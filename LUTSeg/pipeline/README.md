@@ -121,7 +121,7 @@ Equivalent one-command wrapper:
 ```bash
 python LUTSeg/pipeline/run_pipeline.py --default-doctor user_9
 ```
-
+expected split counts (defaults: total=141, train=111, val=30; configurable via env vars)
 
 ## Form Workflow (Golden Set Review)
 
