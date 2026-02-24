@@ -1,0 +1,636 @@
+{
+  "meta": {
+    "groups_json": "annotations/processed/image_groups.json",
+    "golden_only": true,
+    "seed": 42,
+    "alpha": 0.55,
+    "tile_width": 560,
+    "tile_height": 420
+  },
+  "items": [
+    {
+      "image_id": "img_0014",
+      "image_key": "Patient_20/P20T_1.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0014.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 593,
+          "task_id": 442,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_1__ann593.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_1__ann593.png"
+        },
+        "B": {
+          "doctor_id": "user_4",
+          "annotation_id": 530,
+          "task_id": 511,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_1__ann530.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_1__ann530.png"
+        },
+        "C": {
+          "doctor_id": "user_6",
+          "annotation_id": 501,
+          "task_id": 381,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_1__ann501.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_1__ann501.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 629,
+          "task_id": 575,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_1__ann629.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_1__ann629.png"
+        },
+        "E": {
+          "doctor_id": "user_9",
+          "annotation_id": 450,
+          "task_id": 638,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_1__ann450.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_1__ann450.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0015",
+      "image_key": "Patient_20/P20T_2.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0015.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_6",
+          "annotation_id": 502,
+          "task_id": 382,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_2__ann502.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_2__ann502.png"
+        },
+        "B": {
+          "doctor_id": "user_9",
+          "annotation_id": 451,
+          "task_id": 639,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_2__ann451.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_2__ann451.png"
+        },
+        "C": {
+          "doctor_id": "user_7",
+          "annotation_id": 594,
+          "task_id": 443,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_2__ann594.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_2__ann594.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 628,
+          "task_id": 576,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_2__ann628.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_2__ann628.png"
+        },
+        "E": {
+          "doctor_id": "user_4",
+          "annotation_id": 531,
+          "task_id": 512,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_2__ann531.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_2__ann531.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0016",
+      "image_key": "Patient_20/P20T_3.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0016.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 595,
+          "task_id": 444,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_3__ann595.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_3__ann595.png"
+        },
+        "B": {
+          "doctor_id": "user_6",
+          "annotation_id": 503,
+          "task_id": 383,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_3__ann503.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_3__ann503.png"
+        },
+        "C": {
+          "doctor_id": "user_9",
+          "annotation_id": 452,
+          "task_id": 640,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_3__ann452.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_3__ann452.png"
+        },
+        "D": {
+          "doctor_id": "user_4",
+          "annotation_id": 532,
+          "task_id": 513,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_3__ann532.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_3__ann532.png"
+        },
+        "E": {
+          "doctor_id": "user_5",
+          "annotation_id": 627,
+          "task_id": 577,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_3__ann627.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_3__ann627.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0017",
+      "image_key": "Patient_20/P20T_4.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0017.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_9",
+          "annotation_id": 453,
+          "task_id": 641,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_4__ann453.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_4__ann453.png"
+        },
+        "B": {
+          "doctor_id": "user_5",
+          "annotation_id": 626,
+          "task_id": 578,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_4__ann626.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_4__ann626.png"
+        },
+        "C": {
+          "doctor_id": "user_4",
+          "annotation_id": 533,
+          "task_id": 514,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_4__ann533.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_4__ann533.png"
+        },
+        "D": {
+          "doctor_id": "user_6",
+          "annotation_id": 504,
+          "task_id": 384,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_4__ann504.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_4__ann504.png"
+        },
+        "E": {
+          "doctor_id": "user_7",
+          "annotation_id": 573,
+          "task_id": 445,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_4__ann573.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_4__ann573.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0018",
+      "image_key": "Patient_20/P20T_5.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0018.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_4",
+          "annotation_id": 534,
+          "task_id": 515,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_5__ann534.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_5__ann534.png"
+        },
+        "B": {
+          "doctor_id": "user_7",
+          "annotation_id": 571,
+          "task_id": 446,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_5__ann571.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_5__ann571.png"
+        },
+        "C": {
+          "doctor_id": "user_9",
+          "annotation_id": 454,
+          "task_id": 642,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_5__ann454.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_5__ann454.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 625,
+          "task_id": 579,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_5__ann625.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_5__ann625.png"
+        },
+        "E": {
+          "doctor_id": "user_6",
+          "annotation_id": 505,
+          "task_id": 385,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_5__ann505.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_5__ann505.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0019",
+      "image_key": "Patient_20/P20T_6.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0019.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 563,
+          "task_id": 447,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_6__ann563.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_6__ann563.png"
+        },
+        "B": {
+          "doctor_id": "user_9",
+          "annotation_id": 440,
+          "task_id": 643,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_6__ann440.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_6__ann440.png"
+        },
+        "C": {
+          "doctor_id": "user_6",
+          "annotation_id": 506,
+          "task_id": 386,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_6__ann506.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_6__ann506.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 624,
+          "task_id": 580,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_6__ann624.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_6__ann624.png"
+        },
+        "E": {
+          "doctor_id": "user_4",
+          "annotation_id": 535,
+          "task_id": 516,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_6__ann535.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_6__ann535.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0020",
+      "image_key": "Patient_20/P20T_7.jpg",
+      "patient_id": "Patient_20",
+      "form_image": "images/img_0020.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_4",
+          "annotation_id": 536,
+          "task_id": 517,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_20/P20T_7__ann536.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_20/P20T_7__ann536.png"
+        },
+        "B": {
+          "doctor_id": "user_6",
+          "annotation_id": 507,
+          "task_id": 387,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_20/P20T_7__ann507.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_20/P20T_7__ann507.png"
+        },
+        "C": {
+          "doctor_id": "user_9",
+          "annotation_id": 445,
+          "task_id": 644,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_20/P20T_7__ann445.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_20/P20T_7__ann445.png"
+        },
+        "D": {
+          "doctor_id": "user_7",
+          "annotation_id": 562,
+          "task_id": 448,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_20/P20T_7__ann562.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_20/P20T_7__ann562.png"
+        },
+        "E": {
+          "doctor_id": "user_5",
+          "annotation_id": 623,
+          "task_id": 581,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_20/P20T_7__ann623.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_20/P20T_7__ann623.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0034",
+      "image_key": "Patient_5/P5T_1.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0034.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 560,
+          "task_id": 409,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_1__ann560.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_1__ann560.png"
+        },
+        "B": {
+          "doctor_id": "user_9",
+          "annotation_id": 398,
+          "task_id": 612,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_1__ann398.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_1__ann398.png"
+        },
+        "C": {
+          "doctor_id": "user_5",
+          "annotation_id": 645,
+          "task_id": 534,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_1__ann645.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_1__ann645.png"
+        },
+        "D": {
+          "doctor_id": "user_6",
+          "annotation_id": 427,
+          "task_id": 348,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_1__ann427.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_1__ann427.png"
+        },
+        "E": {
+          "doctor_id": "user_4",
+          "annotation_id": 355,
+          "task_id": 478,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_1__ann355.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_1__ann355.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0035",
+      "image_key": "Patient_5/P5T_2.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0035.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_9",
+          "annotation_id": 405,
+          "task_id": 613,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_2__ann405.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_2__ann405.png"
+        },
+        "B": {
+          "doctor_id": "user_5",
+          "annotation_id": 644,
+          "task_id": 535,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_2__ann644.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_2__ann644.png"
+        },
+        "C": {
+          "doctor_id": "user_6",
+          "annotation_id": 433,
+          "task_id": 349,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_2__ann433.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_2__ann433.png"
+        },
+        "D": {
+          "doctor_id": "user_4",
+          "annotation_id": 356,
+          "task_id": 479,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_2__ann356.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_2__ann356.png"
+        },
+        "E": {
+          "doctor_id": "user_7",
+          "annotation_id": 564,
+          "task_id": 410,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_2__ann564.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_2__ann564.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0036",
+      "image_key": "Patient_5/P5T_3.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0036.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 565,
+          "task_id": 411,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_3__ann565.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_3__ann565.png"
+        },
+        "B": {
+          "doctor_id": "user_4",
+          "annotation_id": 357,
+          "task_id": 480,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_3__ann357.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_3__ann357.png"
+        },
+        "C": {
+          "doctor_id": "user_6",
+          "annotation_id": 435,
+          "task_id": 350,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_3__ann435.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_3__ann435.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 643,
+          "task_id": 536,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_3__ann643.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_3__ann643.png"
+        },
+        "E": {
+          "doctor_id": "user_9",
+          "annotation_id": 409,
+          "task_id": 614,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_3__ann409.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_3__ann409.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0037",
+      "image_key": "Patient_5/P5T_4.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0037.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_9",
+          "annotation_id": 413,
+          "task_id": 615,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_4__ann413.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_4__ann413.png"
+        },
+        "B": {
+          "doctor_id": "user_7",
+          "annotation_id": 566,
+          "task_id": 412,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_4__ann566.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_4__ann566.png"
+        },
+        "C": {
+          "doctor_id": "user_4",
+          "annotation_id": 455,
+          "task_id": 481,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_4__ann455.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_4__ann455.png"
+        },
+        "D": {
+          "doctor_id": "user_5",
+          "annotation_id": 642,
+          "task_id": 537,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_4__ann642.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_4__ann642.png"
+        },
+        "E": {
+          "doctor_id": "user_6",
+          "annotation_id": 457,
+          "task_id": 351,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_4__ann457.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_4__ann457.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0038",
+      "image_key": "Patient_5/P5T_5.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0038.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_7",
+          "annotation_id": 567,
+          "task_id": 413,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_5__ann567.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_5__ann567.png"
+        },
+        "B": {
+          "doctor_id": "user_9",
+          "annotation_id": 420,
+          "task_id": 616,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_5__ann420.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_5__ann420.png"
+        },
+        "C": {
+          "doctor_id": "user_6",
+          "annotation_id": 459,
+          "task_id": 352,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_5__ann459.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_5__ann459.png"
+        },
+        "D": {
+          "doctor_id": "user_4",
+          "annotation_id": 456,
+          "task_id": 482,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_5__ann456.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_5__ann456.png"
+        },
+        "E": {
+          "doctor_id": "user_5",
+          "annotation_id": 641,
+          "task_id": 538,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_5__ann641.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_5__ann641.png"
+        }
+      }
+    },
+    {
+      "image_id": "img_0039",
+      "image_key": "Patient_5/P5T_6.jpg",
+      "patient_id": "Patient_5",
+      "form_image": "images/img_0039.png",
+      "options": {
+        "A": {
+          "doctor_id": "user_6",
+          "annotation_id": 462,
+          "task_id": 353,
+          "project_id": 8,
+          "mask_path": "masks_by_annotator/user_6/Patient_5/P5T_6__ann462.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_6/Patient_5/P5T_6__ann462.png"
+        },
+        "B": {
+          "doctor_id": "user_5",
+          "annotation_id": 640,
+          "task_id": 539,
+          "project_id": 13,
+          "mask_path": "masks_by_annotator/user_5/Patient_5/P5T_6__ann640.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_5/Patient_5/P5T_6__ann640.png"
+        },
+        "C": {
+          "doctor_id": "user_9",
+          "annotation_id": 423,
+          "task_id": 617,
+          "project_id": 12,
+          "mask_path": "masks_by_annotator/user_9/Patient_5/P5T_6__ann423.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_9/Patient_5/P5T_6__ann423.png"
+        },
+        "D": {
+          "doctor_id": "user_4",
+          "annotation_id": 458,
+          "task_id": 483,
+          "project_id": 10,
+          "mask_path": "masks_by_annotator/user_4/Patient_5/P5T_6__ann458.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_4/Patient_5/P5T_6__ann458.png"
+        },
+        "E": {
+          "doctor_id": "user_7",
+          "annotation_id": 568,
+          "task_id": 414,
+          "project_id": 9,
+          "mask_path": "masks_by_annotator/user_7/Patient_5/P5T_6__ann568.png",
+          "wound_mask_path": "wound_masks_by_annotator/user_7/Patient_5/P5T_6__ann568.png"
+        }
+      }
+    }
+  ]
+}

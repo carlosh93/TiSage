@@ -1,0 +1,14 @@
+image_key,image,mask,wound_mask,mask_rgb
+Patient_10/P10T_1.jpg,Images/Patient_10/P10T_1.jpg,Masks/Patient_10/P10T_1.png,Wound_Masks/Patient_10/P10T_1.png,Masks_RGB/Patient_10/P10T_1.png
+Patient_10/P10T_2.jpg,Images/Patient_10/P10T_2.jpg,Masks/Patient_10/P10T_2.png,Wound_Masks/Patient_10/P10T_2.png,Masks_RGB/Patient_10/P10T_2.png
+Patient_10/P10T_3.jpg,Images/Patient_10/P10T_3.jpg,Masks/Patient_10/P10T_3.png,Wound_Masks/Patient_10/P10T_3.png,Masks_RGB/Patient_10/P10T_3.png
+Patient_34/P34T_1.jpg,Images/Patient_34/P34T_1.jpg,Masks/Patient_34/P34T_1.png,Wound_Masks/Patient_34/P34T_1.png,Masks_RGB/Patient_34/P34T_1.png
+Patient_34/P34T_2.jpg,Images/Patient_34/P34T_2.jpg,Masks/Patient_34/P34T_2.png,Wound_Masks/Patient_34/P34T_2.png,Masks_RGB/Patient_34/P34T_2.png
+Patient_34/P34T_3.jpg,Images/Patient_34/P34T_3.jpg,Masks/Patient_34/P34T_3.png,Wound_Masks/Patient_34/P34T_3.png,Masks_RGB/Patient_34/P34T_3.png
+Patient_34/P34T_4.jpg,Images/Patient_34/P34T_4.jpg,Masks/Patient_34/P34T_4.png,Wound_Masks/Patient_34/P34T_4.png,Masks_RGB/Patient_34/P34T_4.png
+Patient_20/P20T_1.jpg,Images/Patient_20/P20T_1.jpg,Masks/Patient_20/P20T_1.png,Wound_Masks/Patient_20/P20T_1.png,Masks_RGB/Patient_20/P20T_1.png
+Patient_20/P20T_2.jpg,Images/Patient_20/P20T_2.jpg,Masks/Patient_20/P20T_2.png,Wound_Masks/Patient_20/P20T_2.png,Masks_RGB/Patient_20/P20T_2.png
+Patient_20/P20T_3.jpg,Images/Patient_20/P20T_3.jpg,Masks/Patient_20/P20T_3.png,Wound_Masks/Patient_20/P20T_3.png,Masks_RGB/Patient_20/P20T_3.png
+Patient_20/P20T_4.jpg,Images/Patient_20/P20T_4.jpg,Masks/Patient_20/P20T_4.png,Wound_Masks/Patient_20/P20T_4.png,Masks_RGB/Patient_20/P20T_4.png
+Patient_20/P20T_6.jpg,Images/Patient_20/P20T_6.jpg,Masks/Patient_20/P20T_6.png,Wound_Masks/Patient_20/P20T_6.png,Masks_RGB/Patient_20/P20T_6.png
+Patient_20/P20T_7.jpg,Images/Patient_20/P20T_7.jpg,Masks/Patient_20/P20T_7.png,Wound_Masks/Patient_20/P20T_7.png,Masks_RGB/Patient_20/P20T_7.png
