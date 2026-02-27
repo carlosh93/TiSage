@@ -187,26 +187,26 @@ python LUTSeg/pipeline/luts_visualize.py \
   --split train \
   --no-legend \
   --include-golden \
-  --save-dir tmp/tissue_train
+  --save-dir tissue_train
 
 python LUTSeg/pipeline/luts_visualize.py \
   --dataset-root LUTSeg/data \
   --split val \
   --no-legend \
   --include-golden \
-  --save-dir tmp/tissue_val
+  --save-dir tissue_val
 
 python LUTSeg/pipeline/luts_visualize_wound_detection.py \
   --dataset-root LUTSeg/data \
   --split train \
   --include-golden \
-  --save-dir tmp/wound_train
+  --save-dir wound_train
 
 python LUTSeg/pipeline/luts_visualize_wound_detection.py \
   --dataset-root LUTSeg/data \
   --split val \
   --include-golden \
-  --save-dir tmp/wound_val
+  --save-dir wound_val
 ```
 
 ## Seeds Used

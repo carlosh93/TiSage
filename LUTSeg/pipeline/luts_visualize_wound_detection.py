@@ -45,7 +45,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--save-dir",
-        default="tmp/luts_wound_detection_previews",
+        default="luts_wound_detection_previews",
         help="Directory to save per-image visualizations.",
     )
     parser.add_argument(

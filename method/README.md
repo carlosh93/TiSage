@@ -13,7 +13,7 @@ This folder contains the method code and experiment scripts used to train, analy
 
 ## Required Inputs
 
-This repository is self-contained for the TiSage method code. The project root (`tmp/TiSage`) must contain:
+This repository is self-contained for the TiSage method code. The project root must contain:
 
 - `data/DFUTissue` and `data/LUTSeg`
 - `splits/dfutissue/...` and `splits/lutseg/...`
@@ -53,7 +53,7 @@ pip install wandb
 
 ## Reproduction Workflow
 
-Run from the repository root (`tmp/TiSage`):
+Run from the repository root:
 
 1. (Optional) Train prior heads
 ```bash
