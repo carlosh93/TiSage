@@ -1,0 +1,35 @@
+dataset: dfutissue
+data_root: data/DFUTissue
+nclass: 4
+crop_size: 98
+epochs: 100
+batch_size: 2
+lr: 5.0e-06
+lr_multi: 20.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.95
+model: dpt
+backbone: dinov2_base
+lock_backbone: true
+
+# MedSigLIP pseudo-label calibration (enable with --medsiglip flag)
+medsiglip_alpha: 0.1         # lower alpha for gated MedSigLIP calibration
+medsiglip_n_segments: 64     # SLIC target superpixel count
+medsiglip_context_margin: 2  # pixels to expand superpixel crop bbox
+medsiglip_recompute_every: 5 # recompute MedSigLIP prior every N training iters
+medsiglip_gate_conf: 0.85    # apply calibration only where teacher conf < this; 0 = no gating
+medsiglip_classifier_path: null  # optional classifier checkpoint; null keeps zero-shot prompts
+medsiglip_embed_batch_size: 32   # MedSigLIP image-embedding batch size (classifier prior mode)
+medsiglip_soft_beta: 0.5         # blend weight for soft KL distillation (if --medsiglip-soft-label)
+medsiglip_use_multiscale: false  # if true: build coarse+fine priors and fuse in logit space
+medsiglip_coarse_n_segments: 32
+medsiglip_coarse_min_size: 80
+medsiglip_fine_n_segments: 128
+medsiglip_fine_min_size: 40
+medsiglip_prior_beta: 0.5        # fine-weight in multiscale prior logit fusion
+medsiglip_adaptive_alpha: false  # if true: pixel-adaptive alpha from teacher confidence
+medsiglip_conf_weighted_kl: false  # if true: entropy-weighted KL (no hard conf mask by default)
+medsiglip_use_hard_conf_mask_for_kl: false  # optional conf-thresh mask on top of weighted KL

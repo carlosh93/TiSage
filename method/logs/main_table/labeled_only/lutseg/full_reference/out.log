@@ -1,0 +1,2039 @@
+W0225 22:21:39.422000 3183077 site-packages/torch/distributed/run.py:792] 
+W0225 22:21:39.422000 3183077 site-packages/torch/distributed/run.py:792] *****************************************
+W0225 22:21:39.422000 3183077 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0225 22:21:39.422000 3183077 site-packages/torch/distributed/run.py:792] *****************************************
+[2026-02-25 22:21:45,161][    INFO] {'backbone': 'dinov2_base',
+ 'batch_size': 2,
+ 'conf_thresh': 0.9,
+ 'config': 'configs/lutseg_supervised.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255}, 'name': 'CELoss'},
+ 'crop_size': 126,
+ 'data_root': 'data/LUTSeg',
+ 'dataset': 'lutseg',
+ 'deterministic': False,
+ 'double_batch_size': False,
+ 'epochs': 100,
+ 'labeled_id_path': 'splits/lutseg/fixed/labeled.txt',
+ 'local_rank': 0,
+ 'lock_backbone': True,
+ 'lr': 3e-06,
+ 'lr_multi': 20.0,
+ 'model': 'dpt',
+ 'nclass': 6,
+ 'ngpus': 2,
+ 'port': 40737,
+ 'pretrained_path': None,
+ 'save_path': 'exp/lutseg/supervised_table_baseline/dinov2_base/full/seed0',
+ 'seed': 0,
+ 'unlabeled_id_path': 'splits/lutseg/fixed/unlabeled.txt',
+ 'wandb': True,
+ 'wandb_entity': None,
+ 'wandb_name': None,
+ 'wandb_project': 'unimatch-v2-table-baselines',
+ 'wandb_tags': 'supervised,lutseg,split_full,seed_0,table_baseline'}
+
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/user/.netrc.
+wandb: Currently logged in as: anon_user to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run oryp97no
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in exp/lutseg/supervised_table_baseline/dinov2_base/full/seed0/wandb/run-20260225_222146-oryp97no
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run swift-dew-6
+wandb: ⭐️ View project at https://wandb.ai/anon_user/unimatch-v2-table-baselines
+wandb: 🚀 View run at https://wandb.ai/anon_user/unimatch-v2-table-baselines/runs/oryp97no
+[2026-02-25 22:21:50,456][    INFO] Total params: 97.5M
+
+gpu211-18:3183179:3183179 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu211-18:3183179:3183179 [0] NCCL INFO Bootstrap : Using ib0:10.109.153.103<0>
+gpu211-18:3183179:3183179 [0] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu211-18:3183179:3183179 [0] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu211-18:3183179:3183179 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu211-18:3183179:3183179 [0] NCCL INFO cudaDriverVersion 12080
+NCCL version 2.21.5+cuda12.4
+gpu211-18:3183179:3183179 [0] NCCL INFO Comm config Blocking set to 1
+gpu211-18:3183180:3183180 [1] NCCL INFO cudaDriverVersion 12080
+gpu211-18:3183180:3183180 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu211-18:3183180:3183180 [1] NCCL INFO Bootstrap : Using ib0:10.109.153.103<0>
+gpu211-18:3183180:3183180 [1] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu211-18:3183180:3183180 [1] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu211-18:3183180:3183180 [1] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu211-18:3183180:3183180 [1] NCCL INFO Comm config Blocking set to 1
+gpu211-18:3183180:3183373 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu211-18:3183179:3183372 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu211-18:3183180:3183373 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.153.103<0>
+gpu211-18:3183180:3183373 [1] NCCL INFO Using non-device net plugin version 0
+gpu211-18:3183180:3183373 [1] NCCL INFO Using network IB
+gpu211-18:3183179:3183372 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.153.103<0>
+gpu211-18:3183179:3183372 [0] NCCL INFO Using non-device net plugin version 0
+gpu211-18:3183179:3183372 [0] NCCL INFO Using network IB
+gpu211-18:3183179:3183372 [0] NCCL INFO ncclCommInitRank comm 0x8330700 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 3e000 commId 0x3c4f70cb937738a5 - Init START
+gpu211-18:3183180:3183373 [1] NCCL INFO ncclCommInitRank comm 0xf066820 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 88000 commId 0x3c4f70cb937738a5 - Init START
+gpu211-18:3183180:3183373 [1] NCCL INFO Setting affinity for GPU 1 to e000,ff000000
+gpu211-18:3183179:3183372 [0] NCCL INFO Setting affinity for GPU 0 to 8000
+gpu211-18:3183180:3183373 [1] NCCL INFO comm 0xf066820 rank 1 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0
+gpu211-18:3183179:3183372 [0] NCCL INFO comm 0x8330700 rank 0 nRanks 2 nNodes 2 localRanks 1 localRank 0 MNNVL 0
+gpu211-18:3183180:3183373 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] 0/-1/-1->1->-1
+gpu211-18:3183180:3183373 [1] NCCL INFO P2P Chunksize set to 131072
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 00/02 :    0   1
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 01/02 :    0   1
+gpu211-18:3183179:3183372 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] -1/-1/-1->0->1
+gpu211-18:3183179:3183372 [0] NCCL INFO P2P Chunksize set to 131072
+gpu211-18:3183180:3183373 [1] NCCL INFO Channel 00/0 : 0[0] -> 1[1] [receive] via NET/IB/2/GDRDMA
+gpu211-18:3183180:3183373 [1] NCCL INFO Channel 01/0 : 0[0] -> 1[1] [receive] via NET/IB/2/GDRDMA
+gpu211-18:3183180:3183373 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] [send] via NET/IB/2/GDRDMA
+gpu211-18:3183180:3183373 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] [send] via NET/IB/2/GDRDMA
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 00/0 : 1[1] -> 0[0] [receive] via NET/IB/1/GDRDMA
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 01/0 : 1[1] -> 0[0] [receive] via NET/IB/1/GDRDMA
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] [send] via NET/IB/1/GDRDMA
+gpu211-18:3183179:3183372 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] [send] via NET/IB/1/GDRDMA
+gpu211-18:3183180:3183373 [1] NCCL INFO Connected all rings
+gpu211-18:3183180:3183373 [1] NCCL INFO Connected all trees
+gpu211-18:3183179:3183372 [0] NCCL INFO Connected all rings
+gpu211-18:3183180:3183373 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu211-18:3183180:3183373 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu211-18:3183179:3183372 [0] NCCL INFO Connected all trees
+gpu211-18:3183179:3183372 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu211-18:3183179:3183372 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu211-18:3183180:3183373 [1] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu211-18:3183180:3183373 [1] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu211-18:3183180:3183373 [1] NCCL INFO ncclCommInitRank comm 0xf066820 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 88000 commId 0x3c4f70cb937738a5 - Init COMPLETE
+gpu211-18:3183179:3183372 [0] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu211-18:3183179:3183372 [0] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu211-18:3183179:3183372 [0] NCCL INFO ncclCommInitRank comm 0x8330700 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 3e000 commId 0x3c4f70cb937738a5 - Init COMPLETE
+[2026-02-25 22:21:51,234][    INFO] No n_upsampled setting for dataset 'lutseg'; using natural dataset size.
+[2026-02-25 22:21:51,236][    INFO] ===========> Epoch: 0, LR: 0.0000030, Previous best: 0.00
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [6, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [6, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [6, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [6, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[2026-02-25 22:21:52,725][    INFO] Iters: 0, Total loss: 1.748
+[2026-02-25 22:21:52,810][    INFO] Iters: 3, Total loss: 1.640
+[2026-02-25 22:21:52,899][    INFO] Iters: 6, Total loss: 1.335
+[2026-02-25 22:21:53,851][    INFO] Iters: 9, Total loss: 0.983
+[2026-02-25 22:21:53,929][    INFO] Iters: 12, Total loss: 1.255
+[2026-02-25 22:21:54,490][    INFO] Iters: 15, Total loss: 1.054
+[2026-02-25 22:21:55,113][    INFO] Iters: 18, Total loss: 1.070
+[2026-02-25 22:21:55,394][    INFO] Iters: 21, Total loss: 1.022
+[2026-02-25 22:21:55,599][    INFO] Iters: 24, Total loss: 0.950
+[2026-02-25 22:21:55,883][    INFO] Iters: 27, Total loss: 0.887
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 91.37
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 0.04
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.00
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 0.00
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:23:31,614][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:23:31,615][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 15.23
+
+[2026-02-25 22:23:32,702][    INFO] ===========> Epoch: 1, LR: 0.0000030, Previous best: 15.23
+[2026-02-25 22:23:32,926][    INFO] Iters: 0, Total loss: 0.091
+[2026-02-25 22:23:33,615][    INFO] Iters: 3, Total loss: 0.644
+[2026-02-25 22:23:33,926][    INFO] Iters: 6, Total loss: 0.566
+[2026-02-25 22:23:34,177][    INFO] Iters: 9, Total loss: 0.499
+[2026-02-25 22:23:34,678][    INFO] Iters: 12, Total loss: 0.437
+[2026-02-25 22:23:34,875][    INFO] Iters: 15, Total loss: 0.441
+[2026-02-25 22:23:34,954][    INFO] Iters: 18, Total loss: 0.487
+[2026-02-25 22:23:35,449][    INFO] Iters: 21, Total loss: 0.539
+[2026-02-25 22:23:36,111][    INFO] Iters: 24, Total loss: 0.501
+[2026-02-25 22:23:36,186][    INFO] Iters: 27, Total loss: 0.610
+[2026-02-25 22:24:52,381][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.65
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 17.47
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 3.78
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 18.72
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:24:52,382][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 22.27
+
+[2026-02-25 22:24:53,566][    INFO] ===========> Epoch: 2, LR: 0.0000029, Previous best: 22.27
+[2026-02-25 22:24:53,752][    INFO] Iters: 0, Total loss: 0.915
+[2026-02-25 22:24:54,466][    INFO] Iters: 3, Total loss: 1.095
+[2026-02-25 22:24:55,071][    INFO] Iters: 6, Total loss: 0.924
+[2026-02-25 22:24:55,147][    INFO] Iters: 9, Total loss: 0.939
+[2026-02-25 22:24:55,242][    INFO] Iters: 12, Total loss: 0.855
+[2026-02-25 22:24:55,532][    INFO] Iters: 15, Total loss: 0.896
+[2026-02-25 22:24:56,647][    INFO] Iters: 18, Total loss: 0.782
+[2026-02-25 22:24:56,725][    INFO] Iters: 21, Total loss: 0.870
+[2026-02-25 22:24:57,072][    INFO] Iters: 24, Total loss: 0.791
+[2026-02-25 22:24:57,390][    INFO] Iters: 27, Total loss: 0.756
+[2026-02-25 22:26:13,624][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.90
+[2026-02-25 22:26:13,624][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 31.31
+[2026-02-25 22:26:13,624][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.12
+[2026-02-25 22:26:13,624][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 7.88
+[2026-02-25 22:26:13,624][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:26:13,625][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:26:13,625][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 22.20
+
+[2026-02-25 22:26:14,237][    INFO] ===========> Epoch: 3, LR: 0.0000029, Previous best: 22.27
+[2026-02-25 22:26:14,874][    INFO] Iters: 0, Total loss: 0.096
+[2026-02-25 22:26:15,238][    INFO] Iters: 3, Total loss: 0.536
+[2026-02-25 22:26:15,361][    INFO] Iters: 6, Total loss: 0.332
+[2026-02-25 22:26:15,674][    INFO] Iters: 9, Total loss: 0.337
+[2026-02-25 22:26:15,839][    INFO] Iters: 12, Total loss: 0.680
+[2026-02-25 22:26:16,244][    INFO] Iters: 15, Total loss: 0.640
+[2026-02-25 22:26:16,678][    INFO] Iters: 18, Total loss: 0.565
+[2026-02-25 22:26:16,938][    INFO] Iters: 21, Total loss: 0.544
+[2026-02-25 22:26:17,316][    INFO] Iters: 24, Total loss: 0.527
+[2026-02-25 22:26:17,935][    INFO] Iters: 27, Total loss: 0.502
+[2026-02-25 22:27:34,211][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.66
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.58
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.00
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 28.27
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:27:34,212][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 22.42
+
+[2026-02-25 22:27:35,442][    INFO] ===========> Epoch: 4, LR: 0.0000029, Previous best: 22.42
+[2026-02-25 22:27:36,031][    INFO] Iters: 0, Total loss: 0.008
+[2026-02-25 22:27:36,686][    INFO] Iters: 3, Total loss: 0.590
+[2026-02-25 22:27:37,028][    INFO] Iters: 6, Total loss: 0.858
+[2026-02-25 22:27:37,119][    INFO] Iters: 9, Total loss: 0.649
+[2026-02-25 22:27:37,196][    INFO] Iters: 12, Total loss: 0.688
+[2026-02-25 22:27:37,320][    INFO] Iters: 15, Total loss: 0.678
+[2026-02-25 22:27:37,999][    INFO] Iters: 18, Total loss: 0.717
+[2026-02-25 22:27:38,079][    INFO] Iters: 21, Total loss: 0.650
+[2026-02-25 22:27:38,615][    INFO] Iters: 24, Total loss: 0.611
+[2026-02-25 22:27:39,173][    INFO] Iters: 27, Total loss: 0.590
+[2026-02-25 22:28:55,378][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.30
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 0.00
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.00
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 17.25
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:28:55,379][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 18.26
+
+[2026-02-25 22:28:55,988][    INFO] ===========> Epoch: 5, LR: 0.0000029, Previous best: 22.42
+[2026-02-25 22:28:56,281][    INFO] Iters: 0, Total loss: 0.358
+[2026-02-25 22:28:56,590][    INFO] Iters: 3, Total loss: 0.457
+[2026-02-25 22:28:57,009][    INFO] Iters: 6, Total loss: 0.451
+[2026-02-25 22:28:57,087][    INFO] Iters: 9, Total loss: 0.413
+[2026-02-25 22:28:57,486][    INFO] Iters: 12, Total loss: 0.502
+[2026-02-25 22:28:58,105][    INFO] Iters: 15, Total loss: 0.613
+[2026-02-25 22:28:58,916][    INFO] Iters: 18, Total loss: 0.592
+[2026-02-25 22:28:58,988][    INFO] Iters: 21, Total loss: 0.534
+[2026-02-25 22:28:59,534][    INFO] Iters: 24, Total loss: 0.540
+[2026-02-25 22:29:00,114][    INFO] Iters: 27, Total loss: 0.486
+[2026-02-25 22:30:16,406][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.82
+[2026-02-25 22:30:16,406][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 1.95
+[2026-02-25 22:30:16,406][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.00
+[2026-02-25 22:30:16,407][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 34.96
+[2026-02-25 22:30:16,407][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:30:16,407][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:30:16,407][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 21.95
+
+[2026-02-25 22:30:17,036][    INFO] ===========> Epoch: 6, LR: 0.0000028, Previous best: 22.42
+[2026-02-25 22:30:17,563][    INFO] Iters: 0, Total loss: 0.684
+[2026-02-25 22:30:17,984][    INFO] Iters: 3, Total loss: 0.509
+[2026-02-25 22:30:18,060][    INFO] Iters: 6, Total loss: 0.350
+[2026-02-25 22:30:18,367][    INFO] Iters: 9, Total loss: 0.332
+[2026-02-25 22:30:18,891][    INFO] Iters: 12, Total loss: 0.321
+[2026-02-25 22:30:18,968][    INFO] Iters: 15, Total loss: 0.342
+[2026-02-25 22:30:19,592][    INFO] Iters: 18, Total loss: 0.336
+[2026-02-25 22:30:19,964][    INFO] Iters: 21, Total loss: 0.388
+[2026-02-25 22:30:20,466][    INFO] Iters: 24, Total loss: 0.358
+[2026-02-25 22:30:20,983][    INFO] Iters: 27, Total loss: 0.358
+[2026-02-25 22:31:37,239][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.10
+[2026-02-25 22:31:37,239][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 22.19
+[2026-02-25 22:31:37,239][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.38
+[2026-02-25 22:31:37,240][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 30.33
+[2026-02-25 22:31:37,240][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:31:37,240][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:31:37,240][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 24.50
+
+[2026-02-25 22:31:38,452][    INFO] ===========> Epoch: 7, LR: 0.0000028, Previous best: 24.50
+[2026-02-25 22:31:39,213][    INFO] Iters: 0, Total loss: 0.259
+[2026-02-25 22:31:39,435][    INFO] Iters: 3, Total loss: 0.381
+[2026-02-25 22:31:40,022][    INFO] Iters: 6, Total loss: 0.704
+[2026-02-25 22:31:40,283][    INFO] Iters: 9, Total loss: 0.528
+[2026-02-25 22:31:40,692][    INFO] Iters: 12, Total loss: 0.434
+[2026-02-25 22:31:41,088][    INFO] Iters: 15, Total loss: 0.362
+[2026-02-25 22:31:41,165][    INFO] Iters: 18, Total loss: 0.375
+[2026-02-25 22:31:41,748][    INFO] Iters: 21, Total loss: 0.437
+[2026-02-25 22:31:41,822][    INFO] Iters: 24, Total loss: 0.402
+[2026-02-25 22:31:41,893][    INFO] Iters: 27, Total loss: 0.363
+[2026-02-25 22:32:58,135][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.65
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.90
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 4.39
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 27.86
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:32:58,136][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 23.14
+
+[2026-02-25 22:32:58,734][    INFO] ===========> Epoch: 8, LR: 0.0000028, Previous best: 24.50
+[2026-02-25 22:32:59,171][    INFO] Iters: 0, Total loss: 0.006
+[2026-02-25 22:33:00,002][    INFO] Iters: 3, Total loss: 0.479
+[2026-02-25 22:33:00,079][    INFO] Iters: 6, Total loss: 0.429
+[2026-02-25 22:33:00,348][    INFO] Iters: 9, Total loss: 0.323
+[2026-02-25 22:33:00,808][    INFO] Iters: 12, Total loss: 0.333
+[2026-02-25 22:33:01,280][    INFO] Iters: 15, Total loss: 0.357
+[2026-02-25 22:33:01,662][    INFO] Iters: 18, Total loss: 0.305
+[2026-02-25 22:33:01,737][    INFO] Iters: 21, Total loss: 0.273
+[2026-02-25 22:33:02,175][    INFO] Iters: 24, Total loss: 0.286
+[2026-02-25 22:33:02,864][    INFO] Iters: 27, Total loss: 0.264
+[2026-02-25 22:34:19,082][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.15
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 24.95
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.00
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 26.03
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:34:19,083][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 23.86
+
+[2026-02-25 22:34:19,688][    INFO] ===========> Epoch: 9, LR: 0.0000028, Previous best: 24.50
+[2026-02-25 22:34:20,215][    INFO] Iters: 0, Total loss: 3.186
+[2026-02-25 22:34:20,309][    INFO] Iters: 3, Total loss: 1.116
+[2026-02-25 22:34:20,989][    INFO] Iters: 6, Total loss: 0.916
+[2026-02-25 22:34:21,788][    INFO] Iters: 9, Total loss: 0.750
+[2026-02-25 22:34:21,866][    INFO] Iters: 12, Total loss: 0.646
+[2026-02-25 22:34:21,947][    INFO] Iters: 15, Total loss: 0.611
+[2026-02-25 22:34:22,081][    INFO] Iters: 18, Total loss: 0.570
+[2026-02-25 22:34:22,746][    INFO] Iters: 21, Total loss: 0.513
+[2026-02-25 22:34:23,217][    INFO] Iters: 24, Total loss: 0.502
+[2026-02-25 22:34:23,566][    INFO] Iters: 27, Total loss: 0.507
+[2026-02-25 22:35:39,794][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.15
+[2026-02-25 22:35:39,795][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 0.05
+[2026-02-25 22:35:39,795][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 0.15
+[2026-02-25 22:35:39,795][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 28.15
+[2026-02-25 22:35:39,795][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:35:39,796][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:35:39,796][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 20.42
+
+[2026-02-25 22:35:40,407][    INFO] ===========> Epoch: 10, LR: 0.0000027, Previous best: 24.50
+[2026-02-25 22:35:41,453][    INFO] Iters: 0, Total loss: 0.004
+[2026-02-25 22:35:41,528][    INFO] Iters: 3, Total loss: 0.215
+[2026-02-25 22:35:42,215][    INFO] Iters: 6, Total loss: 0.180
+[2026-02-25 22:35:42,865][    INFO] Iters: 9, Total loss: 0.129
+[2026-02-25 22:35:42,947][    INFO] Iters: 12, Total loss: 0.143
+[2026-02-25 22:35:43,028][    INFO] Iters: 15, Total loss: 0.117
+[2026-02-25 22:35:43,610][    INFO] Iters: 18, Total loss: 0.128
+[2026-02-25 22:35:44,417][    INFO] Iters: 21, Total loss: 0.222
+[2026-02-25 22:35:44,739][    INFO] Iters: 24, Total loss: 0.265
+[2026-02-25 22:35:44,819][    INFO] Iters: 27, Total loss: 0.273
+[2026-02-25 22:37:01,060][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.03
+[2026-02-25 22:37:01,060][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.84
+[2026-02-25 22:37:01,060][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 1.71
+[2026-02-25 22:37:01,060][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.26
+[2026-02-25 22:37:01,061][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:37:01,061][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:37:01,061][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.31
+
+[2026-02-25 22:37:02,307][    INFO] ===========> Epoch: 11, LR: 0.0000027, Previous best: 26.31
+[2026-02-25 22:37:02,526][    INFO] Iters: 0, Total loss: 0.236
+[2026-02-25 22:37:03,196][    INFO] Iters: 3, Total loss: 0.288
+[2026-02-25 22:37:03,273][    INFO] Iters: 6, Total loss: 0.540
+[2026-02-25 22:37:03,353][    INFO] Iters: 9, Total loss: 0.538
+[2026-02-25 22:37:04,014][    INFO] Iters: 12, Total loss: 0.450
+[2026-02-25 22:37:04,475][    INFO] Iters: 15, Total loss: 0.434
+[2026-02-25 22:37:04,553][    INFO] Iters: 18, Total loss: 0.408
+[2026-02-25 22:37:05,234][    INFO] Iters: 21, Total loss: 0.356
+[2026-02-25 22:37:05,491][    INFO] Iters: 24, Total loss: 0.340
+[2026-02-25 22:37:05,893][    INFO] Iters: 27, Total loss: 0.394
+[2026-02-25 22:38:22,112][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.79
+[2026-02-25 22:38:22,112][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 16.68
+[2026-02-25 22:38:22,112][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 4.14
+[2026-02-25 22:38:22,112][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 38.09
+[2026-02-25 22:38:22,113][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:38:22,113][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:38:22,113][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.62
+
+[2026-02-25 22:38:22,725][    INFO] ===========> Epoch: 12, LR: 0.0000027, Previous best: 26.31
+[2026-02-25 22:38:22,927][    INFO] Iters: 0, Total loss: 0.649
+[2026-02-25 22:38:23,214][    INFO] Iters: 3, Total loss: 0.512
+[2026-02-25 22:38:23,440][    INFO] Iters: 6, Total loss: 0.534
+[2026-02-25 22:38:24,114][    INFO] Iters: 9, Total loss: 0.546
+[2026-02-25 22:38:25,007][    INFO] Iters: 12, Total loss: 0.501
+[2026-02-25 22:38:25,091][    INFO] Iters: 15, Total loss: 0.531
+[2026-02-25 22:38:25,828][    INFO] Iters: 18, Total loss: 0.506
+[2026-02-25 22:38:25,903][    INFO] Iters: 21, Total loss: 0.499
+[2026-02-25 22:38:26,155][    INFO] Iters: 24, Total loss: 0.504
+[2026-02-25 22:38:26,876][    INFO] Iters: 27, Total loss: 0.490
+[2026-02-25 22:39:43,061][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.19
+[2026-02-25 22:39:43,062][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.84
+[2026-02-25 22:39:43,062][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.69
+[2026-02-25 22:39:43,062][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 33.30
+[2026-02-25 22:39:43,062][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:39:43,062][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:39:43,063][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.00
+
+[2026-02-25 22:39:43,646][    INFO] ===========> Epoch: 13, LR: 0.0000026, Previous best: 26.31
+[2026-02-25 22:39:44,264][    INFO] Iters: 0, Total loss: 0.746
+[2026-02-25 22:39:44,341][    INFO] Iters: 3, Total loss: 0.338
+[2026-02-25 22:39:44,418][    INFO] Iters: 6, Total loss: 0.275
+[2026-02-25 22:39:44,696][    INFO] Iters: 9, Total loss: 0.265
+[2026-02-25 22:39:45,159][    INFO] Iters: 12, Total loss: 0.308
+[2026-02-25 22:39:45,724][    INFO] Iters: 15, Total loss: 0.353
+[2026-02-25 22:39:46,027][    INFO] Iters: 18, Total loss: 0.416
+[2026-02-25 22:39:46,723][    INFO] Iters: 21, Total loss: 0.372
+[2026-02-25 22:39:46,801][    INFO] Iters: 24, Total loss: 0.344
+[2026-02-25 22:39:47,291][    INFO] Iters: 27, Total loss: 0.359
+[2026-02-25 22:41:03,487][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.15
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 16.88
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 12.80
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.15
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:41:03,488][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.83
+
+[2026-02-25 22:41:04,712][    INFO] ===========> Epoch: 14, LR: 0.0000026, Previous best: 29.83
+[2026-02-25 22:41:04,923][    INFO] Iters: 0, Total loss: 0.727
+[2026-02-25 22:41:05,002][    INFO] Iters: 3, Total loss: 0.551
+[2026-02-25 22:41:05,638][    INFO] Iters: 6, Total loss: 0.370
+[2026-02-25 22:41:05,914][    INFO] Iters: 9, Total loss: 0.303
+[2026-02-25 22:41:05,990][    INFO] Iters: 12, Total loss: 0.392
+[2026-02-25 22:41:06,556][    INFO] Iters: 15, Total loss: 0.547
+[2026-02-25 22:41:06,905][    INFO] Iters: 18, Total loss: 0.574
+[2026-02-25 22:41:07,311][    INFO] Iters: 21, Total loss: 0.570
+[2026-02-25 22:41:07,434][    INFO] Iters: 24, Total loss: 0.577
+[2026-02-25 22:41:07,906][    INFO] Iters: 27, Total loss: 0.535
+[2026-02-25 22:42:24,144][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.05
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 6.66
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.92
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 42.79
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:42:24,145][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.57
+
+[2026-02-25 22:42:24,744][    INFO] ===========> Epoch: 15, LR: 0.0000026, Previous best: 29.83
+[2026-02-25 22:42:24,942][    INFO] Iters: 0, Total loss: 0.717
+[2026-02-25 22:42:25,511][    INFO] Iters: 3, Total loss: 0.549
+[2026-02-25 22:42:25,995][    INFO] Iters: 6, Total loss: 0.370
+[2026-02-25 22:42:26,071][    INFO] Iters: 9, Total loss: 0.836
+[2026-02-25 22:42:26,289][    INFO] Iters: 12, Total loss: 0.694
+[2026-02-25 22:42:26,815][    INFO] Iters: 15, Total loss: 0.620
+[2026-02-25 22:42:26,893][    INFO] Iters: 18, Total loss: 0.573
+[2026-02-25 22:42:27,607][    INFO] Iters: 21, Total loss: 0.500
+[2026-02-25 22:42:27,687][    INFO] Iters: 24, Total loss: 0.461
+[2026-02-25 22:42:28,378][    INFO] Iters: 27, Total loss: 0.425
+[2026-02-25 22:43:44,658][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.10
+[2026-02-25 22:43:44,659][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 4.57
+[2026-02-25 22:43:44,659][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 6.69
+[2026-02-25 22:43:44,659][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 58.07
+[2026-02-25 22:43:44,659][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:43:44,659][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:43:44,660][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.41
+
+[2026-02-25 22:43:45,275][    INFO] ===========> Epoch: 16, LR: 0.0000026, Previous best: 29.83
+[2026-02-25 22:43:45,506][    INFO] Iters: 0, Total loss: 0.025
+[2026-02-25 22:43:46,188][    INFO] Iters: 3, Total loss: 0.158
+[2026-02-25 22:43:46,587][    INFO] Iters: 6, Total loss: 0.158
+[2026-02-25 22:43:46,671][    INFO] Iters: 9, Total loss: 0.276
+[2026-02-25 22:43:47,260][    INFO] Iters: 12, Total loss: 0.233
+[2026-02-25 22:43:47,491][    INFO] Iters: 15, Total loss: 0.197
+[2026-02-25 22:43:48,181][    INFO] Iters: 18, Total loss: 0.261
+[2026-02-25 22:43:48,253][    INFO] Iters: 21, Total loss: 0.233
+[2026-02-25 22:43:48,533][    INFO] Iters: 24, Total loss: 0.271
+[2026-02-25 22:43:49,261][    INFO] Iters: 27, Total loss: 0.278
+[2026-02-25 22:45:05,433][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.09
+[2026-02-25 22:45:05,433][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 4.85
+[2026-02-25 22:45:05,433][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.17
+[2026-02-25 22:45:05,434][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.17
+[2026-02-25 22:45:05,434][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:45:05,434][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:45:05,434][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.21
+
+[2026-02-25 22:45:06,055][    INFO] ===========> Epoch: 17, LR: 0.0000025, Previous best: 29.83
+[2026-02-25 22:45:06,926][    INFO] Iters: 0, Total loss: 0.525
+[2026-02-25 22:45:07,010][    INFO] Iters: 3, Total loss: 0.336
+[2026-02-25 22:45:07,317][    INFO] Iters: 6, Total loss: 0.238
+[2026-02-25 22:45:07,866][    INFO] Iters: 9, Total loss: 0.346
+[2026-02-25 22:45:08,195][    INFO] Iters: 12, Total loss: 0.346
+[2026-02-25 22:45:08,421][    INFO] Iters: 15, Total loss: 0.310
+[2026-02-25 22:45:08,726][    INFO] Iters: 18, Total loss: 0.312
+[2026-02-25 22:45:08,883][    INFO] Iters: 21, Total loss: 0.383
+[2026-02-25 22:45:09,751][    INFO] Iters: 24, Total loss: 0.385
+[2026-02-25 22:45:09,817][    INFO] Iters: 27, Total loss: 0.393
+[2026-02-25 22:46:26,011][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.68
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 26.36
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.63
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 44.81
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:46:26,012][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.91
+
+[2026-02-25 22:46:26,616][    INFO] ===========> Epoch: 18, LR: 0.0000025, Previous best: 29.83
+[2026-02-25 22:46:26,809][    INFO] Iters: 0, Total loss: 0.461
+[2026-02-25 22:46:27,310][    INFO] Iters: 3, Total loss: 0.667
+[2026-02-25 22:46:27,386][    INFO] Iters: 6, Total loss: 0.399
+[2026-02-25 22:46:27,607][    INFO] Iters: 9, Total loss: 0.297
+[2026-02-25 22:46:27,932][    INFO] Iters: 12, Total loss: 0.465
+[2026-02-25 22:46:28,193][    INFO] Iters: 15, Total loss: 0.420
+[2026-02-25 22:46:28,663][    INFO] Iters: 18, Total loss: 0.490
+[2026-02-25 22:46:28,742][    INFO] Iters: 21, Total loss: 0.446
+[2026-02-25 22:46:28,819][    INFO] Iters: 24, Total loss: 0.438
+[2026-02-25 22:46:29,303][    INFO] Iters: 27, Total loss: 0.392
+[2026-02-25 22:47:45,464][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.90
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 8.45
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.29
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 39.70
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:47:45,465][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.39
+
+[2026-02-25 22:47:46,066][    INFO] ===========> Epoch: 19, LR: 0.0000025, Previous best: 29.83
+[2026-02-25 22:47:46,615][    INFO] Iters: 0, Total loss: 0.051
+[2026-02-25 22:47:46,696][    INFO] Iters: 3, Total loss: 0.051
+[2026-02-25 22:47:47,352][    INFO] Iters: 6, Total loss: 0.110
+[2026-02-25 22:47:47,468][    INFO] Iters: 9, Total loss: 0.128
+[2026-02-25 22:47:48,004][    INFO] Iters: 12, Total loss: 0.112
+[2026-02-25 22:47:48,081][    INFO] Iters: 15, Total loss: 0.199
+[2026-02-25 22:47:48,628][    INFO] Iters: 18, Total loss: 0.214
+[2026-02-25 22:47:48,705][    INFO] Iters: 21, Total loss: 0.192
+[2026-02-25 22:47:49,565][    INFO] Iters: 24, Total loss: 0.188
+[2026-02-25 22:47:49,631][    INFO] Iters: 27, Total loss: 0.214
+[2026-02-25 22:49:05,792][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.18
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 5.09
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.55
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.45
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:49:05,793][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.55
+
+[2026-02-25 22:49:06,404][    INFO] ===========> Epoch: 20, LR: 0.0000025, Previous best: 29.83
+[2026-02-25 22:49:07,285][    INFO] Iters: 0, Total loss: 0.805
+[2026-02-25 22:49:07,576][    INFO] Iters: 3, Total loss: 0.721
+[2026-02-25 22:49:07,661][    INFO] Iters: 6, Total loss: 0.545
+[2026-02-25 22:49:07,737][    INFO] Iters: 9, Total loss: 0.435
+[2026-02-25 22:49:08,595][    INFO] Iters: 12, Total loss: 0.369
+[2026-02-25 22:49:08,671][    INFO] Iters: 15, Total loss: 0.386
+[2026-02-25 22:49:09,325][    INFO] Iters: 18, Total loss: 0.369
+[2026-02-25 22:49:09,631][    INFO] Iters: 21, Total loss: 0.357
+[2026-02-25 22:49:09,821][    INFO] Iters: 24, Total loss: 0.341
+[2026-02-25 22:49:10,650][    INFO] Iters: 27, Total loss: 0.326
+[2026-02-25 22:50:26,817][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.20
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 15.48
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.18
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 26.67
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:50:26,818][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 24.25
+
+[2026-02-25 22:50:27,428][    INFO] ===========> Epoch: 21, LR: 0.0000024, Previous best: 29.83
+[2026-02-25 22:50:27,654][    INFO] Iters: 0, Total loss: 0.005
+[2026-02-25 22:50:28,383][    INFO] Iters: 3, Total loss: 0.047
+[2026-02-25 22:50:28,769][    INFO] Iters: 6, Total loss: 0.267
+[2026-02-25 22:50:29,073][    INFO] Iters: 9, Total loss: 0.197
+[2026-02-25 22:50:29,215][    INFO] Iters: 12, Total loss: 0.255
+[2026-02-25 22:50:29,516][    INFO] Iters: 15, Total loss: 0.276
+[2026-02-25 22:50:29,774][    INFO] Iters: 18, Total loss: 0.274
+[2026-02-25 22:50:30,470][    INFO] Iters: 21, Total loss: 0.274
+[2026-02-25 22:50:31,053][    INFO] Iters: 24, Total loss: 0.267
+[2026-02-25 22:50:31,120][    INFO] Iters: 27, Total loss: 0.250
+[2026-02-25 22:51:47,322][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.83
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 16.56
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.42
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 56.17
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:51:47,323][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.16
+
+[2026-02-25 22:51:47,926][    INFO] ===========> Epoch: 22, LR: 0.0000024, Previous best: 29.83
+[2026-02-25 22:51:48,117][    INFO] Iters: 0, Total loss: 0.355
+[2026-02-25 22:51:48,946][    INFO] Iters: 3, Total loss: 0.108
+[2026-02-25 22:51:49,732][    INFO] Iters: 6, Total loss: 0.152
+[2026-02-25 22:51:49,813][    INFO] Iters: 9, Total loss: 0.471
+[2026-02-25 22:51:49,890][    INFO] Iters: 12, Total loss: 0.416
+[2026-02-25 22:51:50,590][    INFO] Iters: 15, Total loss: 0.375
+[2026-02-25 22:51:51,230][    INFO] Iters: 18, Total loss: 0.345
+[2026-02-25 22:51:51,306][    INFO] Iters: 21, Total loss: 0.347
+[2026-02-25 22:51:51,586][    INFO] Iters: 24, Total loss: 0.420
+[2026-02-25 22:51:52,004][    INFO] Iters: 27, Total loss: 0.442
+[2026-02-25 22:53:08,225][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.23
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 32.76
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 6.70
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.98
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:53:08,226][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 30.61
+
+[2026-02-25 22:53:09,424][    INFO] ===========> Epoch: 23, LR: 0.0000024, Previous best: 30.61
+[2026-02-25 22:53:09,868][    INFO] Iters: 0, Total loss: 0.100
+[2026-02-25 22:53:09,944][    INFO] Iters: 3, Total loss: 0.106
+[2026-02-25 22:53:10,099][    INFO] Iters: 6, Total loss: 0.117
+[2026-02-25 22:53:10,727][    INFO] Iters: 9, Total loss: 0.101
+[2026-02-25 22:53:10,813][    INFO] Iters: 12, Total loss: 0.171
+[2026-02-25 22:53:11,083][    INFO] Iters: 15, Total loss: 0.187
+[2026-02-25 22:53:12,046][    INFO] Iters: 18, Total loss: 0.161
+[2026-02-25 22:53:12,121][    INFO] Iters: 21, Total loss: 0.153
+[2026-02-25 22:53:12,195][    INFO] Iters: 24, Total loss: 0.154
+[2026-02-25 22:53:12,533][    INFO] Iters: 27, Total loss: 0.173
+[2026-02-25 22:54:28,686][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.76
+[2026-02-25 22:54:28,687][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 31.56
+[2026-02-25 22:54:28,687][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 6.93
+[2026-02-25 22:54:28,688][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.16
+[2026-02-25 22:54:28,688][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:54:28,688][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:54:28,688][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.90
+
+[2026-02-25 22:54:29,299][    INFO] ===========> Epoch: 24, LR: 0.0000023, Previous best: 30.61
+[2026-02-25 22:54:29,809][    INFO] Iters: 0, Total loss: 0.752
+[2026-02-25 22:54:30,621][    INFO] Iters: 3, Total loss: 0.488
+[2026-02-25 22:54:31,231][    INFO] Iters: 6, Total loss: 0.490
+[2026-02-25 22:54:31,905][    INFO] Iters: 9, Total loss: 0.476
+[2026-02-25 22:54:31,981][    INFO] Iters: 12, Total loss: 0.435
+[2026-02-25 22:54:32,461][    INFO] Iters: 15, Total loss: 0.451
+[2026-02-25 22:54:32,538][    INFO] Iters: 18, Total loss: 0.416
+[2026-02-25 22:54:32,630][    INFO] Iters: 21, Total loss: 0.479
+[2026-02-25 22:54:33,755][    INFO] Iters: 24, Total loss: 0.441
+[2026-02-25 22:54:34,184][    INFO] Iters: 27, Total loss: 0.444
+[2026-02-25 22:55:50,352][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.19
+[2026-02-25 22:55:50,352][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.58
+[2026-02-25 22:55:50,353][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 4.06
+[2026-02-25 22:55:50,353][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 36.59
+[2026-02-25 22:55:50,353][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:55:50,353][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:55:50,353][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 24.07
+
+[2026-02-25 22:55:50,969][    INFO] ===========> Epoch: 25, LR: 0.0000023, Previous best: 30.61
+[2026-02-25 22:55:51,181][    INFO] Iters: 0, Total loss: 0.557
+[2026-02-25 22:55:51,484][    INFO] Iters: 3, Total loss: 0.782
+[2026-02-25 22:55:52,244][    INFO] Iters: 6, Total loss: 0.537
+[2026-02-25 22:55:53,303][    INFO] Iters: 9, Total loss: 0.501
+[2026-02-25 22:55:53,380][    INFO] Iters: 12, Total loss: 0.509
+[2026-02-25 22:55:53,460][    INFO] Iters: 15, Total loss: 0.486
+[2026-02-25 22:55:53,936][    INFO] Iters: 18, Total loss: 0.412
+[2026-02-25 22:55:54,680][    INFO] Iters: 21, Total loss: 0.449
+[2026-02-25 22:55:54,749][    INFO] Iters: 24, Total loss: 0.448
+[2026-02-25 22:55:55,333][    INFO] Iters: 27, Total loss: 0.417
+[2026-02-25 22:57:11,478][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.90
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.27
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 3.84
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 31.48
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:57:11,479][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 23.58
+
+[2026-02-25 22:57:12,109][    INFO] ===========> Epoch: 26, LR: 0.0000023, Previous best: 30.61
+[2026-02-25 22:57:12,474][    INFO] Iters: 0, Total loss: 0.007
+[2026-02-25 22:57:12,703][    INFO] Iters: 3, Total loss: 0.075
+[2026-02-25 22:57:13,305][    INFO] Iters: 6, Total loss: 0.162
+[2026-02-25 22:57:13,784][    INFO] Iters: 9, Total loss: 0.297
+[2026-02-25 22:57:13,862][    INFO] Iters: 12, Total loss: 0.371
+[2026-02-25 22:57:15,060][    INFO] Iters: 15, Total loss: 0.346
+[2026-02-25 22:57:15,514][    INFO] Iters: 18, Total loss: 0.320
+[2026-02-25 22:57:15,600][    INFO] Iters: 21, Total loss: 0.339
+[2026-02-25 22:57:15,869][    INFO] Iters: 24, Total loss: 0.436
+[2026-02-25 22:57:16,218][    INFO] Iters: 27, Total loss: 0.409
+[2026-02-25 22:58:32,391][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.64
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 1.71
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 4.27
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 8.17
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:58:32,392][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 17.80
+
+[2026-02-25 22:58:33,015][    INFO] ===========> Epoch: 27, LR: 0.0000023, Previous best: 30.61
+[2026-02-25 22:58:33,402][    INFO] Iters: 0, Total loss: 0.005
+[2026-02-25 22:58:34,379][    INFO] Iters: 3, Total loss: 0.419
+[2026-02-25 22:58:34,463][    INFO] Iters: 6, Total loss: 0.486
+[2026-02-25 22:58:34,546][    INFO] Iters: 9, Total loss: 0.411
+[2026-02-25 22:58:35,464][    INFO] Iters: 12, Total loss: 0.373
+[2026-02-25 22:58:35,541][    INFO] Iters: 15, Total loss: 0.338
+[2026-02-25 22:58:35,618][    INFO] Iters: 18, Total loss: 0.386
+[2026-02-25 22:58:36,026][    INFO] Iters: 21, Total loss: 0.393
+[2026-02-25 22:58:36,449][    INFO] Iters: 24, Total loss: 0.409
+[2026-02-25 22:58:36,613][    INFO] Iters: 27, Total loss: 0.400
+[2026-02-25 22:59:52,811][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.03
+[2026-02-25 22:59:52,812][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 23.21
+[2026-02-25 22:59:52,812][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 6.31
+[2026-02-25 22:59:52,812][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.88
+[2026-02-25 22:59:52,813][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.21
+[2026-02-25 22:59:52,813][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 22:59:52,813][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.94
+
+[2026-02-25 22:59:53,425][    INFO] ===========> Epoch: 28, LR: 0.0000022, Previous best: 30.61
+[2026-02-25 22:59:54,878][    INFO] Iters: 0, Total loss: 0.009
+[2026-02-25 22:59:54,957][    INFO] Iters: 3, Total loss: 0.047
+[2026-02-25 22:59:55,628][    INFO] Iters: 6, Total loss: 0.194
+[2026-02-25 22:59:55,713][    INFO] Iters: 9, Total loss: 0.214
+[2026-02-25 22:59:56,649][    INFO] Iters: 12, Total loss: 0.211
+[2026-02-25 22:59:56,740][    INFO] Iters: 15, Total loss: 0.192
+[2026-02-25 22:59:56,952][    INFO] Iters: 18, Total loss: 0.237
+[2026-02-25 22:59:57,395][    INFO] Iters: 21, Total loss: 0.256
+[2026-02-25 22:59:57,907][    INFO] Iters: 24, Total loss: 0.228
+[2026-02-25 22:59:57,975][    INFO] Iters: 27, Total loss: 0.303
+[2026-02-25 23:01:14,118][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.10
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 21.13
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.25
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.56
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.00
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:01:14,119][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.51
+
+[2026-02-25 23:01:14,726][    INFO] ===========> Epoch: 29, LR: 0.0000022, Previous best: 30.61
+[2026-02-25 23:01:14,951][    INFO] Iters: 0, Total loss: 1.161
+[2026-02-25 23:01:15,405][    INFO] Iters: 3, Total loss: 0.432
+[2026-02-25 23:01:16,005][    INFO] Iters: 6, Total loss: 0.310
+[2026-02-25 23:01:16,516][    INFO] Iters: 9, Total loss: 0.246
+[2026-02-25 23:01:16,803][    INFO] Iters: 12, Total loss: 0.277
+[2026-02-25 23:01:16,985][    INFO] Iters: 15, Total loss: 0.234
+[2026-02-25 23:01:17,262][    INFO] Iters: 18, Total loss: 0.342
+[2026-02-25 23:01:17,766][    INFO] Iters: 21, Total loss: 0.384
+[2026-02-25 23:01:18,060][    INFO] Iters: 24, Total loss: 0.367
+[2026-02-25 23:01:18,128][    INFO] Iters: 27, Total loss: 0.340
+[2026-02-25 23:02:34,317][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.46
+[2026-02-25 23:02:34,317][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.99
+[2026-02-25 23:02:34,317][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.95
+[2026-02-25 23:02:34,317][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 56.32
+[2026-02-25 23:02:34,317][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.18
+[2026-02-25 23:02:34,318][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:02:34,318][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.32
+
+[2026-02-25 23:02:34,907][    INFO] ===========> Epoch: 30, LR: 0.0000022, Previous best: 30.61
+[2026-02-25 23:02:36,115][    INFO] Iters: 0, Total loss: 0.018
+[2026-02-25 23:02:36,190][    INFO] Iters: 3, Total loss: 0.035
+[2026-02-25 23:02:36,265][    INFO] Iters: 6, Total loss: 0.217
+[2026-02-25 23:02:36,926][    INFO] Iters: 9, Total loss: 0.239
+[2026-02-25 23:02:37,151][    INFO] Iters: 12, Total loss: 0.280
+[2026-02-25 23:02:37,889][    INFO] Iters: 15, Total loss: 0.417
+[2026-02-25 23:02:38,212][    INFO] Iters: 18, Total loss: 0.441
+[2026-02-25 23:02:38,322][    INFO] Iters: 21, Total loss: 0.431
+[2026-02-25 23:02:38,393][    INFO] Iters: 24, Total loss: 0.480
+[2026-02-25 23:02:38,696][    INFO] Iters: 27, Total loss: 0.441
+[2026-02-25 23:03:54,881][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.01
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 20.37
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.69
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.27
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.93
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:03:54,882][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.71
+
+[2026-02-25 23:03:55,490][    INFO] ===========> Epoch: 31, LR: 0.0000021, Previous best: 30.61
+[2026-02-25 23:03:55,716][    INFO] Iters: 0, Total loss: 0.706
+[2026-02-25 23:03:56,398][    INFO] Iters: 3, Total loss: 0.259
+[2026-02-25 23:03:56,477][    INFO] Iters: 6, Total loss: 0.180
+[2026-02-25 23:03:56,552][    INFO] Iters: 9, Total loss: 0.256
+[2026-02-25 23:03:57,187][    INFO] Iters: 12, Total loss: 0.275
+[2026-02-25 23:03:57,790][    INFO] Iters: 15, Total loss: 0.264
+[2026-02-25 23:03:57,874][    INFO] Iters: 18, Total loss: 0.247
+[2026-02-25 23:03:58,347][    INFO] Iters: 21, Total loss: 0.366
+[2026-02-25 23:03:58,917][    INFO] Iters: 24, Total loss: 0.339
+[2026-02-25 23:03:59,262][    INFO] Iters: 27, Total loss: 0.329
+[2026-02-25 23:05:15,475][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.28
+[2026-02-25 23:05:15,475][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 5.76
+[2026-02-25 23:05:15,476][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.17
+[2026-02-25 23:05:15,476][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 52.41
+[2026-02-25 23:05:15,476][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 0.58
+[2026-02-25 23:05:15,476][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:05:15,476][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.37
+
+[2026-02-25 23:05:16,081][    INFO] ===========> Epoch: 32, LR: 0.0000021, Previous best: 30.61
+[2026-02-25 23:05:16,425][    INFO] Iters: 0, Total loss: 1.094
+[2026-02-25 23:05:16,849][    INFO] Iters: 3, Total loss: 0.343
+[2026-02-25 23:05:17,599][    INFO] Iters: 6, Total loss: 0.274
+[2026-02-25 23:05:17,678][    INFO] Iters: 9, Total loss: 0.245
+[2026-02-25 23:05:18,042][    INFO] Iters: 12, Total loss: 0.234
+[2026-02-25 23:05:18,565][    INFO] Iters: 15, Total loss: 0.282
+[2026-02-25 23:05:18,638][    INFO] Iters: 18, Total loss: 0.279
+[2026-02-25 23:05:18,710][    INFO] Iters: 21, Total loss: 0.331
+[2026-02-25 23:05:18,989][    INFO] Iters: 24, Total loss: 0.301
+[2026-02-25 23:05:19,284][    INFO] Iters: 27, Total loss: 0.333
+[2026-02-25 23:06:35,544][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.22
+[2026-02-25 23:06:35,545][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.45
+[2026-02-25 23:06:35,545][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.59
+[2026-02-25 23:06:35,545][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 55.17
+[2026-02-25 23:06:35,545][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 6.91
+[2026-02-25 23:06:35,546][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:06:35,546][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.89
+
+[2026-02-25 23:06:36,151][    INFO] ===========> Epoch: 33, LR: 0.0000021, Previous best: 30.61
+[2026-02-25 23:06:36,723][    INFO] Iters: 0, Total loss: 0.013
+[2026-02-25 23:06:37,084][    INFO] Iters: 3, Total loss: 0.112
+[2026-02-25 23:06:37,519][    INFO] Iters: 6, Total loss: 0.162
+[2026-02-25 23:06:38,100][    INFO] Iters: 9, Total loss: 0.175
+[2026-02-25 23:06:38,334][    INFO] Iters: 12, Total loss: 0.198
+[2026-02-25 23:06:38,411][    INFO] Iters: 15, Total loss: 0.283
+[2026-02-25 23:06:39,066][    INFO] Iters: 18, Total loss: 0.291
+[2026-02-25 23:06:39,477][    INFO] Iters: 21, Total loss: 0.293
+[2026-02-25 23:06:39,717][    INFO] Iters: 24, Total loss: 0.341
+[2026-02-25 23:06:39,958][    INFO] Iters: 27, Total loss: 0.317
+[2026-02-25 23:07:56,170][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.57
+[2026-02-25 23:07:56,171][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.34
+[2026-02-25 23:07:56,171][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.28
+[2026-02-25 23:07:56,171][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.60
+[2026-02-25 23:07:56,171][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.29
+[2026-02-25 23:07:56,171][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:07:56,172][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.35
+
+[2026-02-25 23:07:56,774][    INFO] ===========> Epoch: 34, LR: 0.0000021, Previous best: 30.61
+[2026-02-25 23:07:57,113][    INFO] Iters: 0, Total loss: 0.227
+[2026-02-25 23:07:57,895][    INFO] Iters: 3, Total loss: 0.289
+[2026-02-25 23:07:58,558][    INFO] Iters: 6, Total loss: 0.328
+[2026-02-25 23:07:58,633][    INFO] Iters: 9, Total loss: 0.325
+[2026-02-25 23:07:59,632][    INFO] Iters: 12, Total loss: 0.258
+[2026-02-25 23:07:59,709][    INFO] Iters: 15, Total loss: 0.306
+[2026-02-25 23:07:59,787][    INFO] Iters: 18, Total loss: 0.354
+[2026-02-25 23:07:59,945][    INFO] Iters: 21, Total loss: 0.325
+[2026-02-25 23:08:00,301][    INFO] Iters: 24, Total loss: 0.311
+[2026-02-25 23:08:00,578][    INFO] Iters: 27, Total loss: 0.282
+[2026-02-25 23:09:16,801][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.19
+[2026-02-25 23:09:16,801][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.77
+[2026-02-25 23:09:16,802][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.74
+[2026-02-25 23:09:16,802][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.09
+[2026-02-25 23:09:16,802][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 6.87
+[2026-02-25 23:09:16,802][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:09:16,802][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.11
+
+[2026-02-25 23:09:17,388][    INFO] ===========> Epoch: 35, LR: 0.0000020, Previous best: 30.61
+[2026-02-25 23:09:18,175][    INFO] Iters: 0, Total loss: 0.489
+[2026-02-25 23:09:18,249][    INFO] Iters: 3, Total loss: 0.506
+[2026-02-25 23:09:18,573][    INFO] Iters: 6, Total loss: 0.434
+[2026-02-25 23:09:18,716][    INFO] Iters: 9, Total loss: 0.384
+[2026-02-25 23:09:19,579][    INFO] Iters: 12, Total loss: 0.441
+[2026-02-25 23:09:19,658][    INFO] Iters: 15, Total loss: 0.437
+[2026-02-25 23:09:19,959][    INFO] Iters: 18, Total loss: 0.397
+[2026-02-25 23:09:20,441][    INFO] Iters: 21, Total loss: 0.390
+[2026-02-25 23:09:20,511][    INFO] Iters: 24, Total loss: 0.410
+[2026-02-25 23:09:20,869][    INFO] Iters: 27, Total loss: 0.378
+[2026-02-25 23:10:37,108][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 92.93
+[2026-02-25 23:10:37,108][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 16.23
+[2026-02-25 23:10:37,108][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 6.59
+[2026-02-25 23:10:37,109][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.96
+[2026-02-25 23:10:37,109][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.84
+[2026-02-25 23:10:37,109][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:10:37,109][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.42
+
+[2026-02-25 23:10:37,723][    INFO] ===========> Epoch: 36, LR: 0.0000020, Previous best: 30.61
+[2026-02-25 23:10:38,433][    INFO] Iters: 0, Total loss: 0.121
+[2026-02-25 23:10:38,510][    INFO] Iters: 3, Total loss: 0.340
+[2026-02-25 23:10:39,102][    INFO] Iters: 6, Total loss: 0.238
+[2026-02-25 23:10:39,364][    INFO] Iters: 9, Total loss: 0.201
+[2026-02-25 23:10:39,465][    INFO] Iters: 12, Total loss: 0.156
+[2026-02-25 23:10:40,126][    INFO] Iters: 15, Total loss: 0.238
+[2026-02-25 23:10:40,202][    INFO] Iters: 18, Total loss: 0.276
+[2026-02-25 23:10:40,592][    INFO] Iters: 21, Total loss: 0.282
+[2026-02-25 23:10:40,915][    INFO] Iters: 24, Total loss: 0.297
+[2026-02-25 23:10:41,488][    INFO] Iters: 27, Total loss: 0.279
+[2026-02-25 23:11:57,656][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 91.99
+[2026-02-25 23:11:57,656][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 25.52
+[2026-02-25 23:11:57,657][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.84
+[2026-02-25 23:11:57,657][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 53.09
+[2026-02-25 23:11:57,657][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 7.73
+[2026-02-25 23:11:57,657][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:11:57,657][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 30.70
+
+[2026-02-25 23:11:58,839][    INFO] ===========> Epoch: 37, LR: 0.0000020, Previous best: 30.70
+[2026-02-25 23:11:59,048][    INFO] Iters: 0, Total loss: 0.082
+[2026-02-25 23:11:59,782][    INFO] Iters: 3, Total loss: 0.340
+[2026-02-25 23:12:00,213][    INFO] Iters: 6, Total loss: 0.272
+[2026-02-25 23:12:00,287][    INFO] Iters: 9, Total loss: 0.208
+[2026-02-25 23:12:00,565][    INFO] Iters: 12, Total loss: 0.164
+[2026-02-25 23:12:01,016][    INFO] Iters: 15, Total loss: 0.180
+[2026-02-25 23:12:01,995][    INFO] Iters: 18, Total loss: 0.236
+[2026-02-25 23:12:02,071][    INFO] Iters: 21, Total loss: 0.333
+[2026-02-25 23:12:02,142][    INFO] Iters: 24, Total loss: 0.309
+[2026-02-25 23:12:03,203][    INFO] Iters: 27, Total loss: 0.309
+[2026-02-25 23:13:19,342][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.60
+[2026-02-25 23:13:19,343][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 27.18
+[2026-02-25 23:13:19,343][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.70
+[2026-02-25 23:13:19,343][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 53.48
+[2026-02-25 23:13:19,344][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 8.24
+[2026-02-25 23:13:19,344][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:13:19,344][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 31.37
+
+[2026-02-25 23:13:20,520][    INFO] ===========> Epoch: 38, LR: 0.0000020, Previous best: 31.37
+[2026-02-25 23:13:21,103][    INFO] Iters: 0, Total loss: 0.344
+[2026-02-25 23:13:21,559][    INFO] Iters: 3, Total loss: 0.425
+[2026-02-25 23:13:21,637][    INFO] Iters: 6, Total loss: 0.526
+[2026-02-25 23:13:22,360][    INFO] Iters: 9, Total loss: 0.439
+[2026-02-25 23:13:22,437][    INFO] Iters: 12, Total loss: 0.381
+[2026-02-25 23:13:22,517][    INFO] Iters: 15, Total loss: 0.360
+[2026-02-25 23:13:22,598][    INFO] Iters: 18, Total loss: 0.342
+[2026-02-25 23:13:23,180][    INFO] Iters: 21, Total loss: 0.320
+[2026-02-25 23:13:24,243][    INFO] Iters: 24, Total loss: 0.282
+[2026-02-25 23:13:24,864][    INFO] Iters: 27, Total loss: 0.311
+[2026-02-25 23:14:41,045][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.39
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 4.47
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.88
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.45
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 8.49
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:14:41,046][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.78
+
+[2026-02-25 23:14:41,650][    INFO] ===========> Epoch: 39, LR: 0.0000019, Previous best: 31.37
+[2026-02-25 23:14:42,005][    INFO] Iters: 0, Total loss: 0.144
+[2026-02-25 23:14:42,701][    INFO] Iters: 3, Total loss: 0.349
+[2026-02-25 23:14:42,779][    INFO] Iters: 6, Total loss: 0.465
+[2026-02-25 23:14:43,445][    INFO] Iters: 9, Total loss: 0.401
+[2026-02-25 23:14:43,527][    INFO] Iters: 12, Total loss: 0.372
+[2026-02-25 23:14:43,791][    INFO] Iters: 15, Total loss: 0.354
+[2026-02-25 23:14:44,327][    INFO] Iters: 18, Total loss: 0.448
+[2026-02-25 23:14:44,596][    INFO] Iters: 21, Total loss: 0.397
+[2026-02-25 23:14:44,669][    INFO] Iters: 24, Total loss: 0.372
+[2026-02-25 23:14:45,152][    INFO] Iters: 27, Total loss: 0.354
+[2026-02-25 23:16:01,341][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.54
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 24.64
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 4.44
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 48.97
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.77
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:16:01,342][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.56
+
+[2026-02-25 23:16:01,971][    INFO] ===========> Epoch: 40, LR: 0.0000019, Previous best: 31.37
+[2026-02-25 23:16:02,199][    INFO] Iters: 0, Total loss: 0.257
+[2026-02-25 23:16:02,543][    INFO] Iters: 3, Total loss: 0.157
+[2026-02-25 23:16:02,779][    INFO] Iters: 6, Total loss: 0.166
+[2026-02-25 23:16:03,354][    INFO] Iters: 9, Total loss: 0.134
+[2026-02-25 23:16:03,939][    INFO] Iters: 12, Total loss: 0.244
+[2026-02-25 23:16:04,015][    INFO] Iters: 15, Total loss: 0.248
+[2026-02-25 23:16:04,721][    INFO] Iters: 18, Total loss: 0.307
+[2026-02-25 23:16:05,077][    INFO] Iters: 21, Total loss: 0.290
+[2026-02-25 23:16:05,472][    INFO] Iters: 24, Total loss: 0.326
+[2026-02-25 23:16:05,538][    INFO] Iters: 27, Total loss: 0.330
+[2026-02-25 23:17:21,744][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.40
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 9.80
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.35
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 37.57
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.64
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:17:21,745][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.13
+
+[2026-02-25 23:17:22,356][    INFO] ===========> Epoch: 41, LR: 0.0000019, Previous best: 31.37
+[2026-02-25 23:17:23,070][    INFO] Iters: 0, Total loss: 1.150
+[2026-02-25 23:17:23,546][    INFO] Iters: 3, Total loss: 0.312
+[2026-02-25 23:17:23,944][    INFO] Iters: 6, Total loss: 0.272
+[2026-02-25 23:17:24,021][    INFO] Iters: 9, Total loss: 0.271
+[2026-02-25 23:17:24,667][    INFO] Iters: 12, Total loss: 0.212
+[2026-02-25 23:17:24,744][    INFO] Iters: 15, Total loss: 0.208
+[2026-02-25 23:17:24,958][    INFO] Iters: 18, Total loss: 0.184
+[2026-02-25 23:17:25,430][    INFO] Iters: 21, Total loss: 0.190
+[2026-02-25 23:17:25,856][    INFO] Iters: 24, Total loss: 0.234
+[2026-02-25 23:17:25,923][    INFO] Iters: 27, Total loss: 0.280
+[2026-02-25 23:18:42,138][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.25
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 6.46
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 5.91
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 41.59
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.08
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:18:42,139][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.38
+
+[2026-02-25 23:18:42,744][    INFO] ===========> Epoch: 42, LR: 0.0000018, Previous best: 31.37
+[2026-02-25 23:18:43,466][    INFO] Iters: 0, Total loss: 0.004
+[2026-02-25 23:18:43,539][    INFO] Iters: 3, Total loss: 0.107
+[2026-02-25 23:18:43,615][    INFO] Iters: 6, Total loss: 0.152
+[2026-02-25 23:18:44,065][    INFO] Iters: 9, Total loss: 0.176
+[2026-02-25 23:18:44,307][    INFO] Iters: 12, Total loss: 0.193
+[2026-02-25 23:18:45,230][    INFO] Iters: 15, Total loss: 0.169
+[2026-02-25 23:18:45,310][    INFO] Iters: 18, Total loss: 0.191
+[2026-02-25 23:18:45,388][    INFO] Iters: 21, Total loss: 0.167
+[2026-02-25 23:18:46,070][    INFO] Iters: 24, Total loss: 0.164
+[2026-02-25 23:18:46,295][    INFO] Iters: 27, Total loss: 0.163
+[2026-02-25 23:20:02,439][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.94
+[2026-02-25 23:20:02,440][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 16.25
+[2026-02-25 23:20:02,440][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.19
+[2026-02-25 23:20:02,440][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 52.33
+[2026-02-25 23:20:02,440][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.99
+[2026-02-25 23:20:02,440][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:20:02,441][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.78
+
+[2026-02-25 23:20:03,048][    INFO] ===========> Epoch: 43, LR: 0.0000018, Previous best: 31.37
+[2026-02-25 23:20:03,257][    INFO] Iters: 0, Total loss: 0.003
+[2026-02-25 23:20:03,955][    INFO] Iters: 3, Total loss: 0.167
+[2026-02-25 23:20:04,398][    INFO] Iters: 6, Total loss: 0.196
+[2026-02-25 23:20:04,480][    INFO] Iters: 9, Total loss: 0.309
+[2026-02-25 23:20:04,790][    INFO] Iters: 12, Total loss: 0.388
+[2026-02-25 23:20:05,955][    INFO] Iters: 15, Total loss: 0.392
+[2026-02-25 23:20:06,033][    INFO] Iters: 18, Total loss: 0.380
+[2026-02-25 23:20:06,328][    INFO] Iters: 21, Total loss: 0.373
+[2026-02-25 23:20:06,403][    INFO] Iters: 24, Total loss: 0.375
+[2026-02-25 23:20:06,775][    INFO] Iters: 27, Total loss: 0.369
+[2026-02-25 23:21:22,983][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.41
+[2026-02-25 23:21:22,983][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.68
+[2026-02-25 23:21:22,983][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.41
+[2026-02-25 23:21:22,983][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.75
+[2026-02-25 23:21:22,984][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 2.82
+[2026-02-25 23:21:22,984][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:21:22,984][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.84
+
+[2026-02-25 23:21:23,591][    INFO] ===========> Epoch: 44, LR: 0.0000018, Previous best: 31.37
+[2026-02-25 23:21:24,243][    INFO] Iters: 0, Total loss: 0.000
+[2026-02-25 23:21:24,635][    INFO] Iters: 3, Total loss: 0.407
+[2026-02-25 23:21:24,748][    INFO] Iters: 6, Total loss: 0.247
+[2026-02-25 23:21:25,222][    INFO] Iters: 9, Total loss: 0.246
+[2026-02-25 23:21:25,298][    INFO] Iters: 12, Total loss: 0.311
+[2026-02-25 23:21:25,542][    INFO] Iters: 15, Total loss: 0.381
+[2026-02-25 23:21:26,200][    INFO] Iters: 18, Total loss: 0.339
+[2026-02-25 23:21:26,287][    INFO] Iters: 21, Total loss: 0.313
+[2026-02-25 23:21:27,041][    INFO] Iters: 24, Total loss: 0.321
+[2026-02-25 23:21:27,112][    INFO] Iters: 27, Total loss: 0.321
+[2026-02-25 23:22:43,323][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.09
+[2026-02-25 23:22:43,323][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 18.20
+[2026-02-25 23:22:43,324][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.20
+[2026-02-25 23:22:43,324][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 52.90
+[2026-02-25 23:22:43,324][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.70
+[2026-02-25 23:22:43,324][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:22:43,324][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.51
+
+[2026-02-25 23:22:43,929][    INFO] ===========> Epoch: 45, LR: 0.0000018, Previous best: 31.37
+[2026-02-25 23:22:44,144][    INFO] Iters: 0, Total loss: 0.221
+[2026-02-25 23:22:44,225][    INFO] Iters: 3, Total loss: 0.364
+[2026-02-25 23:22:44,673][    INFO] Iters: 6, Total loss: 0.488
+[2026-02-25 23:22:44,844][    INFO] Iters: 9, Total loss: 0.458
+[2026-02-25 23:22:45,794][    INFO] Iters: 12, Total loss: 0.479
+[2026-02-25 23:22:46,134][    INFO] Iters: 15, Total loss: 0.433
+[2026-02-25 23:22:46,213][    INFO] Iters: 18, Total loss: 0.427
+[2026-02-25 23:22:46,913][    INFO] Iters: 21, Total loss: 0.394
+[2026-02-25 23:22:47,366][    INFO] Iters: 24, Total loss: 0.397
+[2026-02-25 23:22:47,436][    INFO] Iters: 27, Total loss: 0.378
+[2026-02-25 23:24:03,627][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.23
+[2026-02-25 23:24:03,627][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.17
+[2026-02-25 23:24:03,627][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.28
+[2026-02-25 23:24:03,628][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 43.16
+[2026-02-25 23:24:03,628][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 2.02
+[2026-02-25 23:24:03,628][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:24:03,628][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.81
+
+[2026-02-25 23:24:04,231][    INFO] ===========> Epoch: 46, LR: 0.0000017, Previous best: 31.37
+[2026-02-25 23:24:04,443][    INFO] Iters: 0, Total loss: 0.627
+[2026-02-25 23:24:04,804][    INFO] Iters: 3, Total loss: 0.349
+[2026-02-25 23:24:04,882][    INFO] Iters: 6, Total loss: 0.605
+[2026-02-25 23:24:04,960][    INFO] Iters: 9, Total loss: 0.529
+[2026-02-25 23:24:05,344][    INFO] Iters: 12, Total loss: 0.485
+[2026-02-25 23:24:05,872][    INFO] Iters: 15, Total loss: 0.462
+[2026-02-25 23:24:06,415][    INFO] Iters: 18, Total loss: 0.464
+[2026-02-25 23:24:06,786][    INFO] Iters: 21, Total loss: 0.432
+[2026-02-25 23:24:06,906][    INFO] Iters: 24, Total loss: 0.420
+[2026-02-25 23:24:08,222][    INFO] Iters: 27, Total loss: 0.376
+[2026-02-25 23:25:24,428][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.32
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 9.08
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.25
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.16
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.61
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:25:24,429][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.24
+
+[2026-02-25 23:25:25,038][    INFO] ===========> Epoch: 47, LR: 0.0000017, Previous best: 31.37
+[2026-02-25 23:25:25,619][    INFO] Iters: 0, Total loss: 0.002
+[2026-02-25 23:25:25,798][    INFO] Iters: 3, Total loss: 0.084
+[2026-02-25 23:25:25,872][    INFO] Iters: 6, Total loss: 0.190
+[2026-02-25 23:25:26,772][    INFO] Iters: 9, Total loss: 0.197
+[2026-02-25 23:25:26,845][    INFO] Iters: 12, Total loss: 0.210
+[2026-02-25 23:25:27,490][    INFO] Iters: 15, Total loss: 0.189
+[2026-02-25 23:25:27,567][    INFO] Iters: 18, Total loss: 0.196
+[2026-02-25 23:25:28,231][    INFO] Iters: 21, Total loss: 0.190
+[2026-02-25 23:25:28,923][    INFO] Iters: 24, Total loss: 0.198
+[2026-02-25 23:25:29,201][    INFO] Iters: 27, Total loss: 0.279
+[2026-02-25 23:26:45,395][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.49
+[2026-02-25 23:26:45,395][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 8.83
+[2026-02-25 23:26:45,395][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.19
+[2026-02-25 23:26:45,395][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 39.07
+[2026-02-25 23:26:45,395][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.38
+[2026-02-25 23:26:45,396][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:26:45,396][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.99
+
+[2026-02-25 23:26:46,001][    INFO] ===========> Epoch: 48, LR: 0.0000017, Previous best: 31.37
+[2026-02-25 23:26:46,206][    INFO] Iters: 0, Total loss: 0.901
+[2026-02-25 23:26:47,088][    INFO] Iters: 3, Total loss: 0.402
+[2026-02-25 23:26:47,697][    INFO] Iters: 6, Total loss: 0.278
+[2026-02-25 23:26:48,407][    INFO] Iters: 9, Total loss: 0.214
+[2026-02-25 23:26:48,483][    INFO] Iters: 12, Total loss: 0.260
+[2026-02-25 23:26:48,777][    INFO] Iters: 15, Total loss: 0.245
+[2026-02-25 23:26:49,337][    INFO] Iters: 18, Total loss: 0.307
+[2026-02-25 23:26:49,417][    INFO] Iters: 21, Total loss: 0.303
+[2026-02-25 23:26:49,905][    INFO] Iters: 24, Total loss: 0.292
+[2026-02-25 23:26:50,427][    INFO] Iters: 27, Total loss: 0.272
+[2026-02-25 23:28:06,639][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.79
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.20
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 11.22
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.85
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.63
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:28:06,640][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.78
+
+[2026-02-25 23:28:07,250][    INFO] ===========> Epoch: 49, LR: 0.0000016, Previous best: 31.37
+[2026-02-25 23:28:07,779][    INFO] Iters: 0, Total loss: 0.069
+[2026-02-25 23:28:08,471][    INFO] Iters: 3, Total loss: 0.306
+[2026-02-25 23:28:08,549][    INFO] Iters: 6, Total loss: 0.344
+[2026-02-25 23:28:09,208][    INFO] Iters: 9, Total loss: 0.572
+[2026-02-25 23:28:09,286][    INFO] Iters: 12, Total loss: 0.496
+[2026-02-25 23:28:09,468][    INFO] Iters: 15, Total loss: 0.508
+[2026-02-25 23:28:09,703][    INFO] Iters: 18, Total loss: 0.538
+[2026-02-25 23:28:10,313][    INFO] Iters: 21, Total loss: 0.490
+[2026-02-25 23:28:10,556][    INFO] Iters: 24, Total loss: 0.449
+[2026-02-25 23:28:10,968][    INFO] Iters: 27, Total loss: 0.407
+[2026-02-25 23:29:27,176][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.63
+[2026-02-25 23:29:27,176][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.17
+[2026-02-25 23:29:27,176][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 10.69
+[2026-02-25 23:29:27,177][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.41
+[2026-02-25 23:29:27,177][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.90
+[2026-02-25 23:29:27,177][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:29:27,177][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.13
+
+[2026-02-25 23:29:27,781][    INFO] ===========> Epoch: 50, LR: 0.0000016, Previous best: 31.37
+[2026-02-25 23:29:27,991][    INFO] Iters: 0, Total loss: 0.446
+[2026-02-25 23:29:28,608][    INFO] Iters: 3, Total loss: 0.167
+[2026-02-25 23:29:28,887][    INFO] Iters: 6, Total loss: 0.102
+[2026-02-25 23:29:29,513][    INFO] Iters: 9, Total loss: 0.159
+[2026-02-25 23:29:29,604][    INFO] Iters: 12, Total loss: 0.203
+[2026-02-25 23:29:29,967][    INFO] Iters: 15, Total loss: 0.286
+[2026-02-25 23:29:30,048][    INFO] Iters: 18, Total loss: 0.275
+[2026-02-25 23:29:30,170][    INFO] Iters: 21, Total loss: 0.286
+[2026-02-25 23:29:31,292][    INFO] Iters: 24, Total loss: 0.270
+[2026-02-25 23:29:31,362][    INFO] Iters: 27, Total loss: 0.260
+[2026-02-25 23:30:47,580][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.28
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 7.36
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 11.81
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.78
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.18
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:30:47,581][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.07
+
+[2026-02-25 23:30:48,186][    INFO] ===========> Epoch: 51, LR: 0.0000016, Previous best: 31.37
+[2026-02-25 23:30:49,360][    INFO] Iters: 0, Total loss: 1.229
+[2026-02-25 23:30:49,435][    INFO] Iters: 3, Total loss: 0.377
+[2026-02-25 23:30:49,907][    INFO] Iters: 6, Total loss: 0.350
+[2026-02-25 23:30:50,415][    INFO] Iters: 9, Total loss: 0.289
+[2026-02-25 23:30:50,492][    INFO] Iters: 12, Total loss: 0.257
+[2026-02-25 23:30:50,948][    INFO] Iters: 15, Total loss: 0.222
+[2026-02-25 23:30:51,647][    INFO] Iters: 18, Total loss: 0.211
+[2026-02-25 23:30:51,723][    INFO] Iters: 21, Total loss: 0.193
+[2026-02-25 23:30:51,856][    INFO] Iters: 24, Total loss: 0.188
+[2026-02-25 23:30:52,487][    INFO] Iters: 27, Total loss: 0.185
+[2026-02-25 23:32:08,690][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.86
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.47
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 10.15
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 54.27
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.17
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:32:08,691][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.82
+
+[2026-02-25 23:32:09,284][    INFO] ===========> Epoch: 52, LR: 0.0000016, Previous best: 31.37
+[2026-02-25 23:32:10,057][    INFO] Iters: 0, Total loss: 0.108
+[2026-02-25 23:32:10,310][    INFO] Iters: 3, Total loss: 0.074
+[2026-02-25 23:32:11,007][    INFO] Iters: 6, Total loss: 0.082
+[2026-02-25 23:32:11,086][    INFO] Iters: 9, Total loss: 0.120
+[2026-02-25 23:32:11,166][    INFO] Iters: 12, Total loss: 0.174
+[2026-02-25 23:32:11,422][    INFO] Iters: 15, Total loss: 0.155
+[2026-02-25 23:32:12,081][    INFO] Iters: 18, Total loss: 0.138
+[2026-02-25 23:32:12,259][    INFO] Iters: 21, Total loss: 0.235
+[2026-02-25 23:32:12,768][    INFO] Iters: 24, Total loss: 0.280
+[2026-02-25 23:32:13,025][    INFO] Iters: 27, Total loss: 0.258
+[2026-02-25 23:33:29,201][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.63
+[2026-02-25 23:33:29,201][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.54
+[2026-02-25 23:33:29,201][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.82
+[2026-02-25 23:33:29,201][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 48.92
+[2026-02-25 23:33:29,201][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.02
+[2026-02-25 23:33:29,202][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:33:29,202][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.82
+
+[2026-02-25 23:33:29,794][    INFO] ===========> Epoch: 53, LR: 0.0000015, Previous best: 31.37
+[2026-02-25 23:33:30,524][    INFO] Iters: 0, Total loss: 0.024
+[2026-02-25 23:33:30,602][    INFO] Iters: 3, Total loss: 0.447
+[2026-02-25 23:33:31,250][    INFO] Iters: 6, Total loss: 0.298
+[2026-02-25 23:33:31,488][    INFO] Iters: 9, Total loss: 0.257
+[2026-02-25 23:33:31,726][    INFO] Iters: 12, Total loss: 0.225
+[2026-02-25 23:33:31,970][    INFO] Iters: 15, Total loss: 0.224
+[2026-02-25 23:33:32,112][    INFO] Iters: 18, Total loss: 0.278
+[2026-02-25 23:33:32,598][    INFO] Iters: 21, Total loss: 0.273
+[2026-02-25 23:33:32,960][    INFO] Iters: 24, Total loss: 0.334
+[2026-02-25 23:33:33,543][    INFO] Iters: 27, Total loss: 0.386
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.86
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.69
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.00
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 55.88
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.19
+[2026-02-25 23:34:49,740][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:34:49,741][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 30.10
+
+[2026-02-25 23:34:50,342][    INFO] ===========> Epoch: 54, LR: 0.0000015, Previous best: 31.37
+[2026-02-25 23:34:50,570][    INFO] Iters: 0, Total loss: 0.053
+[2026-02-25 23:34:51,066][    INFO] Iters: 3, Total loss: 0.071
+[2026-02-25 23:34:51,146][    INFO] Iters: 6, Total loss: 0.280
+[2026-02-25 23:34:51,655][    INFO] Iters: 9, Total loss: 0.232
+[2026-02-25 23:34:52,194][    INFO] Iters: 12, Total loss: 0.226
+[2026-02-25 23:34:52,277][    INFO] Iters: 15, Total loss: 0.250
+[2026-02-25 23:34:52,848][    INFO] Iters: 18, Total loss: 0.231
+[2026-02-25 23:34:53,587][    INFO] Iters: 21, Total loss: 0.210
+[2026-02-25 23:34:53,659][    INFO] Iters: 24, Total loss: 0.218
+[2026-02-25 23:34:54,693][    INFO] Iters: 27, Total loss: 0.233
+[2026-02-25 23:36:10,859][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.41
+[2026-02-25 23:36:10,860][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.22
+[2026-02-25 23:36:10,860][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.76
+[2026-02-25 23:36:10,860][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.26
+[2026-02-25 23:36:10,860][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.34
+[2026-02-25 23:36:10,861][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:36:10,861][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.67
+
+[2026-02-25 23:36:11,468][    INFO] ===========> Epoch: 55, LR: 0.0000015, Previous best: 31.37
+[2026-02-25 23:36:11,695][    INFO] Iters: 0, Total loss: 0.452
+[2026-02-25 23:36:12,301][    INFO] Iters: 3, Total loss: 0.219
+[2026-02-25 23:36:12,411][    INFO] Iters: 6, Total loss: 0.180
+[2026-02-25 23:36:12,998][    INFO] Iters: 9, Total loss: 0.161
+[2026-02-25 23:36:13,075][    INFO] Iters: 12, Total loss: 0.200
+[2026-02-25 23:36:13,893][    INFO] Iters: 15, Total loss: 0.193
+[2026-02-25 23:36:14,248][    INFO] Iters: 18, Total loss: 0.200
+[2026-02-25 23:36:14,899][    INFO] Iters: 21, Total loss: 0.210
+[2026-02-25 23:36:14,973][    INFO] Iters: 24, Total loss: 0.225
+[2026-02-25 23:36:15,391][    INFO] Iters: 27, Total loss: 0.220
+[2026-02-25 23:37:31,579][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 96.03
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.65
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.65
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 55.82
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.88
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:37:31,580][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.50
+
+[2026-02-25 23:37:32,188][    INFO] ===========> Epoch: 56, LR: 0.0000014, Previous best: 31.37
+[2026-02-25 23:37:32,919][    INFO] Iters: 0, Total loss: 0.000
+[2026-02-25 23:37:32,995][    INFO] Iters: 3, Total loss: 0.214
+[2026-02-25 23:37:33,074][    INFO] Iters: 6, Total loss: 0.206
+[2026-02-25 23:37:33,792][    INFO] Iters: 9, Total loss: 0.212
+[2026-02-25 23:37:34,121][    INFO] Iters: 12, Total loss: 0.206
+[2026-02-25 23:37:34,523][    INFO] Iters: 15, Total loss: 0.189
+[2026-02-25 23:37:34,599][    INFO] Iters: 18, Total loss: 0.203
+[2026-02-25 23:37:34,915][    INFO] Iters: 21, Total loss: 0.212
+[2026-02-25 23:37:35,301][    INFO] Iters: 24, Total loss: 0.220
+[2026-02-25 23:37:35,558][    INFO] Iters: 27, Total loss: 0.213
+[2026-02-25 23:38:51,735][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.64
+[2026-02-25 23:38:51,735][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 15.97
+[2026-02-25 23:38:51,736][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.86
+[2026-02-25 23:38:51,736][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 52.77
+[2026-02-25 23:38:51,736][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.76
+[2026-02-25 23:38:51,736][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:38:51,736][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.67
+
+[2026-02-25 23:38:52,346][    INFO] ===========> Epoch: 57, LR: 0.0000014, Previous best: 31.37
+[2026-02-25 23:38:53,163][    INFO] Iters: 0, Total loss: 0.008
+[2026-02-25 23:38:53,237][    INFO] Iters: 3, Total loss: 0.327
+[2026-02-25 23:38:53,313][    INFO] Iters: 6, Total loss: 0.352
+[2026-02-25 23:38:54,087][    INFO] Iters: 9, Total loss: 0.303
+[2026-02-25 23:38:54,176][    INFO] Iters: 12, Total loss: 0.276
+[2026-02-25 23:38:55,364][    INFO] Iters: 15, Total loss: 0.228
+[2026-02-25 23:38:55,442][    INFO] Iters: 18, Total loss: 0.257
+[2026-02-25 23:38:55,570][    INFO] Iters: 21, Total loss: 0.264
+[2026-02-25 23:38:56,464][    INFO] Iters: 24, Total loss: 0.278
+[2026-02-25 23:38:56,638][    INFO] Iters: 27, Total loss: 0.271
+[2026-02-25 23:40:12,816][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 93.81
+[2026-02-25 23:40:12,816][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.74
+[2026-02-25 23:40:12,816][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.63
+[2026-02-25 23:40:12,816][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 38.70
+[2026-02-25 23:40:12,816][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.63
+[2026-02-25 23:40:12,817][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:40:12,817][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.58
+
+[2026-02-25 23:40:13,433][    INFO] ===========> Epoch: 58, LR: 0.0000014, Previous best: 31.37
+[2026-02-25 23:40:14,197][    INFO] Iters: 0, Total loss: 0.001
+[2026-02-25 23:40:14,274][    INFO] Iters: 3, Total loss: 0.089
+[2026-02-25 23:40:14,348][    INFO] Iters: 6, Total loss: 0.215
+[2026-02-25 23:40:14,730][    INFO] Iters: 9, Total loss: 0.322
+[2026-02-25 23:40:15,005][    INFO] Iters: 12, Total loss: 0.335
+[2026-02-25 23:40:15,085][    INFO] Iters: 15, Total loss: 0.374
+[2026-02-25 23:40:15,571][    INFO] Iters: 18, Total loss: 0.367
+[2026-02-25 23:40:16,541][    INFO] Iters: 21, Total loss: 0.404
+[2026-02-25 23:40:16,614][    INFO] Iters: 24, Total loss: 0.360
+[2026-02-25 23:40:17,587][    INFO] Iters: 27, Total loss: 0.373
+[2026-02-25 23:41:33,730][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.11
+[2026-02-25 23:41:33,730][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.63
+[2026-02-25 23:41:33,731][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.56
+[2026-02-25 23:41:33,731][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.82
+[2026-02-25 23:41:33,731][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.49
+[2026-02-25 23:41:33,731][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:41:33,731][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.10
+
+[2026-02-25 23:41:34,339][    INFO] ===========> Epoch: 59, LR: 0.0000013, Previous best: 31.37
+[2026-02-25 23:41:34,942][    INFO] Iters: 0, Total loss: 0.028
+[2026-02-25 23:41:35,048][    INFO] Iters: 3, Total loss: 0.315
+[2026-02-25 23:41:35,996][    INFO] Iters: 6, Total loss: 0.221
+[2026-02-25 23:41:36,595][    INFO] Iters: 9, Total loss: 0.198
+[2026-02-25 23:41:36,678][    INFO] Iters: 12, Total loss: 0.159
+[2026-02-25 23:41:36,931][    INFO] Iters: 15, Total loss: 0.216
+[2026-02-25 23:41:37,223][    INFO] Iters: 18, Total loss: 0.232
+[2026-02-25 23:41:37,301][    INFO] Iters: 21, Total loss: 0.253
+[2026-02-25 23:41:37,628][    INFO] Iters: 24, Total loss: 0.238
+[2026-02-25 23:41:38,224][    INFO] Iters: 27, Total loss: 0.221
+[2026-02-25 23:42:54,382][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.29
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 7.31
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.68
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 39.52
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.86
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:42:54,383][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.61
+
+[2026-02-25 23:42:54,990][    INFO] ===========> Epoch: 60, LR: 0.0000013, Previous best: 31.37
+[2026-02-25 23:42:55,190][    INFO] Iters: 0, Total loss: 0.119
+[2026-02-25 23:42:55,269][    INFO] Iters: 3, Total loss: 0.465
+[2026-02-25 23:42:55,550][    INFO] Iters: 6, Total loss: 0.295
+[2026-02-25 23:42:55,826][    INFO] Iters: 9, Total loss: 0.223
+[2026-02-25 23:42:56,608][    INFO] Iters: 12, Total loss: 0.345
+[2026-02-25 23:42:56,836][    INFO] Iters: 15, Total loss: 0.376
+[2026-02-25 23:42:56,919][    INFO] Iters: 18, Total loss: 0.356
+[2026-02-25 23:42:57,452][    INFO] Iters: 21, Total loss: 0.337
+[2026-02-25 23:42:58,863][    INFO] Iters: 24, Total loss: 0.311
+[2026-02-25 23:42:59,631][    INFO] Iters: 27, Total loss: 0.446
+[2026-02-25 23:44:15,787][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.45
+[2026-02-25 23:44:15,787][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 7.95
+[2026-02-25 23:44:15,787][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.33
+[2026-02-25 23:44:15,787][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 41.75
+[2026-02-25 23:44:15,787][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.52
+[2026-02-25 23:44:15,788][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:44:15,788][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.00
+
+[2026-02-25 23:44:16,379][    INFO] ===========> Epoch: 61, LR: 0.0000013, Previous best: 31.37
+[2026-02-25 23:44:16,851][    INFO] Iters: 0, Total loss: 0.248
+[2026-02-25 23:44:17,104][    INFO] Iters: 3, Total loss: 0.237
+[2026-02-25 23:44:17,630][    INFO] Iters: 6, Total loss: 0.176
+[2026-02-25 23:44:18,333][    INFO] Iters: 9, Total loss: 0.166
+[2026-02-25 23:44:18,410][    INFO] Iters: 12, Total loss: 0.294
+[2026-02-25 23:44:19,800][    INFO] Iters: 15, Total loss: 0.251
+[2026-02-25 23:44:19,874][    INFO] Iters: 18, Total loss: 0.251
+[2026-02-25 23:44:19,949][    INFO] Iters: 21, Total loss: 0.280
+[2026-02-25 23:44:20,605][    INFO] Iters: 24, Total loss: 0.266
+[2026-02-25 23:44:21,081][    INFO] Iters: 27, Total loss: 0.257
+[2026-02-25 23:45:37,291][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.80
+[2026-02-25 23:45:37,291][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.46
+[2026-02-25 23:45:37,292][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.45
+[2026-02-25 23:45:37,292][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 55.38
+[2026-02-25 23:45:37,292][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.32
+[2026-02-25 23:45:37,292][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:45:37,292][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.40
+
+[2026-02-25 23:45:37,905][    INFO] ===========> Epoch: 62, LR: 0.0000013, Previous best: 31.37
+[2026-02-25 23:45:38,486][    INFO] Iters: 0, Total loss: 0.017
+[2026-02-25 23:45:38,688][    INFO] Iters: 3, Total loss: 0.021
+[2026-02-25 23:45:39,650][    INFO] Iters: 6, Total loss: 0.168
+[2026-02-25 23:45:40,068][    INFO] Iters: 9, Total loss: 0.121
+[2026-02-25 23:45:40,144][    INFO] Iters: 12, Total loss: 0.252
+[2026-02-25 23:45:40,399][    INFO] Iters: 15, Total loss: 0.256
+[2026-02-25 23:45:40,801][    INFO] Iters: 18, Total loss: 0.243
+[2026-02-25 23:45:41,494][    INFO] Iters: 21, Total loss: 0.344
+[2026-02-25 23:45:42,464][    INFO] Iters: 24, Total loss: 0.381
+[2026-02-25 23:45:43,052][    INFO] Iters: 27, Total loss: 0.389
+[2026-02-25 23:46:59,256][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.49
+[2026-02-25 23:46:59,257][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.99
+[2026-02-25 23:46:59,257][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.24
+[2026-02-25 23:46:59,257][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 40.35
+[2026-02-25 23:46:59,257][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.49
+[2026-02-25 23:46:59,257][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:46:59,258][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.59
+
+[2026-02-25 23:46:59,861][    INFO] ===========> Epoch: 63, LR: 0.0000012, Previous best: 31.37
+[2026-02-25 23:47:00,136][    INFO] Iters: 0, Total loss: 1.690
+[2026-02-25 23:47:01,379][    INFO] Iters: 3, Total loss: 0.571
+[2026-02-25 23:47:01,657][    INFO] Iters: 6, Total loss: 0.442
+[2026-02-25 23:47:01,734][    INFO] Iters: 9, Total loss: 0.416
+[2026-02-25 23:47:02,056][    INFO] Iters: 12, Total loss: 0.356
+[2026-02-25 23:47:02,535][    INFO] Iters: 15, Total loss: 0.313
+[2026-02-25 23:47:03,034][    INFO] Iters: 18, Total loss: 0.284
+[2026-02-25 23:47:03,106][    INFO] Iters: 21, Total loss: 0.262
+[2026-02-25 23:47:03,547][    INFO] Iters: 24, Total loss: 0.267
+[2026-02-25 23:47:03,614][    INFO] Iters: 27, Total loss: 0.307
+[2026-02-25 23:48:19,786][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.57
+[2026-02-25 23:48:19,786][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.61
+[2026-02-25 23:48:19,787][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.46
+[2026-02-25 23:48:19,787][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 47.36
+[2026-02-25 23:48:19,787][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.73
+[2026-02-25 23:48:19,787][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:48:19,787][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.79
+
+[2026-02-25 23:48:20,385][    INFO] ===========> Epoch: 64, LR: 0.0000012, Previous best: 31.37
+[2026-02-25 23:48:20,806][    INFO] Iters: 0, Total loss: 0.186
+[2026-02-25 23:48:20,915][    INFO] Iters: 3, Total loss: 0.296
+[2026-02-25 23:48:21,365][    INFO] Iters: 6, Total loss: 0.710
+[2026-02-25 23:48:22,020][    INFO] Iters: 9, Total loss: 0.599
+[2026-02-25 23:48:22,098][    INFO] Iters: 12, Total loss: 0.485
+[2026-02-25 23:48:22,609][    INFO] Iters: 15, Total loss: 0.400
+[2026-02-25 23:48:22,688][    INFO] Iters: 18, Total loss: 0.393
+[2026-02-25 23:48:22,903][    INFO] Iters: 21, Total loss: 0.367
+[2026-02-25 23:48:23,204][    INFO] Iters: 24, Total loss: 0.341
+[2026-02-25 23:48:23,618][    INFO] Iters: 27, Total loss: 0.332
+[2026-02-25 23:49:39,797][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.70
+[2026-02-25 23:49:39,797][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 5.88
+[2026-02-25 23:49:39,798][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.55
+[2026-02-25 23:49:39,798][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 39.58
+[2026-02-25 23:49:39,798][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.31
+[2026-02-25 23:49:39,798][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:49:39,798][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.50
+
+[2026-02-25 23:49:40,392][    INFO] ===========> Epoch: 65, LR: 0.0000012, Previous best: 31.37
+[2026-02-25 23:49:40,594][    INFO] Iters: 0, Total loss: 0.015
+[2026-02-25 23:49:40,887][    INFO] Iters: 3, Total loss: 0.021
+[2026-02-25 23:49:41,549][    INFO] Iters: 6, Total loss: 0.033
+[2026-02-25 23:49:42,171][    INFO] Iters: 9, Total loss: 0.170
+[2026-02-25 23:49:42,242][    INFO] Iters: 12, Total loss: 0.145
+[2026-02-25 23:49:42,961][    INFO] Iters: 15, Total loss: 0.136
+[2026-02-25 23:49:43,033][    INFO] Iters: 18, Total loss: 0.152
+[2026-02-25 23:49:43,313][    INFO] Iters: 21, Total loss: 0.214
+[2026-02-25 23:49:44,256][    INFO] Iters: 24, Total loss: 0.254
+[2026-02-25 23:49:44,325][    INFO] Iters: 27, Total loss: 0.243
+[2026-02-25 23:51:00,504][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.40
+[2026-02-25 23:51:00,505][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 8.43
+[2026-02-25 23:51:00,505][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.40
+[2026-02-25 23:51:00,505][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.06
+[2026-02-25 23:51:00,506][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.16
+[2026-02-25 23:51:00,506][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:51:00,506][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.74
+
+[2026-02-25 23:51:01,123][    INFO] ===========> Epoch: 66, LR: 0.0000011, Previous best: 31.37
+[2026-02-25 23:51:01,375][    INFO] Iters: 0, Total loss: 0.166
+[2026-02-25 23:51:02,549][    INFO] Iters: 3, Total loss: 0.076
+[2026-02-25 23:51:02,628][    INFO] Iters: 6, Total loss: 0.369
+[2026-02-25 23:51:03,596][    INFO] Iters: 9, Total loss: 0.483
+[2026-02-25 23:51:03,673][    INFO] Iters: 12, Total loss: 0.394
+[2026-02-25 23:51:03,749][    INFO] Iters: 15, Total loss: 0.387
+[2026-02-25 23:51:04,347][    INFO] Iters: 18, Total loss: 0.386
+[2026-02-25 23:51:04,422][    INFO] Iters: 21, Total loss: 0.347
+[2026-02-25 23:51:04,996][    INFO] Iters: 24, Total loss: 0.331
+[2026-02-25 23:51:05,360][    INFO] Iters: 27, Total loss: 0.314
+[2026-02-25 23:52:21,580][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.94
+[2026-02-25 23:52:21,580][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 8.33
+[2026-02-25 23:52:21,580][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.92
+[2026-02-25 23:52:21,580][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.17
+[2026-02-25 23:52:21,580][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.84
+[2026-02-25 23:52:21,581][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:52:21,581][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.87
+
+[2026-02-25 23:52:22,187][    INFO] ===========> Epoch: 67, LR: 0.0000011, Previous best: 31.37
+[2026-02-25 23:52:22,457][    INFO] Iters: 0, Total loss: 0.211
+[2026-02-25 23:52:22,692][    INFO] Iters: 3, Total loss: 0.084
+[2026-02-25 23:52:23,040][    INFO] Iters: 6, Total loss: 0.141
+[2026-02-25 23:52:23,116][    INFO] Iters: 9, Total loss: 0.208
+[2026-02-25 23:52:23,557][    INFO] Iters: 12, Total loss: 0.315
+[2026-02-25 23:52:24,307][    INFO] Iters: 15, Total loss: 0.282
+[2026-02-25 23:52:24,595][    INFO] Iters: 18, Total loss: 0.406
+[2026-02-25 23:52:24,681][    INFO] Iters: 21, Total loss: 0.383
+[2026-02-25 23:52:25,293][    INFO] Iters: 24, Total loss: 0.343
+[2026-02-25 23:52:25,361][    INFO] Iters: 27, Total loss: 0.326
+[2026-02-25 23:53:41,540][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.36
+[2026-02-25 23:53:41,540][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.68
+[2026-02-25 23:53:41,541][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.51
+[2026-02-25 23:53:41,541][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 49.17
+[2026-02-25 23:53:41,541][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.27
+[2026-02-25 23:53:41,541][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:53:41,541][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.16
+
+[2026-02-25 23:53:42,139][    INFO] ===========> Epoch: 68, LR: 0.0000011, Previous best: 31.37
+[2026-02-25 23:53:42,890][    INFO] Iters: 0, Total loss: 0.203
+[2026-02-25 23:53:43,016][    INFO] Iters: 3, Total loss: 0.081
+[2026-02-25 23:53:43,820][    INFO] Iters: 6, Total loss: 0.125
+[2026-02-25 23:53:43,896][    INFO] Iters: 9, Total loss: 0.267
+[2026-02-25 23:53:44,409][    INFO] Iters: 12, Total loss: 0.254
+[2026-02-25 23:53:44,720][    INFO] Iters: 15, Total loss: 0.229
+[2026-02-25 23:53:44,793][    INFO] Iters: 18, Total loss: 0.276
+[2026-02-25 23:53:44,987][    INFO] Iters: 21, Total loss: 0.308
+[2026-02-25 23:53:46,252][    INFO] Iters: 24, Total loss: 0.292
+[2026-02-25 23:53:46,319][    INFO] Iters: 27, Total loss: 0.378
+[2026-02-25 23:55:02,511][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.30
+[2026-02-25 23:55:02,511][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 7.83
+[2026-02-25 23:55:02,511][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.14
+[2026-02-25 23:55:02,512][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 38.19
+[2026-02-25 23:55:02,512][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.04
+[2026-02-25 23:55:02,512][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:55:02,512][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 25.42
+
+[2026-02-25 23:55:03,109][    INFO] ===========> Epoch: 69, LR: 0.0000010, Previous best: 31.37
+[2026-02-25 23:55:03,321][    INFO] Iters: 0, Total loss: 0.045
+[2026-02-25 23:55:03,511][    INFO] Iters: 3, Total loss: 0.062
+[2026-02-25 23:55:04,135][    INFO] Iters: 6, Total loss: 0.234
+[2026-02-25 23:55:04,493][    INFO] Iters: 9, Total loss: 0.576
+[2026-02-25 23:55:05,159][    INFO] Iters: 12, Total loss: 0.577
+[2026-02-25 23:55:05,307][    INFO] Iters: 15, Total loss: 0.509
+[2026-02-25 23:55:06,357][    INFO] Iters: 18, Total loss: 0.477
+[2026-02-25 23:55:06,430][    INFO] Iters: 21, Total loss: 0.415
+[2026-02-25 23:55:06,899][    INFO] Iters: 24, Total loss: 0.384
+[2026-02-25 23:55:07,826][    INFO] Iters: 27, Total loss: 0.358
+[2026-02-25 23:56:23,977][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.36
+[2026-02-25 23:56:23,977][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 9.87
+[2026-02-25 23:56:23,977][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.35
+[2026-02-25 23:56:23,977][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.51
+[2026-02-25 23:56:23,977][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.77
+[2026-02-25 23:56:23,978][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:56:23,978][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.31
+
+[2026-02-25 23:56:24,596][    INFO] ===========> Epoch: 70, LR: 0.0000010, Previous best: 31.37
+[2026-02-25 23:56:25,370][    INFO] Iters: 0, Total loss: 0.216
+[2026-02-25 23:56:25,444][    INFO] Iters: 3, Total loss: 0.518
+[2026-02-25 23:56:26,097][    INFO] Iters: 6, Total loss: 0.361
+[2026-02-25 23:56:26,177][    INFO] Iters: 9, Total loss: 0.337
+[2026-02-25 23:56:26,611][    INFO] Iters: 12, Total loss: 0.395
+[2026-02-25 23:56:26,931][    INFO] Iters: 15, Total loss: 0.359
+[2026-02-25 23:56:27,244][    INFO] Iters: 18, Total loss: 0.370
+[2026-02-25 23:56:27,692][    INFO] Iters: 21, Total loss: 0.366
+[2026-02-25 23:56:28,436][    INFO] Iters: 24, Total loss: 0.338
+[2026-02-25 23:56:28,890][    INFO] Iters: 27, Total loss: 0.346
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.27
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 8.19
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.78
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.37
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.00
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:57:45,060][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.10
+
+[2026-02-25 23:57:45,661][    INFO] ===========> Epoch: 71, LR: 0.0000010, Previous best: 31.37
+[2026-02-25 23:57:45,888][    INFO] Iters: 0, Total loss: 0.001
+[2026-02-25 23:57:46,122][    INFO] Iters: 3, Total loss: 0.220
+[2026-02-25 23:57:46,197][    INFO] Iters: 6, Total loss: 0.270
+[2026-02-25 23:57:46,736][    INFO] Iters: 9, Total loss: 0.207
+[2026-02-25 23:57:47,329][    INFO] Iters: 12, Total loss: 0.199
+[2026-02-25 23:57:48,000][    INFO] Iters: 15, Total loss: 0.170
+[2026-02-25 23:57:48,087][    INFO] Iters: 18, Total loss: 0.150
+[2026-02-25 23:57:48,165][    INFO] Iters: 21, Total loss: 0.162
+[2026-02-25 23:57:48,843][    INFO] Iters: 24, Total loss: 0.169
+[2026-02-25 23:57:49,115][    INFO] Iters: 27, Total loss: 0.176
+[2026-02-25 23:59:05,276][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.36
+[2026-02-25 23:59:05,276][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 9.52
+[2026-02-25 23:59:05,277][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.64
+[2026-02-25 23:59:05,277][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.80
+[2026-02-25 23:59:05,277][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.18
+[2026-02-25 23:59:05,277][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-25 23:59:05,277][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.41
+
+[2026-02-25 23:59:05,888][    INFO] ===========> Epoch: 72, LR: 0.0000010, Previous best: 31.37
+[2026-02-25 23:59:06,123][    INFO] Iters: 0, Total loss: 0.198
+[2026-02-25 23:59:06,199][    INFO] Iters: 3, Total loss: 0.058
+[2026-02-25 23:59:06,957][    INFO] Iters: 6, Total loss: 0.220
+[2026-02-25 23:59:07,493][    INFO] Iters: 9, Total loss: 0.248
+[2026-02-25 23:59:07,567][    INFO] Iters: 12, Total loss: 0.191
+[2026-02-25 23:59:07,887][    INFO] Iters: 15, Total loss: 0.194
+[2026-02-25 23:59:08,353][    INFO] Iters: 18, Total loss: 0.169
+[2026-02-25 23:59:08,430][    INFO] Iters: 21, Total loss: 0.153
+[2026-02-25 23:59:08,640][    INFO] Iters: 24, Total loss: 0.185
+[2026-02-25 23:59:09,122][    INFO] Iters: 27, Total loss: 0.235
+[2026-02-26 00:00:25,344][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.76
+[2026-02-26 00:00:25,344][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.09
+[2026-02-26 00:00:25,345][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.91
+[2026-02-26 00:00:25,345][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.08
+[2026-02-26 00:00:25,345][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.97
+[2026-02-26 00:00:25,345][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:00:25,345][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.13
+
+[2026-02-26 00:00:25,942][    INFO] ===========> Epoch: 73, LR: 0.0000009, Previous best: 31.37
+[2026-02-26 00:00:26,723][    INFO] Iters: 0, Total loss: 0.050
+[2026-02-26 00:00:26,801][    INFO] Iters: 3, Total loss: 0.390
+[2026-02-26 00:00:27,112][    INFO] Iters: 6, Total loss: 0.269
+[2026-02-26 00:00:27,191][    INFO] Iters: 9, Total loss: 0.286
+[2026-02-26 00:00:28,266][    INFO] Iters: 12, Total loss: 0.368
+[2026-02-26 00:00:28,800][    INFO] Iters: 15, Total loss: 0.313
+[2026-02-26 00:00:29,070][    INFO] Iters: 18, Total loss: 0.310
+[2026-02-26 00:00:29,146][    INFO] Iters: 21, Total loss: 0.342
+[2026-02-26 00:00:29,504][    INFO] Iters: 24, Total loss: 0.331
+[2026-02-26 00:00:29,761][    INFO] Iters: 27, Total loss: 0.309
+[2026-02-26 00:01:45,936][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.83
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.34
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.38
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.84
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.29
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:01:45,937][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.61
+
+[2026-02-26 00:01:46,560][    INFO] ===========> Epoch: 74, LR: 0.0000009, Previous best: 31.37
+[2026-02-26 00:01:46,771][    INFO] Iters: 0, Total loss: 0.120
+[2026-02-26 00:01:47,139][    INFO] Iters: 3, Total loss: 0.472
+[2026-02-26 00:01:47,557][    INFO] Iters: 6, Total loss: 0.386
+[2026-02-26 00:01:47,636][    INFO] Iters: 9, Total loss: 0.365
+[2026-02-26 00:01:47,716][    INFO] Iters: 12, Total loss: 0.306
+[2026-02-26 00:01:48,303][    INFO] Iters: 15, Total loss: 0.285
+[2026-02-26 00:01:48,434][    INFO] Iters: 18, Total loss: 0.260
+[2026-02-26 00:01:48,679][    INFO] Iters: 21, Total loss: 0.293
+[2026-02-26 00:01:49,539][    INFO] Iters: 24, Total loss: 0.287
+[2026-02-26 00:01:49,681][    INFO] Iters: 27, Total loss: 0.307
+[2026-02-26 00:03:05,861][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.54
+[2026-02-26 00:03:05,861][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.55
+[2026-02-26 00:03:05,862][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.67
+[2026-02-26 00:03:05,862][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.10
+[2026-02-26 00:03:05,862][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.11
+[2026-02-26 00:03:05,862][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:03:05,862][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.16
+
+[2026-02-26 00:03:06,468][    INFO] ===========> Epoch: 75, LR: 0.0000009, Previous best: 31.37
+[2026-02-26 00:03:06,681][    INFO] Iters: 0, Total loss: 0.187
+[2026-02-26 00:03:06,986][    INFO] Iters: 3, Total loss: 0.123
+[2026-02-26 00:03:07,685][    INFO] Iters: 6, Total loss: 0.151
+[2026-02-26 00:03:07,994][    INFO] Iters: 9, Total loss: 0.117
+[2026-02-26 00:03:08,081][    INFO] Iters: 12, Total loss: 0.102
+[2026-02-26 00:03:08,858][    INFO] Iters: 15, Total loss: 0.153
+[2026-02-26 00:03:08,939][    INFO] Iters: 18, Total loss: 0.155
+[2026-02-26 00:03:09,081][    INFO] Iters: 21, Total loss: 0.156
+[2026-02-26 00:03:09,414][    INFO] Iters: 24, Total loss: 0.141
+[2026-02-26 00:03:10,453][    INFO] Iters: 27, Total loss: 0.146
+[2026-02-26 00:04:26,622][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.57
+[2026-02-26 00:04:26,622][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.54
+[2026-02-26 00:04:26,622][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.42
+[2026-02-26 00:04:26,623][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 47.58
+[2026-02-26 00:04:26,623][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.32
+[2026-02-26 00:04:26,623][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:04:26,623][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.74
+
+[2026-02-26 00:04:27,232][    INFO] ===========> Epoch: 76, LR: 0.0000008, Previous best: 31.37
+[2026-02-26 00:04:27,455][    INFO] Iters: 0, Total loss: 1.341
+[2026-02-26 00:04:28,073][    INFO] Iters: 3, Total loss: 0.652
+[2026-02-26 00:04:28,474][    INFO] Iters: 6, Total loss: 0.533
+[2026-02-26 00:04:28,556][    INFO] Iters: 9, Total loss: 0.373
+[2026-02-26 00:04:29,113][    INFO] Iters: 12, Total loss: 0.409
+[2026-02-26 00:04:29,202][    INFO] Iters: 15, Total loss: 0.333
+[2026-02-26 00:04:29,873][    INFO] Iters: 18, Total loss: 0.305
+[2026-02-26 00:04:30,102][    INFO] Iters: 21, Total loss: 0.305
+[2026-02-26 00:04:30,555][    INFO] Iters: 24, Total loss: 0.272
+[2026-02-26 00:04:30,622][    INFO] Iters: 27, Total loss: 0.302
+[2026-02-26 00:05:46,820][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.72
+[2026-02-26 00:05:46,820][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.18
+[2026-02-26 00:05:46,821][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.81
+[2026-02-26 00:05:46,821][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 39.89
+[2026-02-26 00:05:46,821][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.31
+[2026-02-26 00:05:46,821][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:05:46,821][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 26.82
+
+[2026-02-26 00:05:47,430][    INFO] ===========> Epoch: 77, LR: 0.0000008, Previous best: 31.37
+[2026-02-26 00:05:47,631][    INFO] Iters: 0, Total loss: 0.347
+[2026-02-26 00:05:48,449][    INFO] Iters: 3, Total loss: 0.094
+[2026-02-26 00:05:49,092][    INFO] Iters: 6, Total loss: 0.092
+[2026-02-26 00:05:49,176][    INFO] Iters: 9, Total loss: 0.088
+[2026-02-26 00:05:50,175][    INFO] Iters: 12, Total loss: 0.103
+[2026-02-26 00:05:51,583][    INFO] Iters: 15, Total loss: 0.102
+[2026-02-26 00:05:52,089][    INFO] Iters: 18, Total loss: 0.216
+[2026-02-26 00:05:52,185][    INFO] Iters: 21, Total loss: 0.482
+[2026-02-26 00:05:52,548][    INFO] Iters: 24, Total loss: 0.452
+[2026-02-26 00:05:53,369][    INFO] Iters: 27, Total loss: 0.410
+[2026-02-26 00:07:09,523][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.10
+[2026-02-26 00:07:09,523][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.90
+[2026-02-26 00:07:09,524][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.43
+[2026-02-26 00:07:09,524][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 44.03
+[2026-02-26 00:07:09,524][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.41
+[2026-02-26 00:07:09,524][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:07:09,524][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.65
+
+[2026-02-26 00:07:10,131][    INFO] ===========> Epoch: 78, LR: 0.0000008, Previous best: 31.37
+[2026-02-26 00:07:10,952][    INFO] Iters: 0, Total loss: 0.006
+[2026-02-26 00:07:11,036][    INFO] Iters: 3, Total loss: 0.061
+[2026-02-26 00:07:11,255][    INFO] Iters: 6, Total loss: 0.130
+[2026-02-26 00:07:11,971][    INFO] Iters: 9, Total loss: 0.192
+[2026-02-26 00:07:12,046][    INFO] Iters: 12, Total loss: 0.164
+[2026-02-26 00:07:12,712][    INFO] Iters: 15, Total loss: 0.187
+[2026-02-26 00:07:13,035][    INFO] Iters: 18, Total loss: 0.329
+[2026-02-26 00:07:13,419][    INFO] Iters: 21, Total loss: 0.323
+[2026-02-26 00:07:13,678][    INFO] Iters: 24, Total loss: 0.322
+[2026-02-26 00:07:13,744][    INFO] Iters: 27, Total loss: 0.292
+[2026-02-26 00:08:29,955][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.17
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.18
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.85
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.87
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.72
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:08:29,956][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.30
+
+[2026-02-26 00:08:30,571][    INFO] ===========> Epoch: 79, LR: 0.0000007, Previous best: 31.37
+[2026-02-26 00:08:31,035][    INFO] Iters: 0, Total loss: 0.027
+[2026-02-26 00:08:31,112][    INFO] Iters: 3, Total loss: 0.234
+[2026-02-26 00:08:31,305][    INFO] Iters: 6, Total loss: 0.243
+[2026-02-26 00:08:31,706][    INFO] Iters: 9, Total loss: 0.215
+[2026-02-26 00:08:31,930][    INFO] Iters: 12, Total loss: 0.216
+[2026-02-26 00:08:32,487][    INFO] Iters: 15, Total loss: 0.207
+[2026-02-26 00:08:32,783][    INFO] Iters: 18, Total loss: 0.213
+[2026-02-26 00:08:33,102][    INFO] Iters: 21, Total loss: 0.187
+[2026-02-26 00:08:33,512][    INFO] Iters: 24, Total loss: 0.247
+[2026-02-26 00:08:34,322][    INFO] Iters: 27, Total loss: 0.294
+[2026-02-26 00:09:50,550][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.06
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.61
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 10.18
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.90
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.17
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:09:50,551][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.82
+
+[2026-02-26 00:09:51,157][    INFO] ===========> Epoch: 80, LR: 0.0000007, Previous best: 31.37
+[2026-02-26 00:09:51,730][    INFO] Iters: 0, Total loss: 0.306
+[2026-02-26 00:09:52,443][    INFO] Iters: 3, Total loss: 0.170
+[2026-02-26 00:09:52,990][    INFO] Iters: 6, Total loss: 0.139
+[2026-02-26 00:09:53,192][    INFO] Iters: 9, Total loss: 0.234
+[2026-02-26 00:09:53,451][    INFO] Iters: 12, Total loss: 0.222
+[2026-02-26 00:09:54,009][    INFO] Iters: 15, Total loss: 0.195
+[2026-02-26 00:09:54,089][    INFO] Iters: 18, Total loss: 0.260
+[2026-02-26 00:09:54,483][    INFO] Iters: 21, Total loss: 0.242
+[2026-02-26 00:09:54,705][    INFO] Iters: 24, Total loss: 0.281
+[2026-02-26 00:09:55,064][    INFO] Iters: 27, Total loss: 0.261
+[2026-02-26 00:11:11,260][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.42
+[2026-02-26 00:11:11,260][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.87
+[2026-02-26 00:11:11,260][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.31
+[2026-02-26 00:11:11,261][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 43.89
+[2026-02-26 00:11:11,261][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.68
+[2026-02-26 00:11:11,261][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:11:11,261][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.20
+
+[2026-02-26 00:11:11,870][    INFO] ===========> Epoch: 81, LR: 0.0000007, Previous best: 31.37
+[2026-02-26 00:11:12,690][    INFO] Iters: 0, Total loss: 0.477
+[2026-02-26 00:11:12,767][    INFO] Iters: 3, Total loss: 0.272
+[2026-02-26 00:11:13,014][    INFO] Iters: 6, Total loss: 0.374
+[2026-02-26 00:11:13,448][    INFO] Iters: 9, Total loss: 0.321
+[2026-02-26 00:11:13,615][    INFO] Iters: 12, Total loss: 0.351
+[2026-02-26 00:11:13,694][    INFO] Iters: 15, Total loss: 0.341
+[2026-02-26 00:11:14,507][    INFO] Iters: 18, Total loss: 0.300
+[2026-02-26 00:11:15,456][    INFO] Iters: 21, Total loss: 0.264
+[2026-02-26 00:11:15,530][    INFO] Iters: 24, Total loss: 0.264
+[2026-02-26 00:11:15,823][    INFO] Iters: 27, Total loss: 0.315
+[2026-02-26 00:12:32,022][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.43
+[2026-02-26 00:12:32,022][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.39
+[2026-02-26 00:12:32,023][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.59
+[2026-02-26 00:12:32,023][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 48.81
+[2026-02-26 00:12:32,023][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.51
+[2026-02-26 00:12:32,023][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:12:32,023][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.45
+
+[2026-02-26 00:12:32,631][    INFO] ===========> Epoch: 82, LR: 0.0000006, Previous best: 31.37
+[2026-02-26 00:12:33,349][    INFO] Iters: 0, Total loss: 0.018
+[2026-02-26 00:12:33,424][    INFO] Iters: 3, Total loss: 0.018
+[2026-02-26 00:12:33,500][    INFO] Iters: 6, Total loss: 0.016
+[2026-02-26 00:12:34,029][    INFO] Iters: 9, Total loss: 0.021
+[2026-02-26 00:12:34,107][    INFO] Iters: 12, Total loss: 0.080
+[2026-02-26 00:12:34,552][    INFO] Iters: 15, Total loss: 0.086
+[2026-02-26 00:12:34,795][    INFO] Iters: 18, Total loss: 0.171
+[2026-02-26 00:12:34,890][    INFO] Iters: 21, Total loss: 0.251
+[2026-02-26 00:12:35,408][    INFO] Iters: 24, Total loss: 0.247
+[2026-02-26 00:12:35,870][    INFO] Iters: 27, Total loss: 0.235
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.17
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.72
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.23
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 47.29
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.55
+[2026-02-26 00:13:52,008][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:13:52,009][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.99
+
+[2026-02-26 00:13:52,611][    INFO] ===========> Epoch: 83, LR: 0.0000006, Previous best: 31.37
+[2026-02-26 00:13:52,860][    INFO] Iters: 0, Total loss: 0.129
+[2026-02-26 00:13:53,319][    INFO] Iters: 3, Total loss: 0.600
+[2026-02-26 00:13:53,745][    INFO] Iters: 6, Total loss: 0.604
+[2026-02-26 00:13:53,938][    INFO] Iters: 9, Total loss: 0.454
+[2026-02-26 00:13:54,379][    INFO] Iters: 12, Total loss: 0.378
+[2026-02-26 00:13:54,459][    INFO] Iters: 15, Total loss: 0.358
+[2026-02-26 00:13:55,161][    INFO] Iters: 18, Total loss: 0.373
+[2026-02-26 00:13:55,310][    INFO] Iters: 21, Total loss: 0.387
+[2026-02-26 00:13:55,781][    INFO] Iters: 24, Total loss: 0.370
+[2026-02-26 00:13:56,213][    INFO] Iters: 27, Total loss: 0.361
+[2026-02-26 00:15:12,412][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.09
+[2026-02-26 00:15:12,412][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 10.22
+[2026-02-26 00:15:12,413][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 7.87
+[2026-02-26 00:15:12,413][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.70
+[2026-02-26 00:15:12,413][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.52
+[2026-02-26 00:15:12,413][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:15:12,413][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.40
+
+[2026-02-26 00:15:13,023][    INFO] ===========> Epoch: 84, LR: 0.0000006, Previous best: 31.37
+[2026-02-26 00:15:13,517][    INFO] Iters: 0, Total loss: 0.010
+[2026-02-26 00:15:13,593][    INFO] Iters: 3, Total loss: 0.061
+[2026-02-26 00:15:13,901][    INFO] Iters: 6, Total loss: 0.098
+[2026-02-26 00:15:14,123][    INFO] Iters: 9, Total loss: 0.222
+[2026-02-26 00:15:14,240][    INFO] Iters: 12, Total loss: 0.209
+[2026-02-26 00:15:14,982][    INFO] Iters: 15, Total loss: 0.177
+[2026-02-26 00:15:15,064][    INFO] Iters: 18, Total loss: 0.176
+[2026-02-26 00:15:15,484][    INFO] Iters: 21, Total loss: 0.210
+[2026-02-26 00:15:16,201][    INFO] Iters: 24, Total loss: 0.187
+[2026-02-26 00:15:16,271][    INFO] Iters: 27, Total loss: 0.189
+[2026-02-26 00:16:32,467][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.69
+[2026-02-26 00:16:32,467][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 11.04
+[2026-02-26 00:16:32,467][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.78
+[2026-02-26 00:16:32,467][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.59
+[2026-02-26 00:16:32,468][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 5.02
+[2026-02-26 00:16:32,468][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:16:32,468][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.52
+
+[2026-02-26 00:16:33,071][    INFO] ===========> Epoch: 85, LR: 0.0000005, Previous best: 31.37
+[2026-02-26 00:16:33,557][    INFO] Iters: 0, Total loss: 0.062
+[2026-02-26 00:16:34,245][    INFO] Iters: 3, Total loss: 0.155
+[2026-02-26 00:16:34,322][    INFO] Iters: 6, Total loss: 0.155
+[2026-02-26 00:16:35,183][    INFO] Iters: 9, Total loss: 0.178
+[2026-02-26 00:16:35,838][    INFO] Iters: 12, Total loss: 0.368
+[2026-02-26 00:16:35,961][    INFO] Iters: 15, Total loss: 0.316
+[2026-02-26 00:16:36,047][    INFO] Iters: 18, Total loss: 0.299
+[2026-02-26 00:16:36,618][    INFO] Iters: 21, Total loss: 0.289
+[2026-02-26 00:16:36,888][    INFO] Iters: 24, Total loss: 0.315
+[2026-02-26 00:16:38,259][    INFO] Iters: 27, Total loss: 0.337
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.62
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 12.45
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.21
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.81
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.28
+[2026-02-26 00:17:54,527][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:17:54,528][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.73
+
+[2026-02-26 00:17:55,117][    INFO] ===========> Epoch: 86, LR: 0.0000005, Previous best: 31.37
+[2026-02-26 00:17:55,360][    INFO] Iters: 0, Total loss: 0.144
+[2026-02-26 00:17:55,432][    INFO] Iters: 3, Total loss: 0.377
+[2026-02-26 00:17:56,030][    INFO] Iters: 6, Total loss: 0.223
+[2026-02-26 00:17:56,536][    INFO] Iters: 9, Total loss: 0.249
+[2026-02-26 00:17:57,010][    INFO] Iters: 12, Total loss: 0.268
+[2026-02-26 00:17:57,417][    INFO] Iters: 15, Total loss: 0.264
+[2026-02-26 00:17:58,044][    INFO] Iters: 18, Total loss: 0.255
+[2026-02-26 00:17:58,269][    INFO] Iters: 21, Total loss: 0.255
+[2026-02-26 00:17:58,870][    INFO] Iters: 24, Total loss: 0.332
+[2026-02-26 00:17:59,117][    INFO] Iters: 27, Total loss: 0.323
+[2026-02-26 00:19:15,296][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.21
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.90
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.49
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 45.96
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 3.83
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:19:15,297][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 27.90
+
+[2026-02-26 00:19:15,884][    INFO] ===========> Epoch: 87, LR: 0.0000005, Previous best: 31.37
+[2026-02-26 00:19:16,118][    INFO] Iters: 0, Total loss: 0.004
+[2026-02-26 00:19:16,879][    INFO] Iters: 3, Total loss: 0.642
+[2026-02-26 00:19:16,955][    INFO] Iters: 6, Total loss: 0.506
+[2026-02-26 00:19:17,165][    INFO] Iters: 9, Total loss: 0.460
+[2026-02-26 00:19:17,344][    INFO] Iters: 12, Total loss: 0.385
+[2026-02-26 00:19:17,758][    INFO] Iters: 15, Total loss: 0.375
+[2026-02-26 00:19:18,465][    INFO] Iters: 18, Total loss: 0.320
+[2026-02-26 00:19:19,124][    INFO] Iters: 21, Total loss: 0.287
+[2026-02-26 00:19:19,193][    INFO] Iters: 24, Total loss: 0.267
+[2026-02-26 00:19:19,962][    INFO] Iters: 27, Total loss: 0.272
+[2026-02-26 00:20:36,170][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.70
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.35
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.65
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 46.45
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.11
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:20:36,171][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.05
+
+[2026-02-26 00:20:36,762][    INFO] ===========> Epoch: 88, LR: 0.0000004, Previous best: 31.37
+[2026-02-26 00:20:37,390][    INFO] Iters: 0, Total loss: 0.022
+[2026-02-26 00:20:37,730][    INFO] Iters: 3, Total loss: 0.132
+[2026-02-26 00:20:37,804][    INFO] Iters: 6, Total loss: 0.130
+[2026-02-26 00:20:37,929][    INFO] Iters: 9, Total loss: 0.301
+[2026-02-26 00:20:38,990][    INFO] Iters: 12, Total loss: 0.239
+[2026-02-26 00:20:39,559][    INFO] Iters: 15, Total loss: 0.207
+[2026-02-26 00:20:39,633][    INFO] Iters: 18, Total loss: 0.250
+[2026-02-26 00:20:39,709][    INFO] Iters: 21, Total loss: 0.235
+[2026-02-26 00:20:40,210][    INFO] Iters: 24, Total loss: 0.245
+[2026-02-26 00:20:40,279][    INFO] Iters: 27, Total loss: 0.245
+[2026-02-26 00:21:56,519][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.99
+[2026-02-26 00:21:56,519][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 15.55
+[2026-02-26 00:21:56,519][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.00
+[2026-02-26 00:21:56,520][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 47.88
+[2026-02-26 00:21:56,520][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.13
+[2026-02-26 00:21:56,520][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:21:56,520][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.59
+
+[2026-02-26 00:21:57,117][    INFO] ===========> Epoch: 89, LR: 0.0000004, Previous best: 31.37
+[2026-02-26 00:21:57,372][    INFO] Iters: 0, Total loss: 0.008
+[2026-02-26 00:21:57,904][    INFO] Iters: 3, Total loss: 0.223
+[2026-02-26 00:21:58,577][    INFO] Iters: 6, Total loss: 0.308
+[2026-02-26 00:21:58,654][    INFO] Iters: 9, Total loss: 0.228
+[2026-02-26 00:21:59,251][    INFO] Iters: 12, Total loss: 0.264
+[2026-02-26 00:21:59,330][    INFO] Iters: 15, Total loss: 0.288
+[2026-02-26 00:21:59,632][    INFO] Iters: 18, Total loss: 0.252
+[2026-02-26 00:22:00,085][    INFO] Iters: 21, Total loss: 0.251
+[2026-02-26 00:22:00,338][    INFO] Iters: 24, Total loss: 0.240
+[2026-02-26 00:22:00,406][    INFO] Iters: 27, Total loss: 0.216
+[2026-02-26 00:23:16,639][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.28
+[2026-02-26 00:23:16,639][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 15.54
+[2026-02-26 00:23:16,640][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 9.00
+[2026-02-26 00:23:16,640][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 52.54
+[2026-02-26 00:23:16,640][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.39
+[2026-02-26 00:23:16,640][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:23:16,640][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.46
+
+[2026-02-26 00:23:17,245][    INFO] ===========> Epoch: 90, LR: 0.0000004, Previous best: 31.37
+[2026-02-26 00:23:17,853][    INFO] Iters: 0, Total loss: 0.546
+[2026-02-26 00:23:18,133][    INFO] Iters: 3, Total loss: 0.218
+[2026-02-26 00:23:18,569][    INFO] Iters: 6, Total loss: 0.130
+[2026-02-26 00:23:18,646][    INFO] Iters: 9, Total loss: 0.140
+[2026-02-26 00:23:18,768][    INFO] Iters: 12, Total loss: 0.376
+[2026-02-26 00:23:18,983][    INFO] Iters: 15, Total loss: 0.312
+[2026-02-26 00:23:19,058][    INFO] Iters: 18, Total loss: 0.280
+[2026-02-26 00:23:19,706][    INFO] Iters: 21, Total loss: 0.260
+[2026-02-26 00:23:20,505][    INFO] Iters: 24, Total loss: 0.307
+[2026-02-26 00:23:21,082][    INFO] Iters: 27, Total loss: 0.323
+[2026-02-26 00:24:37,279][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.40
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.93
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.93
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 53.74
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.57
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:24:37,280][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.59
+
+[2026-02-26 00:24:37,876][    INFO] ===========> Epoch: 91, LR: 0.0000003, Previous best: 31.37
+[2026-02-26 00:24:38,087][    INFO] Iters: 0, Total loss: 0.000
+[2026-02-26 00:24:38,557][    INFO] Iters: 3, Total loss: 0.479
+[2026-02-26 00:24:38,675][    INFO] Iters: 6, Total loss: 0.319
+[2026-02-26 00:24:38,840][    INFO] Iters: 9, Total loss: 0.354
+[2026-02-26 00:24:39,413][    INFO] Iters: 12, Total loss: 0.325
+[2026-02-26 00:24:39,732][    INFO] Iters: 15, Total loss: 0.270
+[2026-02-26 00:24:39,808][    INFO] Iters: 18, Total loss: 0.265
+[2026-02-26 00:24:40,298][    INFO] Iters: 21, Total loss: 0.230
+[2026-02-26 00:24:41,203][    INFO] Iters: 24, Total loss: 0.353
+[2026-02-26 00:24:41,272][    INFO] Iters: 27, Total loss: 0.339
+[2026-02-26 00:25:57,458][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.16
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.93
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.82
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.38
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.32
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:25:57,459][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.10
+
+[2026-02-26 00:25:58,062][    INFO] ===========> Epoch: 92, LR: 0.0000003, Previous best: 31.37
+[2026-02-26 00:25:58,557][    INFO] Iters: 0, Total loss: 0.032
+[2026-02-26 00:25:58,694][    INFO] Iters: 3, Total loss: 0.380
+[2026-02-26 00:25:59,221][    INFO] Iters: 6, Total loss: 0.222
+[2026-02-26 00:25:59,294][    INFO] Iters: 9, Total loss: 0.185
+[2026-02-26 00:25:59,686][    INFO] Iters: 12, Total loss: 0.219
+[2026-02-26 00:25:59,963][    INFO] Iters: 15, Total loss: 0.208
+[2026-02-26 00:26:00,798][    INFO] Iters: 18, Total loss: 0.243
+[2026-02-26 00:26:00,869][    INFO] Iters: 21, Total loss: 0.222
+[2026-02-26 00:26:00,938][    INFO] Iters: 24, Total loss: 0.211
+[2026-02-26 00:26:01,476][    INFO] Iters: 27, Total loss: 0.217
+[2026-02-26 00:27:17,699][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.99
+[2026-02-26 00:27:17,699][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.47
+[2026-02-26 00:27:17,700][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.57
+[2026-02-26 00:27:17,700][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.46
+[2026-02-26 00:27:17,700][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.35
+[2026-02-26 00:27:17,700][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:27:17,700][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.81
+
+[2026-02-26 00:27:18,299][    INFO] ===========> Epoch: 93, LR: 0.0000003, Previous best: 31.37
+[2026-02-26 00:27:18,524][    INFO] Iters: 0, Total loss: 0.001
+[2026-02-26 00:27:18,990][    INFO] Iters: 3, Total loss: 0.039
+[2026-02-26 00:27:19,145][    INFO] Iters: 6, Total loss: 0.314
+[2026-02-26 00:27:19,761][    INFO] Iters: 9, Total loss: 0.222
+[2026-02-26 00:27:20,018][    INFO] Iters: 12, Total loss: 0.458
+[2026-02-26 00:27:20,094][    INFO] Iters: 15, Total loss: 0.404
+[2026-02-26 00:27:20,322][    INFO] Iters: 18, Total loss: 0.424
+[2026-02-26 00:27:21,020][    INFO] Iters: 21, Total loss: 0.452
+[2026-02-26 00:27:21,108][    INFO] Iters: 24, Total loss: 0.477
+[2026-02-26 00:27:21,175][    INFO] Iters: 27, Total loss: 0.443
+[2026-02-26 00:28:37,341][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.73
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.02
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.31
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.54
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.22
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:28:37,342][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.64
+
+[2026-02-26 00:28:37,952][    INFO] ===========> Epoch: 94, LR: 0.0000002, Previous best: 31.37
+[2026-02-26 00:28:38,175][    INFO] Iters: 0, Total loss: 0.000
+[2026-02-26 00:28:38,729][    INFO] Iters: 3, Total loss: 0.036
+[2026-02-26 00:28:39,154][    INFO] Iters: 6, Total loss: 0.145
+[2026-02-26 00:28:39,420][    INFO] Iters: 9, Total loss: 0.140
+[2026-02-26 00:28:39,496][    INFO] Iters: 12, Total loss: 0.134
+[2026-02-26 00:28:39,709][    INFO] Iters: 15, Total loss: 0.172
+[2026-02-26 00:28:40,265][    INFO] Iters: 18, Total loss: 0.216
+[2026-02-26 00:28:40,409][    INFO] Iters: 21, Total loss: 0.197
+[2026-02-26 00:28:40,765][    INFO] Iters: 24, Total loss: 0.218
+[2026-02-26 00:28:41,274][    INFO] Iters: 27, Total loss: 0.331
+[2026-02-26 00:29:57,469][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.89
+[2026-02-26 00:29:57,469][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.65
+[2026-02-26 00:29:57,470][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.41
+[2026-02-26 00:29:57,470][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.67
+[2026-02-26 00:29:57,470][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.22
+[2026-02-26 00:29:57,470][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:29:57,470][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.64
+
+[2026-02-26 00:29:58,072][    INFO] ===========> Epoch: 95, LR: 0.0000002, Previous best: 31.37
+[2026-02-26 00:29:58,759][    INFO] Iters: 0, Total loss: 0.210
+[2026-02-26 00:29:58,836][    INFO] Iters: 3, Total loss: 0.209
+[2026-02-26 00:29:59,344][    INFO] Iters: 6, Total loss: 0.235
+[2026-02-26 00:29:59,706][    INFO] Iters: 9, Total loss: 0.358
+[2026-02-26 00:29:59,783][    INFO] Iters: 12, Total loss: 0.350
+[2026-02-26 00:30:00,369][    INFO] Iters: 15, Total loss: 0.326
+[2026-02-26 00:30:00,834][    INFO] Iters: 18, Total loss: 0.288
+[2026-02-26 00:30:00,906][    INFO] Iters: 21, Total loss: 0.266
+[2026-02-26 00:30:00,974][    INFO] Iters: 24, Total loss: 0.239
+[2026-02-26 00:30:02,163][    INFO] Iters: 27, Total loss: 0.225
+[2026-02-26 00:31:18,390][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.10
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 13.99
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.69
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.40
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.37
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:31:18,391][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.92
+
+[2026-02-26 00:31:19,000][    INFO] ===========> Epoch: 96, LR: 0.0000002, Previous best: 31.37
+[2026-02-26 00:31:19,771][    INFO] Iters: 0, Total loss: 0.013
+[2026-02-26 00:31:20,067][    INFO] Iters: 3, Total loss: 0.043
+[2026-02-26 00:31:20,147][    INFO] Iters: 6, Total loss: 0.107
+[2026-02-26 00:31:20,234][    INFO] Iters: 9, Total loss: 0.230
+[2026-02-26 00:31:20,720][    INFO] Iters: 12, Total loss: 0.377
+[2026-02-26 00:31:21,083][    INFO] Iters: 15, Total loss: 0.418
+[2026-02-26 00:31:21,375][    INFO] Iters: 18, Total loss: 0.367
+[2026-02-26 00:31:21,889][    INFO] Iters: 21, Total loss: 0.327
+[2026-02-26 00:31:22,157][    INFO] Iters: 24, Total loss: 0.316
+[2026-02-26 00:31:23,022][    INFO] Iters: 27, Total loss: 0.312
+[2026-02-26 00:32:39,208][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.15
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.09
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.77
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.63
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.38
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:32:39,209][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 29.00
+
+[2026-02-26 00:32:39,825][    INFO] ===========> Epoch: 97, LR: 0.0000001, Previous best: 31.37
+[2026-02-26 00:32:40,012][    INFO] Iters: 0, Total loss: 0.593
+[2026-02-26 00:32:40,842][    INFO] Iters: 3, Total loss: 0.379
+[2026-02-26 00:32:41,263][    INFO] Iters: 6, Total loss: 0.318
+[2026-02-26 00:32:41,343][    INFO] Iters: 9, Total loss: 0.243
+[2026-02-26 00:32:41,608][    INFO] Iters: 12, Total loss: 0.224
+[2026-02-26 00:32:42,851][    INFO] Iters: 15, Total loss: 0.262
+[2026-02-26 00:32:42,929][    INFO] Iters: 18, Total loss: 0.234
+[2026-02-26 00:32:43,003][    INFO] Iters: 21, Total loss: 0.216
+[2026-02-26 00:32:43,582][    INFO] Iters: 24, Total loss: 0.191
+[2026-02-26 00:32:43,652][    INFO] Iters: 27, Total loss: 0.215
+[2026-02-26 00:33:59,863][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 95.05
+[2026-02-26 00:33:59,864][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.17
+[2026-02-26 00:33:59,864][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.79
+[2026-02-26 00:33:59,864][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 51.21
+[2026-02-26 00:33:59,864][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.24
+[2026-02-26 00:33:59,865][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:33:59,865][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.91
+
+[2026-02-26 00:34:00,474][    INFO] ===========> Epoch: 98, LR: 0.0000001, Previous best: 31.37
+[2026-02-26 00:34:01,248][    INFO] Iters: 0, Total loss: 0.446
+[2026-02-26 00:34:01,709][    INFO] Iters: 3, Total loss: 0.335
+[2026-02-26 00:34:01,807][    INFO] Iters: 6, Total loss: 0.224
+[2026-02-26 00:34:02,309][    INFO] Iters: 9, Total loss: 0.278
+[2026-02-26 00:34:02,407][    INFO] Iters: 12, Total loss: 0.232
+[2026-02-26 00:34:02,983][    INFO] Iters: 15, Total loss: 0.202
+[2026-02-26 00:34:03,228][    INFO] Iters: 18, Total loss: 0.257
+[2026-02-26 00:34:03,395][    INFO] Iters: 21, Total loss: 0.250
+[2026-02-26 00:34:04,026][    INFO] Iters: 24, Total loss: 0.285
+[2026-02-26 00:34:04,092][    INFO] Iters: 27, Total loss: 0.304
+[2026-02-26 00:35:20,301][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.95
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.33
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.70
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.98
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.20
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:35:20,302][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.86
+
+[2026-02-26 00:35:20,911][    INFO] ===========> Epoch: 99, LR: 0.0000000, Previous best: 31.37
+[2026-02-26 00:35:21,116][    INFO] Iters: 0, Total loss: 0.720
+[2026-02-26 00:35:22,112][    INFO] Iters: 3, Total loss: 0.312
+[2026-02-26 00:35:22,190][    INFO] Iters: 6, Total loss: 0.269
+[2026-02-26 00:35:22,276][    INFO] Iters: 9, Total loss: 0.254
+[2026-02-26 00:35:23,173][    INFO] Iters: 12, Total loss: 0.204
+[2026-02-26 00:35:23,585][    INFO] Iters: 15, Total loss: 0.221
+[2026-02-26 00:35:23,663][    INFO] Iters: 18, Total loss: 0.234
+[2026-02-26 00:35:24,062][    INFO] Iters: 21, Total loss: 0.230
+[2026-02-26 00:35:24,431][    INFO] Iters: 24, Total loss: 0.221
+[2026-02-26 00:35:24,685][    INFO] Iters: 27, Total loss: 0.232
+[2026-02-26 00:36:40,915][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 94.95
+[2026-02-26 00:36:40,916][    INFO] ***** Evaluation ***** >>>> Class [1 epithelial tissue] IoU: 14.37
+[2026-02-26 00:36:40,916][    INFO] ***** Evaluation ***** >>>> Class [2 slough] IoU: 8.71
+[2026-02-26 00:36:40,916][    INFO] ***** Evaluation ***** >>>> Class [3 granulation tissue] IoU: 50.92
+[2026-02-26 00:36:40,916][    INFO] ***** Evaluation ***** >>>> Class [4 necrotic tissue] IoU: 4.17
+[2026-02-26 00:36:40,917][    INFO] ***** Evaluation ***** >>>> Class [5 other] IoU: 0.00
+[2026-02-26 00:36:40,917][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 28.86
+
+gpu211-18:3183180:3183383 [1] NCCL INFO [Service thread] Connection closed by localRank 0
+wandb: updating run metadata
+gpu211-18:3183180:3242966 [1] NCCL INFO comm 0xf066820 rank 1 nranks 2 cudaDev 1 busId 88000 - Abort COMPLETE
+wandb: updating run metadata; uploading wandb-summary.json; uploading output.log
+wandb: uploading wandb-summary.json; uploading output.log; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading output.log
+wandb: uploading history steps 2799-2799, summary, console lines 1899-1905
+wandb: 
+wandb: Run history:
+wandb:      eval/mIoU ▁▄▅▅▅▅▆▇▆▆██▇▇█▇▇▆▇▆▇▇▇▇▆▇▇▆▆▇▇▇▆▇▇█▇▇▇▇
+wandb: train/loss_all ▁▁▁▄▂▅▁▁▆▁▂▁▅▃█▂▂▄▃▃▁▆▄▂▃▂▁▁▃▁▁▂▁▁▁▁▄▁▄▅
+wandb:   train/loss_x ▁▃▁▃▁▂▁▁▁▁█▁▁▁▂▁▁▁▁▂▂▁▄▁▃▂▁▁▃▁▁▁▂▁▁▂▂▂▁▁
+wandb:       train/lr ███████▇▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▂▂▂▁▁
+wandb: 
+wandb: Run summary:
+wandb:      eval/mIoU 28.85523
+wandb: train/loss_all 0.00651
+wandb:   train/loss_x 0.00651
+wandb:       train/lr 0.0
+wandb: 
+wandb: 🚀 View run swift-dew-6 at: https://wandb.ai/anon_user/unimatch-v2-table-baselines/runs/oryp97no
+wandb: ⭐️ View project at: https://wandb.ai/anon_user/unimatch-v2-table-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: exp/lutseg/supervised_table_baseline/dinov2_base/full/seed0/wandb/run-20260225_222146-oryp97no/logs
+[rank0]:[W226 00:36:45.610332820 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+gpu211-18:3183179:3183384 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+gpu211-18:3183179:3243006 [0] NCCL INFO comm 0x8330700 rank 0 nranks 2 cudaDev 0 busId 3e000 - Abort COMPLETE

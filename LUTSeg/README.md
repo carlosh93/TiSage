@@ -8,6 +8,8 @@ This folder contains the reproducibility assets for LUTSeg dataset construction 
 - `annotations/raw/`: raw Label Studio exports and wound-outline fix files.
 - `examples/`: A small, non-identifying subset and form-review artifacts are included for reproducibility. The full dataset is not released in this repository during double-blind review because some images may contain non-anonymized content. Upon acceptance, the full dataset will be publicly available.
 
+All annotator references in this repository use pseudonymous IDs (for example `user_7`).
+
 ## What This Reproduces
 
 1. Normalize and rasterize raw polygon annotations.

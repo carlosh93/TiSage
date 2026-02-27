@@ -1,0 +1,1740 @@
+W0204 10:44:26.590000 3708142 site-packages/torch/distributed/run.py:792] 
+W0204 10:44:26.590000 3708142 site-packages/torch/distributed/run.py:792] *****************************************
+W0204 10:44:26.590000 3708142 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0204 10:44:26.590000 3708142 site-packages/torch/distributed/run.py:792] *****************************************
+[2026-02-04 10:44:31,799][    INFO] {'backbone': 'dinov2_base',
+ 'batch_size': 2,
+ 'conf_thresh': 0.95,
+ 'config': 'configs/dfutissue.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255}, 'name': 'CELoss'},
+ 'crop_size': 98,
+ 'data_root': 'data/DFUTissue',
+ 'dataset': 'dfutissue',
+ 'deterministic': False,
+ 'epochs': 100,
+ 'labeled_id_path': 'splits/dfutissue/1_8/labeled.txt',
+ 'local_rank': 0,
+ 'lock_backbone': True,
+ 'lr': 5e-06,
+ 'lr_multi': 20.0,
+ 'model': 'dpt',
+ 'nclass': 4,
+ 'ngpus': 2,
+ 'port': 44741,
+ 'save_path': 'exp/dfutissue/unimatch_v2/dinov2_base/1_8/seed1',
+ 'seed': 1,
+ 'unlabeled_id_path': 'splits/dfutissue/1_8/unlabeled.txt',
+ 'wandb': True,
+ 'wandb_entity': None,
+ 'wandb_name': None,
+ 'wandb_project': 'unimatch-v2',
+ 'wandb_tags': None}
+
+[2026-02-04 10:44:31,799][    INFO] world_size=2, rank=0
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/user/.netrc.
+wandb: Currently logged in as: anon_user to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 979jxbwh
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in exp/dfutissue/unimatch_v2/dinov2_base/1_8/seed1/wandb/run-20260204_104433-979jxbwh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rose-butterfly-113
+wandb: ⭐️ View project at https://wandb.ai/anon_user/unimatch-v2
+wandb: 🚀 View run at https://wandb.ai/anon_user/unimatch-v2/runs/979jxbwh
+[2026-02-04 10:44:36,679][    INFO] Total params: 97.5M
+[2026-02-04 10:44:36,679][    INFO] Encoder params: 86.6M
+[2026-02-04 10:44:36,680][    INFO] Decoder params: 10.9M
+
+gpu210-06:3708211:3708211 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu210-06:3708211:3708211 [0] NCCL INFO Bootstrap : Using ib0:10.109.152.31<0>
+gpu210-06:3708211:3708211 [0] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu210-06:3708211:3708211 [0] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu210-06:3708211:3708211 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu210-06:3708211:3708211 [0] NCCL INFO cudaDriverVersion 12080
+NCCL version 2.21.5+cuda12.4
+gpu210-06:3708211:3708211 [0] NCCL INFO Comm config Blocking set to 1
+gpu210-06:3708212:3708212 [1] NCCL INFO cudaDriverVersion 12080
+gpu210-06:3708212:3708212 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu210-06:3708212:3708212 [1] NCCL INFO Bootstrap : Using ib0:10.109.152.31<0>
+gpu210-06:3708212:3708212 [1] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu210-06:3708212:3708212 [1] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu210-06:3708212:3708212 [1] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu210-06:3708212:3708212 [1] NCCL INFO Comm config Blocking set to 1
+gpu210-06:3708211:3708492 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu210-06:3708212:3708493 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu210-06:3708212:3708493 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.152.31<0>
+gpu210-06:3708212:3708493 [1] NCCL INFO Using non-device net plugin version 0
+gpu210-06:3708212:3708493 [1] NCCL INFO Using network IB
+gpu210-06:3708211:3708492 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.152.31<0>
+gpu210-06:3708211:3708492 [0] NCCL INFO Using non-device net plugin version 0
+gpu210-06:3708211:3708492 [0] NCCL INFO Using network IB
+gpu210-06:3708211:3708492 [0] NCCL INFO ncclCommInitRank comm 0xc320400 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 1a000 commId 0x353ebc66990757aa - Init START
+gpu210-06:3708212:3708493 [1] NCCL INFO ncclCommInitRank comm 0xdb1eee0 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 1b000 commId 0x353ebc66990757aa - Init START
+gpu210-06:3708211:3708492 [0] NCCL INFO Setting affinity for GPU 0 to 3ff9
+gpu210-06:3708212:3708493 [1] NCCL INFO Setting affinity for GPU 1 to 3ff9
+gpu210-06:3708211:3708492 [0] NCCL INFO comm 0xc320400 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+gpu210-06:3708212:3708493 [1] NCCL INFO comm 0xdb1eee0 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+gpu210-06:3708211:3708492 [0] NCCL INFO Channel 00/02 :    0   1
+gpu210-06:3708212:3708493 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+gpu210-06:3708211:3708492 [0] NCCL INFO Channel 01/02 :    0   1
+gpu210-06:3708212:3708493 [1] NCCL INFO P2P Chunksize set to 524288
+gpu210-06:3708211:3708492 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+gpu210-06:3708211:3708492 [0] NCCL INFO P2P Chunksize set to 524288
+gpu210-06:3708211:3708492 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/CUMEM
+gpu210-06:3708211:3708492 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/CUMEM
+gpu210-06:3708212:3708493 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/CUMEM
+gpu210-06:3708212:3708493 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/CUMEM
+gpu210-06:3708211:3708492 [0] NCCL INFO Connected all rings
+gpu210-06:3708212:3708493 [1] NCCL INFO Connected all rings
+gpu210-06:3708211:3708492 [0] NCCL INFO Connected all trees
+gpu210-06:3708212:3708493 [1] NCCL INFO Connected all trees
+gpu210-06:3708212:3708493 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu210-06:3708212:3708493 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu210-06:3708211:3708492 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu210-06:3708211:3708492 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu210-06:3708212:3708493 [1] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu210-06:3708211:3708492 [0] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu210-06:3708212:3708493 [1] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu210-06:3708211:3708492 [0] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu210-06:3708212:3708493 [1] NCCL INFO ncclCommInitRank comm 0xdb1eee0 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 1b000 commId 0x353ebc66990757aa - Init COMPLETE
+gpu210-06:3708211:3708492 [0] NCCL INFO ncclCommInitRank comm 0xc320400 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 1a000 commId 0x353ebc66990757aa - Init COMPLETE
+[2026-02-04 10:44:37,261][    INFO] ===========> Epoch: 0, Previous best: 0.00 @epoch-0, EMA: 0.00 @epoch-0
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [4, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [4, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [4, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [4, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[2026-02-04 10:44:39,137][    INFO] Iters: 0, LR: 0.0000050, Total loss: 0.695, Loss x: 1.389, Loss s: 0.000, Mask ratio: 0.000
+[2026-02-04 10:44:40,296][    INFO] Iters: 18, LR: 0.0000050, Total loss: 0.531, Loss x: 1.062, Loss s: 0.000, Mask ratio: 0.000
+[2026-02-04 10:44:41,453][    INFO] Iters: 36, LR: 0.0000050, Total loss: 0.421, Loss x: 0.843, Loss s: 0.000, Mask ratio: 0.000
+[2026-02-04 10:44:42,551][    INFO] Iters: 54, LR: 0.0000050, Total loss: 0.377, Loss x: 0.754, Loss s: 0.000, Mask ratio: 0.006
+[2026-02-04 10:44:43,689][    INFO] Iters: 72, LR: 0.0000050, Total loss: 0.335, Loss x: 0.667, Loss s: 0.004, Mask ratio: 0.036
+[2026-02-04 10:44:44,769][    INFO] Iters: 90, LR: 0.0000050, Total loss: 0.319, Loss x: 0.634, Loss s: 0.004, Mask ratio: 0.079
+[2026-02-04 10:44:45,859][    INFO] Iters: 108, LR: 0.0000050, Total loss: 0.300, Loss x: 0.594, Loss s: 0.005, Mask ratio: 0.141
+[2026-02-04 10:44:46,961][    INFO] Iters: 126, LR: 0.0000050, Total loss: 0.283, Loss x: 0.562, Loss s: 0.005, Mask ratio: 0.195
+[2026-02-04 10:44:48,068][    INFO] Iters: 144, LR: 0.0000050, Total loss: 0.271, Loss x: 0.538, Loss s: 0.004, Mask ratio: 0.246
+[2026-02-04 10:44:49,547][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 83.37, EMA: 83.09
+[2026-02-04 10:44:49,547][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 0.00, EMA: 0.00
+[2026-02-04 10:44:49,548][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 71.18, EMA: 71.98
+[2026-02-04 10:44:49,548][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 33.37, EMA: 39.17
+[2026-02-04 10:44:49,548][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 46.98, EMA: 48.56
+
+[2026-02-04 10:44:51,067][    INFO] ===========> Epoch: 1, Previous best: 46.98 @epoch-0, EMA: 48.56 @epoch-0
+[2026-02-04 10:44:51,327][    INFO] Iters: 0, LR: 0.0000050, Total loss: 0.225, Loss x: 0.449, Loss s: 0.000, Mask ratio: 0.438
+[2026-02-04 10:44:52,390][    INFO] Iters: 18, LR: 0.0000049, Total loss: 0.158, Loss x: 0.313, Loss s: 0.003, Mask ratio: 0.786
+[2026-02-04 10:44:53,468][    INFO] Iters: 36, LR: 0.0000049, Total loss: 0.175, Loss x: 0.346, Loss s: 0.005, Mask ratio: 0.745
+[2026-02-04 10:44:54,543][    INFO] Iters: 54, LR: 0.0000049, Total loss: 0.175, Loss x: 0.346, Loss s: 0.004, Mask ratio: 0.784
+[2026-02-04 10:44:55,613][    INFO] Iters: 72, LR: 0.0000049, Total loss: 0.173, Loss x: 0.342, Loss s: 0.004, Mask ratio: 0.764
+[2026-02-04 10:44:56,692][    INFO] Iters: 90, LR: 0.0000049, Total loss: 0.171, Loss x: 0.339, Loss s: 0.003, Mask ratio: 0.772
+[2026-02-04 10:44:57,763][    INFO] Iters: 108, LR: 0.0000049, Total loss: 0.166, Loss x: 0.328, Loss s: 0.003, Mask ratio: 0.780
+[2026-02-04 10:44:58,836][    INFO] Iters: 126, LR: 0.0000049, Total loss: 0.165, Loss x: 0.327, Loss s: 0.003, Mask ratio: 0.786
+[2026-02-04 10:44:59,900][    INFO] Iters: 144, LR: 0.0000049, Total loss: 0.162, Loss x: 0.320, Loss s: 0.003, Mask ratio: 0.786
+[2026-02-04 10:45:00,594][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 84.46, EMA: 83.47
+[2026-02-04 10:45:00,595][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 8.10, EMA: 1.34
+[2026-02-04 10:45:00,595][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 78.93, EMA: 75.06
+[2026-02-04 10:45:00,595][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 45.43, EMA: 41.44
+[2026-02-04 10:45:00,595][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 54.23, EMA: 50.33
+
+[2026-02-04 10:45:02,225][    INFO] ===========> Epoch: 2, Previous best: 54.23 @epoch-1, EMA: 50.33 @epoch-1
+[2026-02-04 10:45:02,470][    INFO] Iters: 0, LR: 0.0000049, Total loss: 0.608, Loss x: 1.214, Loss s: 0.001, Mask ratio: 0.604
+[2026-02-04 10:45:03,547][    INFO] Iters: 18, LR: 0.0000049, Total loss: 0.171, Loss x: 0.341, Loss s: 0.002, Mask ratio: 0.758
+[2026-02-04 10:45:04,622][    INFO] Iters: 36, LR: 0.0000049, Total loss: 0.172, Loss x: 0.340, Loss s: 0.004, Mask ratio: 0.805
+[2026-02-04 10:45:05,693][    INFO] Iters: 54, LR: 0.0000049, Total loss: 0.161, Loss x: 0.317, Loss s: 0.006, Mask ratio: 0.793
+[2026-02-04 10:45:06,753][    INFO] Iters: 72, LR: 0.0000049, Total loss: 0.152, Loss x: 0.300, Loss s: 0.004, Mask ratio: 0.811
+[2026-02-04 10:45:07,822][    INFO] Iters: 90, LR: 0.0000049, Total loss: 0.149, Loss x: 0.293, Loss s: 0.004, Mask ratio: 0.820
+[2026-02-04 10:45:08,889][    INFO] Iters: 108, LR: 0.0000049, Total loss: 0.145, Loss x: 0.286, Loss s: 0.005, Mask ratio: 0.817
+[2026-02-04 10:45:09,963][    INFO] Iters: 126, LR: 0.0000049, Total loss: 0.141, Loss x: 0.277, Loss s: 0.005, Mask ratio: 0.819
+[2026-02-04 10:45:11,014][    INFO] Iters: 144, LR: 0.0000049, Total loss: 0.139, Loss x: 0.272, Loss s: 0.005, Mask ratio: 0.813
+[2026-02-04 10:45:11,628][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 84.45, EMA: 84.07
+[2026-02-04 10:45:11,629][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 12.79, EMA: 11.06
+[2026-02-04 10:45:11,629][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 76.99, EMA: 77.72
+[2026-02-04 10:45:11,629][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 46.53, EMA: 44.47
+[2026-02-04 10:45:11,629][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 55.19, EMA: 54.33
+
+[2026-02-04 10:45:13,224][    INFO] ===========> Epoch: 3, Previous best: 55.19 @epoch-2, EMA: 54.33 @epoch-2
+[2026-02-04 10:45:13,469][    INFO] Iters: 0, LR: 0.0000049, Total loss: 0.105, Loss x: 0.206, Loss s: 0.004, Mask ratio: 0.655
+[2026-02-04 10:45:14,545][    INFO] Iters: 18, LR: 0.0000049, Total loss: 0.122, Loss x: 0.235, Loss s: 0.010, Mask ratio: 0.804
+[2026-02-04 10:45:15,619][    INFO] Iters: 36, LR: 0.0000049, Total loss: 0.118, Loss x: 0.227, Loss s: 0.009, Mask ratio: 0.811
+[2026-02-04 10:45:16,685][    INFO] Iters: 54, LR: 0.0000048, Total loss: 0.116, Loss x: 0.219, Loss s: 0.012, Mask ratio: 0.810
+[2026-02-04 10:45:17,764][    INFO] Iters: 72, LR: 0.0000048, Total loss: 0.120, Loss x: 0.227, Loss s: 0.013, Mask ratio: 0.831
+[2026-02-04 10:45:18,842][    INFO] Iters: 90, LR: 0.0000048, Total loss: 0.122, Loss x: 0.230, Loss s: 0.013, Mask ratio: 0.823
+[2026-02-04 10:45:19,919][    INFO] Iters: 108, LR: 0.0000048, Total loss: 0.120, Loss x: 0.228, Loss s: 0.012, Mask ratio: 0.828
+[2026-02-04 10:45:20,999][    INFO] Iters: 126, LR: 0.0000048, Total loss: 0.121, Loss x: 0.227, Loss s: 0.015, Mask ratio: 0.826
+[2026-02-04 10:45:22,053][    INFO] Iters: 144, LR: 0.0000048, Total loss: 0.119, Loss x: 0.224, Loss s: 0.014, Mask ratio: 0.827
+[2026-02-04 10:45:22,666][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.12, EMA: 84.47
+[2026-02-04 10:45:22,667][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 20.43, EMA: 13.53
+[2026-02-04 10:45:22,667][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 80.87, EMA: 79.37
+[2026-02-04 10:45:22,667][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.87, EMA: 46.06
+[2026-02-04 10:45:22,667][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 59.32, EMA: 55.86
+
+[2026-02-04 10:45:24,283][    INFO] ===========> Epoch: 4, Previous best: 59.32 @epoch-3, EMA: 55.86 @epoch-3
+[2026-02-04 10:45:24,538][    INFO] Iters: 0, LR: 0.0000048, Total loss: 0.171, Loss x: 0.343, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:45:25,628][    INFO] Iters: 18, LR: 0.0000048, Total loss: 0.100, Loss x: 0.193, Loss s: 0.007, Mask ratio: 0.899
+[2026-02-04 10:45:26,712][    INFO] Iters: 36, LR: 0.0000048, Total loss: 0.099, Loss x: 0.183, Loss s: 0.015, Mask ratio: 0.855
+[2026-02-04 10:45:27,795][    INFO] Iters: 54, LR: 0.0000048, Total loss: 0.099, Loss x: 0.185, Loss s: 0.014, Mask ratio: 0.861
+[2026-02-04 10:45:28,868][    INFO] Iters: 72, LR: 0.0000048, Total loss: 0.105, Loss x: 0.195, Loss s: 0.016, Mask ratio: 0.857
+[2026-02-04 10:45:29,944][    INFO] Iters: 90, LR: 0.0000048, Total loss: 0.104, Loss x: 0.192, Loss s: 0.015, Mask ratio: 0.859
+[2026-02-04 10:45:31,011][    INFO] Iters: 108, LR: 0.0000048, Total loss: 0.107, Loss x: 0.195, Loss s: 0.020, Mask ratio: 0.848
+[2026-02-04 10:45:32,082][    INFO] Iters: 126, LR: 0.0000048, Total loss: 0.106, Loss x: 0.192, Loss s: 0.021, Mask ratio: 0.851
+[2026-02-04 10:45:33,152][    INFO] Iters: 144, LR: 0.0000048, Total loss: 0.107, Loss x: 0.192, Loss s: 0.022, Mask ratio: 0.851
+[2026-02-04 10:45:33,779][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 84.23, EMA: 85.05
+[2026-02-04 10:45:33,780][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 20.39, EMA: 16.72
+[2026-02-04 10:45:33,780][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 80.47, EMA: 80.22
+[2026-02-04 10:45:33,780][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.13, EMA: 47.89
+[2026-02-04 10:45:33,780][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 58.80, EMA: 57.47
+
+[2026-02-04 10:45:34,637][    INFO] ===========> Epoch: 5, Previous best: 59.32 @epoch-3, EMA: 57.47 @epoch-4
+[2026-02-04 10:45:34,878][    INFO] Iters: 0, LR: 0.0000048, Total loss: 0.191, Loss x: 0.093, Loss s: 0.288, Mask ratio: 0.733
+[2026-02-04 10:45:35,958][    INFO] Iters: 18, LR: 0.0000048, Total loss: 0.113, Loss x: 0.201, Loss s: 0.025, Mask ratio: 0.873
+[2026-02-04 10:45:37,033][    INFO] Iters: 36, LR: 0.0000048, Total loss: 0.112, Loss x: 0.203, Loss s: 0.020, Mask ratio: 0.847
+[2026-02-04 10:45:38,107][    INFO] Iters: 54, LR: 0.0000048, Total loss: 0.112, Loss x: 0.195, Loss s: 0.029, Mask ratio: 0.846
+[2026-02-04 10:45:39,173][    INFO] Iters: 72, LR: 0.0000048, Total loss: 0.127, Loss x: 0.203, Loss s: 0.050, Mask ratio: 0.844
+[2026-02-04 10:45:40,249][    INFO] Iters: 90, LR: 0.0000047, Total loss: 0.124, Loss x: 0.203, Loss s: 0.045, Mask ratio: 0.847
+[2026-02-04 10:45:41,320][    INFO] Iters: 108, LR: 0.0000047, Total loss: 0.123, Loss x: 0.204, Loss s: 0.042, Mask ratio: 0.835
+[2026-02-04 10:45:42,396][    INFO] Iters: 126, LR: 0.0000047, Total loss: 0.119, Loss x: 0.197, Loss s: 0.041, Mask ratio: 0.835
+[2026-02-04 10:45:43,466][    INFO] Iters: 144, LR: 0.0000047, Total loss: 0.122, Loss x: 0.198, Loss s: 0.047, Mask ratio: 0.828
+[2026-02-04 10:45:44,104][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.62, EMA: 85.50
+[2026-02-04 10:45:44,105][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 18.49, EMA: 18.91
+[2026-02-04 10:45:44,105][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 76.41, EMA: 80.46
+[2026-02-04 10:45:44,105][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.70, EMA: 49.59
+[2026-02-04 10:45:44,105][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 57.55, EMA: 58.62
+
+[2026-02-04 10:45:44,982][    INFO] ===========> Epoch: 6, Previous best: 59.32 @epoch-3, EMA: 58.62 @epoch-5
+[2026-02-04 10:45:45,228][    INFO] Iters: 0, LR: 0.0000047, Total loss: 0.101, Loss x: 0.176, Loss s: 0.026, Mask ratio: 0.873
+[2026-02-04 10:45:46,313][    INFO] Iters: 18, LR: 0.0000047, Total loss: 0.102, Loss x: 0.167, Loss s: 0.036, Mask ratio: 0.849
+[2026-02-04 10:45:47,378][    INFO] Iters: 36, LR: 0.0000047, Total loss: 0.101, Loss x: 0.167, Loss s: 0.035, Mask ratio: 0.835
+[2026-02-04 10:45:48,449][    INFO] Iters: 54, LR: 0.0000047, Total loss: 0.099, Loss x: 0.167, Loss s: 0.030, Mask ratio: 0.853
+[2026-02-04 10:45:49,518][    INFO] Iters: 72, LR: 0.0000047, Total loss: 0.103, Loss x: 0.169, Loss s: 0.036, Mask ratio: 0.849
+[2026-02-04 10:45:50,597][    INFO] Iters: 90, LR: 0.0000047, Total loss: 0.107, Loss x: 0.178, Loss s: 0.037, Mask ratio: 0.852
+[2026-02-04 10:45:51,661][    INFO] Iters: 108, LR: 0.0000047, Total loss: 0.109, Loss x: 0.183, Loss s: 0.036, Mask ratio: 0.853
+[2026-02-04 10:45:52,727][    INFO] Iters: 126, LR: 0.0000047, Total loss: 0.110, Loss x: 0.184, Loss s: 0.035, Mask ratio: 0.856
+[2026-02-04 10:45:53,783][    INFO] Iters: 144, LR: 0.0000047, Total loss: 0.111, Loss x: 0.184, Loss s: 0.038, Mask ratio: 0.852
+[2026-02-04 10:45:54,395][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 83.26, EMA: 85.81
+[2026-02-04 10:45:54,395][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.44, EMA: 21.77
+[2026-02-04 10:45:54,396][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.30, EMA: 80.94
+[2026-02-04 10:45:54,396][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.99, EMA: 51.44
+[2026-02-04 10:45:54,396][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.00, EMA: 59.99
+
+[2026-02-04 10:45:56,023][    INFO] ===========> Epoch: 7, Previous best: 62.00 @epoch-6, EMA: 59.99 @epoch-6
+[2026-02-04 10:45:56,280][    INFO] Iters: 0, LR: 0.0000047, Total loss: 0.106, Loss x: 0.185, Loss s: 0.027, Mask ratio: 0.618
+[2026-02-04 10:45:57,355][    INFO] Iters: 18, LR: 0.0000047, Total loss: 0.121, Loss x: 0.200, Loss s: 0.042, Mask ratio: 0.842
+[2026-02-04 10:45:58,430][    INFO] Iters: 36, LR: 0.0000047, Total loss: 0.113, Loss x: 0.195, Loss s: 0.032, Mask ratio: 0.861
+[2026-02-04 10:45:59,511][    INFO] Iters: 54, LR: 0.0000047, Total loss: 0.114, Loss x: 0.194, Loss s: 0.033, Mask ratio: 0.864
+[2026-02-04 10:46:00,587][    INFO] Iters: 72, LR: 0.0000047, Total loss: 0.107, Loss x: 0.181, Loss s: 0.032, Mask ratio: 0.872
+[2026-02-04 10:46:01,662][    INFO] Iters: 90, LR: 0.0000047, Total loss: 0.102, Loss x: 0.175, Loss s: 0.030, Mask ratio: 0.873
+[2026-02-04 10:46:02,744][    INFO] Iters: 108, LR: 0.0000047, Total loss: 0.102, Loss x: 0.176, Loss s: 0.029, Mask ratio: 0.868
+[2026-02-04 10:46:03,822][    INFO] Iters: 126, LR: 0.0000046, Total loss: 0.102, Loss x: 0.175, Loss s: 0.029, Mask ratio: 0.864
+[2026-02-04 10:46:04,893][    INFO] Iters: 144, LR: 0.0000046, Total loss: 0.104, Loss x: 0.175, Loss s: 0.032, Mask ratio: 0.863
+[2026-02-04 10:46:05,514][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.51, EMA: 86.04
+[2026-02-04 10:46:05,514][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.14, EMA: 25.15
+[2026-02-04 10:46:05,514][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 80.90, EMA: 81.30
+[2026-02-04 10:46:05,515][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 54.61, EMA: 52.55
+[2026-02-04 10:46:05,515][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.04, EMA: 61.26
+
+[2026-02-04 10:46:07,159][    INFO] ===========> Epoch: 8, Previous best: 62.04 @epoch-7, EMA: 61.26 @epoch-7
+[2026-02-04 10:46:07,413][    INFO] Iters: 0, LR: 0.0000046, Total loss: 0.092, Loss x: 0.144, Loss s: 0.040, Mask ratio: 0.625
+[2026-02-04 10:46:08,489][    INFO] Iters: 18, LR: 0.0000046, Total loss: 0.095, Loss x: 0.152, Loss s: 0.038, Mask ratio: 0.843
+[2026-02-04 10:46:09,553][    INFO] Iters: 36, LR: 0.0000046, Total loss: 0.088, Loss x: 0.147, Loss s: 0.030, Mask ratio: 0.878
+[2026-02-04 10:46:10,623][    INFO] Iters: 54, LR: 0.0000046, Total loss: 0.093, Loss x: 0.157, Loss s: 0.028, Mask ratio: 0.866
+[2026-02-04 10:46:11,702][    INFO] Iters: 72, LR: 0.0000046, Total loss: 0.090, Loss x: 0.149, Loss s: 0.030, Mask ratio: 0.869
+[2026-02-04 10:46:12,779][    INFO] Iters: 90, LR: 0.0000046, Total loss: 0.098, Loss x: 0.159, Loss s: 0.037, Mask ratio: 0.865
+[2026-02-04 10:46:13,857][    INFO] Iters: 108, LR: 0.0000046, Total loss: 0.103, Loss x: 0.160, Loss s: 0.045, Mask ratio: 0.854
+[2026-02-04 10:46:14,936][    INFO] Iters: 126, LR: 0.0000046, Total loss: 0.104, Loss x: 0.161, Loss s: 0.047, Mask ratio: 0.854
+[2026-02-04 10:46:15,993][    INFO] Iters: 144, LR: 0.0000046, Total loss: 0.100, Loss x: 0.157, Loss s: 0.044, Mask ratio: 0.861
+[2026-02-04 10:46:16,614][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.21, EMA: 86.15
+[2026-02-04 10:46:16,615][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.66, EMA: 25.28
+[2026-02-04 10:46:16,615][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.29, EMA: 82.14
+[2026-02-04 10:46:16,615][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 53.42, EMA: 53.38
+[2026-02-04 10:46:16,615][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.40, EMA: 61.74
+
+[2026-02-04 10:46:18,263][    INFO] ===========> Epoch: 9, Previous best: 62.40 @epoch-8, EMA: 61.74 @epoch-8
+[2026-02-04 10:46:18,517][    INFO] Iters: 0, LR: 0.0000046, Total loss: 0.099, Loss x: 0.177, Loss s: 0.020, Mask ratio: 0.955
+[2026-02-04 10:46:19,594][    INFO] Iters: 18, LR: 0.0000046, Total loss: 0.086, Loss x: 0.151, Loss s: 0.021, Mask ratio: 0.865
+[2026-02-04 10:46:20,676][    INFO] Iters: 36, LR: 0.0000046, Total loss: 0.087, Loss x: 0.154, Loss s: 0.020, Mask ratio: 0.880
+[2026-02-04 10:46:21,779][    INFO] Iters: 54, LR: 0.0000046, Total loss: 0.090, Loss x: 0.155, Loss s: 0.024, Mask ratio: 0.883
+[2026-02-04 10:46:22,865][    INFO] Iters: 72, LR: 0.0000046, Total loss: 0.092, Loss x: 0.158, Loss s: 0.026, Mask ratio: 0.886
+[2026-02-04 10:46:23,956][    INFO] Iters: 90, LR: 0.0000046, Total loss: 0.090, Loss x: 0.154, Loss s: 0.027, Mask ratio: 0.879
+[2026-02-04 10:46:25,039][    INFO] Iters: 108, LR: 0.0000046, Total loss: 0.089, Loss x: 0.152, Loss s: 0.026, Mask ratio: 0.885
+[2026-02-04 10:46:26,134][    INFO] Iters: 126, LR: 0.0000046, Total loss: 0.090, Loss x: 0.153, Loss s: 0.027, Mask ratio: 0.889
+[2026-02-04 10:46:27,202][    INFO] Iters: 144, LR: 0.0000045, Total loss: 0.090, Loss x: 0.151, Loss s: 0.028, Mask ratio: 0.894
+[2026-02-04 10:46:27,828][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.24, EMA: 86.30
+[2026-02-04 10:46:27,828][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.23, EMA: 25.85
+[2026-02-04 10:46:27,829][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.19, EMA: 82.23
+[2026-02-04 10:46:27,829][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.85, EMA: 53.69
+[2026-02-04 10:46:27,829][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.88, EMA: 62.02
+
+[2026-02-04 10:46:28,678][    INFO] ===========> Epoch: 10, Previous best: 62.40 @epoch-8, EMA: 62.02 @epoch-9
+[2026-02-04 10:46:28,924][    INFO] Iters: 0, LR: 0.0000045, Total loss: 0.083, Loss x: 0.165, Loss s: 0.001, Mask ratio: 0.994
+[2026-02-04 10:46:29,997][    INFO] Iters: 18, LR: 0.0000045, Total loss: 0.091, Loss x: 0.147, Loss s: 0.034, Mask ratio: 0.882
+[2026-02-04 10:46:31,064][    INFO] Iters: 36, LR: 0.0000045, Total loss: 0.087, Loss x: 0.145, Loss s: 0.029, Mask ratio: 0.894
+[2026-02-04 10:46:32,134][    INFO] Iters: 54, LR: 0.0000045, Total loss: 0.087, Loss x: 0.145, Loss s: 0.028, Mask ratio: 0.885
+[2026-02-04 10:46:33,202][    INFO] Iters: 72, LR: 0.0000045, Total loss: 0.088, Loss x: 0.145, Loss s: 0.032, Mask ratio: 0.877
+[2026-02-04 10:46:34,270][    INFO] Iters: 90, LR: 0.0000045, Total loss: 0.087, Loss x: 0.143, Loss s: 0.032, Mask ratio: 0.884
+[2026-02-04 10:46:35,344][    INFO] Iters: 108, LR: 0.0000045, Total loss: 0.090, Loss x: 0.145, Loss s: 0.035, Mask ratio: 0.881
+[2026-02-04 10:46:36,420][    INFO] Iters: 126, LR: 0.0000045, Total loss: 0.092, Loss x: 0.146, Loss s: 0.037, Mask ratio: 0.876
+[2026-02-04 10:46:37,484][    INFO] Iters: 144, LR: 0.0000045, Total loss: 0.094, Loss x: 0.152, Loss s: 0.037, Mask ratio: 0.878
+[2026-02-04 10:46:38,159][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.05, EMA: 86.47
+[2026-02-04 10:46:38,159][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.13, EMA: 26.83
+[2026-02-04 10:46:38,159][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.62, EMA: 82.63
+[2026-02-04 10:46:38,159][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.00, EMA: 54.17
+[2026-02-04 10:46:38,159][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.45, EMA: 62.53
+
+[2026-02-04 10:46:39,014][    INFO] ===========> Epoch: 11, Previous best: 62.40 @epoch-8, EMA: 62.53 @epoch-10
+[2026-02-04 10:46:39,258][    INFO] Iters: 0, LR: 0.0000045, Total loss: 0.115, Loss x: 0.113, Loss s: 0.116, Mask ratio: 0.776
+[2026-02-04 10:46:40,326][    INFO] Iters: 18, LR: 0.0000045, Total loss: 0.086, Loss x: 0.146, Loss s: 0.026, Mask ratio: 0.910
+[2026-02-04 10:46:41,405][    INFO] Iters: 36, LR: 0.0000045, Total loss: 0.094, Loss x: 0.162, Loss s: 0.026, Mask ratio: 0.893
+[2026-02-04 10:46:42,490][    INFO] Iters: 54, LR: 0.0000045, Total loss: 0.096, Loss x: 0.158, Loss s: 0.034, Mask ratio: 0.872
+[2026-02-04 10:46:43,568][    INFO] Iters: 72, LR: 0.0000045, Total loss: 0.091, Loss x: 0.153, Loss s: 0.030, Mask ratio: 0.870
+[2026-02-04 10:46:44,654][    INFO] Iters: 90, LR: 0.0000045, Total loss: 0.089, Loss x: 0.150, Loss s: 0.029, Mask ratio: 0.879
+[2026-02-04 10:46:45,735][    INFO] Iters: 108, LR: 0.0000045, Total loss: 0.087, Loss x: 0.143, Loss s: 0.030, Mask ratio: 0.883
+[2026-02-04 10:46:46,811][    INFO] Iters: 126, LR: 0.0000045, Total loss: 0.087, Loss x: 0.142, Loss s: 0.031, Mask ratio: 0.880
+[2026-02-04 10:46:47,886][    INFO] Iters: 144, LR: 0.0000045, Total loss: 0.088, Loss x: 0.144, Loss s: 0.033, Mask ratio: 0.880
+[2026-02-04 10:46:48,510][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.96, EMA: 86.64
+[2026-02-04 10:46:48,511][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.02, EMA: 27.73
+[2026-02-04 10:46:48,511][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 80.78, EMA: 82.75
+[2026-02-04 10:46:48,511][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.91, EMA: 55.32
+[2026-02-04 10:46:48,511][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.17, EMA: 63.11
+
+[2026-02-04 10:46:49,392][    INFO] ===========> Epoch: 12, Previous best: 62.40 @epoch-8, EMA: 63.11 @epoch-11
+[2026-02-04 10:46:49,636][    INFO] Iters: 0, LR: 0.0000045, Total loss: 0.121, Loss x: 0.134, Loss s: 0.108, Mask ratio: 0.829
+[2026-02-04 10:46:50,711][    INFO] Iters: 18, LR: 0.0000045, Total loss: 0.102, Loss x: 0.148, Loss s: 0.055, Mask ratio: 0.897
+[2026-02-04 10:46:51,785][    INFO] Iters: 36, LR: 0.0000044, Total loss: 0.098, Loss x: 0.140, Loss s: 0.057, Mask ratio: 0.886
+[2026-02-04 10:46:52,859][    INFO] Iters: 54, LR: 0.0000044, Total loss: 0.097, Loss x: 0.141, Loss s: 0.052, Mask ratio: 0.882
+[2026-02-04 10:46:53,926][    INFO] Iters: 72, LR: 0.0000044, Total loss: 0.096, Loss x: 0.139, Loss s: 0.052, Mask ratio: 0.869
+[2026-02-04 10:46:54,989][    INFO] Iters: 90, LR: 0.0000044, Total loss: 0.102, Loss x: 0.143, Loss s: 0.061, Mask ratio: 0.864
+[2026-02-04 10:46:56,061][    INFO] Iters: 108, LR: 0.0000044, Total loss: 0.101, Loss x: 0.145, Loss s: 0.057, Mask ratio: 0.866
+[2026-02-04 10:46:57,132][    INFO] Iters: 126, LR: 0.0000044, Total loss: 0.099, Loss x: 0.145, Loss s: 0.053, Mask ratio: 0.870
+[2026-02-04 10:46:58,196][    INFO] Iters: 144, LR: 0.0000044, Total loss: 0.099, Loss x: 0.147, Loss s: 0.052, Mask ratio: 0.867
+[2026-02-04 10:46:58,867][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.39, EMA: 86.63
+[2026-02-04 10:46:58,867][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.28, EMA: 27.71
+[2026-02-04 10:46:58,868][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.30, EMA: 83.13
+[2026-02-04 10:46:58,868][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 53.50, EMA: 55.54
+[2026-02-04 10:46:58,868][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.62, EMA: 63.25
+
+[2026-02-04 10:47:00,497][    INFO] ===========> Epoch: 13, Previous best: 62.62 @epoch-12, EMA: 63.25 @epoch-12
+[2026-02-04 10:47:00,750][    INFO] Iters: 0, LR: 0.0000044, Total loss: 0.059, Loss x: 0.108, Loss s: 0.010, Mask ratio: 0.952
+[2026-02-04 10:47:01,833][    INFO] Iters: 18, LR: 0.0000044, Total loss: 0.108, Loss x: 0.169, Loss s: 0.047, Mask ratio: 0.874
+[2026-02-04 10:47:02,917][    INFO] Iters: 36, LR: 0.0000044, Total loss: 0.091, Loss x: 0.147, Loss s: 0.036, Mask ratio: 0.886
+[2026-02-04 10:47:03,998][    INFO] Iters: 54, LR: 0.0000044, Total loss: 0.094, Loss x: 0.148, Loss s: 0.039, Mask ratio: 0.893
+[2026-02-04 10:47:05,071][    INFO] Iters: 72, LR: 0.0000044, Total loss: 0.089, Loss x: 0.143, Loss s: 0.035, Mask ratio: 0.905
+[2026-02-04 10:47:06,153][    INFO] Iters: 90, LR: 0.0000044, Total loss: 0.089, Loss x: 0.143, Loss s: 0.034, Mask ratio: 0.897
+[2026-02-04 10:47:07,217][    INFO] Iters: 108, LR: 0.0000044, Total loss: 0.089, Loss x: 0.144, Loss s: 0.034, Mask ratio: 0.898
+[2026-02-04 10:47:08,283][    INFO] Iters: 126, LR: 0.0000044, Total loss: 0.089, Loss x: 0.145, Loss s: 0.033, Mask ratio: 0.899
+[2026-02-04 10:47:09,339][    INFO] Iters: 144, LR: 0.0000044, Total loss: 0.089, Loss x: 0.145, Loss s: 0.034, Mask ratio: 0.892
+[2026-02-04 10:47:09,967][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.90, EMA: 86.50
+[2026-02-04 10:47:09,968][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.26, EMA: 28.28
+[2026-02-04 10:47:09,968][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.18, EMA: 83.42
+[2026-02-04 10:47:09,968][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.12, EMA: 55.39
+[2026-02-04 10:47:09,968][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.62, EMA: 63.40
+
+[2026-02-04 10:47:11,625][    INFO] ===========> Epoch: 14, Previous best: 63.62 @epoch-13, EMA: 63.40 @epoch-13
+[2026-02-04 10:47:11,872][    INFO] Iters: 0, LR: 0.0000044, Total loss: 0.041, Loss x: 0.082, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:47:12,946][    INFO] Iters: 18, LR: 0.0000044, Total loss: 0.084, Loss x: 0.127, Loss s: 0.041, Mask ratio: 0.935
+[2026-02-04 10:47:14,025][    INFO] Iters: 36, LR: 0.0000044, Total loss: 0.092, Loss x: 0.141, Loss s: 0.043, Mask ratio: 0.921
+[2026-02-04 10:47:15,105][    INFO] Iters: 54, LR: 0.0000043, Total loss: 0.093, Loss x: 0.145, Loss s: 0.041, Mask ratio: 0.918
+[2026-02-04 10:47:16,178][    INFO] Iters: 72, LR: 0.0000043, Total loss: 0.091, Loss x: 0.141, Loss s: 0.041, Mask ratio: 0.913
+[2026-02-04 10:47:17,256][    INFO] Iters: 90, LR: 0.0000043, Total loss: 0.090, Loss x: 0.140, Loss s: 0.039, Mask ratio: 0.914
+[2026-02-04 10:47:18,335][    INFO] Iters: 108, LR: 0.0000043, Total loss: 0.092, Loss x: 0.143, Loss s: 0.041, Mask ratio: 0.914
+[2026-02-04 10:47:19,416][    INFO] Iters: 126, LR: 0.0000043, Total loss: 0.091, Loss x: 0.143, Loss s: 0.040, Mask ratio: 0.913
+[2026-02-04 10:47:20,485][    INFO] Iters: 144, LR: 0.0000043, Total loss: 0.092, Loss x: 0.141, Loss s: 0.042, Mask ratio: 0.911
+[2026-02-04 10:47:21,107][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.88, EMA: 86.49
+[2026-02-04 10:47:21,108][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 31.68, EMA: 30.40
+[2026-02-04 10:47:21,108][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.67, EMA: 83.62
+[2026-02-04 10:47:21,108][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 54.63, EMA: 55.56
+[2026-02-04 10:47:21,109][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.72, EMA: 64.02
+
+[2026-02-04 10:47:22,804][    INFO] ===========> Epoch: 15, Previous best: 63.72 @epoch-14, EMA: 64.02 @epoch-14
+[2026-02-04 10:47:23,047][    INFO] Iters: 0, LR: 0.0000043, Total loss: 0.101, Loss x: 0.185, Loss s: 0.016, Mask ratio: 0.975
+[2026-02-04 10:47:24,130][    INFO] Iters: 18, LR: 0.0000043, Total loss: 0.096, Loss x: 0.141, Loss s: 0.051, Mask ratio: 0.916
+[2026-02-04 10:47:25,216][    INFO] Iters: 36, LR: 0.0000043, Total loss: 0.088, Loss x: 0.136, Loss s: 0.041, Mask ratio: 0.909
+[2026-02-04 10:47:26,295][    INFO] Iters: 54, LR: 0.0000043, Total loss: 0.093, Loss x: 0.139, Loss s: 0.046, Mask ratio: 0.905
+[2026-02-04 10:47:27,370][    INFO] Iters: 72, LR: 0.0000043, Total loss: 0.087, Loss x: 0.133, Loss s: 0.041, Mask ratio: 0.905
+[2026-02-04 10:47:28,446][    INFO] Iters: 90, LR: 0.0000043, Total loss: 0.087, Loss x: 0.134, Loss s: 0.039, Mask ratio: 0.908
+[2026-02-04 10:47:29,524][    INFO] Iters: 108, LR: 0.0000043, Total loss: 0.084, Loss x: 0.130, Loss s: 0.037, Mask ratio: 0.907
+[2026-02-04 10:47:30,608][    INFO] Iters: 126, LR: 0.0000043, Total loss: 0.080, Loss x: 0.125, Loss s: 0.035, Mask ratio: 0.908
+[2026-02-04 10:47:31,672][    INFO] Iters: 144, LR: 0.0000043, Total loss: 0.080, Loss x: 0.125, Loss s: 0.034, Mask ratio: 0.905
+[2026-02-04 10:47:32,302][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.05, EMA: 86.48
+[2026-02-04 10:47:32,302][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 31.96, EMA: 31.38
+[2026-02-04 10:47:32,303][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.03, EMA: 83.60
+[2026-02-04 10:47:32,303][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 54.57, EMA: 55.78
+[2026-02-04 10:47:32,303][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.91, EMA: 64.31
+
+[2026-02-04 10:47:33,962][    INFO] ===========> Epoch: 16, Previous best: 63.91 @epoch-15, EMA: 64.31 @epoch-15
+[2026-02-04 10:47:34,210][    INFO] Iters: 0, LR: 0.0000043, Total loss: 0.077, Loss x: 0.117, Loss s: 0.037, Mask ratio: 0.777
+[2026-02-04 10:47:35,285][    INFO] Iters: 18, LR: 0.0000043, Total loss: 0.087, Loss x: 0.122, Loss s: 0.052, Mask ratio: 0.904
+[2026-02-04 10:47:36,366][    INFO] Iters: 36, LR: 0.0000043, Total loss: 0.092, Loss x: 0.126, Loss s: 0.058, Mask ratio: 0.912
+[2026-02-04 10:47:37,452][    INFO] Iters: 54, LR: 0.0000043, Total loss: 0.088, Loss x: 0.124, Loss s: 0.051, Mask ratio: 0.896
+[2026-02-04 10:47:38,539][    INFO] Iters: 72, LR: 0.0000043, Total loss: 0.085, Loss x: 0.123, Loss s: 0.046, Mask ratio: 0.894
+[2026-02-04 10:47:39,620][    INFO] Iters: 90, LR: 0.0000042, Total loss: 0.085, Loss x: 0.124, Loss s: 0.046, Mask ratio: 0.895
+[2026-02-04 10:47:40,692][    INFO] Iters: 108, LR: 0.0000042, Total loss: 0.088, Loss x: 0.128, Loss s: 0.048, Mask ratio: 0.896
+[2026-02-04 10:47:41,763][    INFO] Iters: 126, LR: 0.0000042, Total loss: 0.087, Loss x: 0.130, Loss s: 0.045, Mask ratio: 0.900
+[2026-02-04 10:47:42,828][    INFO] Iters: 144, LR: 0.0000042, Total loss: 0.088, Loss x: 0.130, Loss s: 0.046, Mask ratio: 0.897
+[2026-02-04 10:47:43,451][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.76, EMA: 86.16
+[2026-02-04 10:47:43,452][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.07, EMA: 32.64
+[2026-02-04 10:47:43,452][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.21, EMA: 83.77
+[2026-02-04 10:47:43,452][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.49, EMA: 55.84
+[2026-02-04 10:47:43,453][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.63, EMA: 64.60
+
+[2026-02-04 10:47:45,106][    INFO] ===========> Epoch: 17, Previous best: 64.63 @epoch-16, EMA: 64.60 @epoch-16
+[2026-02-04 10:47:45,359][    INFO] Iters: 0, LR: 0.0000042, Total loss: 0.130, Loss x: 0.220, Loss s: 0.041, Mask ratio: 0.773
+[2026-02-04 10:47:46,435][    INFO] Iters: 18, LR: 0.0000042, Total loss: 0.063, Loss x: 0.115, Loss s: 0.011, Mask ratio: 0.944
+[2026-02-04 10:47:47,505][    INFO] Iters: 36, LR: 0.0000042, Total loss: 0.071, Loss x: 0.122, Loss s: 0.019, Mask ratio: 0.932
+[2026-02-04 10:47:48,573][    INFO] Iters: 54, LR: 0.0000042, Total loss: 0.082, Loss x: 0.125, Loss s: 0.038, Mask ratio: 0.904
+[2026-02-04 10:47:49,643][    INFO] Iters: 72, LR: 0.0000042, Total loss: 0.083, Loss x: 0.127, Loss s: 0.038, Mask ratio: 0.905
+[2026-02-04 10:47:50,712][    INFO] Iters: 90, LR: 0.0000042, Total loss: 0.083, Loss x: 0.127, Loss s: 0.038, Mask ratio: 0.906
+[2026-02-04 10:47:51,776][    INFO] Iters: 108, LR: 0.0000042, Total loss: 0.085, Loss x: 0.129, Loss s: 0.040, Mask ratio: 0.902
+[2026-02-04 10:47:52,849][    INFO] Iters: 126, LR: 0.0000042, Total loss: 0.084, Loss x: 0.128, Loss s: 0.040, Mask ratio: 0.903
+[2026-02-04 10:47:53,914][    INFO] Iters: 144, LR: 0.0000042, Total loss: 0.084, Loss x: 0.125, Loss s: 0.043, Mask ratio: 0.905
+[2026-02-04 10:47:54,532][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.15, EMA: 86.09
+[2026-02-04 10:47:54,532][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 35.54, EMA: 36.01
+[2026-02-04 10:47:54,532][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.74, EMA: 84.01
+[2026-02-04 10:47:54,533][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 54.48, EMA: 55.75
+[2026-02-04 10:47:54,533][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.98, EMA: 65.46
+
+[2026-02-04 10:47:56,198][    INFO] ===========> Epoch: 18, Previous best: 64.98 @epoch-17, EMA: 65.46 @epoch-17
+[2026-02-04 10:47:56,448][    INFO] Iters: 0, LR: 0.0000042, Total loss: 0.081, Loss x: 0.158, Loss s: 0.005, Mask ratio: 0.962
+[2026-02-04 10:47:57,525][    INFO] Iters: 18, LR: 0.0000042, Total loss: 0.084, Loss x: 0.123, Loss s: 0.045, Mask ratio: 0.899
+[2026-02-04 10:47:58,597][    INFO] Iters: 36, LR: 0.0000042, Total loss: 0.096, Loss x: 0.139, Loss s: 0.054, Mask ratio: 0.897
+[2026-02-04 10:47:59,673][    INFO] Iters: 54, LR: 0.0000042, Total loss: 0.094, Loss x: 0.134, Loss s: 0.054, Mask ratio: 0.897
+[2026-02-04 10:48:00,739][    INFO] Iters: 72, LR: 0.0000042, Total loss: 0.094, Loss x: 0.132, Loss s: 0.056, Mask ratio: 0.893
+[2026-02-04 10:48:01,813][    INFO] Iters: 90, LR: 0.0000042, Total loss: 0.091, Loss x: 0.131, Loss s: 0.051, Mask ratio: 0.896
+[2026-02-04 10:48:02,885][    INFO] Iters: 108, LR: 0.0000041, Total loss: 0.090, Loss x: 0.129, Loss s: 0.051, Mask ratio: 0.891
+[2026-02-04 10:48:03,964][    INFO] Iters: 126, LR: 0.0000041, Total loss: 0.092, Loss x: 0.131, Loss s: 0.053, Mask ratio: 0.891
+[2026-02-04 10:48:05,028][    INFO] Iters: 144, LR: 0.0000041, Total loss: 0.088, Loss x: 0.128, Loss s: 0.049, Mask ratio: 0.897
+[2026-02-04 10:48:05,647][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.19, EMA: 86.06
+[2026-02-04 10:48:05,648][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.79, EMA: 35.67
+[2026-02-04 10:48:05,648][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.61, EMA: 84.11
+[2026-02-04 10:48:05,648][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.38, EMA: 55.72
+[2026-02-04 10:48:05,648][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.49, EMA: 65.39
+
+[2026-02-04 10:48:06,504][    INFO] ===========> Epoch: 19, Previous best: 64.98 @epoch-17, EMA: 65.46 @epoch-17
+[2026-02-04 10:48:06,752][    INFO] Iters: 0, LR: 0.0000041, Total loss: 0.096, Loss x: 0.146, Loss s: 0.045, Mask ratio: 0.927
+[2026-02-04 10:48:07,822][    INFO] Iters: 18, LR: 0.0000041, Total loss: 0.085, Loss x: 0.132, Loss s: 0.039, Mask ratio: 0.903
+[2026-02-04 10:48:08,901][    INFO] Iters: 36, LR: 0.0000041, Total loss: 0.084, Loss x: 0.125, Loss s: 0.044, Mask ratio: 0.904
+[2026-02-04 10:48:09,978][    INFO] Iters: 54, LR: 0.0000041, Total loss: 0.076, Loss x: 0.118, Loss s: 0.035, Mask ratio: 0.918
+[2026-02-04 10:48:11,055][    INFO] Iters: 72, LR: 0.0000041, Total loss: 0.077, Loss x: 0.119, Loss s: 0.036, Mask ratio: 0.918
+[2026-02-04 10:48:12,137][    INFO] Iters: 90, LR: 0.0000041, Total loss: 0.076, Loss x: 0.117, Loss s: 0.035, Mask ratio: 0.911
+[2026-02-04 10:48:13,216][    INFO] Iters: 108, LR: 0.0000041, Total loss: 0.077, Loss x: 0.115, Loss s: 0.038, Mask ratio: 0.902
+[2026-02-04 10:48:14,297][    INFO] Iters: 126, LR: 0.0000041, Total loss: 0.076, Loss x: 0.115, Loss s: 0.037, Mask ratio: 0.903
+[2026-02-04 10:48:15,359][    INFO] Iters: 144, LR: 0.0000041, Total loss: 0.075, Loss x: 0.115, Loss s: 0.036, Mask ratio: 0.905
+[2026-02-04 10:48:15,976][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.39, EMA: 86.28
+[2026-02-04 10:48:15,977][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.58, EMA: 34.12
+[2026-02-04 10:48:15,977][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.80, EMA: 84.02
+[2026-02-04 10:48:15,977][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.44, EMA: 56.00
+[2026-02-04 10:48:15,978][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.55, EMA: 65.10
+
+[2026-02-04 10:48:16,847][    INFO] ===========> Epoch: 20, Previous best: 64.98 @epoch-17, EMA: 65.46 @epoch-17
+[2026-02-04 10:48:17,093][    INFO] Iters: 0, LR: 0.0000041, Total loss: 0.151, Loss x: 0.146, Loss s: 0.157, Mask ratio: 0.877
+[2026-02-04 10:48:18,174][    INFO] Iters: 18, LR: 0.0000041, Total loss: 0.075, Loss x: 0.114, Loss s: 0.037, Mask ratio: 0.923
+[2026-02-04 10:48:19,250][    INFO] Iters: 36, LR: 0.0000041, Total loss: 0.080, Loss x: 0.110, Loss s: 0.050, Mask ratio: 0.884
+[2026-02-04 10:48:20,328][    INFO] Iters: 54, LR: 0.0000041, Total loss: 0.075, Loss x: 0.108, Loss s: 0.041, Mask ratio: 0.894
+[2026-02-04 10:48:21,405][    INFO] Iters: 72, LR: 0.0000041, Total loss: 0.073, Loss x: 0.102, Loss s: 0.044, Mask ratio: 0.896
+[2026-02-04 10:48:22,475][    INFO] Iters: 90, LR: 0.0000041, Total loss: 0.077, Loss x: 0.105, Loss s: 0.049, Mask ratio: 0.891
+[2026-02-04 10:48:23,534][    INFO] Iters: 108, LR: 0.0000041, Total loss: 0.074, Loss x: 0.104, Loss s: 0.045, Mask ratio: 0.896
+[2026-02-04 10:48:24,605][    INFO] Iters: 126, LR: 0.0000041, Total loss: 0.077, Loss x: 0.105, Loss s: 0.048, Mask ratio: 0.896
+[2026-02-04 10:48:25,670][    INFO] Iters: 144, LR: 0.0000040, Total loss: 0.078, Loss x: 0.106, Loss s: 0.050, Mask ratio: 0.891
+[2026-02-04 10:48:26,283][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.92, EMA: 86.52
+[2026-02-04 10:48:26,284][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.11, EMA: 33.50
+[2026-02-04 10:48:26,284][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.55, EMA: 84.11
+[2026-02-04 10:48:26,284][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.73, EMA: 56.35
+[2026-02-04 10:48:26,284][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.83, EMA: 65.12
+
+[2026-02-04 10:48:27,168][    INFO] ===========> Epoch: 21, Previous best: 64.98 @epoch-17, EMA: 65.46 @epoch-17
+[2026-02-04 10:48:27,414][    INFO] Iters: 0, LR: 0.0000040, Total loss: 0.030, Loss x: 0.060, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:48:28,503][    INFO] Iters: 18, LR: 0.0000040, Total loss: 0.080, Loss x: 0.129, Loss s: 0.032, Mask ratio: 0.927
+[2026-02-04 10:48:29,585][    INFO] Iters: 36, LR: 0.0000040, Total loss: 0.082, Loss x: 0.119, Loss s: 0.044, Mask ratio: 0.907
+[2026-02-04 10:48:30,676][    INFO] Iters: 54, LR: 0.0000040, Total loss: 0.079, Loss x: 0.118, Loss s: 0.039, Mask ratio: 0.899
+[2026-02-04 10:48:31,735][    INFO] Iters: 72, LR: 0.0000040, Total loss: 0.075, Loss x: 0.115, Loss s: 0.035, Mask ratio: 0.910
+[2026-02-04 10:48:32,799][    INFO] Iters: 90, LR: 0.0000040, Total loss: 0.077, Loss x: 0.115, Loss s: 0.039, Mask ratio: 0.912
+[2026-02-04 10:48:33,870][    INFO] Iters: 108, LR: 0.0000040, Total loss: 0.079, Loss x: 0.113, Loss s: 0.046, Mask ratio: 0.898
+[2026-02-04 10:48:34,945][    INFO] Iters: 126, LR: 0.0000040, Total loss: 0.079, Loss x: 0.111, Loss s: 0.047, Mask ratio: 0.894
+[2026-02-04 10:48:36,002][    INFO] Iters: 144, LR: 0.0000040, Total loss: 0.078, Loss x: 0.111, Loss s: 0.046, Mask ratio: 0.896
+[2026-02-04 10:48:36,616][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.30, EMA: 86.59
+[2026-02-04 10:48:36,617][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.31, EMA: 33.58
+[2026-02-04 10:48:36,617][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.32, EMA: 84.06
+[2026-02-04 10:48:36,617][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.43, EMA: 56.72
+[2026-02-04 10:48:36,618][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.09, EMA: 65.24
+
+[2026-02-04 10:48:37,456][    INFO] ===========> Epoch: 22, Previous best: 64.98 @epoch-17, EMA: 65.46 @epoch-17
+[2026-02-04 10:48:37,700][    INFO] Iters: 0, LR: 0.0000040, Total loss: 0.096, Loss x: 0.165, Loss s: 0.027, Mask ratio: 0.935
+[2026-02-04 10:48:38,787][    INFO] Iters: 18, LR: 0.0000040, Total loss: 0.079, Loss x: 0.116, Loss s: 0.042, Mask ratio: 0.937
+[2026-02-04 10:48:39,878][    INFO] Iters: 36, LR: 0.0000040, Total loss: 0.075, Loss x: 0.112, Loss s: 0.037, Mask ratio: 0.939
+[2026-02-04 10:48:40,944][    INFO] Iters: 54, LR: 0.0000040, Total loss: 0.079, Loss x: 0.112, Loss s: 0.047, Mask ratio: 0.913
+[2026-02-04 10:48:42,029][    INFO] Iters: 72, LR: 0.0000040, Total loss: 0.076, Loss x: 0.104, Loss s: 0.048, Mask ratio: 0.911
+[2026-02-04 10:48:43,114][    INFO] Iters: 90, LR: 0.0000040, Total loss: 0.079, Loss x: 0.106, Loss s: 0.052, Mask ratio: 0.908
+[2026-02-04 10:48:44,190][    INFO] Iters: 108, LR: 0.0000040, Total loss: 0.078, Loss x: 0.104, Loss s: 0.052, Mask ratio: 0.904
+[2026-02-04 10:48:45,262][    INFO] Iters: 126, LR: 0.0000040, Total loss: 0.080, Loss x: 0.107, Loss s: 0.053, Mask ratio: 0.902
+[2026-02-04 10:48:46,323][    INFO] Iters: 144, LR: 0.0000040, Total loss: 0.079, Loss x: 0.109, Loss s: 0.049, Mask ratio: 0.902
+[2026-02-04 10:48:46,938][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.49, EMA: 86.69
+[2026-02-04 10:48:46,938][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.22, EMA: 32.50
+[2026-02-04 10:48:46,939][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.47, EMA: 84.03
+[2026-02-04 10:48:46,939][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.26, EMA: 57.09
+[2026-02-04 10:48:46,939][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.11, EMA: 65.08
+
+[2026-02-04 10:48:48,577][    INFO] ===========> Epoch: 23, Previous best: 65.11 @epoch-22, EMA: 65.46 @epoch-17
+[2026-02-04 10:48:48,830][    INFO] Iters: 0, LR: 0.0000040, Total loss: 0.136, Loss x: 0.153, Loss s: 0.118, Mask ratio: 0.870
+[2026-02-04 10:48:49,918][    INFO] Iters: 18, LR: 0.0000039, Total loss: 0.082, Loss x: 0.116, Loss s: 0.048, Mask ratio: 0.895
+[2026-02-04 10:48:50,999][    INFO] Iters: 36, LR: 0.0000039, Total loss: 0.078, Loss x: 0.107, Loss s: 0.049, Mask ratio: 0.888
+[2026-02-04 10:48:52,090][    INFO] Iters: 54, LR: 0.0000039, Total loss: 0.081, Loss x: 0.113, Loss s: 0.048, Mask ratio: 0.898
+[2026-02-04 10:48:53,171][    INFO] Iters: 72, LR: 0.0000039, Total loss: 0.078, Loss x: 0.109, Loss s: 0.047, Mask ratio: 0.901
+[2026-02-04 10:48:54,254][    INFO] Iters: 90, LR: 0.0000039, Total loss: 0.075, Loss x: 0.106, Loss s: 0.045, Mask ratio: 0.896
+[2026-02-04 10:48:55,337][    INFO] Iters: 108, LR: 0.0000039, Total loss: 0.076, Loss x: 0.108, Loss s: 0.045, Mask ratio: 0.892
+[2026-02-04 10:48:56,424][    INFO] Iters: 126, LR: 0.0000039, Total loss: 0.075, Loss x: 0.107, Loss s: 0.043, Mask ratio: 0.897
+[2026-02-04 10:48:57,494][    INFO] Iters: 144, LR: 0.0000039, Total loss: 0.073, Loss x: 0.105, Loss s: 0.040, Mask ratio: 0.902
+[2026-02-04 10:48:58,123][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.40, EMA: 86.74
+[2026-02-04 10:48:58,123][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.40, EMA: 33.68
+[2026-02-04 10:48:58,124][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.56, EMA: 83.92
+[2026-02-04 10:48:58,124][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.46, EMA: 57.04
+[2026-02-04 10:48:58,124][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.46, EMA: 65.35
+
+[2026-02-04 10:48:59,806][    INFO] ===========> Epoch: 24, Previous best: 65.46 @epoch-23, EMA: 65.46 @epoch-17
+[2026-02-04 10:49:00,052][    INFO] Iters: 0, LR: 0.0000039, Total loss: 0.071, Loss x: 0.142, Loss s: 0.001, Mask ratio: 1.000
+[2026-02-04 10:49:01,129][    INFO] Iters: 18, LR: 0.0000039, Total loss: 0.066, Loss x: 0.091, Loss s: 0.040, Mask ratio: 0.913
+[2026-02-04 10:49:02,207][    INFO] Iters: 36, LR: 0.0000039, Total loss: 0.064, Loss x: 0.097, Loss s: 0.032, Mask ratio: 0.923
+[2026-02-04 10:49:03,281][    INFO] Iters: 54, LR: 0.0000039, Total loss: 0.066, Loss x: 0.099, Loss s: 0.033, Mask ratio: 0.921
+[2026-02-04 10:49:04,357][    INFO] Iters: 72, LR: 0.0000039, Total loss: 0.072, Loss x: 0.099, Loss s: 0.044, Mask ratio: 0.911
+[2026-02-04 10:49:05,439][    INFO] Iters: 90, LR: 0.0000039, Total loss: 0.071, Loss x: 0.099, Loss s: 0.043, Mask ratio: 0.913
+[2026-02-04 10:49:06,517][    INFO] Iters: 108, LR: 0.0000039, Total loss: 0.073, Loss x: 0.100, Loss s: 0.046, Mask ratio: 0.911
+[2026-02-04 10:49:07,600][    INFO] Iters: 126, LR: 0.0000039, Total loss: 0.072, Loss x: 0.100, Loss s: 0.043, Mask ratio: 0.913
+[2026-02-04 10:49:08,668][    INFO] Iters: 144, LR: 0.0000039, Total loss: 0.073, Loss x: 0.103, Loss s: 0.043, Mask ratio: 0.911
+[2026-02-04 10:49:09,281][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.60, EMA: 86.57
+[2026-02-04 10:49:09,281][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.24, EMA: 35.50
+[2026-02-04 10:49:09,282][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.07, EMA: 83.91
+[2026-02-04 10:49:09,282][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.22, EMA: 56.82
+[2026-02-04 10:49:09,282][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.28, EMA: 65.70
+
+[2026-02-04 10:49:10,292][    INFO] ===========> Epoch: 25, Previous best: 65.46 @epoch-23, EMA: 65.70 @epoch-24
+[2026-02-04 10:49:10,548][    INFO] Iters: 0, LR: 0.0000039, Total loss: 0.035, Loss x: 0.062, Loss s: 0.008, Mask ratio: 0.990
+[2026-02-04 10:49:11,619][    INFO] Iters: 18, LR: 0.0000039, Total loss: 0.073, Loss x: 0.101, Loss s: 0.044, Mask ratio: 0.937
+[2026-02-04 10:49:12,688][    INFO] Iters: 36, LR: 0.0000038, Total loss: 0.074, Loss x: 0.105, Loss s: 0.044, Mask ratio: 0.920
+[2026-02-04 10:49:13,767][    INFO] Iters: 54, LR: 0.0000038, Total loss: 0.077, Loss x: 0.106, Loss s: 0.048, Mask ratio: 0.916
+[2026-02-04 10:49:14,839][    INFO] Iters: 72, LR: 0.0000038, Total loss: 0.078, Loss x: 0.105, Loss s: 0.051, Mask ratio: 0.910
+[2026-02-04 10:49:15,921][    INFO] Iters: 90, LR: 0.0000038, Total loss: 0.079, Loss x: 0.104, Loss s: 0.053, Mask ratio: 0.913
+[2026-02-04 10:49:16,992][    INFO] Iters: 108, LR: 0.0000038, Total loss: 0.079, Loss x: 0.103, Loss s: 0.056, Mask ratio: 0.906
+[2026-02-04 10:49:18,068][    INFO] Iters: 126, LR: 0.0000038, Total loss: 0.078, Loss x: 0.104, Loss s: 0.053, Mask ratio: 0.910
+[2026-02-04 10:49:19,130][    INFO] Iters: 144, LR: 0.0000038, Total loss: 0.081, Loss x: 0.104, Loss s: 0.059, Mask ratio: 0.903
+[2026-02-04 10:49:19,755][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.04, EMA: 86.61
+[2026-02-04 10:49:19,755][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.46, EMA: 35.81
+[2026-02-04 10:49:19,756][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.74, EMA: 83.97
+[2026-02-04 10:49:19,756][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.15, EMA: 57.03
+[2026-02-04 10:49:19,756][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.85, EMA: 65.86
+
+[2026-02-04 10:49:21,418][    INFO] ===========> Epoch: 26, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:49:21,675][    INFO] Iters: 0, LR: 0.0000038, Total loss: 0.176, Loss x: 0.122, Loss s: 0.230, Mask ratio: 0.724
+[2026-02-04 10:49:22,746][    INFO] Iters: 18, LR: 0.0000038, Total loss: 0.085, Loss x: 0.110, Loss s: 0.059, Mask ratio: 0.856
+[2026-02-04 10:49:23,823][    INFO] Iters: 36, LR: 0.0000038, Total loss: 0.073, Loss x: 0.101, Loss s: 0.044, Mask ratio: 0.902
+[2026-02-04 10:49:24,905][    INFO] Iters: 54, LR: 0.0000038, Total loss: 0.072, Loss x: 0.099, Loss s: 0.044, Mask ratio: 0.908
+[2026-02-04 10:49:26,000][    INFO] Iters: 72, LR: 0.0000038, Total loss: 0.069, Loss x: 0.097, Loss s: 0.041, Mask ratio: 0.911
+[2026-02-04 10:49:27,085][    INFO] Iters: 90, LR: 0.0000038, Total loss: 0.070, Loss x: 0.098, Loss s: 0.043, Mask ratio: 0.910
+[2026-02-04 10:49:28,161][    INFO] Iters: 108, LR: 0.0000038, Total loss: 0.069, Loss x: 0.096, Loss s: 0.042, Mask ratio: 0.915
+[2026-02-04 10:49:29,239][    INFO] Iters: 126, LR: 0.0000038, Total loss: 0.071, Loss x: 0.099, Loss s: 0.042, Mask ratio: 0.914
+[2026-02-04 10:49:30,298][    INFO] Iters: 144, LR: 0.0000038, Total loss: 0.072, Loss x: 0.100, Loss s: 0.044, Mask ratio: 0.914
+[2026-02-04 10:49:30,916][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.05, EMA: 86.37
+[2026-02-04 10:49:30,916][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.89, EMA: 35.60
+[2026-02-04 10:49:30,917][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.78, EMA: 84.15
+[2026-02-04 10:49:30,917][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.12, EMA: 56.67
+[2026-02-04 10:49:30,917][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.96, EMA: 65.70
+
+[2026-02-04 10:49:31,768][    INFO] ===========> Epoch: 27, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:49:32,027][    INFO] Iters: 0, LR: 0.0000038, Total loss: 0.033, Loss x: 0.065, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:49:33,109][    INFO] Iters: 18, LR: 0.0000038, Total loss: 0.094, Loss x: 0.115, Loss s: 0.073, Mask ratio: 0.910
+[2026-02-04 10:49:34,189][    INFO] Iters: 36, LR: 0.0000038, Total loss: 0.076, Loss x: 0.102, Loss s: 0.051, Mask ratio: 0.923
+[2026-02-04 10:49:35,272][    INFO] Iters: 54, LR: 0.0000037, Total loss: 0.068, Loss x: 0.099, Loss s: 0.037, Mask ratio: 0.931
+[2026-02-04 10:49:36,361][    INFO] Iters: 72, LR: 0.0000037, Total loss: 0.068, Loss x: 0.099, Loss s: 0.038, Mask ratio: 0.931
+[2026-02-04 10:49:37,443][    INFO] Iters: 90, LR: 0.0000037, Total loss: 0.069, Loss x: 0.099, Loss s: 0.039, Mask ratio: 0.924
+[2026-02-04 10:49:38,524][    INFO] Iters: 108, LR: 0.0000037, Total loss: 0.072, Loss x: 0.099, Loss s: 0.045, Mask ratio: 0.920
+[2026-02-04 10:49:39,601][    INFO] Iters: 126, LR: 0.0000037, Total loss: 0.073, Loss x: 0.099, Loss s: 0.046, Mask ratio: 0.921
+[2026-02-04 10:49:40,654][    INFO] Iters: 144, LR: 0.0000037, Total loss: 0.073, Loss x: 0.099, Loss s: 0.046, Mask ratio: 0.920
+[2026-02-04 10:49:41,296][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.13, EMA: 86.33
+[2026-02-04 10:49:41,296][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.70, EMA: 35.14
+[2026-02-04 10:49:41,296][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.16, EMA: 84.03
+[2026-02-04 10:49:41,296][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.63, EMA: 56.26
+[2026-02-04 10:49:41,297][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.41, EMA: 65.44
+
+[2026-02-04 10:49:42,154][    INFO] ===========> Epoch: 28, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:49:42,414][    INFO] Iters: 0, LR: 0.0000037, Total loss: 0.059, Loss x: 0.095, Loss s: 0.022, Mask ratio: 0.937
+[2026-02-04 10:49:43,474][    INFO] Iters: 18, LR: 0.0000037, Total loss: 0.067, Loss x: 0.106, Loss s: 0.028, Mask ratio: 0.925
+[2026-02-04 10:49:44,544][    INFO] Iters: 36, LR: 0.0000037, Total loss: 0.071, Loss x: 0.102, Loss s: 0.040, Mask ratio: 0.910
+[2026-02-04 10:49:45,618][    INFO] Iters: 54, LR: 0.0000037, Total loss: 0.071, Loss x: 0.098, Loss s: 0.044, Mask ratio: 0.923
+[2026-02-04 10:49:46,704][    INFO] Iters: 72, LR: 0.0000037, Total loss: 0.068, Loss x: 0.096, Loss s: 0.040, Mask ratio: 0.929
+[2026-02-04 10:49:47,840][    INFO] Iters: 90, LR: 0.0000037, Total loss: 0.066, Loss x: 0.097, Loss s: 0.034, Mask ratio: 0.934
+[2026-02-04 10:49:48,905][    INFO] Iters: 108, LR: 0.0000037, Total loss: 0.065, Loss x: 0.097, Loss s: 0.033, Mask ratio: 0.937
+[2026-02-04 10:49:49,981][    INFO] Iters: 126, LR: 0.0000037, Total loss: 0.065, Loss x: 0.095, Loss s: 0.034, Mask ratio: 0.928
+[2026-02-04 10:49:51,040][    INFO] Iters: 144, LR: 0.0000037, Total loss: 0.066, Loss x: 0.096, Loss s: 0.035, Mask ratio: 0.928
+[2026-02-04 10:49:51,671][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 84.05, EMA: 86.39
+[2026-02-04 10:49:51,672][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.94, EMA: 33.20
+[2026-02-04 10:49:51,672][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.87, EMA: 83.58
+[2026-02-04 10:49:51,672][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 53.96, EMA: 56.02
+[2026-02-04 10:49:51,672][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.71, EMA: 64.80
+
+[2026-02-04 10:49:52,538][    INFO] ===========> Epoch: 29, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:49:52,790][    INFO] Iters: 0, LR: 0.0000037, Total loss: 0.042, Loss x: 0.082, Loss s: 0.002, Mask ratio: 0.917
+[2026-02-04 10:49:53,871][    INFO] Iters: 18, LR: 0.0000037, Total loss: 0.083, Loss x: 0.111, Loss s: 0.054, Mask ratio: 0.898
+[2026-02-04 10:49:54,950][    INFO] Iters: 36, LR: 0.0000037, Total loss: 0.084, Loss x: 0.104, Loss s: 0.064, Mask ratio: 0.901
+[2026-02-04 10:49:56,035][    INFO] Iters: 54, LR: 0.0000037, Total loss: 0.086, Loss x: 0.109, Loss s: 0.064, Mask ratio: 0.904
+[2026-02-04 10:49:57,110][    INFO] Iters: 72, LR: 0.0000037, Total loss: 0.084, Loss x: 0.106, Loss s: 0.063, Mask ratio: 0.904
+[2026-02-04 10:49:58,186][    INFO] Iters: 90, LR: 0.0000036, Total loss: 0.085, Loss x: 0.101, Loss s: 0.069, Mask ratio: 0.906
+[2026-02-04 10:49:59,257][    INFO] Iters: 108, LR: 0.0000036, Total loss: 0.081, Loss x: 0.101, Loss s: 0.060, Mask ratio: 0.915
+[2026-02-04 10:50:00,335][    INFO] Iters: 126, LR: 0.0000036, Total loss: 0.078, Loss x: 0.100, Loss s: 0.055, Mask ratio: 0.917
+[2026-02-04 10:50:01,401][    INFO] Iters: 144, LR: 0.0000036, Total loss: 0.075, Loss x: 0.099, Loss s: 0.051, Mask ratio: 0.915
+[2026-02-04 10:50:02,023][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.56, EMA: 86.26
+[2026-02-04 10:50:02,023][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 31.75, EMA: 33.56
+[2026-02-04 10:50:02,023][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 80.80, EMA: 83.30
+[2026-02-04 10:50:02,023][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.30, EMA: 56.20
+[2026-02-04 10:50:02,024][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.86, EMA: 64.83
+
+[2026-02-04 10:50:02,883][    INFO] ===========> Epoch: 30, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:03,135][    INFO] Iters: 0, LR: 0.0000036, Total loss: 0.084, Loss x: 0.121, Loss s: 0.046, Mask ratio: 0.915
+[2026-02-04 10:50:04,213][    INFO] Iters: 18, LR: 0.0000036, Total loss: 0.081, Loss x: 0.093, Loss s: 0.068, Mask ratio: 0.888
+[2026-02-04 10:50:05,289][    INFO] Iters: 36, LR: 0.0000036, Total loss: 0.076, Loss x: 0.087, Loss s: 0.065, Mask ratio: 0.899
+[2026-02-04 10:50:06,371][    INFO] Iters: 54, LR: 0.0000036, Total loss: 0.075, Loss x: 0.089, Loss s: 0.060, Mask ratio: 0.898
+[2026-02-04 10:50:07,452][    INFO] Iters: 72, LR: 0.0000036, Total loss: 0.070, Loss x: 0.086, Loss s: 0.053, Mask ratio: 0.908
+[2026-02-04 10:50:08,533][    INFO] Iters: 90, LR: 0.0000036, Total loss: 0.073, Loss x: 0.088, Loss s: 0.057, Mask ratio: 0.911
+[2026-02-04 10:50:09,608][    INFO] Iters: 108, LR: 0.0000036, Total loss: 0.072, Loss x: 0.089, Loss s: 0.055, Mask ratio: 0.906
+[2026-02-04 10:50:10,682][    INFO] Iters: 126, LR: 0.0000036, Total loss: 0.071, Loss x: 0.089, Loss s: 0.053, Mask ratio: 0.911
+[2026-02-04 10:50:11,748][    INFO] Iters: 144, LR: 0.0000036, Total loss: 0.072, Loss x: 0.089, Loss s: 0.056, Mask ratio: 0.909
+[2026-02-04 10:50:12,372][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.07, EMA: 86.12
+[2026-02-04 10:50:12,373][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 35.19, EMA: 34.98
+[2026-02-04 10:50:12,373][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.43, EMA: 83.11
+[2026-02-04 10:50:12,373][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.14, EMA: 56.21
+[2026-02-04 10:50:12,373][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.96, EMA: 65.11
+
+[2026-02-04 10:50:13,241][    INFO] ===========> Epoch: 31, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:13,495][    INFO] Iters: 0, LR: 0.0000036, Total loss: 0.016, Loss x: 0.031, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:50:14,579][    INFO] Iters: 18, LR: 0.0000036, Total loss: 0.066, Loss x: 0.105, Loss s: 0.028, Mask ratio: 0.925
+[2026-02-04 10:50:15,666][    INFO] Iters: 36, LR: 0.0000036, Total loss: 0.068, Loss x: 0.107, Loss s: 0.028, Mask ratio: 0.936
+[2026-02-04 10:50:16,743][    INFO] Iters: 54, LR: 0.0000036, Total loss: 0.066, Loss x: 0.102, Loss s: 0.031, Mask ratio: 0.929
+[2026-02-04 10:50:17,832][    INFO] Iters: 72, LR: 0.0000036, Total loss: 0.067, Loss x: 0.097, Loss s: 0.036, Mask ratio: 0.923
+[2026-02-04 10:50:18,907][    INFO] Iters: 90, LR: 0.0000036, Total loss: 0.065, Loss x: 0.094, Loss s: 0.036, Mask ratio: 0.921
+[2026-02-04 10:50:19,989][    INFO] Iters: 108, LR: 0.0000035, Total loss: 0.064, Loss x: 0.093, Loss s: 0.034, Mask ratio: 0.927
+[2026-02-04 10:50:21,079][    INFO] Iters: 126, LR: 0.0000035, Total loss: 0.063, Loss x: 0.092, Loss s: 0.035, Mask ratio: 0.922
+[2026-02-04 10:50:22,160][    INFO] Iters: 144, LR: 0.0000035, Total loss: 0.066, Loss x: 0.095, Loss s: 0.038, Mask ratio: 0.922
+[2026-02-04 10:50:22,862][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.86, EMA: 86.32
+[2026-02-04 10:50:22,863][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.77, EMA: 35.89
+[2026-02-04 10:50:22,863][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.48, EMA: 83.02
+[2026-02-04 10:50:22,863][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.33, EMA: 56.54
+[2026-02-04 10:50:22,863][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.86, EMA: 65.44
+
+[2026-02-04 10:50:23,724][    INFO] ===========> Epoch: 32, Previous best: 65.85 @epoch-25, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:23,978][    INFO] Iters: 0, LR: 0.0000035, Total loss: 0.053, Loss x: 0.104, Loss s: 0.002, Mask ratio: 1.000
+[2026-02-04 10:50:25,047][    INFO] Iters: 18, LR: 0.0000035, Total loss: 0.050, Loss x: 0.083, Loss s: 0.018, Mask ratio: 0.935
+[2026-02-04 10:50:26,114][    INFO] Iters: 36, LR: 0.0000035, Total loss: 0.064, Loss x: 0.099, Loss s: 0.029, Mask ratio: 0.918
+[2026-02-04 10:50:27,176][    INFO] Iters: 54, LR: 0.0000035, Total loss: 0.070, Loss x: 0.093, Loss s: 0.046, Mask ratio: 0.912
+[2026-02-04 10:50:28,251][    INFO] Iters: 72, LR: 0.0000035, Total loss: 0.068, Loss x: 0.094, Loss s: 0.042, Mask ratio: 0.913
+[2026-02-04 10:50:29,321][    INFO] Iters: 90, LR: 0.0000035, Total loss: 0.066, Loss x: 0.092, Loss s: 0.040, Mask ratio: 0.917
+[2026-02-04 10:50:30,391][    INFO] Iters: 108, LR: 0.0000035, Total loss: 0.066, Loss x: 0.093, Loss s: 0.039, Mask ratio: 0.917
+[2026-02-04 10:50:31,466][    INFO] Iters: 126, LR: 0.0000035, Total loss: 0.068, Loss x: 0.094, Loss s: 0.042, Mask ratio: 0.913
+[2026-02-04 10:50:32,537][    INFO] Iters: 144, LR: 0.0000035, Total loss: 0.067, Loss x: 0.092, Loss s: 0.042, Mask ratio: 0.911
+[2026-02-04 10:50:33,168][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.28, EMA: 86.47
+[2026-02-04 10:50:33,169][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.65, EMA: 36.20
+[2026-02-04 10:50:33,169][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.95, EMA: 83.45
+[2026-02-04 10:50:33,170][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.62, EMA: 56.72
+[2026-02-04 10:50:33,170][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.88, EMA: 65.71
+
+[2026-02-04 10:50:34,872][    INFO] ===========> Epoch: 33, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:35,125][    INFO] Iters: 0, LR: 0.0000035, Total loss: 0.041, Loss x: 0.038, Loss s: 0.043, Mask ratio: 0.799
+[2026-02-04 10:50:36,211][    INFO] Iters: 18, LR: 0.0000035, Total loss: 0.061, Loss x: 0.089, Loss s: 0.032, Mask ratio: 0.910
+[2026-02-04 10:50:37,289][    INFO] Iters: 36, LR: 0.0000035, Total loss: 0.060, Loss x: 0.091, Loss s: 0.029, Mask ratio: 0.913
+[2026-02-04 10:50:38,360][    INFO] Iters: 54, LR: 0.0000035, Total loss: 0.059, Loss x: 0.090, Loss s: 0.029, Mask ratio: 0.920
+[2026-02-04 10:50:39,429][    INFO] Iters: 72, LR: 0.0000035, Total loss: 0.059, Loss x: 0.089, Loss s: 0.030, Mask ratio: 0.925
+[2026-02-04 10:50:40,509][    INFO] Iters: 90, LR: 0.0000035, Total loss: 0.062, Loss x: 0.090, Loss s: 0.033, Mask ratio: 0.918
+[2026-02-04 10:50:41,587][    INFO] Iters: 108, LR: 0.0000035, Total loss: 0.063, Loss x: 0.090, Loss s: 0.035, Mask ratio: 0.920
+[2026-02-04 10:50:42,661][    INFO] Iters: 126, LR: 0.0000034, Total loss: 0.065, Loss x: 0.093, Loss s: 0.037, Mask ratio: 0.917
+[2026-02-04 10:50:43,715][    INFO] Iters: 144, LR: 0.0000034, Total loss: 0.065, Loss x: 0.094, Loss s: 0.037, Mask ratio: 0.921
+[2026-02-04 10:50:44,348][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.59, EMA: 86.43
+[2026-02-04 10:50:44,348][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.71, EMA: 35.43
+[2026-02-04 10:50:44,348][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.04, EMA: 83.41
+[2026-02-04 10:50:44,348][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 55.66, EMA: 56.80
+[2026-02-04 10:50:44,349][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.50, EMA: 65.52
+
+[2026-02-04 10:50:45,241][    INFO] ===========> Epoch: 34, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:45,490][    INFO] Iters: 0, LR: 0.0000034, Total loss: 0.046, Loss x: 0.063, Loss s: 0.028, Mask ratio: 0.886
+[2026-02-04 10:50:46,563][    INFO] Iters: 18, LR: 0.0000034, Total loss: 0.064, Loss x: 0.077, Loss s: 0.050, Mask ratio: 0.905
+[2026-02-04 10:50:47,634][    INFO] Iters: 36, LR: 0.0000034, Total loss: 0.067, Loss x: 0.084, Loss s: 0.051, Mask ratio: 0.915
+[2026-02-04 10:50:48,718][    INFO] Iters: 54, LR: 0.0000034, Total loss: 0.066, Loss x: 0.084, Loss s: 0.047, Mask ratio: 0.925
+[2026-02-04 10:50:49,808][    INFO] Iters: 72, LR: 0.0000034, Total loss: 0.067, Loss x: 0.084, Loss s: 0.050, Mask ratio: 0.914
+[2026-02-04 10:50:50,897][    INFO] Iters: 90, LR: 0.0000034, Total loss: 0.066, Loss x: 0.084, Loss s: 0.048, Mask ratio: 0.916
+[2026-02-04 10:50:51,979][    INFO] Iters: 108, LR: 0.0000034, Total loss: 0.066, Loss x: 0.087, Loss s: 0.045, Mask ratio: 0.918
+[2026-02-04 10:50:53,062][    INFO] Iters: 126, LR: 0.0000034, Total loss: 0.067, Loss x: 0.088, Loss s: 0.047, Mask ratio: 0.917
+[2026-02-04 10:50:54,132][    INFO] Iters: 144, LR: 0.0000034, Total loss: 0.067, Loss x: 0.087, Loss s: 0.047, Mask ratio: 0.920
+[2026-02-04 10:50:54,751][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.66, EMA: 86.44
+[2026-02-04 10:50:54,752][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.07, EMA: 35.05
+[2026-02-04 10:50:54,752][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.06, EMA: 83.39
+[2026-02-04 10:50:54,752][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.18, EMA: 56.80
+[2026-02-04 10:50:54,752][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.24, EMA: 65.42
+
+[2026-02-04 10:50:55,646][    INFO] ===========> Epoch: 35, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:50:55,898][    INFO] Iters: 0, LR: 0.0000034, Total loss: 0.038, Loss x: 0.060, Loss s: 0.015, Mask ratio: 0.859
+[2026-02-04 10:50:56,974][    INFO] Iters: 18, LR: 0.0000034, Total loss: 0.061, Loss x: 0.090, Loss s: 0.031, Mask ratio: 0.943
+[2026-02-04 10:50:58,053][    INFO] Iters: 36, LR: 0.0000034, Total loss: 0.069, Loss x: 0.088, Loss s: 0.050, Mask ratio: 0.930
+[2026-02-04 10:50:59,135][    INFO] Iters: 54, LR: 0.0000034, Total loss: 0.066, Loss x: 0.084, Loss s: 0.047, Mask ratio: 0.919
+[2026-02-04 10:51:00,216][    INFO] Iters: 72, LR: 0.0000034, Total loss: 0.072, Loss x: 0.088, Loss s: 0.056, Mask ratio: 0.911
+[2026-02-04 10:51:01,301][    INFO] Iters: 90, LR: 0.0000034, Total loss: 0.069, Loss x: 0.084, Loss s: 0.054, Mask ratio: 0.913
+[2026-02-04 10:51:02,364][    INFO] Iters: 108, LR: 0.0000034, Total loss: 0.071, Loss x: 0.087, Loss s: 0.054, Mask ratio: 0.911
+[2026-02-04 10:51:03,443][    INFO] Iters: 126, LR: 0.0000034, Total loss: 0.070, Loss x: 0.087, Loss s: 0.054, Mask ratio: 0.911
+[2026-02-04 10:51:04,551][    INFO] Iters: 144, LR: 0.0000033, Total loss: 0.069, Loss x: 0.086, Loss s: 0.052, Mask ratio: 0.910
+[2026-02-04 10:51:05,166][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.65, EMA: 86.45
+[2026-02-04 10:51:05,166][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.21, EMA: 34.04
+[2026-02-04 10:51:05,166][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.13, EMA: 83.51
+[2026-02-04 10:51:05,167][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.34, EMA: 57.00
+[2026-02-04 10:51:05,167][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.33, EMA: 65.25
+
+[2026-02-04 10:51:06,089][    INFO] ===========> Epoch: 36, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:06,357][    INFO] Iters: 0, LR: 0.0000033, Total loss: 0.038, Loss x: 0.077, Loss s: 0.000, Mask ratio: 0.999
+[2026-02-04 10:51:07,440][    INFO] Iters: 18, LR: 0.0000033, Total loss: 0.081, Loss x: 0.106, Loss s: 0.055, Mask ratio: 0.924
+[2026-02-04 10:51:08,549][    INFO] Iters: 36, LR: 0.0000033, Total loss: 0.076, Loss x: 0.103, Loss s: 0.050, Mask ratio: 0.916
+[2026-02-04 10:51:09,631][    INFO] Iters: 54, LR: 0.0000033, Total loss: 0.075, Loss x: 0.096, Loss s: 0.054, Mask ratio: 0.916
+[2026-02-04 10:51:10,752][    INFO] Iters: 72, LR: 0.0000033, Total loss: 0.076, Loss x: 0.095, Loss s: 0.057, Mask ratio: 0.909
+[2026-02-04 10:51:11,854][    INFO] Iters: 90, LR: 0.0000033, Total loss: 0.077, Loss x: 0.093, Loss s: 0.061, Mask ratio: 0.911
+[2026-02-04 10:51:12,963][    INFO] Iters: 108, LR: 0.0000033, Total loss: 0.074, Loss x: 0.091, Loss s: 0.058, Mask ratio: 0.915
+[2026-02-04 10:51:14,067][    INFO] Iters: 126, LR: 0.0000033, Total loss: 0.075, Loss x: 0.090, Loss s: 0.061, Mask ratio: 0.914
+[2026-02-04 10:51:15,145][    INFO] Iters: 144, LR: 0.0000033, Total loss: 0.073, Loss x: 0.091, Loss s: 0.055, Mask ratio: 0.917
+[2026-02-04 10:51:15,804][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.81, EMA: 86.64
+[2026-02-04 10:51:15,805][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.96, EMA: 34.39
+[2026-02-04 10:51:15,805][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.49, EMA: 83.58
+[2026-02-04 10:51:15,805][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.11, EMA: 57.61
+[2026-02-04 10:51:15,805][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.84, EMA: 65.55
+
+[2026-02-04 10:51:16,707][    INFO] ===========> Epoch: 37, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:16,959][    INFO] Iters: 0, LR: 0.0000033, Total loss: 0.048, Loss x: 0.081, Loss s: 0.016, Mask ratio: 0.828
+[2026-02-04 10:51:18,114][    INFO] Iters: 18, LR: 0.0000033, Total loss: 0.058, Loss x: 0.080, Loss s: 0.036, Mask ratio: 0.931
+[2026-02-04 10:51:19,208][    INFO] Iters: 36, LR: 0.0000033, Total loss: 0.066, Loss x: 0.091, Loss s: 0.040, Mask ratio: 0.918
+[2026-02-04 10:51:20,288][    INFO] Iters: 54, LR: 0.0000033, Total loss: 0.068, Loss x: 0.090, Loss s: 0.046, Mask ratio: 0.924
+[2026-02-04 10:51:21,389][    INFO] Iters: 72, LR: 0.0000033, Total loss: 0.064, Loss x: 0.090, Loss s: 0.039, Mask ratio: 0.929
+[2026-02-04 10:51:22,477][    INFO] Iters: 90, LR: 0.0000033, Total loss: 0.064, Loss x: 0.089, Loss s: 0.039, Mask ratio: 0.932
+[2026-02-04 10:51:23,547][    INFO] Iters: 108, LR: 0.0000033, Total loss: 0.065, Loss x: 0.088, Loss s: 0.042, Mask ratio: 0.930
+[2026-02-04 10:51:24,624][    INFO] Iters: 126, LR: 0.0000033, Total loss: 0.065, Loss x: 0.089, Loss s: 0.042, Mask ratio: 0.930
+[2026-02-04 10:51:25,694][    INFO] Iters: 144, LR: 0.0000033, Total loss: 0.065, Loss x: 0.089, Loss s: 0.042, Mask ratio: 0.930
+[2026-02-04 10:51:26,316][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.52, EMA: 86.57
+[2026-02-04 10:51:26,317][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 35.77, EMA: 34.55
+[2026-02-04 10:51:26,317][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.10, EMA: 83.60
+[2026-02-04 10:51:26,317][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.38, EMA: 57.50
+[2026-02-04 10:51:26,317][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.19, EMA: 65.55
+
+[2026-02-04 10:51:27,176][    INFO] ===========> Epoch: 38, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:27,437][    INFO] Iters: 0, LR: 0.0000033, Total loss: 0.106, Loss x: 0.117, Loss s: 0.095, Mask ratio: 0.834
+[2026-02-04 10:51:28,518][    INFO] Iters: 18, LR: 0.0000032, Total loss: 0.083, Loss x: 0.093, Loss s: 0.072, Mask ratio: 0.923
+[2026-02-04 10:51:29,612][    INFO] Iters: 36, LR: 0.0000032, Total loss: 0.080, Loss x: 0.088, Loss s: 0.072, Mask ratio: 0.911
+[2026-02-04 10:51:30,700][    INFO] Iters: 54, LR: 0.0000032, Total loss: 0.071, Loss x: 0.084, Loss s: 0.058, Mask ratio: 0.917
+[2026-02-04 10:51:31,779][    INFO] Iters: 72, LR: 0.0000032, Total loss: 0.066, Loss x: 0.081, Loss s: 0.051, Mask ratio: 0.919
+[2026-02-04 10:51:32,860][    INFO] Iters: 90, LR: 0.0000032, Total loss: 0.067, Loss x: 0.083, Loss s: 0.051, Mask ratio: 0.915
+[2026-02-04 10:51:33,934][    INFO] Iters: 108, LR: 0.0000032, Total loss: 0.067, Loss x: 0.083, Loss s: 0.050, Mask ratio: 0.916
+[2026-02-04 10:51:35,004][    INFO] Iters: 126, LR: 0.0000032, Total loss: 0.068, Loss x: 0.084, Loss s: 0.052, Mask ratio: 0.920
+[2026-02-04 10:51:36,068][    INFO] Iters: 144, LR: 0.0000032, Total loss: 0.067, Loss x: 0.082, Loss s: 0.051, Mask ratio: 0.919
+[2026-02-04 10:51:36,693][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.80, EMA: 86.51
+[2026-02-04 10:51:36,694][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.78, EMA: 34.40
+[2026-02-04 10:51:36,694][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.90, EMA: 83.67
+[2026-02-04 10:51:36,694][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.15, EMA: 57.63
+[2026-02-04 10:51:36,694][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.41, EMA: 65.55
+
+[2026-02-04 10:51:37,576][    INFO] ===========> Epoch: 39, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:37,823][    INFO] Iters: 0, LR: 0.0000032, Total loss: 0.071, Loss x: 0.101, Loss s: 0.041, Mask ratio: 0.928
+[2026-02-04 10:51:38,895][    INFO] Iters: 18, LR: 0.0000032, Total loss: 0.067, Loss x: 0.073, Loss s: 0.061, Mask ratio: 0.891
+[2026-02-04 10:51:39,969][    INFO] Iters: 36, LR: 0.0000032, Total loss: 0.063, Loss x: 0.080, Loss s: 0.047, Mask ratio: 0.911
+[2026-02-04 10:51:41,046][    INFO] Iters: 54, LR: 0.0000032, Total loss: 0.061, Loss x: 0.077, Loss s: 0.045, Mask ratio: 0.913
+[2026-02-04 10:51:42,117][    INFO] Iters: 72, LR: 0.0000032, Total loss: 0.065, Loss x: 0.077, Loss s: 0.053, Mask ratio: 0.908
+[2026-02-04 10:51:43,195][    INFO] Iters: 90, LR: 0.0000032, Total loss: 0.064, Loss x: 0.077, Loss s: 0.051, Mask ratio: 0.911
+[2026-02-04 10:51:44,274][    INFO] Iters: 108, LR: 0.0000032, Total loss: 0.063, Loss x: 0.077, Loss s: 0.048, Mask ratio: 0.909
+[2026-02-04 10:51:45,350][    INFO] Iters: 126, LR: 0.0000032, Total loss: 0.063, Loss x: 0.077, Loss s: 0.049, Mask ratio: 0.907
+[2026-02-04 10:51:46,414][    INFO] Iters: 144, LR: 0.0000032, Total loss: 0.062, Loss x: 0.076, Loss s: 0.047, Mask ratio: 0.909
+[2026-02-04 10:51:47,031][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.67, EMA: 86.47
+[2026-02-04 10:51:47,031][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.46, EMA: 34.26
+[2026-02-04 10:51:47,031][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.79, EMA: 83.82
+[2026-02-04 10:51:47,031][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.95, EMA: 57.94
+[2026-02-04 10:51:47,032][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.47, EMA: 65.62
+
+[2026-02-04 10:51:47,896][    INFO] ===========> Epoch: 40, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:48,155][    INFO] Iters: 0, LR: 0.0000032, Total loss: 0.053, Loss x: 0.089, Loss s: 0.016, Mask ratio: 0.906
+[2026-02-04 10:51:49,231][    INFO] Iters: 18, LR: 0.0000032, Total loss: 0.059, Loss x: 0.082, Loss s: 0.037, Mask ratio: 0.945
+[2026-02-04 10:51:50,313][    INFO] Iters: 36, LR: 0.0000031, Total loss: 0.059, Loss x: 0.084, Loss s: 0.035, Mask ratio: 0.937
+[2026-02-04 10:51:51,390][    INFO] Iters: 54, LR: 0.0000031, Total loss: 0.064, Loss x: 0.084, Loss s: 0.043, Mask ratio: 0.931
+[2026-02-04 10:51:52,457][    INFO] Iters: 72, LR: 0.0000031, Total loss: 0.065, Loss x: 0.082, Loss s: 0.047, Mask ratio: 0.924
+[2026-02-04 10:51:53,525][    INFO] Iters: 90, LR: 0.0000031, Total loss: 0.065, Loss x: 0.084, Loss s: 0.045, Mask ratio: 0.922
+[2026-02-04 10:51:54,609][    INFO] Iters: 108, LR: 0.0000031, Total loss: 0.065, Loss x: 0.082, Loss s: 0.047, Mask ratio: 0.921
+[2026-02-04 10:51:55,688][    INFO] Iters: 126, LR: 0.0000031, Total loss: 0.065, Loss x: 0.081, Loss s: 0.049, Mask ratio: 0.918
+[2026-02-04 10:51:56,749][    INFO] Iters: 144, LR: 0.0000031, Total loss: 0.063, Loss x: 0.081, Loss s: 0.046, Mask ratio: 0.917
+[2026-02-04 10:51:57,375][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.70, EMA: 86.35
+[2026-02-04 10:51:57,375][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.29, EMA: 33.80
+[2026-02-04 10:51:57,376][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.07, EMA: 83.83
+[2026-02-04 10:51:57,376][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.54, EMA: 57.63
+[2026-02-04 10:51:57,376][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.40, EMA: 65.40
+
+[2026-02-04 10:51:58,250][    INFO] ===========> Epoch: 41, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:51:58,496][    INFO] Iters: 0, LR: 0.0000031, Total loss: 0.041, Loss x: 0.083, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:51:59,560][    INFO] Iters: 18, LR: 0.0000031, Total loss: 0.060, Loss x: 0.079, Loss s: 0.040, Mask ratio: 0.920
+[2026-02-04 10:52:00,625][    INFO] Iters: 36, LR: 0.0000031, Total loss: 0.061, Loss x: 0.083, Loss s: 0.039, Mask ratio: 0.922
+[2026-02-04 10:52:01,705][    INFO] Iters: 54, LR: 0.0000031, Total loss: 0.057, Loss x: 0.083, Loss s: 0.032, Mask ratio: 0.932
+[2026-02-04 10:52:02,792][    INFO] Iters: 72, LR: 0.0000031, Total loss: 0.060, Loss x: 0.082, Loss s: 0.037, Mask ratio: 0.931
+[2026-02-04 10:52:03,872][    INFO] Iters: 90, LR: 0.0000031, Total loss: 0.062, Loss x: 0.083, Loss s: 0.040, Mask ratio: 0.929
+[2026-02-04 10:52:04,941][    INFO] Iters: 108, LR: 0.0000031, Total loss: 0.064, Loss x: 0.083, Loss s: 0.046, Mask ratio: 0.928
+[2026-02-04 10:52:06,011][    INFO] Iters: 126, LR: 0.0000031, Total loss: 0.063, Loss x: 0.082, Loss s: 0.045, Mask ratio: 0.925
+[2026-02-04 10:52:07,075][    INFO] Iters: 144, LR: 0.0000031, Total loss: 0.063, Loss x: 0.082, Loss s: 0.044, Mask ratio: 0.925
+[2026-02-04 10:52:07,700][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.87, EMA: 86.28
+[2026-02-04 10:52:07,701][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.16, EMA: 34.28
+[2026-02-04 10:52:07,701][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.47, EMA: 83.85
+[2026-02-04 10:52:07,701][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.99, EMA: 57.53
+[2026-02-04 10:52:07,701][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.87, EMA: 65.49
+
+[2026-02-04 10:52:08,568][    INFO] ===========> Epoch: 42, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:52:08,827][    INFO] Iters: 0, LR: 0.0000031, Total loss: 0.049, Loss x: 0.097, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:52:09,894][    INFO] Iters: 18, LR: 0.0000031, Total loss: 0.065, Loss x: 0.093, Loss s: 0.038, Mask ratio: 0.942
+[2026-02-04 10:52:10,962][    INFO] Iters: 36, LR: 0.0000031, Total loss: 0.064, Loss x: 0.082, Loss s: 0.046, Mask ratio: 0.924
+[2026-02-04 10:52:12,030][    INFO] Iters: 54, LR: 0.0000030, Total loss: 0.064, Loss x: 0.082, Loss s: 0.045, Mask ratio: 0.921
+[2026-02-04 10:52:13,097][    INFO] Iters: 72, LR: 0.0000030, Total loss: 0.063, Loss x: 0.081, Loss s: 0.045, Mask ratio: 0.923
+[2026-02-04 10:52:14,172][    INFO] Iters: 90, LR: 0.0000030, Total loss: 0.066, Loss x: 0.083, Loss s: 0.049, Mask ratio: 0.922
+[2026-02-04 10:52:15,235][    INFO] Iters: 108, LR: 0.0000030, Total loss: 0.067, Loss x: 0.083, Loss s: 0.051, Mask ratio: 0.923
+[2026-02-04 10:52:16,299][    INFO] Iters: 126, LR: 0.0000030, Total loss: 0.068, Loss x: 0.084, Loss s: 0.051, Mask ratio: 0.921
+[2026-02-04 10:52:17,359][    INFO] Iters: 144, LR: 0.0000030, Total loss: 0.067, Loss x: 0.085, Loss s: 0.049, Mask ratio: 0.924
+[2026-02-04 10:52:18,061][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.65, EMA: 86.42
+[2026-02-04 10:52:18,061][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.69, EMA: 34.40
+[2026-02-04 10:52:18,061][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.66, EMA: 83.76
+[2026-02-04 10:52:18,061][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.82, EMA: 57.65
+[2026-02-04 10:52:18,061][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.71, EMA: 65.56
+
+[2026-02-04 10:52:18,947][    INFO] ===========> Epoch: 43, Previous best: 65.88 @epoch-32, EMA: 65.86 @epoch-25
+[2026-02-04 10:52:19,193][    INFO] Iters: 0, LR: 0.0000030, Total loss: 0.103, Loss x: 0.144, Loss s: 0.062, Mask ratio: 0.953
+[2026-02-04 10:52:20,275][    INFO] Iters: 18, LR: 0.0000030, Total loss: 0.057, Loss x: 0.072, Loss s: 0.042, Mask ratio: 0.910
+[2026-02-04 10:52:21,355][    INFO] Iters: 36, LR: 0.0000030, Total loss: 0.056, Loss x: 0.070, Loss s: 0.042, Mask ratio: 0.908
+[2026-02-04 10:52:22,440][    INFO] Iters: 54, LR: 0.0000030, Total loss: 0.062, Loss x: 0.071, Loss s: 0.053, Mask ratio: 0.915
+[2026-02-04 10:52:23,519][    INFO] Iters: 72, LR: 0.0000030, Total loss: 0.063, Loss x: 0.073, Loss s: 0.052, Mask ratio: 0.917
+[2026-02-04 10:52:24,599][    INFO] Iters: 90, LR: 0.0000030, Total loss: 0.062, Loss x: 0.074, Loss s: 0.051, Mask ratio: 0.916
+[2026-02-04 10:52:25,675][    INFO] Iters: 108, LR: 0.0000030, Total loss: 0.063, Loss x: 0.073, Loss s: 0.052, Mask ratio: 0.918
+[2026-02-04 10:52:26,752][    INFO] Iters: 126, LR: 0.0000030, Total loss: 0.064, Loss x: 0.074, Loss s: 0.053, Mask ratio: 0.919
+[2026-02-04 10:52:27,821][    INFO] Iters: 144, LR: 0.0000030, Total loss: 0.063, Loss x: 0.074, Loss s: 0.052, Mask ratio: 0.920
+[2026-02-04 10:52:28,440][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.10, EMA: 86.40
+[2026-02-04 10:52:28,440][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 35.25, EMA: 35.29
+[2026-02-04 10:52:28,440][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.62, EMA: 83.68
+[2026-02-04 10:52:28,441][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.25, EMA: 57.73
+[2026-02-04 10:52:28,441][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.05, EMA: 65.77
+
+[2026-02-04 10:52:30,152][    INFO] ===========> Epoch: 44, Previous best: 66.05 @epoch-43, EMA: 65.86 @epoch-25
+[2026-02-04 10:52:30,407][    INFO] Iters: 0, LR: 0.0000030, Total loss: 0.035, Loss x: 0.070, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:52:31,480][    INFO] Iters: 18, LR: 0.0000030, Total loss: 0.061, Loss x: 0.075, Loss s: 0.048, Mask ratio: 0.933
+[2026-02-04 10:52:32,561][    INFO] Iters: 36, LR: 0.0000030, Total loss: 0.050, Loss x: 0.065, Loss s: 0.035, Mask ratio: 0.942
+[2026-02-04 10:52:33,628][    INFO] Iters: 54, LR: 0.0000029, Total loss: 0.059, Loss x: 0.069, Loss s: 0.048, Mask ratio: 0.918
+[2026-02-04 10:52:34,697][    INFO] Iters: 72, LR: 0.0000029, Total loss: 0.061, Loss x: 0.072, Loss s: 0.049, Mask ratio: 0.921
+[2026-02-04 10:52:35,771][    INFO] Iters: 90, LR: 0.0000029, Total loss: 0.063, Loss x: 0.074, Loss s: 0.052, Mask ratio: 0.922
+[2026-02-04 10:52:36,846][    INFO] Iters: 108, LR: 0.0000029, Total loss: 0.063, Loss x: 0.074, Loss s: 0.052, Mask ratio: 0.923
+[2026-02-04 10:52:37,928][    INFO] Iters: 126, LR: 0.0000029, Total loss: 0.062, Loss x: 0.075, Loss s: 0.049, Mask ratio: 0.925
+[2026-02-04 10:52:38,994][    INFO] Iters: 144, LR: 0.0000029, Total loss: 0.062, Loss x: 0.074, Loss s: 0.050, Mask ratio: 0.926
+[2026-02-04 10:52:39,621][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.38, EMA: 86.53
+[2026-02-04 10:52:39,621][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.36, EMA: 35.88
+[2026-02-04 10:52:39,621][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.71, EMA: 83.75
+[2026-02-04 10:52:39,622][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.51, EMA: 57.88
+[2026-02-04 10:52:39,622][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.49, EMA: 66.01
+
+[2026-02-04 10:52:41,353][    INFO] ===========> Epoch: 45, Previous best: 66.49 @epoch-44, EMA: 66.01 @epoch-44
+[2026-02-04 10:52:41,616][    INFO] Iters: 0, LR: 0.0000029, Total loss: 0.081, Loss x: 0.097, Loss s: 0.066, Mask ratio: 0.842
+[2026-02-04 10:52:42,693][    INFO] Iters: 18, LR: 0.0000029, Total loss: 0.058, Loss x: 0.082, Loss s: 0.035, Mask ratio: 0.930
+[2026-02-04 10:52:43,771][    INFO] Iters: 36, LR: 0.0000029, Total loss: 0.071, Loss x: 0.081, Loss s: 0.061, Mask ratio: 0.933
+[2026-02-04 10:52:44,843][    INFO] Iters: 54, LR: 0.0000029, Total loss: 0.068, Loss x: 0.081, Loss s: 0.054, Mask ratio: 0.927
+[2026-02-04 10:52:45,904][    INFO] Iters: 72, LR: 0.0000029, Total loss: 0.066, Loss x: 0.078, Loss s: 0.054, Mask ratio: 0.922
+[2026-02-04 10:52:46,975][    INFO] Iters: 90, LR: 0.0000029, Total loss: 0.065, Loss x: 0.076, Loss s: 0.053, Mask ratio: 0.921
+[2026-02-04 10:52:48,051][    INFO] Iters: 108, LR: 0.0000029, Total loss: 0.065, Loss x: 0.078, Loss s: 0.051, Mask ratio: 0.921
+[2026-02-04 10:52:49,131][    INFO] Iters: 126, LR: 0.0000029, Total loss: 0.062, Loss x: 0.078, Loss s: 0.047, Mask ratio: 0.927
+[2026-02-04 10:52:50,197][    INFO] Iters: 144, LR: 0.0000029, Total loss: 0.065, Loss x: 0.079, Loss s: 0.051, Mask ratio: 0.924
+[2026-02-04 10:52:50,817][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.61, EMA: 86.52
+[2026-02-04 10:52:50,818][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.88, EMA: 35.70
+[2026-02-04 10:52:50,818][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.75, EMA: 83.76
+[2026-02-04 10:52:50,818][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.96, EMA: 57.80
+[2026-02-04 10:52:50,818][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.30, EMA: 65.94
+
+[2026-02-04 10:52:51,687][    INFO] ===========> Epoch: 46, Previous best: 66.49 @epoch-44, EMA: 66.01 @epoch-44
+[2026-02-04 10:52:51,938][    INFO] Iters: 0, LR: 0.0000029, Total loss: 0.068, Loss x: 0.088, Loss s: 0.049, Mask ratio: 0.942
+[2026-02-04 10:52:53,018][    INFO] Iters: 18, LR: 0.0000029, Total loss: 0.060, Loss x: 0.079, Loss s: 0.041, Mask ratio: 0.938
+[2026-02-04 10:52:54,105][    INFO] Iters: 36, LR: 0.0000029, Total loss: 0.064, Loss x: 0.077, Loss s: 0.050, Mask ratio: 0.919
+[2026-02-04 10:52:55,184][    INFO] Iters: 54, LR: 0.0000029, Total loss: 0.061, Loss x: 0.074, Loss s: 0.048, Mask ratio: 0.923
+[2026-02-04 10:52:56,253][    INFO] Iters: 72, LR: 0.0000028, Total loss: 0.063, Loss x: 0.072, Loss s: 0.053, Mask ratio: 0.919
+[2026-02-04 10:52:57,317][    INFO] Iters: 90, LR: 0.0000028, Total loss: 0.063, Loss x: 0.076, Loss s: 0.050, Mask ratio: 0.924
+[2026-02-04 10:52:58,397][    INFO] Iters: 108, LR: 0.0000028, Total loss: 0.063, Loss x: 0.078, Loss s: 0.049, Mask ratio: 0.923
+[2026-02-04 10:52:59,475][    INFO] Iters: 126, LR: 0.0000028, Total loss: 0.063, Loss x: 0.076, Loss s: 0.050, Mask ratio: 0.924
+[2026-02-04 10:53:00,544][    INFO] Iters: 144, LR: 0.0000028, Total loss: 0.061, Loss x: 0.075, Loss s: 0.047, Mask ratio: 0.923
+[2026-02-04 10:53:01,177][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.26, EMA: 86.73
+[2026-02-04 10:53:01,178][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.55, EMA: 35.46
+[2026-02-04 10:53:01,178][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.65, EMA: 83.68
+[2026-02-04 10:53:01,178][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.73, EMA: 58.26
+[2026-02-04 10:53:01,179][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.55, EMA: 66.03
+
+[2026-02-04 10:53:02,903][    INFO] ===========> Epoch: 47, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:03,153][    INFO] Iters: 0, LR: 0.0000028, Total loss: 0.152, Loss x: 0.080, Loss s: 0.224, Mask ratio: 0.898
+[2026-02-04 10:53:04,229][    INFO] Iters: 18, LR: 0.0000028, Total loss: 0.063, Loss x: 0.086, Loss s: 0.039, Mask ratio: 0.950
+[2026-02-04 10:53:05,303][    INFO] Iters: 36, LR: 0.0000028, Total loss: 0.055, Loss x: 0.074, Loss s: 0.037, Mask ratio: 0.937
+[2026-02-04 10:53:06,374][    INFO] Iters: 54, LR: 0.0000028, Total loss: 0.058, Loss x: 0.078, Loss s: 0.038, Mask ratio: 0.928
+[2026-02-04 10:53:07,451][    INFO] Iters: 72, LR: 0.0000028, Total loss: 0.059, Loss x: 0.075, Loss s: 0.043, Mask ratio: 0.924
+[2026-02-04 10:53:08,534][    INFO] Iters: 90, LR: 0.0000028, Total loss: 0.058, Loss x: 0.075, Loss s: 0.040, Mask ratio: 0.927
+[2026-02-04 10:53:09,628][    INFO] Iters: 108, LR: 0.0000028, Total loss: 0.059, Loss x: 0.074, Loss s: 0.044, Mask ratio: 0.924
+[2026-02-04 10:53:10,704][    INFO] Iters: 126, LR: 0.0000028, Total loss: 0.060, Loss x: 0.075, Loss s: 0.044, Mask ratio: 0.926
+[2026-02-04 10:53:11,760][    INFO] Iters: 144, LR: 0.0000028, Total loss: 0.063, Loss x: 0.076, Loss s: 0.049, Mask ratio: 0.921
+[2026-02-04 10:53:12,377][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.45, EMA: 86.83
+[2026-02-04 10:53:12,378][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.75, EMA: 34.68
+[2026-02-04 10:53:12,378][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.40, EMA: 83.38
+[2026-02-04 10:53:12,378][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.89, EMA: 58.57
+[2026-02-04 10:53:12,378][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.62, EMA: 65.86
+
+[2026-02-04 10:53:13,243][    INFO] ===========> Epoch: 48, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:13,492][    INFO] Iters: 0, LR: 0.0000028, Total loss: 0.039, Loss x: 0.049, Loss s: 0.030, Mask ratio: 0.981
+[2026-02-04 10:53:14,572][    INFO] Iters: 18, LR: 0.0000028, Total loss: 0.060, Loss x: 0.073, Loss s: 0.047, Mask ratio: 0.942
+[2026-02-04 10:53:15,636][    INFO] Iters: 36, LR: 0.0000028, Total loss: 0.068, Loss x: 0.075, Loss s: 0.061, Mask ratio: 0.919
+[2026-02-04 10:53:16,700][    INFO] Iters: 54, LR: 0.0000028, Total loss: 0.066, Loss x: 0.074, Loss s: 0.059, Mask ratio: 0.913
+[2026-02-04 10:53:17,773][    INFO] Iters: 72, LR: 0.0000028, Total loss: 0.067, Loss x: 0.073, Loss s: 0.062, Mask ratio: 0.912
+[2026-02-04 10:53:18,849][    INFO] Iters: 90, LR: 0.0000027, Total loss: 0.067, Loss x: 0.074, Loss s: 0.059, Mask ratio: 0.911
+[2026-02-04 10:53:19,922][    INFO] Iters: 108, LR: 0.0000027, Total loss: 0.066, Loss x: 0.073, Loss s: 0.060, Mask ratio: 0.911
+[2026-02-04 10:53:21,003][    INFO] Iters: 126, LR: 0.0000027, Total loss: 0.064, Loss x: 0.073, Loss s: 0.055, Mask ratio: 0.916
+[2026-02-04 10:53:22,075][    INFO] Iters: 144, LR: 0.0000027, Total loss: 0.065, Loss x: 0.073, Loss s: 0.056, Mask ratio: 0.916
+[2026-02-04 10:53:22,699][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.88, EMA: 86.97
+[2026-02-04 10:53:22,699][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.28, EMA: 34.67
+[2026-02-04 10:53:22,699][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.41, EMA: 83.25
+[2026-02-04 10:53:22,699][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.74, EMA: 58.61
+[2026-02-04 10:53:22,699][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.33, EMA: 65.88
+
+[2026-02-04 10:53:23,565][    INFO] ===========> Epoch: 49, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:23,816][    INFO] Iters: 0, LR: 0.0000027, Total loss: 0.058, Loss x: 0.087, Loss s: 0.028, Mask ratio: 0.869
+[2026-02-04 10:53:24,899][    INFO] Iters: 18, LR: 0.0000027, Total loss: 0.053, Loss x: 0.067, Loss s: 0.039, Mask ratio: 0.931
+[2026-02-04 10:53:25,986][    INFO] Iters: 36, LR: 0.0000027, Total loss: 0.059, Loss x: 0.070, Loss s: 0.049, Mask ratio: 0.927
+[2026-02-04 10:53:27,067][    INFO] Iters: 54, LR: 0.0000027, Total loss: 0.063, Loss x: 0.074, Loss s: 0.052, Mask ratio: 0.928
+[2026-02-04 10:53:28,152][    INFO] Iters: 72, LR: 0.0000027, Total loss: 0.068, Loss x: 0.076, Loss s: 0.059, Mask ratio: 0.917
+[2026-02-04 10:53:29,236][    INFO] Iters: 90, LR: 0.0000027, Total loss: 0.065, Loss x: 0.075, Loss s: 0.055, Mask ratio: 0.922
+[2026-02-04 10:53:30,314][    INFO] Iters: 108, LR: 0.0000027, Total loss: 0.065, Loss x: 0.074, Loss s: 0.055, Mask ratio: 0.922
+[2026-02-04 10:53:31,404][    INFO] Iters: 126, LR: 0.0000027, Total loss: 0.063, Loss x: 0.074, Loss s: 0.051, Mask ratio: 0.926
+[2026-02-04 10:53:32,478][    INFO] Iters: 144, LR: 0.0000027, Total loss: 0.062, Loss x: 0.074, Loss s: 0.049, Mask ratio: 0.926
+[2026-02-04 10:53:33,102][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.55, EMA: 86.84
+[2026-02-04 10:53:33,102][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.17, EMA: 35.42
+[2026-02-04 10:53:33,103][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.98, EMA: 83.44
+[2026-02-04 10:53:33,103][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.59, EMA: 58.37
+[2026-02-04 10:53:33,103][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.07, EMA: 66.02
+
+[2026-02-04 10:53:34,001][    INFO] ===========> Epoch: 50, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:34,253][    INFO] Iters: 0, LR: 0.0000027, Total loss: 0.046, Loss x: 0.090, Loss s: 0.002, Mask ratio: 0.978
+[2026-02-04 10:53:35,321][    INFO] Iters: 18, LR: 0.0000027, Total loss: 0.067, Loss x: 0.076, Loss s: 0.058, Mask ratio: 0.924
+[2026-02-04 10:53:36,394][    INFO] Iters: 36, LR: 0.0000027, Total loss: 0.063, Loss x: 0.078, Loss s: 0.049, Mask ratio: 0.934
+[2026-02-04 10:53:37,471][    INFO] Iters: 54, LR: 0.0000027, Total loss: 0.059, Loss x: 0.077, Loss s: 0.042, Mask ratio: 0.939
+[2026-02-04 10:53:38,549][    INFO] Iters: 72, LR: 0.0000027, Total loss: 0.061, Loss x: 0.076, Loss s: 0.047, Mask ratio: 0.941
+[2026-02-04 10:53:39,628][    INFO] Iters: 90, LR: 0.0000027, Total loss: 0.061, Loss x: 0.076, Loss s: 0.045, Mask ratio: 0.934
+[2026-02-04 10:53:40,715][    INFO] Iters: 108, LR: 0.0000026, Total loss: 0.062, Loss x: 0.077, Loss s: 0.048, Mask ratio: 0.932
+[2026-02-04 10:53:41,789][    INFO] Iters: 126, LR: 0.0000026, Total loss: 0.063, Loss x: 0.077, Loss s: 0.049, Mask ratio: 0.933
+[2026-02-04 10:53:42,853][    INFO] Iters: 144, LR: 0.0000026, Total loss: 0.063, Loss x: 0.075, Loss s: 0.051, Mask ratio: 0.931
+[2026-02-04 10:53:43,467][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.45, EMA: 86.85
+[2026-02-04 10:53:43,467][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.62, EMA: 35.30
+[2026-02-04 10:53:43,468][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.73, EMA: 83.53
+[2026-02-04 10:53:43,468][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.39, EMA: 58.26
+[2026-02-04 10:53:43,468][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.55, EMA: 65.99
+
+[2026-02-04 10:53:44,330][    INFO] ===========> Epoch: 51, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:44,577][    INFO] Iters: 0, LR: 0.0000026, Total loss: 0.051, Loss x: 0.053, Loss s: 0.048, Mask ratio: 0.890
+[2026-02-04 10:53:45,660][    INFO] Iters: 18, LR: 0.0000026, Total loss: 0.064, Loss x: 0.070, Loss s: 0.058, Mask ratio: 0.930
+[2026-02-04 10:53:46,740][    INFO] Iters: 36, LR: 0.0000026, Total loss: 0.064, Loss x: 0.071, Loss s: 0.058, Mask ratio: 0.924
+[2026-02-04 10:53:47,815][    INFO] Iters: 54, LR: 0.0000026, Total loss: 0.063, Loss x: 0.072, Loss s: 0.055, Mask ratio: 0.921
+[2026-02-04 10:53:48,892][    INFO] Iters: 72, LR: 0.0000026, Total loss: 0.064, Loss x: 0.071, Loss s: 0.056, Mask ratio: 0.923
+[2026-02-04 10:53:49,964][    INFO] Iters: 90, LR: 0.0000026, Total loss: 0.061, Loss x: 0.072, Loss s: 0.050, Mask ratio: 0.927
+[2026-02-04 10:53:51,043][    INFO] Iters: 108, LR: 0.0000026, Total loss: 0.060, Loss x: 0.072, Loss s: 0.047, Mask ratio: 0.930
+[2026-02-04 10:53:52,122][    INFO] Iters: 126, LR: 0.0000026, Total loss: 0.061, Loss x: 0.071, Loss s: 0.051, Mask ratio: 0.928
+[2026-02-04 10:53:53,190][    INFO] Iters: 144, LR: 0.0000026, Total loss: 0.062, Loss x: 0.072, Loss s: 0.052, Mask ratio: 0.926
+[2026-02-04 10:53:53,821][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31, EMA: 86.70
+[2026-02-04 10:53:53,822][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.87, EMA: 35.69
+[2026-02-04 10:53:53,822][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.33, EMA: 83.53
+[2026-02-04 10:53:53,822][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.81, EMA: 57.91
+[2026-02-04 10:53:53,822][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.33, EMA: 65.96
+
+[2026-02-04 10:53:54,683][    INFO] ===========> Epoch: 52, Previous best: 66.55 @epoch-46, EMA: 66.03 @epoch-46
+[2026-02-04 10:53:54,934][    INFO] Iters: 0, LR: 0.0000026, Total loss: 0.099, Loss x: 0.050, Loss s: 0.147, Mask ratio: 0.789
+[2026-02-04 10:53:56,016][    INFO] Iters: 18, LR: 0.0000026, Total loss: 0.050, Loss x: 0.063, Loss s: 0.038, Mask ratio: 0.949
+[2026-02-04 10:53:57,085][    INFO] Iters: 36, LR: 0.0000026, Total loss: 0.052, Loss x: 0.068, Loss s: 0.035, Mask ratio: 0.949
+[2026-02-04 10:53:58,157][    INFO] Iters: 54, LR: 0.0000026, Total loss: 0.054, Loss x: 0.067, Loss s: 0.040, Mask ratio: 0.942
+[2026-02-04 10:53:59,225][    INFO] Iters: 72, LR: 0.0000026, Total loss: 0.055, Loss x: 0.066, Loss s: 0.044, Mask ratio: 0.937
+[2026-02-04 10:54:00,293][    INFO] Iters: 90, LR: 0.0000026, Total loss: 0.057, Loss x: 0.069, Loss s: 0.046, Mask ratio: 0.934
+[2026-02-04 10:54:01,364][    INFO] Iters: 108, LR: 0.0000025, Total loss: 0.058, Loss x: 0.071, Loss s: 0.045, Mask ratio: 0.933
+[2026-02-04 10:54:02,445][    INFO] Iters: 126, LR: 0.0000025, Total loss: 0.059, Loss x: 0.073, Loss s: 0.044, Mask ratio: 0.934
+[2026-02-04 10:54:03,512][    INFO] Iters: 144, LR: 0.0000025, Total loss: 0.060, Loss x: 0.073, Loss s: 0.046, Mask ratio: 0.933
+[2026-02-04 10:54:04,128][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.92, EMA: 87.00
+[2026-02-04 10:54:04,129][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.73, EMA: 36.34
+[2026-02-04 10:54:04,129][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.23, EMA: 83.53
+[2026-02-04 10:54:04,129][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.30, EMA: 58.14
+[2026-02-04 10:54:04,129][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.54, EMA: 66.25
+
+[2026-02-04 10:54:05,001][    INFO] ===========> Epoch: 53, Previous best: 66.55 @epoch-46, EMA: 66.25 @epoch-52
+[2026-02-04 10:54:05,252][    INFO] Iters: 0, LR: 0.0000025, Total loss: 0.044, Loss x: 0.088, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:54:06,342][    INFO] Iters: 18, LR: 0.0000025, Total loss: 0.063, Loss x: 0.072, Loss s: 0.054, Mask ratio: 0.912
+[2026-02-04 10:54:07,422][    INFO] Iters: 36, LR: 0.0000025, Total loss: 0.069, Loss x: 0.073, Loss s: 0.066, Mask ratio: 0.925
+[2026-02-04 10:54:08,508][    INFO] Iters: 54, LR: 0.0000025, Total loss: 0.067, Loss x: 0.074, Loss s: 0.059, Mask ratio: 0.923
+[2026-02-04 10:54:09,591][    INFO] Iters: 72, LR: 0.0000025, Total loss: 0.062, Loss x: 0.073, Loss s: 0.051, Mask ratio: 0.931
+[2026-02-04 10:54:10,670][    INFO] Iters: 90, LR: 0.0000025, Total loss: 0.060, Loss x: 0.072, Loss s: 0.048, Mask ratio: 0.935
+[2026-02-04 10:54:11,748][    INFO] Iters: 108, LR: 0.0000025, Total loss: 0.058, Loss x: 0.070, Loss s: 0.046, Mask ratio: 0.937
+[2026-02-04 10:54:12,831][    INFO] Iters: 126, LR: 0.0000025, Total loss: 0.058, Loss x: 0.071, Loss s: 0.045, Mask ratio: 0.938
+[2026-02-04 10:54:13,893][    INFO] Iters: 144, LR: 0.0000025, Total loss: 0.057, Loss x: 0.072, Loss s: 0.043, Mask ratio: 0.941
+[2026-02-04 10:54:14,516][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.94, EMA: 87.09
+[2026-02-04 10:54:14,516][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.87, EMA: 37.12
+[2026-02-04 10:54:14,516][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.54, EMA: 83.46
+[2026-02-04 10:54:14,516][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.31, EMA: 58.18
+[2026-02-04 10:54:14,516][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 65.91, EMA: 66.46
+
+[2026-02-04 10:54:15,373][    INFO] ===========> Epoch: 54, Previous best: 66.55 @epoch-46, EMA: 66.46 @epoch-53
+[2026-02-04 10:54:15,621][    INFO] Iters: 0, LR: 0.0000025, Total loss: 0.064, Loss x: 0.129, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:54:16,712][    INFO] Iters: 18, LR: 0.0000025, Total loss: 0.067, Loss x: 0.071, Loss s: 0.062, Mask ratio: 0.952
+[2026-02-04 10:54:17,802][    INFO] Iters: 36, LR: 0.0000025, Total loss: 0.067, Loss x: 0.076, Loss s: 0.057, Mask ratio: 0.938
+[2026-02-04 10:54:18,883][    INFO] Iters: 54, LR: 0.0000025, Total loss: 0.058, Loss x: 0.073, Loss s: 0.042, Mask ratio: 0.947
+[2026-02-04 10:54:19,956][    INFO] Iters: 72, LR: 0.0000025, Total loss: 0.059, Loss x: 0.068, Loss s: 0.050, Mask ratio: 0.943
+[2026-02-04 10:54:21,039][    INFO] Iters: 90, LR: 0.0000025, Total loss: 0.057, Loss x: 0.071, Loss s: 0.044, Mask ratio: 0.949
+[2026-02-04 10:54:22,126][    INFO] Iters: 108, LR: 0.0000025, Total loss: 0.058, Loss x: 0.070, Loss s: 0.046, Mask ratio: 0.944
+[2026-02-04 10:54:23,202][    INFO] Iters: 126, LR: 0.0000024, Total loss: 0.058, Loss x: 0.069, Loss s: 0.046, Mask ratio: 0.941
+[2026-02-04 10:54:24,269][    INFO] Iters: 144, LR: 0.0000024, Total loss: 0.059, Loss x: 0.069, Loss s: 0.050, Mask ratio: 0.941
+[2026-02-04 10:54:24,888][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.51, EMA: 86.99
+[2026-02-04 10:54:24,888][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 38.12, EMA: 36.94
+[2026-02-04 10:54:24,888][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.05, EMA: 83.38
+[2026-02-04 10:54:24,889][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.44, EMA: 58.11
+[2026-02-04 10:54:24,889][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.28, EMA: 66.36
+
+[2026-02-04 10:54:25,774][    INFO] ===========> Epoch: 55, Previous best: 66.55 @epoch-46, EMA: 66.46 @epoch-53
+[2026-02-04 10:54:26,023][    INFO] Iters: 0, LR: 0.0000024, Total loss: 0.047, Loss x: 0.064, Loss s: 0.031, Mask ratio: 0.968
+[2026-02-04 10:54:27,081][    INFO] Iters: 18, LR: 0.0000024, Total loss: 0.059, Loss x: 0.062, Loss s: 0.057, Mask ratio: 0.909
+[2026-02-04 10:54:28,139][    INFO] Iters: 36, LR: 0.0000024, Total loss: 0.055, Loss x: 0.065, Loss s: 0.045, Mask ratio: 0.915
+[2026-02-04 10:54:29,206][    INFO] Iters: 54, LR: 0.0000024, Total loss: 0.059, Loss x: 0.069, Loss s: 0.049, Mask ratio: 0.923
+[2026-02-04 10:54:30,278][    INFO] Iters: 72, LR: 0.0000024, Total loss: 0.061, Loss x: 0.067, Loss s: 0.054, Mask ratio: 0.922
+[2026-02-04 10:54:31,352][    INFO] Iters: 90, LR: 0.0000024, Total loss: 0.058, Loss x: 0.066, Loss s: 0.050, Mask ratio: 0.928
+[2026-02-04 10:54:32,423][    INFO] Iters: 108, LR: 0.0000024, Total loss: 0.061, Loss x: 0.067, Loss s: 0.055, Mask ratio: 0.928
+[2026-02-04 10:54:33,492][    INFO] Iters: 126, LR: 0.0000024, Total loss: 0.063, Loss x: 0.071, Loss s: 0.056, Mask ratio: 0.928
+[2026-02-04 10:54:34,552][    INFO] Iters: 144, LR: 0.0000024, Total loss: 0.062, Loss x: 0.071, Loss s: 0.053, Mask ratio: 0.930
+[2026-02-04 10:54:35,166][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.82, EMA: 87.02
+[2026-02-04 10:54:35,166][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.21, EMA: 37.31
+[2026-02-04 10:54:35,166][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.13, EMA: 83.43
+[2026-02-04 10:54:35,167][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.93, EMA: 58.15
+[2026-02-04 10:54:35,167][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.02, EMA: 66.48
+
+[2026-02-04 10:54:36,015][    INFO] ===========> Epoch: 56, Previous best: 66.55 @epoch-46, EMA: 66.48 @epoch-55
+[2026-02-04 10:54:36,261][    INFO] Iters: 0, LR: 0.0000024, Total loss: 0.028, Loss x: 0.055, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:54:37,330][    INFO] Iters: 18, LR: 0.0000024, Total loss: 0.053, Loss x: 0.066, Loss s: 0.041, Mask ratio: 0.943
+[2026-02-04 10:54:38,405][    INFO] Iters: 36, LR: 0.0000024, Total loss: 0.061, Loss x: 0.070, Loss s: 0.052, Mask ratio: 0.916
+[2026-02-04 10:54:39,482][    INFO] Iters: 54, LR: 0.0000024, Total loss: 0.059, Loss x: 0.069, Loss s: 0.049, Mask ratio: 0.927
+[2026-02-04 10:54:40,559][    INFO] Iters: 72, LR: 0.0000024, Total loss: 0.060, Loss x: 0.070, Loss s: 0.051, Mask ratio: 0.931
+[2026-02-04 10:54:41,642][    INFO] Iters: 90, LR: 0.0000024, Total loss: 0.061, Loss x: 0.071, Loss s: 0.050, Mask ratio: 0.930
+[2026-02-04 10:54:42,727][    INFO] Iters: 108, LR: 0.0000024, Total loss: 0.060, Loss x: 0.072, Loss s: 0.048, Mask ratio: 0.931
+[2026-02-04 10:54:43,804][    INFO] Iters: 126, LR: 0.0000023, Total loss: 0.061, Loss x: 0.072, Loss s: 0.050, Mask ratio: 0.933
+[2026-02-04 10:54:44,876][    INFO] Iters: 144, LR: 0.0000023, Total loss: 0.060, Loss x: 0.071, Loss s: 0.049, Mask ratio: 0.933
+[2026-02-04 10:54:45,501][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.23, EMA: 87.05
+[2026-02-04 10:54:45,502][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.45, EMA: 37.39
+[2026-02-04 10:54:45,502][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.27, EMA: 83.42
+[2026-02-04 10:54:45,502][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.61, EMA: 58.31
+[2026-02-04 10:54:45,502][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.64, EMA: 66.54
+
+[2026-02-04 10:54:47,258][    INFO] ===========> Epoch: 57, Previous best: 66.64 @epoch-56, EMA: 66.54 @epoch-56
+[2026-02-04 10:54:47,521][    INFO] Iters: 0, LR: 0.0000023, Total loss: 0.054, Loss x: 0.108, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:54:48,600][    INFO] Iters: 18, LR: 0.0000023, Total loss: 0.048, Loss x: 0.060, Loss s: 0.036, Mask ratio: 0.924
+[2026-02-04 10:54:49,672][    INFO] Iters: 36, LR: 0.0000023, Total loss: 0.051, Loss x: 0.066, Loss s: 0.037, Mask ratio: 0.940
+[2026-02-04 10:54:50,758][    INFO] Iters: 54, LR: 0.0000023, Total loss: 0.051, Loss x: 0.067, Loss s: 0.034, Mask ratio: 0.940
+[2026-02-04 10:54:51,838][    INFO] Iters: 72, LR: 0.0000023, Total loss: 0.052, Loss x: 0.067, Loss s: 0.037, Mask ratio: 0.937
+[2026-02-04 10:54:52,925][    INFO] Iters: 90, LR: 0.0000023, Total loss: 0.055, Loss x: 0.068, Loss s: 0.042, Mask ratio: 0.938
+[2026-02-04 10:54:54,012][    INFO] Iters: 108, LR: 0.0000023, Total loss: 0.054, Loss x: 0.067, Loss s: 0.041, Mask ratio: 0.940
+[2026-02-04 10:54:55,099][    INFO] Iters: 126, LR: 0.0000023, Total loss: 0.053, Loss x: 0.066, Loss s: 0.041, Mask ratio: 0.937
+[2026-02-04 10:54:56,170][    INFO] Iters: 144, LR: 0.0000023, Total loss: 0.054, Loss x: 0.067, Loss s: 0.041, Mask ratio: 0.935
+[2026-02-04 10:54:56,787][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.23, EMA: 87.11
+[2026-02-04 10:54:56,787][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.82, EMA: 37.77
+[2026-02-04 10:54:56,788][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.12, EMA: 83.40
+[2026-02-04 10:54:56,788][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.56, EMA: 58.39
+[2026-02-04 10:54:56,788][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.43, EMA: 66.67
+
+[2026-02-04 10:54:57,648][    INFO] ===========> Epoch: 58, Previous best: 66.64 @epoch-56, EMA: 66.67 @epoch-57
+[2026-02-04 10:54:57,898][    INFO] Iters: 0, LR: 0.0000023, Total loss: 0.061, Loss x: 0.081, Loss s: 0.040, Mask ratio: 0.925
+[2026-02-04 10:54:58,962][    INFO] Iters: 18, LR: 0.0000023, Total loss: 0.052, Loss x: 0.067, Loss s: 0.036, Mask ratio: 0.899
+[2026-02-04 10:55:00,030][    INFO] Iters: 36, LR: 0.0000023, Total loss: 0.049, Loss x: 0.068, Loss s: 0.030, Mask ratio: 0.918
+[2026-02-04 10:55:01,112][    INFO] Iters: 54, LR: 0.0000023, Total loss: 0.048, Loss x: 0.065, Loss s: 0.031, Mask ratio: 0.920
+[2026-02-04 10:55:02,188][    INFO] Iters: 72, LR: 0.0000023, Total loss: 0.051, Loss x: 0.065, Loss s: 0.037, Mask ratio: 0.920
+[2026-02-04 10:55:03,269][    INFO] Iters: 90, LR: 0.0000023, Total loss: 0.051, Loss x: 0.066, Loss s: 0.037, Mask ratio: 0.924
+[2026-02-04 10:55:04,345][    INFO] Iters: 108, LR: 0.0000023, Total loss: 0.057, Loss x: 0.067, Loss s: 0.046, Mask ratio: 0.921
+[2026-02-04 10:55:05,430][    INFO] Iters: 126, LR: 0.0000022, Total loss: 0.055, Loss x: 0.068, Loss s: 0.043, Mask ratio: 0.925
+[2026-02-04 10:55:06,496][    INFO] Iters: 144, LR: 0.0000022, Total loss: 0.057, Loss x: 0.067, Loss s: 0.048, Mask ratio: 0.923
+[2026-02-04 10:55:07,113][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.87, EMA: 87.04
+[2026-02-04 10:55:07,114][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.70, EMA: 37.84
+[2026-02-04 10:55:07,114][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.64, EMA: 83.55
+[2026-02-04 10:55:07,114][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.14, EMA: 58.43
+[2026-02-04 10:55:07,114][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.59, EMA: 66.72
+
+[2026-02-04 10:55:08,008][    INFO] ===========> Epoch: 59, Previous best: 66.64 @epoch-56, EMA: 66.72 @epoch-58
+[2026-02-04 10:55:08,256][    INFO] Iters: 0, LR: 0.0000022, Total loss: 0.057, Loss x: 0.050, Loss s: 0.064, Mask ratio: 0.908
+[2026-02-04 10:55:09,334][    INFO] Iters: 18, LR: 0.0000022, Total loss: 0.047, Loss x: 0.066, Loss s: 0.028, Mask ratio: 0.949
+[2026-02-04 10:55:10,408][    INFO] Iters: 36, LR: 0.0000022, Total loss: 0.047, Loss x: 0.062, Loss s: 0.031, Mask ratio: 0.946
+[2026-02-04 10:55:11,480][    INFO] Iters: 54, LR: 0.0000022, Total loss: 0.048, Loss x: 0.062, Loss s: 0.034, Mask ratio: 0.943
+[2026-02-04 10:55:12,562][    INFO] Iters: 72, LR: 0.0000022, Total loss: 0.047, Loss x: 0.062, Loss s: 0.032, Mask ratio: 0.941
+[2026-02-04 10:55:13,649][    INFO] Iters: 90, LR: 0.0000022, Total loss: 0.048, Loss x: 0.065, Loss s: 0.031, Mask ratio: 0.947
+[2026-02-04 10:55:14,731][    INFO] Iters: 108, LR: 0.0000022, Total loss: 0.048, Loss x: 0.065, Loss s: 0.032, Mask ratio: 0.947
+[2026-02-04 10:55:15,810][    INFO] Iters: 126, LR: 0.0000022, Total loss: 0.048, Loss x: 0.065, Loss s: 0.030, Mask ratio: 0.949
+[2026-02-04 10:55:16,872][    INFO] Iters: 144, LR: 0.0000022, Total loss: 0.048, Loss x: 0.065, Loss s: 0.030, Mask ratio: 0.947
+[2026-02-04 10:55:17,494][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.53, EMA: 87.02
+[2026-02-04 10:55:17,494][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.13, EMA: 37.85
+[2026-02-04 10:55:17,495][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.12, EMA: 83.61
+[2026-02-04 10:55:17,495][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.39, EMA: 58.36
+[2026-02-04 10:55:17,495][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.54, EMA: 66.71
+
+[2026-02-04 10:55:18,358][    INFO] ===========> Epoch: 60, Previous best: 66.64 @epoch-56, EMA: 66.72 @epoch-58
+[2026-02-04 10:55:18,609][    INFO] Iters: 0, LR: 0.0000022, Total loss: 0.058, Loss x: 0.073, Loss s: 0.044, Mask ratio: 0.977
+[2026-02-04 10:55:19,682][    INFO] Iters: 18, LR: 0.0000022, Total loss: 0.045, Loss x: 0.063, Loss s: 0.027, Mask ratio: 0.960
+[2026-02-04 10:55:20,756][    INFO] Iters: 36, LR: 0.0000022, Total loss: 0.061, Loss x: 0.067, Loss s: 0.055, Mask ratio: 0.921
+[2026-02-04 10:55:21,825][    INFO] Iters: 54, LR: 0.0000022, Total loss: 0.066, Loss x: 0.069, Loss s: 0.064, Mask ratio: 0.909
+[2026-02-04 10:55:22,900][    INFO] Iters: 72, LR: 0.0000022, Total loss: 0.066, Loss x: 0.068, Loss s: 0.064, Mask ratio: 0.912
+[2026-02-04 10:55:23,990][    INFO] Iters: 90, LR: 0.0000022, Total loss: 0.064, Loss x: 0.069, Loss s: 0.058, Mask ratio: 0.921
+[2026-02-04 10:55:25,078][    INFO] Iters: 108, LR: 0.0000022, Total loss: 0.062, Loss x: 0.070, Loss s: 0.055, Mask ratio: 0.923
+[2026-02-04 10:55:26,169][    INFO] Iters: 126, LR: 0.0000022, Total loss: 0.061, Loss x: 0.068, Loss s: 0.054, Mask ratio: 0.919
+[2026-02-04 10:55:27,238][    INFO] Iters: 144, LR: 0.0000021, Total loss: 0.060, Loss x: 0.068, Loss s: 0.053, Mask ratio: 0.919
+[2026-02-04 10:55:27,858][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.98, EMA: 86.96
+[2026-02-04 10:55:27,859][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.03, EMA: 38.22
+[2026-02-04 10:55:27,859][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.00, EMA: 83.62
+[2026-02-04 10:55:27,859][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.75, EMA: 58.30
+[2026-02-04 10:55:27,859][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.69, EMA: 66.78
+
+[2026-02-04 10:55:29,552][    INFO] ===========> Epoch: 61, Previous best: 66.69 @epoch-60, EMA: 66.78 @epoch-60
+[2026-02-04 10:55:29,799][    INFO] Iters: 0, LR: 0.0000021, Total loss: 0.044, Loss x: 0.074, Loss s: 0.014, Mask ratio: 0.939
+[2026-02-04 10:55:30,870][    INFO] Iters: 18, LR: 0.0000021, Total loss: 0.059, Loss x: 0.068, Loss s: 0.049, Mask ratio: 0.943
+[2026-02-04 10:55:31,939][    INFO] Iters: 36, LR: 0.0000021, Total loss: 0.053, Loss x: 0.066, Loss s: 0.039, Mask ratio: 0.945
+[2026-02-04 10:55:33,011][    INFO] Iters: 54, LR: 0.0000021, Total loss: 0.055, Loss x: 0.064, Loss s: 0.046, Mask ratio: 0.934
+[2026-02-04 10:55:34,089][    INFO] Iters: 72, LR: 0.0000021, Total loss: 0.055, Loss x: 0.065, Loss s: 0.045, Mask ratio: 0.934
+[2026-02-04 10:55:35,165][    INFO] Iters: 90, LR: 0.0000021, Total loss: 0.056, Loss x: 0.065, Loss s: 0.046, Mask ratio: 0.935
+[2026-02-04 10:55:36,247][    INFO] Iters: 108, LR: 0.0000021, Total loss: 0.057, Loss x: 0.066, Loss s: 0.049, Mask ratio: 0.933
+[2026-02-04 10:55:37,318][    INFO] Iters: 126, LR: 0.0000021, Total loss: 0.058, Loss x: 0.066, Loss s: 0.051, Mask ratio: 0.933
+[2026-02-04 10:55:38,379][    INFO] Iters: 144, LR: 0.0000021, Total loss: 0.058, Loss x: 0.069, Loss s: 0.048, Mask ratio: 0.933
+[2026-02-04 10:55:38,999][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.31, EMA: 86.84
+[2026-02-04 10:55:39,000][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 42.31, EMA: 39.78
+[2026-02-04 10:55:39,000][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.68, EMA: 83.56
+[2026-02-04 10:55:39,000][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.76, EMA: 58.18
+[2026-02-04 10:55:39,000][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 68.02, EMA: 67.09
+
+[2026-02-04 10:55:40,721][    INFO] ===========> Epoch: 62, Previous best: 68.02 @epoch-61, EMA: 67.09 @epoch-61
+[2026-02-04 10:55:40,966][    INFO] Iters: 0, LR: 0.0000021, Total loss: 0.071, Loss x: 0.091, Loss s: 0.052, Mask ratio: 0.945
+[2026-02-04 10:55:42,039][    INFO] Iters: 18, LR: 0.0000021, Total loss: 0.044, Loss x: 0.062, Loss s: 0.026, Mask ratio: 0.952
+[2026-02-04 10:55:43,104][    INFO] Iters: 36, LR: 0.0000021, Total loss: 0.048, Loss x: 0.063, Loss s: 0.034, Mask ratio: 0.940
+[2026-02-04 10:55:44,177][    INFO] Iters: 54, LR: 0.0000021, Total loss: 0.051, Loss x: 0.066, Loss s: 0.037, Mask ratio: 0.936
+[2026-02-04 10:55:45,245][    INFO] Iters: 72, LR: 0.0000021, Total loss: 0.051, Loss x: 0.066, Loss s: 0.036, Mask ratio: 0.938
+[2026-02-04 10:55:46,315][    INFO] Iters: 90, LR: 0.0000021, Total loss: 0.054, Loss x: 0.065, Loss s: 0.044, Mask ratio: 0.935
+[2026-02-04 10:55:47,387][    INFO] Iters: 108, LR: 0.0000021, Total loss: 0.055, Loss x: 0.064, Loss s: 0.045, Mask ratio: 0.933
+[2026-02-04 10:55:48,470][    INFO] Iters: 126, LR: 0.0000021, Total loss: 0.056, Loss x: 0.065, Loss s: 0.047, Mask ratio: 0.932
+[2026-02-04 10:55:49,536][    INFO] Iters: 144, LR: 0.0000020, Total loss: 0.056, Loss x: 0.066, Loss s: 0.046, Mask ratio: 0.930
+[2026-02-04 10:55:50,166][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.83, EMA: 86.94
+[2026-02-04 10:55:50,166][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.72, EMA: 39.43
+[2026-02-04 10:55:50,166][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.41, EMA: 83.48
+[2026-02-04 10:55:50,166][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.27, EMA: 58.32
+[2026-02-04 10:55:50,166][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.05, EMA: 67.04
+
+[2026-02-04 10:55:51,079][    INFO] ===========> Epoch: 63, Previous best: 68.02 @epoch-61, EMA: 67.09 @epoch-61
+[2026-02-04 10:55:51,326][    INFO] Iters: 0, LR: 0.0000020, Total loss: 0.075, Loss x: 0.056, Loss s: 0.093, Mask ratio: 0.954
+[2026-02-04 10:55:52,410][    INFO] Iters: 18, LR: 0.0000020, Total loss: 0.060, Loss x: 0.067, Loss s: 0.053, Mask ratio: 0.930
+[2026-02-04 10:55:53,490][    INFO] Iters: 36, LR: 0.0000020, Total loss: 0.052, Loss x: 0.067, Loss s: 0.038, Mask ratio: 0.934
+[2026-02-04 10:55:54,582][    INFO] Iters: 54, LR: 0.0000020, Total loss: 0.055, Loss x: 0.066, Loss s: 0.043, Mask ratio: 0.924
+[2026-02-04 10:55:55,679][    INFO] Iters: 72, LR: 0.0000020, Total loss: 0.061, Loss x: 0.065, Loss s: 0.057, Mask ratio: 0.917
+[2026-02-04 10:55:56,756][    INFO] Iters: 90, LR: 0.0000020, Total loss: 0.059, Loss x: 0.065, Loss s: 0.052, Mask ratio: 0.920
+[2026-02-04 10:55:57,829][    INFO] Iters: 108, LR: 0.0000020, Total loss: 0.057, Loss x: 0.066, Loss s: 0.049, Mask ratio: 0.927
+[2026-02-04 10:55:58,904][    INFO] Iters: 126, LR: 0.0000020, Total loss: 0.060, Loss x: 0.067, Loss s: 0.053, Mask ratio: 0.924
+[2026-02-04 10:55:59,970][    INFO] Iters: 144, LR: 0.0000020, Total loss: 0.059, Loss x: 0.066, Loss s: 0.052, Mask ratio: 0.925
+[2026-02-04 10:56:00,589][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.30, EMA: 86.84
+[2026-02-04 10:56:00,589][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.39, EMA: 39.50
+[2026-02-04 10:56:00,590][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.46, EMA: 83.58
+[2026-02-04 10:56:00,590][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.58, EMA: 58.26
+[2026-02-04 10:56:00,590][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.18, EMA: 67.05
+
+[2026-02-04 10:56:01,444][    INFO] ===========> Epoch: 64, Previous best: 68.02 @epoch-61, EMA: 67.09 @epoch-61
+[2026-02-04 10:56:01,693][    INFO] Iters: 0, LR: 0.0000020, Total loss: 0.038, Loss x: 0.076, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:56:02,776][    INFO] Iters: 18, LR: 0.0000020, Total loss: 0.055, Loss x: 0.072, Loss s: 0.039, Mask ratio: 0.937
+[2026-02-04 10:56:03,853][    INFO] Iters: 36, LR: 0.0000020, Total loss: 0.053, Loss x: 0.069, Loss s: 0.038, Mask ratio: 0.940
+[2026-02-04 10:56:04,936][    INFO] Iters: 54, LR: 0.0000020, Total loss: 0.060, Loss x: 0.070, Loss s: 0.049, Mask ratio: 0.938
+[2026-02-04 10:56:06,020][    INFO] Iters: 72, LR: 0.0000020, Total loss: 0.065, Loss x: 0.068, Loss s: 0.062, Mask ratio: 0.937
+[2026-02-04 10:56:07,089][    INFO] Iters: 90, LR: 0.0000020, Total loss: 0.063, Loss x: 0.068, Loss s: 0.059, Mask ratio: 0.940
+[2026-02-04 10:56:08,160][    INFO] Iters: 108, LR: 0.0000020, Total loss: 0.063, Loss x: 0.068, Loss s: 0.057, Mask ratio: 0.936
+[2026-02-04 10:56:09,233][    INFO] Iters: 126, LR: 0.0000020, Total loss: 0.061, Loss x: 0.067, Loss s: 0.056, Mask ratio: 0.929
+[2026-02-04 10:56:10,305][    INFO] Iters: 144, LR: 0.0000019, Total loss: 0.062, Loss x: 0.066, Loss s: 0.058, Mask ratio: 0.921
+[2026-02-04 10:56:10,930][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.58, EMA: 86.67
+[2026-02-04 10:56:10,931][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.03, EMA: 39.30
+[2026-02-04 10:56:10,931][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.66, EMA: 83.72
+[2026-02-04 10:56:10,931][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.09, EMA: 57.97
+[2026-02-04 10:56:10,931][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.59, EMA: 66.92
+
+[2026-02-04 10:56:11,800][    INFO] ===========> Epoch: 65, Previous best: 68.02 @epoch-61, EMA: 67.09 @epoch-61
+[2026-02-04 10:56:12,054][    INFO] Iters: 0, LR: 0.0000019, Total loss: 0.054, Loss x: 0.071, Loss s: 0.037, Mask ratio: 0.960
+[2026-02-04 10:56:13,138][    INFO] Iters: 18, LR: 0.0000019, Total loss: 0.059, Loss x: 0.064, Loss s: 0.054, Mask ratio: 0.892
+[2026-02-04 10:56:14,210][    INFO] Iters: 36, LR: 0.0000019, Total loss: 0.059, Loss x: 0.069, Loss s: 0.048, Mask ratio: 0.917
+[2026-02-04 10:56:15,283][    INFO] Iters: 54, LR: 0.0000019, Total loss: 0.059, Loss x: 0.066, Loss s: 0.051, Mask ratio: 0.921
+[2026-02-04 10:56:16,357][    INFO] Iters: 72, LR: 0.0000019, Total loss: 0.057, Loss x: 0.066, Loss s: 0.048, Mask ratio: 0.926
+[2026-02-04 10:56:17,443][    INFO] Iters: 90, LR: 0.0000019, Total loss: 0.054, Loss x: 0.065, Loss s: 0.043, Mask ratio: 0.931
+[2026-02-04 10:56:18,528][    INFO] Iters: 108, LR: 0.0000019, Total loss: 0.053, Loss x: 0.064, Loss s: 0.043, Mask ratio: 0.931
+[2026-02-04 10:56:19,609][    INFO] Iters: 126, LR: 0.0000019, Total loss: 0.052, Loss x: 0.063, Loss s: 0.041, Mask ratio: 0.934
+[2026-02-04 10:56:20,699][    INFO] Iters: 144, LR: 0.0000019, Total loss: 0.053, Loss x: 0.064, Loss s: 0.042, Mask ratio: 0.933
+[2026-02-04 10:56:21,318][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.40, EMA: 86.65
+[2026-02-04 10:56:21,318][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 38.79, EMA: 39.52
+[2026-02-04 10:56:21,318][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.93, EMA: 83.74
+[2026-02-04 10:56:21,318][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.69, EMA: 58.00
+[2026-02-04 10:56:21,318][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.20, EMA: 66.98
+
+[2026-02-04 10:56:22,184][    INFO] ===========> Epoch: 66, Previous best: 68.02 @epoch-61, EMA: 67.09 @epoch-61
+[2026-02-04 10:56:22,447][    INFO] Iters: 0, LR: 0.0000019, Total loss: 0.054, Loss x: 0.108, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:56:23,526][    INFO] Iters: 18, LR: 0.0000019, Total loss: 0.054, Loss x: 0.070, Loss s: 0.038, Mask ratio: 0.941
+[2026-02-04 10:56:24,598][    INFO] Iters: 36, LR: 0.0000019, Total loss: 0.052, Loss x: 0.064, Loss s: 0.040, Mask ratio: 0.927
+[2026-02-04 10:56:25,672][    INFO] Iters: 54, LR: 0.0000019, Total loss: 0.058, Loss x: 0.065, Loss s: 0.051, Mask ratio: 0.920
+[2026-02-04 10:56:26,745][    INFO] Iters: 72, LR: 0.0000019, Total loss: 0.058, Loss x: 0.063, Loss s: 0.053, Mask ratio: 0.920
+[2026-02-04 10:56:27,822][    INFO] Iters: 90, LR: 0.0000019, Total loss: 0.057, Loss x: 0.064, Loss s: 0.051, Mask ratio: 0.924
+[2026-02-04 10:56:28,907][    INFO] Iters: 108, LR: 0.0000019, Total loss: 0.057, Loss x: 0.064, Loss s: 0.051, Mask ratio: 0.925
+[2026-02-04 10:56:29,992][    INFO] Iters: 126, LR: 0.0000019, Total loss: 0.057, Loss x: 0.063, Loss s: 0.050, Mask ratio: 0.927
+[2026-02-04 10:56:31,059][    INFO] Iters: 144, LR: 0.0000018, Total loss: 0.058, Loss x: 0.065, Loss s: 0.052, Mask ratio: 0.927
+[2026-02-04 10:56:31,697][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.98, EMA: 86.46
+[2026-02-04 10:56:31,698][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.26, EMA: 40.38
+[2026-02-04 10:56:31,698][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.20, EMA: 83.84
+[2026-02-04 10:56:31,698][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.06, EMA: 57.84
+[2026-02-04 10:56:31,698][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.37, EMA: 67.13
+
+[2026-02-04 10:56:32,553][    INFO] ===========> Epoch: 67, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:56:32,808][    INFO] Iters: 0, LR: 0.0000018, Total loss: 0.034, Loss x: 0.041, Loss s: 0.027, Mask ratio: 0.937
+[2026-02-04 10:56:33,883][    INFO] Iters: 18, LR: 0.0000018, Total loss: 0.058, Loss x: 0.063, Loss s: 0.052, Mask ratio: 0.917
+[2026-02-04 10:56:34,956][    INFO] Iters: 36, LR: 0.0000018, Total loss: 0.058, Loss x: 0.064, Loss s: 0.052, Mask ratio: 0.923
+[2026-02-04 10:56:36,030][    INFO] Iters: 54, LR: 0.0000018, Total loss: 0.056, Loss x: 0.066, Loss s: 0.047, Mask ratio: 0.926
+[2026-02-04 10:56:37,104][    INFO] Iters: 72, LR: 0.0000018, Total loss: 0.053, Loss x: 0.065, Loss s: 0.042, Mask ratio: 0.937
+[2026-02-04 10:56:38,191][    INFO] Iters: 90, LR: 0.0000018, Total loss: 0.052, Loss x: 0.062, Loss s: 0.042, Mask ratio: 0.931
+[2026-02-04 10:56:39,269][    INFO] Iters: 108, LR: 0.0000018, Total loss: 0.052, Loss x: 0.064, Loss s: 0.041, Mask ratio: 0.932
+[2026-02-04 10:56:40,337][    INFO] Iters: 126, LR: 0.0000018, Total loss: 0.053, Loss x: 0.064, Loss s: 0.041, Mask ratio: 0.934
+[2026-02-04 10:56:41,392][    INFO] Iters: 144, LR: 0.0000018, Total loss: 0.052, Loss x: 0.063, Loss s: 0.042, Mask ratio: 0.936
+[2026-02-04 10:56:42,003][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.36, EMA: 86.54
+[2026-02-04 10:56:42,004][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.21, EMA: 40.22
+[2026-02-04 10:56:42,004][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.22, EMA: 83.66
+[2026-02-04 10:56:42,004][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.24, EMA: 57.81
+[2026-02-04 10:56:42,004][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.01, EMA: 67.06
+
+[2026-02-04 10:56:42,875][    INFO] ===========> Epoch: 68, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:56:43,134][    INFO] Iters: 0, LR: 0.0000018, Total loss: 0.022, Loss x: 0.044, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:56:44,196][    INFO] Iters: 18, LR: 0.0000018, Total loss: 0.071, Loss x: 0.063, Loss s: 0.078, Mask ratio: 0.927
+[2026-02-04 10:56:45,262][    INFO] Iters: 36, LR: 0.0000018, Total loss: 0.064, Loss x: 0.069, Loss s: 0.059, Mask ratio: 0.935
+[2026-02-04 10:56:46,336][    INFO] Iters: 54, LR: 0.0000018, Total loss: 0.059, Loss x: 0.064, Loss s: 0.053, Mask ratio: 0.936
+[2026-02-04 10:56:47,407][    INFO] Iters: 72, LR: 0.0000018, Total loss: 0.055, Loss x: 0.062, Loss s: 0.048, Mask ratio: 0.936
+[2026-02-04 10:56:48,536][    INFO] Iters: 90, LR: 0.0000018, Total loss: 0.054, Loss x: 0.061, Loss s: 0.047, Mask ratio: 0.933
+[2026-02-04 10:56:49,687][    INFO] Iters: 108, LR: 0.0000018, Total loss: 0.056, Loss x: 0.061, Loss s: 0.051, Mask ratio: 0.927
+[2026-02-04 10:56:50,794][    INFO] Iters: 126, LR: 0.0000018, Total loss: 0.056, Loss x: 0.061, Loss s: 0.051, Mask ratio: 0.927
+[2026-02-04 10:56:51,862][    INFO] Iters: 144, LR: 0.0000017, Total loss: 0.055, Loss x: 0.061, Loss s: 0.048, Mask ratio: 0.930
+[2026-02-04 10:56:52,483][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.44, EMA: 86.46
+[2026-02-04 10:56:52,484][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 38.58, EMA: 39.79
+[2026-02-04 10:56:52,484][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.56, EMA: 83.70
+[2026-02-04 10:56:52,484][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.22, EMA: 57.68
+[2026-02-04 10:56:52,484][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.45, EMA: 66.91
+
+[2026-02-04 10:56:53,353][    INFO] ===========> Epoch: 69, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:56:53,605][    INFO] Iters: 0, LR: 0.0000017, Total loss: 0.018, Loss x: 0.029, Loss s: 0.008, Mask ratio: 0.991
+[2026-02-04 10:56:54,678][    INFO] Iters: 18, LR: 0.0000017, Total loss: 0.049, Loss x: 0.063, Loss s: 0.035, Mask ratio: 0.940
+[2026-02-04 10:56:55,748][    INFO] Iters: 36, LR: 0.0000017, Total loss: 0.055, Loss x: 0.063, Loss s: 0.047, Mask ratio: 0.927
+[2026-02-04 10:56:56,823][    INFO] Iters: 54, LR: 0.0000017, Total loss: 0.052, Loss x: 0.061, Loss s: 0.043, Mask ratio: 0.936
+[2026-02-04 10:56:57,909][    INFO] Iters: 72, LR: 0.0000017, Total loss: 0.053, Loss x: 0.061, Loss s: 0.046, Mask ratio: 0.936
+[2026-02-04 10:56:58,996][    INFO] Iters: 90, LR: 0.0000017, Total loss: 0.054, Loss x: 0.062, Loss s: 0.046, Mask ratio: 0.939
+[2026-02-04 10:57:00,089][    INFO] Iters: 108, LR: 0.0000017, Total loss: 0.056, Loss x: 0.062, Loss s: 0.050, Mask ratio: 0.934
+[2026-02-04 10:57:01,177][    INFO] Iters: 126, LR: 0.0000017, Total loss: 0.055, Loss x: 0.064, Loss s: 0.046, Mask ratio: 0.938
+[2026-02-04 10:57:02,260][    INFO] Iters: 144, LR: 0.0000017, Total loss: 0.055, Loss x: 0.064, Loss s: 0.047, Mask ratio: 0.934
+[2026-02-04 10:57:02,889][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.65, EMA: 86.38
+[2026-02-04 10:57:02,890][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 38.78, EMA: 39.38
+[2026-02-04 10:57:02,890][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.06, EMA: 83.70
+[2026-02-04 10:57:02,890][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.88, EMA: 57.55
+[2026-02-04 10:57:02,891][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.59, EMA: 66.75
+
+[2026-02-04 10:57:03,803][    INFO] ===========> Epoch: 70, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:04,060][    INFO] Iters: 0, LR: 0.0000017, Total loss: 0.043, Loss x: 0.084, Loss s: 0.002, Mask ratio: 0.999
+[2026-02-04 10:57:05,142][    INFO] Iters: 18, LR: 0.0000017, Total loss: 0.041, Loss x: 0.059, Loss s: 0.024, Mask ratio: 0.961
+[2026-02-04 10:57:06,232][    INFO] Iters: 36, LR: 0.0000017, Total loss: 0.045, Loss x: 0.059, Loss s: 0.030, Mask ratio: 0.947
+[2026-02-04 10:57:07,319][    INFO] Iters: 54, LR: 0.0000017, Total loss: 0.049, Loss x: 0.061, Loss s: 0.037, Mask ratio: 0.942
+[2026-02-04 10:57:08,410][    INFO] Iters: 72, LR: 0.0000017, Total loss: 0.052, Loss x: 0.062, Loss s: 0.041, Mask ratio: 0.941
+[2026-02-04 10:57:09,489][    INFO] Iters: 90, LR: 0.0000017, Total loss: 0.056, Loss x: 0.067, Loss s: 0.046, Mask ratio: 0.942
+[2026-02-04 10:57:10,565][    INFO] Iters: 108, LR: 0.0000017, Total loss: 0.054, Loss x: 0.065, Loss s: 0.043, Mask ratio: 0.939
+[2026-02-04 10:57:11,640][    INFO] Iters: 126, LR: 0.0000016, Total loss: 0.056, Loss x: 0.065, Loss s: 0.047, Mask ratio: 0.937
+[2026-02-04 10:57:12,702][    INFO] Iters: 144, LR: 0.0000016, Total loss: 0.058, Loss x: 0.066, Loss s: 0.051, Mask ratio: 0.931
+[2026-02-04 10:57:13,320][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.51, EMA: 86.47
+[2026-02-04 10:57:13,321][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.76, EMA: 39.17
+[2026-02-04 10:57:13,321][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.82, EMA: 83.58
+[2026-02-04 10:57:13,321][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.68, EMA: 57.67
+[2026-02-04 10:57:13,321][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.95, EMA: 66.72
+
+[2026-02-04 10:57:14,181][    INFO] ===========> Epoch: 71, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:14,442][    INFO] Iters: 0, LR: 0.0000016, Total loss: 0.039, Loss x: 0.045, Loss s: 0.033, Mask ratio: 0.851
+[2026-02-04 10:57:15,517][    INFO] Iters: 18, LR: 0.0000016, Total loss: 0.046, Loss x: 0.057, Loss s: 0.034, Mask ratio: 0.958
+[2026-02-04 10:57:16,594][    INFO] Iters: 36, LR: 0.0000016, Total loss: 0.046, Loss x: 0.061, Loss s: 0.031, Mask ratio: 0.956
+[2026-02-04 10:57:17,676][    INFO] Iters: 54, LR: 0.0000016, Total loss: 0.045, Loss x: 0.060, Loss s: 0.031, Mask ratio: 0.951
+[2026-02-04 10:57:18,761][    INFO] Iters: 72, LR: 0.0000016, Total loss: 0.048, Loss x: 0.061, Loss s: 0.034, Mask ratio: 0.941
+[2026-02-04 10:57:19,850][    INFO] Iters: 90, LR: 0.0000016, Total loss: 0.050, Loss x: 0.061, Loss s: 0.039, Mask ratio: 0.941
+[2026-02-04 10:57:20,936][    INFO] Iters: 108, LR: 0.0000016, Total loss: 0.050, Loss x: 0.062, Loss s: 0.038, Mask ratio: 0.943
+[2026-02-04 10:57:22,024][    INFO] Iters: 126, LR: 0.0000016, Total loss: 0.051, Loss x: 0.062, Loss s: 0.039, Mask ratio: 0.941
+[2026-02-04 10:57:23,102][    INFO] Iters: 144, LR: 0.0000016, Total loss: 0.051, Loss x: 0.060, Loss s: 0.042, Mask ratio: 0.939
+[2026-02-04 10:57:23,729][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.23, EMA: 86.30
+[2026-02-04 10:57:23,729][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.10, EMA: 39.46
+[2026-02-04 10:57:23,729][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.12, EMA: 83.70
+[2026-02-04 10:57:23,729][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.07, EMA: 57.42
+[2026-02-04 10:57:23,729][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.38, EMA: 66.72
+
+[2026-02-04 10:57:24,601][    INFO] ===========> Epoch: 72, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:24,859][    INFO] Iters: 0, LR: 0.0000016, Total loss: 0.054, Loss x: 0.078, Loss s: 0.030, Mask ratio: 0.964
+[2026-02-04 10:57:25,946][    INFO] Iters: 18, LR: 0.0000016, Total loss: 0.056, Loss x: 0.064, Loss s: 0.049, Mask ratio: 0.899
+[2026-02-04 10:57:27,030][    INFO] Iters: 36, LR: 0.0000016, Total loss: 0.047, Loss x: 0.059, Loss s: 0.034, Mask ratio: 0.924
+[2026-02-04 10:57:28,115][    INFO] Iters: 54, LR: 0.0000016, Total loss: 0.052, Loss x: 0.060, Loss s: 0.044, Mask ratio: 0.927
+[2026-02-04 10:57:29,198][    INFO] Iters: 72, LR: 0.0000016, Total loss: 0.055, Loss x: 0.062, Loss s: 0.049, Mask ratio: 0.928
+[2026-02-04 10:57:30,275][    INFO] Iters: 90, LR: 0.0000016, Total loss: 0.053, Loss x: 0.062, Loss s: 0.045, Mask ratio: 0.929
+[2026-02-04 10:57:31,359][    INFO] Iters: 108, LR: 0.0000016, Total loss: 0.055, Loss x: 0.061, Loss s: 0.050, Mask ratio: 0.929
+[2026-02-04 10:57:32,442][    INFO] Iters: 126, LR: 0.0000015, Total loss: 0.056, Loss x: 0.062, Loss s: 0.050, Mask ratio: 0.929
+[2026-02-04 10:57:33,522][    INFO] Iters: 144, LR: 0.0000015, Total loss: 0.056, Loss x: 0.060, Loss s: 0.052, Mask ratio: 0.929
+[2026-02-04 10:57:34,149][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.45, EMA: 86.28
+[2026-02-04 10:57:34,149][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.63, EMA: 40.07
+[2026-02-04 10:57:34,150][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.89, EMA: 83.69
+[2026-02-04 10:57:34,150][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.89, EMA: 57.37
+[2026-02-04 10:57:34,150][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.21, EMA: 66.86
+
+[2026-02-04 10:57:35,038][    INFO] ===========> Epoch: 73, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:35,292][    INFO] Iters: 0, LR: 0.0000015, Total loss: 0.042, Loss x: 0.037, Loss s: 0.046, Mask ratio: 0.922
+[2026-02-04 10:57:36,384][    INFO] Iters: 18, LR: 0.0000015, Total loss: 0.051, Loss x: 0.057, Loss s: 0.045, Mask ratio: 0.916
+[2026-02-04 10:57:37,476][    INFO] Iters: 36, LR: 0.0000015, Total loss: 0.045, Loss x: 0.057, Loss s: 0.032, Mask ratio: 0.935
+[2026-02-04 10:57:38,575][    INFO] Iters: 54, LR: 0.0000015, Total loss: 0.050, Loss x: 0.061, Loss s: 0.038, Mask ratio: 0.935
+[2026-02-04 10:57:39,658][    INFO] Iters: 72, LR: 0.0000015, Total loss: 0.052, Loss x: 0.065, Loss s: 0.039, Mask ratio: 0.938
+[2026-02-04 10:57:40,740][    INFO] Iters: 90, LR: 0.0000015, Total loss: 0.053, Loss x: 0.063, Loss s: 0.042, Mask ratio: 0.936
+[2026-02-04 10:57:41,820][    INFO] Iters: 108, LR: 0.0000015, Total loss: 0.052, Loss x: 0.063, Loss s: 0.041, Mask ratio: 0.935
+[2026-02-04 10:57:42,897][    INFO] Iters: 126, LR: 0.0000015, Total loss: 0.052, Loss x: 0.063, Loss s: 0.041, Mask ratio: 0.936
+[2026-02-04 10:57:43,961][    INFO] Iters: 144, LR: 0.0000015, Total loss: 0.053, Loss x: 0.062, Loss s: 0.045, Mask ratio: 0.934
+[2026-02-04 10:57:44,583][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.71, EMA: 86.39
+[2026-02-04 10:57:44,583][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.84, EMA: 40.35
+[2026-02-04 10:57:44,584][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.88, EMA: 83.75
+[2026-02-04 10:57:44,584][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 58.08, EMA: 57.58
+[2026-02-04 10:57:44,584][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.38, EMA: 67.01
+
+[2026-02-04 10:57:45,433][    INFO] ===========> Epoch: 74, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:45,684][    INFO] Iters: 0, LR: 0.0000015, Total loss: 0.049, Loss x: 0.056, Loss s: 0.043, Mask ratio: 0.913
+[2026-02-04 10:57:46,755][    INFO] Iters: 18, LR: 0.0000015, Total loss: 0.058, Loss x: 0.075, Loss s: 0.040, Mask ratio: 0.940
+[2026-02-04 10:57:47,831][    INFO] Iters: 36, LR: 0.0000015, Total loss: 0.055, Loss x: 0.071, Loss s: 0.038, Mask ratio: 0.941
+[2026-02-04 10:57:48,905][    INFO] Iters: 54, LR: 0.0000015, Total loss: 0.052, Loss x: 0.069, Loss s: 0.035, Mask ratio: 0.938
+[2026-02-04 10:57:49,986][    INFO] Iters: 72, LR: 0.0000015, Total loss: 0.050, Loss x: 0.063, Loss s: 0.038, Mask ratio: 0.937
+[2026-02-04 10:57:51,070][    INFO] Iters: 90, LR: 0.0000015, Total loss: 0.051, Loss x: 0.063, Loss s: 0.039, Mask ratio: 0.935
+[2026-02-04 10:57:52,155][    INFO] Iters: 108, LR: 0.0000015, Total loss: 0.051, Loss x: 0.063, Loss s: 0.040, Mask ratio: 0.936
+[2026-02-04 10:57:53,222][    INFO] Iters: 126, LR: 0.0000014, Total loss: 0.052, Loss x: 0.062, Loss s: 0.042, Mask ratio: 0.936
+[2026-02-04 10:57:54,282][    INFO] Iters: 144, LR: 0.0000014, Total loss: 0.053, Loss x: 0.062, Loss s: 0.044, Mask ratio: 0.936
+[2026-02-04 10:57:54,918][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.76, EMA: 86.49
+[2026-02-04 10:57:54,919][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.98, EMA: 40.23
+[2026-02-04 10:57:54,919][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.11, EMA: 83.66
+[2026-02-04 10:57:54,919][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.67, EMA: 57.70
+[2026-02-04 10:57:54,919][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.38, EMA: 67.02
+
+[2026-02-04 10:57:55,783][    INFO] ===========> Epoch: 75, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:57:56,037][    INFO] Iters: 0, LR: 0.0000014, Total loss: 0.033, Loss x: 0.046, Loss s: 0.019, Mask ratio: 0.961
+[2026-02-04 10:57:57,119][    INFO] Iters: 18, LR: 0.0000014, Total loss: 0.071, Loss x: 0.076, Loss s: 0.067, Mask ratio: 0.913
+[2026-02-04 10:57:58,198][    INFO] Iters: 36, LR: 0.0000014, Total loss: 0.060, Loss x: 0.064, Loss s: 0.056, Mask ratio: 0.916
+[2026-02-04 10:57:59,290][    INFO] Iters: 54, LR: 0.0000014, Total loss: 0.058, Loss x: 0.062, Loss s: 0.054, Mask ratio: 0.920
+[2026-02-04 10:58:00,383][    INFO] Iters: 72, LR: 0.0000014, Total loss: 0.055, Loss x: 0.061, Loss s: 0.049, Mask ratio: 0.927
+[2026-02-04 10:58:01,467][    INFO] Iters: 90, LR: 0.0000014, Total loss: 0.053, Loss x: 0.061, Loss s: 0.045, Mask ratio: 0.932
+[2026-02-04 10:58:02,539][    INFO] Iters: 108, LR: 0.0000014, Total loss: 0.053, Loss x: 0.061, Loss s: 0.045, Mask ratio: 0.931
+[2026-02-04 10:58:03,621][    INFO] Iters: 126, LR: 0.0000014, Total loss: 0.052, Loss x: 0.061, Loss s: 0.044, Mask ratio: 0.935
+[2026-02-04 10:58:04,691][    INFO] Iters: 144, LR: 0.0000014, Total loss: 0.053, Loss x: 0.061, Loss s: 0.045, Mask ratio: 0.934
+[2026-02-04 10:58:05,359][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.41, EMA: 86.46
+[2026-02-04 10:58:05,359][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.39, EMA: 40.48
+[2026-02-04 10:58:05,360][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.13, EMA: 83.68
+[2026-02-04 10:58:05,360][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.54, EMA: 57.67
+[2026-02-04 10:58:05,360][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.12, EMA: 67.07
+
+[2026-02-04 10:58:06,256][    INFO] ===========> Epoch: 76, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:06,508][    INFO] Iters: 0, LR: 0.0000014, Total loss: 0.042, Loss x: 0.039, Loss s: 0.044, Mask ratio: 0.850
+[2026-02-04 10:58:07,657][    INFO] Iters: 18, LR: 0.0000014, Total loss: 0.058, Loss x: 0.067, Loss s: 0.049, Mask ratio: 0.897
+[2026-02-04 10:58:08,749][    INFO] Iters: 36, LR: 0.0000014, Total loss: 0.058, Loss x: 0.063, Loss s: 0.053, Mask ratio: 0.920
+[2026-02-04 10:58:09,897][    INFO] Iters: 54, LR: 0.0000014, Total loss: 0.057, Loss x: 0.058, Loss s: 0.055, Mask ratio: 0.927
+[2026-02-04 10:58:11,028][    INFO] Iters: 72, LR: 0.0000014, Total loss: 0.059, Loss x: 0.059, Loss s: 0.058, Mask ratio: 0.924
+[2026-02-04 10:58:12,142][    INFO] Iters: 90, LR: 0.0000014, Total loss: 0.058, Loss x: 0.061, Loss s: 0.056, Mask ratio: 0.925
+[2026-02-04 10:58:13,300][    INFO] Iters: 108, LR: 0.0000013, Total loss: 0.056, Loss x: 0.060, Loss s: 0.052, Mask ratio: 0.927
+[2026-02-04 10:58:14,403][    INFO] Iters: 126, LR: 0.0000013, Total loss: 0.061, Loss x: 0.060, Loss s: 0.061, Mask ratio: 0.925
+[2026-02-04 10:58:15,523][    INFO] Iters: 144, LR: 0.0000013, Total loss: 0.061, Loss x: 0.059, Loss s: 0.062, Mask ratio: 0.927
+[2026-02-04 10:58:16,184][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.74, EMA: 86.32
+[2026-02-04 10:58:16,185][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.36, EMA: 40.61
+[2026-02-04 10:58:16,185][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.85, EMA: 83.82
+[2026-02-04 10:58:16,185][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.67, EMA: 57.55
+[2026-02-04 10:58:16,185][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.66, EMA: 67.07
+
+[2026-02-04 10:58:17,062][    INFO] ===========> Epoch: 77, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:17,323][    INFO] Iters: 0, LR: 0.0000013, Total loss: 0.109, Loss x: 0.039, Loss s: 0.179, Mask ratio: 0.890
+[2026-02-04 10:58:18,393][    INFO] Iters: 18, LR: 0.0000013, Total loss: 0.057, Loss x: 0.054, Loss s: 0.061, Mask ratio: 0.953
+[2026-02-04 10:58:19,465][    INFO] Iters: 36, LR: 0.0000013, Total loss: 0.054, Loss x: 0.057, Loss s: 0.051, Mask ratio: 0.947
+[2026-02-04 10:58:20,540][    INFO] Iters: 54, LR: 0.0000013, Total loss: 0.051, Loss x: 0.057, Loss s: 0.044, Mask ratio: 0.951
+[2026-02-04 10:58:21,614][    INFO] Iters: 72, LR: 0.0000013, Total loss: 0.054, Loss x: 0.059, Loss s: 0.049, Mask ratio: 0.945
+[2026-02-04 10:58:22,702][    INFO] Iters: 90, LR: 0.0000013, Total loss: 0.054, Loss x: 0.058, Loss s: 0.051, Mask ratio: 0.939
+[2026-02-04 10:58:23,774][    INFO] Iters: 108, LR: 0.0000013, Total loss: 0.055, Loss x: 0.058, Loss s: 0.052, Mask ratio: 0.931
+[2026-02-04 10:58:24,859][    INFO] Iters: 126, LR: 0.0000013, Total loss: 0.054, Loss x: 0.058, Loss s: 0.050, Mask ratio: 0.934
+[2026-02-04 10:58:25,940][    INFO] Iters: 144, LR: 0.0000013, Total loss: 0.054, Loss x: 0.058, Loss s: 0.050, Mask ratio: 0.934
+[2026-02-04 10:58:26,567][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.86, EMA: 86.13
+[2026-02-04 10:58:26,568][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.44, EMA: 40.68
+[2026-02-04 10:58:26,568][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.70, EMA: 83.85
+[2026-02-04 10:58:26,568][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.73, EMA: 57.25
+[2026-02-04 10:58:26,568][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.93, EMA: 66.98
+
+[2026-02-04 10:58:27,429][    INFO] ===========> Epoch: 78, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:27,679][    INFO] Iters: 0, LR: 0.0000013, Total loss: 0.056, Loss x: 0.084, Loss s: 0.028, Mask ratio: 0.927
+[2026-02-04 10:58:28,761][    INFO] Iters: 18, LR: 0.0000013, Total loss: 0.046, Loss x: 0.052, Loss s: 0.040, Mask ratio: 0.922
+[2026-02-04 10:58:29,836][    INFO] Iters: 36, LR: 0.0000013, Total loss: 0.039, Loss x: 0.051, Loss s: 0.027, Mask ratio: 0.936
+[2026-02-04 10:58:30,914][    INFO] Iters: 54, LR: 0.0000013, Total loss: 0.041, Loss x: 0.051, Loss s: 0.032, Mask ratio: 0.935
+[2026-02-04 10:58:31,986][    INFO] Iters: 72, LR: 0.0000013, Total loss: 0.043, Loss x: 0.051, Loss s: 0.035, Mask ratio: 0.935
+[2026-02-04 10:58:33,062][    INFO] Iters: 90, LR: 0.0000012, Total loss: 0.043, Loss x: 0.053, Loss s: 0.034, Mask ratio: 0.938
+[2026-02-04 10:58:34,140][    INFO] Iters: 108, LR: 0.0000012, Total loss: 0.044, Loss x: 0.056, Loss s: 0.033, Mask ratio: 0.936
+[2026-02-04 10:58:35,232][    INFO] Iters: 126, LR: 0.0000012, Total loss: 0.044, Loss x: 0.056, Loss s: 0.033, Mask ratio: 0.939
+[2026-02-04 10:58:36,304][    INFO] Iters: 144, LR: 0.0000012, Total loss: 0.046, Loss x: 0.056, Loss s: 0.035, Mask ratio: 0.937
+[2026-02-04 10:58:36,930][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 87.02, EMA: 86.11
+[2026-02-04 10:58:36,931][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.28, EMA: 40.85
+[2026-02-04 10:58:36,931][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.16, EMA: 83.67
+[2026-02-04 10:58:36,931][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.98, EMA: 57.21
+[2026-02-04 10:58:36,931][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.11, EMA: 66.96
+
+[2026-02-04 10:58:37,836][    INFO] ===========> Epoch: 79, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:38,092][    INFO] Iters: 0, LR: 0.0000012, Total loss: 0.022, Loss x: 0.036, Loss s: 0.008, Mask ratio: 0.974
+[2026-02-04 10:58:39,164][    INFO] Iters: 18, LR: 0.0000012, Total loss: 0.052, Loss x: 0.052, Loss s: 0.051, Mask ratio: 0.933
+[2026-02-04 10:58:40,245][    INFO] Iters: 36, LR: 0.0000012, Total loss: 0.056, Loss x: 0.057, Loss s: 0.054, Mask ratio: 0.934
+[2026-02-04 10:58:41,330][    INFO] Iters: 54, LR: 0.0000012, Total loss: 0.058, Loss x: 0.058, Loss s: 0.057, Mask ratio: 0.923
+[2026-02-04 10:58:42,405][    INFO] Iters: 72, LR: 0.0000012, Total loss: 0.060, Loss x: 0.059, Loss s: 0.061, Mask ratio: 0.923
+[2026-02-04 10:58:43,487][    INFO] Iters: 90, LR: 0.0000012, Total loss: 0.061, Loss x: 0.058, Loss s: 0.065, Mask ratio: 0.926
+[2026-02-04 10:58:44,581][    INFO] Iters: 108, LR: 0.0000012, Total loss: 0.058, Loss x: 0.059, Loss s: 0.058, Mask ratio: 0.932
+[2026-02-04 10:58:45,679][    INFO] Iters: 126, LR: 0.0000012, Total loss: 0.057, Loss x: 0.059, Loss s: 0.055, Mask ratio: 0.935
+[2026-02-04 10:58:46,758][    INFO] Iters: 144, LR: 0.0000012, Total loss: 0.058, Loss x: 0.060, Loss s: 0.057, Mask ratio: 0.934
+[2026-02-04 10:58:47,382][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.19, EMA: 86.19
+[2026-02-04 10:58:47,383][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.74, EMA: 40.74
+[2026-02-04 10:58:47,383][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.09, EMA: 83.59
+[2026-02-04 10:58:47,383][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.38, EMA: 57.39
+[2026-02-04 10:58:47,383][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.60, EMA: 66.98
+
+[2026-02-04 10:58:48,411][    INFO] ===========> Epoch: 80, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:48,663][    INFO] Iters: 0, LR: 0.0000012, Total loss: 0.087, Loss x: 0.045, Loss s: 0.129, Mask ratio: 0.945
+[2026-02-04 10:58:49,748][    INFO] Iters: 18, LR: 0.0000012, Total loss: 0.046, Loss x: 0.049, Loss s: 0.043, Mask ratio: 0.924
+[2026-02-04 10:58:50,842][    INFO] Iters: 36, LR: 0.0000012, Total loss: 0.058, Loss x: 0.057, Loss s: 0.059, Mask ratio: 0.921
+[2026-02-04 10:58:51,925][    INFO] Iters: 54, LR: 0.0000012, Total loss: 0.059, Loss x: 0.055, Loss s: 0.062, Mask ratio: 0.918
+[2026-02-04 10:58:53,002][    INFO] Iters: 72, LR: 0.0000011, Total loss: 0.055, Loss x: 0.053, Loss s: 0.057, Mask ratio: 0.921
+[2026-02-04 10:58:54,080][    INFO] Iters: 90, LR: 0.0000011, Total loss: 0.052, Loss x: 0.053, Loss s: 0.052, Mask ratio: 0.924
+[2026-02-04 10:58:55,152][    INFO] Iters: 108, LR: 0.0000011, Total loss: 0.053, Loss x: 0.056, Loss s: 0.050, Mask ratio: 0.926
+[2026-02-04 10:58:56,231][    INFO] Iters: 126, LR: 0.0000011, Total loss: 0.054, Loss x: 0.057, Loss s: 0.052, Mask ratio: 0.928
+[2026-02-04 10:58:57,294][    INFO] Iters: 144, LR: 0.0000011, Total loss: 0.053, Loss x: 0.056, Loss s: 0.050, Mask ratio: 0.930
+[2026-02-04 10:58:57,918][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.35, EMA: 86.14
+[2026-02-04 10:58:57,919][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.97, EMA: 40.51
+[2026-02-04 10:58:57,919][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.71, EMA: 83.59
+[2026-02-04 10:58:57,919][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.48, EMA: 57.35
+[2026-02-04 10:58:57,919][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.13, EMA: 66.90
+
+[2026-02-04 10:58:58,779][    INFO] ===========> Epoch: 81, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:58:59,033][    INFO] Iters: 0, LR: 0.0000011, Total loss: 0.029, Loss x: 0.034, Loss s: 0.024, Mask ratio: 0.948
+[2026-02-04 10:59:00,111][    INFO] Iters: 18, LR: 0.0000011, Total loss: 0.045, Loss x: 0.058, Loss s: 0.032, Mask ratio: 0.949
+[2026-02-04 10:59:01,186][    INFO] Iters: 36, LR: 0.0000011, Total loss: 0.041, Loss x: 0.054, Loss s: 0.029, Mask ratio: 0.953
+[2026-02-04 10:59:02,269][    INFO] Iters: 54, LR: 0.0000011, Total loss: 0.048, Loss x: 0.057, Loss s: 0.039, Mask ratio: 0.941
+[2026-02-04 10:59:03,350][    INFO] Iters: 72, LR: 0.0000011, Total loss: 0.051, Loss x: 0.058, Loss s: 0.043, Mask ratio: 0.943
+[2026-02-04 10:59:04,433][    INFO] Iters: 90, LR: 0.0000011, Total loss: 0.049, Loss x: 0.058, Loss s: 0.039, Mask ratio: 0.946
+[2026-02-04 10:59:05,519][    INFO] Iters: 108, LR: 0.0000011, Total loss: 0.049, Loss x: 0.058, Loss s: 0.039, Mask ratio: 0.941
+[2026-02-04 10:59:06,596][    INFO] Iters: 126, LR: 0.0000011, Total loss: 0.049, Loss x: 0.057, Loss s: 0.042, Mask ratio: 0.937
+[2026-02-04 10:59:07,656][    INFO] Iters: 144, LR: 0.0000011, Total loss: 0.049, Loss x: 0.057, Loss s: 0.041, Mask ratio: 0.937
+[2026-02-04 10:59:08,276][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.45, EMA: 86.07
+[2026-02-04 10:59:08,277][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.59, EMA: 40.60
+[2026-02-04 10:59:08,277][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.37, EMA: 83.53
+[2026-02-04 10:59:08,277][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.75, EMA: 57.22
+[2026-02-04 10:59:08,277][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.04, EMA: 66.86
+
+[2026-02-04 10:59:09,144][    INFO] ===========> Epoch: 82, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:59:09,402][    INFO] Iters: 0, LR: 0.0000011, Total loss: 0.059, Loss x: 0.096, Loss s: 0.023, Mask ratio: 0.968
+[2026-02-04 10:59:10,475][    INFO] Iters: 18, LR: 0.0000011, Total loss: 0.047, Loss x: 0.067, Loss s: 0.027, Mask ratio: 0.933
+[2026-02-04 10:59:11,553][    INFO] Iters: 36, LR: 0.0000011, Total loss: 0.046, Loss x: 0.058, Loss s: 0.034, Mask ratio: 0.929
+[2026-02-04 10:59:12,627][    INFO] Iters: 54, LR: 0.0000010, Total loss: 0.047, Loss x: 0.057, Loss s: 0.037, Mask ratio: 0.939
+[2026-02-04 10:59:13,700][    INFO] Iters: 72, LR: 0.0000010, Total loss: 0.050, Loss x: 0.056, Loss s: 0.044, Mask ratio: 0.931
+[2026-02-04 10:59:14,772][    INFO] Iters: 90, LR: 0.0000010, Total loss: 0.051, Loss x: 0.058, Loss s: 0.044, Mask ratio: 0.934
+[2026-02-04 10:59:15,844][    INFO] Iters: 108, LR: 0.0000010, Total loss: 0.050, Loss x: 0.058, Loss s: 0.042, Mask ratio: 0.938
+[2026-02-04 10:59:16,924][    INFO] Iters: 126, LR: 0.0000010, Total loss: 0.050, Loss x: 0.059, Loss s: 0.042, Mask ratio: 0.937
+[2026-02-04 10:59:17,992][    INFO] Iters: 144, LR: 0.0000010, Total loss: 0.050, Loss x: 0.059, Loss s: 0.041, Mask ratio: 0.937
+[2026-02-04 10:59:18,616][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.70, EMA: 85.98
+[2026-02-04 10:59:18,617][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 39.70, EMA: 40.61
+[2026-02-04 10:59:18,617][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.92, EMA: 83.65
+[2026-02-04 10:59:18,617][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.57, EMA: 57.07
+[2026-02-04 10:59:18,618][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.47, EMA: 66.83
+
+[2026-02-04 10:59:19,490][    INFO] ===========> Epoch: 83, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:59:19,746][    INFO] Iters: 0, LR: 0.0000010, Total loss: 0.030, Loss x: 0.033, Loss s: 0.028, Mask ratio: 0.832
+[2026-02-04 10:59:20,818][    INFO] Iters: 18, LR: 0.0000010, Total loss: 0.043, Loss x: 0.054, Loss s: 0.033, Mask ratio: 0.932
+[2026-02-04 10:59:21,896][    INFO] Iters: 36, LR: 0.0000010, Total loss: 0.050, Loss x: 0.055, Loss s: 0.046, Mask ratio: 0.941
+[2026-02-04 10:59:22,970][    INFO] Iters: 54, LR: 0.0000010, Total loss: 0.053, Loss x: 0.055, Loss s: 0.051, Mask ratio: 0.933
+[2026-02-04 10:59:24,048][    INFO] Iters: 72, LR: 0.0000010, Total loss: 0.053, Loss x: 0.055, Loss s: 0.051, Mask ratio: 0.935
+[2026-02-04 10:59:25,117][    INFO] Iters: 90, LR: 0.0000010, Total loss: 0.054, Loss x: 0.056, Loss s: 0.051, Mask ratio: 0.934
+[2026-02-04 10:59:26,184][    INFO] Iters: 108, LR: 0.0000010, Total loss: 0.052, Loss x: 0.058, Loss s: 0.046, Mask ratio: 0.939
+[2026-02-04 10:59:27,266][    INFO] Iters: 126, LR: 0.0000010, Total loss: 0.054, Loss x: 0.057, Loss s: 0.052, Mask ratio: 0.939
+[2026-02-04 10:59:28,339][    INFO] Iters: 144, LR: 0.0000010, Total loss: 0.054, Loss x: 0.057, Loss s: 0.051, Mask ratio: 0.939
+[2026-02-04 10:59:28,956][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.92, EMA: 85.96
+[2026-02-04 10:59:28,956][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.50, EMA: 41.07
+[2026-02-04 10:59:28,957][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.66, EMA: 83.59
+[2026-02-04 10:59:28,957][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.10, EMA: 57.08
+[2026-02-04 10:59:28,957][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.04, EMA: 66.92
+
+[2026-02-04 10:59:29,816][    INFO] ===========> Epoch: 84, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:59:30,078][    INFO] Iters: 0, LR: 0.0000010, Total loss: 0.023, Loss x: 0.045, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 10:59:31,158][    INFO] Iters: 18, LR: 0.0000010, Total loss: 0.048, Loss x: 0.046, Loss s: 0.051, Mask ratio: 0.936
+[2026-02-04 10:59:32,242][    INFO] Iters: 36, LR: 0.0000009, Total loss: 0.048, Loss x: 0.051, Loss s: 0.045, Mask ratio: 0.935
+[2026-02-04 10:59:33,316][    INFO] Iters: 54, LR: 0.0000009, Total loss: 0.049, Loss x: 0.052, Loss s: 0.047, Mask ratio: 0.935
+[2026-02-04 10:59:34,397][    INFO] Iters: 72, LR: 0.0000009, Total loss: 0.050, Loss x: 0.051, Loss s: 0.048, Mask ratio: 0.938
+[2026-02-04 10:59:35,477][    INFO] Iters: 90, LR: 0.0000009, Total loss: 0.051, Loss x: 0.051, Loss s: 0.051, Mask ratio: 0.939
+[2026-02-04 10:59:36,552][    INFO] Iters: 108, LR: 0.0000009, Total loss: 0.051, Loss x: 0.053, Loss s: 0.049, Mask ratio: 0.941
+[2026-02-04 10:59:37,642][    INFO] Iters: 126, LR: 0.0000009, Total loss: 0.051, Loss x: 0.054, Loss s: 0.049, Mask ratio: 0.940
+[2026-02-04 10:59:38,714][    INFO] Iters: 144, LR: 0.0000009, Total loss: 0.050, Loss x: 0.054, Loss s: 0.045, Mask ratio: 0.941
+[2026-02-04 10:59:39,335][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.26, EMA: 85.89
+[2026-02-04 10:59:39,336][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.38, EMA: 41.43
+[2026-02-04 10:59:39,336][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.86, EMA: 83.64
+[2026-02-04 10:59:39,336][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.25, EMA: 57.06
+[2026-02-04 10:59:39,336][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.69, EMA: 67.01
+
+[2026-02-04 10:59:40,229][    INFO] ===========> Epoch: 85, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:59:40,481][    INFO] Iters: 0, LR: 0.0000009, Total loss: 0.018, Loss x: 0.029, Loss s: 0.007, Mask ratio: 0.905
+[2026-02-04 10:59:41,564][    INFO] Iters: 18, LR: 0.0000009, Total loss: 0.046, Loss x: 0.049, Loss s: 0.043, Mask ratio: 0.933
+[2026-02-04 10:59:42,636][    INFO] Iters: 36, LR: 0.0000009, Total loss: 0.044, Loss x: 0.051, Loss s: 0.037, Mask ratio: 0.934
+[2026-02-04 10:59:43,710][    INFO] Iters: 54, LR: 0.0000009, Total loss: 0.045, Loss x: 0.052, Loss s: 0.037, Mask ratio: 0.936
+[2026-02-04 10:59:44,783][    INFO] Iters: 72, LR: 0.0000009, Total loss: 0.044, Loss x: 0.051, Loss s: 0.038, Mask ratio: 0.934
+[2026-02-04 10:59:45,875][    INFO] Iters: 90, LR: 0.0000009, Total loss: 0.046, Loss x: 0.050, Loss s: 0.042, Mask ratio: 0.933
+[2026-02-04 10:59:46,999][    INFO] Iters: 108, LR: 0.0000009, Total loss: 0.048, Loss x: 0.052, Loss s: 0.044, Mask ratio: 0.932
+[2026-02-04 10:59:48,135][    INFO] Iters: 126, LR: 0.0000009, Total loss: 0.049, Loss x: 0.052, Loss s: 0.046, Mask ratio: 0.934
+[2026-02-04 10:59:49,214][    INFO] Iters: 144, LR: 0.0000009, Total loss: 0.052, Loss x: 0.053, Loss s: 0.052, Mask ratio: 0.936
+[2026-02-04 10:59:49,844][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.53, EMA: 85.91
+[2026-02-04 10:59:49,844][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 42.10, EMA: 41.56
+[2026-02-04 10:59:49,845][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.46, EMA: 83.69
+[2026-02-04 10:59:49,845][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.61, EMA: 57.02
+[2026-02-04 10:59:49,845][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.92, EMA: 67.05
+
+[2026-02-04 10:59:50,712][    INFO] ===========> Epoch: 86, Previous best: 68.02 @epoch-61, EMA: 67.13 @epoch-66
+[2026-02-04 10:59:50,965][    INFO] Iters: 0, LR: 0.0000009, Total loss: 0.058, Loss x: 0.051, Loss s: 0.065, Mask ratio: 0.906
+[2026-02-04 10:59:52,044][    INFO] Iters: 18, LR: 0.0000008, Total loss: 0.059, Loss x: 0.054, Loss s: 0.064, Mask ratio: 0.923
+[2026-02-04 10:59:53,129][    INFO] Iters: 36, LR: 0.0000008, Total loss: 0.053, Loss x: 0.052, Loss s: 0.055, Mask ratio: 0.922
+[2026-02-04 10:59:54,221][    INFO] Iters: 54, LR: 0.0000008, Total loss: 0.057, Loss x: 0.054, Loss s: 0.061, Mask ratio: 0.926
+[2026-02-04 10:59:55,310][    INFO] Iters: 72, LR: 0.0000008, Total loss: 0.055, Loss x: 0.055, Loss s: 0.054, Mask ratio: 0.931
+[2026-02-04 10:59:56,384][    INFO] Iters: 90, LR: 0.0000008, Total loss: 0.053, Loss x: 0.057, Loss s: 0.050, Mask ratio: 0.935
+[2026-02-04 10:59:57,457][    INFO] Iters: 108, LR: 0.0000008, Total loss: 0.052, Loss x: 0.057, Loss s: 0.047, Mask ratio: 0.940
+[2026-02-04 10:59:58,529][    INFO] Iters: 126, LR: 0.0000008, Total loss: 0.051, Loss x: 0.056, Loss s: 0.046, Mask ratio: 0.943
+[2026-02-04 10:59:59,589][    INFO] Iters: 144, LR: 0.0000008, Total loss: 0.053, Loss x: 0.057, Loss s: 0.050, Mask ratio: 0.940
+[2026-02-04 11:00:00,218][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.28, EMA: 86.02
+[2026-02-04 11:00:00,219][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.85, EMA: 42.05
+[2026-02-04 11:00:00,219][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.66, EMA: 83.67
+[2026-02-04 11:00:00,219][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.51, EMA: 57.15
+[2026-02-04 11:00:00,219][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.33, EMA: 67.22
+
+[2026-02-04 11:00:01,105][    INFO] ===========> Epoch: 87, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:01,358][    INFO] Iters: 0, LR: 0.0000008, Total loss: 0.048, Loss x: 0.075, Loss s: 0.021, Mask ratio: 0.925
+[2026-02-04 11:00:02,440][    INFO] Iters: 18, LR: 0.0000008, Total loss: 0.041, Loss x: 0.054, Loss s: 0.027, Mask ratio: 0.959
+[2026-02-04 11:00:03,527][    INFO] Iters: 36, LR: 0.0000008, Total loss: 0.056, Loss x: 0.055, Loss s: 0.057, Mask ratio: 0.933
+[2026-02-04 11:00:04,606][    INFO] Iters: 54, LR: 0.0000008, Total loss: 0.057, Loss x: 0.055, Loss s: 0.058, Mask ratio: 0.932
+[2026-02-04 11:00:05,694][    INFO] Iters: 72, LR: 0.0000008, Total loss: 0.058, Loss x: 0.056, Loss s: 0.061, Mask ratio: 0.933
+[2026-02-04 11:00:06,773][    INFO] Iters: 90, LR: 0.0000008, Total loss: 0.058, Loss x: 0.059, Loss s: 0.057, Mask ratio: 0.936
+[2026-02-04 11:00:07,849][    INFO] Iters: 108, LR: 0.0000008, Total loss: 0.057, Loss x: 0.058, Loss s: 0.056, Mask ratio: 0.937
+[2026-02-04 11:00:08,926][    INFO] Iters: 126, LR: 0.0000008, Total loss: 0.056, Loss x: 0.058, Loss s: 0.055, Mask ratio: 0.937
+[2026-02-04 11:00:09,980][    INFO] Iters: 144, LR: 0.0000007, Total loss: 0.056, Loss x: 0.058, Loss s: 0.054, Mask ratio: 0.939
+[2026-02-04 11:00:10,726][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.49, EMA: 86.12
+[2026-02-04 11:00:10,727][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.35, EMA: 41.75
+[2026-02-04 11:00:10,727][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.18, EMA: 83.61
+[2026-02-04 11:00:10,727][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.44, EMA: 57.27
+[2026-02-04 11:00:10,727][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.11, EMA: 67.18
+
+[2026-02-04 11:00:11,586][    INFO] ===========> Epoch: 88, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:11,842][    INFO] Iters: 0, LR: 0.0000007, Total loss: 0.070, Loss x: 0.057, Loss s: 0.083, Mask ratio: 0.899
+[2026-02-04 11:00:12,920][    INFO] Iters: 18, LR: 0.0000007, Total loss: 0.070, Loss x: 0.053, Loss s: 0.087, Mask ratio: 0.923
+[2026-02-04 11:00:14,006][    INFO] Iters: 36, LR: 0.0000007, Total loss: 0.060, Loss x: 0.056, Loss s: 0.063, Mask ratio: 0.934
+[2026-02-04 11:00:15,091][    INFO] Iters: 54, LR: 0.0000007, Total loss: 0.057, Loss x: 0.055, Loss s: 0.058, Mask ratio: 0.937
+[2026-02-04 11:00:16,162][    INFO] Iters: 72, LR: 0.0000007, Total loss: 0.057, Loss x: 0.055, Loss s: 0.059, Mask ratio: 0.934
+[2026-02-04 11:00:17,237][    INFO] Iters: 90, LR: 0.0000007, Total loss: 0.054, Loss x: 0.053, Loss s: 0.055, Mask ratio: 0.932
+[2026-02-04 11:00:18,320][    INFO] Iters: 108, LR: 0.0000007, Total loss: 0.052, Loss x: 0.053, Loss s: 0.051, Mask ratio: 0.934
+[2026-02-04 11:00:19,394][    INFO] Iters: 126, LR: 0.0000007, Total loss: 0.051, Loss x: 0.053, Loss s: 0.048, Mask ratio: 0.938
+[2026-02-04 11:00:20,458][    INFO] Iters: 144, LR: 0.0000007, Total loss: 0.050, Loss x: 0.054, Loss s: 0.045, Mask ratio: 0.942
+[2026-02-04 11:00:21,082][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.02, EMA: 86.10
+[2026-02-04 11:00:21,082][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.36, EMA: 41.56
+[2026-02-04 11:00:21,083][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.01, EMA: 83.61
+[2026-02-04 11:00:21,083][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 56.98, EMA: 57.22
+[2026-02-04 11:00:21,083][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.84, EMA: 67.12
+
+[2026-02-04 11:00:21,954][    INFO] ===========> Epoch: 89, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:22,209][    INFO] Iters: 0, LR: 0.0000007, Total loss: 0.044, Loss x: 0.053, Loss s: 0.034, Mask ratio: 0.927
+[2026-02-04 11:00:23,282][    INFO] Iters: 18, LR: 0.0000007, Total loss: 0.057, Loss x: 0.055, Loss s: 0.058, Mask ratio: 0.902
+[2026-02-04 11:00:24,355][    INFO] Iters: 36, LR: 0.0000007, Total loss: 0.053, Loss x: 0.056, Loss s: 0.050, Mask ratio: 0.920
+[2026-02-04 11:00:25,431][    INFO] Iters: 54, LR: 0.0000007, Total loss: 0.048, Loss x: 0.054, Loss s: 0.042, Mask ratio: 0.933
+[2026-02-04 11:00:26,509][    INFO] Iters: 72, LR: 0.0000007, Total loss: 0.046, Loss x: 0.054, Loss s: 0.037, Mask ratio: 0.941
+[2026-02-04 11:00:27,585][    INFO] Iters: 90, LR: 0.0000007, Total loss: 0.047, Loss x: 0.055, Loss s: 0.039, Mask ratio: 0.944
+[2026-02-04 11:00:28,658][    INFO] Iters: 108, LR: 0.0000006, Total loss: 0.046, Loss x: 0.054, Loss s: 0.039, Mask ratio: 0.945
+[2026-02-04 11:00:29,739][    INFO] Iters: 126, LR: 0.0000006, Total loss: 0.046, Loss x: 0.054, Loss s: 0.039, Mask ratio: 0.945
+[2026-02-04 11:00:30,808][    INFO] Iters: 144, LR: 0.0000006, Total loss: 0.046, Loss x: 0.054, Loss s: 0.039, Mask ratio: 0.946
+[2026-02-04 11:00:31,421][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.20, EMA: 86.17
+[2026-02-04 11:00:31,421][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.38, EMA: 41.29
+[2026-02-04 11:00:31,421][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.45, EMA: 83.67
+[2026-02-04 11:00:31,422][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.42, EMA: 57.28
+[2026-02-04 11:00:31,422][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.86, EMA: 67.10
+
+[2026-02-04 11:00:32,280][    INFO] ===========> Epoch: 90, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:32,530][    INFO] Iters: 0, LR: 0.0000006, Total loss: 0.031, Loss x: 0.055, Loss s: 0.007, Mask ratio: 0.957
+[2026-02-04 11:00:33,616][    INFO] Iters: 18, LR: 0.0000006, Total loss: 0.064, Loss x: 0.052, Loss s: 0.077, Mask ratio: 0.927
+[2026-02-04 11:00:34,702][    INFO] Iters: 36, LR: 0.0000006, Total loss: 0.056, Loss x: 0.060, Loss s: 0.052, Mask ratio: 0.940
+[2026-02-04 11:00:35,786][    INFO] Iters: 54, LR: 0.0000006, Total loss: 0.057, Loss x: 0.057, Loss s: 0.057, Mask ratio: 0.936
+[2026-02-04 11:00:36,871][    INFO] Iters: 72, LR: 0.0000006, Total loss: 0.057, Loss x: 0.057, Loss s: 0.058, Mask ratio: 0.927
+[2026-02-04 11:00:37,960][    INFO] Iters: 90, LR: 0.0000006, Total loss: 0.054, Loss x: 0.054, Loss s: 0.054, Mask ratio: 0.932
+[2026-02-04 11:00:39,045][    INFO] Iters: 108, LR: 0.0000006, Total loss: 0.054, Loss x: 0.055, Loss s: 0.054, Mask ratio: 0.929
+[2026-02-04 11:00:40,129][    INFO] Iters: 126, LR: 0.0000006, Total loss: 0.053, Loss x: 0.055, Loss s: 0.052, Mask ratio: 0.930
+[2026-02-04 11:00:41,206][    INFO] Iters: 144, LR: 0.0000006, Total loss: 0.052, Loss x: 0.055, Loss s: 0.050, Mask ratio: 0.932
+[2026-02-04 11:00:41,826][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31, EMA: 86.20
+[2026-02-04 11:00:41,827][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.99, EMA: 41.31
+[2026-02-04 11:00:41,827][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.92, EMA: 83.69
+[2026-02-04 11:00:41,827][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.19, EMA: 57.26
+[2026-02-04 11:00:41,828][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.10, EMA: 67.12
+
+[2026-02-04 11:00:42,701][    INFO] ===========> Epoch: 91, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:42,951][    INFO] Iters: 0, LR: 0.0000006, Total loss: 0.031, Loss x: 0.061, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 11:00:44,038][    INFO] Iters: 18, LR: 0.0000006, Total loss: 0.064, Loss x: 0.061, Loss s: 0.067, Mask ratio: 0.935
+[2026-02-04 11:00:45,122][    INFO] Iters: 36, LR: 0.0000006, Total loss: 0.055, Loss x: 0.055, Loss s: 0.055, Mask ratio: 0.948
+[2026-02-04 11:00:46,202][    INFO] Iters: 54, LR: 0.0000006, Total loss: 0.056, Loss x: 0.056, Loss s: 0.057, Mask ratio: 0.933
+[2026-02-04 11:00:47,266][    INFO] Iters: 72, LR: 0.0000005, Total loss: 0.054, Loss x: 0.056, Loss s: 0.051, Mask ratio: 0.939
+[2026-02-04 11:00:48,333][    INFO] Iters: 90, LR: 0.0000005, Total loss: 0.052, Loss x: 0.055, Loss s: 0.049, Mask ratio: 0.940
+[2026-02-04 11:00:49,403][    INFO] Iters: 108, LR: 0.0000005, Total loss: 0.051, Loss x: 0.056, Loss s: 0.047, Mask ratio: 0.941
+[2026-02-04 11:00:50,473][    INFO] Iters: 126, LR: 0.0000005, Total loss: 0.052, Loss x: 0.055, Loss s: 0.049, Mask ratio: 0.940
+[2026-02-04 11:00:51,545][    INFO] Iters: 144, LR: 0.0000005, Total loss: 0.053, Loss x: 0.054, Loss s: 0.052, Mask ratio: 0.938
+[2026-02-04 11:00:52,176][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.22, EMA: 86.27
+[2026-02-04 11:00:52,177][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.36, EMA: 41.17
+[2026-02-04 11:00:52,177][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.60, EMA: 83.84
+[2026-02-04 11:00:52,177][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.37, EMA: 57.37
+[2026-02-04 11:00:52,177][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.14, EMA: 67.16
+
+[2026-02-04 11:00:53,046][    INFO] ===========> Epoch: 92, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:00:53,297][    INFO] Iters: 0, LR: 0.0000005, Total loss: 0.074, Loss x: 0.071, Loss s: 0.077, Mask ratio: 0.742
+[2026-02-04 11:00:54,393][    INFO] Iters: 18, LR: 0.0000005, Total loss: 0.049, Loss x: 0.054, Loss s: 0.044, Mask ratio: 0.919
+[2026-02-04 11:00:55,478][    INFO] Iters: 36, LR: 0.0000005, Total loss: 0.054, Loss x: 0.051, Loss s: 0.057, Mask ratio: 0.922
+[2026-02-04 11:00:56,550][    INFO] Iters: 54, LR: 0.0000005, Total loss: 0.051, Loss x: 0.050, Loss s: 0.052, Mask ratio: 0.928
+[2026-02-04 11:00:57,623][    INFO] Iters: 72, LR: 0.0000005, Total loss: 0.055, Loss x: 0.052, Loss s: 0.058, Mask ratio: 0.923
+[2026-02-04 11:00:58,703][    INFO] Iters: 90, LR: 0.0000005, Total loss: 0.053, Loss x: 0.052, Loss s: 0.054, Mask ratio: 0.928
+[2026-02-04 11:00:59,777][    INFO] Iters: 108, LR: 0.0000005, Total loss: 0.054, Loss x: 0.053, Loss s: 0.054, Mask ratio: 0.930
+[2026-02-04 11:01:00,853][    INFO] Iters: 126, LR: 0.0000005, Total loss: 0.056, Loss x: 0.054, Loss s: 0.057, Mask ratio: 0.928
+[2026-02-04 11:01:01,915][    INFO] Iters: 144, LR: 0.0000005, Total loss: 0.056, Loss x: 0.055, Loss s: 0.058, Mask ratio: 0.926
+[2026-02-04 11:01:02,537][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.38, EMA: 86.26
+[2026-02-04 11:01:02,538][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.60, EMA: 41.07
+[2026-02-04 11:01:02,538][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.74, EMA: 83.87
+[2026-02-04 11:01:02,538][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.57, EMA: 57.38
+[2026-02-04 11:01:02,538][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.07, EMA: 67.14
+
+[2026-02-04 11:01:03,399][    INFO] ===========> Epoch: 93, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:01:03,652][    INFO] Iters: 0, LR: 0.0000005, Total loss: 0.030, Loss x: 0.059, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 11:01:04,729][    INFO] Iters: 18, LR: 0.0000004, Total loss: 0.038, Loss x: 0.055, Loss s: 0.022, Mask ratio: 0.969
+[2026-02-04 11:01:05,818][    INFO] Iters: 36, LR: 0.0000004, Total loss: 0.044, Loss x: 0.058, Loss s: 0.031, Mask ratio: 0.956
+[2026-02-04 11:01:06,902][    INFO] Iters: 54, LR: 0.0000004, Total loss: 0.047, Loss x: 0.056, Loss s: 0.037, Mask ratio: 0.951
+[2026-02-04 11:01:07,977][    INFO] Iters: 72, LR: 0.0000004, Total loss: 0.045, Loss x: 0.057, Loss s: 0.033, Mask ratio: 0.955
+[2026-02-04 11:01:09,051][    INFO] Iters: 90, LR: 0.0000004, Total loss: 0.045, Loss x: 0.054, Loss s: 0.036, Mask ratio: 0.953
+[2026-02-04 11:01:10,127][    INFO] Iters: 108, LR: 0.0000004, Total loss: 0.047, Loss x: 0.054, Loss s: 0.040, Mask ratio: 0.952
+[2026-02-04 11:01:11,210][    INFO] Iters: 126, LR: 0.0000004, Total loss: 0.046, Loss x: 0.053, Loss s: 0.039, Mask ratio: 0.954
+[2026-02-04 11:01:12,273][    INFO] Iters: 144, LR: 0.0000004, Total loss: 0.047, Loss x: 0.053, Loss s: 0.042, Mask ratio: 0.952
+[2026-02-04 11:01:12,889][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.32, EMA: 86.35
+[2026-02-04 11:01:12,890][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.29, EMA: 40.93
+[2026-02-04 11:01:12,890][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.04, EMA: 83.89
+[2026-02-04 11:01:12,890][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.32, EMA: 57.45
+[2026-02-04 11:01:12,891][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.24, EMA: 67.16
+
+[2026-02-04 11:01:13,751][    INFO] ===========> Epoch: 94, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:01:14,011][    INFO] Iters: 0, LR: 0.0000004, Total loss: 0.065, Loss x: 0.053, Loss s: 0.076, Mask ratio: 0.922
+[2026-02-04 11:01:15,087][    INFO] Iters: 18, LR: 0.0000004, Total loss: 0.044, Loss x: 0.049, Loss s: 0.039, Mask ratio: 0.932
+[2026-02-04 11:01:16,177][    INFO] Iters: 36, LR: 0.0000004, Total loss: 0.046, Loss x: 0.051, Loss s: 0.040, Mask ratio: 0.941
+[2026-02-04 11:01:17,255][    INFO] Iters: 54, LR: 0.0000004, Total loss: 0.045, Loss x: 0.051, Loss s: 0.039, Mask ratio: 0.943
+[2026-02-04 11:01:18,343][    INFO] Iters: 72, LR: 0.0000004, Total loss: 0.047, Loss x: 0.050, Loss s: 0.043, Mask ratio: 0.941
+[2026-02-04 11:01:19,432][    INFO] Iters: 90, LR: 0.0000004, Total loss: 0.046, Loss x: 0.051, Loss s: 0.042, Mask ratio: 0.943
+[2026-02-04 11:01:20,506][    INFO] Iters: 108, LR: 0.0000004, Total loss: 0.045, Loss x: 0.052, Loss s: 0.038, Mask ratio: 0.949
+[2026-02-04 11:01:21,602][    INFO] Iters: 126, LR: 0.0000003, Total loss: 0.044, Loss x: 0.052, Loss s: 0.037, Mask ratio: 0.949
+[2026-02-04 11:01:22,677][    INFO] Iters: 144, LR: 0.0000003, Total loss: 0.045, Loss x: 0.052, Loss s: 0.038, Mask ratio: 0.947
+[2026-02-04 11:01:23,303][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.47, EMA: 86.33
+[2026-02-04 11:01:23,304][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 41.23, EMA: 41.07
+[2026-02-04 11:01:23,304][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.15, EMA: 83.97
+[2026-02-04 11:01:23,304][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.69, EMA: 57.44
+[2026-02-04 11:01:23,304][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.39, EMA: 67.20
+
+[2026-02-04 11:01:24,222][    INFO] ===========> Epoch: 95, Previous best: 68.02 @epoch-61, EMA: 67.22 @epoch-86
+[2026-02-04 11:01:24,473][    INFO] Iters: 0, LR: 0.0000003, Total loss: 0.018, Loss x: 0.002, Loss s: 0.034, Mask ratio: 0.926
+[2026-02-04 11:01:25,568][    INFO] Iters: 18, LR: 0.0000003, Total loss: 0.047, Loss x: 0.046, Loss s: 0.047, Mask ratio: 0.940
+[2026-02-04 11:01:26,660][    INFO] Iters: 36, LR: 0.0000003, Total loss: 0.054, Loss x: 0.049, Loss s: 0.058, Mask ratio: 0.930
+[2026-02-04 11:01:27,745][    INFO] Iters: 54, LR: 0.0000003, Total loss: 0.061, Loss x: 0.051, Loss s: 0.070, Mask ratio: 0.926
+[2026-02-04 11:01:28,815][    INFO] Iters: 72, LR: 0.0000003, Total loss: 0.062, Loss x: 0.052, Loss s: 0.072, Mask ratio: 0.928
+[2026-02-04 11:01:29,887][    INFO] Iters: 90, LR: 0.0000003, Total loss: 0.059, Loss x: 0.053, Loss s: 0.066, Mask ratio: 0.930
+[2026-02-04 11:01:30,954][    INFO] Iters: 108, LR: 0.0000003, Total loss: 0.056, Loss x: 0.053, Loss s: 0.059, Mask ratio: 0.936
+[2026-02-04 11:01:32,027][    INFO] Iters: 126, LR: 0.0000003, Total loss: 0.055, Loss x: 0.053, Loss s: 0.057, Mask ratio: 0.938
+[2026-02-04 11:01:33,088][    INFO] Iters: 144, LR: 0.0000003, Total loss: 0.055, Loss x: 0.053, Loss s: 0.058, Mask ratio: 0.938
+[2026-02-04 11:01:33,722][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31, EMA: 86.36
+[2026-02-04 11:01:33,722][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.77, EMA: 41.29
+[2026-02-04 11:01:33,723][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.99, EMA: 83.98
+[2026-02-04 11:01:33,723][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.32, EMA: 57.47
+[2026-02-04 11:01:33,723][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.10, EMA: 67.28
+
+[2026-02-04 11:01:34,579][    INFO] ===========> Epoch: 96, Previous best: 68.02 @epoch-61, EMA: 67.28 @epoch-95
+[2026-02-04 11:01:34,837][    INFO] Iters: 0, LR: 0.0000003, Total loss: 0.027, Loss x: 0.046, Loss s: 0.008, Mask ratio: 0.972
+[2026-02-04 11:01:35,915][    INFO] Iters: 18, LR: 0.0000003, Total loss: 0.050, Loss x: 0.052, Loss s: 0.049, Mask ratio: 0.911
+[2026-02-04 11:01:36,990][    INFO] Iters: 36, LR: 0.0000003, Total loss: 0.050, Loss x: 0.050, Loss s: 0.049, Mask ratio: 0.917
+[2026-02-04 11:01:38,062][    INFO] Iters: 54, LR: 0.0000003, Total loss: 0.048, Loss x: 0.058, Loss s: 0.039, Mask ratio: 0.929
+[2026-02-04 11:01:39,133][    INFO] Iters: 72, LR: 0.0000002, Total loss: 0.048, Loss x: 0.057, Loss s: 0.039, Mask ratio: 0.931
+[2026-02-04 11:01:40,202][    INFO] Iters: 90, LR: 0.0000002, Total loss: 0.049, Loss x: 0.055, Loss s: 0.042, Mask ratio: 0.932
+[2026-02-04 11:01:41,270][    INFO] Iters: 108, LR: 0.0000002, Total loss: 0.049, Loss x: 0.056, Loss s: 0.042, Mask ratio: 0.932
+[2026-02-04 11:01:42,344][    INFO] Iters: 126, LR: 0.0000002, Total loss: 0.051, Loss x: 0.055, Loss s: 0.047, Mask ratio: 0.930
+[2026-02-04 11:01:43,402][    INFO] Iters: 144, LR: 0.0000002, Total loss: 0.049, Loss x: 0.054, Loss s: 0.045, Mask ratio: 0.932
+[2026-02-04 11:01:44,021][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.50, EMA: 86.37
+[2026-02-04 11:01:44,021][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.79, EMA: 41.00
+[2026-02-04 11:01:44,022][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.93, EMA: 84.01
+[2026-02-04 11:01:44,022][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.75, EMA: 57.51
+[2026-02-04 11:01:44,022][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.24, EMA: 67.23
+
+[2026-02-04 11:01:44,911][    INFO] ===========> Epoch: 97, Previous best: 68.02 @epoch-61, EMA: 67.28 @epoch-95
+[2026-02-04 11:01:45,165][    INFO] Iters: 0, LR: 0.0000002, Total loss: 0.029, Loss x: 0.043, Loss s: 0.015, Mask ratio: 0.988
+[2026-02-04 11:01:46,246][    INFO] Iters: 18, LR: 0.0000002, Total loss: 0.047, Loss x: 0.053, Loss s: 0.040, Mask ratio: 0.954
+[2026-02-04 11:01:47,322][    INFO] Iters: 36, LR: 0.0000002, Total loss: 0.045, Loss x: 0.054, Loss s: 0.037, Mask ratio: 0.952
+[2026-02-04 11:01:48,397][    INFO] Iters: 54, LR: 0.0000002, Total loss: 0.043, Loss x: 0.052, Loss s: 0.033, Mask ratio: 0.953
+[2026-02-04 11:01:49,466][    INFO] Iters: 72, LR: 0.0000002, Total loss: 0.046, Loss x: 0.052, Loss s: 0.040, Mask ratio: 0.948
+[2026-02-04 11:01:50,537][    INFO] Iters: 90, LR: 0.0000002, Total loss: 0.049, Loss x: 0.052, Loss s: 0.047, Mask ratio: 0.942
+[2026-02-04 11:01:51,608][    INFO] Iters: 108, LR: 0.0000002, Total loss: 0.050, Loss x: 0.052, Loss s: 0.047, Mask ratio: 0.944
+[2026-02-04 11:01:52,693][    INFO] Iters: 126, LR: 0.0000002, Total loss: 0.051, Loss x: 0.052, Loss s: 0.050, Mask ratio: 0.941
+[2026-02-04 11:01:53,762][    INFO] Iters: 144, LR: 0.0000002, Total loss: 0.053, Loss x: 0.053, Loss s: 0.052, Mask ratio: 0.936
+[2026-02-04 11:01:54,385][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.29, EMA: 86.32
+[2026-02-04 11:01:54,385][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.77, EMA: 40.97
+[2026-02-04 11:01:54,386][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.98, EMA: 84.01
+[2026-02-04 11:01:54,386][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.47, EMA: 57.48
+[2026-02-04 11:01:54,386][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.13, EMA: 67.19
+
+[2026-02-04 11:01:55,269][    INFO] ===========> Epoch: 98, Previous best: 68.02 @epoch-61, EMA: 67.28 @epoch-95
+[2026-02-04 11:01:55,525][    INFO] Iters: 0, LR: 0.0000001, Total loss: 0.064, Loss x: 0.046, Loss s: 0.083, Mask ratio: 0.966
+[2026-02-04 11:01:56,614][    INFO] Iters: 18, LR: 0.0000001, Total loss: 0.044, Loss x: 0.051, Loss s: 0.036, Mask ratio: 0.958
+[2026-02-04 11:01:57,700][    INFO] Iters: 36, LR: 0.0000001, Total loss: 0.044, Loss x: 0.047, Loss s: 0.041, Mask ratio: 0.952
+[2026-02-04 11:01:58,786][    INFO] Iters: 54, LR: 0.0000001, Total loss: 0.048, Loss x: 0.051, Loss s: 0.044, Mask ratio: 0.945
+[2026-02-04 11:01:59,860][    INFO] Iters: 72, LR: 0.0000001, Total loss: 0.050, Loss x: 0.052, Loss s: 0.048, Mask ratio: 0.941
+[2026-02-04 11:02:00,936][    INFO] Iters: 90, LR: 0.0000001, Total loss: 0.049, Loss x: 0.053, Loss s: 0.045, Mask ratio: 0.942
+[2026-02-04 11:02:02,009][    INFO] Iters: 108, LR: 0.0000001, Total loss: 0.050, Loss x: 0.053, Loss s: 0.048, Mask ratio: 0.942
+[2026-02-04 11:02:03,074][    INFO] Iters: 126, LR: 0.0000001, Total loss: 0.050, Loss x: 0.052, Loss s: 0.049, Mask ratio: 0.939
+[2026-02-04 11:02:04,132][    INFO] Iters: 144, LR: 0.0000001, Total loss: 0.050, Loss x: 0.051, Loss s: 0.049, Mask ratio: 0.939
+[2026-02-04 11:02:04,750][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.29, EMA: 86.31
+[2026-02-04 11:02:04,751][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.32, EMA: 40.81
+[2026-02-04 11:02:04,751][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.94, EMA: 84.02
+[2026-02-04 11:02:04,751][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.39, EMA: 57.46
+[2026-02-04 11:02:04,751][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.98, EMA: 67.15
+
+[2026-02-04 11:02:05,615][    INFO] ===========> Epoch: 99, Previous best: 68.02 @epoch-61, EMA: 67.28 @epoch-95
+[2026-02-04 11:02:05,866][    INFO] Iters: 0, LR: 0.0000001, Total loss: 0.036, Loss x: 0.071, Loss s: 0.000, Mask ratio: 1.000
+[2026-02-04 11:02:06,942][    INFO] Iters: 18, LR: 0.0000001, Total loss: 0.054, Loss x: 0.053, Loss s: 0.054, Mask ratio: 0.919
+[2026-02-04 11:02:08,019][    INFO] Iters: 36, LR: 0.0000001, Total loss: 0.049, Loss x: 0.049, Loss s: 0.049, Mask ratio: 0.917
+[2026-02-04 11:02:09,090][    INFO] Iters: 54, LR: 0.0000001, Total loss: 0.044, Loss x: 0.051, Loss s: 0.038, Mask ratio: 0.935
+[2026-02-04 11:02:10,165][    INFO] Iters: 72, LR: 0.0000000, Total loss: 0.046, Loss x: 0.052, Loss s: 0.040, Mask ratio: 0.933
+[2026-02-04 11:02:11,226][    INFO] Iters: 90, LR: 0.0000000, Total loss: 0.050, Loss x: 0.053, Loss s: 0.046, Mask ratio: 0.931
+[2026-02-04 11:02:12,293][    INFO] Iters: 108, LR: 0.0000000, Total loss: 0.051, Loss x: 0.054, Loss s: 0.047, Mask ratio: 0.931
+[2026-02-04 11:02:13,371][    INFO] Iters: 126, LR: 0.0000000, Total loss: 0.052, Loss x: 0.054, Loss s: 0.050, Mask ratio: 0.930
+[2026-02-04 11:02:14,438][    INFO] Iters: 144, LR: 0.0000000, Total loss: 0.052, Loss x: 0.054, Loss s: 0.049, Mask ratio: 0.932
+[2026-02-04 11:02:15,061][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.40, EMA: 86.34
+[2026-02-04 11:02:15,061][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 40.23, EMA: 40.58
+[2026-02-04 11:02:15,062][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.99, EMA: 84.01
+[2026-02-04 11:02:15,062][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 57.52, EMA: 57.49
+[2026-02-04 11:02:15,062][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 67.04, EMA: 67.10
+
+gpu210-06:3708212:3708512 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+gpu210-06:3708212:3742268 [1] NCCL INFO comm 0xdb1eee0 rank 1 nranks 2 cudaDev 1 busId 1b000 - Abort COMPLETE
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log
+wandb: uploading history steps 14860-14999, summary, console lines 1594-1606
+wandb: 
+wandb: Run history:
+wandb:        eval/mIoU ▁▃▃▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇▇█▇█▇█▇▇█▇██▇
+wandb:    eval/mIoU_ema ▁▂▃▄▅▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇████████████████████
+wandb:   train/loss_all █▄▆▁▃▆▄▂▅▃▂▁▂▂▂▂▂▂▅▁▅▂▅▂▁▁▁▂▁▃▃▃▂▁▁▁▁▂▂▃
+wandb:     train/loss_s ▁▂▁▁▂▂▁▃▄▂▁▁▁▂▁▂▁▂▁▁▂▁▁▁▃▂▁▄▅▁▅▂▂▁▁▁▁▁█▂
+wandb:     train/loss_x █▆▇▅▃▅▄▅▆▄▅▄▃▄▃▂▃▁▂▃▃▃▃▂▃▂▃▂▃▃▃▂▂▃▂▂▂▁▂▁
+wandb:         train/lr █████▇▇▇▇▇▇▇▇▇▇▆▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁
+wandb: train/mask_ratio ▄▅█▆▁█▅▆▁▇▇▇██▆█▇▅▇███▇█▆▆▇█▄▆▆▇█▇▇█▇▆█▇
+wandb: 
+wandb: Run summary:
+wandb:        eval/mIoU 67.0379
+wandb:    eval/mIoU_ema 67.10367
+wandb:   train/loss_all 0.06141
+wandb:     train/loss_s 0.05945
+wandb:     train/loss_x 0.06337
+wandb:         train/lr 0.0
+wandb: train/mask_ratio 0.8838
+wandb: 
+wandb: 🚀 View run rose-butterfly-113 at: https://wandb.ai/anon_user/unimatch-v2/runs/979jxbwh
+wandb: ⭐️ View project at: https://wandb.ai/anon_user/unimatch-v2
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: exp/dfutissue/unimatch_v2/dinov2_base/1_8/seed1/wandb/run-20260204_104433-979jxbwh/logs
+[rank0]:[W204 11:02:19.658941557 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+gpu210-06:3708211:3708511 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+gpu210-06:3708211:3742384 [0] NCCL INFO comm 0xc320400 rank 0 nranks 2 cudaDev 0 busId 1a000 - Abort COMPLETE

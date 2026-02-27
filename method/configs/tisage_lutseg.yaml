@@ -1,0 +1,46 @@
+dataset: lutseg
+data_root: data/LUTSeg
+nclass: 6
+crop_size: 126
+epochs: 100
+batch_size: 2
+lr: 3.0e-06
+lr_multi: 20.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.9
+model: dpt
+backbone: dinov2_base
+lock_backbone: true
+
+# MedSigLIP pseudo-label calibration (enable with --medsiglip flag)
+medsiglip_alpha: 0.1
+medsiglip_n_segments: 64
+medsiglip_context_margin: 2
+medsiglip_recompute_every: 5
+medsiglip_gate_conf: 0.85
+medsiglip_classifier_path: null
+medsiglip_embed_batch_size: 32
+medsiglip_soft_beta: 0.5
+medsiglip_use_multiscale: false
+medsiglip_coarse_n_segments: 32
+medsiglip_coarse_min_size: 80
+medsiglip_fine_n_segments: 128
+medsiglip_fine_min_size: 40
+medsiglip_prior_beta: 0.5
+medsiglip_adaptive_alpha: false
+medsiglip_conf_weighted_kl: false
+medsiglip_use_hard_conf_mask_for_kl: false
+
+# Optional override prompts for zero-shot mode (ignored when classifier checkpoint is used).
+# Order must match mask class indices:
+# 0 background, 1 epithelial tissue, 2 slough, 3 granulation tissue, 4 necrotic tissue, 5 other
+medsiglip_text_prompts:
+  - "a clinical photo of healthy skin without a wound"
+  - "a clinical photo of epithelial tissue in a wound"
+  - "a clinical photo of slough tissue in a wound"
+  - "a clinical photo of granulation tissue in a wound"
+  - "a clinical photo of necrotic tissue in a wound"
+  - "a clinical photo of other tissue in a wound"

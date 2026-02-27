@@ -28,3 +28,8 @@ Form assets (`Form/public`, `Form/private_or_posthoc`) are restricted to golden/
 
 - Patient_20
 - Patient_5
+
+## Anonymization
+
+- Patient-style identifiers (e.g., `Patient_20`, `P20T_1`) are dataset-internal codes, not personal identifiers.
+- Annotator identifiers in form artifacts use pseudonymous IDs (e.g., `user_7`).

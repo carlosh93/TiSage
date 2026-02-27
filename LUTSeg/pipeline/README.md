@@ -45,6 +45,8 @@ Format:
 }
 ```
 
+`doctor_id` values are pseudonymous annotator IDs (for example `user_9`).
+
 Before voting, bootstrap with a preferred annotator:
 
 ```bash

@@ -1,0 +1,1735 @@
+W0225 22:20:04.509000 3539482 site-packages/torch/distributed/run.py:792] 
+W0225 22:20:04.509000 3539482 site-packages/torch/distributed/run.py:792] *****************************************
+W0225 22:20:04.509000 3539482 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0225 22:20:04.509000 3539482 site-packages/torch/distributed/run.py:792] *****************************************
+[2026-02-25 22:20:10,166][    INFO] {'backbone': 'dinov2_base',
+ 'batch_size': 2,
+ 'conf_thresh': 0.95,
+ 'config': 'configs/dfutissue_supervised.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255}, 'name': 'CELoss'},
+ 'crop_size': 98,
+ 'data_root': 'data/DFUTissue',
+ 'dataset': 'dfutissue',
+ 'deterministic': False,
+ 'double_batch_size': False,
+ 'epochs': 100,
+ 'labeled_id_path': 'splits/dfutissue/1_8/labeled.txt',
+ 'local_rank': 0,
+ 'lock_backbone': True,
+ 'lr': 5e-06,
+ 'lr_multi': 20.0,
+ 'model': 'dpt',
+ 'nclass': 4,
+ 'ngpus': 2,
+ 'port': 58893,
+ 'pretrained_path': None,
+ 'save_path': 'exp/dfutissue/supervised_table_baseline/dinov2_base/1_8/seed0',
+ 'seed': 0,
+ 'unlabeled_id_path': 'splits/dfutissue/1_8/unlabeled.txt',
+ 'wandb': True,
+ 'wandb_entity': None,
+ 'wandb_name': None,
+ 'wandb_project': 'unimatch-v2-table-baselines',
+ 'wandb_tags': 'supervised,dfutissue,split_1_8,seed_0,table_baseline'}
+
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/user/.netrc.
+wandb: Currently logged in as: anon_user to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run c0a3zdti
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in exp/dfutissue/supervised_table_baseline/dinov2_base/1_8/seed0/wandb/run-20260225_222011-c0a3zdti
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vague-energy-4
+wandb: ⭐️ View project at https://wandb.ai/anon_user/unimatch-v2-table-baselines
+wandb: 🚀 View run at https://wandb.ai/anon_user/unimatch-v2-table-baselines/runs/c0a3zdti
+[2026-02-25 22:20:15,761][    INFO] Total params: 97.5M
+
+gpu212-18:3539572:3539572 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu212-18:3539572:3539572 [0] NCCL INFO Bootstrap : Using ib0:10.109.154.103<0>
+gpu212-18:3539572:3539572 [0] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu212-18:3539572:3539572 [0] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu212-18:3539572:3539572 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu212-18:3539572:3539572 [0] NCCL INFO cudaDriverVersion 12080
+NCCL version 2.21.5+cuda12.4
+gpu212-18:3539572:3539572 [0] NCCL INFO Comm config Blocking set to 1
+gpu212-18:3539573:3539573 [1] NCCL INFO cudaDriverVersion 12080
+gpu212-18:3539573:3539573 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu212-18:3539573:3539573 [1] NCCL INFO Bootstrap : Using ib0:10.109.154.103<0>
+gpu212-18:3539573:3539573 [1] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+gpu212-18:3539573:3539573 [1] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+gpu212-18:3539573:3539573 [1] NCCL INFO NET/Plugin: Using internal network plugin.
+gpu212-18:3539573:3539573 [1] NCCL INFO Comm config Blocking set to 1
+gpu212-18:3539572:3539648 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu212-18:3539573:3539649 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ib0
+gpu212-18:3539572:3539648 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.154.103<0>
+gpu212-18:3539572:3539648 [0] NCCL INFO Using non-device net plugin version 0
+gpu212-18:3539572:3539648 [0] NCCL INFO Using network IB
+gpu212-18:3539573:3539649 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_2:1/IB [2]mlx5_3:1/IB [3]mlx5_4:1/IB [RO]; OOB ib0:10.109.154.103<0>
+gpu212-18:3539573:3539649 [1] NCCL INFO Using non-device net plugin version 0
+gpu212-18:3539573:3539649 [1] NCCL INFO Using network IB
+gpu212-18:3539573:3539649 [1] NCCL INFO ncclCommInitRank comm 0xe802160 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId b3000 commId 0x36156e4887ef3067 - Init START
+gpu212-18:3539572:3539648 [0] NCCL INFO ncclCommInitRank comm 0xb2f8f40 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 89000 commId 0x36156e4887ef3067 - Init START
+gpu212-18:3539572:3539648 [0] NCCL INFO Setting affinity for GPU 0 to 0ff0,0f000000
+gpu212-18:3539573:3539649 [1] NCCL INFO Setting affinity for GPU 1 to 0ff0,0f000000
+gpu212-18:3539572:3539648 [0] NCCL INFO comm 0xb2f8f40 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+gpu212-18:3539573:3539649 [1] NCCL INFO comm 0xe802160 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+gpu212-18:3539572:3539648 [0] NCCL INFO Channel 00/02 :    0   1
+gpu212-18:3539573:3539649 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+gpu212-18:3539572:3539648 [0] NCCL INFO Channel 01/02 :    0   1
+gpu212-18:3539573:3539649 [1] NCCL INFO P2P Chunksize set to 524288
+gpu212-18:3539572:3539648 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+gpu212-18:3539572:3539648 [0] NCCL INFO P2P Chunksize set to 524288
+gpu212-18:3539573:3539649 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/CUMEM
+gpu212-18:3539573:3539649 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/CUMEM
+gpu212-18:3539572:3539648 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/CUMEM
+gpu212-18:3539572:3539648 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/CUMEM
+gpu212-18:3539572:3539648 [0] NCCL INFO Connected all rings
+gpu212-18:3539572:3539648 [0] NCCL INFO Connected all trees
+gpu212-18:3539573:3539649 [1] NCCL INFO Connected all rings
+gpu212-18:3539573:3539649 [1] NCCL INFO Connected all trees
+gpu212-18:3539573:3539649 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu212-18:3539573:3539649 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu212-18:3539572:3539648 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+gpu212-18:3539572:3539648 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+gpu212-18:3539573:3539649 [1] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu212-18:3539572:3539648 [0] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+gpu212-18:3539573:3539649 [1] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu212-18:3539572:3539648 [0] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+gpu212-18:3539572:3539648 [0] NCCL INFO ncclCommInitRank comm 0xb2f8f40 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 89000 commId 0x36156e4887ef3067 - Init COMPLETE
+gpu212-18:3539573:3539649 [1] NCCL INFO ncclCommInitRank comm 0xe802160 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId b3000 commId 0x36156e4887ef3067 - Init COMPLETE
+[2026-02-25 22:20:16,302][    INFO] Upsampling labeled set to 3000 samples per epoch.
+[2026-02-25 22:20:16,304][    INFO] ===========> Epoch: 0, LR: 0.0000050, Previous best: 0.00
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [4, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [4, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/opt/venv/lib/python3.10/site-packages/torch/autograd/graph.py:823: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [4, 128, 1, 1], strides() = [128, 1, 128, 128]
+bucket_view.sizes() = [4, 128, 1, 1], strides() = [128, 1, 1, 1] (Triggered internally at /pytorch/torch/csrc/distributed/c10d/reducer.cpp:327.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[2026-02-25 22:20:17,541][    INFO] Iters: 0, Total loss: 1.418
+[2026-02-25 22:20:19,478][    INFO] Iters: 93, Total loss: 0.636
+[2026-02-25 22:20:21,400][    INFO] Iters: 186, Total loss: 0.510
+[2026-02-25 22:20:23,327][    INFO] Iters: 279, Total loss: 0.439
+[2026-02-25 22:20:25,255][    INFO] Iters: 372, Total loss: 0.394
+[2026-02-25 22:20:27,206][    INFO] Iters: 465, Total loss: 0.362
+[2026-02-25 22:20:29,118][    INFO] Iters: 558, Total loss: 0.340
+[2026-02-25 22:20:31,020][    INFO] Iters: 651, Total loss: 0.321
+[2026-02-25 22:20:32,973][    INFO] Iters: 744, Total loss: 0.307
+[2026-02-25 22:20:34,201][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 82.10
+[2026-02-25 22:20:34,201][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.24
+[2026-02-25 22:20:34,202][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.16
+[2026-02-25 22:20:34,202][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.15
+[2026-02-25 22:20:34,202][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 59.16
+
+[2026-02-25 22:20:35,172][    INFO] ===========> Epoch: 1, LR: 0.0000050, Previous best: 59.16
+[2026-02-25 22:20:35,322][    INFO] Iters: 0, Total loss: 0.148
+[2026-02-25 22:20:37,340][    INFO] Iters: 93, Total loss: 0.189
+[2026-02-25 22:20:39,342][    INFO] Iters: 186, Total loss: 0.193
+[2026-02-25 22:20:41,414][    INFO] Iters: 279, Total loss: 0.194
+[2026-02-25 22:20:43,491][    INFO] Iters: 372, Total loss: 0.189
+[2026-02-25 22:20:45,570][    INFO] Iters: 465, Total loss: 0.182
+[2026-02-25 22:20:47,648][    INFO] Iters: 558, Total loss: 0.179
+[2026-02-25 22:20:49,723][    INFO] Iters: 651, Total loss: 0.175
+[2026-02-25 22:20:51,801][    INFO] Iters: 744, Total loss: 0.173
+[2026-02-25 22:20:52,124][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 84.01
+[2026-02-25 22:20:52,125][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 19.88
+[2026-02-25 22:20:52,125][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.64
+[2026-02-25 22:20:52,125][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.48
+[2026-02-25 22:20:52,126][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 59.00
+
+[2026-02-25 22:20:52,631][    INFO] ===========> Epoch: 2, LR: 0.0000049, Previous best: 59.16
+[2026-02-25 22:20:52,772][    INFO] Iters: 0, Total loss: 0.160
+[2026-02-25 22:20:54,668][    INFO] Iters: 93, Total loss: 0.143
+[2026-02-25 22:20:56,570][    INFO] Iters: 186, Total loss: 0.147
+[2026-02-25 22:20:58,456][    INFO] Iters: 279, Total loss: 0.142
+[2026-02-25 22:21:00,363][    INFO] Iters: 372, Total loss: 0.139
+[2026-02-25 22:21:02,285][    INFO] Iters: 465, Total loss: 0.135
+[2026-02-25 22:21:04,195][    INFO] Iters: 558, Total loss: 0.136
+[2026-02-25 22:21:06,098][    INFO] Iters: 651, Total loss: 0.135
+[2026-02-25 22:21:08,004][    INFO] Iters: 744, Total loss: 0.132
+[2026-02-25 22:21:08,324][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.30
+[2026-02-25 22:21:08,325][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.82
+[2026-02-25 22:21:08,325][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.29
+[2026-02-25 22:21:08,325][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.19
+[2026-02-25 22:21:08,325][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.15
+
+[2026-02-25 22:21:09,327][    INFO] ===========> Epoch: 3, LR: 0.0000049, Previous best: 62.15
+[2026-02-25 22:21:09,470][    INFO] Iters: 0, Total loss: 0.121
+[2026-02-25 22:21:11,380][    INFO] Iters: 93, Total loss: 0.111
+[2026-02-25 22:21:13,301][    INFO] Iters: 186, Total loss: 0.118
+[2026-02-25 22:21:15,220][    INFO] Iters: 279, Total loss: 0.119
+[2026-02-25 22:21:17,155][    INFO] Iters: 372, Total loss: 0.115
+[2026-02-25 22:21:19,283][    INFO] Iters: 465, Total loss: 0.113
+[2026-02-25 22:21:21,407][    INFO] Iters: 558, Total loss: 0.112
+[2026-02-25 22:21:23,538][    INFO] Iters: 651, Total loss: 0.112
+[2026-02-25 22:21:25,460][    INFO] Iters: 744, Total loss: 0.111
+[2026-02-25 22:21:25,778][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.04
+[2026-02-25 22:21:25,778][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.57
+[2026-02-25 22:21:25,779][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.47
+[2026-02-25 22:21:25,779][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.29
+[2026-02-25 22:21:25,779][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.09
+
+[2026-02-25 22:21:26,827][    INFO] ===========> Epoch: 4, LR: 0.0000048, Previous best: 63.09
+[2026-02-25 22:21:26,972][    INFO] Iters: 0, Total loss: 0.104
+[2026-02-25 22:21:28,893][    INFO] Iters: 93, Total loss: 0.102
+[2026-02-25 22:21:30,809][    INFO] Iters: 186, Total loss: 0.105
+[2026-02-25 22:21:32,728][    INFO] Iters: 279, Total loss: 0.103
+[2026-02-25 22:21:34,831][    INFO] Iters: 372, Total loss: 0.103
+[2026-02-25 22:21:36,858][    INFO] Iters: 465, Total loss: 0.103
+[2026-02-25 22:21:39,003][    INFO] Iters: 558, Total loss: 0.102
+[2026-02-25 22:21:41,175][    INFO] Iters: 651, Total loss: 0.101
+[2026-02-25 22:21:43,287][    INFO] Iters: 744, Total loss: 0.101
+[2026-02-25 22:21:43,620][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.11
+[2026-02-25 22:21:43,620][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.80
+[2026-02-25 22:21:43,621][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.91
+[2026-02-25 22:21:43,621][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 53.61
+[2026-02-25 22:21:43,621][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.61
+
+[2026-02-25 22:21:44,703][    INFO] ===========> Epoch: 5, LR: 0.0000048, Previous best: 63.61
+[2026-02-25 22:21:44,851][    INFO] Iters: 0, Total loss: 0.099
+[2026-02-25 22:21:46,969][    INFO] Iters: 93, Total loss: 0.098
+[2026-02-25 22:21:49,091][    INFO] Iters: 186, Total loss: 0.100
+[2026-02-25 22:21:51,093][    INFO] Iters: 279, Total loss: 0.097
+[2026-02-25 22:21:53,014][    INFO] Iters: 372, Total loss: 0.102
+[2026-02-25 22:21:54,945][    INFO] Iters: 465, Total loss: 0.101
+[2026-02-25 22:21:56,880][    INFO] Iters: 558, Total loss: 0.100
+[2026-02-25 22:21:58,797][    INFO] Iters: 651, Total loss: 0.098
+[2026-02-25 22:22:00,717][    INFO] Iters: 744, Total loss: 0.097
+[2026-02-25 22:22:01,035][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.71
+[2026-02-25 22:22:01,036][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 34.75
+[2026-02-25 22:22:01,036][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.22
+[2026-02-25 22:22:01,036][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.90
+[2026-02-25 22:22:01,036][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.65
+
+[2026-02-25 22:22:02,085][    INFO] ===========> Epoch: 6, LR: 0.0000047, Previous best: 63.65
+[2026-02-25 22:22:02,229][    INFO] Iters: 0, Total loss: 0.085
+[2026-02-25 22:22:04,163][    INFO] Iters: 93, Total loss: 0.094
+[2026-02-25 22:22:06,092][    INFO] Iters: 186, Total loss: 0.089
+[2026-02-25 22:22:08,026][    INFO] Iters: 279, Total loss: 0.088
+[2026-02-25 22:22:09,970][    INFO] Iters: 372, Total loss: 0.086
+[2026-02-25 22:22:11,881][    INFO] Iters: 465, Total loss: 0.085
+[2026-02-25 22:22:13,788][    INFO] Iters: 558, Total loss: 0.085
+[2026-02-25 22:22:15,688][    INFO] Iters: 651, Total loss: 0.085
+[2026-02-25 22:22:17,579][    INFO] Iters: 744, Total loss: 0.084
+[2026-02-25 22:22:17,896][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.94
+[2026-02-25 22:22:17,896][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 36.60
+[2026-02-25 22:22:17,896][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.76
+[2026-02-25 22:22:17,896][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.56
+[2026-02-25 22:22:17,897][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.71
+
+[2026-02-25 22:22:18,917][    INFO] ===========> Epoch: 7, LR: 0.0000047, Previous best: 63.71
+[2026-02-25 22:22:19,062][    INFO] Iters: 0, Total loss: 0.064
+[2026-02-25 22:22:20,975][    INFO] Iters: 93, Total loss: 0.078
+[2026-02-25 22:22:22,903][    INFO] Iters: 186, Total loss: 0.079
+[2026-02-25 22:22:24,825][    INFO] Iters: 279, Total loss: 0.079
+[2026-02-25 22:22:26,753][    INFO] Iters: 372, Total loss: 0.078
+[2026-02-25 22:22:28,673][    INFO] Iters: 465, Total loss: 0.077
+[2026-02-25 22:22:30,585][    INFO] Iters: 558, Total loss: 0.076
+[2026-02-25 22:22:32,499][    INFO] Iters: 651, Total loss: 0.077
+[2026-02-25 22:22:34,412][    INFO] Iters: 744, Total loss: 0.077
+[2026-02-25 22:22:34,728][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.52
+[2026-02-25 22:22:34,729][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.10
+[2026-02-25 22:22:34,729][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.37
+[2026-02-25 22:22:34,729][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.33
+[2026-02-25 22:22:34,729][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.58
+
+[2026-02-25 22:22:35,253][    INFO] ===========> Epoch: 8, LR: 0.0000046, Previous best: 63.71
+[2026-02-25 22:22:35,398][    INFO] Iters: 0, Total loss: 0.066
+[2026-02-25 22:22:37,331][    INFO] Iters: 93, Total loss: 0.080
+[2026-02-25 22:22:39,233][    INFO] Iters: 186, Total loss: 0.077
+[2026-02-25 22:22:41,145][    INFO] Iters: 279, Total loss: 0.076
+[2026-02-25 22:22:43,052][    INFO] Iters: 372, Total loss: 0.074
+[2026-02-25 22:22:44,970][    INFO] Iters: 465, Total loss: 0.074
+[2026-02-25 22:22:46,875][    INFO] Iters: 558, Total loss: 0.074
+[2026-02-25 22:22:48,899][    INFO] Iters: 651, Total loss: 0.073
+[2026-02-25 22:22:50,917][    INFO] Iters: 744, Total loss: 0.074
+[2026-02-25 22:22:51,239][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.68
+[2026-02-25 22:22:51,239][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 35.15
+[2026-02-25 22:22:51,239][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.08
+[2026-02-25 22:22:51,239][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.93
+[2026-02-25 22:22:51,240][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.46
+
+[2026-02-25 22:22:52,262][    INFO] ===========> Epoch: 9, LR: 0.0000046, Previous best: 64.46
+[2026-02-25 22:22:52,411][    INFO] Iters: 0, Total loss: 0.069
+[2026-02-25 22:22:54,475][    INFO] Iters: 93, Total loss: 0.066
+[2026-02-25 22:22:56,515][    INFO] Iters: 186, Total loss: 0.069
+[2026-02-25 22:22:58,452][    INFO] Iters: 279, Total loss: 0.068
+[2026-02-25 22:23:00,503][    INFO] Iters: 372, Total loss: 0.069
+[2026-02-25 22:23:02,701][    INFO] Iters: 465, Total loss: 0.069
+[2026-02-25 22:23:04,659][    INFO] Iters: 558, Total loss: 0.069
+[2026-02-25 22:23:06,801][    INFO] Iters: 651, Total loss: 0.068
+[2026-02-25 22:23:08,733][    INFO] Iters: 744, Total loss: 0.068
+[2026-02-25 22:23:09,050][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.30
+[2026-02-25 22:23:09,050][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 37.23
+[2026-02-25 22:23:09,050][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.84
+[2026-02-25 22:23:09,051][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.36
+[2026-02-25 22:23:09,051][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.68
+
+[2026-02-25 22:23:10,060][    INFO] ===========> Epoch: 10, LR: 0.0000045, Previous best: 64.68
+[2026-02-25 22:23:10,205][    INFO] Iters: 0, Total loss: 0.076
+[2026-02-25 22:23:12,111][    INFO] Iters: 93, Total loss: 0.065
+[2026-02-25 22:23:14,005][    INFO] Iters: 186, Total loss: 0.066
+[2026-02-25 22:23:15,931][    INFO] Iters: 279, Total loss: 0.066
+[2026-02-25 22:23:17,978][    INFO] Iters: 372, Total loss: 0.066
+[2026-02-25 22:23:19,992][    INFO] Iters: 465, Total loss: 0.065
+[2026-02-25 22:23:22,016][    INFO] Iters: 558, Total loss: 0.067
+[2026-02-25 22:23:24,040][    INFO] Iters: 651, Total loss: 0.067
+[2026-02-25 22:23:25,955][    INFO] Iters: 744, Total loss: 0.067
+[2026-02-25 22:23:26,280][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.74
+[2026-02-25 22:23:26,280][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.80
+[2026-02-25 22:23:26,281][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.83
+[2026-02-25 22:23:26,281][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.90
+[2026-02-25 22:23:26,281][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.32
+
+[2026-02-25 22:23:26,801][    INFO] ===========> Epoch: 11, LR: 0.0000045, Previous best: 64.68
+[2026-02-25 22:23:26,947][    INFO] Iters: 0, Total loss: 0.104
+[2026-02-25 22:23:29,007][    INFO] Iters: 93, Total loss: 0.066
+[2026-02-25 22:23:31,064][    INFO] Iters: 186, Total loss: 0.064
+[2026-02-25 22:23:33,124][    INFO] Iters: 279, Total loss: 0.064
+[2026-02-25 22:23:35,086][    INFO] Iters: 372, Total loss: 0.063
+[2026-02-25 22:23:37,078][    INFO] Iters: 465, Total loss: 0.063
+[2026-02-25 22:23:39,088][    INFO] Iters: 558, Total loss: 0.062
+[2026-02-25 22:23:41,087][    INFO] Iters: 651, Total loss: 0.062
+[2026-02-25 22:23:43,161][    INFO] Iters: 744, Total loss: 0.062
+[2026-02-25 22:23:43,483][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.86
+[2026-02-25 22:23:43,484][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.90
+[2026-02-25 22:23:43,484][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.51
+[2026-02-25 22:23:43,484][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.92
+[2026-02-25 22:23:43,484][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.80
+
+[2026-02-25 22:23:44,013][    INFO] ===========> Epoch: 12, LR: 0.0000045, Previous best: 64.68
+[2026-02-25 22:23:44,156][    INFO] Iters: 0, Total loss: 0.061
+[2026-02-25 22:23:46,222][    INFO] Iters: 93, Total loss: 0.060
+[2026-02-25 22:23:48,169][    INFO] Iters: 186, Total loss: 0.061
+[2026-02-25 22:23:50,092][    INFO] Iters: 279, Total loss: 0.061
+[2026-02-25 22:23:52,148][    INFO] Iters: 372, Total loss: 0.060
+[2026-02-25 22:23:54,177][    INFO] Iters: 465, Total loss: 0.060
+[2026-02-25 22:23:56,082][    INFO] Iters: 558, Total loss: 0.059
+[2026-02-25 22:23:57,978][    INFO] Iters: 651, Total loss: 0.059
+[2026-02-25 22:24:00,001][    INFO] Iters: 744, Total loss: 0.059
+[2026-02-25 22:24:00,322][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.24
+[2026-02-25 22:24:00,323][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.28
+[2026-02-25 22:24:00,323][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 81.39
+[2026-02-25 22:24:00,323][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.66
+[2026-02-25 22:24:00,323][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.64
+
+[2026-02-25 22:24:00,860][    INFO] ===========> Epoch: 13, LR: 0.0000044, Previous best: 64.68
+[2026-02-25 22:24:01,004][    INFO] Iters: 0, Total loss: 0.047
+[2026-02-25 22:24:03,080][    INFO] Iters: 93, Total loss: 0.062
+[2026-02-25 22:24:05,091][    INFO] Iters: 186, Total loss: 0.058
+[2026-02-25 22:24:07,025][    INFO] Iters: 279, Total loss: 0.058
+[2026-02-25 22:24:08,933][    INFO] Iters: 372, Total loss: 0.058
+[2026-02-25 22:24:10,918][    INFO] Iters: 465, Total loss: 0.057
+[2026-02-25 22:24:13,055][    INFO] Iters: 558, Total loss: 0.057
+[2026-02-25 22:24:14,962][    INFO] Iters: 651, Total loss: 0.057
+[2026-02-25 22:24:16,975][    INFO] Iters: 744, Total loss: 0.057
+[2026-02-25 22:24:17,304][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.69
+[2026-02-25 22:24:17,304][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.27
+[2026-02-25 22:24:17,305][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.46
+[2026-02-25 22:24:17,305][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.87
+[2026-02-25 22:24:17,305][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.32
+
+[2026-02-25 22:24:17,837][    INFO] ===========> Epoch: 14, LR: 0.0000044, Previous best: 64.68
+[2026-02-25 22:24:17,978][    INFO] Iters: 0, Total loss: 0.058
+[2026-02-25 22:24:19,960][    INFO] Iters: 93, Total loss: 0.059
+[2026-02-25 22:24:21,924][    INFO] Iters: 186, Total loss: 0.071
+[2026-02-25 22:24:23,853][    INFO] Iters: 279, Total loss: 0.069
+[2026-02-25 22:24:25,817][    INFO] Iters: 372, Total loss: 0.066
+[2026-02-25 22:24:27,728][    INFO] Iters: 465, Total loss: 0.065
+[2026-02-25 22:24:29,638][    INFO] Iters: 558, Total loss: 0.063
+[2026-02-25 22:24:31,546][    INFO] Iters: 651, Total loss: 0.061
+[2026-02-25 22:24:33,462][    INFO] Iters: 744, Total loss: 0.060
+[2026-02-25 22:24:33,781][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.21
+[2026-02-25 22:24:33,782][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 31.34
+[2026-02-25 22:24:33,782][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.26
+[2026-02-25 22:24:33,782][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.28
+[2026-02-25 22:24:33,782][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.77
+
+[2026-02-25 22:24:34,305][    INFO] ===========> Epoch: 15, LR: 0.0000043, Previous best: 64.68
+[2026-02-25 22:24:34,453][    INFO] Iters: 0, Total loss: 0.058
+[2026-02-25 22:24:36,379][    INFO] Iters: 93, Total loss: 0.052
+[2026-02-25 22:24:38,291][    INFO] Iters: 186, Total loss: 0.053
+[2026-02-25 22:24:40,206][    INFO] Iters: 279, Total loss: 0.052
+[2026-02-25 22:24:42,133][    INFO] Iters: 372, Total loss: 0.052
+[2026-02-25 22:24:44,077][    INFO] Iters: 465, Total loss: 0.052
+[2026-02-25 22:24:46,022][    INFO] Iters: 558, Total loss: 0.052
+[2026-02-25 22:24:47,958][    INFO] Iters: 651, Total loss: 0.051
+[2026-02-25 22:24:49,872][    INFO] Iters: 744, Total loss: 0.051
+[2026-02-25 22:24:50,203][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.30
+[2026-02-25 22:24:50,204][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.53
+[2026-02-25 22:24:50,204][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.30
+[2026-02-25 22:24:50,204][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.67
+[2026-02-25 22:24:50,204][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.95
+
+[2026-02-25 22:24:50,751][    INFO] ===========> Epoch: 16, LR: 0.0000043, Previous best: 64.68
+[2026-02-25 22:24:50,898][    INFO] Iters: 0, Total loss: 0.044
+[2026-02-25 22:24:52,871][    INFO] Iters: 93, Total loss: 0.051
+[2026-02-25 22:24:54,840][    INFO] Iters: 186, Total loss: 0.052
+[2026-02-25 22:24:56,852][    INFO] Iters: 279, Total loss: 0.052
+[2026-02-25 22:24:59,001][    INFO] Iters: 372, Total loss: 0.052
+[2026-02-25 22:25:01,084][    INFO] Iters: 465, Total loss: 0.051
+[2026-02-25 22:25:03,022][    INFO] Iters: 558, Total loss: 0.051
+[2026-02-25 22:25:04,943][    INFO] Iters: 651, Total loss: 0.052
+[2026-02-25 22:25:06,858][    INFO] Iters: 744, Total loss: 0.051
+[2026-02-25 22:25:07,173][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.21
+[2026-02-25 22:25:07,173][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 31.80
+[2026-02-25 22:25:07,174][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.35
+[2026-02-25 22:25:07,174][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.35
+[2026-02-25 22:25:07,174][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.68
+
+[2026-02-25 22:25:07,685][    INFO] ===========> Epoch: 17, LR: 0.0000042, Previous best: 64.68
+[2026-02-25 22:25:07,825][    INFO] Iters: 0, Total loss: 0.044
+[2026-02-25 22:25:09,749][    INFO] Iters: 93, Total loss: 0.048
+[2026-02-25 22:25:11,662][    INFO] Iters: 186, Total loss: 0.051
+[2026-02-25 22:25:13,567][    INFO] Iters: 279, Total loss: 0.050
+[2026-02-25 22:25:15,467][    INFO] Iters: 372, Total loss: 0.050
+[2026-02-25 22:25:17,362][    INFO] Iters: 465, Total loss: 0.050
+[2026-02-25 22:25:19,264][    INFO] Iters: 558, Total loss: 0.050
+[2026-02-25 22:25:21,177][    INFO] Iters: 651, Total loss: 0.050
+[2026-02-25 22:25:23,097][    INFO] Iters: 744, Total loss: 0.050
+[2026-02-25 22:25:23,413][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.42
+[2026-02-25 22:25:23,413][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.17
+[2026-02-25 22:25:23,414][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.52
+[2026-02-25 22:25:23,414][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.06
+[2026-02-25 22:25:23,414][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 63.04
+
+[2026-02-25 22:25:23,959][    INFO] ===========> Epoch: 18, LR: 0.0000042, Previous best: 64.68
+[2026-02-25 22:25:24,099][    INFO] Iters: 0, Total loss: 0.050
+[2026-02-25 22:25:26,033][    INFO] Iters: 93, Total loss: 0.051
+[2026-02-25 22:25:27,998][    INFO] Iters: 186, Total loss: 0.048
+[2026-02-25 22:25:29,914][    INFO] Iters: 279, Total loss: 0.047
+[2026-02-25 22:25:31,839][    INFO] Iters: 372, Total loss: 0.047
+[2026-02-25 22:25:33,904][    INFO] Iters: 465, Total loss: 0.047
+[2026-02-25 22:25:35,977][    INFO] Iters: 558, Total loss: 0.047
+[2026-02-25 22:25:38,044][    INFO] Iters: 651, Total loss: 0.047
+[2026-02-25 22:25:40,103][    INFO] Iters: 744, Total loss: 0.048
+[2026-02-25 22:25:40,445][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.81
+[2026-02-25 22:25:40,445][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 32.20
+[2026-02-25 22:25:40,445][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.41
+[2026-02-25 22:25:40,446][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.93
+[2026-02-25 22:25:40,446][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.84
+
+[2026-02-25 22:25:40,980][    INFO] ===========> Epoch: 19, LR: 0.0000041, Previous best: 64.68
+[2026-02-25 22:25:41,128][    INFO] Iters: 0, Total loss: 0.063
+[2026-02-25 22:25:43,264][    INFO] Iters: 93, Total loss: 0.047
+[2026-02-25 22:25:45,412][    INFO] Iters: 186, Total loss: 0.046
+[2026-02-25 22:25:47,543][    INFO] Iters: 279, Total loss: 0.047
+[2026-02-25 22:25:49,674][    INFO] Iters: 372, Total loss: 0.047
+[2026-02-25 22:25:51,744][    INFO] Iters: 465, Total loss: 0.047
+[2026-02-25 22:25:53,861][    INFO] Iters: 558, Total loss: 0.048
+[2026-02-25 22:25:56,014][    INFO] Iters: 651, Total loss: 0.048
+[2026-02-25 22:25:57,964][    INFO] Iters: 744, Total loss: 0.047
+[2026-02-25 22:25:58,281][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.50
+[2026-02-25 22:25:58,281][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 33.93
+[2026-02-25 22:25:58,281][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.27
+[2026-02-25 22:25:58,282][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.22
+[2026-02-25 22:25:58,282][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 64.23
+
+[2026-02-25 22:25:58,801][    INFO] ===========> Epoch: 20, LR: 0.0000041, Previous best: 64.68
+[2026-02-25 22:25:58,946][    INFO] Iters: 0, Total loss: 0.093
+[2026-02-25 22:26:00,880][    INFO] Iters: 93, Total loss: 0.047
+[2026-02-25 22:26:02,807][    INFO] Iters: 186, Total loss: 0.048
+[2026-02-25 22:26:04,717][    INFO] Iters: 279, Total loss: 0.047
+[2026-02-25 22:26:06,719][    INFO] Iters: 372, Total loss: 0.048
+[2026-02-25 22:26:08,796][    INFO] Iters: 465, Total loss: 0.047
+[2026-02-25 22:26:10,862][    INFO] Iters: 558, Total loss: 0.047
+[2026-02-25 22:26:12,930][    INFO] Iters: 651, Total loss: 0.047
+[2026-02-25 22:26:14,993][    INFO] Iters: 744, Total loss: 0.047
+[2026-02-25 22:26:15,319][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.37
+[2026-02-25 22:26:15,319][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.56
+[2026-02-25 22:26:15,319][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.78
+[2026-02-25 22:26:15,320][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.02
+[2026-02-25 22:26:15,320][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.18
+
+[2026-02-25 22:26:15,864][    INFO] ===========> Epoch: 21, LR: 0.0000040, Previous best: 64.68
+[2026-02-25 22:26:16,004][    INFO] Iters: 0, Total loss: 0.047
+[2026-02-25 22:26:17,937][    INFO] Iters: 93, Total loss: 0.041
+[2026-02-25 22:26:19,929][    INFO] Iters: 186, Total loss: 0.043
+[2026-02-25 22:26:21,847][    INFO] Iters: 279, Total loss: 0.042
+[2026-02-25 22:26:23,769][    INFO] Iters: 372, Total loss: 0.043
+[2026-02-25 22:26:25,698][    INFO] Iters: 465, Total loss: 0.043
+[2026-02-25 22:26:27,614][    INFO] Iters: 558, Total loss: 0.044
+[2026-02-25 22:26:29,534][    INFO] Iters: 651, Total loss: 0.044
+[2026-02-25 22:26:31,445][    INFO] Iters: 744, Total loss: 0.045
+[2026-02-25 22:26:31,759][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.26
+[2026-02-25 22:26:31,759][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.87
+[2026-02-25 22:26:31,760][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.80
+[2026-02-25 22:26:31,760][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.95
+[2026-02-25 22:26:31,760][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.47
+
+[2026-02-25 22:26:32,319][    INFO] ===========> Epoch: 22, LR: 0.0000040, Previous best: 64.68
+[2026-02-25 22:26:32,464][    INFO] Iters: 0, Total loss: 0.021
+[2026-02-25 22:26:34,391][    INFO] Iters: 93, Total loss: 0.046
+[2026-02-25 22:26:36,326][    INFO] Iters: 186, Total loss: 0.045
+[2026-02-25 22:26:38,280][    INFO] Iters: 279, Total loss: 0.045
+[2026-02-25 22:26:40,232][    INFO] Iters: 372, Total loss: 0.045
+[2026-02-25 22:26:42,167][    INFO] Iters: 465, Total loss: 0.044
+[2026-02-25 22:26:44,292][    INFO] Iters: 558, Total loss: 0.044
+[2026-02-25 22:26:46,430][    INFO] Iters: 651, Total loss: 0.044
+[2026-02-25 22:26:48,455][    INFO] Iters: 744, Total loss: 0.044
+[2026-02-25 22:26:48,771][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.17
+[2026-02-25 22:26:48,771][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.91
+[2026-02-25 22:26:48,772][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.50
+[2026-02-25 22:26:48,772][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.60
+[2026-02-25 22:26:48,772][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.79
+
+[2026-02-25 22:26:49,311][    INFO] ===========> Epoch: 23, LR: 0.0000040, Previous best: 64.68
+[2026-02-25 22:26:49,456][    INFO] Iters: 0, Total loss: 0.062
+[2026-02-25 22:26:51,400][    INFO] Iters: 93, Total loss: 0.043
+[2026-02-25 22:26:53,447][    INFO] Iters: 186, Total loss: 0.045
+[2026-02-25 22:26:55,426][    INFO] Iters: 279, Total loss: 0.045
+[2026-02-25 22:26:57,349][    INFO] Iters: 372, Total loss: 0.046
+[2026-02-25 22:26:59,275][    INFO] Iters: 465, Total loss: 0.045
+[2026-02-25 22:27:01,320][    INFO] Iters: 558, Total loss: 0.044
+[2026-02-25 22:27:03,413][    INFO] Iters: 651, Total loss: 0.044
+[2026-02-25 22:27:05,555][    INFO] Iters: 744, Total loss: 0.044
+[2026-02-25 22:27:05,900][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.14
+[2026-02-25 22:27:05,901][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 29.06
+[2026-02-25 22:27:05,901][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.16
+[2026-02-25 22:27:05,901][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.20
+[2026-02-25 22:27:05,901][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.64
+
+[2026-02-25 22:27:06,416][    INFO] ===========> Epoch: 24, LR: 0.0000039, Previous best: 64.68
+[2026-02-25 22:27:06,562][    INFO] Iters: 0, Total loss: 0.058
+[2026-02-25 22:27:08,668][    INFO] Iters: 93, Total loss: 0.043
+[2026-02-25 22:27:10,596][    INFO] Iters: 186, Total loss: 0.043
+[2026-02-25 22:27:12,526][    INFO] Iters: 279, Total loss: 0.042
+[2026-02-25 22:27:14,454][    INFO] Iters: 372, Total loss: 0.042
+[2026-02-25 22:27:16,381][    INFO] Iters: 465, Total loss: 0.042
+[2026-02-25 22:27:18,299][    INFO] Iters: 558, Total loss: 0.042
+[2026-02-25 22:27:20,224][    INFO] Iters: 651, Total loss: 0.043
+[2026-02-25 22:27:22,148][    INFO] Iters: 744, Total loss: 0.043
+[2026-02-25 22:27:22,467][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.32
+[2026-02-25 22:27:22,467][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.74
+[2026-02-25 22:27:22,467][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.52
+[2026-02-25 22:27:22,468][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.11
+[2026-02-25 22:27:22,468][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.42
+
+[2026-02-25 22:27:22,990][    INFO] ===========> Epoch: 25, LR: 0.0000039, Previous best: 64.68
+[2026-02-25 22:27:23,143][    INFO] Iters: 0, Total loss: 0.067
+[2026-02-25 22:27:25,074][    INFO] Iters: 93, Total loss: 0.040
+[2026-02-25 22:27:26,982][    INFO] Iters: 186, Total loss: 0.040
+[2026-02-25 22:27:28,903][    INFO] Iters: 279, Total loss: 0.041
+[2026-02-25 22:27:30,845][    INFO] Iters: 372, Total loss: 0.041
+[2026-02-25 22:27:32,767][    INFO] Iters: 465, Total loss: 0.042
+[2026-02-25 22:27:34,685][    INFO] Iters: 558, Total loss: 0.042
+[2026-02-25 22:27:36,613][    INFO] Iters: 651, Total loss: 0.042
+[2026-02-25 22:27:38,528][    INFO] Iters: 744, Total loss: 0.043
+[2026-02-25 22:27:38,845][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.10
+[2026-02-25 22:27:38,845][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 30.57
+[2026-02-25 22:27:38,846][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.21
+[2026-02-25 22:27:38,846][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.70
+[2026-02-25 22:27:38,846][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.65
+
+[2026-02-25 22:27:39,375][    INFO] ===========> Epoch: 26, LR: 0.0000038, Previous best: 64.68
+[2026-02-25 22:27:39,526][    INFO] Iters: 0, Total loss: 0.043
+[2026-02-25 22:27:41,664][    INFO] Iters: 93, Total loss: 0.044
+[2026-02-25 22:27:43,789][    INFO] Iters: 186, Total loss: 0.042
+[2026-02-25 22:27:45,719][    INFO] Iters: 279, Total loss: 0.041
+[2026-02-25 22:27:47,630][    INFO] Iters: 372, Total loss: 0.041
+[2026-02-25 22:27:49,547][    INFO] Iters: 465, Total loss: 0.041
+[2026-02-25 22:27:51,459][    INFO] Iters: 558, Total loss: 0.042
+[2026-02-25 22:27:53,424][    INFO] Iters: 651, Total loss: 0.042
+[2026-02-25 22:27:55,454][    INFO] Iters: 744, Total loss: 0.041
+[2026-02-25 22:27:55,778][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.84
+[2026-02-25 22:27:55,779][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.74
+[2026-02-25 22:27:55,779][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.30
+[2026-02-25 22:27:55,780][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.54
+[2026-02-25 22:27:55,780][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.86
+
+[2026-02-25 22:27:56,315][    INFO] ===========> Epoch: 27, LR: 0.0000038, Previous best: 64.68
+[2026-02-25 22:27:56,461][    INFO] Iters: 0, Total loss: 0.055
+[2026-02-25 22:27:58,506][    INFO] Iters: 93, Total loss: 0.040
+[2026-02-25 22:28:00,567][    INFO] Iters: 186, Total loss: 0.041
+[2026-02-25 22:28:02,616][    INFO] Iters: 279, Total loss: 0.041
+[2026-02-25 22:28:04,747][    INFO] Iters: 372, Total loss: 0.040
+[2026-02-25 22:28:06,810][    INFO] Iters: 465, Total loss: 0.040
+[2026-02-25 22:28:08,763][    INFO] Iters: 558, Total loss: 0.039
+[2026-02-25 22:28:10,688][    INFO] Iters: 651, Total loss: 0.039
+[2026-02-25 22:28:12,584][    INFO] Iters: 744, Total loss: 0.039
+[2026-02-25 22:28:12,901][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.47
+[2026-02-25 22:28:12,902][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.33
+[2026-02-25 22:28:12,902][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.97
+[2026-02-25 22:28:12,902][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.75
+[2026-02-25 22:28:12,902][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.13
+
+[2026-02-25 22:28:13,438][    INFO] ===========> Epoch: 28, LR: 0.0000037, Previous best: 64.68
+[2026-02-25 22:28:13,585][    INFO] Iters: 0, Total loss: 0.014
+[2026-02-25 22:28:15,669][    INFO] Iters: 93, Total loss: 0.041
+[2026-02-25 22:28:17,742][    INFO] Iters: 186, Total loss: 0.041
+[2026-02-25 22:28:19,798][    INFO] Iters: 279, Total loss: 0.040
+[2026-02-25 22:28:21,745][    INFO] Iters: 372, Total loss: 0.040
+[2026-02-25 22:28:23,672][    INFO] Iters: 465, Total loss: 0.039
+[2026-02-25 22:28:25,602][    INFO] Iters: 558, Total loss: 0.042
+[2026-02-25 22:28:27,667][    INFO] Iters: 651, Total loss: 0.043
+[2026-02-25 22:28:29,741][    INFO] Iters: 744, Total loss: 0.042
+[2026-02-25 22:28:30,073][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.46
+[2026-02-25 22:28:30,073][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.87
+[2026-02-25 22:28:30,074][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.59
+[2026-02-25 22:28:30,074][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.92
+[2026-02-25 22:28:30,074][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.96
+
+[2026-02-25 22:28:30,569][    INFO] ===========> Epoch: 29, LR: 0.0000037, Previous best: 64.68
+[2026-02-25 22:28:30,714][    INFO] Iters: 0, Total loss: 0.043
+[2026-02-25 22:28:32,638][    INFO] Iters: 93, Total loss: 0.040
+[2026-02-25 22:28:34,559][    INFO] Iters: 186, Total loss: 0.039
+[2026-02-25 22:28:36,480][    INFO] Iters: 279, Total loss: 0.038
+[2026-02-25 22:28:38,404][    INFO] Iters: 372, Total loss: 0.038
+[2026-02-25 22:28:40,411][    INFO] Iters: 465, Total loss: 0.038
+[2026-02-25 22:28:42,402][    INFO] Iters: 558, Total loss: 0.038
+[2026-02-25 22:28:44,311][    INFO] Iters: 651, Total loss: 0.038
+[2026-02-25 22:28:46,290][    INFO] Iters: 744, Total loss: 0.038
+[2026-02-25 22:28:46,613][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.32
+[2026-02-25 22:28:46,613][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.41
+[2026-02-25 22:28:46,613][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.37
+[2026-02-25 22:28:46,614][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.30
+[2026-02-25 22:28:46,614][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.10
+
+[2026-02-25 22:28:47,135][    INFO] ===========> Epoch: 30, LR: 0.0000036, Previous best: 64.68
+[2026-02-25 22:28:47,311][    INFO] Iters: 0, Total loss: 0.012
+[2026-02-25 22:28:49,315][    INFO] Iters: 93, Total loss: 0.037
+[2026-02-25 22:28:51,296][    INFO] Iters: 186, Total loss: 0.036
+[2026-02-25 22:28:53,384][    INFO] Iters: 279, Total loss: 0.037
+[2026-02-25 22:28:55,379][    INFO] Iters: 372, Total loss: 0.037
+[2026-02-25 22:28:57,469][    INFO] Iters: 465, Total loss: 0.037
+[2026-02-25 22:28:59,532][    INFO] Iters: 558, Total loss: 0.037
+[2026-02-25 22:29:01,505][    INFO] Iters: 651, Total loss: 0.037
+[2026-02-25 22:29:03,488][    INFO] Iters: 744, Total loss: 0.037
+[2026-02-25 22:29:03,812][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.07
+[2026-02-25 22:29:03,812][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.96
+[2026-02-25 22:29:03,812][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.00
+[2026-02-25 22:29:03,813][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.22
+[2026-02-25 22:29:03,813][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.56
+
+[2026-02-25 22:29:04,345][    INFO] ===========> Epoch: 31, LR: 0.0000036, Previous best: 64.68
+[2026-02-25 22:29:04,493][    INFO] Iters: 0, Total loss: 0.019
+[2026-02-25 22:29:06,427][    INFO] Iters: 93, Total loss: 0.038
+[2026-02-25 22:29:08,338][    INFO] Iters: 186, Total loss: 0.036
+[2026-02-25 22:29:10,244][    INFO] Iters: 279, Total loss: 0.036
+[2026-02-25 22:29:12,159][    INFO] Iters: 372, Total loss: 0.037
+[2026-02-25 22:29:14,168][    INFO] Iters: 465, Total loss: 0.037
+[2026-02-25 22:29:16,222][    INFO] Iters: 558, Total loss: 0.037
+[2026-02-25 22:29:18,286][    INFO] Iters: 651, Total loss: 0.037
+[2026-02-25 22:29:20,231][    INFO] Iters: 744, Total loss: 0.036
+[2026-02-25 22:29:20,547][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.77
+[2026-02-25 22:29:20,548][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.36
+[2026-02-25 22:29:20,548][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.81
+[2026-02-25 22:29:20,548][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.85
+[2026-02-25 22:29:20,548][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.70
+
+[2026-02-25 22:29:21,100][    INFO] ===========> Epoch: 32, LR: 0.0000035, Previous best: 64.68
+[2026-02-25 22:29:21,244][    INFO] Iters: 0, Total loss: 0.047
+[2026-02-25 22:29:23,380][    INFO] Iters: 93, Total loss: 0.037
+[2026-02-25 22:29:25,503][    INFO] Iters: 186, Total loss: 0.037
+[2026-02-25 22:29:27,636][    INFO] Iters: 279, Total loss: 0.037
+[2026-02-25 22:29:29,767][    INFO] Iters: 372, Total loss: 0.037
+[2026-02-25 22:29:31,828][    INFO] Iters: 465, Total loss: 0.037
+[2026-02-25 22:29:33,798][    INFO] Iters: 558, Total loss: 0.037
+[2026-02-25 22:29:35,817][    INFO] Iters: 651, Total loss: 0.037
+[2026-02-25 22:29:37,809][    INFO] Iters: 744, Total loss: 0.037
+[2026-02-25 22:29:38,136][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.46
+[2026-02-25 22:29:38,137][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.80
+[2026-02-25 22:29:38,137][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.51
+[2026-02-25 22:29:38,137][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.02
+[2026-02-25 22:29:38,137][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.95
+
+[2026-02-25 22:29:38,647][    INFO] ===========> Epoch: 33, LR: 0.0000035, Previous best: 64.68
+[2026-02-25 22:29:38,792][    INFO] Iters: 0, Total loss: 0.038
+[2026-02-25 22:29:40,838][    INFO] Iters: 93, Total loss: 0.035
+[2026-02-25 22:29:42,988][    INFO] Iters: 186, Total loss: 0.035
+[2026-02-25 22:29:45,122][    INFO] Iters: 279, Total loss: 0.035
+[2026-02-25 22:29:47,296][    INFO] Iters: 372, Total loss: 0.035
+[2026-02-25 22:29:49,345][    INFO] Iters: 465, Total loss: 0.036
+[2026-02-25 22:29:51,446][    INFO] Iters: 558, Total loss: 0.037
+[2026-02-25 22:29:53,516][    INFO] Iters: 651, Total loss: 0.036
+[2026-02-25 22:29:55,484][    INFO] Iters: 744, Total loss: 0.036
+[2026-02-25 22:29:55,800][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.27
+[2026-02-25 22:29:55,800][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.85
+[2026-02-25 22:29:55,800][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.35
+[2026-02-25 22:29:55,800][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.37
+[2026-02-25 22:29:55,800][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.46
+
+[2026-02-25 22:29:56,339][    INFO] ===========> Epoch: 34, LR: 0.0000034, Previous best: 64.68
+[2026-02-25 22:29:56,487][    INFO] Iters: 0, Total loss: 0.044
+[2026-02-25 22:29:58,500][    INFO] Iters: 93, Total loss: 0.034
+[2026-02-25 22:30:00,474][    INFO] Iters: 186, Total loss: 0.035
+[2026-02-25 22:30:02,524][    INFO] Iters: 279, Total loss: 0.036
+[2026-02-25 22:30:04,443][    INFO] Iters: 372, Total loss: 0.036
+[2026-02-25 22:30:06,353][    INFO] Iters: 465, Total loss: 0.037
+[2026-02-25 22:30:08,261][    INFO] Iters: 558, Total loss: 0.037
+[2026-02-25 22:30:10,184][    INFO] Iters: 651, Total loss: 0.037
+[2026-02-25 22:30:12,178][    INFO] Iters: 744, Total loss: 0.037
+[2026-02-25 22:30:12,498][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.87
+[2026-02-25 22:30:12,499][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.98
+[2026-02-25 22:30:12,499][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 84.15
+[2026-02-25 22:30:12,499][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.35
+[2026-02-25 22:30:12,500][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.84
+
+[2026-02-25 22:30:13,029][    INFO] ===========> Epoch: 35, LR: 0.0000034, Previous best: 64.68
+[2026-02-25 22:30:13,178][    INFO] Iters: 0, Total loss: 0.058
+[2026-02-25 22:30:15,342][    INFO] Iters: 93, Total loss: 0.038
+[2026-02-25 22:30:17,563][    INFO] Iters: 186, Total loss: 0.037
+[2026-02-25 22:30:19,686][    INFO] Iters: 279, Total loss: 0.037
+[2026-02-25 22:30:21,936][    INFO] Iters: 372, Total loss: 0.037
+[2026-02-25 22:30:24,105][    INFO] Iters: 465, Total loss: 0.036
+[2026-02-25 22:30:26,200][    INFO] Iters: 558, Total loss: 0.036
+[2026-02-25 22:30:28,245][    INFO] Iters: 651, Total loss: 0.036
+[2026-02-25 22:30:30,296][    INFO] Iters: 744, Total loss: 0.036
+[2026-02-25 22:30:30,620][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.85
+[2026-02-25 22:30:30,620][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.29
+[2026-02-25 22:30:30,621][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.38
+[2026-02-25 22:30:30,621][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.77
+[2026-02-25 22:30:30,621][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.57
+
+[2026-02-25 22:30:31,156][    INFO] ===========> Epoch: 36, LR: 0.0000033, Previous best: 64.68
+[2026-02-25 22:30:31,301][    INFO] Iters: 0, Total loss: 0.038
+[2026-02-25 22:30:33,327][    INFO] Iters: 93, Total loss: 0.038
+[2026-02-25 22:30:35,352][    INFO] Iters: 186, Total loss: 0.037
+[2026-02-25 22:30:37,402][    INFO] Iters: 279, Total loss: 0.037
+[2026-02-25 22:30:39,456][    INFO] Iters: 372, Total loss: 0.036
+[2026-02-25 22:30:41,540][    INFO] Iters: 465, Total loss: 0.036
+[2026-02-25 22:30:43,589][    INFO] Iters: 558, Total loss: 0.036
+[2026-02-25 22:30:45,537][    INFO] Iters: 651, Total loss: 0.036
+[2026-02-25 22:30:47,499][    INFO] Iters: 744, Total loss: 0.035
+[2026-02-25 22:30:47,823][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.27
+[2026-02-25 22:30:47,823][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.96
+[2026-02-25 22:30:47,823][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.47
+[2026-02-25 22:30:47,823][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.00
+[2026-02-25 22:30:47,824][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.42
+
+[2026-02-25 22:30:48,372][    INFO] ===========> Epoch: 37, LR: 0.0000033, Previous best: 64.68
+[2026-02-25 22:30:48,521][    INFO] Iters: 0, Total loss: 0.036
+[2026-02-25 22:30:50,527][    INFO] Iters: 93, Total loss: 0.034
+[2026-02-25 22:30:52,472][    INFO] Iters: 186, Total loss: 0.034
+[2026-02-25 22:30:54,415][    INFO] Iters: 279, Total loss: 0.034
+[2026-02-25 22:30:56,368][    INFO] Iters: 372, Total loss: 0.034
+[2026-02-25 22:30:58,340][    INFO] Iters: 465, Total loss: 0.034
+[2026-02-25 22:31:00,292][    INFO] Iters: 558, Total loss: 0.034
+[2026-02-25 22:31:02,255][    INFO] Iters: 651, Total loss: 0.034
+[2026-02-25 22:31:04,262][    INFO] Iters: 744, Total loss: 0.034
+[2026-02-25 22:31:04,590][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.68
+[2026-02-25 22:31:04,590][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.06
+[2026-02-25 22:31:04,591][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.14
+[2026-02-25 22:31:04,591][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.64
+[2026-02-25 22:31:04,591][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.13
+
+[2026-02-25 22:31:05,135][    INFO] ===========> Epoch: 38, LR: 0.0000033, Previous best: 64.68
+[2026-02-25 22:31:05,278][    INFO] Iters: 0, Total loss: 0.019
+[2026-02-25 22:31:07,289][    INFO] Iters: 93, Total loss: 0.037
+[2026-02-25 22:31:09,351][    INFO] Iters: 186, Total loss: 0.036
+[2026-02-25 22:31:11,328][    INFO] Iters: 279, Total loss: 0.036
+[2026-02-25 22:31:13,300][    INFO] Iters: 372, Total loss: 0.035
+[2026-02-25 22:31:15,254][    INFO] Iters: 465, Total loss: 0.035
+[2026-02-25 22:31:17,288][    INFO] Iters: 558, Total loss: 0.035
+[2026-02-25 22:31:19,208][    INFO] Iters: 651, Total loss: 0.035
+[2026-02-25 22:31:21,152][    INFO] Iters: 744, Total loss: 0.035
+[2026-02-25 22:31:21,477][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.64
+[2026-02-25 22:31:21,477][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.33
+[2026-02-25 22:31:21,478][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.05
+[2026-02-25 22:31:21,478][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.77
+[2026-02-25 22:31:21,478][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.95
+
+[2026-02-25 22:31:22,013][    INFO] ===========> Epoch: 39, LR: 0.0000032, Previous best: 64.68
+[2026-02-25 22:31:22,159][    INFO] Iters: 0, Total loss: 0.021
+[2026-02-25 22:31:24,124][    INFO] Iters: 93, Total loss: 0.036
+[2026-02-25 22:31:26,080][    INFO] Iters: 186, Total loss: 0.035
+[2026-02-25 22:31:28,055][    INFO] Iters: 279, Total loss: 0.034
+[2026-02-25 22:31:30,073][    INFO] Iters: 372, Total loss: 0.034
+[2026-02-25 22:31:32,103][    INFO] Iters: 465, Total loss: 0.034
+[2026-02-25 22:31:34,148][    INFO] Iters: 558, Total loss: 0.034
+[2026-02-25 22:31:36,326][    INFO] Iters: 651, Total loss: 0.034
+[2026-02-25 22:31:38,530][    INFO] Iters: 744, Total loss: 0.034
+[2026-02-25 22:31:38,862][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.10
+[2026-02-25 22:31:38,863][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.47
+[2026-02-25 22:31:38,863][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.08
+[2026-02-25 22:31:38,863][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.05
+[2026-02-25 22:31:38,863][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.18
+
+[2026-02-25 22:31:39,405][    INFO] ===========> Epoch: 40, LR: 0.0000032, Previous best: 64.68
+[2026-02-25 22:31:39,551][    INFO] Iters: 0, Total loss: 0.067
+[2026-02-25 22:31:41,589][    INFO] Iters: 93, Total loss: 0.035
+[2026-02-25 22:31:43,551][    INFO] Iters: 186, Total loss: 0.033
+[2026-02-25 22:31:45,508][    INFO] Iters: 279, Total loss: 0.033
+[2026-02-25 22:31:47,464][    INFO] Iters: 372, Total loss: 0.033
+[2026-02-25 22:31:49,431][    INFO] Iters: 465, Total loss: 0.033
+[2026-02-25 22:31:51,401][    INFO] Iters: 558, Total loss: 0.033
+[2026-02-25 22:31:53,390][    INFO] Iters: 651, Total loss: 0.033
+[2026-02-25 22:31:55,361][    INFO] Iters: 744, Total loss: 0.033
+[2026-02-25 22:31:55,680][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.64
+[2026-02-25 22:31:55,681][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.62
+[2026-02-25 22:31:55,681][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.84
+[2026-02-25 22:31:55,681][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.05
+[2026-02-25 22:31:55,681][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.53
+
+[2026-02-25 22:31:56,200][    INFO] ===========> Epoch: 41, LR: 0.0000031, Previous best: 64.68
+[2026-02-25 22:31:56,346][    INFO] Iters: 0, Total loss: 0.040
+[2026-02-25 22:31:58,305][    INFO] Iters: 93, Total loss: 0.034
+[2026-02-25 22:32:00,254][    INFO] Iters: 186, Total loss: 0.034
+[2026-02-25 22:32:02,245][    INFO] Iters: 279, Total loss: 0.034
+[2026-02-25 22:32:04,214][    INFO] Iters: 372, Total loss: 0.034
+[2026-02-25 22:32:06,218][    INFO] Iters: 465, Total loss: 0.034
+[2026-02-25 22:32:08,188][    INFO] Iters: 558, Total loss: 0.034
+[2026-02-25 22:32:10,163][    INFO] Iters: 651, Total loss: 0.034
+[2026-02-25 22:32:12,118][    INFO] Iters: 744, Total loss: 0.034
+[2026-02-25 22:32:12,437][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.91
+[2026-02-25 22:32:12,438][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.30
+[2026-02-25 22:32:12,438][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.95
+[2026-02-25 22:32:12,438][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 52.49
+[2026-02-25 22:32:12,439][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.16
+
+[2026-02-25 22:32:12,960][    INFO] ===========> Epoch: 42, LR: 0.0000031, Previous best: 64.68
+[2026-02-25 22:32:13,105][    INFO] Iters: 0, Total loss: 0.037
+[2026-02-25 22:32:15,074][    INFO] Iters: 93, Total loss: 0.033
+[2026-02-25 22:32:17,044][    INFO] Iters: 186, Total loss: 0.033
+[2026-02-25 22:32:19,061][    INFO] Iters: 279, Total loss: 0.032
+[2026-02-25 22:32:21,027][    INFO] Iters: 372, Total loss: 0.033
+[2026-02-25 22:32:22,983][    INFO] Iters: 465, Total loss: 0.032
+[2026-02-25 22:32:24,957][    INFO] Iters: 558, Total loss: 0.032
+[2026-02-25 22:32:26,918][    INFO] Iters: 651, Total loss: 0.033
+[2026-02-25 22:32:28,876][    INFO] Iters: 744, Total loss: 0.033
+[2026-02-25 22:32:29,198][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.57
+[2026-02-25 22:32:29,199][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.64
+[2026-02-25 22:32:29,199][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.87
+[2026-02-25 22:32:29,199][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.35
+[2026-02-25 22:32:29,200][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.61
+
+[2026-02-25 22:32:29,731][    INFO] ===========> Epoch: 43, LR: 0.0000030, Previous best: 64.68
+[2026-02-25 22:32:29,878][    INFO] Iters: 0, Total loss: 0.029
+[2026-02-25 22:32:31,901][    INFO] Iters: 93, Total loss: 0.035
+[2026-02-25 22:32:33,840][    INFO] Iters: 186, Total loss: 0.033
+[2026-02-25 22:32:35,799][    INFO] Iters: 279, Total loss: 0.033
+[2026-02-25 22:32:37,754][    INFO] Iters: 372, Total loss: 0.033
+[2026-02-25 22:32:39,712][    INFO] Iters: 465, Total loss: 0.033
+[2026-02-25 22:32:41,698][    INFO] Iters: 558, Total loss: 0.032
+[2026-02-25 22:32:43,707][    INFO] Iters: 651, Total loss: 0.032
+[2026-02-25 22:32:45,679][    INFO] Iters: 744, Total loss: 0.032
+[2026-02-25 22:32:46,002][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.30
+[2026-02-25 22:32:46,003][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.32
+[2026-02-25 22:32:46,003][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.91
+[2026-02-25 22:32:46,003][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.78
+[2026-02-25 22:32:46,003][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.83
+
+[2026-02-25 22:32:46,515][    INFO] ===========> Epoch: 44, LR: 0.0000030, Previous best: 64.68
+[2026-02-25 22:32:46,659][    INFO] Iters: 0, Total loss: 0.042
+[2026-02-25 22:32:48,612][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:32:50,638][    INFO] Iters: 186, Total loss: 0.031
+[2026-02-25 22:32:52,671][    INFO] Iters: 279, Total loss: 0.031
+[2026-02-25 22:32:54,704][    INFO] Iters: 372, Total loss: 0.031
+[2026-02-25 22:32:56,772][    INFO] Iters: 465, Total loss: 0.031
+[2026-02-25 22:32:58,740][    INFO] Iters: 558, Total loss: 0.031
+[2026-02-25 22:33:00,722][    INFO] Iters: 651, Total loss: 0.031
+[2026-02-25 22:33:02,734][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:33:03,058][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.64
+[2026-02-25 22:33:03,059][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.35
+[2026-02-25 22:33:03,059][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.55
+[2026-02-25 22:33:03,059][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.59
+[2026-02-25 22:33:03,059][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.53
+
+[2026-02-25 22:33:03,571][    INFO] ===========> Epoch: 45, LR: 0.0000029, Previous best: 64.68
+[2026-02-25 22:33:03,718][    INFO] Iters: 0, Total loss: 0.037
+[2026-02-25 22:33:05,791][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:33:07,794][    INFO] Iters: 186, Total loss: 0.031
+[2026-02-25 22:33:09,798][    INFO] Iters: 279, Total loss: 0.030
+[2026-02-25 22:33:11,762][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:33:13,726][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:33:15,722][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:33:17,679][    INFO] Iters: 651, Total loss: 0.031
+[2026-02-25 22:33:19,630][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:33:19,955][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.64
+[2026-02-25 22:33:19,955][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.51
+[2026-02-25 22:33:19,955][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.56
+[2026-02-25 22:33:19,956][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.80
+[2026-02-25 22:33:19,956][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.38
+
+[2026-02-25 22:33:20,521][    INFO] ===========> Epoch: 46, LR: 0.0000029, Previous best: 64.68
+[2026-02-25 22:33:20,672][    INFO] Iters: 0, Total loss: 0.043
+[2026-02-25 22:33:22,637][    INFO] Iters: 93, Total loss: 0.031
+[2026-02-25 22:33:24,634][    INFO] Iters: 186, Total loss: 0.032
+[2026-02-25 22:33:26,654][    INFO] Iters: 279, Total loss: 0.031
+[2026-02-25 22:33:28,667][    INFO] Iters: 372, Total loss: 0.031
+[2026-02-25 22:33:30,703][    INFO] Iters: 465, Total loss: 0.031
+[2026-02-25 22:33:32,718][    INFO] Iters: 558, Total loss: 0.032
+[2026-02-25 22:33:34,733][    INFO] Iters: 651, Total loss: 0.031
+[2026-02-25 22:33:36,702][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:33:37,031][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.51
+[2026-02-25 22:33:37,031][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.53
+[2026-02-25 22:33:37,031][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.40
+[2026-02-25 22:33:37,032][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.86
+[2026-02-25 22:33:37,032][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.07
+
+[2026-02-25 22:33:37,561][    INFO] ===========> Epoch: 47, LR: 0.0000028, Previous best: 64.68
+[2026-02-25 22:33:37,709][    INFO] Iters: 0, Total loss: 0.051
+[2026-02-25 22:33:39,705][    INFO] Iters: 93, Total loss: 0.031
+[2026-02-25 22:33:41,692][    INFO] Iters: 186, Total loss: 0.032
+[2026-02-25 22:33:43,672][    INFO] Iters: 279, Total loss: 0.032
+[2026-02-25 22:33:45,663][    INFO] Iters: 372, Total loss: 0.031
+[2026-02-25 22:33:47,637][    INFO] Iters: 465, Total loss: 0.031
+[2026-02-25 22:33:49,591][    INFO] Iters: 558, Total loss: 0.031
+[2026-02-25 22:33:51,555][    INFO] Iters: 651, Total loss: 0.031
+[2026-02-25 22:33:53,518][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:33:53,837][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.40
+[2026-02-25 22:33:53,837][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.08
+[2026-02-25 22:33:53,838][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.93
+[2026-02-25 22:33:53,838][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.93
+[2026-02-25 22:33:53,838][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.84
+
+[2026-02-25 22:33:54,350][    INFO] ===========> Epoch: 48, LR: 0.0000028, Previous best: 64.68
+[2026-02-25 22:33:54,499][    INFO] Iters: 0, Total loss: 0.043
+[2026-02-25 22:33:56,493][    INFO] Iters: 93, Total loss: 0.032
+[2026-02-25 22:33:58,505][    INFO] Iters: 186, Total loss: 0.031
+[2026-02-25 22:34:00,472][    INFO] Iters: 279, Total loss: 0.031
+[2026-02-25 22:34:02,412][    INFO] Iters: 372, Total loss: 0.031
+[2026-02-25 22:34:04,330][    INFO] Iters: 465, Total loss: 0.031
+[2026-02-25 22:34:06,251][    INFO] Iters: 558, Total loss: 0.031
+[2026-02-25 22:34:08,346][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:34:10,483][    INFO] Iters: 744, Total loss: 0.030
+[2026-02-25 22:34:10,828][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.95
+[2026-02-25 22:34:10,829][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.39
+[2026-02-25 22:34:10,829][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.54
+[2026-02-25 22:34:10,829][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.74
+[2026-02-25 22:34:10,829][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.65
+
+[2026-02-25 22:34:11,342][    INFO] ===========> Epoch: 49, LR: 0.0000027, Previous best: 64.68
+[2026-02-25 22:34:11,487][    INFO] Iters: 0, Total loss: 0.047
+[2026-02-25 22:34:13,449][    INFO] Iters: 93, Total loss: 0.029
+[2026-02-25 22:34:15,390][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:34:17,348][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:34:19,310][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:34:21,275][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:34:23,330][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:34:25,482][    INFO] Iters: 651, Total loss: 0.031
+[2026-02-25 22:34:27,602][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:34:27,932][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.10
+[2026-02-25 22:34:27,933][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.59
+[2026-02-25 22:34:27,933][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.39
+[2026-02-25 22:34:27,933][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.11
+[2026-02-25 22:34:27,933][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.55
+
+[2026-02-25 22:34:28,454][    INFO] ===========> Epoch: 50, LR: 0.0000027, Previous best: 64.68
+[2026-02-25 22:34:28,600][    INFO] Iters: 0, Total loss: 0.035
+[2026-02-25 22:34:30,565][    INFO] Iters: 93, Total loss: 0.031
+[2026-02-25 22:34:32,532][    INFO] Iters: 186, Total loss: 0.030
+[2026-02-25 22:34:34,490][    INFO] Iters: 279, Total loss: 0.030
+[2026-02-25 22:34:36,504][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:34:38,461][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:34:40,428][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:34:42,409][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:34:44,390][    INFO] Iters: 744, Total loss: 0.030
+[2026-02-25 22:34:44,709][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.03
+[2026-02-25 22:34:44,710][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.59
+[2026-02-25 22:34:44,710][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.39
+[2026-02-25 22:34:44,710][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.48
+[2026-02-25 22:34:44,710][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.37
+
+[2026-02-25 22:34:45,245][    INFO] ===========> Epoch: 51, LR: 0.0000026, Previous best: 64.68
+[2026-02-25 22:34:45,393][    INFO] Iters: 0, Total loss: 0.026
+[2026-02-25 22:34:47,374][    INFO] Iters: 93, Total loss: 0.031
+[2026-02-25 22:34:49,401][    INFO] Iters: 186, Total loss: 0.031
+[2026-02-25 22:34:51,349][    INFO] Iters: 279, Total loss: 0.030
+[2026-02-25 22:34:53,312][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:34:55,280][    INFO] Iters: 465, Total loss: 0.031
+[2026-02-25 22:34:57,245][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:34:59,207][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:35:01,236][    INFO] Iters: 744, Total loss: 0.030
+[2026-02-25 22:35:01,571][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.50
+[2026-02-25 22:35:01,571][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.19
+[2026-02-25 22:35:01,571][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.76
+[2026-02-25 22:35:01,571][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.10
+[2026-02-25 22:35:01,571][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.89
+
+[2026-02-25 22:35:02,097][    INFO] ===========> Epoch: 52, LR: 0.0000026, Previous best: 64.68
+[2026-02-25 22:35:02,240][    INFO] Iters: 0, Total loss: 0.011
+[2026-02-25 22:35:04,196][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:35:06,179][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:35:08,203][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:35:10,370][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:35:12,454][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:35:14,458][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:35:16,413][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:35:18,358][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:35:18,680][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.46
+[2026-02-25 22:35:18,680][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.29
+[2026-02-25 22:35:18,681][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.06
+[2026-02-25 22:35:18,681][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.21
+[2026-02-25 22:35:18,681][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.01
+
+[2026-02-25 22:35:19,226][    INFO] ===========> Epoch: 53, LR: 0.0000025, Previous best: 64.68
+[2026-02-25 22:35:19,372][    INFO] Iters: 0, Total loss: 0.021
+[2026-02-25 22:35:21,339][    INFO] Iters: 93, Total loss: 0.029
+[2026-02-25 22:35:23,302][    INFO] Iters: 186, Total loss: 0.030
+[2026-02-25 22:35:25,332][    INFO] Iters: 279, Total loss: 0.030
+[2026-02-25 22:35:27,306][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:35:29,272][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:35:31,233][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:35:33,176][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:35:35,117][    INFO] Iters: 744, Total loss: 0.031
+[2026-02-25 22:35:35,446][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.41
+[2026-02-25 22:35:35,447][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.89
+[2026-02-25 22:35:35,447][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.30
+[2026-02-25 22:35:35,447][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.72
+[2026-02-25 22:35:35,447][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 62.08
+
+[2026-02-25 22:35:35,972][    INFO] ===========> Epoch: 54, LR: 0.0000025, Previous best: 64.68
+[2026-02-25 22:35:36,118][    INFO] Iters: 0, Total loss: 0.029
+[2026-02-25 22:35:38,064][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:35:40,028][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:35:41,986][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:35:43,925][    INFO] Iters: 372, Total loss: 0.029
+[2026-02-25 22:35:45,876][    INFO] Iters: 465, Total loss: 0.029
+[2026-02-25 22:35:47,818][    INFO] Iters: 558, Total loss: 0.029
+[2026-02-25 22:35:49,771][    INFO] Iters: 651, Total loss: 0.030
+[2026-02-25 22:35:51,794][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:35:52,123][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.23
+[2026-02-25 22:35:52,123][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.19
+[2026-02-25 22:35:52,123][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.55
+[2026-02-25 22:35:52,123][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.58
+[2026-02-25 22:35:52,123][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.39
+
+[2026-02-25 22:35:52,667][    INFO] ===========> Epoch: 55, LR: 0.0000024, Previous best: 64.68
+[2026-02-25 22:35:52,814][    INFO] Iters: 0, Total loss: 0.021
+[2026-02-25 22:35:54,785][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:35:56,767][    INFO] Iters: 186, Total loss: 0.028
+[2026-02-25 22:35:58,735][    INFO] Iters: 279, Total loss: 0.028
+[2026-02-25 22:36:00,704][    INFO] Iters: 372, Total loss: 0.029
+[2026-02-25 22:36:02,682][    INFO] Iters: 465, Total loss: 0.029
+[2026-02-25 22:36:04,693][    INFO] Iters: 558, Total loss: 0.029
+[2026-02-25 22:36:06,632][    INFO] Iters: 651, Total loss: 0.029
+[2026-02-25 22:36:08,597][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:36:08,918][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.95
+[2026-02-25 22:36:08,918][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.85
+[2026-02-25 22:36:08,918][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.26
+[2026-02-25 22:36:08,919][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.45
+[2026-02-25 22:36:08,919][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.38
+
+[2026-02-25 22:36:09,471][    INFO] ===========> Epoch: 56, LR: 0.0000024, Previous best: 64.68
+[2026-02-25 22:36:09,615][    INFO] Iters: 0, Total loss: 0.038
+[2026-02-25 22:36:11,606][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:36:13,568][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:36:15,541][    INFO] Iters: 279, Total loss: 0.030
+[2026-02-25 22:36:17,536][    INFO] Iters: 372, Total loss: 0.030
+[2026-02-25 22:36:19,607][    INFO] Iters: 465, Total loss: 0.030
+[2026-02-25 22:36:21,739][    INFO] Iters: 558, Total loss: 0.030
+[2026-02-25 22:36:23,698][    INFO] Iters: 651, Total loss: 0.029
+[2026-02-25 22:36:25,752][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:36:26,087][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.26
+[2026-02-25 22:36:26,088][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.84
+[2026-02-25 22:36:26,088][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.21
+[2026-02-25 22:36:26,088][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.45
+[2026-02-25 22:36:26,088][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.19
+
+[2026-02-25 22:36:26,622][    INFO] ===========> Epoch: 57, LR: 0.0000023, Previous best: 64.68
+[2026-02-25 22:36:26,766][    INFO] Iters: 0, Total loss: 0.027
+[2026-02-25 22:36:28,788][    INFO] Iters: 93, Total loss: 0.030
+[2026-02-25 22:36:30,750][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:36:32,698][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:36:34,660][    INFO] Iters: 372, Total loss: 0.029
+[2026-02-25 22:36:36,612][    INFO] Iters: 465, Total loss: 0.029
+[2026-02-25 22:36:38,602][    INFO] Iters: 558, Total loss: 0.029
+[2026-02-25 22:36:40,599][    INFO] Iters: 651, Total loss: 0.029
+[2026-02-25 22:36:42,607][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:36:42,926][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.75
+[2026-02-25 22:36:42,927][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 28.68
+[2026-02-25 22:36:42,927][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.78
+[2026-02-25 22:36:42,927][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.09
+[2026-02-25 22:36:42,928][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.83
+
+[2026-02-25 22:36:43,463][    INFO] ===========> Epoch: 58, LR: 0.0000023, Previous best: 64.68
+[2026-02-25 22:36:43,612][    INFO] Iters: 0, Total loss: 0.030
+[2026-02-25 22:36:45,580][    INFO] Iters: 93, Total loss: 0.029
+[2026-02-25 22:36:47,530][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:36:49,494][    INFO] Iters: 279, Total loss: 0.028
+[2026-02-25 22:36:51,449][    INFO] Iters: 372, Total loss: 0.028
+[2026-02-25 22:36:53,442][    INFO] Iters: 465, Total loss: 0.028
+[2026-02-25 22:36:55,540][    INFO] Iters: 558, Total loss: 0.028
+[2026-02-25 22:36:57,552][    INFO] Iters: 651, Total loss: 0.028
+[2026-02-25 22:36:59,702][    INFO] Iters: 744, Total loss: 0.028
+[2026-02-25 22:37:00,054][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.06
+[2026-02-25 22:37:00,054][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 27.07
+[2026-02-25 22:37:00,054][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.80
+[2026-02-25 22:37:00,055][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.26
+[2026-02-25 22:37:00,055][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.55
+
+[2026-02-25 22:37:00,612][    INFO] ===========> Epoch: 59, LR: 0.0000022, Previous best: 64.68
+[2026-02-25 22:37:00,758][    INFO] Iters: 0, Total loss: 0.038
+[2026-02-25 22:37:02,878][    INFO] Iters: 93, Total loss: 0.029
+[2026-02-25 22:37:04,998][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:37:07,188][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:37:09,298][    INFO] Iters: 372, Total loss: 0.029
+[2026-02-25 22:37:11,416][    INFO] Iters: 465, Total loss: 0.029
+[2026-02-25 22:37:13,522][    INFO] Iters: 558, Total loss: 0.029
+[2026-02-25 22:37:15,628][    INFO] Iters: 651, Total loss: 0.029
+[2026-02-25 22:37:17,725][    INFO] Iters: 744, Total loss: 0.029
+[2026-02-25 22:37:18,053][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.28
+[2026-02-25 22:37:18,054][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.89
+[2026-02-25 22:37:18,054][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.00
+[2026-02-25 22:37:18,054][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.84
+[2026-02-25 22:37:18,054][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.50
+
+[2026-02-25 22:37:18,606][    INFO] ===========> Epoch: 60, LR: 0.0000022, Previous best: 64.68
+[2026-02-25 22:37:18,757][    INFO] Iters: 0, Total loss: 0.027
+[2026-02-25 22:37:20,732][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:37:22,685][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:37:24,636][    INFO] Iters: 279, Total loss: 0.029
+[2026-02-25 22:37:26,578][    INFO] Iters: 372, Total loss: 0.028
+[2026-02-25 22:37:28,530][    INFO] Iters: 465, Total loss: 0.028
+[2026-02-25 22:37:30,544][    INFO] Iters: 558, Total loss: 0.028
+[2026-02-25 22:37:32,567][    INFO] Iters: 651, Total loss: 0.028
+[2026-02-25 22:37:34,521][    INFO] Iters: 744, Total loss: 0.028
+[2026-02-25 22:37:34,842][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.13
+[2026-02-25 22:37:34,842][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 21.68
+[2026-02-25 22:37:34,842][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.04
+[2026-02-25 22:37:34,843][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.62
+[2026-02-25 22:37:34,843][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.12
+
+[2026-02-25 22:37:35,371][    INFO] ===========> Epoch: 61, LR: 0.0000021, Previous best: 64.68
+[2026-02-25 22:37:35,516][    INFO] Iters: 0, Total loss: 0.041
+[2026-02-25 22:37:37,491][    INFO] Iters: 93, Total loss: 0.029
+[2026-02-25 22:37:39,476][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:37:41,463][    INFO] Iters: 279, Total loss: 0.028
+[2026-02-25 22:37:43,531][    INFO] Iters: 372, Total loss: 0.029
+[2026-02-25 22:37:45,614][    INFO] Iters: 465, Total loss: 0.028
+[2026-02-25 22:37:47,832][    INFO] Iters: 558, Total loss: 0.028
+[2026-02-25 22:37:50,033][    INFO] Iters: 651, Total loss: 0.028
+[2026-02-25 22:37:52,189][    INFO] Iters: 744, Total loss: 0.028
+[2026-02-25 22:37:52,513][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.83
+[2026-02-25 22:37:52,513][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.94
+[2026-02-25 22:37:52,514][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.19
+[2026-02-25 22:37:52,514][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.60
+[2026-02-25 22:37:52,514][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.39
+
+[2026-02-25 22:37:53,054][    INFO] ===========> Epoch: 62, LR: 0.0000021, Previous best: 64.68
+[2026-02-25 22:37:53,201][    INFO] Iters: 0, Total loss: 0.034
+[2026-02-25 22:37:55,183][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:37:57,197][    INFO] Iters: 186, Total loss: 0.029
+[2026-02-25 22:37:59,137][    INFO] Iters: 279, Total loss: 0.028
+[2026-02-25 22:38:01,092][    INFO] Iters: 372, Total loss: 0.028
+[2026-02-25 22:38:03,048][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:38:05,008][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:38:07,029][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:38:09,205][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:38:09,541][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.27
+[2026-02-25 22:38:09,541][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 25.34
+[2026-02-25 22:38:09,542][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.99
+[2026-02-25 22:38:09,542][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.51
+[2026-02-25 22:38:09,542][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.28
+
+[2026-02-25 22:38:10,083][    INFO] ===========> Epoch: 63, LR: 0.0000020, Previous best: 64.68
+[2026-02-25 22:38:10,230][    INFO] Iters: 0, Total loss: 0.036
+[2026-02-25 22:38:12,338][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:38:14,439][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:38:16,543][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:38:18,656][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:38:20,802][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:38:22,948][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:38:25,151][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:38:27,146][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:38:27,468][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.76
+[2026-02-25 22:38:27,469][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.30
+[2026-02-25 22:38:27,469][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.10
+[2026-02-25 22:38:27,469][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.73
+[2026-02-25 22:38:27,469][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.47
+
+[2026-02-25 22:38:27,993][    INFO] ===========> Epoch: 64, LR: 0.0000020, Previous best: 64.68
+[2026-02-25 22:38:28,141][    INFO] Iters: 0, Total loss: 0.060
+[2026-02-25 22:38:30,107][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:38:32,065][    INFO] Iters: 186, Total loss: 0.028
+[2026-02-25 22:38:34,100][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:38:36,155][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:38:38,260][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:38:40,371][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:38:42,509][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:38:44,702][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:38:45,042][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.14
+[2026-02-25 22:38:45,043][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 26.44
+[2026-02-25 22:38:45,043][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.83
+[2026-02-25 22:38:45,043][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.15
+[2026-02-25 22:38:45,043][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.64
+
+[2026-02-25 22:38:45,584][    INFO] ===========> Epoch: 65, LR: 0.0000019, Previous best: 64.68
+[2026-02-25 22:38:45,734][    INFO] Iters: 0, Total loss: 0.026
+[2026-02-25 22:38:47,730][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:38:49,703][    INFO] Iters: 186, Total loss: 0.028
+[2026-02-25 22:38:51,765][    INFO] Iters: 279, Total loss: 0.028
+[2026-02-25 22:38:53,878][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:38:55,985][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:38:58,127][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:39:00,135][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:39:02,121][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:39:02,444][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.01
+[2026-02-25 22:39:02,445][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.94
+[2026-02-25 22:39:02,445][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.36
+[2026-02-25 22:39:02,445][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.52
+[2026-02-25 22:39:02,445][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.21
+
+[2026-02-25 22:39:02,986][    INFO] ===========> Epoch: 66, LR: 0.0000019, Previous best: 64.68
+[2026-02-25 22:39:03,131][    INFO] Iters: 0, Total loss: 0.027
+[2026-02-25 22:39:05,123][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:39:07,191][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:39:09,314][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:39:11,541][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:39:13,709][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:39:15,764][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:39:17,854][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:39:19,940][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:39:20,266][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.17
+[2026-02-25 22:39:20,266][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.13
+[2026-02-25 22:39:20,266][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.16
+[2026-02-25 22:39:20,266][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.06
+[2026-02-25 22:39:20,267][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.63
+
+[2026-02-25 22:39:20,794][    INFO] ===========> Epoch: 67, LR: 0.0000018, Previous best: 64.68
+[2026-02-25 22:39:20,941][    INFO] Iters: 0, Total loss: 0.035
+[2026-02-25 22:39:23,018][    INFO] Iters: 93, Total loss: 0.027
+[2026-02-25 22:39:25,090][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:39:27,050][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:39:29,017][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:39:30,990][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:39:32,944][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:39:34,924][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:39:37,001][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:39:37,323][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.20
+[2026-02-25 22:39:37,323][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.08
+[2026-02-25 22:39:37,324][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.89
+[2026-02-25 22:39:37,324][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.00
+[2026-02-25 22:39:37,324][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.04
+
+[2026-02-25 22:39:37,878][    INFO] ===========> Epoch: 68, LR: 0.0000018, Previous best: 64.68
+[2026-02-25 22:39:38,028][    INFO] Iters: 0, Total loss: 0.008
+[2026-02-25 22:39:40,092][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:39:42,148][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:39:44,162][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:39:46,125][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:39:48,119][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:39:50,099][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:39:52,052][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:39:54,066][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:39:54,387][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.27
+[2026-02-25 22:39:54,387][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 21.89
+[2026-02-25 22:39:54,387][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.28
+[2026-02-25 22:39:54,387][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.31
+[2026-02-25 22:39:54,387][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.44
+
+[2026-02-25 22:39:54,936][    INFO] ===========> Epoch: 69, LR: 0.0000017, Previous best: 64.68
+[2026-02-25 22:39:55,082][    INFO] Iters: 0, Total loss: 0.030
+[2026-02-25 22:39:57,173][    INFO] Iters: 93, Total loss: 0.027
+[2026-02-25 22:39:59,230][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:40:01,259][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:40:03,217][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:40:05,156][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:40:07,097][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:40:09,050][    INFO] Iters: 651, Total loss: 0.027
+[2026-02-25 22:40:11,007][    INFO] Iters: 744, Total loss: 0.027
+[2026-02-25 22:40:11,329][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.99
+[2026-02-25 22:40:11,329][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.44
+[2026-02-25 22:40:11,330][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.21
+[2026-02-25 22:40:11,330][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 49.56
+[2026-02-25 22:40:11,330][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.80
+
+[2026-02-25 22:40:11,895][    INFO] ===========> Epoch: 70, LR: 0.0000017, Previous best: 64.68
+[2026-02-25 22:40:12,040][    INFO] Iters: 0, Total loss: 0.014
+[2026-02-25 22:40:14,147][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:40:16,118][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:40:18,124][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:40:20,224][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:40:22,346][    INFO] Iters: 465, Total loss: 0.026
+[2026-02-25 22:40:24,475][    INFO] Iters: 558, Total loss: 0.026
+[2026-02-25 22:40:26,667][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:40:28,763][    INFO] Iters: 744, Total loss: 0.026
+[2026-02-25 22:40:29,106][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.42
+[2026-02-25 22:40:29,106][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.55
+[2026-02-25 22:40:29,107][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.81
+[2026-02-25 22:40:29,107][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.26
+[2026-02-25 22:40:29,107][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.01
+
+[2026-02-25 22:40:29,665][    INFO] ===========> Epoch: 71, LR: 0.0000016, Previous best: 64.68
+[2026-02-25 22:40:29,811][    INFO] Iters: 0, Total loss: 0.028
+[2026-02-25 22:40:31,793][    INFO] Iters: 93, Total loss: 0.028
+[2026-02-25 22:40:33,843][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:40:35,889][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:40:37,999][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:40:40,046][    INFO] Iters: 465, Total loss: 0.026
+[2026-02-25 22:40:42,096][    INFO] Iters: 558, Total loss: 0.026
+[2026-02-25 22:40:44,137][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:40:46,111][    INFO] Iters: 744, Total loss: 0.026
+[2026-02-25 22:40:46,439][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.36
+[2026-02-25 22:40:46,440][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.91
+[2026-02-25 22:40:46,440][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.14
+[2026-02-25 22:40:46,440][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.46
+[2026-02-25 22:40:46,440][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.22
+
+[2026-02-25 22:40:46,987][    INFO] ===========> Epoch: 72, LR: 0.0000016, Previous best: 64.68
+[2026-02-25 22:40:47,133][    INFO] Iters: 0, Total loss: 0.014
+[2026-02-25 22:40:49,173][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:40:51,273][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:40:53,294][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:40:55,314][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:40:57,340][    INFO] Iters: 465, Total loss: 0.026
+[2026-02-25 22:40:59,330][    INFO] Iters: 558, Total loss: 0.026
+[2026-02-25 22:41:01,308][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:41:03,393][    INFO] Iters: 744, Total loss: 0.026
+[2026-02-25 22:41:03,731][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.94
+[2026-02-25 22:41:03,732][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 21.84
+[2026-02-25 22:41:03,732][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.83
+[2026-02-25 22:41:03,732][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.11
+[2026-02-25 22:41:03,732][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.18
+
+[2026-02-25 22:41:04,279][    INFO] ===========> Epoch: 73, LR: 0.0000015, Previous best: 64.68
+[2026-02-25 22:41:04,428][    INFO] Iters: 0, Total loss: 0.013
+[2026-02-25 22:41:06,551][    INFO] Iters: 93, Total loss: 0.027
+[2026-02-25 22:41:08,639][    INFO] Iters: 186, Total loss: 0.027
+[2026-02-25 22:41:10,771][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:41:12,874][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:41:14,888][    INFO] Iters: 465, Total loss: 0.027
+[2026-02-25 22:41:16,955][    INFO] Iters: 558, Total loss: 0.027
+[2026-02-25 22:41:18,960][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:41:20,970][    INFO] Iters: 744, Total loss: 0.026
+[2026-02-25 22:41:21,299][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.15
+[2026-02-25 22:41:21,299][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.06
+[2026-02-25 22:41:21,299][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.42
+[2026-02-25 22:41:21,300][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.58
+[2026-02-25 22:41:21,300][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.30
+
+[2026-02-25 22:41:21,831][    INFO] ===========> Epoch: 74, LR: 0.0000015, Previous best: 64.68
+[2026-02-25 22:41:21,980][    INFO] Iters: 0, Total loss: 0.017
+[2026-02-25 22:41:24,003][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:41:25,985][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:41:28,015][    INFO] Iters: 279, Total loss: 0.027
+[2026-02-25 22:41:29,999][    INFO] Iters: 372, Total loss: 0.027
+[2026-02-25 22:41:31,952][    INFO] Iters: 465, Total loss: 0.026
+[2026-02-25 22:41:33,911][    INFO] Iters: 558, Total loss: 0.026
+[2026-02-25 22:41:35,866][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:41:37,849][    INFO] Iters: 744, Total loss: 0.026
+[2026-02-25 22:41:38,186][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.06
+[2026-02-25 22:41:38,186][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.45
+[2026-02-25 22:41:38,186][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.84
+[2026-02-25 22:41:38,186][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.32
+[2026-02-25 22:41:38,187][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.42
+
+[2026-02-25 22:41:38,735][    INFO] ===========> Epoch: 75, LR: 0.0000014, Previous best: 64.68
+[2026-02-25 22:41:38,885][    INFO] Iters: 0, Total loss: 0.028
+[2026-02-25 22:41:40,969][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:41:42,944][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:41:44,845][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:41:46,755][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:41:48,666][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:41:50,574][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:41:52,496][    INFO] Iters: 651, Total loss: 0.026
+[2026-02-25 22:41:54,401][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:41:54,719][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.14
+[2026-02-25 22:41:54,720][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.20
+[2026-02-25 22:41:54,720][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.09
+[2026-02-25 22:41:54,720][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.25
+[2026-02-25 22:41:54,720][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.92
+
+[2026-02-25 22:41:55,256][    INFO] ===========> Epoch: 76, LR: 0.0000014, Previous best: 64.68
+[2026-02-25 22:41:55,399][    INFO] Iters: 0, Total loss: 0.015
+[2026-02-25 22:41:57,307][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:41:59,229][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:42:01,152][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:42:03,070][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:42:04,987][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:42:06,891][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:42:08,784][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:42:10,681][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:42:10,995][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31
+[2026-02-25 22:42:10,995][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.48
+[2026-02-25 22:42:10,995][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.99
+[2026-02-25 22:42:10,995][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.81
+[2026-02-25 22:42:10,996][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.90
+
+[2026-02-25 22:42:11,540][    INFO] ===========> Epoch: 77, LR: 0.0000013, Previous best: 64.68
+[2026-02-25 22:42:11,683][    INFO] Iters: 0, Total loss: 0.025
+[2026-02-25 22:42:13,760][    INFO] Iters: 93, Total loss: 0.026
+[2026-02-25 22:42:15,698][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:42:17,683][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:42:19,749][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:42:21,831][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:42:23,932][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:42:26,032][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:42:28,111][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:42:28,453][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.18
+[2026-02-25 22:42:28,454][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.67
+[2026-02-25 22:42:28,454][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.44
+[2026-02-25 22:42:28,454][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.48
+[2026-02-25 22:42:28,454][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.69
+
+[2026-02-25 22:42:28,983][    INFO] ===========> Epoch: 78, LR: 0.0000013, Previous best: 64.68
+[2026-02-25 22:42:29,127][    INFO] Iters: 0, Total loss: 0.007
+[2026-02-25 22:42:31,031][    INFO] Iters: 93, Total loss: 0.027
+[2026-02-25 22:42:32,935][    INFO] Iters: 186, Total loss: 0.026
+[2026-02-25 22:42:34,849][    INFO] Iters: 279, Total loss: 0.026
+[2026-02-25 22:42:36,758][    INFO] Iters: 372, Total loss: 0.026
+[2026-02-25 22:42:38,674][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:42:40,584][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:42:42,493][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:42:44,401][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:42:44,733][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.17
+[2026-02-25 22:42:44,733][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.55
+[2026-02-25 22:42:44,734][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.18
+[2026-02-25 22:42:44,734][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.83
+[2026-02-25 22:42:44,734][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.93
+
+[2026-02-25 22:42:45,248][    INFO] ===========> Epoch: 79, LR: 0.0000012, Previous best: 64.68
+[2026-02-25 22:42:45,394][    INFO] Iters: 0, Total loss: 0.024
+[2026-02-25 22:42:47,432][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:42:49,509][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:42:51,588][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:42:53,664][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:42:55,741][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:42:57,826][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:42:59,922][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:43:02,021][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:43:02,345][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.03
+[2026-02-25 22:43:02,346][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.01
+[2026-02-25 22:43:02,346][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.91
+[2026-02-25 22:43:02,347][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.00
+[2026-02-25 22:43:02,347][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.74
+
+[2026-02-25 22:43:02,875][    INFO] ===========> Epoch: 80, LR: 0.0000012, Previous best: 64.68
+[2026-02-25 22:43:03,019][    INFO] Iters: 0, Total loss: 0.009
+[2026-02-25 22:43:05,089][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:43:07,164][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:43:09,329][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:43:11,396][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:43:13,462][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:43:15,529][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:43:17,600][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:43:19,612][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:43:19,927][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.23
+[2026-02-25 22:43:19,928][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.76
+[2026-02-25 22:43:19,928][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.27
+[2026-02-25 22:43:19,928][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.48
+[2026-02-25 22:43:19,928][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.43
+
+[2026-02-25 22:43:20,466][    INFO] ===========> Epoch: 81, LR: 0.0000011, Previous best: 64.68
+[2026-02-25 22:43:20,610][    INFO] Iters: 0, Total loss: 0.020
+[2026-02-25 22:43:22,531][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:43:24,447][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:43:26,358][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:43:28,270][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:43:30,179][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:43:32,091][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:43:34,173][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:43:36,073][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:43:36,388][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.90
+[2026-02-25 22:43:36,389][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.41
+[2026-02-25 22:43:36,389][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.76
+[2026-02-25 22:43:36,390][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.68
+[2026-02-25 22:43:36,390][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.69
+
+[2026-02-25 22:43:36,923][    INFO] ===========> Epoch: 82, LR: 0.0000011, Previous best: 64.68
+[2026-02-25 22:43:37,086][    INFO] Iters: 0, Total loss: 0.026
+[2026-02-25 22:43:39,103][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:43:41,189][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:43:43,270][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:43:45,345][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:43:47,425][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:43:49,427][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:43:51,377][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:43:53,481][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:43:53,818][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.23
+[2026-02-25 22:43:53,818][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.37
+[2026-02-25 22:43:53,818][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.97
+[2026-02-25 22:43:53,818][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.39
+[2026-02-25 22:43:53,819][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.49
+
+[2026-02-25 22:43:54,349][    INFO] ===========> Epoch: 83, LR: 0.0000010, Previous best: 64.68
+[2026-02-25 22:43:54,495][    INFO] Iters: 0, Total loss: 0.026
+[2026-02-25 22:43:56,421][    INFO] Iters: 93, Total loss: 0.023
+[2026-02-25 22:43:58,335][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:44:00,302][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:44:02,362][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:44:04,412][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:44:06,313][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:44:08,295][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:44:10,227][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:44:10,550][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31
+[2026-02-25 22:44:10,550][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.61
+[2026-02-25 22:44:10,550][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.93
+[2026-02-25 22:44:10,550][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.72
+[2026-02-25 22:44:10,550][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.64
+
+[2026-02-25 22:44:11,088][    INFO] ===========> Epoch: 84, LR: 0.0000010, Previous best: 64.68
+[2026-02-25 22:44:11,230][    INFO] Iters: 0, Total loss: 0.018
+[2026-02-25 22:44:13,218][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:44:15,208][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:44:17,192][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:44:19,177][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:44:21,139][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:44:23,047][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:44:25,029][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:44:26,986][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:44:27,304][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.34
+[2026-02-25 22:44:27,304][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.12
+[2026-02-25 22:44:27,304][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.01
+[2026-02-25 22:44:27,304][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 51.30
+[2026-02-25 22:44:27,304][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.94
+
+[2026-02-25 22:44:27,839][    INFO] ===========> Epoch: 85, LR: 0.0000009, Previous best: 64.68
+[2026-02-25 22:44:27,983][    INFO] Iters: 0, Total loss: 0.024
+[2026-02-25 22:44:29,974][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:44:32,031][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:44:33,935][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:44:35,836][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:44:37,749][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:44:39,678][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:44:41,614][    INFO] Iters: 651, Total loss: 0.025
+[2026-02-25 22:44:43,546][    INFO] Iters: 744, Total loss: 0.025
+[2026-02-25 22:44:43,866][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.31
+[2026-02-25 22:44:43,867][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.28
+[2026-02-25 22:44:43,867][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.10
+[2026-02-25 22:44:43,867][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.58
+[2026-02-25 22:44:43,867][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.82
+
+[2026-02-25 22:44:44,420][    INFO] ===========> Epoch: 86, LR: 0.0000009, Previous best: 64.68
+[2026-02-25 22:44:44,567][    INFO] Iters: 0, Total loss: 0.048
+[2026-02-25 22:44:46,494][    INFO] Iters: 93, Total loss: 0.023
+[2026-02-25 22:44:48,450][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:44:50,355][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:44:52,260][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:44:54,174][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:44:56,079][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:44:58,016][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:44:59,936][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:45:00,277][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.15
+[2026-02-25 22:45:00,277][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 24.59
+[2026-02-25 22:45:00,277][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.78
+[2026-02-25 22:45:00,277][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.60
+[2026-02-25 22:45:00,277][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 61.03
+
+[2026-02-25 22:45:00,793][    INFO] ===========> Epoch: 87, LR: 0.0000008, Previous best: 64.68
+[2026-02-25 22:45:00,939][    INFO] Iters: 0, Total loss: 0.023
+[2026-02-25 22:45:02,859][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:45:04,812][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:45:06,842][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:45:08,904][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:45:11,028][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:45:13,154][    INFO] Iters: 558, Total loss: 0.025
+[2026-02-25 22:45:15,279][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:45:17,399][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:45:17,742][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.16
+[2026-02-25 22:45:17,743][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.34
+[2026-02-25 22:45:17,743][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.62
+[2026-02-25 22:45:17,743][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.78
+[2026-02-25 22:45:17,743][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.73
+
+[2026-02-25 22:45:18,261][    INFO] ===========> Epoch: 88, LR: 0.0000007, Previous best: 64.68
+[2026-02-25 22:45:18,407][    INFO] Iters: 0, Total loss: 0.015
+[2026-02-25 22:45:20,526][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:45:22,427][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:45:24,335][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:45:26,236][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:45:28,134][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:45:30,043][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:45:31,940][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:45:33,834][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:45:34,148][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 85.77
+[2026-02-25 22:45:34,149][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.15
+[2026-02-25 22:45:34,149][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.85
+[2026-02-25 22:45:34,149][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.02
+[2026-02-25 22:45:34,149][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.45
+
+[2026-02-25 22:45:34,642][    INFO] ===========> Epoch: 89, LR: 0.0000007, Previous best: 64.68
+[2026-02-25 22:45:34,787][    INFO] Iters: 0, Total loss: 0.016
+[2026-02-25 22:45:36,692][    INFO] Iters: 93, Total loss: 0.025
+[2026-02-25 22:45:38,599][    INFO] Iters: 186, Total loss: 0.025
+[2026-02-25 22:45:40,497][    INFO] Iters: 279, Total loss: 0.025
+[2026-02-25 22:45:42,402][    INFO] Iters: 372, Total loss: 0.025
+[2026-02-25 22:45:44,428][    INFO] Iters: 465, Total loss: 0.025
+[2026-02-25 22:45:46,333][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:45:48,237][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:45:50,241][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:45:50,568][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.21
+[2026-02-25 22:45:50,568][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.88
+[2026-02-25 22:45:50,568][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.10
+[2026-02-25 22:45:50,569][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.22
+[2026-02-25 22:45:50,569][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.85
+
+[2026-02-25 22:45:51,062][    INFO] ===========> Epoch: 90, LR: 0.0000006, Previous best: 64.68
+[2026-02-25 22:45:51,207][    INFO] Iters: 0, Total loss: 0.023
+[2026-02-25 22:45:53,118][    INFO] Iters: 93, Total loss: 0.023
+[2026-02-25 22:45:55,037][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:45:56,944][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:45:58,850][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:46:00,759][    INFO] Iters: 465, Total loss: 0.024
+[2026-02-25 22:46:02,665][    INFO] Iters: 558, Total loss: 0.024
+[2026-02-25 22:46:04,561][    INFO] Iters: 651, Total loss: 0.024
+[2026-02-25 22:46:06,448][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:46:06,777][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.15
+[2026-02-25 22:46:06,778][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.23
+[2026-02-25 22:46:06,778][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.96
+[2026-02-25 22:46:06,778][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.41
+[2026-02-25 22:46:06,778][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.69
+
+[2026-02-25 22:46:07,278][    INFO] ===========> Epoch: 91, LR: 0.0000006, Previous best: 64.68
+[2026-02-25 22:46:07,424][    INFO] Iters: 0, Total loss: 0.014
+[2026-02-25 22:46:09,323][    INFO] Iters: 93, Total loss: 0.022
+[2026-02-25 22:46:11,224][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:46:13,119][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:46:15,020][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:46:16,918][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:46:18,817][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:46:20,707][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:46:22,598][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:46:22,917][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.25
+[2026-02-25 22:46:22,918][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.15
+[2026-02-25 22:46:22,918][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.68
+[2026-02-25 22:46:22,918][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.66
+[2026-02-25 22:46:22,918][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.68
+
+[2026-02-25 22:46:23,424][    INFO] ===========> Epoch: 92, LR: 0.0000005, Previous best: 64.68
+[2026-02-25 22:46:23,570][    INFO] Iters: 0, Total loss: 0.024
+[2026-02-25 22:46:25,489][    INFO] Iters: 93, Total loss: 0.023
+[2026-02-25 22:46:27,386][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:46:29,285][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:46:31,191][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:46:33,090][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:46:34,983][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:46:36,899][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:46:38,828][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:46:39,156][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.22
+[2026-02-25 22:46:39,157][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.04
+[2026-02-25 22:46:39,157][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.90
+[2026-02-25 22:46:39,157][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.82
+[2026-02-25 22:46:39,158][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.75
+
+[2026-02-25 22:46:39,687][    INFO] ===========> Epoch: 93, LR: 0.0000005, Previous best: 64.68
+[2026-02-25 22:46:39,835][    INFO] Iters: 0, Total loss: 0.024
+[2026-02-25 22:46:41,790][    INFO] Iters: 93, Total loss: 0.021
+[2026-02-25 22:46:43,729][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:46:45,633][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:46:47,539][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:46:49,445][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:46:51,361][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:46:53,261][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:46:55,167][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:46:55,484][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.35
+[2026-02-25 22:46:55,485][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.72
+[2026-02-25 22:46:55,485][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.03
+[2026-02-25 22:46:55,485][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.57
+[2026-02-25 22:46:55,485][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.92
+
+[2026-02-25 22:46:56,005][    INFO] ===========> Epoch: 94, LR: 0.0000004, Previous best: 64.68
+[2026-02-25 22:46:56,147][    INFO] Iters: 0, Total loss: 0.026
+[2026-02-25 22:46:58,049][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:46:59,949][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:47:01,857][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:47:03,758][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:47:05,673][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:47:07,615][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:47:09,659][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:47:11,695][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:47:12,040][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.21
+[2026-02-25 22:47:12,040][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.72
+[2026-02-25 22:47:12,040][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 83.05
+[2026-02-25 22:47:12,041][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.58
+[2026-02-25 22:47:12,041][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.64
+
+[2026-02-25 22:47:12,574][    INFO] ===========> Epoch: 95, LR: 0.0000003, Previous best: 64.68
+[2026-02-25 22:47:12,717][    INFO] Iters: 0, Total loss: 0.012
+[2026-02-25 22:47:14,759][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:47:16,800][    INFO] Iters: 186, Total loss: 0.024
+[2026-02-25 22:47:18,773][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:47:20,700][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:47:22,702][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:47:24,752][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:47:26,790][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:47:28,702][    INFO] Iters: 744, Total loss: 0.024
+[2026-02-25 22:47:29,016][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.23
+[2026-02-25 22:47:29,017][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 23.24
+[2026-02-25 22:47:29,017][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.93
+[2026-02-25 22:47:29,017][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.69
+[2026-02-25 22:47:29,017][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.77
+
+[2026-02-25 22:47:29,563][    INFO] ===========> Epoch: 96, LR: 0.0000003, Previous best: 64.68
+[2026-02-25 22:47:29,707][    INFO] Iters: 0, Total loss: 0.043
+[2026-02-25 22:47:31,603][    INFO] Iters: 93, Total loss: 0.022
+[2026-02-25 22:47:33,494][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:47:35,385][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:47:37,288][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:47:39,182][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:47:41,082][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:47:43,002][    INFO] Iters: 651, Total loss: 0.022
+[2026-02-25 22:47:44,913][    INFO] Iters: 744, Total loss: 0.022
+[2026-02-25 22:47:45,232][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.26
+[2026-02-25 22:47:45,232][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.63
+[2026-02-25 22:47:45,233][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.90
+[2026-02-25 22:47:45,233][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.73
+[2026-02-25 22:47:45,233][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.63
+
+[2026-02-25 22:47:45,770][    INFO] ===========> Epoch: 97, LR: 0.0000002, Previous best: 64.68
+[2026-02-25 22:47:45,915][    INFO] Iters: 0, Total loss: 0.027
+[2026-02-25 22:47:47,867][    INFO] Iters: 93, Total loss: 0.023
+[2026-02-25 22:47:49,767][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:47:51,766][    INFO] Iters: 279, Total loss: 0.024
+[2026-02-25 22:47:53,856][    INFO] Iters: 372, Total loss: 0.024
+[2026-02-25 22:47:55,879][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:47:57,779][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:47:59,680][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:48:01,698][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:48:02,026][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.28
+[2026-02-25 22:48:02,027][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.47
+[2026-02-25 22:48:02,027][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.82
+[2026-02-25 22:48:02,027][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.73
+[2026-02-25 22:48:02,027][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.57
+
+[2026-02-25 22:48:02,544][    INFO] ===========> Epoch: 98, LR: 0.0000001, Previous best: 64.68
+[2026-02-25 22:48:02,688][    INFO] Iters: 0, Total loss: 0.019
+[2026-02-25 22:48:04,618][    INFO] Iters: 93, Total loss: 0.022
+[2026-02-25 22:48:06,539][    INFO] Iters: 186, Total loss: 0.022
+[2026-02-25 22:48:08,444][    INFO] Iters: 279, Total loss: 0.022
+[2026-02-25 22:48:10,406][    INFO] Iters: 372, Total loss: 0.022
+[2026-02-25 22:48:12,379][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:48:14,289][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:48:16,208][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:48:18,113][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:48:18,443][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.28
+[2026-02-25 22:48:18,444][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.51
+[2026-02-25 22:48:18,444][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.99
+[2026-02-25 22:48:18,444][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.78
+[2026-02-25 22:48:18,444][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.64
+
+[2026-02-25 22:48:18,969][    INFO] ===========> Epoch: 99, LR: 0.0000001, Previous best: 64.68
+[2026-02-25 22:48:19,114][    INFO] Iters: 0, Total loss: 0.022
+[2026-02-25 22:48:21,035][    INFO] Iters: 93, Total loss: 0.024
+[2026-02-25 22:48:22,954][    INFO] Iters: 186, Total loss: 0.023
+[2026-02-25 22:48:24,870][    INFO] Iters: 279, Total loss: 0.023
+[2026-02-25 22:48:26,772][    INFO] Iters: 372, Total loss: 0.023
+[2026-02-25 22:48:28,679][    INFO] Iters: 465, Total loss: 0.023
+[2026-02-25 22:48:30,590][    INFO] Iters: 558, Total loss: 0.023
+[2026-02-25 22:48:32,504][    INFO] Iters: 651, Total loss: 0.023
+[2026-02-25 22:48:34,408][    INFO] Iters: 744, Total loss: 0.023
+[2026-02-25 22:48:34,727][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 86.24
+[2026-02-25 22:48:34,728][    INFO] ***** Evaluation ***** >>>> Class [1 fibrin] IoU: 22.55
+[2026-02-25 22:48:34,728][    INFO] ***** Evaluation ***** >>>> Class [2 granulation] IoU: 82.92
+[2026-02-25 22:48:34,728][    INFO] ***** Evaluation ***** >>>> Class [3 callus] IoU: 50.69
+[2026-02-25 22:48:34,728][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 60.60
+
+gpu212-18:3539573:3539659 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+wandb: updating run metadata
+gpu212-18:3539573:3559671 [1] NCCL INFO comm 0xe802160 rank 1 nranks 2 cudaDev 1 busId b3000 - Abort COMPLETE
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading output.log
+wandb: uploading history steps 74807-74999, summary, console lines 1598-1605
+wandb: 
+wandb: Run history:
+wandb:      eval/mIoU ▁▅▇▇█▅▆▇▇▆▅▅▅▄▅▄▃▅▃▄▄▄▂▄▄▃▄▃▃▃▃▃▃▃▄▃▃▃▃▃
+wandb: train/loss_all ▂▇▁█▅▄▃▄▄▃▂▃▂▂▃▃▁▂▂▂▂▃▂▁▂▂▂▂▂▁▂▂▂▂▂▂▂▂▂▂
+wandb:   train/loss_x ▇▇██▅▅▂▄▃▄▃▂▃▃▃▃▃▁▂▂▂▃▁▁▂▂▂▃▂▂▁▂▂▁▁▂▃▁▂▂
+wandb:       train/lr ████▇▆▆▆▆▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▄▄▄▃▃▃▃▃▂▂▂▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      eval/mIoU 60.60075
+wandb: train/loss_all 0.02123
+wandb:   train/loss_x 0.02123
+wandb:       train/lr 0.0
+wandb: 
+wandb: 🚀 View run vague-energy-4 at: https://wandb.ai/anon_user/unimatch-v2-table-baselines/runs/c0a3zdti
+wandb: ⭐️ View project at: https://wandb.ai/anon_user/unimatch-v2-table-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: exp/dfutissue/supervised_table_baseline/dinov2_base/1_8/seed0/wandb/run-20260225_222011-c0a3zdti/logs
+[rank0]:[W225 22:48:39.909622538 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+gpu212-18:3539572:3539658 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+gpu212-18:3539572:3559674 [0] NCCL INFO comm 0xb2f8f40 rank 0 nranks 2 cudaDev 0 busId 89000 - Abort COMPLETE
