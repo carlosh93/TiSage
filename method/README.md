@@ -25,7 +25,7 @@ For MedSigLIP prior integration, expected default classifier checkpoints are:
 - `method/checkpoints/pretrained/medsiglip_head_dfutissue.pt`
 - `method/checkpoints/pretrained/medsiglip_head_lutseg.pt`
 
-## Main Table (Linked Logs)
+## Main Table
 
 LUTSeg full-supervision reference: [31.37 / 39.19*](logs/main_table/labeled_only/lutseg/full_reference/out.log)
 All linked logs in `logs/main_table/` are sanitized for anonymized review.
