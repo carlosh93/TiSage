@@ -1,6 +1,6 @@
 # TiSage
 
-Reproducibility repository for **TiSage** (Semi-Supervised Tissue Segmentation with Multi-Scale Semantic Guidance).
+Reproducibility repository for Semi-Supervised Tissue Segmentation with Multi-Scale Semantic Guidance (Paper ID: 3280).
 
 ## Repository Structure
 
@@ -9,8 +9,6 @@ Reproducibility repository for **TiSage** (Semi-Supervised Tissue Segmentation w
 - `LUTSeg/`: LUTSeg dataset-construction reproducibility pipeline and examples.
 
 ## Quick Start
-
-From `tmp/TiSage`:
 
 ```bash
 python3 -m venv venv
@@ -25,10 +23,9 @@ Then see:
 
 ## Data Availability
 
-- The full training datasets are not packaged in this review repository.
+- The full training dataset is not included in this anonymous review repository because some images contain institutional landmarks that could compromise anonymity. All images were de-identified prior to the study in accordance with institutional ethical guidelines. The complete dataset will be released upon acceptance.
 - A small non-identifying example subset is included under `LUTSeg/examples/` to document file formats and the annotation-voting workflow.
 
 ## Reproducibility Notes
 
 - Main results table values and source logs are provided in `method/README.md` and `method/logs/main_table/`.
-- Randomization is controlled through explicit seeds in scripts.
