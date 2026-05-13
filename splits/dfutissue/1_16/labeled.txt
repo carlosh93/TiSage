@@ -1,0 +1,5 @@
+Labeled/Original/Images/TrainVal/0918.png Labeled/Original/Annotations/TrainVal/0918.png
+Labeled/Original/Images/TrainVal/0921.png Labeled/Original/Annotations/TrainVal/0921.png
+Labeled/Original/Images/TrainVal/0966.png Labeled/Original/Annotations/TrainVal/0966.png
+Labeled/Original/Images/TrainVal/0943.png Labeled/Original/Annotations/TrainVal/0943.png
+Labeled/Original/Images/TrainVal/0913.png Labeled/Original/Annotations/TrainVal/0913.png

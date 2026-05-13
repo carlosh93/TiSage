@@ -1,0 +1,16 @@
+Labeled/Original/Images/Test/0914.png Labeled/Original/Annotations/Test/0914.png
+Labeled/Original/Images/Test/0925.png Labeled/Original/Annotations/Test/0925.png
+Labeled/Original/Images/Test/0927.png Labeled/Original/Annotations/Test/0927.png
+Labeled/Original/Images/Test/0935.png Labeled/Original/Annotations/Test/0935.png
+Labeled/Original/Images/Test/0961.png Labeled/Original/Annotations/Test/0961.png
+Labeled/Original/Images/Test/0962.png Labeled/Original/Annotations/Test/0962.png
+Labeled/Original/Images/Test/0963.png Labeled/Original/Annotations/Test/0963.png
+Labeled/Original/Images/Test/0967.png Labeled/Original/Annotations/Test/0967.png
+Labeled/Original/Images/Test/0976.png Labeled/Original/Annotations/Test/0976.png
+Labeled/Original/Images/Test/0983.png Labeled/Original/Annotations/Test/0983.png
+Labeled/Original/Images/Test/0989.png Labeled/Original/Annotations/Test/0989.png
+Labeled/Original/Images/Test/0994.png Labeled/Original/Annotations/Test/0994.png
+Labeled/Original/Images/Test/0996.png Labeled/Original/Annotations/Test/0996.png
+Labeled/Original/Images/Test/0999.png Labeled/Original/Annotations/Test/0999.png
+Labeled/Original/Images/Test/1004.png Labeled/Original/Annotations/Test/1004.png
+Labeled/Original/Images/Test/1005.png Labeled/Original/Annotations/Test/1005.png

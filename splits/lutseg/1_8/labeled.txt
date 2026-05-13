@@ -1,0 +1,13 @@
+Images/Patient_11/P11T_2.jpg Masks/Patient_11/P11T_2.png
+Images/Patient_11/P11T_5.jpg Masks/Patient_11/P11T_5.png
+Images/Patient_2/P2_T1.jpeg Masks/Patient_2/P2_T1.png
+Images/Patient_21/P21T_1.jpg Masks/Patient_21/P21T_1.png
+Images/Patient_22/P22T_1.jpg Masks/Patient_22/P22T_1.png
+Images/Patient_25/P25T_3.jpg Masks/Patient_25/P25T_3.png
+Images/Patient_27/P27T_1.jpg Masks/Patient_27/P27T_1.png
+Images/Patient_31/P31T_1.jpg Masks/Patient_31/P31T_1.png
+Images/Patient_33/P33T_2.jpg Masks/Patient_33/P33T_2.png
+Images/Patient_34/P34T_2.jpg Masks/Patient_34/P34T_2.png
+Images/Patient_36/P36T_2.jpg Masks/Patient_36/P36T_2.png
+Images/Patient_38/P38T_3.jpg Masks/Patient_38/P38T_3.png
+Images/Patient_9/P9T_2.jpg Masks/Patient_9/P9T_2.png

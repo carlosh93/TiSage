@@ -1,0 +1,11 @@
+Labeled/Original/Images/TrainVal/0911.png Labeled/Original/Annotations/TrainVal/0911.png
+Labeled/Original/Images/TrainVal/0922.png Labeled/Original/Annotations/TrainVal/0922.png
+Labeled/Original/Images/TrainVal/1000.png Labeled/Original/Annotations/TrainVal/1000.png
+Labeled/Original/Images/TrainVal/0933.png Labeled/Original/Annotations/TrainVal/0933.png
+Labeled/Original/Images/TrainVal/0901.png Labeled/Original/Annotations/TrainVal/0901.png
+Labeled/Original/Images/TrainVal/0919.png Labeled/Original/Annotations/TrainVal/0919.png
+Labeled/Original/Images/TrainVal/0934.png Labeled/Original/Annotations/TrainVal/0934.png
+Labeled/Original/Images/TrainVal/0937.png Labeled/Original/Annotations/TrainVal/0937.png
+Labeled/Original/Images/TrainVal/0979.png Labeled/Original/Annotations/TrainVal/0979.png
+Labeled/Original/Images/TrainVal/0945.png Labeled/Original/Annotations/TrainVal/0945.png
+Labeled/Original/Images/TrainVal/0971.png Labeled/Original/Annotations/TrainVal/0971.png

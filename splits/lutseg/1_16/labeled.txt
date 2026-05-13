@@ -1,0 +1,6 @@
+Images/Patient_16/P16T_1.jpg Masks/Patient_16/P16T_1.png
+Images/Patient_25/P25T_4.jpg Masks/Patient_25/P25T_4.png
+Images/Patient_27/P27T_2.jpg Masks/Patient_27/P27T_2.png
+Images/Patient_3/P3_T2.jpg Masks/Patient_3/P3_T2.png
+Images/Patient_30/P30T_3.jpg Masks/Patient_30/P30T_3.png
+Images/Patient_9/P9T_4.jpg Masks/Patient_9/P9T_4.png
