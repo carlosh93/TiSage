@@ -20,7 +20,13 @@ DFUTissue:
 
 The released DFUTissue files are the paper splits: `fixed`, `1_4`, `1_8`,
 and `1_16`. Use the committed files directly for exact reproduction; the split
-script is included for transparency.
+script is included for transparency. These files were generated from the
+historical fixed-seed split generation used during development, then only the
+paper-reported splits were retained here.
+
+```bash
+python prepare_dfutissue.py --ratios 32,16,8,4 --fixed-split
+```
 
 LUTSeg:
 
