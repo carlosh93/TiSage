@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use TiSage or LUTSeg, please cite the accompanying paper."
+title: "TiSage: Code and Reproducibility Repository for LUTSeg"
+type: software
+license: MIT
+repository-code: "https://github.com/carlosh93/TiSage"
+url: "https://github.com/carlosh93/TiSage"
+keywords:
+  - medical image segmentation
+  - semi-supervised learning
+  - wound tissue segmentation
+  - longitudinal dataset
+  - MedSigLIP
+authors:
+  - given-names: Karen
+    family-names: Sanchez
+    website: "https://ksanchez84.github.io/"
+  - given-names: Carlos
+    family-names: Hinojosa
+    website: "http://carloshinojosa.me/"
+  - given-names: Albert Alejandro
+    family-names: Ávila Álvarez
+    website: "https://scholar.google.com/citations?user=XQcJalsAAAAJ"
+  - given-names: Andrea Catalina
+    family-names: Riano-Rojas
+    website: "https://www.linkedin.com/in/andrea-catalina-ria%C3%B1o-rojas-09a528145/"
+  - given-names: Diego Hernando
+    family-names: Romero Pinzon
+  - given-names: Jenny Carolina
+    family-names: Páez Figueroa
+  - given-names: Martina
+    family-names: Llinás Tono
+  - given-names: Bernard
+    family-names: Ghanem
+    website: "https://www.bernardghanem.com/"
+preferred-citation:
+  type: conference-paper
+  title: "LUTSeg: A Longitudinal Multi-Expert Dataset for Ulcer Tissue Segmentation"
+  authors:
+    - given-names: Karen
+      family-names: Sanchez
+    - given-names: Carlos
+      family-names: Hinojosa
+    - given-names: Albert Alejandro
+      family-names: Ávila Álvarez
+    - given-names: Andrea Catalina
+      family-names: Riano-Rojas
+    - given-names: Diego Hernando
+      family-names: Romero Pinzon
+    - given-names: Jenny Carolina
+      family-names: Páez Figueroa
+    - given-names: Martina
+      family-names: Llinás Tono
+    - given-names: Bernard
+      family-names: Ghanem
+  collection-title: "Eleventh ISIC Skin Image Analysis Workshop at MICCAI"
+  year: 2026

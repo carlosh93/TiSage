@@ -1,10 +1,34 @@
-# LUTSeg and TiSage
+<h1 align="center">TiSage</h1>
 
-Official code and reproducibility repository for **LUTSeg: A Longitudinal
-Multi-Expert Dataset for Ulcer Tissue Segmentation** and the TiSage
-semi-supervised tissue-segmentation method.
+<h3 align="center">LUTSeg: A Longitudinal Multi-Expert Dataset for Ulcer Tissue Segmentation</h3>
 
-> **Spotlight paper — Eleventh ISIC Skin Image Analysis Workshop @ MICCAI 2026**
+<p align="center">
+  <strong>🏆 Spotlight — Eleventh ISIC Skin Image Analysis Workshop @ MICCAI 2026</strong>
+</p>
+
+<p align="center">
+  <a href="https://ksanchez84.github.io/">Karen Sanchez</a> ·
+  <a href="http://carloshinojosa.me/">Carlos Hinojosa</a> ·
+  <a href="https://scholar.google.com/citations?user=XQcJalsAAAAJ">Albert Alejandro Ávila Álvarez</a> ·
+  <a href="https://www.linkedin.com/in/andrea-catalina-ria%C3%B1o-rojas-09a528145/">Andrea Catalina Riano-Rojas</a> ·<br>
+  Diego Hernando Romero Pinzon ·
+  Jenny Carolina Páez Figueroa ·
+  Martina Llinás Tono ·
+  <a href="https://www.bernardghanem.com/">Bernard Ghanem</a>
+</p>
+
+<p align="center">
+  <a href="https://workshop.isic-archive.com/2026/"><img src="https://img.shields.io/badge/Paper-Spotlight%20%40%20MICCAI%202026-f97316" alt="Paper: Spotlight at MICCAI 2026"></a>
+  <a href="https://huggingface.co/ksanchez84/TiSage"><img src="https://img.shields.io/badge/Hugging%20Face-Model-FFD21E?logo=huggingface&amp;logoColor=000" alt="Hugging Face model"></a>
+  <a href="https://huggingface.co/datasets/ksanchez84/LUTSeg"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&amp;logoColor=000" alt="Hugging Face dataset"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/Citation-BibTeX-2563eb" alt="BibTeX citation"></a>
+  <a href="method/README.md"><img src="https://img.shields.io/badge/Results-Verified-16a34a" alt="Verified results"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Code%20License-MIT-64748b" alt="MIT License"></a>
+  <a href="LUTSeg/DATA_LICENSE.md"><img src="https://img.shields.io/badge/Data%20License-CC%20BY%204.0-64748b" alt="CC BY 4.0 data license"></a>
+</p>
+
+Official code, dataset, checkpoints, and reproducibility repository for LUTSeg
+and the TiSage semi-supervised tissue-segmentation method.
 
 TiSage builds on an EMA teacher-student segmentation framework and introduces
 multi-scale MedSigLIP semantic guidance, pixel-adaptive fusion, and
@@ -158,9 +182,22 @@ defaults. Use `--nproc-per-node 1` to run any configuration on one GPU.
 
 ## Citation
 
-The final author list and proceedings identifier will be added after the
-camera-ready bibliographic record becomes public. Until then, please cite the
-paper by title and the Eleventh ISIC Skin Image Analysis Workshop @ MICCAI 2026.
+The proceedings URL, pages, and DOI will be added when the final bibliographic
+record becomes public. Until then, use the following provisional citation:
+
+```bibtex
+@inproceedings{sanchez2026lutseg,
+  title     = {LUTSeg: A Longitudinal Multi-Expert Dataset for Ulcer Tissue Segmentation},
+  author    = {Sanchez, Karen and Hinojosa, Carlos and Ávila Álvarez, Albert Alejandro and Riano-Rojas, Andrea Catalina and Romero Pinzon, Diego Hernando and Páez Figueroa, Jenny Carolina and Llinás Tono, Martina and Ghanem, Bernard},
+  booktitle = {Eleventh ISIC Skin Image Analysis Workshop at MICCAI},
+  year      = {2026},
+  note      = {Spotlight}
+}
+```
+
+The paper badge links to the official workshop page until the proceedings paper
+has a permanent public URL. Machine-readable citation metadata is available in
+`CITATION.cff`, which enables GitHub's **Cite this repository** interface.
 
 ## License
 
