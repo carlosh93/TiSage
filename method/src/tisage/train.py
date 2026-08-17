@@ -3,7 +3,13 @@ import random
 from copy import deepcopy
 import logging
 import os
+from pathlib import Path
 import pprint
+import sys
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import torch
 import torch.nn.functional as F
@@ -44,6 +50,10 @@ parser.add_argument('--wandb-name', type=str, default=None)
 parser.add_argument('--wandb-tags', type=str, default=None, help='comma-separated tags')
 parser.add_argument('--seed', type=int, default=0)
 parser.add_argument('--deterministic', action='store_true', help='enable deterministic training (slower)')
+parser.add_argument('--epochs', type=int, default=None, help='override the configured epoch count')
+parser.add_argument('--max-steps-per-epoch', type=int, default=None,
+                    help='limit optimizer steps per epoch for a bounded training check')
+parser.add_argument('--no-save', action='store_true', help='skip writing training checkpoints')
 parser.add_argument('--medsiglip', action='store_true', help='enable MedSigLIP pseudo-label calibration')
 parser.add_argument('--medsiglip-alpha', type=float, default=None,
                     help='calibration strength (overrides config if set)')
@@ -85,6 +95,12 @@ def main():
     args = parser.parse_args()
 
     cfg = yaml.load(open(args.config, "r"), Loader=yaml.Loader)
+    if args.epochs is not None:
+        if args.epochs < 1:
+            parser.error('--epochs must be positive')
+        cfg['epochs'] = args.epochs
+    if args.max_steps_per_epoch is not None and args.max_steps_per_epoch < 1:
+        parser.error('--max-steps-per-epoch must be positive')
 
     logger = init_log('global', logging.INFO)
     logger.propagate = 0
@@ -276,7 +292,10 @@ def main():
         valset, batch_size=1, pin_memory=True, num_workers=1, drop_last=False, sampler=valsampler
     )
     
-    total_iters = len(trainloader_u) * cfg['epochs']
+    iters_per_epoch = len(trainloader_u)
+    if args.max_steps_per_epoch is not None:
+        iters_per_epoch = min(iters_per_epoch, args.max_steps_per_epoch)
+    total_iters = iters_per_epoch * cfg['epochs']
     previous_best, previous_best_ema = 0.0, 0.0
     best_epoch, best_epoch_ema = 0, 0
     epoch = -1
@@ -323,6 +342,8 @@ def main():
 
         for i, ((img_x, mask_x),
                 (img_u_w, img_u_s1, img_u_s2, ignore_mask, cutmix_box1, cutmix_box2)) in enumerate(loader):
+            if i >= iters_per_epoch:
+                break
             
             img_x, mask_x = img_x.cuda(), mask_x.cuda()
             img_u_w, img_u_s1, img_u_s2 = img_u_w.cuda(), img_u_s1.cuda(), img_u_s2.cuda()
@@ -469,7 +490,7 @@ def main():
             mask_ratio = ((conf_u_w >= cfg['conf_thresh']) & (ignore_mask != 255)).sum().item() / (ignore_mask != 255).sum()
             total_mask_ratio.update(mask_ratio.item())
 
-            iters = epoch * len(trainloader_u) + i
+            iters = epoch * iters_per_epoch + i
             lr = cfg['lr'] * (1 - iters / total_iters) ** 0.9
             optimizer.param_groups[0]["lr"] = lr
             optimizer.param_groups[1]["lr"] = lr * cfg['lr_multi']
@@ -502,7 +523,7 @@ def main():
                 if wandb_run is not None:
                     wandb.log(log_dict, step=iters)
 
-            if (i % (len(trainloader_u) // 8) == 0) and (rank == 0):
+            if (i % max(iters_per_epoch // 8, 1) == 0) and (rank == 0):
                 logger.info('Iters: {:}, LR: {:.7f}, Total loss: {:.3f}, Loss x: {:.3f}, Loss s: {:.3f}, Mask ratio: '
                             '{:.3f}'.format(i, optimizer.param_groups[0]['lr'], total_loss.avg, total_loss_x.avg, 
                                             total_loss_s.avg, total_mask_ratio.avg))
@@ -549,7 +570,7 @@ def main():
                 step=iters,
             )
         
-        if rank == 0:
+        if rank == 0 and not args.no_save:
             checkpoint = {
                 'model': model.state_dict(),
                 'model_ema': model_ema.state_dict(),
@@ -581,8 +602,13 @@ def main():
                         'pixels_calibrated={} / {} ({:.2f}%)'.format(
                         t_recomputes.item(), t_pixels_cal.item(), t_pixels_seen.item(), pct))
 
-    if rank == 0 and wandb_run is not None:
-        wandb_run.finish()
+    if rank == 0:
+        writer.close()
+        if wandb_run is not None:
+            wandb_run.finish()
+
+    if torch.distributed.is_initialized():
+        torch.distributed.destroy_process_group()
 
 
 if __name__ == '__main__':

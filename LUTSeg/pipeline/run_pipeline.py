@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-Run the full LUTS pipeline (steps 1-7).
+Run the full LUTSeg pipeline (steps 1-7).
 
 Usage:
   # From repository root: selection JSON is auto-created before step 4 if missing (from image_groups + default-doctor).
-  venv/bin/python data/LUTS/pipeline/run_pipeline.py --default-doctor user_9
+  venv/bin/python LUTSeg/pipeline/run_pipeline.py --default-doctor user_9
 
   # Use explicit per-image mapping (e.g. from votes):
-  venv/bin/python data/LUTS/pipeline/run_pipeline.py \
-      --selection-json data/LUTS/Annotations/processed/selected_doctor_by_image.json
+  venv/bin/python LUTSeg/pipeline/run_pipeline.py \
+      --selection-json LUTSeg/annotations/processed/selected_doctor_by_image.json
 
   # Fail if selection JSON is missing (e.g. you expect to have run votes first):
-  venv/bin/python data/LUTS/pipeline/run_pipeline.py --no-auto-init-selection
+  venv/bin/python LUTSeg/pipeline/run_pipeline.py --no-auto-init-selection
 
 Requires:
-- Raw Label Studio exports in data/LUTS/Annotations/raw/*.json
-- Source images under data/Dataset_evolution_wounds_VR/
+- Raw Label Studio exports in LUTSeg/annotations/raw/*.json
+- Source images under LUTSeg/data/
 - Python with opencv-python (cv2) and numpy for steps 2, 4, 7 (use project venv if needed)
 """
 from __future__ import annotations
@@ -28,11 +28,11 @@ from pathlib import Path
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run LUTS pipeline (normalize → rasterize → group → selected-mask step → splits → export → QC)."
+        description="Run LUTSeg pipeline (normalize → rasterize → group → selected-mask step → splits → export → QC)."
     )
     parser.add_argument(
         "--selection-json",
-        default="data/LUTS/Annotations/processed/selected_doctor_by_image.json",
+        default="LUTSeg/annotations/processed/selected_doctor_by_image.json",
         help=(
             "JSON mapping image_key -> doctor_id for step 4 selection. "
             "If missing entries, --default-doctor is used when available."
@@ -88,10 +88,8 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
 
-    # Project root (so that data/LUTS/... and data/Dataset_evolution_wounds_VR resolve):
-    # run_pipeline.py lives in <project>/data/LUTS/pipeline → parents[2] = project root
     script_dir = Path(__file__).resolve().parent
-    repo_root = Path(args.repo_root).resolve() if args.repo_root else script_dir.parents[2]
+    repo_root = Path(args.repo_root).resolve() if args.repo_root else script_dir.parents[1]
 
     pipeline_dir = script_dir
     steps = [
@@ -137,7 +135,7 @@ def main() -> None:
                 sys.executable,
                 str(pipeline_dir / "luts_04_init_selection_map.py"),
                 "--groups-json",
-                str(repo_root / "data/LUTS/Annotations/processed/image_groups.json"),
+                str(repo_root / "LUTSeg/annotations/processed/image_groups.json"),
                 "--preferred-doctor",
                 str(args.default_doctor),
                 "--output-json",

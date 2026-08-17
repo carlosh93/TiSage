@@ -3,7 +3,7 @@
 Optional Step 7: basic QC report for final consensus masks.
 
 Outputs:
-- data/LUTS/Annotations/processed/qc_report.json
+- LUTSeg/annotations/processed/qc_report.json
 """
 from __future__ import annotations
 
@@ -20,12 +20,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate LUTS mask QC report.")
     parser.add_argument(
         "--consensus-manifest",
-        default="data/LUTS/Annotations/processed/consensus_manifest.json",
+        default="LUTSeg/annotations/processed/consensus_manifest.json",
         help="Consensus manifest JSON path.",
     )
     parser.add_argument(
         "--output-json",
-        default="data/LUTS/Annotations/processed/qc_report.json",
+        default="LUTSeg/annotations/processed/qc_report.json",
         help="Output QC report path.",
     )
     return parser.parse_args()

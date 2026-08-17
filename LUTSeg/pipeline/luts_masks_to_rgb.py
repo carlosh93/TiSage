@@ -20,12 +20,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Convert LUTS masks to RGB for visualization.")
     parser.add_argument(
         "--masks-dir",
-        default="data/LUTS/Masks",
+        default="LUTSeg/data/Masks",
         help="Input masks directory (index PNGs).",
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Masks_RGB",
+        default="LUTSeg/data/Masks_RGB",
         help="Output directory for RGB visualizations.",
     )
     return parser.parse_args()

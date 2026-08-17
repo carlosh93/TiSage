@@ -1,0 +1,30 @@
+{
+  "dfutissue_tisage_fixed_seed2_best.pth": {
+    "dataset": "dfutissue",
+    "epoch": 64,
+    "method": "tisage",
+    "seed": 2,
+    "setting": "fixed"
+  },
+  "dfutissue_unimatch_v2_fixed_seed1_best.pth": {
+    "dataset": "dfutissue",
+    "epoch": 89,
+    "method": "unimatch_v2",
+    "seed": 1,
+    "setting": "fixed"
+  },
+  "lutseg_tisage_1_8_seed0_best.pth": {
+    "dataset": "lutseg",
+    "epoch": 48,
+    "method": "tisage",
+    "seed": 0,
+    "setting": "1_8"
+  },
+  "lutseg_unimatch_v2_1_8_seed0_best.pth": {
+    "dataset": "lutseg",
+    "epoch": 46,
+    "method": "unimatch_v2",
+    "seed": 0,
+    "setting": "1_8"
+  }
+}

@@ -3,10 +3,10 @@
 Step 3: Group per-annotator tissue/wound masks by unique image.
 
 Input:
-- data/LUTS/Annotations/processed/rasterized_manifest.json
+- LUTSeg/annotations/processed/rasterized_manifest.json
 
 Output:
-- data/LUTS/Annotations/processed/image_groups.json
+- LUTSeg/annotations/processed/image_groups.json
 """
 from __future__ import annotations
 
@@ -20,12 +20,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Group LUTS masks by image key.")
     parser.add_argument(
         "--manifest-json",
-        default="data/LUTS/Annotations/processed/rasterized_manifest.json",
+        default="LUTSeg/annotations/processed/rasterized_manifest.json",
         help="Rasterized manifest path.",
     )
     parser.add_argument(
         "--output-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Output grouped JSON path.",
     )
     parser.add_argument(

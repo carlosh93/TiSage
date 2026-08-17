@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate anonymized review-form images for doctor voting.
+Generate pseudonymized comparison-form images for clinician voting.
 
 Layout:
 - Fixed 2x3 grid (2 rows, 3 columns = 6 panels).
@@ -33,12 +33,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate anonymized form images for label voting.")
     parser.add_argument(
         "--groups-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Image groups JSON path (step 3 output).",
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Annotations/processed/form_review",
+        default="LUTSeg/annotations/processed/form_review",
         help="Output directory for images + mapping files.",
     )
     parser.add_argument(

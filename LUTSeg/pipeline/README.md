@@ -1,4 +1,4 @@
-# LUTS Processing Pipeline
+# LUTSeg Processing Pipeline
 
 - Raw annotations: `LUTSeg/annotations/raw/`
 - Processed artifacts: `LUTSeg/annotations/processed/`
@@ -123,7 +123,8 @@ Equivalent one-command wrapper:
 ```bash
 python LUTSeg/pipeline/run_pipeline.py --default-doctor user_9
 ```
-expected split counts (defaults: total=141, train=111, val=30; configurable via env vars)
+Expected split counts are 141 total images, 111 training images, and 30
+validation images. These defaults can be overridden by the pipeline arguments.
 
 ## Form Workflow (Golden Set Review)
 

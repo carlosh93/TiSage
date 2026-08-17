@@ -1,0 +1,30 @@
+# Fully supervised DeepLabV3+ baseline for DFUTissue.
+dataset: dfutissue
+data_root: data/DFUTissue
+nclass: 4
+crop_size: 98
+epochs: 100
+batch_size: 4
+samples_per_epoch: 3000
+num_workers: 4
+val_num_workers: 2
+eval_every: 1
+
+model: deeplabv3plus
+backbone: resnet50
+output_stride: 16
+pretrained_path: pretrained/resnet50-11ad3fa6.pth
+sync_bn: false
+
+lr: 0.001
+lr_multi: 10.0
+momentum: 0.9
+weight_decay: 0.0001
+nesterov: true
+poly_power: 0.9
+amp: true
+
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255

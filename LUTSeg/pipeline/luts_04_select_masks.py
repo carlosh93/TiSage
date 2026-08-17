@@ -8,9 +8,9 @@ This replaces majority-vote consensus with explicit selection:
 - Else fallback to first available annotation (deterministic sort by doctor_id).
 
 Outputs (kept compatible with downstream steps):
-- data/LUTS/Masks/**.png
-- data/LUTS/Wound_Masks/**.png
-- data/LUTS/Annotations/processed/consensus_manifest.json
+- LUTSeg/data/Masks/**.png
+- LUTSeg/data/Wound_Masks/**.png
+- LUTSeg/annotations/processed/consensus_manifest.json
 """
 from __future__ import annotations
 
@@ -27,12 +27,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Select one LUTS annotation per image.")
     parser.add_argument(
         "--groups-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Image groups JSON path (step 3 output).",
     )
     parser.add_argument(
         "--selection-json",
-        default="data/LUTS/Annotations/processed/selected_doctor_by_image.json",
+        default="LUTSeg/annotations/processed/selected_doctor_by_image.json",
         help=(
             "JSON mapping image_key -> doctor_id. Can also be "
             "{'selections': {image_key: doctor_id}}."
@@ -50,17 +50,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Masks",
+        default="LUTSeg/data/Masks",
         help="Output directory for selected tissue masks.",
     )
     parser.add_argument(
         "--wound-output-dir",
-        default="data/LUTS/Wound_Masks",
+        default="LUTSeg/data/Wound_Masks",
         help="Output directory for selected wound masks.",
     )
     parser.add_argument(
         "--manifest-json",
-        default="data/LUTS/Annotations/processed/consensus_manifest.json",
+        default="LUTSeg/annotations/processed/consensus_manifest.json",
         help="Output manifest path (kept compatible with downstream step names).",
     )
     return parser.parse_args()

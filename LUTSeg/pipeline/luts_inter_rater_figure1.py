@@ -12,7 +12,7 @@ Outputs:
 - Optional CSVs: proportions, ICC table, Dice per image.
 
 Run from repo root (use project venv if you have one):
-  venv/bin/python data/LUTS/pipeline/luts_inter_rater_figure1.py [--save-csvs]
+  venv/bin/python LUTSeg/pipeline/luts_inter_rater_figure1.py [--save-csvs]
 
 Requires: numpy, pandas, opencv-python, matplotlib, pingouin (pip install pingouin)
 """
@@ -89,7 +89,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Inter-rater Figure 1: ICC + Dice.")
     parser.add_argument(
         "--groups-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Image groups JSON (must contain is_golden_patient).",
     )
     parser.add_argument(
@@ -100,12 +100,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-figure",
-        default="data/LUTS/Annotations/processed/inter_rater_figure1.png",
+        default="LUTSeg/annotations/processed/inter_rater_figure1.png",
         help="Output path for Figure 1.",
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Annotations/processed",
+        default="LUTSeg/annotations/processed",
         help="Directory for optional CSV outputs.",
     )
     parser.add_argument(

@@ -119,7 +119,9 @@ class MedSigLIPCalibrator:
 
         # Load frozen MedSigLIP
         self.model = AutoModel.from_pretrained("google/medsiglip-448").to(device)
-        self.processor = AutoProcessor.from_pretrained("google/medsiglip-448")
+        self.processor = AutoProcessor.from_pretrained(
+            "google/medsiglip-448", use_fast=False
+        )
         self.model.eval()
         for p in self.model.parameters():
             p.requires_grad = False

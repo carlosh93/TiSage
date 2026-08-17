@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--dataset-root",
-        default="data/LUTS",
+        default="LUTSeg/data",
         help="Dataset root containing train.txt/val.txt, Images/, Masks/, Wound_Masks/.",
     )
     parser.add_argument(

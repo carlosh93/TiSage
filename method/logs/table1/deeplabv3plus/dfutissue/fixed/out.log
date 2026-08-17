@@ -1,0 +1,1438 @@
+[2026-07-10 17:53:29,364][    INFO] {'allow_weight_download': False,
+ 'amp': True,
+ 'backbone': 'resnet50',
+ 'batch_size': 4,
+ 'config': 'configs/dfutissue_supervised_deeplabv3plus.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255}, 'name': 'CELoss'},
+ 'crop_size': 98,
+ 'data_root': 'data/DFUTissue',
+ 'dataset': 'dfutissue',
+ 'deterministic': False,
+ 'epochs': 100,
+ 'eval_every': 1,
+ 'labeled_id_path': 'splits/dfutissue/fixed/labeled.txt',
+ 'local_rank': 0,
+ 'lr': 0.001,
+ 'lr_multi': 10.0,
+ 'model': 'deeplabv3plus',
+ 'momentum': 0.9,
+ 'nclass': 4,
+ 'nesterov': True,
+ 'num_workers': 4,
+ 'output_stride': 16,
+ 'poly_power': 0.9,
+ 'port': None,
+ 'pretrained_path': 'pretrained/resnet50-11ad3fa6.pth',
+ 'resume': False,
+ 'samples_per_epoch': 3000,
+ 'save_path': 'exp/dfutissue/supervised_deeplabv3plus/resnet50_os16/fixed/seed0',
+ 'seed': 0,
+ 'sync_bn': False,
+ 'unlabeled_id_path': 'splits/dfutissue/fixed/unlabeled.txt',
+ 'val_num_workers': 2,
+ 'weight_decay': 0.0001,
+ 'world_size': 1}
+
+[2026-07-10 17:53:29,364][    INFO] Model: DeepLabV3+ ResNet-50 OS16, parameters: 40.3M
+[2026-07-10 17:53:29,365][    INFO] Training images in split: 94; samples per epoch: 3000; batches per epoch/rank: 750
+[2026-07-10 17:53:36,371][    INFO] Epoch 1/100, iter 1/750, loss 6.7081, encoder LR 0.001
+[2026-07-10 17:53:39,830][    INFO] Epoch 1/100, iter 94/750, loss 2.1450, encoder LR 0.000998884
+[2026-07-10 17:53:43,284][    INFO] Epoch 1/100, iter 187/750, loss 1.5001, encoder LR 0.000997768
+[2026-07-10 17:53:47,145][    INFO] Epoch 1/100, iter 280/750, loss 1.2621, encoder LR 0.000996651
+[2026-07-10 17:53:50,806][    INFO] Epoch 1/100, iter 373/750, loss 1.1266, encoder LR 0.000995535
+[2026-07-10 17:53:54,389][    INFO] Epoch 1/100, iter 466/750, loss 1.0480, encoder LR 0.000994418
+[2026-07-10 17:53:57,733][    INFO] Epoch 1/100, iter 559/750, loss 0.9919, encoder LR 0.000993302
+[2026-07-10 17:54:01,509][    INFO] Epoch 1/100, iter 652/750, loss 0.9486, encoder LR 0.000992185
+[2026-07-10 17:54:05,221][    INFO] Epoch 1/100, iter 745/750, loss 0.9110, encoder LR 0.000991068
+[2026-07-10 17:54:09,566][    INFO] Evaluation class [0 background]: IoU 80.63, Dice 89.27
+[2026-07-10 17:54:09,567][    INFO] Evaluation class [1 fibrin]: IoU 13.28, Dice 23.44
+[2026-07-10 17:54:09,568][    INFO] Evaluation class [2 granulation]: IoU 79.92, Dice 88.84
+[2026-07-10 17:54:09,568][    INFO] Evaluation class [3 callus]: IoU 38.59, Dice 55.69
+[2026-07-10 17:54:09,568][    INFO] Evaluation epoch 0: MeanIoU 53.10, MeanDice 64.31; BEST mIoU 53.10, Dice 64.31 at epoch 0
+[2026-07-10 17:54:10,394][    INFO] Epoch 2/100, iter 1/750, loss 0.6478, encoder LR 0.000990995
+[2026-07-10 17:54:13,854][    INFO] Epoch 2/100, iter 94/750, loss 0.6786, encoder LR 0.000989878
+[2026-07-10 17:54:17,268][    INFO] Epoch 2/100, iter 187/750, loss 0.6600, encoder LR 0.000988761
+[2026-07-10 17:54:20,686][    INFO] Epoch 2/100, iter 280/750, loss 0.6533, encoder LR 0.000987643
+[2026-07-10 17:54:24,062][    INFO] Epoch 2/100, iter 373/750, loss 0.6411, encoder LR 0.000986526
+[2026-07-10 17:54:27,668][    INFO] Epoch 2/100, iter 466/750, loss 0.6332, encoder LR 0.000985408
+[2026-07-10 17:54:31,640][    INFO] Epoch 2/100, iter 559/750, loss 0.6216, encoder LR 0.00098429
+[2026-07-10 17:54:35,021][    INFO] Epoch 2/100, iter 652/750, loss 0.6192, encoder LR 0.000983172
+[2026-07-10 17:54:38,331][    INFO] Epoch 2/100, iter 745/750, loss 0.6106, encoder LR 0.000982054
+[2026-07-10 17:54:38,657][    INFO] Evaluation class [0 background]: IoU 80.21, Dice 89.02
+[2026-07-10 17:54:38,658][    INFO] Evaluation class [1 fibrin]: IoU 46.06, Dice 63.07
+[2026-07-10 17:54:38,658][    INFO] Evaluation class [2 granulation]: IoU 83.20, Dice 90.83
+[2026-07-10 17:54:38,658][    INFO] Evaluation class [3 callus]: IoU 38.30, Dice 55.39
+[2026-07-10 17:54:38,658][    INFO] Evaluation epoch 1: MeanIoU 61.94, MeanDice 74.58; BEST mIoU 61.94, Dice 74.58 at epoch 1
+[2026-07-10 17:54:39,565][    INFO] Epoch 3/100, iter 1/750, loss 0.5394, encoder LR 0.000981982
+[2026-07-10 17:54:43,039][    INFO] Epoch 3/100, iter 94/750, loss 0.5791, encoder LR 0.000980864
+[2026-07-10 17:54:46,569][    INFO] Epoch 3/100, iter 187/750, loss 0.5777, encoder LR 0.000979745
+[2026-07-10 17:54:49,947][    INFO] Epoch 3/100, iter 280/750, loss 0.5685, encoder LR 0.000978626
+[2026-07-10 17:54:53,139][    INFO] Epoch 3/100, iter 373/750, loss 0.5730, encoder LR 0.000977508
+[2026-07-10 17:54:56,226][    INFO] Epoch 3/100, iter 466/750, loss 0.5654, encoder LR 0.000976389
+[2026-07-10 17:54:59,387][    INFO] Epoch 3/100, iter 559/750, loss 0.5599, encoder LR 0.00097527
+[2026-07-10 17:55:02,554][    INFO] Epoch 3/100, iter 652/750, loss 0.5544, encoder LR 0.000974151
+[2026-07-10 17:55:05,625][    INFO] Epoch 3/100, iter 745/750, loss 0.5520, encoder LR 0.000973031
+[2026-07-10 17:55:05,940][    INFO] Evaluation class [0 background]: IoU 82.17, Dice 90.21
+[2026-07-10 17:55:05,940][    INFO] Evaluation class [1 fibrin]: IoU 35.50, Dice 52.40
+[2026-07-10 17:55:05,940][    INFO] Evaluation class [2 granulation]: IoU 83.85, Dice 91.21
+[2026-07-10 17:55:05,940][    INFO] Evaluation class [3 callus]: IoU 41.67, Dice 58.83
+[2026-07-10 17:55:05,941][    INFO] Evaluation epoch 2: MeanIoU 60.80, MeanDice 73.16; BEST mIoU 61.94, Dice 74.58 at epoch 1
+[2026-07-10 17:55:06,410][    INFO] Epoch 4/100, iter 1/750, loss 0.4220, encoder LR 0.000972959
+[2026-07-10 17:55:09,507][    INFO] Epoch 4/100, iter 94/750, loss 0.5350, encoder LR 0.00097184
+[2026-07-10 17:55:12,515][    INFO] Epoch 4/100, iter 187/750, loss 0.5482, encoder LR 0.00097072
+[2026-07-10 17:55:15,626][    INFO] Epoch 4/100, iter 280/750, loss 0.5460, encoder LR 0.0009696
+[2026-07-10 17:55:18,681][    INFO] Epoch 4/100, iter 373/750, loss 0.5425, encoder LR 0.00096848
+[2026-07-10 17:55:21,984][    INFO] Epoch 4/100, iter 466/750, loss 0.5431, encoder LR 0.00096736
+[2026-07-10 17:55:25,062][    INFO] Epoch 4/100, iter 559/750, loss 0.5336, encoder LR 0.00096624
+[2026-07-10 17:55:28,208][    INFO] Epoch 4/100, iter 652/750, loss 0.5302, encoder LR 0.00096512
+[2026-07-10 17:55:31,373][    INFO] Epoch 4/100, iter 745/750, loss 0.5263, encoder LR 0.000963999
+[2026-07-10 17:55:31,692][    INFO] Evaluation class [0 background]: IoU 81.82, Dice 90.00
+[2026-07-10 17:55:31,693][    INFO] Evaluation class [1 fibrin]: IoU 42.37, Dice 59.52
+[2026-07-10 17:55:31,693][    INFO] Evaluation class [2 granulation]: IoU 79.20, Dice 88.39
+[2026-07-10 17:55:31,693][    INFO] Evaluation class [3 callus]: IoU 39.03, Dice 56.15
+[2026-07-10 17:55:31,693][    INFO] Evaluation epoch 3: MeanIoU 60.61, MeanDice 73.52; BEST mIoU 61.94, Dice 74.58 at epoch 1
+[2026-07-10 17:55:32,175][    INFO] Epoch 5/100, iter 1/750, loss 0.4070, encoder LR 0.000963927
+[2026-07-10 17:55:35,528][    INFO] Epoch 5/100, iter 94/750, loss 0.4674, encoder LR 0.000962806
+[2026-07-10 17:55:38,781][    INFO] Epoch 5/100, iter 187/750, loss 0.4806, encoder LR 0.000961686
+[2026-07-10 17:55:42,029][    INFO] Epoch 5/100, iter 280/750, loss 0.4817, encoder LR 0.000960565
+[2026-07-10 17:55:45,173][    INFO] Epoch 5/100, iter 373/750, loss 0.4868, encoder LR 0.000959444
+[2026-07-10 17:55:48,393][    INFO] Epoch 5/100, iter 466/750, loss 0.4871, encoder LR 0.000958322
+[2026-07-10 17:55:51,491][    INFO] Epoch 5/100, iter 559/750, loss 0.4826, encoder LR 0.000957201
+[2026-07-10 17:55:54,666][    INFO] Epoch 5/100, iter 652/750, loss 0.4818, encoder LR 0.000956079
+[2026-07-10 17:55:57,944][    INFO] Epoch 5/100, iter 745/750, loss 0.4795, encoder LR 0.000954958
+[2026-07-10 17:55:58,296][    INFO] Evaluation class [0 background]: IoU 81.72, Dice 89.94
+[2026-07-10 17:55:58,297][    INFO] Evaluation class [1 fibrin]: IoU 37.63, Dice 54.68
+[2026-07-10 17:55:58,297][    INFO] Evaluation class [2 granulation]: IoU 83.12, Dice 90.78
+[2026-07-10 17:55:58,297][    INFO] Evaluation class [3 callus]: IoU 39.26, Dice 56.39
+[2026-07-10 17:55:58,297][    INFO] Evaluation epoch 4: MeanIoU 60.43, MeanDice 72.95; BEST mIoU 61.94, Dice 74.58 at epoch 1
+[2026-07-10 17:55:58,788][    INFO] Epoch 6/100, iter 1/750, loss 0.4384, encoder LR 0.000954885
+[2026-07-10 17:56:01,962][    INFO] Epoch 6/100, iter 94/750, loss 0.4716, encoder LR 0.000953764
+[2026-07-10 17:56:05,126][    INFO] Epoch 6/100, iter 187/750, loss 0.4676, encoder LR 0.000952642
+[2026-07-10 17:56:08,367][    INFO] Epoch 6/100, iter 280/750, loss 0.4684, encoder LR 0.00095152
+[2026-07-10 17:56:11,537][    INFO] Epoch 6/100, iter 373/750, loss 0.4659, encoder LR 0.000950397
+[2026-07-10 17:56:14,673][    INFO] Epoch 6/100, iter 466/750, loss 0.4618, encoder LR 0.000949275
+[2026-07-10 17:56:17,815][    INFO] Epoch 6/100, iter 559/750, loss 0.4597, encoder LR 0.000948152
+[2026-07-10 17:56:20,928][    INFO] Epoch 6/100, iter 652/750, loss 0.4642, encoder LR 0.00094703
+[2026-07-10 17:56:24,347][    INFO] Epoch 6/100, iter 745/750, loss 0.4604, encoder LR 0.000945907
+[2026-07-10 17:56:24,672][    INFO] Evaluation class [0 background]: IoU 83.06, Dice 90.74
+[2026-07-10 17:56:24,672][    INFO] Evaluation class [1 fibrin]: IoU 46.99, Dice 63.94
+[2026-07-10 17:56:24,672][    INFO] Evaluation class [2 granulation]: IoU 81.89, Dice 90.04
+[2026-07-10 17:56:24,672][    INFO] Evaluation class [3 callus]: IoU 42.42, Dice 59.57
+[2026-07-10 17:56:24,672][    INFO] Evaluation epoch 5: MeanIoU 63.59, MeanDice 76.07; BEST mIoU 63.59, Dice 76.07 at epoch 5
+[2026-07-10 17:56:25,579][    INFO] Epoch 7/100, iter 1/750, loss 0.3116, encoder LR 0.000945834
+[2026-07-10 17:56:28,807][    INFO] Epoch 7/100, iter 94/750, loss 0.4527, encoder LR 0.000944711
+[2026-07-10 17:56:32,242][    INFO] Epoch 7/100, iter 187/750, loss 0.4389, encoder LR 0.000943588
+[2026-07-10 17:56:35,567][    INFO] Epoch 7/100, iter 280/750, loss 0.4415, encoder LR 0.000942465
+[2026-07-10 17:56:38,939][    INFO] Epoch 7/100, iter 373/750, loss 0.4379, encoder LR 0.000941341
+[2026-07-10 17:56:42,070][    INFO] Epoch 7/100, iter 466/750, loss 0.4424, encoder LR 0.000940218
+[2026-07-10 17:56:45,195][    INFO] Epoch 7/100, iter 559/750, loss 0.4396, encoder LR 0.000939094
+[2026-07-10 17:56:48,335][    INFO] Epoch 7/100, iter 652/750, loss 0.4357, encoder LR 0.00093797
+[2026-07-10 17:56:51,513][    INFO] Epoch 7/100, iter 745/750, loss 0.4375, encoder LR 0.000936846
+[2026-07-10 17:56:51,839][    INFO] Evaluation class [0 background]: IoU 84.32, Dice 91.49
+[2026-07-10 17:56:51,839][    INFO] Evaluation class [1 fibrin]: IoU 33.14, Dice 49.79
+[2026-07-10 17:56:51,839][    INFO] Evaluation class [2 granulation]: IoU 82.51, Dice 90.42
+[2026-07-10 17:56:51,839][    INFO] Evaluation class [3 callus]: IoU 44.78, Dice 61.86
+[2026-07-10 17:56:51,839][    INFO] Evaluation epoch 6: MeanIoU 61.19, MeanDice 73.39; BEST mIoU 63.59, Dice 76.07 at epoch 5
+[2026-07-10 17:56:52,323][    INFO] Epoch 8/100, iter 1/750, loss 0.4589, encoder LR 0.000936774
+[2026-07-10 17:56:55,768][    INFO] Epoch 8/100, iter 94/750, loss 0.4260, encoder LR 0.000935649
+[2026-07-10 17:56:59,010][    INFO] Epoch 8/100, iter 187/750, loss 0.4121, encoder LR 0.000934525
+[2026-07-10 17:57:02,270][    INFO] Epoch 8/100, iter 280/750, loss 0.4103, encoder LR 0.000933401
+[2026-07-10 17:57:05,453][    INFO] Epoch 8/100, iter 373/750, loss 0.4092, encoder LR 0.000932276
+[2026-07-10 17:57:08,592][    INFO] Epoch 8/100, iter 466/750, loss 0.4077, encoder LR 0.000931151
+[2026-07-10 17:57:11,726][    INFO] Epoch 8/100, iter 559/750, loss 0.4110, encoder LR 0.000930026
+[2026-07-10 17:57:14,853][    INFO] Epoch 8/100, iter 652/750, loss 0.4097, encoder LR 0.000928901
+[2026-07-10 17:57:18,224][    INFO] Epoch 8/100, iter 745/750, loss 0.4096, encoder LR 0.000927776
+[2026-07-10 17:57:18,576][    INFO] Evaluation class [0 background]: IoU 85.14, Dice 91.97
+[2026-07-10 17:57:18,577][    INFO] Evaluation class [1 fibrin]: IoU 49.10, Dice 65.86
+[2026-07-10 17:57:18,577][    INFO] Evaluation class [2 granulation]: IoU 85.74, Dice 92.32
+[2026-07-10 17:57:18,577][    INFO] Evaluation class [3 callus]: IoU 47.47, Dice 64.38
+[2026-07-10 17:57:18,577][    INFO] Evaluation epoch 7: MeanIoU 66.86, MeanDice 78.63; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:57:19,444][    INFO] Epoch 9/100, iter 1/750, loss 0.8237, encoder LR 0.000927703
+[2026-07-10 17:57:22,661][    INFO] Epoch 9/100, iter 94/750, loss 0.4056, encoder LR 0.000926578
+[2026-07-10 17:57:25,815][    INFO] Epoch 9/100, iter 187/750, loss 0.4179, encoder LR 0.000925452
+[2026-07-10 17:57:29,239][    INFO] Epoch 9/100, iter 280/750, loss 0.4075, encoder LR 0.000924326
+[2026-07-10 17:57:32,685][    INFO] Epoch 9/100, iter 373/750, loss 0.4075, encoder LR 0.000923201
+[2026-07-10 17:57:36,177][    INFO] Epoch 9/100, iter 466/750, loss 0.4043, encoder LR 0.000922075
+[2026-07-10 17:57:39,543][    INFO] Epoch 9/100, iter 559/750, loss 0.4006, encoder LR 0.000920948
+[2026-07-10 17:57:42,895][    INFO] Epoch 9/100, iter 652/750, loss 0.3971, encoder LR 0.000919822
+[2026-07-10 17:57:46,317][    INFO] Epoch 9/100, iter 745/750, loss 0.3954, encoder LR 0.000918696
+[2026-07-10 17:57:46,682][    INFO] Evaluation class [0 background]: IoU 83.61, Dice 91.07
+[2026-07-10 17:57:46,683][    INFO] Evaluation class [1 fibrin]: IoU 55.51, Dice 71.39
+[2026-07-10 17:57:46,683][    INFO] Evaluation class [2 granulation]: IoU 85.77, Dice 92.34
+[2026-07-10 17:57:46,683][    INFO] Evaluation class [3 callus]: IoU 38.58, Dice 55.68
+[2026-07-10 17:57:46,683][    INFO] Evaluation epoch 8: MeanIoU 65.87, MeanDice 77.62; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:57:47,141][    INFO] Epoch 10/100, iter 1/750, loss 0.3274, encoder LR 0.000918623
+[2026-07-10 17:57:50,417][    INFO] Epoch 10/100, iter 94/750, loss 0.3994, encoder LR 0.000917496
+[2026-07-10 17:57:53,621][    INFO] Epoch 10/100, iter 187/750, loss 0.4068, encoder LR 0.000916369
+[2026-07-10 17:57:57,017][    INFO] Epoch 10/100, iter 280/750, loss 0.4026, encoder LR 0.000915242
+[2026-07-10 17:58:00,463][    INFO] Epoch 10/100, iter 373/750, loss 0.3973, encoder LR 0.000914115
+[2026-07-10 17:58:03,888][    INFO] Epoch 10/100, iter 466/750, loss 0.3938, encoder LR 0.000912988
+[2026-07-10 17:58:07,065][    INFO] Epoch 10/100, iter 559/750, loss 0.3865, encoder LR 0.000911861
+[2026-07-10 17:58:10,180][    INFO] Epoch 10/100, iter 652/750, loss 0.3867, encoder LR 0.000910733
+[2026-07-10 17:58:13,309][    INFO] Epoch 10/100, iter 745/750, loss 0.3878, encoder LR 0.000909605
+[2026-07-10 17:58:13,633][    INFO] Evaluation class [0 background]: IoU 85.80, Dice 92.36
+[2026-07-10 17:58:13,633][    INFO] Evaluation class [1 fibrin]: IoU 45.47, Dice 62.52
+[2026-07-10 17:58:13,633][    INFO] Evaluation class [2 granulation]: IoU 86.25, Dice 92.62
+[2026-07-10 17:58:13,634][    INFO] Evaluation class [3 callus]: IoU 49.30, Dice 66.04
+[2026-07-10 17:58:13,634][    INFO] Evaluation epoch 9: MeanIoU 66.71, MeanDice 78.38; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:58:14,133][    INFO] Epoch 11/100, iter 1/750, loss 0.5551, encoder LR 0.000909533
+[2026-07-10 17:58:17,564][    INFO] Epoch 11/100, iter 94/750, loss 0.3724, encoder LR 0.000908405
+[2026-07-10 17:58:20,967][    INFO] Epoch 11/100, iter 187/750, loss 0.3762, encoder LR 0.000907277
+[2026-07-10 17:58:24,228][    INFO] Epoch 11/100, iter 280/750, loss 0.3804, encoder LR 0.000906148
+[2026-07-10 17:58:27,442][    INFO] Epoch 11/100, iter 373/750, loss 0.3759, encoder LR 0.00090502
+[2026-07-10 17:58:30,616][    INFO] Epoch 11/100, iter 466/750, loss 0.3753, encoder LR 0.000903892
+[2026-07-10 17:58:33,826][    INFO] Epoch 11/100, iter 559/750, loss 0.3780, encoder LR 0.000902763
+[2026-07-10 17:58:37,053][    INFO] Epoch 11/100, iter 652/750, loss 0.3829, encoder LR 0.000901634
+[2026-07-10 17:58:40,164][    INFO] Epoch 11/100, iter 745/750, loss 0.3788, encoder LR 0.000900505
+[2026-07-10 17:58:40,487][    INFO] Evaluation class [0 background]: IoU 84.61, Dice 91.66
+[2026-07-10 17:58:40,488][    INFO] Evaluation class [1 fibrin]: IoU 44.63, Dice 61.71
+[2026-07-10 17:58:40,488][    INFO] Evaluation class [2 granulation]: IoU 85.55, Dice 92.21
+[2026-07-10 17:58:40,488][    INFO] Evaluation class [3 callus]: IoU 41.64, Dice 58.80
+[2026-07-10 17:58:40,489][    INFO] Evaluation epoch 10: MeanIoU 64.11, MeanDice 76.10; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:58:40,972][    INFO] Epoch 12/100, iter 1/750, loss 0.4154, encoder LR 0.000900432
+[2026-07-10 17:58:44,130][    INFO] Epoch 12/100, iter 94/750, loss 0.3661, encoder LR 0.000899303
+[2026-07-10 17:58:47,602][    INFO] Epoch 12/100, iter 187/750, loss 0.3702, encoder LR 0.000898174
+[2026-07-10 17:58:50,875][    INFO] Epoch 12/100, iter 280/750, loss 0.3612, encoder LR 0.000897044
+[2026-07-10 17:58:54,049][    INFO] Epoch 12/100, iter 373/750, loss 0.3579, encoder LR 0.000895915
+[2026-07-10 17:58:57,409][    INFO] Epoch 12/100, iter 466/750, loss 0.3601, encoder LR 0.000894785
+[2026-07-10 17:59:00,602][    INFO] Epoch 12/100, iter 559/750, loss 0.3569, encoder LR 0.000893655
+[2026-07-10 17:59:03,739][    INFO] Epoch 12/100, iter 652/750, loss 0.3578, encoder LR 0.000892525
+[2026-07-10 17:59:06,990][    INFO] Epoch 12/100, iter 745/750, loss 0.3577, encoder LR 0.000891394
+[2026-07-10 17:59:07,320][    INFO] Evaluation class [0 background]: IoU 85.59, Dice 92.23
+[2026-07-10 17:59:07,320][    INFO] Evaluation class [1 fibrin]: IoU 42.12, Dice 59.27
+[2026-07-10 17:59:07,321][    INFO] Evaluation class [2 granulation]: IoU 86.74, Dice 92.90
+[2026-07-10 17:59:07,321][    INFO] Evaluation class [3 callus]: IoU 48.28, Dice 65.12
+[2026-07-10 17:59:07,321][    INFO] Evaluation epoch 11: MeanIoU 65.68, MeanDice 77.38; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:59:07,816][    INFO] Epoch 13/100, iter 1/750, loss 0.3683, encoder LR 0.000891322
+[2026-07-10 17:59:11,034][    INFO] Epoch 13/100, iter 94/750, loss 0.3366, encoder LR 0.000890191
+[2026-07-10 17:59:14,225][    INFO] Epoch 13/100, iter 187/750, loss 0.3431, encoder LR 0.000889061
+[2026-07-10 17:59:17,377][    INFO] Epoch 13/100, iter 280/750, loss 0.3520, encoder LR 0.00088793
+[2026-07-10 17:59:20,501][    INFO] Epoch 13/100, iter 373/750, loss 0.3481, encoder LR 0.000886799
+[2026-07-10 17:59:23,709][    INFO] Epoch 13/100, iter 466/750, loss 0.3463, encoder LR 0.000885668
+[2026-07-10 17:59:26,918][    INFO] Epoch 13/100, iter 559/750, loss 0.3451, encoder LR 0.000884537
+[2026-07-10 17:59:30,117][    INFO] Epoch 13/100, iter 652/750, loss 0.3430, encoder LR 0.000883405
+[2026-07-10 17:59:33,426][    INFO] Epoch 13/100, iter 745/750, loss 0.3448, encoder LR 0.000882274
+[2026-07-10 17:59:33,753][    INFO] Evaluation class [0 background]: IoU 83.98, Dice 91.29
+[2026-07-10 17:59:33,753][    INFO] Evaluation class [1 fibrin]: IoU 51.47, Dice 67.96
+[2026-07-10 17:59:33,754][    INFO] Evaluation class [2 granulation]: IoU 85.55, Dice 92.21
+[2026-07-10 17:59:33,754][    INFO] Evaluation class [3 callus]: IoU 40.97, Dice 58.13
+[2026-07-10 17:59:33,754][    INFO] Evaluation epoch 12: MeanIoU 65.49, MeanDice 77.40; BEST mIoU 66.86, Dice 78.63 at epoch 7
+[2026-07-10 17:59:34,242][    INFO] Epoch 14/100, iter 1/750, loss 0.3003, encoder LR 0.000882201
+[2026-07-10 17:59:37,458][    INFO] Epoch 14/100, iter 94/750, loss 0.3509, encoder LR 0.000881069
+[2026-07-10 17:59:40,840][    INFO] Epoch 14/100, iter 187/750, loss 0.3445, encoder LR 0.000879937
+[2026-07-10 17:59:44,181][    INFO] Epoch 14/100, iter 280/750, loss 0.3391, encoder LR 0.000878805
+[2026-07-10 17:59:47,519][    INFO] Epoch 14/100, iter 373/750, loss 0.3434, encoder LR 0.000877673
+[2026-07-10 17:59:50,922][    INFO] Epoch 14/100, iter 466/750, loss 0.3446, encoder LR 0.00087654
+[2026-07-10 17:59:54,155][    INFO] Epoch 14/100, iter 559/750, loss 0.3433, encoder LR 0.000875408
+[2026-07-10 17:59:57,536][    INFO] Epoch 14/100, iter 652/750, loss 0.3425, encoder LR 0.000874275
+[2026-07-10 18:00:00,934][    INFO] Epoch 14/100, iter 745/750, loss 0.3407, encoder LR 0.000873142
+[2026-07-10 18:00:01,281][    INFO] Evaluation class [0 background]: IoU 86.19, Dice 92.59
+[2026-07-10 18:00:01,282][    INFO] Evaluation class [1 fibrin]: IoU 46.74, Dice 63.70
+[2026-07-10 18:00:01,282][    INFO] Evaluation class [2 granulation]: IoU 85.75, Dice 92.33
+[2026-07-10 18:00:01,282][    INFO] Evaluation class [3 callus]: IoU 50.03, Dice 66.69
+[2026-07-10 18:00:01,282][    INFO] Evaluation epoch 13: MeanIoU 67.18, MeanDice 78.83; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:00:02,206][    INFO] Epoch 15/100, iter 1/750, loss 0.2438, encoder LR 0.000873069
+[2026-07-10 18:00:05,396][    INFO] Epoch 15/100, iter 94/750, loss 0.3351, encoder LR 0.000871936
+[2026-07-10 18:00:08,615][    INFO] Epoch 15/100, iter 187/750, loss 0.3326, encoder LR 0.000870803
+[2026-07-10 18:00:11,745][    INFO] Epoch 15/100, iter 280/750, loss 0.3302, encoder LR 0.000869669
+[2026-07-10 18:00:15,003][    INFO] Epoch 15/100, iter 373/750, loss 0.3294, encoder LR 0.000868536
+[2026-07-10 18:00:18,290][    INFO] Epoch 15/100, iter 466/750, loss 0.3328, encoder LR 0.000867402
+[2026-07-10 18:00:21,660][    INFO] Epoch 15/100, iter 559/750, loss 0.3351, encoder LR 0.000866268
+[2026-07-10 18:00:24,986][    INFO] Epoch 15/100, iter 652/750, loss 0.3333, encoder LR 0.000865134
+[2026-07-10 18:00:28,176][    INFO] Epoch 15/100, iter 745/750, loss 0.3339, encoder LR 0.000864
+[2026-07-10 18:00:28,516][    INFO] Evaluation class [0 background]: IoU 84.39, Dice 91.53
+[2026-07-10 18:00:28,516][    INFO] Evaluation class [1 fibrin]: IoU 47.81, Dice 64.69
+[2026-07-10 18:00:28,517][    INFO] Evaluation class [2 granulation]: IoU 86.56, Dice 92.79
+[2026-07-10 18:00:28,517][    INFO] Evaluation class [3 callus]: IoU 46.91, Dice 63.86
+[2026-07-10 18:00:28,517][    INFO] Evaluation epoch 14: MeanIoU 66.42, MeanDice 78.22; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:00:29,003][    INFO] Epoch 16/100, iter 1/750, loss 0.5343, encoder LR 0.000863927
+[2026-07-10 18:00:32,171][    INFO] Epoch 16/100, iter 94/750, loss 0.3342, encoder LR 0.000862793
+[2026-07-10 18:00:35,473][    INFO] Epoch 16/100, iter 187/750, loss 0.3259, encoder LR 0.000861658
+[2026-07-10 18:00:38,904][    INFO] Epoch 16/100, iter 280/750, loss 0.3343, encoder LR 0.000860523
+[2026-07-10 18:00:42,176][    INFO] Epoch 16/100, iter 373/750, loss 0.3383, encoder LR 0.000859389
+[2026-07-10 18:00:45,539][    INFO] Epoch 16/100, iter 466/750, loss 0.3342, encoder LR 0.000858253
+[2026-07-10 18:00:48,825][    INFO] Epoch 16/100, iter 559/750, loss 0.3294, encoder LR 0.000857118
+[2026-07-10 18:00:52,296][    INFO] Epoch 16/100, iter 652/750, loss 0.3238, encoder LR 0.000855983
+[2026-07-10 18:00:55,783][    INFO] Epoch 16/100, iter 745/750, loss 0.3213, encoder LR 0.000854847
+[2026-07-10 18:00:56,141][    INFO] Evaluation class [0 background]: IoU 85.19, Dice 92.00
+[2026-07-10 18:00:56,141][    INFO] Evaluation class [1 fibrin]: IoU 47.50, Dice 64.40
+[2026-07-10 18:00:56,142][    INFO] Evaluation class [2 granulation]: IoU 86.61, Dice 92.82
+[2026-07-10 18:00:56,142][    INFO] Evaluation class [3 callus]: IoU 48.72, Dice 65.52
+[2026-07-10 18:00:56,142][    INFO] Evaluation epoch 15: MeanIoU 67.00, MeanDice 78.69; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:00:56,635][    INFO] Epoch 17/100, iter 1/750, loss 0.2850, encoder LR 0.000854774
+[2026-07-10 18:01:00,018][    INFO] Epoch 17/100, iter 94/750, loss 0.3206, encoder LR 0.000853638
+[2026-07-10 18:01:03,361][    INFO] Epoch 17/100, iter 187/750, loss 0.3208, encoder LR 0.000852503
+[2026-07-10 18:01:06,763][    INFO] Epoch 17/100, iter 280/750, loss 0.3135, encoder LR 0.000851366
+[2026-07-10 18:01:10,084][    INFO] Epoch 17/100, iter 373/750, loss 0.3156, encoder LR 0.00085023
+[2026-07-10 18:01:13,319][    INFO] Epoch 17/100, iter 466/750, loss 0.3237, encoder LR 0.000849094
+[2026-07-10 18:01:16,498][    INFO] Epoch 17/100, iter 559/750, loss 0.3254, encoder LR 0.000847957
+[2026-07-10 18:01:19,603][    INFO] Epoch 17/100, iter 652/750, loss 0.3249, encoder LR 0.000846821
+[2026-07-10 18:01:22,829][    INFO] Epoch 17/100, iter 745/750, loss 0.3232, encoder LR 0.000845684
+[2026-07-10 18:01:23,153][    INFO] Evaluation class [0 background]: IoU 85.33, Dice 92.09
+[2026-07-10 18:01:23,154][    INFO] Evaluation class [1 fibrin]: IoU 47.30, Dice 64.23
+[2026-07-10 18:01:23,154][    INFO] Evaluation class [2 granulation]: IoU 86.57, Dice 92.80
+[2026-07-10 18:01:23,154][    INFO] Evaluation class [3 callus]: IoU 46.29, Dice 63.28
+[2026-07-10 18:01:23,154][    INFO] Evaluation epoch 16: MeanIoU 66.37, MeanDice 78.10; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:01:23,637][    INFO] Epoch 18/100, iter 1/750, loss 0.2106, encoder LR 0.00084561
+[2026-07-10 18:01:26,790][    INFO] Epoch 18/100, iter 94/750, loss 0.3089, encoder LR 0.000844473
+[2026-07-10 18:01:30,063][    INFO] Epoch 18/100, iter 187/750, loss 0.3084, encoder LR 0.000843336
+[2026-07-10 18:01:33,286][    INFO] Epoch 18/100, iter 280/750, loss 0.3034, encoder LR 0.000842199
+[2026-07-10 18:01:36,628][    INFO] Epoch 18/100, iter 373/750, loss 0.2992, encoder LR 0.000841061
+[2026-07-10 18:01:39,795][    INFO] Epoch 18/100, iter 466/750, loss 0.3041, encoder LR 0.000839923
+[2026-07-10 18:01:43,044][    INFO] Epoch 18/100, iter 559/750, loss 0.3068, encoder LR 0.000838785
+[2026-07-10 18:01:46,349][    INFO] Epoch 18/100, iter 652/750, loss 0.3044, encoder LR 0.000837647
+[2026-07-10 18:01:49,650][    INFO] Epoch 18/100, iter 745/750, loss 0.3024, encoder LR 0.000836509
+[2026-07-10 18:01:50,001][    INFO] Evaluation class [0 background]: IoU 86.56, Dice 92.79
+[2026-07-10 18:01:50,001][    INFO] Evaluation class [1 fibrin]: IoU 43.05, Dice 60.19
+[2026-07-10 18:01:50,001][    INFO] Evaluation class [2 granulation]: IoU 86.32, Dice 92.66
+[2026-07-10 18:01:50,002][    INFO] Evaluation class [3 callus]: IoU 49.95, Dice 66.62
+[2026-07-10 18:01:50,002][    INFO] Evaluation epoch 17: MeanIoU 66.47, MeanDice 78.07; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:01:50,519][    INFO] Epoch 19/100, iter 1/750, loss 0.2201, encoder LR 0.000836436
+[2026-07-10 18:01:53,704][    INFO] Epoch 19/100, iter 94/750, loss 0.2965, encoder LR 0.000835297
+[2026-07-10 18:01:56,841][    INFO] Epoch 19/100, iter 187/750, loss 0.2918, encoder LR 0.000834158
+[2026-07-10 18:02:00,224][    INFO] Epoch 19/100, iter 280/750, loss 0.2913, encoder LR 0.00083302
+[2026-07-10 18:02:03,459][    INFO] Epoch 19/100, iter 373/750, loss 0.2935, encoder LR 0.000831881
+[2026-07-10 18:02:06,623][    INFO] Epoch 19/100, iter 466/750, loss 0.2928, encoder LR 0.000830742
+[2026-07-10 18:02:10,063][    INFO] Epoch 19/100, iter 559/750, loss 0.2910, encoder LR 0.000829602
+[2026-07-10 18:02:13,435][    INFO] Epoch 19/100, iter 652/750, loss 0.2927, encoder LR 0.000828463
+[2026-07-10 18:02:16,652][    INFO] Epoch 19/100, iter 745/750, loss 0.2931, encoder LR 0.000827323
+[2026-07-10 18:02:16,977][    INFO] Evaluation class [0 background]: IoU 85.29, Dice 92.06
+[2026-07-10 18:02:16,977][    INFO] Evaluation class [1 fibrin]: IoU 51.44, Dice 67.94
+[2026-07-10 18:02:16,978][    INFO] Evaluation class [2 granulation]: IoU 86.44, Dice 92.73
+[2026-07-10 18:02:16,978][    INFO] Evaluation class [3 callus]: IoU 45.19, Dice 62.25
+[2026-07-10 18:02:16,978][    INFO] Evaluation epoch 18: MeanIoU 67.09, MeanDice 78.74; BEST mIoU 67.18, Dice 78.83 at epoch 13
+[2026-07-10 18:02:17,478][    INFO] Epoch 20/100, iter 1/750, loss 0.1973, encoder LR 0.00082725
+[2026-07-10 18:02:20,687][    INFO] Epoch 20/100, iter 94/750, loss 0.3000, encoder LR 0.00082611
+[2026-07-10 18:02:24,051][    INFO] Epoch 20/100, iter 187/750, loss 0.2924, encoder LR 0.00082497
+[2026-07-10 18:02:27,322][    INFO] Epoch 20/100, iter 280/750, loss 0.2908, encoder LR 0.000823829
+[2026-07-10 18:02:30,876][    INFO] Epoch 20/100, iter 373/750, loss 0.2921, encoder LR 0.000822689
+[2026-07-10 18:02:34,077][    INFO] Epoch 20/100, iter 466/750, loss 0.2924, encoder LR 0.000821548
+[2026-07-10 18:02:37,201][    INFO] Epoch 20/100, iter 559/750, loss 0.2923, encoder LR 0.000820408
+[2026-07-10 18:02:40,352][    INFO] Epoch 20/100, iter 652/750, loss 0.2896, encoder LR 0.000819267
+[2026-07-10 18:02:43,569][    INFO] Epoch 20/100, iter 745/750, loss 0.2887, encoder LR 0.000818126
+[2026-07-10 18:02:43,894][    INFO] Evaluation class [0 background]: IoU 85.37, Dice 92.11
+[2026-07-10 18:02:43,895][    INFO] Evaluation class [1 fibrin]: IoU 53.19, Dice 69.44
+[2026-07-10 18:02:43,895][    INFO] Evaluation class [2 granulation]: IoU 85.65, Dice 92.27
+[2026-07-10 18:02:43,895][    INFO] Evaluation class [3 callus]: IoU 47.55, Dice 64.45
+[2026-07-10 18:02:43,895][    INFO] Evaluation epoch 19: MeanIoU 67.94, MeanDice 79.57; BEST mIoU 67.94, Dice 79.57 at epoch 19
+[2026-07-10 18:02:44,803][    INFO] Epoch 21/100, iter 1/750, loss 0.2348, encoder LR 0.000818052
+[2026-07-10 18:02:47,949][    INFO] Epoch 21/100, iter 94/750, loss 0.2889, encoder LR 0.000816911
+[2026-07-10 18:02:51,145][    INFO] Epoch 21/100, iter 187/750, loss 0.2904, encoder LR 0.000815769
+[2026-07-10 18:02:54,273][    INFO] Epoch 21/100, iter 280/750, loss 0.2862, encoder LR 0.000814628
+[2026-07-10 18:02:57,538][    INFO] Epoch 21/100, iter 373/750, loss 0.2875, encoder LR 0.000813486
+[2026-07-10 18:03:00,705][    INFO] Epoch 21/100, iter 466/750, loss 0.2821, encoder LR 0.000812344
+[2026-07-10 18:03:03,946][    INFO] Epoch 21/100, iter 559/750, loss 0.2823, encoder LR 0.000811202
+[2026-07-10 18:03:07,381][    INFO] Epoch 21/100, iter 652/750, loss 0.2783, encoder LR 0.00081006
+[2026-07-10 18:03:10,737][    INFO] Epoch 21/100, iter 745/750, loss 0.2772, encoder LR 0.000808917
+[2026-07-10 18:03:11,090][    INFO] Evaluation class [0 background]: IoU 85.08, Dice 91.94
+[2026-07-10 18:03:11,090][    INFO] Evaluation class [1 fibrin]: IoU 48.19, Dice 65.04
+[2026-07-10 18:03:11,090][    INFO] Evaluation class [2 granulation]: IoU 85.13, Dice 91.97
+[2026-07-10 18:03:11,091][    INFO] Evaluation class [3 callus]: IoU 46.69, Dice 63.66
+[2026-07-10 18:03:11,091][    INFO] Evaluation epoch 20: MeanIoU 66.27, MeanDice 78.15; BEST mIoU 67.94, Dice 79.57 at epoch 19
+[2026-07-10 18:03:11,573][    INFO] Epoch 22/100, iter 1/750, loss 0.1837, encoder LR 0.000808843
+[2026-07-10 18:03:14,941][    INFO] Epoch 22/100, iter 94/750, loss 0.2950, encoder LR 0.000807701
+[2026-07-10 18:03:18,232][    INFO] Epoch 22/100, iter 187/750, loss 0.2903, encoder LR 0.000806558
+[2026-07-10 18:03:21,371][    INFO] Epoch 22/100, iter 280/750, loss 0.2900, encoder LR 0.000805415
+[2026-07-10 18:03:24,889][    INFO] Epoch 22/100, iter 373/750, loss 0.2892, encoder LR 0.000804271
+[2026-07-10 18:03:28,300][    INFO] Epoch 22/100, iter 466/750, loss 0.2799, encoder LR 0.000803128
+[2026-07-10 18:03:31,710][    INFO] Epoch 22/100, iter 559/750, loss 0.2807, encoder LR 0.000801984
+[2026-07-10 18:03:34,934][    INFO] Epoch 22/100, iter 652/750, loss 0.2800, encoder LR 0.000800841
+[2026-07-10 18:03:38,075][    INFO] Epoch 22/100, iter 745/750, loss 0.2811, encoder LR 0.000799697
+[2026-07-10 18:03:38,394][    INFO] Evaluation class [0 background]: IoU 84.45, Dice 91.57
+[2026-07-10 18:03:38,394][    INFO] Evaluation class [1 fibrin]: IoU 48.48, Dice 65.31
+[2026-07-10 18:03:38,395][    INFO] Evaluation class [2 granulation]: IoU 85.03, Dice 91.91
+[2026-07-10 18:03:38,395][    INFO] Evaluation class [3 callus]: IoU 50.79, Dice 67.37
+[2026-07-10 18:03:38,395][    INFO] Evaluation epoch 21: MeanIoU 67.19, MeanDice 79.04; BEST mIoU 67.94, Dice 79.57 at epoch 19
+[2026-07-10 18:03:38,855][    INFO] Epoch 23/100, iter 1/750, loss 0.2117, encoder LR 0.000799623
+[2026-07-10 18:03:42,091][    INFO] Epoch 23/100, iter 94/750, loss 0.2768, encoder LR 0.000798479
+[2026-07-10 18:03:45,338][    INFO] Epoch 23/100, iter 187/750, loss 0.2779, encoder LR 0.000797334
+[2026-07-10 18:03:48,519][    INFO] Epoch 23/100, iter 280/750, loss 0.2741, encoder LR 0.00079619
+[2026-07-10 18:03:51,752][    INFO] Epoch 23/100, iter 373/750, loss 0.2717, encoder LR 0.000795045
+[2026-07-10 18:03:54,907][    INFO] Epoch 23/100, iter 466/750, loss 0.2694, encoder LR 0.0007939
+[2026-07-10 18:03:58,269][    INFO] Epoch 23/100, iter 559/750, loss 0.2693, encoder LR 0.000792755
+[2026-07-10 18:04:01,602][    INFO] Epoch 23/100, iter 652/750, loss 0.2682, encoder LR 0.00079161
+[2026-07-10 18:04:04,996][    INFO] Epoch 23/100, iter 745/750, loss 0.2666, encoder LR 0.000790464
+[2026-07-10 18:04:05,321][    INFO] Evaluation class [0 background]: IoU 85.60, Dice 92.24
+[2026-07-10 18:04:05,322][    INFO] Evaluation class [1 fibrin]: IoU 50.89, Dice 67.45
+[2026-07-10 18:04:05,322][    INFO] Evaluation class [2 granulation]: IoU 85.88, Dice 92.40
+[2026-07-10 18:04:05,322][    INFO] Evaluation class [3 callus]: IoU 50.71, Dice 67.29
+[2026-07-10 18:04:05,322][    INFO] Evaluation epoch 22: MeanIoU 68.27, MeanDice 79.85; BEST mIoU 68.27, Dice 79.85 at epoch 22
+[2026-07-10 18:04:06,207][    INFO] Epoch 24/100, iter 1/750, loss 0.1815, encoder LR 0.00079039
+[2026-07-10 18:04:09,404][    INFO] Epoch 24/100, iter 94/750, loss 0.2566, encoder LR 0.000789245
+[2026-07-10 18:04:12,704][    INFO] Epoch 24/100, iter 187/750, loss 0.2665, encoder LR 0.000788099
+[2026-07-10 18:04:16,042][    INFO] Epoch 24/100, iter 280/750, loss 0.2660, encoder LR 0.000786953
+[2026-07-10 18:04:19,438][    INFO] Epoch 24/100, iter 373/750, loss 0.2661, encoder LR 0.000785807
+[2026-07-10 18:04:22,732][    INFO] Epoch 24/100, iter 466/750, loss 0.2664, encoder LR 0.00078466
+[2026-07-10 18:04:25,909][    INFO] Epoch 24/100, iter 559/750, loss 0.2686, encoder LR 0.000783514
+[2026-07-10 18:04:29,136][    INFO] Epoch 24/100, iter 652/750, loss 0.2714, encoder LR 0.000782367
+[2026-07-10 18:04:32,350][    INFO] Epoch 24/100, iter 745/750, loss 0.2720, encoder LR 0.00078122
+[2026-07-10 18:04:32,680][    INFO] Evaluation class [0 background]: IoU 85.68, Dice 92.29
+[2026-07-10 18:04:32,680][    INFO] Evaluation class [1 fibrin]: IoU 50.29, Dice 66.92
+[2026-07-10 18:04:32,680][    INFO] Evaluation class [2 granulation]: IoU 85.86, Dice 92.39
+[2026-07-10 18:04:32,680][    INFO] Evaluation class [3 callus]: IoU 48.20, Dice 65.05
+[2026-07-10 18:04:32,680][    INFO] Evaluation epoch 23: MeanIoU 67.51, MeanDice 79.16; BEST mIoU 68.27, Dice 79.85 at epoch 22
+[2026-07-10 18:04:33,134][    INFO] Epoch 25/100, iter 1/750, loss 0.2208, encoder LR 0.000781146
+[2026-07-10 18:04:36,305][    INFO] Epoch 25/100, iter 94/750, loss 0.2713, encoder LR 0.000779999
+[2026-07-10 18:04:39,431][    INFO] Epoch 25/100, iter 187/750, loss 0.2591, encoder LR 0.000778852
+[2026-07-10 18:04:42,655][    INFO] Epoch 25/100, iter 280/750, loss 0.2604, encoder LR 0.000777704
+[2026-07-10 18:04:45,976][    INFO] Epoch 25/100, iter 373/750, loss 0.2585, encoder LR 0.000776556
+[2026-07-10 18:04:49,281][    INFO] Epoch 25/100, iter 466/750, loss 0.2566, encoder LR 0.000775408
+[2026-07-10 18:04:52,476][    INFO] Epoch 25/100, iter 559/750, loss 0.2557, encoder LR 0.00077426
+[2026-07-10 18:04:55,736][    INFO] Epoch 25/100, iter 652/750, loss 0.2528, encoder LR 0.000773112
+[2026-07-10 18:04:58,855][    INFO] Epoch 25/100, iter 745/750, loss 0.2529, encoder LR 0.000771964
+[2026-07-10 18:04:59,180][    INFO] Evaluation class [0 background]: IoU 85.81, Dice 92.36
+[2026-07-10 18:04:59,180][    INFO] Evaluation class [1 fibrin]: IoU 51.36, Dice 67.86
+[2026-07-10 18:04:59,180][    INFO] Evaluation class [2 granulation]: IoU 85.97, Dice 92.46
+[2026-07-10 18:04:59,180][    INFO] Evaluation class [3 callus]: IoU 50.09, Dice 66.75
+[2026-07-10 18:04:59,180][    INFO] Evaluation epoch 24: MeanIoU 68.31, MeanDice 79.86; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:05:00,068][    INFO] Epoch 26/100, iter 1/750, loss 1.0625, encoder LR 0.00077189
+[2026-07-10 18:05:03,218][    INFO] Epoch 26/100, iter 94/750, loss 0.2466, encoder LR 0.000770741
+[2026-07-10 18:05:06,545][    INFO] Epoch 26/100, iter 187/750, loss 0.2421, encoder LR 0.000769592
+[2026-07-10 18:05:09,768][    INFO] Epoch 26/100, iter 280/750, loss 0.2509, encoder LR 0.000768443
+[2026-07-10 18:05:12,949][    INFO] Epoch 26/100, iter 373/750, loss 0.2479, encoder LR 0.000767294
+[2026-07-10 18:05:16,095][    INFO] Epoch 26/100, iter 466/750, loss 0.2491, encoder LR 0.000766144
+[2026-07-10 18:05:19,253][    INFO] Epoch 26/100, iter 559/750, loss 0.2486, encoder LR 0.000764995
+[2026-07-10 18:05:22,534][    INFO] Epoch 26/100, iter 652/750, loss 0.2492, encoder LR 0.000763845
+[2026-07-10 18:05:25,774][    INFO] Epoch 26/100, iter 745/750, loss 0.2488, encoder LR 0.000762695
+[2026-07-10 18:05:26,126][    INFO] Evaluation class [0 background]: IoU 84.56, Dice 91.63
+[2026-07-10 18:05:26,126][    INFO] Evaluation class [1 fibrin]: IoU 47.96, Dice 64.83
+[2026-07-10 18:05:26,126][    INFO] Evaluation class [2 granulation]: IoU 86.22, Dice 92.60
+[2026-07-10 18:05:26,126][    INFO] Evaluation class [3 callus]: IoU 48.52, Dice 65.34
+[2026-07-10 18:05:26,127][    INFO] Evaluation epoch 25: MeanIoU 66.82, MeanDice 78.60; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:05:26,605][    INFO] Epoch 27/100, iter 1/750, loss 0.2362, encoder LR 0.000762621
+[2026-07-10 18:05:29,869][    INFO] Epoch 27/100, iter 94/750, loss 0.2520, encoder LR 0.00076147
+[2026-07-10 18:05:33,058][    INFO] Epoch 27/100, iter 187/750, loss 0.2531, encoder LR 0.00076032
+[2026-07-10 18:05:36,340][    INFO] Epoch 27/100, iter 280/750, loss 0.2525, encoder LR 0.000759169
+[2026-07-10 18:05:39,498][    INFO] Epoch 27/100, iter 373/750, loss 0.2534, encoder LR 0.000758019
+[2026-07-10 18:05:42,914][    INFO] Epoch 27/100, iter 466/750, loss 0.2515, encoder LR 0.000756868
+[2026-07-10 18:05:46,396][    INFO] Epoch 27/100, iter 559/750, loss 0.2531, encoder LR 0.000755716
+[2026-07-10 18:05:49,788][    INFO] Epoch 27/100, iter 652/750, loss 0.2521, encoder LR 0.000754565
+[2026-07-10 18:05:53,080][    INFO] Epoch 27/100, iter 745/750, loss 0.2511, encoder LR 0.000753414
+[2026-07-10 18:05:53,405][    INFO] Evaluation class [0 background]: IoU 86.30, Dice 92.65
+[2026-07-10 18:05:53,406][    INFO] Evaluation class [1 fibrin]: IoU 47.45, Dice 64.36
+[2026-07-10 18:05:53,406][    INFO] Evaluation class [2 granulation]: IoU 87.08, Dice 93.09
+[2026-07-10 18:05:53,406][    INFO] Evaluation class [3 callus]: IoU 50.23, Dice 66.87
+[2026-07-10 18:05:53,406][    INFO] Evaluation epoch 26: MeanIoU 67.76, MeanDice 79.24; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:05:53,880][    INFO] Epoch 28/100, iter 1/750, loss 0.3433, encoder LR 0.000753339
+[2026-07-10 18:05:57,126][    INFO] Epoch 28/100, iter 94/750, loss 0.2374, encoder LR 0.000752187
+[2026-07-10 18:06:00,598][    INFO] Epoch 28/100, iter 187/750, loss 0.2419, encoder LR 0.000751035
+[2026-07-10 18:06:04,100][    INFO] Epoch 28/100, iter 280/750, loss 0.2378, encoder LR 0.000749883
+[2026-07-10 18:06:07,513][    INFO] Epoch 28/100, iter 373/750, loss 0.2370, encoder LR 0.000748731
+[2026-07-10 18:06:10,917][    INFO] Epoch 28/100, iter 466/750, loss 0.2385, encoder LR 0.000747578
+[2026-07-10 18:06:14,330][    INFO] Epoch 28/100, iter 559/750, loss 0.2374, encoder LR 0.000746426
+[2026-07-10 18:06:17,685][    INFO] Epoch 28/100, iter 652/750, loss 0.2361, encoder LR 0.000745273
+[2026-07-10 18:06:21,055][    INFO] Epoch 28/100, iter 745/750, loss 0.2367, encoder LR 0.000744119
+[2026-07-10 18:06:21,379][    INFO] Evaluation class [0 background]: IoU 84.44, Dice 91.56
+[2026-07-10 18:06:21,379][    INFO] Evaluation class [1 fibrin]: IoU 43.64, Dice 60.76
+[2026-07-10 18:06:21,380][    INFO] Evaluation class [2 granulation]: IoU 85.31, Dice 92.07
+[2026-07-10 18:06:21,380][    INFO] Evaluation class [3 callus]: IoU 48.53, Dice 65.34
+[2026-07-10 18:06:21,380][    INFO] Evaluation epoch 27: MeanIoU 65.48, MeanDice 77.44; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:06:21,874][    INFO] Epoch 29/100, iter 1/750, loss 0.2476, encoder LR 0.000744045
+[2026-07-10 18:06:25,201][    INFO] Epoch 29/100, iter 94/750, loss 0.2445, encoder LR 0.000742892
+[2026-07-10 18:06:28,592][    INFO] Epoch 29/100, iter 187/750, loss 0.2395, encoder LR 0.000741738
+[2026-07-10 18:06:31,848][    INFO] Epoch 29/100, iter 280/750, loss 0.2440, encoder LR 0.000740584
+[2026-07-10 18:06:34,988][    INFO] Epoch 29/100, iter 373/750, loss 0.2433, encoder LR 0.00073943
+[2026-07-10 18:06:38,112][    INFO] Epoch 29/100, iter 466/750, loss 0.2389, encoder LR 0.000738276
+[2026-07-10 18:06:41,399][    INFO] Epoch 29/100, iter 559/750, loss 0.2374, encoder LR 0.000737122
+[2026-07-10 18:06:44,628][    INFO] Epoch 29/100, iter 652/750, loss 0.2363, encoder LR 0.000735967
+[2026-07-10 18:06:47,853][    INFO] Epoch 29/100, iter 745/750, loss 0.2363, encoder LR 0.000734813
+[2026-07-10 18:06:48,207][    INFO] Evaluation class [0 background]: IoU 85.11, Dice 91.96
+[2026-07-10 18:06:48,207][    INFO] Evaluation class [1 fibrin]: IoU 49.76, Dice 66.45
+[2026-07-10 18:06:48,207][    INFO] Evaluation class [2 granulation]: IoU 85.85, Dice 92.39
+[2026-07-10 18:06:48,207][    INFO] Evaluation class [3 callus]: IoU 49.66, Dice 66.36
+[2026-07-10 18:06:48,208][    INFO] Evaluation epoch 28: MeanIoU 67.59, MeanDice 79.29; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:06:48,696][    INFO] Epoch 30/100, iter 1/750, loss 0.1963, encoder LR 0.000734738
+[2026-07-10 18:06:51,832][    INFO] Epoch 30/100, iter 94/750, loss 0.2280, encoder LR 0.000733583
+[2026-07-10 18:06:54,973][    INFO] Epoch 30/100, iter 187/750, loss 0.2252, encoder LR 0.000732428
+[2026-07-10 18:06:58,182][    INFO] Epoch 30/100, iter 280/750, loss 0.2351, encoder LR 0.000731272
+[2026-07-10 18:07:01,327][    INFO] Epoch 30/100, iter 373/750, loss 0.2412, encoder LR 0.000730117
+[2026-07-10 18:07:04,489][    INFO] Epoch 30/100, iter 466/750, loss 0.2354, encoder LR 0.000728961
+[2026-07-10 18:07:07,897][    INFO] Epoch 30/100, iter 559/750, loss 0.2353, encoder LR 0.000727805
+[2026-07-10 18:07:11,312][    INFO] Epoch 30/100, iter 652/750, loss 0.2365, encoder LR 0.000726649
+[2026-07-10 18:07:14,511][    INFO] Epoch 30/100, iter 745/750, loss 0.2356, encoder LR 0.000725492
+[2026-07-10 18:07:14,872][    INFO] Evaluation class [0 background]: IoU 86.18, Dice 92.58
+[2026-07-10 18:07:14,872][    INFO] Evaluation class [1 fibrin]: IoU 46.76, Dice 63.72
+[2026-07-10 18:07:14,872][    INFO] Evaluation class [2 granulation]: IoU 85.98, Dice 92.46
+[2026-07-10 18:07:14,872][    INFO] Evaluation class [3 callus]: IoU 50.20, Dice 66.85
+[2026-07-10 18:07:14,872][    INFO] Evaluation epoch 29: MeanIoU 67.28, MeanDice 78.90; BEST mIoU 68.31, Dice 79.86 at epoch 24
+[2026-07-10 18:07:15,363][    INFO] Epoch 31/100, iter 1/750, loss 0.1945, encoder LR 0.000725418
+[2026-07-10 18:07:18,538][    INFO] Epoch 31/100, iter 94/750, loss 0.2214, encoder LR 0.000724261
+[2026-07-10 18:07:21,745][    INFO] Epoch 31/100, iter 187/750, loss 0.2288, encoder LR 0.000723104
+[2026-07-10 18:07:24,978][    INFO] Epoch 31/100, iter 280/750, loss 0.2261, encoder LR 0.000721947
+[2026-07-10 18:07:28,207][    INFO] Epoch 31/100, iter 373/750, loss 0.2261, encoder LR 0.00072079
+[2026-07-10 18:07:31,435][    INFO] Epoch 31/100, iter 466/750, loss 0.2268, encoder LR 0.000719633
+[2026-07-10 18:07:34,736][    INFO] Epoch 31/100, iter 559/750, loss 0.2238, encoder LR 0.000718475
+[2026-07-10 18:07:38,123][    INFO] Epoch 31/100, iter 652/750, loss 0.2232, encoder LR 0.000717317
+[2026-07-10 18:07:41,570][    INFO] Epoch 31/100, iter 745/750, loss 0.2240, encoder LR 0.000716159
+[2026-07-10 18:07:41,920][    INFO] Evaluation class [0 background]: IoU 85.64, Dice 92.27
+[2026-07-10 18:07:41,920][    INFO] Evaluation class [1 fibrin]: IoU 50.76, Dice 67.34
+[2026-07-10 18:07:41,920][    INFO] Evaluation class [2 granulation]: IoU 85.92, Dice 92.43
+[2026-07-10 18:07:41,920][    INFO] Evaluation class [3 callus]: IoU 50.93, Dice 67.49
+[2026-07-10 18:07:41,921][    INFO] Evaluation epoch 30: MeanIoU 68.31, MeanDice 79.88; BEST mIoU 68.31, Dice 79.88 at epoch 30
+[2026-07-10 18:07:42,809][    INFO] Epoch 32/100, iter 1/750, loss 0.2345, encoder LR 0.000716084
+[2026-07-10 18:07:46,171][    INFO] Epoch 32/100, iter 94/750, loss 0.2177, encoder LR 0.000714926
+[2026-07-10 18:07:49,455][    INFO] Epoch 32/100, iter 187/750, loss 0.2192, encoder LR 0.000713768
+[2026-07-10 18:07:52,829][    INFO] Epoch 32/100, iter 280/750, loss 0.2265, encoder LR 0.000712609
+[2026-07-10 18:07:55,980][    INFO] Epoch 32/100, iter 373/750, loss 0.2249, encoder LR 0.00071145
+[2026-07-10 18:07:59,321][    INFO] Epoch 32/100, iter 466/750, loss 0.2254, encoder LR 0.000710291
+[2026-07-10 18:08:02,565][    INFO] Epoch 32/100, iter 559/750, loss 0.2249, encoder LR 0.000709131
+[2026-07-10 18:08:05,710][    INFO] Epoch 32/100, iter 652/750, loss 0.2252, encoder LR 0.000707972
+[2026-07-10 18:08:09,039][    INFO] Epoch 32/100, iter 745/750, loss 0.2282, encoder LR 0.000706812
+[2026-07-10 18:08:09,362][    INFO] Evaluation class [0 background]: IoU 85.25, Dice 92.04
+[2026-07-10 18:08:09,363][    INFO] Evaluation class [1 fibrin]: IoU 45.55, Dice 62.59
+[2026-07-10 18:08:09,363][    INFO] Evaluation class [2 granulation]: IoU 85.09, Dice 91.94
+[2026-07-10 18:08:09,363][    INFO] Evaluation class [3 callus]: IoU 47.21, Dice 64.14
+[2026-07-10 18:08:09,363][    INFO] Evaluation epoch 31: MeanIoU 65.78, MeanDice 77.68; BEST mIoU 68.31, Dice 79.88 at epoch 30
+[2026-07-10 18:08:09,838][    INFO] Epoch 33/100, iter 1/750, loss 0.1232, encoder LR 0.000706737
+[2026-07-10 18:08:13,267][    INFO] Epoch 33/100, iter 94/750, loss 0.2158, encoder LR 0.000705577
+[2026-07-10 18:08:16,575][    INFO] Epoch 33/100, iter 187/750, loss 0.2208, encoder LR 0.000704417
+[2026-07-10 18:08:19,751][    INFO] Epoch 33/100, iter 280/750, loss 0.2260, encoder LR 0.000703257
+[2026-07-10 18:08:22,923][    INFO] Epoch 33/100, iter 373/750, loss 0.2225, encoder LR 0.000702096
+[2026-07-10 18:08:26,043][    INFO] Epoch 33/100, iter 466/750, loss 0.2228, encoder LR 0.000700935
+[2026-07-10 18:08:29,187][    INFO] Epoch 33/100, iter 559/750, loss 0.2224, encoder LR 0.000699774
+[2026-07-10 18:08:32,542][    INFO] Epoch 33/100, iter 652/750, loss 0.2198, encoder LR 0.000698613
+[2026-07-10 18:08:35,887][    INFO] Epoch 33/100, iter 745/750, loss 0.2214, encoder LR 0.000697451
+[2026-07-10 18:08:36,249][    INFO] Evaluation class [0 background]: IoU 85.54, Dice 92.21
+[2026-07-10 18:08:36,249][    INFO] Evaluation class [1 fibrin]: IoU 46.75, Dice 63.71
+[2026-07-10 18:08:36,249][    INFO] Evaluation class [2 granulation]: IoU 86.91, Dice 93.00
+[2026-07-10 18:08:36,249][    INFO] Evaluation class [3 callus]: IoU 48.47, Dice 65.29
+[2026-07-10 18:08:36,250][    INFO] Evaluation epoch 32: MeanIoU 66.92, MeanDice 78.55; BEST mIoU 68.31, Dice 79.88 at epoch 30
+[2026-07-10 18:08:36,753][    INFO] Epoch 34/100, iter 1/750, loss 0.1978, encoder LR 0.000697377
+[2026-07-10 18:08:40,105][    INFO] Epoch 34/100, iter 94/750, loss 0.2207, encoder LR 0.000696215
+[2026-07-10 18:08:43,433][    INFO] Epoch 34/100, iter 187/750, loss 0.2167, encoder LR 0.000695053
+[2026-07-10 18:08:46,591][    INFO] Epoch 34/100, iter 280/750, loss 0.2176, encoder LR 0.000693891
+[2026-07-10 18:08:49,790][    INFO] Epoch 34/100, iter 373/750, loss 0.2159, encoder LR 0.000692728
+[2026-07-10 18:08:52,912][    INFO] Epoch 34/100, iter 466/750, loss 0.2163, encoder LR 0.000691566
+[2026-07-10 18:08:56,351][    INFO] Epoch 34/100, iter 559/750, loss 0.2160, encoder LR 0.000690403
+[2026-07-10 18:08:59,737][    INFO] Epoch 34/100, iter 652/750, loss 0.2163, encoder LR 0.00068924
+[2026-07-10 18:09:03,179][    INFO] Epoch 34/100, iter 745/750, loss 0.2183, encoder LR 0.000688077
+[2026-07-10 18:09:03,505][    INFO] Evaluation class [0 background]: IoU 85.00, Dice 91.89
+[2026-07-10 18:09:03,506][    INFO] Evaluation class [1 fibrin]: IoU 46.41, Dice 63.40
+[2026-07-10 18:09:03,506][    INFO] Evaluation class [2 granulation]: IoU 86.47, Dice 92.74
+[2026-07-10 18:09:03,506][    INFO] Evaluation class [3 callus]: IoU 50.58, Dice 67.18
+[2026-07-10 18:09:03,506][    INFO] Evaluation epoch 33: MeanIoU 67.11, MeanDice 78.80; BEST mIoU 68.31, Dice 79.88 at epoch 30
+[2026-07-10 18:09:04,000][    INFO] Epoch 35/100, iter 1/750, loss 0.2243, encoder LR 0.000688002
+[2026-07-10 18:09:07,367][    INFO] Epoch 35/100, iter 94/750, loss 0.2308, encoder LR 0.000686838
+[2026-07-10 18:09:10,588][    INFO] Epoch 35/100, iter 187/750, loss 0.2216, encoder LR 0.000685675
+[2026-07-10 18:09:13,983][    INFO] Epoch 35/100, iter 280/750, loss 0.2125, encoder LR 0.000684511
+[2026-07-10 18:09:17,315][    INFO] Epoch 35/100, iter 373/750, loss 0.2104, encoder LR 0.000683347
+[2026-07-10 18:09:20,617][    INFO] Epoch 35/100, iter 466/750, loss 0.2099, encoder LR 0.000682182
+[2026-07-10 18:09:24,076][    INFO] Epoch 35/100, iter 559/750, loss 0.2108, encoder LR 0.000681018
+[2026-07-10 18:09:27,448][    INFO] Epoch 35/100, iter 652/750, loss 0.2111, encoder LR 0.000679853
+[2026-07-10 18:09:30,966][    INFO] Epoch 35/100, iter 745/750, loss 0.2105, encoder LR 0.000678688
+[2026-07-10 18:09:31,295][    INFO] Evaluation class [0 background]: IoU 84.53, Dice 91.61
+[2026-07-10 18:09:31,295][    INFO] Evaluation class [1 fibrin]: IoU 40.89, Dice 58.04
+[2026-07-10 18:09:31,295][    INFO] Evaluation class [2 granulation]: IoU 84.60, Dice 91.66
+[2026-07-10 18:09:31,295][    INFO] Evaluation class [3 callus]: IoU 50.61, Dice 67.21
+[2026-07-10 18:09:31,296][    INFO] Evaluation epoch 34: MeanIoU 65.16, MeanDice 77.13; BEST mIoU 68.31, Dice 79.88 at epoch 30
+[2026-07-10 18:09:31,767][    INFO] Epoch 36/100, iter 1/750, loss 0.2607, encoder LR 0.000678613
+[2026-07-10 18:09:35,057][    INFO] Epoch 36/100, iter 94/750, loss 0.2133, encoder LR 0.000677448
+[2026-07-10 18:09:38,197][    INFO] Epoch 36/100, iter 187/750, loss 0.2081, encoder LR 0.000676282
+[2026-07-10 18:09:41,350][    INFO] Epoch 36/100, iter 280/750, loss 0.2169, encoder LR 0.000675116
+[2026-07-10 18:09:44,679][    INFO] Epoch 36/100, iter 373/750, loss 0.2175, encoder LR 0.00067395
+[2026-07-10 18:09:47,943][    INFO] Epoch 36/100, iter 466/750, loss 0.2174, encoder LR 0.000672784
+[2026-07-10 18:09:51,192][    INFO] Epoch 36/100, iter 559/750, loss 0.2187, encoder LR 0.000671618
+[2026-07-10 18:09:54,456][    INFO] Epoch 36/100, iter 652/750, loss 0.2177, encoder LR 0.000670451
+[2026-07-10 18:09:57,909][    INFO] Epoch 36/100, iter 745/750, loss 0.2173, encoder LR 0.000669285
+[2026-07-10 18:09:58,259][    INFO] Evaluation class [0 background]: IoU 85.45, Dice 92.15
+[2026-07-10 18:09:58,259][    INFO] Evaluation class [1 fibrin]: IoU 52.75, Dice 69.06
+[2026-07-10 18:09:58,259][    INFO] Evaluation class [2 granulation]: IoU 85.92, Dice 92.43
+[2026-07-10 18:09:58,260][    INFO] Evaluation class [3 callus]: IoU 50.59, Dice 67.19
+[2026-07-10 18:09:58,260][    INFO] Evaluation epoch 35: MeanIoU 68.68, MeanDice 80.21; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:09:59,148][    INFO] Epoch 37/100, iter 1/750, loss 0.3059, encoder LR 0.000669209
+[2026-07-10 18:10:02,371][    INFO] Epoch 37/100, iter 94/750, loss 0.2035, encoder LR 0.000668042
+[2026-07-10 18:10:05,516][    INFO] Epoch 37/100, iter 187/750, loss 0.2020, encoder LR 0.000666875
+[2026-07-10 18:10:08,643][    INFO] Epoch 37/100, iter 280/750, loss 0.2100, encoder LR 0.000665707
+[2026-07-10 18:10:11,764][    INFO] Epoch 37/100, iter 373/750, loss 0.2059, encoder LR 0.00066454
+[2026-07-10 18:10:15,028][    INFO] Epoch 37/100, iter 466/750, loss 0.2060, encoder LR 0.000663372
+[2026-07-10 18:10:18,487][    INFO] Epoch 37/100, iter 559/750, loss 0.2073, encoder LR 0.000662204
+[2026-07-10 18:10:21,862][    INFO] Epoch 37/100, iter 652/750, loss 0.2077, encoder LR 0.000661035
+[2026-07-10 18:10:25,079][    INFO] Epoch 37/100, iter 745/750, loss 0.2078, encoder LR 0.000659867
+[2026-07-10 18:10:25,442][    INFO] Evaluation class [0 background]: IoU 85.12, Dice 91.96
+[2026-07-10 18:10:25,443][    INFO] Evaluation class [1 fibrin]: IoU 41.40, Dice 58.56
+[2026-07-10 18:10:25,443][    INFO] Evaluation class [2 granulation]: IoU 84.87, Dice 91.81
+[2026-07-10 18:10:25,443][    INFO] Evaluation class [3 callus]: IoU 50.90, Dice 67.46
+[2026-07-10 18:10:25,443][    INFO] Evaluation epoch 36: MeanIoU 65.57, MeanDice 77.45; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:10:25,936][    INFO] Epoch 38/100, iter 1/750, loss 0.2447, encoder LR 0.000659791
+[2026-07-10 18:10:29,158][    INFO] Epoch 38/100, iter 94/750, loss 0.2161, encoder LR 0.000658622
+[2026-07-10 18:10:32,299][    INFO] Epoch 38/100, iter 187/750, loss 0.2109, encoder LR 0.000657453
+[2026-07-10 18:10:35,611][    INFO] Epoch 38/100, iter 280/750, loss 0.2111, encoder LR 0.000656284
+[2026-07-10 18:10:38,786][    INFO] Epoch 38/100, iter 373/750, loss 0.2096, encoder LR 0.000655114
+[2026-07-10 18:10:41,985][    INFO] Epoch 38/100, iter 466/750, loss 0.2090, encoder LR 0.000653944
+[2026-07-10 18:10:45,356][    INFO] Epoch 38/100, iter 559/750, loss 0.2108, encoder LR 0.000652774
+[2026-07-10 18:10:48,676][    INFO] Epoch 38/100, iter 652/750, loss 0.2097, encoder LR 0.000651604
+[2026-07-10 18:10:52,119][    INFO] Epoch 38/100, iter 745/750, loss 0.2084, encoder LR 0.000650434
+[2026-07-10 18:10:52,463][    INFO] Evaluation class [0 background]: IoU 85.23, Dice 92.03
+[2026-07-10 18:10:52,463][    INFO] Evaluation class [1 fibrin]: IoU 52.48, Dice 68.84
+[2026-07-10 18:10:52,464][    INFO] Evaluation class [2 granulation]: IoU 85.06, Dice 91.93
+[2026-07-10 18:10:52,464][    INFO] Evaluation class [3 callus]: IoU 51.22, Dice 67.74
+[2026-07-10 18:10:52,464][    INFO] Evaluation epoch 37: MeanIoU 68.50, MeanDice 80.13; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:10:52,964][    INFO] Epoch 39/100, iter 1/750, loss 0.2035, encoder LR 0.000650358
+[2026-07-10 18:10:56,378][    INFO] Epoch 39/100, iter 94/750, loss 0.1960, encoder LR 0.000649187
+[2026-07-10 18:10:59,738][    INFO] Epoch 39/100, iter 187/750, loss 0.2043, encoder LR 0.000648016
+[2026-07-10 18:11:03,143][    INFO] Epoch 39/100, iter 280/750, loss 0.2058, encoder LR 0.000646845
+[2026-07-10 18:11:06,432][    INFO] Epoch 39/100, iter 373/750, loss 0.2047, encoder LR 0.000645674
+[2026-07-10 18:11:09,597][    INFO] Epoch 39/100, iter 466/750, loss 0.2032, encoder LR 0.000644502
+[2026-07-10 18:11:12,868][    INFO] Epoch 39/100, iter 559/750, loss 0.2054, encoder LR 0.00064333
+[2026-07-10 18:11:16,243][    INFO] Epoch 39/100, iter 652/750, loss 0.2043, encoder LR 0.000642158
+[2026-07-10 18:11:19,432][    INFO] Epoch 39/100, iter 745/750, loss 0.2039, encoder LR 0.000640985
+[2026-07-10 18:11:19,779][    INFO] Evaluation class [0 background]: IoU 85.59, Dice 92.23
+[2026-07-10 18:11:19,779][    INFO] Evaluation class [1 fibrin]: IoU 49.31, Dice 66.05
+[2026-07-10 18:11:19,779][    INFO] Evaluation class [2 granulation]: IoU 85.82, Dice 92.37
+[2026-07-10 18:11:19,779][    INFO] Evaluation class [3 callus]: IoU 50.79, Dice 67.36
+[2026-07-10 18:11:19,780][    INFO] Evaluation epoch 38: MeanIoU 67.87, MeanDice 79.50; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:11:20,250][    INFO] Epoch 40/100, iter 1/750, loss 0.1633, encoder LR 0.00064091
+[2026-07-10 18:11:23,596][    INFO] Epoch 40/100, iter 94/750, loss 0.2164, encoder LR 0.000639737
+[2026-07-10 18:11:26,851][    INFO] Epoch 40/100, iter 187/750, loss 0.2135, encoder LR 0.000638564
+[2026-07-10 18:11:30,267][    INFO] Epoch 40/100, iter 280/750, loss 0.2046, encoder LR 0.000637391
+[2026-07-10 18:11:33,594][    INFO] Epoch 40/100, iter 373/750, loss 0.2029, encoder LR 0.000636218
+[2026-07-10 18:11:36,932][    INFO] Epoch 40/100, iter 466/750, loss 0.2020, encoder LR 0.000635044
+[2026-07-10 18:11:40,400][    INFO] Epoch 40/100, iter 559/750, loss 0.2028, encoder LR 0.00063387
+[2026-07-10 18:11:43,810][    INFO] Epoch 40/100, iter 652/750, loss 0.2026, encoder LR 0.000632696
+[2026-07-10 18:11:47,318][    INFO] Epoch 40/100, iter 745/750, loss 0.2005, encoder LR 0.000631522
+[2026-07-10 18:11:47,672][    INFO] Evaluation class [0 background]: IoU 85.58, Dice 92.23
+[2026-07-10 18:11:47,672][    INFO] Evaluation class [1 fibrin]: IoU 46.64, Dice 63.61
+[2026-07-10 18:11:47,672][    INFO] Evaluation class [2 granulation]: IoU 86.58, Dice 92.81
+[2026-07-10 18:11:47,672][    INFO] Evaluation class [3 callus]: IoU 52.70, Dice 69.02
+[2026-07-10 18:11:47,672][    INFO] Evaluation epoch 39: MeanIoU 67.88, MeanDice 79.42; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:11:48,150][    INFO] Epoch 41/100, iter 1/750, loss 0.1520, encoder LR 0.000631446
+[2026-07-10 18:11:51,654][    INFO] Epoch 41/100, iter 94/750, loss 0.1886, encoder LR 0.000630271
+[2026-07-10 18:11:55,018][    INFO] Epoch 41/100, iter 187/750, loss 0.1945, encoder LR 0.000629096
+[2026-07-10 18:11:58,192][    INFO] Epoch 41/100, iter 280/750, loss 0.1939, encoder LR 0.000627921
+[2026-07-10 18:12:01,364][    INFO] Epoch 41/100, iter 373/750, loss 0.1969, encoder LR 0.000626746
+[2026-07-10 18:12:04,541][    INFO] Epoch 41/100, iter 466/750, loss 0.1982, encoder LR 0.00062557
+[2026-07-10 18:12:07,702][    INFO] Epoch 41/100, iter 559/750, loss 0.1974, encoder LR 0.000624395
+[2026-07-10 18:12:10,903][    INFO] Epoch 41/100, iter 652/750, loss 0.2006, encoder LR 0.000623218
+[2026-07-10 18:12:14,113][    INFO] Epoch 41/100, iter 745/750, loss 0.2017, encoder LR 0.000622042
+[2026-07-10 18:12:14,443][    INFO] Evaluation class [0 background]: IoU 86.21, Dice 92.59
+[2026-07-10 18:12:14,443][    INFO] Evaluation class [1 fibrin]: IoU 46.71, Dice 63.68
+[2026-07-10 18:12:14,443][    INFO] Evaluation class [2 granulation]: IoU 85.17, Dice 91.99
+[2026-07-10 18:12:14,443][    INFO] Evaluation class [3 callus]: IoU 53.00, Dice 69.28
+[2026-07-10 18:12:14,443][    INFO] Evaluation epoch 40: MeanIoU 67.77, MeanDice 79.39; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:12:14,926][    INFO] Epoch 42/100, iter 1/750, loss 0.1844, encoder LR 0.000621966
+[2026-07-10 18:12:18,123][    INFO] Epoch 42/100, iter 94/750, loss 0.1861, encoder LR 0.00062079
+[2026-07-10 18:12:21,392][    INFO] Epoch 42/100, iter 187/750, loss 0.1960, encoder LR 0.000619613
+[2026-07-10 18:12:24,595][    INFO] Epoch 42/100, iter 280/750, loss 0.1917, encoder LR 0.000618436
+[2026-07-10 18:12:27,737][    INFO] Epoch 42/100, iter 373/750, loss 0.1946, encoder LR 0.000617258
+[2026-07-10 18:12:30,934][    INFO] Epoch 42/100, iter 466/750, loss 0.1949, encoder LR 0.000616081
+[2026-07-10 18:12:34,052][    INFO] Epoch 42/100, iter 559/750, loss 0.1965, encoder LR 0.000614903
+[2026-07-10 18:12:37,204][    INFO] Epoch 42/100, iter 652/750, loss 0.1961, encoder LR 0.000613725
+[2026-07-10 18:12:40,487][    INFO] Epoch 42/100, iter 745/750, loss 0.1954, encoder LR 0.000612547
+[2026-07-10 18:12:40,812][    INFO] Evaluation class [0 background]: IoU 86.66, Dice 92.85
+[2026-07-10 18:12:40,812][    INFO] Evaluation class [1 fibrin]: IoU 47.39, Dice 64.31
+[2026-07-10 18:12:40,812][    INFO] Evaluation class [2 granulation]: IoU 86.33, Dice 92.66
+[2026-07-10 18:12:40,813][    INFO] Evaluation class [3 callus]: IoU 52.49, Dice 68.85
+[2026-07-10 18:12:40,813][    INFO] Evaluation epoch 41: MeanIoU 68.22, MeanDice 79.67; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:12:41,295][    INFO] Epoch 43/100, iter 1/750, loss 0.0864, encoder LR 0.000612471
+[2026-07-10 18:12:44,432][    INFO] Epoch 43/100, iter 94/750, loss 0.2037, encoder LR 0.000611292
+[2026-07-10 18:12:47,604][    INFO] Epoch 43/100, iter 187/750, loss 0.2036, encoder LR 0.000610113
+[2026-07-10 18:12:50,738][    INFO] Epoch 43/100, iter 280/750, loss 0.2006, encoder LR 0.000608934
+[2026-07-10 18:12:54,173][    INFO] Epoch 43/100, iter 373/750, loss 0.2021, encoder LR 0.000607755
+[2026-07-10 18:12:57,544][    INFO] Epoch 43/100, iter 466/750, loss 0.2025, encoder LR 0.000606575
+[2026-07-10 18:13:00,671][    INFO] Epoch 43/100, iter 559/750, loss 0.2023, encoder LR 0.000605395
+[2026-07-10 18:13:03,879][    INFO] Epoch 43/100, iter 652/750, loss 0.1991, encoder LR 0.000604215
+[2026-07-10 18:13:07,095][    INFO] Epoch 43/100, iter 745/750, loss 0.1984, encoder LR 0.000603035
+[2026-07-10 18:13:07,437][    INFO] Evaluation class [0 background]: IoU 85.09, Dice 91.94
+[2026-07-10 18:13:07,437][    INFO] Evaluation class [1 fibrin]: IoU 48.48, Dice 65.31
+[2026-07-10 18:13:07,438][    INFO] Evaluation class [2 granulation]: IoU 85.74, Dice 92.32
+[2026-07-10 18:13:07,438][    INFO] Evaluation class [3 callus]: IoU 51.46, Dice 67.95
+[2026-07-10 18:13:07,438][    INFO] Evaluation epoch 42: MeanIoU 67.69, MeanDice 79.38; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:13:07,921][    INFO] Epoch 44/100, iter 1/750, loss 0.2992, encoder LR 0.000602958
+[2026-07-10 18:13:11,275][    INFO] Epoch 44/100, iter 94/750, loss 0.1892, encoder LR 0.000601778
+[2026-07-10 18:13:14,632][    INFO] Epoch 44/100, iter 187/750, loss 0.1901, encoder LR 0.000600597
+[2026-07-10 18:13:17,959][    INFO] Epoch 44/100, iter 280/750, loss 0.1896, encoder LR 0.000599416
+[2026-07-10 18:13:21,361][    INFO] Epoch 44/100, iter 373/750, loss 0.1913, encoder LR 0.000598234
+[2026-07-10 18:13:24,575][    INFO] Epoch 44/100, iter 466/750, loss 0.1900, encoder LR 0.000597053
+[2026-07-10 18:13:27,737][    INFO] Epoch 44/100, iter 559/750, loss 0.1943, encoder LR 0.000595871
+[2026-07-10 18:13:31,013][    INFO] Epoch 44/100, iter 652/750, loss 0.1946, encoder LR 0.000594688
+[2026-07-10 18:13:34,323][    INFO] Epoch 44/100, iter 745/750, loss 0.1933, encoder LR 0.000593506
+[2026-07-10 18:13:34,645][    INFO] Evaluation class [0 background]: IoU 86.51, Dice 92.77
+[2026-07-10 18:13:34,646][    INFO] Evaluation class [1 fibrin]: IoU 50.13, Dice 66.79
+[2026-07-10 18:13:34,646][    INFO] Evaluation class [2 granulation]: IoU 86.05, Dice 92.50
+[2026-07-10 18:13:34,646][    INFO] Evaluation class [3 callus]: IoU 51.74, Dice 68.19
+[2026-07-10 18:13:34,646][    INFO] Evaluation epoch 43: MeanIoU 68.61, MeanDice 80.06; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:13:35,119][    INFO] Epoch 45/100, iter 1/750, loss 0.2922, encoder LR 0.00059343
+[2026-07-10 18:13:38,503][    INFO] Epoch 45/100, iter 94/750, loss 0.1902, encoder LR 0.000592247
+[2026-07-10 18:13:41,766][    INFO] Epoch 45/100, iter 187/750, loss 0.1894, encoder LR 0.000591064
+[2026-07-10 18:13:44,996][    INFO] Epoch 45/100, iter 280/750, loss 0.1919, encoder LR 0.000589881
+[2026-07-10 18:13:48,131][    INFO] Epoch 45/100, iter 373/750, loss 0.1950, encoder LR 0.000588697
+[2026-07-10 18:13:51,293][    INFO] Epoch 45/100, iter 466/750, loss 0.1953, encoder LR 0.000587513
+[2026-07-10 18:13:54,476][    INFO] Epoch 45/100, iter 559/750, loss 0.1951, encoder LR 0.000586329
+[2026-07-10 18:13:57,601][    INFO] Epoch 45/100, iter 652/750, loss 0.1934, encoder LR 0.000585145
+[2026-07-10 18:14:00,826][    INFO] Epoch 45/100, iter 745/750, loss 0.1942, encoder LR 0.00058396
+[2026-07-10 18:14:01,153][    INFO] Evaluation class [0 background]: IoU 85.91, Dice 92.42
+[2026-07-10 18:14:01,153][    INFO] Evaluation class [1 fibrin]: IoU 49.30, Dice 66.04
+[2026-07-10 18:14:01,153][    INFO] Evaluation class [2 granulation]: IoU 85.47, Dice 92.17
+[2026-07-10 18:14:01,154][    INFO] Evaluation class [3 callus]: IoU 49.28, Dice 66.03
+[2026-07-10 18:14:01,154][    INFO] Evaluation epoch 44: MeanIoU 67.49, MeanDice 79.16; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:14:01,625][    INFO] Epoch 46/100, iter 1/750, loss 0.3348, encoder LR 0.000583884
+[2026-07-10 18:14:05,020][    INFO] Epoch 46/100, iter 94/750, loss 0.1902, encoder LR 0.000582699
+[2026-07-10 18:14:08,266][    INFO] Epoch 46/100, iter 187/750, loss 0.1851, encoder LR 0.000581514
+[2026-07-10 18:14:11,434][    INFO] Epoch 46/100, iter 280/750, loss 0.1850, encoder LR 0.000580328
+[2026-07-10 18:14:14,582][    INFO] Epoch 46/100, iter 373/750, loss 0.1864, encoder LR 0.000579143
+[2026-07-10 18:14:17,839][    INFO] Epoch 46/100, iter 466/750, loss 0.1854, encoder LR 0.000577957
+[2026-07-10 18:14:21,283][    INFO] Epoch 46/100, iter 559/750, loss 0.1875, encoder LR 0.00057677
+[2026-07-10 18:14:24,599][    INFO] Epoch 46/100, iter 652/750, loss 0.1881, encoder LR 0.000575584
+[2026-07-10 18:14:27,797][    INFO] Epoch 46/100, iter 745/750, loss 0.1875, encoder LR 0.000574397
+[2026-07-10 18:14:28,125][    INFO] Evaluation class [0 background]: IoU 86.07, Dice 92.51
+[2026-07-10 18:14:28,125][    INFO] Evaluation class [1 fibrin]: IoU 48.86, Dice 65.64
+[2026-07-10 18:14:28,125][    INFO] Evaluation class [2 granulation]: IoU 85.41, Dice 92.13
+[2026-07-10 18:14:28,125][    INFO] Evaluation class [3 callus]: IoU 52.95, Dice 69.24
+[2026-07-10 18:14:28,126][    INFO] Evaluation epoch 45: MeanIoU 68.32, MeanDice 79.88; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:14:28,574][    INFO] Epoch 47/100, iter 1/750, loss 0.1276, encoder LR 0.000574321
+[2026-07-10 18:14:31,712][    INFO] Epoch 47/100, iter 94/750, loss 0.1898, encoder LR 0.000573134
+[2026-07-10 18:14:34,951][    INFO] Epoch 47/100, iter 187/750, loss 0.1956, encoder LR 0.000571946
+[2026-07-10 18:14:38,146][    INFO] Epoch 47/100, iter 280/750, loss 0.1932, encoder LR 0.000570759
+[2026-07-10 18:14:41,281][    INFO] Epoch 47/100, iter 373/750, loss 0.1965, encoder LR 0.000569571
+[2026-07-10 18:14:44,399][    INFO] Epoch 47/100, iter 466/750, loss 0.1950, encoder LR 0.000568383
+[2026-07-10 18:14:47,553][    INFO] Epoch 47/100, iter 559/750, loss 0.1934, encoder LR 0.000567194
+[2026-07-10 18:14:50,693][    INFO] Epoch 47/100, iter 652/750, loss 0.1932, encoder LR 0.000566005
+[2026-07-10 18:14:53,910][    INFO] Epoch 47/100, iter 745/750, loss 0.1910, encoder LR 0.000564816
+[2026-07-10 18:14:54,236][    INFO] Evaluation class [0 background]: IoU 85.87, Dice 92.40
+[2026-07-10 18:14:54,236][    INFO] Evaluation class [1 fibrin]: IoU 49.81, Dice 66.50
+[2026-07-10 18:14:54,236][    INFO] Evaluation class [2 granulation]: IoU 85.91, Dice 92.42
+[2026-07-10 18:14:54,236][    INFO] Evaluation class [3 callus]: IoU 50.62, Dice 67.21
+[2026-07-10 18:14:54,236][    INFO] Evaluation epoch 46: MeanIoU 68.05, MeanDice 79.63; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:14:54,714][    INFO] Epoch 48/100, iter 1/750, loss 0.2242, encoder LR 0.00056474
+[2026-07-10 18:14:58,049][    INFO] Epoch 48/100, iter 94/750, loss 0.1832, encoder LR 0.00056355
+[2026-07-10 18:15:01,375][    INFO] Epoch 48/100, iter 187/750, loss 0.1832, encoder LR 0.000562361
+[2026-07-10 18:15:04,853][    INFO] Epoch 48/100, iter 280/750, loss 0.1838, encoder LR 0.000561171
+[2026-07-10 18:15:08,202][    INFO] Epoch 48/100, iter 373/750, loss 0.1815, encoder LR 0.000559981
+[2026-07-10 18:15:11,437][    INFO] Epoch 48/100, iter 466/750, loss 0.1815, encoder LR 0.00055879
+[2026-07-10 18:15:14,801][    INFO] Epoch 48/100, iter 559/750, loss 0.1819, encoder LR 0.0005576
+[2026-07-10 18:15:17,931][    INFO] Epoch 48/100, iter 652/750, loss 0.1838, encoder LR 0.000556409
+[2026-07-10 18:15:21,084][    INFO] Epoch 48/100, iter 745/750, loss 0.1819, encoder LR 0.000555217
+[2026-07-10 18:15:21,409][    INFO] Evaluation class [0 background]: IoU 85.83, Dice 92.38
+[2026-07-10 18:15:21,410][    INFO] Evaluation class [1 fibrin]: IoU 48.93, Dice 65.71
+[2026-07-10 18:15:21,410][    INFO] Evaluation class [2 granulation]: IoU 83.30, Dice 90.89
+[2026-07-10 18:15:21,410][    INFO] Evaluation class [3 callus]: IoU 52.45, Dice 68.81
+[2026-07-10 18:15:21,410][    INFO] Evaluation epoch 47: MeanIoU 67.63, MeanDice 79.44; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:15:21,906][    INFO] Epoch 49/100, iter 1/750, loss 0.1096, encoder LR 0.000555141
+[2026-07-10 18:15:25,082][    INFO] Epoch 49/100, iter 94/750, loss 0.1857, encoder LR 0.000553949
+[2026-07-10 18:15:28,248][    INFO] Epoch 49/100, iter 187/750, loss 0.1930, encoder LR 0.000552757
+[2026-07-10 18:15:31,526][    INFO] Epoch 49/100, iter 280/750, loss 0.1868, encoder LR 0.000551565
+[2026-07-10 18:15:34,795][    INFO] Epoch 49/100, iter 373/750, loss 0.1841, encoder LR 0.000550373
+[2026-07-10 18:15:37,937][    INFO] Epoch 49/100, iter 466/750, loss 0.1825, encoder LR 0.00054918
+[2026-07-10 18:15:41,083][    INFO] Epoch 49/100, iter 559/750, loss 0.1834, encoder LR 0.000547987
+[2026-07-10 18:15:44,452][    INFO] Epoch 49/100, iter 652/750, loss 0.1822, encoder LR 0.000546794
+[2026-07-10 18:15:47,976][    INFO] Epoch 49/100, iter 745/750, loss 0.1837, encoder LR 0.0005456
+[2026-07-10 18:15:48,308][    INFO] Evaluation class [0 background]: IoU 85.70, Dice 92.30
+[2026-07-10 18:15:48,309][    INFO] Evaluation class [1 fibrin]: IoU 48.29, Dice 65.13
+[2026-07-10 18:15:48,309][    INFO] Evaluation class [2 granulation]: IoU 86.03, Dice 92.49
+[2026-07-10 18:15:48,309][    INFO] Evaluation class [3 callus]: IoU 51.28, Dice 67.80
+[2026-07-10 18:15:48,309][    INFO] Evaluation epoch 48: MeanIoU 67.83, MeanDice 79.43; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:15:48,770][    INFO] Epoch 50/100, iter 1/750, loss 0.1459, encoder LR 0.000545523
+[2026-07-10 18:15:52,214][    INFO] Epoch 50/100, iter 94/750, loss 0.1865, encoder LR 0.000544329
+[2026-07-10 18:15:55,608][    INFO] Epoch 50/100, iter 187/750, loss 0.1844, encoder LR 0.000543135
+[2026-07-10 18:15:58,986][    INFO] Epoch 50/100, iter 280/750, loss 0.1872, encoder LR 0.000541941
+[2026-07-10 18:16:02,389][    INFO] Epoch 50/100, iter 373/750, loss 0.1839, encoder LR 0.000540746
+[2026-07-10 18:16:05,649][    INFO] Epoch 50/100, iter 466/750, loss 0.1817, encoder LR 0.000539551
+[2026-07-10 18:16:08,851][    INFO] Epoch 50/100, iter 559/750, loss 0.1806, encoder LR 0.000538355
+[2026-07-10 18:16:12,270][    INFO] Epoch 50/100, iter 652/750, loss 0.1815, encoder LR 0.00053716
+[2026-07-10 18:16:15,473][    INFO] Epoch 50/100, iter 745/750, loss 0.1828, encoder LR 0.000535964
+[2026-07-10 18:16:15,834][    INFO] Evaluation class [0 background]: IoU 86.42, Dice 92.71
+[2026-07-10 18:16:15,834][    INFO] Evaluation class [1 fibrin]: IoU 50.01, Dice 66.67
+[2026-07-10 18:16:15,834][    INFO] Evaluation class [2 granulation]: IoU 86.23, Dice 92.60
+[2026-07-10 18:16:15,834][    INFO] Evaluation class [3 callus]: IoU 51.35, Dice 67.85
+[2026-07-10 18:16:15,834][    INFO] Evaluation epoch 49: MeanIoU 68.50, MeanDice 79.96; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:16:16,308][    INFO] Epoch 51/100, iter 1/750, loss 0.3507, encoder LR 0.000535887
+[2026-07-10 18:16:19,557][    INFO] Epoch 51/100, iter 94/750, loss 0.1852, encoder LR 0.00053469
+[2026-07-10 18:16:22,897][    INFO] Epoch 51/100, iter 187/750, loss 0.1882, encoder LR 0.000533494
+[2026-07-10 18:16:26,171][    INFO] Epoch 51/100, iter 280/750, loss 0.1860, encoder LR 0.000532297
+[2026-07-10 18:16:29,428][    INFO] Epoch 51/100, iter 373/750, loss 0.1848, encoder LR 0.0005311
+[2026-07-10 18:16:32,644][    INFO] Epoch 51/100, iter 466/750, loss 0.1823, encoder LR 0.000529903
+[2026-07-10 18:16:35,831][    INFO] Epoch 51/100, iter 559/750, loss 0.1815, encoder LR 0.000528705
+[2026-07-10 18:16:39,169][    INFO] Epoch 51/100, iter 652/750, loss 0.1801, encoder LR 0.000527507
+[2026-07-10 18:16:42,359][    INFO] Epoch 51/100, iter 745/750, loss 0.1798, encoder LR 0.000526308
+[2026-07-10 18:16:42,688][    INFO] Evaluation class [0 background]: IoU 86.67, Dice 92.86
+[2026-07-10 18:16:42,689][    INFO] Evaluation class [1 fibrin]: IoU 47.01, Dice 63.95
+[2026-07-10 18:16:42,689][    INFO] Evaluation class [2 granulation]: IoU 85.63, Dice 92.26
+[2026-07-10 18:16:42,689][    INFO] Evaluation class [3 callus]: IoU 52.29, Dice 68.67
+[2026-07-10 18:16:42,689][    INFO] Evaluation epoch 50: MeanIoU 67.90, MeanDice 79.43; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:16:43,170][    INFO] Epoch 52/100, iter 1/750, loss 0.1031, encoder LR 0.000526231
+[2026-07-10 18:16:46,362][    INFO] Epoch 52/100, iter 94/750, loss 0.1822, encoder LR 0.000525032
+[2026-07-10 18:16:49,524][    INFO] Epoch 52/100, iter 187/750, loss 0.1810, encoder LR 0.000523833
+[2026-07-10 18:16:52,883][    INFO] Epoch 52/100, iter 280/750, loss 0.1796, encoder LR 0.000522634
+[2026-07-10 18:16:56,128][    INFO] Epoch 52/100, iter 373/750, loss 0.1807, encoder LR 0.000521435
+[2026-07-10 18:16:59,351][    INFO] Epoch 52/100, iter 466/750, loss 0.1775, encoder LR 0.000520235
+[2026-07-10 18:17:02,477][    INFO] Epoch 52/100, iter 559/750, loss 0.1788, encoder LR 0.000519034
+[2026-07-10 18:17:05,778][    INFO] Epoch 52/100, iter 652/750, loss 0.1782, encoder LR 0.000517834
+[2026-07-10 18:17:08,941][    INFO] Epoch 52/100, iter 745/750, loss 0.1767, encoder LR 0.000516633
+[2026-07-10 18:17:09,269][    INFO] Evaluation class [0 background]: IoU 85.56, Dice 92.22
+[2026-07-10 18:17:09,269][    INFO] Evaluation class [1 fibrin]: IoU 51.21, Dice 67.74
+[2026-07-10 18:17:09,269][    INFO] Evaluation class [2 granulation]: IoU 86.54, Dice 92.78
+[2026-07-10 18:17:09,269][    INFO] Evaluation class [3 callus]: IoU 50.23, Dice 66.87
+[2026-07-10 18:17:09,269][    INFO] Evaluation epoch 51: MeanIoU 68.38, MeanDice 79.90; BEST mIoU 68.68, Dice 80.21 at epoch 35
+[2026-07-10 18:17:09,757][    INFO] Epoch 53/100, iter 1/750, loss 0.1302, encoder LR 0.000516556
+[2026-07-10 18:17:12,966][    INFO] Epoch 53/100, iter 94/750, loss 0.1809, encoder LR 0.000515354
+[2026-07-10 18:17:16,244][    INFO] Epoch 53/100, iter 187/750, loss 0.1803, encoder LR 0.000514153
+[2026-07-10 18:17:19,580][    INFO] Epoch 53/100, iter 280/750, loss 0.1782, encoder LR 0.000512951
+[2026-07-10 18:17:22,956][    INFO] Epoch 53/100, iter 373/750, loss 0.1740, encoder LR 0.000511749
+[2026-07-10 18:17:26,242][    INFO] Epoch 53/100, iter 466/750, loss 0.1745, encoder LR 0.000510547
+[2026-07-10 18:17:29,581][    INFO] Epoch 53/100, iter 559/750, loss 0.1765, encoder LR 0.000509344
+[2026-07-10 18:17:32,814][    INFO] Epoch 53/100, iter 652/750, loss 0.1754, encoder LR 0.000508141
+[2026-07-10 18:17:36,179][    INFO] Epoch 53/100, iter 745/750, loss 0.1757, encoder LR 0.000506938
+[2026-07-10 18:17:36,530][    INFO] Evaluation class [0 background]: IoU 86.06, Dice 92.51
+[2026-07-10 18:17:36,530][    INFO] Evaluation class [1 fibrin]: IoU 50.79, Dice 67.37
+[2026-07-10 18:17:36,531][    INFO] Evaluation class [2 granulation]: IoU 86.11, Dice 92.54
+[2026-07-10 18:17:36,531][    INFO] Evaluation class [3 callus]: IoU 52.00, Dice 68.42
+[2026-07-10 18:17:36,531][    INFO] Evaluation epoch 52: MeanIoU 68.74, MeanDice 80.21; BEST mIoU 68.74, Dice 80.21 at epoch 52
+[2026-07-10 18:17:37,400][    INFO] Epoch 54/100, iter 1/750, loss 0.1639, encoder LR 0.00050686
+[2026-07-10 18:17:40,704][    INFO] Epoch 54/100, iter 94/750, loss 0.1808, encoder LR 0.000505656
+[2026-07-10 18:17:44,003][    INFO] Epoch 54/100, iter 187/750, loss 0.1793, encoder LR 0.000504452
+[2026-07-10 18:17:47,328][    INFO] Epoch 54/100, iter 280/750, loss 0.1782, encoder LR 0.000503248
+[2026-07-10 18:17:50,588][    INFO] Epoch 54/100, iter 373/750, loss 0.1755, encoder LR 0.000502043
+[2026-07-10 18:17:53,843][    INFO] Epoch 54/100, iter 466/750, loss 0.1757, encoder LR 0.000500838
+[2026-07-10 18:17:57,237][    INFO] Epoch 54/100, iter 559/750, loss 0.1736, encoder LR 0.000499633
+[2026-07-10 18:18:00,482][    INFO] Epoch 54/100, iter 652/750, loss 0.1742, encoder LR 0.000498428
+[2026-07-10 18:18:03,649][    INFO] Epoch 54/100, iter 745/750, loss 0.1744, encoder LR 0.000497222
+[2026-07-10 18:18:03,976][    INFO] Evaluation class [0 background]: IoU 85.57, Dice 92.22
+[2026-07-10 18:18:03,976][    INFO] Evaluation class [1 fibrin]: IoU 53.26, Dice 69.50
+[2026-07-10 18:18:03,977][    INFO] Evaluation class [2 granulation]: IoU 87.34, Dice 93.24
+[2026-07-10 18:18:03,977][    INFO] Evaluation class [3 callus]: IoU 51.29, Dice 67.80
+[2026-07-10 18:18:03,977][    INFO] Evaluation epoch 53: MeanIoU 69.36, MeanDice 80.69; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:18:04,856][    INFO] Epoch 55/100, iter 1/750, loss 0.1185, encoder LR 0.000497144
+[2026-07-10 18:18:08,062][    INFO] Epoch 55/100, iter 94/750, loss 0.1650, encoder LR 0.000495938
+[2026-07-10 18:18:11,407][    INFO] Epoch 55/100, iter 187/750, loss 0.1764, encoder LR 0.000494731
+[2026-07-10 18:18:14,902][    INFO] Epoch 55/100, iter 280/750, loss 0.1786, encoder LR 0.000493524
+[2026-07-10 18:18:18,497][    INFO] Epoch 55/100, iter 373/750, loss 0.1814, encoder LR 0.000492317
+[2026-07-10 18:18:21,651][    INFO] Epoch 55/100, iter 466/750, loss 0.1790, encoder LR 0.000491109
+[2026-07-10 18:18:24,826][    INFO] Epoch 55/100, iter 559/750, loss 0.1790, encoder LR 0.000489901
+[2026-07-10 18:18:28,082][    INFO] Epoch 55/100, iter 652/750, loss 0.1772, encoder LR 0.000488693
+[2026-07-10 18:18:31,268][    INFO] Epoch 55/100, iter 745/750, loss 0.1773, encoder LR 0.000487484
+[2026-07-10 18:18:31,594][    INFO] Evaluation class [0 background]: IoU 86.91, Dice 93.00
+[2026-07-10 18:18:31,594][    INFO] Evaluation class [1 fibrin]: IoU 49.07, Dice 65.83
+[2026-07-10 18:18:31,595][    INFO] Evaluation class [2 granulation]: IoU 86.42, Dice 92.72
+[2026-07-10 18:18:31,595][    INFO] Evaluation class [3 callus]: IoU 51.97, Dice 68.39
+[2026-07-10 18:18:31,595][    INFO] Evaluation epoch 54: MeanIoU 68.59, MeanDice 79.98; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:18:32,077][    INFO] Epoch 56/100, iter 1/750, loss 0.2349, encoder LR 0.000487406
+[2026-07-10 18:18:35,223][    INFO] Epoch 56/100, iter 94/750, loss 0.1749, encoder LR 0.000486198
+[2026-07-10 18:18:38,362][    INFO] Epoch 56/100, iter 187/750, loss 0.1683, encoder LR 0.000484988
+[2026-07-10 18:18:41,504][    INFO] Epoch 56/100, iter 280/750, loss 0.1667, encoder LR 0.000483779
+[2026-07-10 18:18:44,676][    INFO] Epoch 56/100, iter 373/750, loss 0.1704, encoder LR 0.000482569
+[2026-07-10 18:18:47,825][    INFO] Epoch 56/100, iter 466/750, loss 0.1702, encoder LR 0.000481358
+[2026-07-10 18:18:50,973][    INFO] Epoch 56/100, iter 559/750, loss 0.1720, encoder LR 0.000480148
+[2026-07-10 18:18:54,246][    INFO] Epoch 56/100, iter 652/750, loss 0.1715, encoder LR 0.000478937
+[2026-07-10 18:18:57,627][    INFO] Epoch 56/100, iter 745/750, loss 0.1708, encoder LR 0.000477726
+[2026-07-10 18:18:57,978][    INFO] Evaluation class [0 background]: IoU 86.72, Dice 92.89
+[2026-07-10 18:18:57,978][    INFO] Evaluation class [1 fibrin]: IoU 47.06, Dice 64.00
+[2026-07-10 18:18:57,979][    INFO] Evaluation class [2 granulation]: IoU 87.38, Dice 93.27
+[2026-07-10 18:18:57,979][    INFO] Evaluation class [3 callus]: IoU 52.68, Dice 69.01
+[2026-07-10 18:18:57,979][    INFO] Evaluation epoch 55: MeanIoU 68.46, MeanDice 79.79; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:18:58,462][    INFO] Epoch 57/100, iter 1/750, loss 0.0563, encoder LR 0.000477647
+[2026-07-10 18:19:01,755][    INFO] Epoch 57/100, iter 94/750, loss 0.1749, encoder LR 0.000476436
+[2026-07-10 18:19:05,169][    INFO] Epoch 57/100, iter 187/750, loss 0.1711, encoder LR 0.000475224
+[2026-07-10 18:19:08,540][    INFO] Epoch 57/100, iter 280/750, loss 0.1731, encoder LR 0.000474011
+[2026-07-10 18:19:11,762][    INFO] Epoch 57/100, iter 373/750, loss 0.1715, encoder LR 0.000472799
+[2026-07-10 18:19:15,321][    INFO] Epoch 57/100, iter 466/750, loss 0.1719, encoder LR 0.000471586
+[2026-07-10 18:19:18,752][    INFO] Epoch 57/100, iter 559/750, loss 0.1718, encoder LR 0.000470372
+[2026-07-10 18:19:22,113][    INFO] Epoch 57/100, iter 652/750, loss 0.1709, encoder LR 0.000469159
+[2026-07-10 18:19:25,614][    INFO] Epoch 57/100, iter 745/750, loss 0.1743, encoder LR 0.000467944
+[2026-07-10 18:19:25,968][    INFO] Evaluation class [0 background]: IoU 86.14, Dice 92.56
+[2026-07-10 18:19:25,968][    INFO] Evaluation class [1 fibrin]: IoU 49.06, Dice 65.82
+[2026-07-10 18:19:25,968][    INFO] Evaluation class [2 granulation]: IoU 86.65, Dice 92.85
+[2026-07-10 18:19:25,968][    INFO] Evaluation class [3 callus]: IoU 51.79, Dice 68.24
+[2026-07-10 18:19:25,969][    INFO] Evaluation epoch 56: MeanIoU 68.41, MeanDice 79.87; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:19:26,441][    INFO] Epoch 58/100, iter 1/750, loss 0.1589, encoder LR 0.000467866
+[2026-07-10 18:19:29,879][    INFO] Epoch 58/100, iter 94/750, loss 0.1719, encoder LR 0.000466652
+[2026-07-10 18:19:33,182][    INFO] Epoch 58/100, iter 187/750, loss 0.1713, encoder LR 0.000465437
+[2026-07-10 18:19:36,342][    INFO] Epoch 58/100, iter 280/750, loss 0.1728, encoder LR 0.000464222
+[2026-07-10 18:19:39,487][    INFO] Epoch 58/100, iter 373/750, loss 0.1708, encoder LR 0.000463006
+[2026-07-10 18:19:42,715][    INFO] Epoch 58/100, iter 466/750, loss 0.1723, encoder LR 0.00046179
+[2026-07-10 18:19:46,081][    INFO] Epoch 58/100, iter 559/750, loss 0.1703, encoder LR 0.000460574
+[2026-07-10 18:19:49,308][    INFO] Epoch 58/100, iter 652/750, loss 0.1693, encoder LR 0.000459358
+[2026-07-10 18:19:52,639][    INFO] Epoch 58/100, iter 745/750, loss 0.1700, encoder LR 0.000458141
+[2026-07-10 18:19:52,988][    INFO] Evaluation class [0 background]: IoU 86.21, Dice 92.60
+[2026-07-10 18:19:52,989][    INFO] Evaluation class [1 fibrin]: IoU 48.54, Dice 65.36
+[2026-07-10 18:19:52,989][    INFO] Evaluation class [2 granulation]: IoU 87.05, Dice 93.07
+[2026-07-10 18:19:52,989][    INFO] Evaluation class [3 callus]: IoU 50.58, Dice 67.18
+[2026-07-10 18:19:52,989][    INFO] Evaluation epoch 57: MeanIoU 68.09, MeanDice 79.55; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:19:53,472][    INFO] Epoch 59/100, iter 1/750, loss 0.1147, encoder LR 0.000458062
+[2026-07-10 18:19:56,746][    INFO] Epoch 59/100, iter 94/750, loss 0.1531, encoder LR 0.000456845
+[2026-07-10 18:19:59,927][    INFO] Epoch 59/100, iter 187/750, loss 0.1585, encoder LR 0.000455627
+[2026-07-10 18:20:03,082][    INFO] Epoch 59/100, iter 280/750, loss 0.1611, encoder LR 0.000454409
+[2026-07-10 18:20:06,350][    INFO] Epoch 59/100, iter 373/750, loss 0.1675, encoder LR 0.000453191
+[2026-07-10 18:20:09,523][    INFO] Epoch 59/100, iter 466/750, loss 0.1696, encoder LR 0.000451972
+[2026-07-10 18:20:12,701][    INFO] Epoch 59/100, iter 559/750, loss 0.1674, encoder LR 0.000450753
+[2026-07-10 18:20:15,928][    INFO] Epoch 59/100, iter 652/750, loss 0.1682, encoder LR 0.000449533
+[2026-07-10 18:20:19,087][    INFO] Epoch 59/100, iter 745/750, loss 0.1681, encoder LR 0.000448313
+[2026-07-10 18:20:19,432][    INFO] Evaluation class [0 background]: IoU 86.90, Dice 92.99
+[2026-07-10 18:20:19,432][    INFO] Evaluation class [1 fibrin]: IoU 46.68, Dice 63.65
+[2026-07-10 18:20:19,432][    INFO] Evaluation class [2 granulation]: IoU 85.35, Dice 92.10
+[2026-07-10 18:20:19,433][    INFO] Evaluation class [3 callus]: IoU 52.56, Dice 68.90
+[2026-07-10 18:20:19,433][    INFO] Evaluation epoch 58: MeanIoU 67.87, MeanDice 79.41; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:20:19,918][    INFO] Epoch 60/100, iter 1/750, loss 0.1293, encoder LR 0.000448235
+[2026-07-10 18:20:23,336][    INFO] Epoch 60/100, iter 94/750, loss 0.1610, encoder LR 0.000447014
+[2026-07-10 18:20:26,479][    INFO] Epoch 60/100, iter 187/750, loss 0.1684, encoder LR 0.000445794
+[2026-07-10 18:20:29,610][    INFO] Epoch 60/100, iter 280/750, loss 0.1662, encoder LR 0.000444573
+[2026-07-10 18:20:32,814][    INFO] Epoch 60/100, iter 373/750, loss 0.1685, encoder LR 0.000443351
+[2026-07-10 18:20:36,074][    INFO] Epoch 60/100, iter 466/750, loss 0.1686, encoder LR 0.00044213
+[2026-07-10 18:20:39,219][    INFO] Epoch 60/100, iter 559/750, loss 0.1676, encoder LR 0.000440908
+[2026-07-10 18:20:42,367][    INFO] Epoch 60/100, iter 652/750, loss 0.1673, encoder LR 0.000439685
+[2026-07-10 18:20:45,558][    INFO] Epoch 60/100, iter 745/750, loss 0.1679, encoder LR 0.000438462
+[2026-07-10 18:20:45,909][    INFO] Evaluation class [0 background]: IoU 86.60, Dice 92.82
+[2026-07-10 18:20:45,910][    INFO] Evaluation class [1 fibrin]: IoU 48.94, Dice 65.72
+[2026-07-10 18:20:45,910][    INFO] Evaluation class [2 granulation]: IoU 86.16, Dice 92.57
+[2026-07-10 18:20:45,910][    INFO] Evaluation class [3 callus]: IoU 53.15, Dice 69.41
+[2026-07-10 18:20:45,910][    INFO] Evaluation epoch 59: MeanIoU 68.71, MeanDice 80.13; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:20:46,395][    INFO] Epoch 61/100, iter 1/750, loss 0.1442, encoder LR 0.000438383
+[2026-07-10 18:20:49,577][    INFO] Epoch 61/100, iter 94/750, loss 0.1579, encoder LR 0.00043716
+[2026-07-10 18:20:52,712][    INFO] Epoch 61/100, iter 187/750, loss 0.1555, encoder LR 0.000435936
+[2026-07-10 18:20:56,104][    INFO] Epoch 61/100, iter 280/750, loss 0.1602, encoder LR 0.000434712
+[2026-07-10 18:20:59,483][    INFO] Epoch 61/100, iter 373/750, loss 0.1625, encoder LR 0.000433488
+[2026-07-10 18:21:02,683][    INFO] Epoch 61/100, iter 466/750, loss 0.1631, encoder LR 0.000432263
+[2026-07-10 18:21:05,842][    INFO] Epoch 61/100, iter 559/750, loss 0.1647, encoder LR 0.000431038
+[2026-07-10 18:21:08,996][    INFO] Epoch 61/100, iter 652/750, loss 0.1664, encoder LR 0.000429812
+[2026-07-10 18:21:12,127][    INFO] Epoch 61/100, iter 745/750, loss 0.1651, encoder LR 0.000428586
+[2026-07-10 18:21:12,456][    INFO] Evaluation class [0 background]: IoU 85.78, Dice 92.34
+[2026-07-10 18:21:12,457][    INFO] Evaluation class [1 fibrin]: IoU 47.20, Dice 64.13
+[2026-07-10 18:21:12,457][    INFO] Evaluation class [2 granulation]: IoU 85.14, Dice 91.97
+[2026-07-10 18:21:12,457][    INFO] Evaluation class [3 callus]: IoU 51.18, Dice 67.70
+[2026-07-10 18:21:12,457][    INFO] Evaluation epoch 60: MeanIoU 67.32, MeanDice 79.04; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:21:12,935][    INFO] Epoch 62/100, iter 1/750, loss 0.1235, encoder LR 0.000428507
+[2026-07-10 18:21:16,438][    INFO] Epoch 62/100, iter 94/750, loss 0.1635, encoder LR 0.000427281
+[2026-07-10 18:21:19,601][    INFO] Epoch 62/100, iter 187/750, loss 0.1722, encoder LR 0.000426054
+[2026-07-10 18:21:22,749][    INFO] Epoch 62/100, iter 280/750, loss 0.1718, encoder LR 0.000424827
+[2026-07-10 18:21:25,936][    INFO] Epoch 62/100, iter 373/750, loss 0.1720, encoder LR 0.000423599
+[2026-07-10 18:21:29,319][    INFO] Epoch 62/100, iter 466/750, loss 0.1694, encoder LR 0.000422371
+[2026-07-10 18:21:32,514][    INFO] Epoch 62/100, iter 559/750, loss 0.1695, encoder LR 0.000421143
+[2026-07-10 18:21:35,685][    INFO] Epoch 62/100, iter 652/750, loss 0.1688, encoder LR 0.000419914
+[2026-07-10 18:21:38,855][    INFO] Epoch 62/100, iter 745/750, loss 0.1686, encoder LR 0.000418685
+[2026-07-10 18:21:39,181][    INFO] Evaluation class [0 background]: IoU 86.84, Dice 92.96
+[2026-07-10 18:21:39,181][    INFO] Evaluation class [1 fibrin]: IoU 45.37, Dice 62.42
+[2026-07-10 18:21:39,182][    INFO] Evaluation class [2 granulation]: IoU 86.76, Dice 92.91
+[2026-07-10 18:21:39,182][    INFO] Evaluation class [3 callus]: IoU 53.30, Dice 69.54
+[2026-07-10 18:21:39,182][    INFO] Evaluation epoch 61: MeanIoU 68.07, MeanDice 79.46; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:21:39,659][    INFO] Epoch 63/100, iter 1/750, loss 0.1647, encoder LR 0.000418606
+[2026-07-10 18:21:43,046][    INFO] Epoch 63/100, iter 94/750, loss 0.1588, encoder LR 0.000417376
+[2026-07-10 18:21:46,488][    INFO] Epoch 63/100, iter 187/750, loss 0.1580, encoder LR 0.000416146
+[2026-07-10 18:21:49,659][    INFO] Epoch 63/100, iter 280/750, loss 0.1606, encoder LR 0.000414916
+[2026-07-10 18:21:52,891][    INFO] Epoch 63/100, iter 373/750, loss 0.1630, encoder LR 0.000413685
+[2026-07-10 18:21:56,058][    INFO] Epoch 63/100, iter 466/750, loss 0.1666, encoder LR 0.000412454
+[2026-07-10 18:21:59,248][    INFO] Epoch 63/100, iter 559/750, loss 0.1663, encoder LR 0.000411222
+[2026-07-10 18:22:02,543][    INFO] Epoch 63/100, iter 652/750, loss 0.1655, encoder LR 0.00040999
+[2026-07-10 18:22:05,908][    INFO] Epoch 63/100, iter 745/750, loss 0.1648, encoder LR 0.000408758
+[2026-07-10 18:22:06,236][    INFO] Evaluation class [0 background]: IoU 86.68, Dice 92.86
+[2026-07-10 18:22:06,237][    INFO] Evaluation class [1 fibrin]: IoU 47.81, Dice 64.69
+[2026-07-10 18:22:06,237][    INFO] Evaluation class [2 granulation]: IoU 87.06, Dice 93.08
+[2026-07-10 18:22:06,237][    INFO] Evaluation class [3 callus]: IoU 52.13, Dice 68.53
+[2026-07-10 18:22:06,237][    INFO] Evaluation epoch 62: MeanIoU 68.42, MeanDice 79.79; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:22:06,730][    INFO] Epoch 64/100, iter 1/750, loss 0.1395, encoder LR 0.000408678
+[2026-07-10 18:22:10,131][    INFO] Epoch 64/100, iter 94/750, loss 0.1647, encoder LR 0.000407445
+[2026-07-10 18:22:13,629][    INFO] Epoch 64/100, iter 187/750, loss 0.1658, encoder LR 0.000406212
+[2026-07-10 18:22:16,860][    INFO] Epoch 64/100, iter 280/750, loss 0.1667, encoder LR 0.000404978
+[2026-07-10 18:22:20,010][    INFO] Epoch 64/100, iter 373/750, loss 0.1632, encoder LR 0.000403744
+[2026-07-10 18:22:23,219][    INFO] Epoch 64/100, iter 466/750, loss 0.1624, encoder LR 0.00040251
+[2026-07-10 18:22:26,422][    INFO] Epoch 64/100, iter 559/750, loss 0.1624, encoder LR 0.000401275
+[2026-07-10 18:22:29,575][    INFO] Epoch 64/100, iter 652/750, loss 0.1621, encoder LR 0.000400039
+[2026-07-10 18:22:32,761][    INFO] Epoch 64/100, iter 745/750, loss 0.1626, encoder LR 0.000398804
+[2026-07-10 18:22:33,085][    INFO] Evaluation class [0 background]: IoU 87.60, Dice 93.39
+[2026-07-10 18:22:33,085][    INFO] Evaluation class [1 fibrin]: IoU 47.17, Dice 64.10
+[2026-07-10 18:22:33,085][    INFO] Evaluation class [2 granulation]: IoU 86.92, Dice 93.01
+[2026-07-10 18:22:33,086][    INFO] Evaluation class [3 callus]: IoU 54.10, Dice 70.21
+[2026-07-10 18:22:33,086][    INFO] Evaluation epoch 63: MeanIoU 68.95, MeanDice 80.18; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:22:33,570][    INFO] Epoch 65/100, iter 1/750, loss 0.1678, encoder LR 0.000398724
+[2026-07-10 18:22:36,755][    INFO] Epoch 65/100, iter 94/750, loss 0.1633, encoder LR 0.000397488
+[2026-07-10 18:22:40,012][    INFO] Epoch 65/100, iter 187/750, loss 0.1660, encoder LR 0.000396251
+[2026-07-10 18:22:43,149][    INFO] Epoch 65/100, iter 280/750, loss 0.1634, encoder LR 0.000395014
+[2026-07-10 18:22:46,518][    INFO] Epoch 65/100, iter 373/750, loss 0.1643, encoder LR 0.000393776
+[2026-07-10 18:22:50,028][    INFO] Epoch 65/100, iter 466/750, loss 0.1634, encoder LR 0.000392538
+[2026-07-10 18:22:53,539][    INFO] Epoch 65/100, iter 559/750, loss 0.1619, encoder LR 0.0003913
+[2026-07-10 18:22:56,863][    INFO] Epoch 65/100, iter 652/750, loss 0.1617, encoder LR 0.000390061
+[2026-07-10 18:23:00,138][    INFO] Epoch 65/100, iter 745/750, loss 0.1617, encoder LR 0.000388822
+[2026-07-10 18:23:00,482][    INFO] Evaluation class [0 background]: IoU 86.30, Dice 92.65
+[2026-07-10 18:23:00,483][    INFO] Evaluation class [1 fibrin]: IoU 51.97, Dice 68.39
+[2026-07-10 18:23:00,483][    INFO] Evaluation class [2 granulation]: IoU 85.87, Dice 92.40
+[2026-07-10 18:23:00,483][    INFO] Evaluation class [3 callus]: IoU 53.30, Dice 69.54
+[2026-07-10 18:23:00,483][    INFO] Evaluation epoch 64: MeanIoU 69.36, MeanDice 80.75; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:23:00,969][    INFO] Epoch 66/100, iter 1/750, loss 0.1015, encoder LR 0.000388742
+[2026-07-10 18:23:04,126][    INFO] Epoch 66/100, iter 94/750, loss 0.1709, encoder LR 0.000387502
+[2026-07-10 18:23:07,496][    INFO] Epoch 66/100, iter 187/750, loss 0.1707, encoder LR 0.000386262
+[2026-07-10 18:23:10,800][    INFO] Epoch 66/100, iter 280/750, loss 0.1678, encoder LR 0.000385021
+[2026-07-10 18:23:14,104][    INFO] Epoch 66/100, iter 373/750, loss 0.1678, encoder LR 0.00038378
+[2026-07-10 18:23:17,301][    INFO] Epoch 66/100, iter 466/750, loss 0.1658, encoder LR 0.000382539
+[2026-07-10 18:23:20,461][    INFO] Epoch 66/100, iter 559/750, loss 0.1658, encoder LR 0.000381297
+[2026-07-10 18:23:23,673][    INFO] Epoch 66/100, iter 652/750, loss 0.1646, encoder LR 0.000380054
+[2026-07-10 18:23:26,961][    INFO] Epoch 66/100, iter 745/750, loss 0.1644, encoder LR 0.000378811
+[2026-07-10 18:23:27,313][    INFO] Evaluation class [0 background]: IoU 86.67, Dice 92.86
+[2026-07-10 18:23:27,314][    INFO] Evaluation class [1 fibrin]: IoU 47.75, Dice 64.64
+[2026-07-10 18:23:27,314][    INFO] Evaluation class [2 granulation]: IoU 86.28, Dice 92.64
+[2026-07-10 18:23:27,314][    INFO] Evaluation class [3 callus]: IoU 53.69, Dice 69.87
+[2026-07-10 18:23:27,314][    INFO] Evaluation epoch 65: MeanIoU 68.60, MeanDice 80.00; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:23:27,802][    INFO] Epoch 67/100, iter 1/750, loss 0.1200, encoder LR 0.000378731
+[2026-07-10 18:23:31,207][    INFO] Epoch 67/100, iter 94/750, loss 0.1640, encoder LR 0.000377488
+[2026-07-10 18:23:34,375][    INFO] Epoch 67/100, iter 187/750, loss 0.1630, encoder LR 0.000376244
+[2026-07-10 18:23:37,587][    INFO] Epoch 67/100, iter 280/750, loss 0.1684, encoder LR 0.000375
+[2026-07-10 18:23:40,820][    INFO] Epoch 67/100, iter 373/750, loss 0.1694, encoder LR 0.000373755
+[2026-07-10 18:23:44,008][    INFO] Epoch 67/100, iter 466/750, loss 0.1691, encoder LR 0.00037251
+[2026-07-10 18:23:47,152][    INFO] Epoch 67/100, iter 559/750, loss 0.1666, encoder LR 0.000371264
+[2026-07-10 18:23:50,453][    INFO] Epoch 67/100, iter 652/750, loss 0.1658, encoder LR 0.000370018
+[2026-07-10 18:23:53,892][    INFO] Epoch 67/100, iter 745/750, loss 0.1645, encoder LR 0.000368771
+[2026-07-10 18:23:54,257][    INFO] Evaluation class [0 background]: IoU 86.61, Dice 92.83
+[2026-07-10 18:23:54,257][    INFO] Evaluation class [1 fibrin]: IoU 49.22, Dice 65.97
+[2026-07-10 18:23:54,257][    INFO] Evaluation class [2 granulation]: IoU 86.58, Dice 92.81
+[2026-07-10 18:23:54,257][    INFO] Evaluation class [3 callus]: IoU 52.20, Dice 68.59
+[2026-07-10 18:23:54,257][    INFO] Evaluation epoch 66: MeanIoU 68.65, MeanDice 80.05; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:23:54,828][    INFO] Epoch 68/100, iter 1/750, loss 0.0817, encoder LR 0.000368691
+[2026-07-10 18:23:58,185][    INFO] Epoch 68/100, iter 94/750, loss 0.1661, encoder LR 0.000367444
+[2026-07-10 18:24:01,317][    INFO] Epoch 68/100, iter 187/750, loss 0.1591, encoder LR 0.000366196
+[2026-07-10 18:24:04,737][    INFO] Epoch 68/100, iter 280/750, loss 0.1599, encoder LR 0.000364948
+[2026-07-10 18:24:08,026][    INFO] Epoch 68/100, iter 373/750, loss 0.1624, encoder LR 0.0003637
+[2026-07-10 18:24:11,195][    INFO] Epoch 68/100, iter 466/750, loss 0.1622, encoder LR 0.000362451
+[2026-07-10 18:24:14,373][    INFO] Epoch 68/100, iter 559/750, loss 0.1615, encoder LR 0.000361201
+[2026-07-10 18:24:17,587][    INFO] Epoch 68/100, iter 652/750, loss 0.1602, encoder LR 0.000359951
+[2026-07-10 18:24:20,928][    INFO] Epoch 68/100, iter 745/750, loss 0.1595, encoder LR 0.000358701
+[2026-07-10 18:24:21,255][    INFO] Evaluation class [0 background]: IoU 87.03, Dice 93.06
+[2026-07-10 18:24:21,255][    INFO] Evaluation class [1 fibrin]: IoU 45.05, Dice 62.12
+[2026-07-10 18:24:21,255][    INFO] Evaluation class [2 granulation]: IoU 87.28, Dice 93.21
+[2026-07-10 18:24:21,255][    INFO] Evaluation class [3 callus]: IoU 54.49, Dice 70.54
+[2026-07-10 18:24:21,256][    INFO] Evaluation epoch 67: MeanIoU 68.46, MeanDice 79.73; BEST mIoU 69.36, Dice 80.69 at epoch 53
+[2026-07-10 18:24:21,749][    INFO] Epoch 69/100, iter 1/750, loss 0.0950, encoder LR 0.00035862
+[2026-07-10 18:24:25,034][    INFO] Epoch 69/100, iter 94/750, loss 0.1538, encoder LR 0.000357369
+[2026-07-10 18:24:28,196][    INFO] Epoch 69/100, iter 187/750, loss 0.1587, encoder LR 0.000356118
+[2026-07-10 18:24:31,345][    INFO] Epoch 69/100, iter 280/750, loss 0.1584, encoder LR 0.000354866
+[2026-07-10 18:24:34,688][    INFO] Epoch 69/100, iter 373/750, loss 0.1583, encoder LR 0.000353614
+[2026-07-10 18:24:37,928][    INFO] Epoch 69/100, iter 466/750, loss 0.1572, encoder LR 0.000352361
+[2026-07-10 18:24:41,117][    INFO] Epoch 69/100, iter 559/750, loss 0.1554, encoder LR 0.000351107
+[2026-07-10 18:24:44,331][    INFO] Epoch 69/100, iter 652/750, loss 0.1566, encoder LR 0.000349854
+[2026-07-10 18:24:47,587][    INFO] Epoch 69/100, iter 745/750, loss 0.1592, encoder LR 0.000348599
+[2026-07-10 18:24:47,961][    INFO] Evaluation class [0 background]: IoU 87.44, Dice 93.30
+[2026-07-10 18:24:47,962][    INFO] Evaluation class [1 fibrin]: IoU 49.21, Dice 65.96
+[2026-07-10 18:24:47,962][    INFO] Evaluation class [2 granulation]: IoU 86.61, Dice 92.83
+[2026-07-10 18:24:47,962][    INFO] Evaluation class [3 callus]: IoU 55.84, Dice 71.66
+[2026-07-10 18:24:47,963][    INFO] Evaluation epoch 68: MeanIoU 69.77, MeanDice 80.94; BEST mIoU 69.77, Dice 80.94 at epoch 68
+[2026-07-10 18:24:48,950][    INFO] Epoch 70/100, iter 1/750, loss 0.1189, encoder LR 0.000348518
+[2026-07-10 18:24:52,370][    INFO] Epoch 70/100, iter 94/750, loss 0.1572, encoder LR 0.000347263
+[2026-07-10 18:24:55,683][    INFO] Epoch 70/100, iter 187/750, loss 0.1514, encoder LR 0.000346008
+[2026-07-10 18:24:59,079][    INFO] Epoch 70/100, iter 280/750, loss 0.1534, encoder LR 0.000344752
+[2026-07-10 18:25:02,467][    INFO] Epoch 70/100, iter 373/750, loss 0.1525, encoder LR 0.000343496
+[2026-07-10 18:25:05,650][    INFO] Epoch 70/100, iter 466/750, loss 0.1539, encoder LR 0.000342239
+[2026-07-10 18:25:08,939][    INFO] Epoch 70/100, iter 559/750, loss 0.1530, encoder LR 0.000340981
+[2026-07-10 18:25:12,294][    INFO] Epoch 70/100, iter 652/750, loss 0.1547, encoder LR 0.000339723
+[2026-07-10 18:25:15,528][    INFO] Epoch 70/100, iter 745/750, loss 0.1557, encoder LR 0.000338465
+[2026-07-10 18:25:15,855][    INFO] Evaluation class [0 background]: IoU 87.10, Dice 93.10
+[2026-07-10 18:25:15,855][    INFO] Evaluation class [1 fibrin]: IoU 45.69, Dice 62.72
+[2026-07-10 18:25:15,855][    INFO] Evaluation class [2 granulation]: IoU 85.68, Dice 92.29
+[2026-07-10 18:25:15,856][    INFO] Evaluation class [3 callus]: IoU 54.80, Dice 70.80
+[2026-07-10 18:25:15,856][    INFO] Evaluation epoch 69: MeanIoU 68.32, MeanDice 79.73; BEST mIoU 69.77, Dice 80.94 at epoch 68
+[2026-07-10 18:25:16,359][    INFO] Epoch 71/100, iter 1/750, loss 0.1768, encoder LR 0.000338383
+[2026-07-10 18:25:19,579][    INFO] Epoch 71/100, iter 94/750, loss 0.1559, encoder LR 0.000337124
+[2026-07-10 18:25:22,715][    INFO] Epoch 71/100, iter 187/750, loss 0.1549, encoder LR 0.000335865
+[2026-07-10 18:25:25,871][    INFO] Epoch 71/100, iter 280/750, loss 0.1590, encoder LR 0.000334605
+[2026-07-10 18:25:29,211][    INFO] Epoch 71/100, iter 373/750, loss 0.1599, encoder LR 0.000333344
+[2026-07-10 18:25:32,469][    INFO] Epoch 71/100, iter 466/750, loss 0.1586, encoder LR 0.000332083
+[2026-07-10 18:25:35,612][    INFO] Epoch 71/100, iter 559/750, loss 0.1575, encoder LR 0.000330821
+[2026-07-10 18:25:38,950][    INFO] Epoch 71/100, iter 652/750, loss 0.1560, encoder LR 0.000329559
+[2026-07-10 18:25:42,362][    INFO] Epoch 71/100, iter 745/750, loss 0.1556, encoder LR 0.000328296
+[2026-07-10 18:25:42,705][    INFO] Evaluation class [0 background]: IoU 87.97, Dice 93.60
+[2026-07-10 18:25:42,706][    INFO] Evaluation class [1 fibrin]: IoU 49.97, Dice 66.64
+[2026-07-10 18:25:42,706][    INFO] Evaluation class [2 granulation]: IoU 86.71, Dice 92.88
+[2026-07-10 18:25:42,706][    INFO] Evaluation class [3 callus]: IoU 55.45, Dice 71.34
+[2026-07-10 18:25:42,706][    INFO] Evaluation epoch 70: MeanIoU 70.02, MeanDice 81.12; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:25:43,556][    INFO] Epoch 72/100, iter 1/750, loss 0.1477, encoder LR 0.000328215
+[2026-07-10 18:25:46,843][    INFO] Epoch 72/100, iter 94/750, loss 0.1663, encoder LR 0.000326951
+[2026-07-10 18:25:50,028][    INFO] Epoch 72/100, iter 187/750, loss 0.1612, encoder LR 0.000325688
+[2026-07-10 18:25:53,183][    INFO] Epoch 72/100, iter 280/750, loss 0.1591, encoder LR 0.000324423
+[2026-07-10 18:25:56,372][    INFO] Epoch 72/100, iter 373/750, loss 0.1572, encoder LR 0.000323158
+[2026-07-10 18:25:59,503][    INFO] Epoch 72/100, iter 466/750, loss 0.1571, encoder LR 0.000321893
+[2026-07-10 18:26:02,732][    INFO] Epoch 72/100, iter 559/750, loss 0.1587, encoder LR 0.000320627
+[2026-07-10 18:26:05,918][    INFO] Epoch 72/100, iter 652/750, loss 0.1579, encoder LR 0.00031936
+[2026-07-10 18:26:09,106][    INFO] Epoch 72/100, iter 745/750, loss 0.1577, encoder LR 0.000318093
+[2026-07-10 18:26:09,466][    INFO] Evaluation class [0 background]: IoU 85.79, Dice 92.35
+[2026-07-10 18:26:09,466][    INFO] Evaluation class [1 fibrin]: IoU 46.71, Dice 63.68
+[2026-07-10 18:26:09,466][    INFO] Evaluation class [2 granulation]: IoU 85.39, Dice 92.12
+[2026-07-10 18:26:09,467][    INFO] Evaluation class [3 callus]: IoU 52.16, Dice 68.56
+[2026-07-10 18:26:09,467][    INFO] Evaluation epoch 71: MeanIoU 67.51, MeanDice 79.18; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:26:09,945][    INFO] Epoch 73/100, iter 1/750, loss 0.0804, encoder LR 0.000318011
+[2026-07-10 18:26:13,520][    INFO] Epoch 73/100, iter 94/750, loss 0.1522, encoder LR 0.000316743
+[2026-07-10 18:26:17,011][    INFO] Epoch 73/100, iter 187/750, loss 0.1480, encoder LR 0.000315475
+[2026-07-10 18:26:20,322][    INFO] Epoch 73/100, iter 280/750, loss 0.1457, encoder LR 0.000314206
+[2026-07-10 18:26:23,803][    INFO] Epoch 73/100, iter 373/750, loss 0.1485, encoder LR 0.000312937
+[2026-07-10 18:26:27,048][    INFO] Epoch 73/100, iter 466/750, loss 0.1502, encoder LR 0.000311666
+[2026-07-10 18:26:30,284][    INFO] Epoch 73/100, iter 559/750, loss 0.1540, encoder LR 0.000310396
+[2026-07-10 18:26:33,756][    INFO] Epoch 73/100, iter 652/750, loss 0.1541, encoder LR 0.000309125
+[2026-07-10 18:26:37,092][    INFO] Epoch 73/100, iter 745/750, loss 0.1543, encoder LR 0.000307853
+[2026-07-10 18:26:37,426][    INFO] Evaluation class [0 background]: IoU 86.75, Dice 92.90
+[2026-07-10 18:26:37,427][    INFO] Evaluation class [1 fibrin]: IoU 49.50, Dice 66.22
+[2026-07-10 18:26:37,427][    INFO] Evaluation class [2 granulation]: IoU 85.91, Dice 92.42
+[2026-07-10 18:26:37,427][    INFO] Evaluation class [3 callus]: IoU 53.46, Dice 69.67
+[2026-07-10 18:26:37,427][    INFO] Evaluation epoch 72: MeanIoU 68.90, MeanDice 80.30; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:26:37,906][    INFO] Epoch 74/100, iter 1/750, loss 0.0929, encoder LR 0.000307771
+[2026-07-10 18:26:41,177][    INFO] Epoch 74/100, iter 94/750, loss 0.1620, encoder LR 0.000306498
+[2026-07-10 18:26:44,538][    INFO] Epoch 74/100, iter 187/750, loss 0.1572, encoder LR 0.000305225
+[2026-07-10 18:26:47,995][    INFO] Epoch 74/100, iter 280/750, loss 0.1557, encoder LR 0.000303952
+[2026-07-10 18:26:51,451][    INFO] Epoch 74/100, iter 373/750, loss 0.1549, encoder LR 0.000302678
+[2026-07-10 18:26:54,600][    INFO] Epoch 74/100, iter 466/750, loss 0.1547, encoder LR 0.000301403
+[2026-07-10 18:26:57,738][    INFO] Epoch 74/100, iter 559/750, loss 0.1518, encoder LR 0.000300127
+[2026-07-10 18:27:00,890][    INFO] Epoch 74/100, iter 652/750, loss 0.1530, encoder LR 0.000298851
+[2026-07-10 18:27:04,164][    INFO] Epoch 74/100, iter 745/750, loss 0.1529, encoder LR 0.000297575
+[2026-07-10 18:27:04,490][    INFO] Evaluation class [0 background]: IoU 86.37, Dice 92.68
+[2026-07-10 18:27:04,490][    INFO] Evaluation class [1 fibrin]: IoU 49.26, Dice 66.00
+[2026-07-10 18:27:04,491][    INFO] Evaluation class [2 granulation]: IoU 85.56, Dice 92.22
+[2026-07-10 18:27:04,491][    INFO] Evaluation class [3 callus]: IoU 51.89, Dice 68.32
+[2026-07-10 18:27:04,491][    INFO] Evaluation epoch 73: MeanIoU 68.27, MeanDice 79.81; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:27:04,972][    INFO] Epoch 75/100, iter 1/750, loss 0.1360, encoder LR 0.000297492
+[2026-07-10 18:27:08,150][    INFO] Epoch 75/100, iter 94/750, loss 0.1594, encoder LR 0.000296215
+[2026-07-10 18:27:11,515][    INFO] Epoch 75/100, iter 187/750, loss 0.1573, encoder LR 0.000294937
+[2026-07-10 18:27:14,875][    INFO] Epoch 75/100, iter 280/750, loss 0.1550, encoder LR 0.000293659
+[2026-07-10 18:27:18,031][    INFO] Epoch 75/100, iter 373/750, loss 0.1519, encoder LR 0.00029238
+[2026-07-10 18:27:21,216][    INFO] Epoch 75/100, iter 466/750, loss 0.1553, encoder LR 0.0002911
+[2026-07-10 18:27:24,424][    INFO] Epoch 75/100, iter 559/750, loss 0.1552, encoder LR 0.00028982
+[2026-07-10 18:27:27,552][    INFO] Epoch 75/100, iter 652/750, loss 0.1561, encoder LR 0.000288539
+[2026-07-10 18:27:30,834][    INFO] Epoch 75/100, iter 745/750, loss 0.1555, encoder LR 0.000287257
+[2026-07-10 18:27:31,170][    INFO] Evaluation class [0 background]: IoU 86.51, Dice 92.77
+[2026-07-10 18:27:31,171][    INFO] Evaluation class [1 fibrin]: IoU 48.20, Dice 65.05
+[2026-07-10 18:27:31,171][    INFO] Evaluation class [2 granulation]: IoU 85.78, Dice 92.34
+[2026-07-10 18:27:31,171][    INFO] Evaluation class [3 callus]: IoU 52.70, Dice 69.02
+[2026-07-10 18:27:31,171][    INFO] Evaluation epoch 74: MeanIoU 68.30, MeanDice 79.80; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:27:31,660][    INFO] Epoch 76/100, iter 1/750, loss 0.3220, encoder LR 0.000287175
+[2026-07-10 18:27:34,825][    INFO] Epoch 76/100, iter 94/750, loss 0.1590, encoder LR 0.000285892
+[2026-07-10 18:27:38,118][    INFO] Epoch 76/100, iter 187/750, loss 0.1570, encoder LR 0.000284609
+[2026-07-10 18:27:41,456][    INFO] Epoch 76/100, iter 280/750, loss 0.1585, encoder LR 0.000283326
+[2026-07-10 18:27:44,774][    INFO] Epoch 76/100, iter 373/750, loss 0.1572, encoder LR 0.000282042
+[2026-07-10 18:27:47,981][    INFO] Epoch 76/100, iter 466/750, loss 0.1571, encoder LR 0.000280757
+[2026-07-10 18:27:51,338][    INFO] Epoch 76/100, iter 559/750, loss 0.1557, encoder LR 0.000279471
+[2026-07-10 18:27:54,523][    INFO] Epoch 76/100, iter 652/750, loss 0.1547, encoder LR 0.000278185
+[2026-07-10 18:27:57,640][    INFO] Epoch 76/100, iter 745/750, loss 0.1542, encoder LR 0.000276898
+[2026-07-10 18:27:57,980][    INFO] Evaluation class [0 background]: IoU 87.39, Dice 93.27
+[2026-07-10 18:27:57,981][    INFO] Evaluation class [1 fibrin]: IoU 49.09, Dice 65.85
+[2026-07-10 18:27:57,981][    INFO] Evaluation class [2 granulation]: IoU 86.51, Dice 92.77
+[2026-07-10 18:27:57,981][    INFO] Evaluation class [3 callus]: IoU 54.06, Dice 70.18
+[2026-07-10 18:27:57,981][    INFO] Evaluation epoch 75: MeanIoU 69.26, MeanDice 80.52; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:27:58,454][    INFO] Epoch 77/100, iter 1/750, loss 0.2165, encoder LR 0.000276815
+[2026-07-10 18:28:01,838][    INFO] Epoch 77/100, iter 94/750, loss 0.1550, encoder LR 0.000275528
+[2026-07-10 18:28:05,216][    INFO] Epoch 77/100, iter 187/750, loss 0.1504, encoder LR 0.00027424
+[2026-07-10 18:28:08,371][    INFO] Epoch 77/100, iter 280/750, loss 0.1512, encoder LR 0.000272951
+[2026-07-10 18:28:11,591][    INFO] Epoch 77/100, iter 373/750, loss 0.1512, encoder LR 0.000271661
+[2026-07-10 18:28:14,891][    INFO] Epoch 77/100, iter 466/750, loss 0.1489, encoder LR 0.000270371
+[2026-07-10 18:28:18,049][    INFO] Epoch 77/100, iter 559/750, loss 0.1484, encoder LR 0.00026908
+[2026-07-10 18:28:21,271][    INFO] Epoch 77/100, iter 652/750, loss 0.1496, encoder LR 0.000267788
+[2026-07-10 18:28:24,381][    INFO] Epoch 77/100, iter 745/750, loss 0.1511, encoder LR 0.000266496
+[2026-07-10 18:28:24,709][    INFO] Evaluation class [0 background]: IoU 87.01, Dice 93.05
+[2026-07-10 18:28:24,709][    INFO] Evaluation class [1 fibrin]: IoU 50.94, Dice 67.50
+[2026-07-10 18:28:24,709][    INFO] Evaluation class [2 granulation]: IoU 85.61, Dice 92.25
+[2026-07-10 18:28:24,710][    INFO] Evaluation class [3 callus]: IoU 54.77, Dice 70.78
+[2026-07-10 18:28:24,710][    INFO] Evaluation epoch 76: MeanIoU 69.58, MeanDice 80.89; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:28:25,191][    INFO] Epoch 78/100, iter 1/750, loss 0.2259, encoder LR 0.000266413
+[2026-07-10 18:28:28,320][    INFO] Epoch 78/100, iter 94/750, loss 0.1595, encoder LR 0.00026512
+[2026-07-10 18:28:31,593][    INFO] Epoch 78/100, iter 187/750, loss 0.1575, encoder LR 0.000263826
+[2026-07-10 18:28:34,807][    INFO] Epoch 78/100, iter 280/750, loss 0.1543, encoder LR 0.000262532
+[2026-07-10 18:28:37,979][    INFO] Epoch 78/100, iter 373/750, loss 0.1547, encoder LR 0.000261236
+[2026-07-10 18:28:41,105][    INFO] Epoch 78/100, iter 466/750, loss 0.1524, encoder LR 0.000259941
+[2026-07-10 18:28:44,266][    INFO] Epoch 78/100, iter 559/750, loss 0.1537, encoder LR 0.000258644
+[2026-07-10 18:28:47,489][    INFO] Epoch 78/100, iter 652/750, loss 0.1543, encoder LR 0.000257347
+[2026-07-10 18:28:50,640][    INFO] Epoch 78/100, iter 745/750, loss 0.1533, encoder LR 0.000256049
+[2026-07-10 18:28:50,965][    INFO] Evaluation class [0 background]: IoU 87.25, Dice 93.19
+[2026-07-10 18:28:50,965][    INFO] Evaluation class [1 fibrin]: IoU 47.84, Dice 64.72
+[2026-07-10 18:28:50,965][    INFO] Evaluation class [2 granulation]: IoU 85.89, Dice 92.41
+[2026-07-10 18:28:50,965][    INFO] Evaluation class [3 callus]: IoU 54.28, Dice 70.37
+[2026-07-10 18:28:50,965][    INFO] Evaluation epoch 77: MeanIoU 68.82, MeanDice 80.17; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:28:51,441][    INFO] Epoch 79/100, iter 1/750, loss 0.1277, encoder LR 0.000255965
+[2026-07-10 18:28:54,614][    INFO] Epoch 79/100, iter 94/750, loss 0.1524, encoder LR 0.000254666
+[2026-07-10 18:28:57,892][    INFO] Epoch 79/100, iter 187/750, loss 0.1528, encoder LR 0.000253367
+[2026-07-10 18:29:01,279][    INFO] Epoch 79/100, iter 280/750, loss 0.1522, encoder LR 0.000252066
+[2026-07-10 18:29:04,616][    INFO] Epoch 79/100, iter 373/750, loss 0.1524, encoder LR 0.000250765
+[2026-07-10 18:29:07,758][    INFO] Epoch 79/100, iter 466/750, loss 0.1526, encoder LR 0.000249463
+[2026-07-10 18:29:10,986][    INFO] Epoch 79/100, iter 559/750, loss 0.1513, encoder LR 0.000248161
+[2026-07-10 18:29:14,284][    INFO] Epoch 79/100, iter 652/750, loss 0.1513, encoder LR 0.000246858
+[2026-07-10 18:29:17,637][    INFO] Epoch 79/100, iter 745/750, loss 0.1498, encoder LR 0.000245554
+[2026-07-10 18:29:17,961][    INFO] Evaluation class [0 background]: IoU 86.67, Dice 92.86
+[2026-07-10 18:29:17,961][    INFO] Evaluation class [1 fibrin]: IoU 50.95, Dice 67.50
+[2026-07-10 18:29:17,961][    INFO] Evaluation class [2 granulation]: IoU 86.29, Dice 92.64
+[2026-07-10 18:29:17,961][    INFO] Evaluation class [3 callus]: IoU 53.36, Dice 69.59
+[2026-07-10 18:29:17,961][    INFO] Evaluation epoch 78: MeanIoU 69.32, MeanDice 80.65; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:29:18,441][    INFO] Epoch 80/100, iter 1/750, loss 0.1593, encoder LR 0.000245469
+[2026-07-10 18:29:21,593][    INFO] Epoch 80/100, iter 94/750, loss 0.1492, encoder LR 0.000244165
+[2026-07-10 18:29:24,788][    INFO] Epoch 80/100, iter 187/750, loss 0.1531, encoder LR 0.000242859
+[2026-07-10 18:29:28,107][    INFO] Epoch 80/100, iter 280/750, loss 0.1528, encoder LR 0.000241552
+[2026-07-10 18:29:31,492][    INFO] Epoch 80/100, iter 373/750, loss 0.1514, encoder LR 0.000240245
+[2026-07-10 18:29:34,936][    INFO] Epoch 80/100, iter 466/750, loss 0.1511, encoder LR 0.000238937
+[2026-07-10 18:29:38,201][    INFO] Epoch 80/100, iter 559/750, loss 0.1502, encoder LR 0.000237628
+[2026-07-10 18:29:41,409][    INFO] Epoch 80/100, iter 652/750, loss 0.1526, encoder LR 0.000236319
+[2026-07-10 18:29:44,754][    INFO] Epoch 80/100, iter 745/750, loss 0.1519, encoder LR 0.000235008
+[2026-07-10 18:29:45,108][    INFO] Evaluation class [0 background]: IoU 86.16, Dice 92.57
+[2026-07-10 18:29:45,108][    INFO] Evaluation class [1 fibrin]: IoU 49.95, Dice 66.62
+[2026-07-10 18:29:45,108][    INFO] Evaluation class [2 granulation]: IoU 83.68, Dice 91.12
+[2026-07-10 18:29:45,108][    INFO] Evaluation class [3 callus]: IoU 53.21, Dice 69.46
+[2026-07-10 18:29:45,109][    INFO] Evaluation epoch 79: MeanIoU 68.25, MeanDice 79.94; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:29:45,600][    INFO] Epoch 81/100, iter 1/750, loss 0.1830, encoder LR 0.000234924
+[2026-07-10 18:29:48,904][    INFO] Epoch 81/100, iter 94/750, loss 0.1620, encoder LR 0.000233613
+[2026-07-10 18:29:52,233][    INFO] Epoch 81/100, iter 187/750, loss 0.1554, encoder LR 0.0002323
+[2026-07-10 18:29:55,625][    INFO] Epoch 81/100, iter 280/750, loss 0.1579, encoder LR 0.000230987
+[2026-07-10 18:29:58,987][    INFO] Epoch 81/100, iter 373/750, loss 0.1564, encoder LR 0.000229674
+[2026-07-10 18:30:02,167][    INFO] Epoch 81/100, iter 466/750, loss 0.1540, encoder LR 0.000228359
+[2026-07-10 18:30:05,360][    INFO] Epoch 81/100, iter 559/750, loss 0.1536, encoder LR 0.000227044
+[2026-07-10 18:30:08,488][    INFO] Epoch 81/100, iter 652/750, loss 0.1511, encoder LR 0.000225727
+[2026-07-10 18:30:11,685][    INFO] Epoch 81/100, iter 745/750, loss 0.1515, encoder LR 0.00022441
+[2026-07-10 18:30:12,018][    INFO] Evaluation class [0 background]: IoU 87.03, Dice 93.06
+[2026-07-10 18:30:12,018][    INFO] Evaluation class [1 fibrin]: IoU 51.00, Dice 67.55
+[2026-07-10 18:30:12,018][    INFO] Evaluation class [2 granulation]: IoU 85.68, Dice 92.29
+[2026-07-10 18:30:12,019][    INFO] Evaluation class [3 callus]: IoU 53.53, Dice 69.73
+[2026-07-10 18:30:12,019][    INFO] Evaluation epoch 80: MeanIoU 69.31, MeanDice 80.66; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:30:12,477][    INFO] Epoch 82/100, iter 1/750, loss 0.2117, encoder LR 0.000224325
+[2026-07-10 18:30:15,835][    INFO] Epoch 82/100, iter 94/750, loss 0.1522, encoder LR 0.000223007
+[2026-07-10 18:30:19,062][    INFO] Epoch 82/100, iter 187/750, loss 0.1529, encoder LR 0.000221688
+[2026-07-10 18:30:22,222][    INFO] Epoch 82/100, iter 280/750, loss 0.1531, encoder LR 0.000220369
+[2026-07-10 18:30:25,401][    INFO] Epoch 82/100, iter 373/750, loss 0.1503, encoder LR 0.000219048
+[2026-07-10 18:30:28,542][    INFO] Epoch 82/100, iter 466/750, loss 0.1528, encoder LR 0.000217726
+[2026-07-10 18:30:31,797][    INFO] Epoch 82/100, iter 559/750, loss 0.1513, encoder LR 0.000216404
+[2026-07-10 18:30:34,960][    INFO] Epoch 82/100, iter 652/750, loss 0.1512, encoder LR 0.000215081
+[2026-07-10 18:30:38,321][    INFO] Epoch 82/100, iter 745/750, loss 0.1506, encoder LR 0.000213756
+[2026-07-10 18:30:38,674][    INFO] Evaluation class [0 background]: IoU 86.88, Dice 92.98
+[2026-07-10 18:30:38,674][    INFO] Evaluation class [1 fibrin]: IoU 48.31, Dice 65.15
+[2026-07-10 18:30:38,674][    INFO] Evaluation class [2 granulation]: IoU 85.40, Dice 92.12
+[2026-07-10 18:30:38,674][    INFO] Evaluation class [3 callus]: IoU 54.19, Dice 70.29
+[2026-07-10 18:30:38,675][    INFO] Evaluation epoch 81: MeanIoU 68.69, MeanDice 80.13; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:30:39,158][    INFO] Epoch 83/100, iter 1/750, loss 0.2144, encoder LR 0.000213671
+[2026-07-10 18:30:42,436][    INFO] Epoch 83/100, iter 94/750, loss 0.1478, encoder LR 0.000212346
+[2026-07-10 18:30:45,806][    INFO] Epoch 83/100, iter 187/750, loss 0.1509, encoder LR 0.000211019
+[2026-07-10 18:30:49,089][    INFO] Epoch 83/100, iter 280/750, loss 0.1488, encoder LR 0.000209692
+[2026-07-10 18:30:52,349][    INFO] Epoch 83/100, iter 373/750, loss 0.1454, encoder LR 0.000208364
+[2026-07-10 18:30:55,599][    INFO] Epoch 83/100, iter 466/750, loss 0.1454, encoder LR 0.000207035
+[2026-07-10 18:30:58,721][    INFO] Epoch 83/100, iter 559/750, loss 0.1459, encoder LR 0.000205706
+[2026-07-10 18:31:02,063][    INFO] Epoch 83/100, iter 652/750, loss 0.1466, encoder LR 0.000204375
+[2026-07-10 18:31:05,396][    INFO] Epoch 83/100, iter 745/750, loss 0.1463, encoder LR 0.000203043
+[2026-07-10 18:31:05,748][    INFO] Evaluation class [0 background]: IoU 86.82, Dice 92.94
+[2026-07-10 18:31:05,748][    INFO] Evaluation class [1 fibrin]: IoU 51.69, Dice 68.15
+[2026-07-10 18:31:05,749][    INFO] Evaluation class [2 granulation]: IoU 84.60, Dice 91.66
+[2026-07-10 18:31:05,749][    INFO] Evaluation class [3 callus]: IoU 52.25, Dice 68.64
+[2026-07-10 18:31:05,749][    INFO] Evaluation epoch 82: MeanIoU 68.84, MeanDice 80.35; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:31:06,227][    INFO] Epoch 84/100, iter 1/750, loss 0.1588, encoder LR 0.000202957
+[2026-07-10 18:31:09,606][    INFO] Epoch 84/100, iter 94/750, loss 0.1436, encoder LR 0.000201624
+[2026-07-10 18:31:13,026][    INFO] Epoch 84/100, iter 187/750, loss 0.1451, encoder LR 0.00020029
+[2026-07-10 18:31:16,375][    INFO] Epoch 84/100, iter 280/750, loss 0.1500, encoder LR 0.000198956
+[2026-07-10 18:31:19,650][    INFO] Epoch 84/100, iter 373/750, loss 0.1494, encoder LR 0.00019762
+[2026-07-10 18:31:22,848][    INFO] Epoch 84/100, iter 466/750, loss 0.1485, encoder LR 0.000196283
+[2026-07-10 18:31:25,991][    INFO] Epoch 84/100, iter 559/750, loss 0.1474, encoder LR 0.000194945
+[2026-07-10 18:31:29,187][    INFO] Epoch 84/100, iter 652/750, loss 0.1478, encoder LR 0.000193606
+[2026-07-10 18:31:32,336][    INFO] Epoch 84/100, iter 745/750, loss 0.1489, encoder LR 0.000192266
+[2026-07-10 18:31:32,659][    INFO] Evaluation class [0 background]: IoU 87.09, Dice 93.10
+[2026-07-10 18:31:32,659][    INFO] Evaluation class [1 fibrin]: IoU 51.24, Dice 67.76
+[2026-07-10 18:31:32,659][    INFO] Evaluation class [2 granulation]: IoU 85.94, Dice 92.44
+[2026-07-10 18:31:32,659][    INFO] Evaluation class [3 callus]: IoU 53.86, Dice 70.01
+[2026-07-10 18:31:32,659][    INFO] Evaluation epoch 83: MeanIoU 69.53, MeanDice 80.83; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:31:33,147][    INFO] Epoch 85/100, iter 1/750, loss 0.1160, encoder LR 0.00019218
+[2026-07-10 18:31:36,334][    INFO] Epoch 85/100, iter 94/750, loss 0.1449, encoder LR 0.000190839
+[2026-07-10 18:31:39,546][    INFO] Epoch 85/100, iter 187/750, loss 0.1466, encoder LR 0.000189497
+[2026-07-10 18:31:42,714][    INFO] Epoch 85/100, iter 280/750, loss 0.1466, encoder LR 0.000188154
+[2026-07-10 18:31:45,974][    INFO] Epoch 85/100, iter 373/750, loss 0.1443, encoder LR 0.00018681
+[2026-07-10 18:31:49,108][    INFO] Epoch 85/100, iter 466/750, loss 0.1460, encoder LR 0.000185464
+[2026-07-10 18:31:52,284][    INFO] Epoch 85/100, iter 559/750, loss 0.1476, encoder LR 0.000184118
+[2026-07-10 18:31:55,511][    INFO] Epoch 85/100, iter 652/750, loss 0.1479, encoder LR 0.000182771
+[2026-07-10 18:31:58,709][    INFO] Epoch 85/100, iter 745/750, loss 0.1468, encoder LR 0.000181422
+[2026-07-10 18:31:59,036][    INFO] Evaluation class [0 background]: IoU 87.24, Dice 93.18
+[2026-07-10 18:31:59,037][    INFO] Evaluation class [1 fibrin]: IoU 49.89, Dice 66.57
+[2026-07-10 18:31:59,037][    INFO] Evaluation class [2 granulation]: IoU 86.63, Dice 92.84
+[2026-07-10 18:31:59,037][    INFO] Evaluation class [3 callus]: IoU 54.31, Dice 70.39
+[2026-07-10 18:31:59,037][    INFO] Evaluation epoch 84: MeanIoU 69.52, MeanDice 80.74; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:31:59,515][    INFO] Epoch 86/100, iter 1/750, loss 0.1312, encoder LR 0.000181335
+[2026-07-10 18:32:02,650][    INFO] Epoch 86/100, iter 94/750, loss 0.1501, encoder LR 0.000179986
+[2026-07-10 18:32:05,779][    INFO] Epoch 86/100, iter 187/750, loss 0.1552, encoder LR 0.000178635
+[2026-07-10 18:32:08,988][    INFO] Epoch 86/100, iter 280/750, loss 0.1495, encoder LR 0.000177283
+[2026-07-10 18:32:12,303][    INFO] Epoch 86/100, iter 373/750, loss 0.1481, encoder LR 0.00017593
+[2026-07-10 18:32:15,644][    INFO] Epoch 86/100, iter 466/750, loss 0.1477, encoder LR 0.000174575
+[2026-07-10 18:32:19,171][    INFO] Epoch 86/100, iter 559/750, loss 0.1488, encoder LR 0.00017322
+[2026-07-10 18:32:22,628][    INFO] Epoch 86/100, iter 652/750, loss 0.1475, encoder LR 0.000171863
+[2026-07-10 18:32:26,123][    INFO] Epoch 86/100, iter 745/750, loss 0.1472, encoder LR 0.000170506
+[2026-07-10 18:32:26,476][    INFO] Evaluation class [0 background]: IoU 86.92, Dice 93.00
+[2026-07-10 18:32:26,476][    INFO] Evaluation class [1 fibrin]: IoU 46.49, Dice 63.47
+[2026-07-10 18:32:26,476][    INFO] Evaluation class [2 granulation]: IoU 86.10, Dice 92.53
+[2026-07-10 18:32:26,477][    INFO] Evaluation class [3 callus]: IoU 52.45, Dice 68.81
+[2026-07-10 18:32:26,477][    INFO] Evaluation epoch 85: MeanIoU 67.99, MeanDice 79.45; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:32:26,944][    INFO] Epoch 87/100, iter 1/750, loss 0.1119, encoder LR 0.000170418
+[2026-07-10 18:32:30,418][    INFO] Epoch 87/100, iter 94/750, loss 0.1503, encoder LR 0.000169059
+[2026-07-10 18:32:33,826][    INFO] Epoch 87/100, iter 187/750, loss 0.1503, encoder LR 0.000167699
+[2026-07-10 18:32:37,204][    INFO] Epoch 87/100, iter 280/750, loss 0.1465, encoder LR 0.000166337
+[2026-07-10 18:32:40,515][    INFO] Epoch 87/100, iter 373/750, loss 0.1469, encoder LR 0.000164974
+[2026-07-10 18:32:43,778][    INFO] Epoch 87/100, iter 466/750, loss 0.1475, encoder LR 0.00016361
+[2026-07-10 18:32:47,019][    INFO] Epoch 87/100, iter 559/750, loss 0.1467, encoder LR 0.000162245
+[2026-07-10 18:32:50,321][    INFO] Epoch 87/100, iter 652/750, loss 0.1468, encoder LR 0.000160878
+[2026-07-10 18:32:53,805][    INFO] Epoch 87/100, iter 745/750, loss 0.1458, encoder LR 0.000159511
+[2026-07-10 18:32:54,157][    INFO] Evaluation class [0 background]: IoU 86.89, Dice 92.99
+[2026-07-10 18:32:54,157][    INFO] Evaluation class [1 fibrin]: IoU 49.34, Dice 66.07
+[2026-07-10 18:32:54,157][    INFO] Evaluation class [2 granulation]: IoU 85.74, Dice 92.32
+[2026-07-10 18:32:54,157][    INFO] Evaluation class [3 callus]: IoU 53.97, Dice 70.11
+[2026-07-10 18:32:54,157][    INFO] Evaluation epoch 86: MeanIoU 68.98, MeanDice 80.37; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:32:54,644][    INFO] Epoch 88/100, iter 1/750, loss 0.1458, encoder LR 0.000159422
+[2026-07-10 18:32:58,015][    INFO] Epoch 88/100, iter 94/750, loss 0.1429, encoder LR 0.000158053
+[2026-07-10 18:33:01,258][    INFO] Epoch 88/100, iter 187/750, loss 0.1479, encoder LR 0.000156682
+[2026-07-10 18:33:04,397][    INFO] Epoch 88/100, iter 280/750, loss 0.1459, encoder LR 0.000155311
+[2026-07-10 18:33:07,608][    INFO] Epoch 88/100, iter 373/750, loss 0.1426, encoder LR 0.000153937
+[2026-07-10 18:33:10,820][    INFO] Epoch 88/100, iter 466/750, loss 0.1431, encoder LR 0.000152563
+[2026-07-10 18:33:13,983][    INFO] Epoch 88/100, iter 559/750, loss 0.1433, encoder LR 0.000151187
+[2026-07-10 18:33:17,410][    INFO] Epoch 88/100, iter 652/750, loss 0.1442, encoder LR 0.000149809
+[2026-07-10 18:33:20,790][    INFO] Epoch 88/100, iter 745/750, loss 0.1442, encoder LR 0.000148431
+[2026-07-10 18:33:21,131][    INFO] Evaluation class [0 background]: IoU 87.35, Dice 93.25
+[2026-07-10 18:33:21,132][    INFO] Evaluation class [1 fibrin]: IoU 47.40, Dice 64.31
+[2026-07-10 18:33:21,132][    INFO] Evaluation class [2 granulation]: IoU 85.73, Dice 92.32
+[2026-07-10 18:33:21,132][    INFO] Evaluation class [3 callus]: IoU 53.92, Dice 70.06
+[2026-07-10 18:33:21,132][    INFO] Evaluation epoch 87: MeanIoU 68.60, MeanDice 79.99; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:33:21,619][    INFO] Epoch 89/100, iter 1/750, loss 0.1137, encoder LR 0.000148342
+[2026-07-10 18:33:25,140][    INFO] Epoch 89/100, iter 94/750, loss 0.1440, encoder LR 0.000146961
+[2026-07-10 18:33:28,500][    INFO] Epoch 89/100, iter 187/750, loss 0.1454, encoder LR 0.00014558
+[2026-07-10 18:33:31,841][    INFO] Epoch 89/100, iter 280/750, loss 0.1454, encoder LR 0.000144196
+[2026-07-10 18:33:35,237][    INFO] Epoch 89/100, iter 373/750, loss 0.1459, encoder LR 0.000142812
+[2026-07-10 18:33:38,499][    INFO] Epoch 89/100, iter 466/750, loss 0.1454, encoder LR 0.000141426
+[2026-07-10 18:33:41,654][    INFO] Epoch 89/100, iter 559/750, loss 0.1468, encoder LR 0.000140038
+[2026-07-10 18:33:44,798][    INFO] Epoch 89/100, iter 652/750, loss 0.1458, encoder LR 0.000138649
+[2026-07-10 18:33:47,972][    INFO] Epoch 89/100, iter 745/750, loss 0.1454, encoder LR 0.000137258
+[2026-07-10 18:33:48,300][    INFO] Evaluation class [0 background]: IoU 87.22, Dice 93.17
+[2026-07-10 18:33:48,301][    INFO] Evaluation class [1 fibrin]: IoU 48.27, Dice 65.11
+[2026-07-10 18:33:48,301][    INFO] Evaluation class [2 granulation]: IoU 85.99, Dice 92.47
+[2026-07-10 18:33:48,301][    INFO] Evaluation class [3 callus]: IoU 54.01, Dice 70.14
+[2026-07-10 18:33:48,301][    INFO] Evaluation epoch 88: MeanIoU 68.87, MeanDice 80.22; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:33:48,791][    INFO] Epoch 90/100, iter 1/750, loss 0.1840, encoder LR 0.000137168
+[2026-07-10 18:33:52,152][    INFO] Epoch 90/100, iter 94/750, loss 0.1511, encoder LR 0.000135776
+[2026-07-10 18:33:55,405][    INFO] Epoch 90/100, iter 187/750, loss 0.1477, encoder LR 0.000134382
+[2026-07-10 18:33:58,830][    INFO] Epoch 90/100, iter 280/750, loss 0.1485, encoder LR 0.000132986
+[2026-07-10 18:34:01,983][    INFO] Epoch 90/100, iter 373/750, loss 0.1479, encoder LR 0.000131589
+[2026-07-10 18:34:05,243][    INFO] Epoch 90/100, iter 466/750, loss 0.1479, encoder LR 0.00013019
+[2026-07-10 18:34:08,454][    INFO] Epoch 90/100, iter 559/750, loss 0.1464, encoder LR 0.000128789
+[2026-07-10 18:34:11,695][    INFO] Epoch 90/100, iter 652/750, loss 0.1458, encoder LR 0.000127387
+[2026-07-10 18:34:14,873][    INFO] Epoch 90/100, iter 745/750, loss 0.1446, encoder LR 0.000125983
+[2026-07-10 18:34:15,199][    INFO] Evaluation class [0 background]: IoU 87.33, Dice 93.24
+[2026-07-10 18:34:15,199][    INFO] Evaluation class [1 fibrin]: IoU 48.90, Dice 65.68
+[2026-07-10 18:34:15,199][    INFO] Evaluation class [2 granulation]: IoU 86.74, Dice 92.90
+[2026-07-10 18:34:15,199][    INFO] Evaluation class [3 callus]: IoU 54.30, Dice 70.38
+[2026-07-10 18:34:15,200][    INFO] Evaluation epoch 89: MeanIoU 69.32, MeanDice 80.55; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:34:15,689][    INFO] Epoch 91/100, iter 1/750, loss 0.1385, encoder LR 0.000125893
+[2026-07-10 18:34:18,874][    INFO] Epoch 91/100, iter 94/750, loss 0.1398, encoder LR 0.000124487
+[2026-07-10 18:34:22,291][    INFO] Epoch 91/100, iter 187/750, loss 0.1427, encoder LR 0.000123079
+[2026-07-10 18:34:25,587][    INFO] Epoch 91/100, iter 280/750, loss 0.1418, encoder LR 0.00012167
+[2026-07-10 18:34:28,725][    INFO] Epoch 91/100, iter 373/750, loss 0.1436, encoder LR 0.000120259
+[2026-07-10 18:34:32,048][    INFO] Epoch 91/100, iter 466/750, loss 0.1438, encoder LR 0.000118845
+[2026-07-10 18:34:35,379][    INFO] Epoch 91/100, iter 559/750, loss 0.1431, encoder LR 0.000117431
+[2026-07-10 18:34:38,874][    INFO] Epoch 91/100, iter 652/750, loss 0.1435, encoder LR 0.000116014
+[2026-07-10 18:34:42,240][    INFO] Epoch 91/100, iter 745/750, loss 0.1432, encoder LR 0.000114595
+[2026-07-10 18:34:42,580][    INFO] Evaluation class [0 background]: IoU 86.90, Dice 92.99
+[2026-07-10 18:34:42,580][    INFO] Evaluation class [1 fibrin]: IoU 50.49, Dice 67.10
+[2026-07-10 18:34:42,580][    INFO] Evaluation class [2 granulation]: IoU 86.10, Dice 92.53
+[2026-07-10 18:34:42,580][    INFO] Evaluation class [3 callus]: IoU 53.07, Dice 69.34
+[2026-07-10 18:34:42,581][    INFO] Evaluation epoch 90: MeanIoU 69.14, MeanDice 80.49; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:34:43,132][    INFO] Epoch 92/100, iter 1/750, loss 0.0765, encoder LR 0.000114503
+[2026-07-10 18:34:46,309][    INFO] Epoch 92/100, iter 94/750, loss 0.1452, encoder LR 0.000113083
+[2026-07-10 18:34:49,910][    INFO] Epoch 92/100, iter 187/750, loss 0.1439, encoder LR 0.00011166
+[2026-07-10 18:34:53,081][    INFO] Epoch 92/100, iter 280/750, loss 0.1469, encoder LR 0.000110235
+[2026-07-10 18:34:56,235][    INFO] Epoch 92/100, iter 373/750, loss 0.1434, encoder LR 0.000108808
+[2026-07-10 18:34:59,392][    INFO] Epoch 92/100, iter 466/750, loss 0.1424, encoder LR 0.000107379
+[2026-07-10 18:35:02,515][    INFO] Epoch 92/100, iter 559/750, loss 0.1425, encoder LR 0.000105948
+[2026-07-10 18:35:05,658][    INFO] Epoch 92/100, iter 652/750, loss 0.1443, encoder LR 0.000104515
+[2026-07-10 18:35:08,899][    INFO] Epoch 92/100, iter 745/750, loss 0.1434, encoder LR 0.000103079
+[2026-07-10 18:35:09,250][    INFO] Evaluation class [0 background]: IoU 87.29, Dice 93.21
+[2026-07-10 18:35:09,251][    INFO] Evaluation class [1 fibrin]: IoU 50.23, Dice 66.87
+[2026-07-10 18:35:09,251][    INFO] Evaluation class [2 granulation]: IoU 85.42, Dice 92.14
+[2026-07-10 18:35:09,251][    INFO] Evaluation class [3 callus]: IoU 54.17, Dice 70.28
+[2026-07-10 18:35:09,251][    INFO] Evaluation epoch 91: MeanIoU 69.28, MeanDice 80.63; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:35:09,736][    INFO] Epoch 93/100, iter 1/750, loss 0.1379, encoder LR 0.000102987
+[2026-07-10 18:35:13,023][    INFO] Epoch 93/100, iter 94/750, loss 0.1501, encoder LR 0.000101549
+[2026-07-10 18:35:16,374][    INFO] Epoch 93/100, iter 187/750, loss 0.1504, encoder LR 0.000100109
+[2026-07-10 18:35:19,507][    INFO] Epoch 93/100, iter 280/750, loss 0.1488, encoder LR 9.86665e-05
+[2026-07-10 18:35:22,727][    INFO] Epoch 93/100, iter 373/750, loss 0.1479, encoder LR 9.72218e-05
+[2026-07-10 18:35:26,111][    INFO] Epoch 93/100, iter 466/750, loss 0.1485, encoder LR 9.57747e-05
+[2026-07-10 18:35:29,471][    INFO] Epoch 93/100, iter 559/750, loss 0.1486, encoder LR 9.43252e-05
+[2026-07-10 18:35:32,697][    INFO] Epoch 93/100, iter 652/750, loss 0.1469, encoder LR 9.28732e-05
+[2026-07-10 18:35:35,850][    INFO] Epoch 93/100, iter 745/750, loss 0.1473, encoder LR 9.14186e-05
+[2026-07-10 18:35:36,195][    INFO] Evaluation class [0 background]: IoU 87.20, Dice 93.16
+[2026-07-10 18:35:36,195][    INFO] Evaluation class [1 fibrin]: IoU 47.99, Dice 64.86
+[2026-07-10 18:35:36,196][    INFO] Evaluation class [2 granulation]: IoU 86.29, Dice 92.64
+[2026-07-10 18:35:36,196][    INFO] Evaluation class [3 callus]: IoU 54.62, Dice 70.65
+[2026-07-10 18:35:36,196][    INFO] Evaluation epoch 92: MeanIoU 69.03, MeanDice 80.33; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:35:36,678][    INFO] Epoch 94/100, iter 1/750, loss 0.1725, encoder LR 9.13247e-05
+[2026-07-10 18:35:39,886][    INFO] Epoch 94/100, iter 94/750, loss 0.1515, encoder LR 8.98674e-05
+[2026-07-10 18:35:43,238][    INFO] Epoch 94/100, iter 187/750, loss 0.1452, encoder LR 8.84075e-05
+[2026-07-10 18:35:46,402][    INFO] Epoch 94/100, iter 280/750, loss 0.1445, encoder LR 8.69449e-05
+[2026-07-10 18:35:49,608][    INFO] Epoch 94/100, iter 373/750, loss 0.1453, encoder LR 8.54796e-05
+[2026-07-10 18:35:52,757][    INFO] Epoch 94/100, iter 466/750, loss 0.1439, encoder LR 8.40115e-05
+[2026-07-10 18:35:55,880][    INFO] Epoch 94/100, iter 559/750, loss 0.1432, encoder LR 8.25405e-05
+[2026-07-10 18:35:58,997][    INFO] Epoch 94/100, iter 652/750, loss 0.1436, encoder LR 8.10666e-05
+[2026-07-10 18:36:02,164][    INFO] Epoch 94/100, iter 745/750, loss 0.1437, encoder LR 7.95897e-05
+[2026-07-10 18:36:02,492][    INFO] Evaluation class [0 background]: IoU 87.06, Dice 93.08
+[2026-07-10 18:36:02,492][    INFO] Evaluation class [1 fibrin]: IoU 48.07, Dice 64.93
+[2026-07-10 18:36:02,492][    INFO] Evaluation class [2 granulation]: IoU 86.45, Dice 92.73
+[2026-07-10 18:36:02,492][    INFO] Evaluation class [3 callus]: IoU 52.52, Dice 68.87
+[2026-07-10 18:36:02,492][    INFO] Evaluation epoch 93: MeanIoU 68.52, MeanDice 79.90; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:36:02,978][    INFO] Epoch 95/100, iter 1/750, loss 0.1307, encoder LR 7.94943e-05
+[2026-07-10 18:36:06,334][    INFO] Epoch 95/100, iter 94/750, loss 0.1395, encoder LR 7.80142e-05
+[2026-07-10 18:36:09,546][    INFO] Epoch 95/100, iter 187/750, loss 0.1400, encoder LR 7.65309e-05
+[2026-07-10 18:36:12,754][    INFO] Epoch 95/100, iter 280/750, loss 0.1408, encoder LR 7.50445e-05
+[2026-07-10 18:36:15,971][    INFO] Epoch 95/100, iter 373/750, loss 0.1417, encoder LR 7.35547e-05
+[2026-07-10 18:36:19,331][    INFO] Epoch 95/100, iter 466/750, loss 0.1431, encoder LR 7.20616e-05
+[2026-07-10 18:36:22,628][    INFO] Epoch 95/100, iter 559/750, loss 0.1438, encoder LR 7.05651e-05
+[2026-07-10 18:36:25,974][    INFO] Epoch 95/100, iter 652/750, loss 0.1425, encoder LR 6.9065e-05
+[2026-07-10 18:36:29,350][    INFO] Epoch 95/100, iter 745/750, loss 0.1435, encoder LR 6.75613e-05
+[2026-07-10 18:36:29,678][    INFO] Evaluation class [0 background]: IoU 86.69, Dice 92.87
+[2026-07-10 18:36:29,679][    INFO] Evaluation class [1 fibrin]: IoU 50.31, Dice 66.94
+[2026-07-10 18:36:29,679][    INFO] Evaluation class [2 granulation]: IoU 85.24, Dice 92.03
+[2026-07-10 18:36:29,679][    INFO] Evaluation class [3 callus]: IoU 53.46, Dice 69.67
+[2026-07-10 18:36:29,679][    INFO] Evaluation epoch 94: MeanIoU 68.93, MeanDice 80.38; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:36:30,173][    INFO] Epoch 96/100, iter 1/750, loss 0.0973, encoder LR 6.74641e-05
+[2026-07-10 18:36:33,311][    INFO] Epoch 96/100, iter 94/750, loss 0.1366, encoder LR 6.59565e-05
+[2026-07-10 18:36:36,539][    INFO] Epoch 96/100, iter 187/750, loss 0.1394, encoder LR 6.44449e-05
+[2026-07-10 18:36:39,727][    INFO] Epoch 96/100, iter 280/750, loss 0.1415, encoder LR 6.29295e-05
+[2026-07-10 18:36:43,015][    INFO] Epoch 96/100, iter 373/750, loss 0.1410, encoder LR 6.14099e-05
+[2026-07-10 18:36:46,215][    INFO] Epoch 96/100, iter 466/750, loss 0.1402, encoder LR 5.98862e-05
+[2026-07-10 18:36:49,426][    INFO] Epoch 96/100, iter 559/750, loss 0.1389, encoder LR 5.83581e-05
+[2026-07-10 18:36:52,773][    INFO] Epoch 96/100, iter 652/750, loss 0.1392, encoder LR 5.68256e-05
+[2026-07-10 18:36:56,093][    INFO] Epoch 96/100, iter 745/750, loss 0.1392, encoder LR 5.52885e-05
+[2026-07-10 18:36:56,419][    INFO] Evaluation class [0 background]: IoU 86.60, Dice 92.82
+[2026-07-10 18:36:56,419][    INFO] Evaluation class [1 fibrin]: IoU 48.54, Dice 65.36
+[2026-07-10 18:36:56,419][    INFO] Evaluation class [2 granulation]: IoU 84.53, Dice 91.62
+[2026-07-10 18:36:56,419][    INFO] Evaluation class [3 callus]: IoU 52.96, Dice 69.25
+[2026-07-10 18:36:56,420][    INFO] Evaluation epoch 95: MeanIoU 68.16, MeanDice 79.76; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:36:56,912][    INFO] Epoch 97/100, iter 1/750, loss 0.0853, encoder LR 5.51892e-05
+[2026-07-10 18:37:00,385][    INFO] Epoch 97/100, iter 94/750, loss 0.1374, encoder LR 5.3647e-05
+[2026-07-10 18:37:03,685][    INFO] Epoch 97/100, iter 187/750, loss 0.1400, encoder LR 5.20999e-05
+[2026-07-10 18:37:06,887][    INFO] Epoch 97/100, iter 280/750, loss 0.1419, encoder LR 5.05476e-05
+[2026-07-10 18:37:10,147][    INFO] Epoch 97/100, iter 373/750, loss 0.1400, encoder LR 4.899e-05
+[2026-07-10 18:37:13,391][    INFO] Epoch 97/100, iter 466/750, loss 0.1423, encoder LR 4.74269e-05
+[2026-07-10 18:37:16,586][    INFO] Epoch 97/100, iter 559/750, loss 0.1421, encoder LR 4.58581e-05
+[2026-07-10 18:37:19,751][    INFO] Epoch 97/100, iter 652/750, loss 0.1409, encoder LR 4.42833e-05
+[2026-07-10 18:37:23,002][    INFO] Epoch 97/100, iter 745/750, loss 0.1415, encoder LR 4.27022e-05
+[2026-07-10 18:37:23,357][    INFO] Evaluation class [0 background]: IoU 87.09, Dice 93.10
+[2026-07-10 18:37:23,357][    INFO] Evaluation class [1 fibrin]: IoU 44.33, Dice 61.43
+[2026-07-10 18:37:23,357][    INFO] Evaluation class [2 granulation]: IoU 85.18, Dice 92.00
+[2026-07-10 18:37:23,357][    INFO] Evaluation class [3 callus]: IoU 52.64, Dice 68.97
+[2026-07-10 18:37:23,358][    INFO] Evaluation epoch 96: MeanIoU 67.31, MeanDice 78.87; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:37:23,850][    INFO] Epoch 98/100, iter 1/750, loss 0.0843, encoder LR 4.26e-05
+[2026-07-10 18:37:27,151][    INFO] Epoch 98/100, iter 94/750, loss 0.1433, encoder LR 4.10119e-05
+[2026-07-10 18:37:30,400][    INFO] Epoch 98/100, iter 187/750, loss 0.1423, encoder LR 3.9417e-05
+[2026-07-10 18:37:33,641][    INFO] Epoch 98/100, iter 280/750, loss 0.1436, encoder LR 3.78149e-05
+[2026-07-10 18:37:36,852][    INFO] Epoch 98/100, iter 373/750, loss 0.1415, encoder LR 3.62052e-05
+[2026-07-10 18:37:40,019][    INFO] Epoch 98/100, iter 466/750, loss 0.1397, encoder LR 3.45875e-05
+[2026-07-10 18:37:43,162][    INFO] Epoch 98/100, iter 559/750, loss 0.1411, encoder LR 3.29614e-05
+[2026-07-10 18:37:46,309][    INFO] Epoch 98/100, iter 652/750, loss 0.1471, encoder LR 3.13263e-05
+[2026-07-10 18:37:49,515][    INFO] Epoch 98/100, iter 745/750, loss 0.1458, encoder LR 2.96816e-05
+[2026-07-10 18:37:49,880][    INFO] Evaluation class [0 background]: IoU 86.68, Dice 92.86
+[2026-07-10 18:37:49,880][    INFO] Evaluation class [1 fibrin]: IoU 49.86, Dice 66.54
+[2026-07-10 18:37:49,881][    INFO] Evaluation class [2 granulation]: IoU 85.56, Dice 92.22
+[2026-07-10 18:37:49,881][    INFO] Evaluation class [3 callus]: IoU 53.08, Dice 69.35
+[2026-07-10 18:37:49,881][    INFO] Evaluation epoch 97: MeanIoU 68.79, MeanDice 80.24; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:37:50,368][    INFO] Epoch 99/100, iter 1/750, loss 0.1985, encoder LR 2.95752e-05
+[2026-07-10 18:37:53,667][    INFO] Epoch 99/100, iter 94/750, loss 0.1438, encoder LR 2.79196e-05
+[2026-07-10 18:37:56,825][    INFO] Epoch 99/100, iter 187/750, loss 0.1422, encoder LR 2.62531e-05
+[2026-07-10 18:37:59,997][    INFO] Epoch 99/100, iter 280/750, loss 0.1441, encoder LR 2.45747e-05
+[2026-07-10 18:38:03,179][    INFO] Epoch 99/100, iter 373/750, loss 0.1425, encoder LR 2.28835e-05
+[2026-07-10 18:38:06,331][    INFO] Epoch 99/100, iter 466/750, loss 0.1419, encoder LR 2.11783e-05
+[2026-07-10 18:38:09,514][    INFO] Epoch 99/100, iter 559/750, loss 0.1431, encoder LR 1.94577e-05
+[2026-07-10 18:38:12,797][    INFO] Epoch 99/100, iter 652/750, loss 0.1424, encoder LR 1.77199e-05
+[2026-07-10 18:38:16,196][    INFO] Epoch 99/100, iter 745/750, loss 0.1440, encoder LR 1.5963e-05
+[2026-07-10 18:38:16,521][    INFO] Evaluation class [0 background]: IoU 87.39, Dice 93.27
+[2026-07-10 18:38:16,521][    INFO] Evaluation class [1 fibrin]: IoU 48.83, Dice 65.61
+[2026-07-10 18:38:16,521][    INFO] Evaluation class [2 granulation]: IoU 85.79, Dice 92.35
+[2026-07-10 18:38:16,521][    INFO] Evaluation class [3 callus]: IoU 53.31, Dice 69.55
+[2026-07-10 18:38:16,522][    INFO] Evaluation epoch 98: MeanIoU 68.83, MeanDice 80.20; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:38:16,990][    INFO] Epoch 100/100, iter 1/750, loss 0.1406, encoder LR 1.58489e-05
+[2026-07-10 18:38:20,164][    INFO] Epoch 100/100, iter 94/750, loss 0.1389, encoder LR 1.40687e-05
+[2026-07-10 18:38:23,451][    INFO] Epoch 100/100, iter 187/750, loss 0.1372, encoder LR 1.2263e-05
+[2026-07-10 18:38:26,667][    INFO] Epoch 100/100, iter 280/750, loss 0.1400, encoder LR 1.04271e-05
+[2026-07-10 18:38:30,040][    INFO] Epoch 100/100, iter 373/750, loss 0.1400, encoder LR 8.55436e-06
+[2026-07-10 18:38:33,411][    INFO] Epoch 100/100, iter 466/750, loss 0.1409, encoder LR 6.63445e-06
+[2026-07-10 18:38:36,730][    INFO] Epoch 100/100, iter 559/750, loss 0.1438, encoder LR 4.6496e-06
+[2026-07-10 18:38:39,881][    INFO] Epoch 100/100, iter 652/750, loss 0.1431, encoder LR 2.56163e-06
+[2026-07-10 18:38:42,951][    INFO] Epoch 100/100, iter 745/750, loss 0.1448, encoder LR 2.05485e-07
+[2026-07-10 18:38:43,390][    INFO] Evaluation class [0 background]: IoU 87.15, Dice 93.13
+[2026-07-10 18:38:43,390][    INFO] Evaluation class [1 fibrin]: IoU 48.54, Dice 65.36
+[2026-07-10 18:38:43,391][    INFO] Evaluation class [2 granulation]: IoU 86.58, Dice 92.81
+[2026-07-10 18:38:43,391][    INFO] Evaluation class [3 callus]: IoU 52.60, Dice 68.94
+[2026-07-10 18:38:43,391][    INFO] Evaluation epoch 99: MeanIoU 68.72, MeanDice 80.06; BEST mIoU 70.02, Dice 81.12 at epoch 70
+[2026-07-10 18:38:43,828][    INFO] Training complete. BEST mIoU 70.02, Dice 81.12 at epoch 70

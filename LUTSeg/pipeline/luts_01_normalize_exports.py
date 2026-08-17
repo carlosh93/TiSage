@@ -3,11 +3,11 @@
 Step 1: Normalize raw Label Studio exports for LUTS.
 
 Inputs:
-- data/LUTS/Annotations/raw/*.json
+- LUTSeg/annotations/raw/*.json
 
 Outputs:
-- data/LUTS/Annotations/processed/normalized_annotations.json
-- data/LUTS/Annotations/processed/normalize_summary.json
+- LUTSeg/annotations/processed/normalized_annotations.json
+- LUTSeg/annotations/processed/normalize_summary.json
 """
 from __future__ import annotations
 
@@ -33,17 +33,17 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Normalize LUTS Label Studio exports.")
     parser.add_argument(
         "--raw-dir",
-        default="data/LUTS/Annotations/raw",
+        default="LUTSeg/annotations/raw",
         help="Directory containing raw Label Studio export JSON files.",
     )
     parser.add_argument(
         "--output-json",
-        default="data/LUTS/Annotations/processed/normalized_annotations.json",
+        default="LUTSeg/annotations/processed/normalized_annotations.json",
         help="Output JSON path for normalized records.",
     )
     parser.add_argument(
         "--summary-json",
-        default="data/LUTS/Annotations/processed/normalize_summary.json",
+        default="LUTSeg/annotations/processed/normalize_summary.json",
         help="Output JSON path for summary statistics.",
     )
     return parser.parse_args()

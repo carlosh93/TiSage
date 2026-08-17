@@ -3,16 +3,16 @@
 Remove all pipeline-generated files so you can run the full pipeline from scratch.
 
 Does NOT delete:
-- data/LUTS/Annotations/raw/ (your Label Studio exports)
+- LUTSeg/annotations/raw/ (your Label Studio exports)
 
 Deletes:
-- data/LUTS/Annotations/processed/
-- data/LUTS/Masks/
-- data/LUTS/Masks_RGB/
-- data/LUTS/Wound_Masks/
-- data/LUTS/Images/
-- data/LUTS/train.txt, val.txt (and legacy test.txt if present)
-- data/LUTS/class_map.json
+- LUTSeg/annotations/processed/
+- LUTSeg/data/Masks/
+- LUTSeg/data/Masks_RGB/
+- LUTSeg/data/Wound_Masks/
+- LUTSeg/Images/
+- LUTSeg/train.txt, val.txt (and legacy test.txt if present)
+- LUTSeg/class_map.json
 """
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--dataset-root",
-        default="data/LUTS",
+        default="LUTSeg/data",
         help="LUTS dataset root.",
     )
     parser.add_argument(

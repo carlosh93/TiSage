@@ -1,0 +1,5 @@
+run_name	pixel_acc	miou	log_path
+dfutissue_classifier_single_scale	79.40	45.67	dfutissue_classifier_single_scale.log
+dfutissue_zeroshot_single_scale	76.24	34.70	dfutissue_zeroshot_single_scale.log
+lutseg_classifier_single_scale	80.06	24.02	lutseg_classifier_single_scale.log
+lutseg_zeroshot_single_scale	67.94	16.39	lutseg_zeroshot_single_scale.log

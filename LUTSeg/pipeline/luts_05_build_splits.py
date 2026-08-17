@@ -3,7 +3,7 @@
 Step 5: Build patient-level train/val splits for LUTS (no test split).
 
 Outputs:
-- data/LUTS/Annotations/processed/splits.json
+- LUTSeg/annotations/processed/splits.json
 """
 from __future__ import annotations
 
@@ -24,12 +24,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build LUTS patient-level splits.")
     parser.add_argument(
         "--consensus-manifest",
-        default="data/LUTS/Annotations/processed/consensus_manifest.json",
+        default="LUTSeg/annotations/processed/consensus_manifest.json",
         help="Step-4 manifest JSON path (selected-doctor or consensus).",
     )
     parser.add_argument(
         "--output-json",
-        default="data/LUTS/Annotations/processed/splits.json",
+        default="LUTSeg/annotations/processed/splits.json",
         help="Output split JSON path.",
     )
     parser.add_argument(

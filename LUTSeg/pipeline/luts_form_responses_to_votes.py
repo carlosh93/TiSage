@@ -32,22 +32,22 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Convert Google Form responses to votes_filled.csv.")
     parser.add_argument(
         "--responses-csv",
-        default="data/LUTS/Annotations/raw/LUTSeg Dataset Golden Set Review.csv",
+        default="LUTSeg/annotations/raw/LUTSeg Dataset Golden Set Review.csv",
         help="Google Form responses CSV export.",
     )
     parser.add_argument(
         "--votes-template-csv",
-        default="data/LUTS/Annotations/processed/form_review/votes_template.csv",
+        default="LUTSeg/annotations/processed/form_review/votes_template.csv",
         help="votes_template.csv from luts_generate_form_images.py.",
     )
     parser.add_argument(
         "--form-mapping-json",
-        default="data/LUTS/Annotations/processed/form_review/form_option_mapping.json",
+        default="LUTSeg/annotations/processed/form_review/form_option_mapping.json",
         help="Optional form_option_mapping.json for per-image option validation.",
     )
     parser.add_argument(
         "--output-csv",
-        default="data/LUTS/Annotations/processed/form_review/votes_filled.csv",
+        default="LUTSeg/annotations/processed/form_review/votes_filled.csv",
         help="Output votes CSV with selected_option filled.",
     )
     parser.add_argument(
@@ -64,7 +64,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--report-ties-csv",
-        default="data/LUTS/Annotations/processed/form_review/vote_ties_report.csv",
+        default="LUTSeg/annotations/processed/form_review/vote_ties_report.csv",
         help="Optional CSV report for tie cases.",
     )
     parser.add_argument(

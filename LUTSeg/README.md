@@ -1,66 +1,74 @@
-# LUTSeg Reproducibility
+# LUTSeg Dataset Reproducibility
 
-This folder contains the reproducibility assets for LUTSeg dataset construction from raw Label Studio exports, plus the expert-voting workflow used for golden-set selection.
+This directory documents construction of LUTSeg from pseudonymized Label Studio
+exports, multi-expert annotations, and the clinician-voting workflow used for
+gold-set selection.
 
-## Structure
+## Contents
 
-- `pipeline/`: preprocessing and review scripts.
-- `annotations/raw/`: raw Label Studio exports and wound-outline fix files.
-- `examples/`: A small, non-identifying subset and form-review artifacts are included for reproducibility. The full dataset is not released in this repository during double-blind review because some images may contain non-anonymized content. Upon acceptance, the full dataset will be publicly available.
+- `pipeline/`: normalization, rasterization, consensus, split, quality-control, visualization, and inter-rater scripts.
+- `annotations/raw/`: pseudonymized Label Studio exports used by the construction pipeline.
+- `examples/`: a small dataset-layout example and pseudonymized voting artifacts.
+- `inter_rater_figure1.png`: the paper-reported inter-rater analysis figure.
+- `DATA_LICENSE.md`: CC BY 4.0 terms and source-dataset provenance.
 
-All annotator references in this repository use pseudonymous IDs (for example `user_7`).
+The full dataset contains 141 longitudinal images from 39 patients, with 111
+training images and 30 validation images. The gold subset contains 46 images
+from 9 patients annotated by five clinicians. All patient and clinician
+identifiers in this repository are pseudonymous dataset codes.
 
-## What This Reproduces
+## Data Availability
 
-1. Normalize and rasterize raw polygon annotations.
-2. Build grouped image-level annotations across annotators.
-3. Generate anonymized form composites for golden-set voting.
-4. Aggregate votes and produce `selected_doctor_by_image.json`.
-5. Select one final mask per image and export train/val dataset layout.
+The complete LUTSeg release is public at
+[ksanchez84/LUTSeg](https://huggingface.co/datasets/ksanchez84/LUTSeg). Download
+it into the TiSage dataset location with:
 
-## Core Pipeline Scripts
+```bash
+python -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='ksanchez84/LUTSeg', repo_type='dataset', local_dir='data/LUTSeg')"
+```
 
-Expected main scripts in `pipeline/`:
+The examples committed here document formats and workflows but are not a
+replacement for the complete training dataset.
 
-- `luts_01_normalize_exports.py`
-- `luts_02_rasterize_masks.py`
-- `luts_03_build_image_groups.py`
-- `luts_04_init_selection_map.py`
-- `luts_04_select_masks.py`
-- `luts_05_build_splits.py`
-- `luts_06_export_dataset_layout.py`
-- `luts_07_qc_report.py`
-- `luts_generate_form_images.py`
-- `luts_form_responses_to_votes.py`
-- `luts_votes_to_selection_map.py`
+The deterministic release builder in `release/` creates the upload-ready
+dataset without modifying the source files. It strips embedded image metadata,
+selects the documented gold-standard annotations, generates checksums, and
+validates privacy and data integrity before publication.
 
-## Expert Voting Workflow
+## Reproduced Workflow
 
-Input form assets:
+1. Normalize Label Studio polygon exports.
+2. Rasterize tissue and wound-outline masks per annotator.
+3. Group annotations by image.
+4. Generate clinician-comparison forms and aggregate pseudonymized votes.
+5. Select the final mask for each image.
+6. Build patient-level train/validation splits and export the dataset layout.
+7. Generate quality-control and inter-rater reports.
 
-- `examples/Form/public/images/`
-- `examples/Form/public/form_index.csv`
-- `examples/Form/public/votes_template.csv`
+Run the pipeline from the repository root:
 
-Post-vote artifacts:
+```bash
+python LUTSeg/pipeline/run_pipeline.py --default-doctor user_9
+```
 
-- `examples/Form/private_or_posthoc/votes_filled.csv`
-- `examples/Form/private_or_posthoc/vote_ties_report.csv`
-- `examples/Form/private_or_posthoc/form_option_mapping.json`
-- `examples/Form/private_or_posthoc/selected_doctor_by_image.json`
+See `pipeline/README.md` for individual commands and intermediate artifacts.
 
-Recommended vote aggregation policy:
+## Voting Artifacts
 
-- Majority vote per `image_id`.
-- Tie-break by random choice with fixed seed.
-- Keep a tie report for auditability.
+- Public comparison forms: `examples/Form/public/`
+- Pseudonymized responses and selections: `examples/Form/anonymized_votes/`
+
+The aggregation policy uses majority vote per image and a fixed-seed random
+tie-break while retaining a tie report for auditability.
 
 ## Label IDs
 
-- `0`: background
-- `1`: Epithelial tissue
-- `2`: Slough
-- `3`: Granulation tissue
-- `4`: Necrotic tissue
-- `5`: Other
-- `255`: ignore
+| ID | Class |
+|---:|---|
+| 0 | Background |
+| 1 | Epithelial tissue |
+| 2 | Slough |
+| 3 | Granulation tissue |
+| 4 | Necrotic tissue |
+| 5 | Other |
+| 255 | Ignore |

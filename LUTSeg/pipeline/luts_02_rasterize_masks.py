@@ -5,12 +5,12 @@ If wound_outline exists: fill holes inside the wound, and set all pixels
 outside the wound boundary to background (0), clipping any tissue drawn outside.
 
 Input:
-- data/LUTS/Annotations/processed/normalized_annotations.json
+- LUTSeg/annotations/processed/normalized_annotations.json
 
 Output:
-- data/LUTS/Annotations/processed/masks_by_annotator/**.png
-- data/LUTS/Annotations/processed/wound_masks_by_annotator/**.png
-- data/LUTS/Annotations/processed/rasterized_manifest.json
+- LUTSeg/annotations/processed/masks_by_annotator/**.png
+- LUTSeg/annotations/processed/wound_masks_by_annotator/**.png
+- LUTSeg/annotations/processed/rasterized_manifest.json
 """
 from __future__ import annotations
 
@@ -33,27 +33,27 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Rasterize LUTS polygon annotations.")
     parser.add_argument(
         "--normalized-json",
-        default="data/LUTS/Annotations/processed/normalized_annotations.json",
+        default="LUTSeg/annotations/processed/normalized_annotations.json",
         help="Path to normalized annotations JSON.",
     )
     parser.add_argument(
         "--images-root",
-        default="data/Dataset_evolution_wounds_VR",
+        default="LUTSeg/data",
         help="Root directory containing source images.",
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Annotations/processed/masks_by_annotator",
+        default="LUTSeg/annotations/processed/masks_by_annotator",
         help="Output directory for per-annotator masks.",
     )
     parser.add_argument(
         "--wound-output-dir",
-        default="data/LUTS/Annotations/processed/wound_masks_by_annotator",
+        default="LUTSeg/annotations/processed/wound_masks_by_annotator",
         help="Output directory for per-annotator wound masks (from wound_outline).",
     )
     parser.add_argument(
         "--manifest-json",
-        default="data/LUTS/Annotations/processed/rasterized_manifest.json",
+        default="LUTSeg/annotations/processed/rasterized_manifest.json",
         help="Output manifest JSON path.",
     )
     return parser.parse_args()

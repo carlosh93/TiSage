@@ -9,9 +9,9 @@ Rules:
 - Tie policy is configurable (default: 255 ignore).
 
 Outputs:
-- data/LUTS/Masks/**.png
-- data/LUTS/Wound_Masks/**.png
-- data/LUTS/Annotations/processed/consensus_manifest.json
+- LUTSeg/data/Masks/**.png
+- LUTSeg/data/Wound_Masks/**.png
+- LUTSeg/annotations/processed/consensus_manifest.json
 """
 from __future__ import annotations
 
@@ -61,22 +61,22 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Create consensus LUTS masks.")
     parser.add_argument(
         "--groups-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Image groups JSON path.",
     )
     parser.add_argument(
         "--output-dir",
-        default="data/LUTS/Masks",
+        default="LUTSeg/data/Masks",
         help="Output directory for final consensus masks.",
     )
     parser.add_argument(
         "--wound-output-dir",
-        default="data/LUTS/Wound_Masks",
+        default="LUTSeg/data/Wound_Masks",
         help="Output directory for final wound masks.",
     )
     parser.add_argument(
         "--manifest-json",
-        default="data/LUTS/Annotations/processed/consensus_manifest.json",
+        default="LUTSeg/annotations/processed/consensus_manifest.json",
         help="Output consensus manifest path.",
     )
     parser.add_argument(

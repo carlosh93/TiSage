@@ -25,7 +25,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Initialize selected_doctor_by_image mapping.")
     parser.add_argument(
         "--groups-json",
-        default="data/LUTS/Annotations/processed/image_groups.json",
+        default="LUTSeg/annotations/processed/image_groups.json",
         help="Image groups JSON path (step 3 output).",
     )
     parser.add_argument(
@@ -40,7 +40,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-json",
-        default="data/LUTS/Annotations/processed/selected_doctor_by_image.json",
+        default="LUTSeg/annotations/processed/selected_doctor_by_image.json",
         help="Output mapping JSON path.",
     )
     return parser.parse_args()

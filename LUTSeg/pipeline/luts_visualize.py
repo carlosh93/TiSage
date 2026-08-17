@@ -3,9 +3,9 @@
 Visualize LUTS images and masks (overlay or side-by-side) to spot-check correctness.
 
 Usage:
-  python data/LUTS/pipeline/luts_visualize.py
-  python data/LUTS/pipeline/luts_visualize.py --split val --limit 20
-  python data/LUTS/pipeline/luts_visualize.py --save-dir data/LUTS/check_samples --limit 30
+  python LUTSeg/pipeline/luts_visualize.py
+  python LUTSeg/pipeline/luts_visualize.py --split val --limit 20
+  python LUTSeg/pipeline/luts_visualize.py --save-dir LUTSeg/check_samples --limit 30
 
 Keys: n/p = next, b = previous, q = quit.
 """
@@ -40,7 +40,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Visualize LUTS image + mask.")
     parser.add_argument(
         "--dataset-root",
-        default="data/LUTS",
+        default="LUTSeg/data",
         help="LUTS dataset root (contains train.txt, Images/, Masks/).",
     )
     parser.add_argument(

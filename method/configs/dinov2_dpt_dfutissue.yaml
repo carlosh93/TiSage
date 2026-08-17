@@ -1,0 +1,17 @@
+dataset: dfutissue
+data_root: data/DFUTissue
+nclass: 4
+crop_size: 98
+epochs: 100
+batch_size: 2
+double_batch_size: false
+lr: 5.0e-06
+lr_multi: 20.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.95
+model: dpt
+backbone: dinov2_base
+lock_backbone: true

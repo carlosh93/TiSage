@@ -3,12 +3,12 @@
 Step 6: Export final LUTS dataset layout.
 
 Creates:
-- data/LUTS/Images/**
-- data/LUTS/Masks/**
-- data/LUTS/Wound_Masks/**
-- data/LUTS/train.txt
-- data/LUTS/val.txt
-- data/LUTS/class_map.json
+- LUTSeg/Images/**
+- LUTSeg/data/Masks/**
+- LUTSeg/data/Wound_Masks/**
+- LUTSeg/train.txt
+- LUTSeg/val.txt
+- LUTSeg/class_map.json
 """
 from __future__ import annotations
 
@@ -23,12 +23,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Export LUTS dataset layout.")
     parser.add_argument(
         "--splits-json",
-        default="data/LUTS/Annotations/processed/splits.json",
+        default="LUTSeg/annotations/processed/splits.json",
         help="Input splits JSON path.",
     )
     parser.add_argument(
         "--dataset-root",
-        default="data/LUTS",
+        default="LUTSeg/data",
         help="Output dataset root.",
     )
     parser.add_argument(
@@ -49,7 +49,7 @@ def link_or_copy(src: Path, dst: Path, mode: str) -> None:
     src_resolved = src.resolve()
     dst_resolved = dst.resolve()
     if src_resolved == dst_resolved:
-        return  # already in place (e.g. consensus masks already in data/LUTS/Masks)
+        return  # already in place (e.g. consensus masks already in LUTSeg/data/Masks)
     dst.parent.mkdir(parents=True, exist_ok=True)
     if dst.exists() or dst.is_symlink():
         dst.unlink()

@@ -1,0 +1,17 @@
+dataset: lutseg
+data_root: data/LUTSeg
+nclass: 6
+crop_size: 126
+epochs: 100
+batch_size: 2
+double_batch_size: false
+lr: 3.0e-06
+lr_multi: 20.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.9
+model: dpt
+backbone: dinov2_base
+lock_backbone: true

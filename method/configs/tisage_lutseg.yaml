@@ -16,22 +16,22 @@ backbone: dinov2_base
 lock_backbone: true
 
 # MedSigLIP pseudo-label calibration (enable with --medsiglip flag)
-medsiglip_alpha: 0.1
+medsiglip_alpha: 0.25
 medsiglip_n_segments: 64
 medsiglip_context_margin: 2
-medsiglip_recompute_every: 5
+medsiglip_recompute_every: 10
 medsiglip_gate_conf: 0.85
-medsiglip_classifier_path: null
+medsiglip_classifier_path: method/checkpoints/pretrained/medsiglip_head_lutseg.pt
 medsiglip_embed_batch_size: 32
-medsiglip_soft_beta: 0.5
-medsiglip_use_multiscale: false
-medsiglip_coarse_n_segments: 32
+medsiglip_soft_beta: 0.55
+medsiglip_use_multiscale: true
+medsiglip_coarse_n_segments: 64
 medsiglip_coarse_min_size: 80
-medsiglip_fine_n_segments: 128
+medsiglip_fine_n_segments: 192
 medsiglip_fine_min_size: 40
-medsiglip_prior_beta: 0.5
-medsiglip_adaptive_alpha: false
-medsiglip_conf_weighted_kl: false
+medsiglip_prior_beta: 0.7
+medsiglip_adaptive_alpha: true
+medsiglip_conf_weighted_kl: true
 medsiglip_use_hard_conf_mask_for_kl: false
 
 # Optional override prompts for zero-shot mode (ignored when classifier checkpoint is used).

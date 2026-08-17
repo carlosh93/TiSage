@@ -1,0 +1,3 @@
+selection	image	mask	focus_delta	unimatch_focus_iou	tisage_focus_iou	unimatch_miou	tisage_miou
+maximum_gain	Images/Patient_20/P20T_5.jpg	Masks/Patient_20/P20T_5.png	7.5292	2.9643	10.4935	44.0795	48.1250
+hard_case	Images/Patient_28/P28T_3.jpg	Masks/Patient_28/P28T_3.png	-23.8383	36.6640	12.8257	37.6219	46.2901

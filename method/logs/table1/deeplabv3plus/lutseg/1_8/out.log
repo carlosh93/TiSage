@@ -1,0 +1,1738 @@
+[2026-07-10 17:25:38,689][    INFO] {'allow_weight_download': False,
+ 'amp': True,
+ 'backbone': 'resnet50',
+ 'batch_size': 4,
+ 'config': 'configs/lutseg_supervised_deeplabv3plus.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255}, 'name': 'CELoss'},
+ 'crop_size': 126,
+ 'data_root': 'data/LUTSeg',
+ 'dataset': 'lutseg',
+ 'deterministic': False,
+ 'epochs': 100,
+ 'eval_every': 1,
+ 'labeled_id_path': 'splits/lutseg/1_8/labeled.txt',
+ 'local_rank': 0,
+ 'lr': 0.001,
+ 'lr_multi': 10.0,
+ 'model': 'deeplabv3plus',
+ 'momentum': 0.9,
+ 'nclass': 6,
+ 'nesterov': True,
+ 'num_workers': 4,
+ 'output_stride': 16,
+ 'poly_power': 0.9,
+ 'port': None,
+ 'pretrained_path': 'pretrained/resnet50-11ad3fa6.pth',
+ 'resume': False,
+ 'samples_per_epoch': 111,
+ 'save_path': 'exp/lutseg/supervised_deeplabv3plus/resnet50_os16/1_8/seed0',
+ 'seed': 0,
+ 'sync_bn': False,
+ 'unlabeled_id_path': 'splits/lutseg/1_8/unlabeled.txt',
+ 'val_num_workers': 2,
+ 'weight_decay': 0.0001,
+ 'world_size': 1}
+
+[2026-07-10 17:25:38,690][    INFO] Model: DeepLabV3+ ResNet-50 OS16, parameters: 40.3M
+[2026-07-10 17:25:38,690][    INFO] Training images in split: 13; samples per epoch: 111; batches per epoch/rank: 28
+[2026-07-10 17:25:46,022][    INFO] Epoch 1/100, iter 1/28, loss 5.0411, encoder LR 0.001
+[2026-07-10 17:25:46,153][    INFO] Epoch 1/100, iter 4/28, loss 4.6671, encoder LR 0.000999036
+[2026-07-10 17:25:46,276][    INFO] Epoch 1/100, iter 7/28, loss 4.0580, encoder LR 0.000998071
+[2026-07-10 17:25:47,134][    INFO] Epoch 1/100, iter 10/28, loss 3.2317, encoder LR 0.000997107
+[2026-07-10 17:25:48,114][    INFO] Epoch 1/100, iter 13/28, loss 3.2360, encoder LR 0.000996142
+[2026-07-10 17:25:49,227][    INFO] Epoch 1/100, iter 16/28, loss 2.9253, encoder LR 0.000995177
+[2026-07-10 17:25:49,820][    INFO] Epoch 1/100, iter 19/28, loss 2.8823, encoder LR 0.000994212
+[2026-07-10 17:25:50,688][    INFO] Epoch 1/100, iter 22/28, loss 2.7467, encoder LR 0.000993247
+[2026-07-10 17:25:51,778][    INFO] Epoch 1/100, iter 25/28, loss 2.9119, encoder LR 0.000992282
+[2026-07-10 17:25:53,023][    INFO] Epoch 1/100, iter 28/28, loss 2.9846, encoder LR 0.000991317
+[2026-07-10 17:26:36,952][    INFO] Evaluation class [0 background]: IoU 16.12, Dice 27.76
+[2026-07-10 17:26:36,953][    INFO] Evaluation class [1 epithelial tissue]: IoU 5.50, Dice 10.42
+[2026-07-10 17:26:36,953][    INFO] Evaluation class [2 slough]: IoU 0.01, Dice 0.02
+[2026-07-10 17:26:36,953][    INFO] Evaluation class [3 granulation tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:26:36,953][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:26:36,953][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:26:36,953][    INFO] Evaluation epoch 0: MeanIoU 3.60, MeanDice 6.37; BEST mIoU 3.60, Dice 6.37 at epoch 0
+[2026-07-10 17:26:38,774][    INFO] Epoch 2/100, iter 1/28, loss 0.6152, encoder LR 0.000990995
+[2026-07-10 17:26:39,202][    INFO] Epoch 2/100, iter 4/28, loss 1.7417, encoder LR 0.00099003
+[2026-07-10 17:26:39,691][    INFO] Epoch 2/100, iter 7/28, loss 1.9471, encoder LR 0.000989065
+[2026-07-10 17:26:40,911][    INFO] Epoch 2/100, iter 10/28, loss 1.4289, encoder LR 0.000988099
+[2026-07-10 17:26:42,301][    INFO] Epoch 2/100, iter 13/28, loss 1.1667, encoder LR 0.000987134
+[2026-07-10 17:26:42,407][    INFO] Epoch 2/100, iter 16/28, loss 1.0907, encoder LR 0.000986168
+[2026-07-10 17:26:43,946][    INFO] Epoch 2/100, iter 19/28, loss 1.2331, encoder LR 0.000985202
+[2026-07-10 17:26:44,658][    INFO] Epoch 2/100, iter 22/28, loss 1.2567, encoder LR 0.000984236
+[2026-07-10 17:26:45,633][    INFO] Epoch 2/100, iter 25/28, loss 1.1823, encoder LR 0.00098327
+[2026-07-10 17:26:45,753][    INFO] Epoch 2/100, iter 28/28, loss 1.1557, encoder LR 0.000982304
+[2026-07-10 17:26:51,968][    INFO] Evaluation class [0 background]: IoU 90.90, Dice 95.23
+[2026-07-10 17:26:51,969][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.52, Dice 1.04
+[2026-07-10 17:26:51,969][    INFO] Evaluation class [2 slough]: IoU 0.14, Dice 0.28
+[2026-07-10 17:26:51,969][    INFO] Evaluation class [3 granulation tissue]: IoU 4.61, Dice 8.82
+[2026-07-10 17:26:51,969][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:26:51,969][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:26:51,969][    INFO] Evaluation epoch 1: MeanIoU 16.03, MeanDice 17.56; BEST mIoU 16.03, Dice 17.56 at epoch 1
+[2026-07-10 17:26:55,139][    INFO] Epoch 3/100, iter 1/28, loss 0.1953, encoder LR 0.000981982
+[2026-07-10 17:26:55,320][    INFO] Epoch 3/100, iter 4/28, loss 0.8346, encoder LR 0.000981016
+[2026-07-10 17:26:56,794][    INFO] Epoch 3/100, iter 7/28, loss 0.6650, encoder LR 0.000980049
+[2026-07-10 17:26:57,206][    INFO] Epoch 3/100, iter 10/28, loss 0.7412, encoder LR 0.000979083
+[2026-07-10 17:26:57,634][    INFO] Epoch 3/100, iter 13/28, loss 0.6591, encoder LR 0.000978116
+[2026-07-10 17:26:58,458][    INFO] Epoch 3/100, iter 16/28, loss 0.6225, encoder LR 0.000977149
+[2026-07-10 17:27:00,362][    INFO] Epoch 3/100, iter 19/28, loss 0.6676, encoder LR 0.000976183
+[2026-07-10 17:27:00,768][    INFO] Epoch 3/100, iter 22/28, loss 0.8544, encoder LR 0.000975216
+[2026-07-10 17:27:00,867][    INFO] Epoch 3/100, iter 25/28, loss 0.8552, encoder LR 0.000974249
+[2026-07-10 17:27:01,720][    INFO] Epoch 3/100, iter 28/28, loss 0.8222, encoder LR 0.000973281
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [0 background]: IoU 91.36, Dice 95.49
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.82, Dice 1.62
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [2 slough]: IoU 0.16, Dice 0.32
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [3 granulation tissue]: IoU 5.24, Dice 9.95
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:06,318][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:06,318][    INFO] Evaluation epoch 2: MeanIoU 16.26, MeanDice 17.90; BEST mIoU 16.26, Dice 17.90 at epoch 2
+[2026-07-10 17:27:07,228][    INFO] Epoch 4/100, iter 1/28, loss 0.9249, encoder LR 0.000972959
+[2026-07-10 17:27:08,738][    INFO] Epoch 4/100, iter 4/28, loss 0.5115, encoder LR 0.000971992
+[2026-07-10 17:27:10,132][    INFO] Epoch 4/100, iter 7/28, loss 0.5037, encoder LR 0.000971024
+[2026-07-10 17:27:11,284][    INFO] Epoch 4/100, iter 10/28, loss 0.5072, encoder LR 0.000970057
+[2026-07-10 17:27:11,390][    INFO] Epoch 4/100, iter 13/28, loss 0.4865, encoder LR 0.000969089
+[2026-07-10 17:27:13,176][    INFO] Epoch 4/100, iter 16/28, loss 0.4314, encoder LR 0.000968122
+[2026-07-10 17:27:14,656][    INFO] Epoch 4/100, iter 19/28, loss 0.3801, encoder LR 0.000967154
+[2026-07-10 17:27:15,853][    INFO] Epoch 4/100, iter 22/28, loss 0.3757, encoder LR 0.000966186
+[2026-07-10 17:27:15,952][    INFO] Epoch 4/100, iter 25/28, loss 0.4275, encoder LR 0.000965218
+[2026-07-10 17:27:17,003][    INFO] Epoch 4/100, iter 28/28, loss 0.4245, encoder LR 0.00096425
+[2026-07-10 17:27:21,593][    INFO] Evaluation class [0 background]: IoU 91.77, Dice 95.71
+[2026-07-10 17:27:21,593][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.05, Dice 0.10
+[2026-07-10 17:27:21,593][    INFO] Evaluation class [2 slough]: IoU 0.06, Dice 0.12
+[2026-07-10 17:27:21,594][    INFO] Evaluation class [3 granulation tissue]: IoU 26.75, Dice 42.21
+[2026-07-10 17:27:21,594][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:21,594][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:21,594][    INFO] Evaluation epoch 3: MeanIoU 19.77, MeanDice 23.02; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:27:22,520][    INFO] Epoch 5/100, iter 1/28, loss 0.3654, encoder LR 0.000963927
+[2026-07-10 17:27:23,817][    INFO] Epoch 5/100, iter 4/28, loss 0.3365, encoder LR 0.000962959
+[2026-07-10 17:27:25,082][    INFO] Epoch 5/100, iter 7/28, loss 0.3257, encoder LR 0.00096199
+[2026-07-10 17:27:26,165][    INFO] Epoch 5/100, iter 10/28, loss 0.3026, encoder LR 0.000961022
+[2026-07-10 17:27:26,271][    INFO] Epoch 5/100, iter 13/28, loss 0.3461, encoder LR 0.000960053
+[2026-07-10 17:27:27,088][    INFO] Epoch 5/100, iter 16/28, loss 0.4821, encoder LR 0.000959084
+[2026-07-10 17:27:28,222][    INFO] Epoch 5/100, iter 19/28, loss 0.5993, encoder LR 0.000958116
+[2026-07-10 17:27:29,084][    INFO] Epoch 5/100, iter 22/28, loss 0.5827, encoder LR 0.000957147
+[2026-07-10 17:27:29,653][    INFO] Epoch 5/100, iter 25/28, loss 0.5894, encoder LR 0.000956178
+[2026-07-10 17:27:30,138][    INFO] Epoch 5/100, iter 28/28, loss 0.5640, encoder LR 0.000955208
+[2026-07-10 17:27:36,662][    INFO] Evaluation class [0 background]: IoU 91.36, Dice 95.48
+[2026-07-10 17:27:36,662][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.02, Dice 0.03
+[2026-07-10 17:27:36,663][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:36,663][    INFO] Evaluation class [3 granulation tissue]: IoU 0.28, Dice 0.55
+[2026-07-10 17:27:36,663][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:36,663][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:36,663][    INFO] Evaluation epoch 4: MeanIoU 15.28, MeanDice 16.01; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:27:39,207][    INFO] Epoch 6/100, iter 1/28, loss 0.1547, encoder LR 0.000954885
+[2026-07-10 17:27:39,316][    INFO] Epoch 6/100, iter 4/28, loss 0.3558, encoder LR 0.000953916
+[2026-07-10 17:27:40,650][    INFO] Epoch 6/100, iter 7/28, loss 0.2348, encoder LR 0.000952947
+[2026-07-10 17:27:41,534][    INFO] Epoch 6/100, iter 10/28, loss 0.2297, encoder LR 0.000951977
+[2026-07-10 17:27:41,641][    INFO] Epoch 6/100, iter 13/28, loss 0.5876, encoder LR 0.000951008
+[2026-07-10 17:27:43,010][    INFO] Epoch 6/100, iter 16/28, loss 0.5433, encoder LR 0.000950038
+[2026-07-10 17:27:43,126][    INFO] Epoch 6/100, iter 19/28, loss 0.5281, encoder LR 0.000949068
+[2026-07-10 17:27:43,890][    INFO] Epoch 6/100, iter 22/28, loss 0.5151, encoder LR 0.000948098
+[2026-07-10 17:27:45,199][    INFO] Epoch 6/100, iter 25/28, loss 0.5788, encoder LR 0.000947128
+[2026-07-10 17:27:45,555][    INFO] Epoch 6/100, iter 28/28, loss 0.5393, encoder LR 0.000946158
+[2026-07-10 17:27:50,482][    INFO] Evaluation class [0 background]: IoU 91.07, Dice 95.32
+[2026-07-10 17:27:50,482][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:50,482][    INFO] Evaluation class [2 slough]: IoU 0.29, Dice 0.58
+[2026-07-10 17:27:50,483][    INFO] Evaluation class [3 granulation tissue]: IoU 4.56, Dice 8.72
+[2026-07-10 17:27:50,483][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:50,483][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:27:50,483][    INFO] Evaluation epoch 5: MeanIoU 15.99, MeanDice 17.44; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:27:52,909][    INFO] Epoch 7/100, iter 1/28, loss 2.5746, encoder LR 0.000945834
+[2026-07-10 17:27:53,199][    INFO] Epoch 7/100, iter 4/28, loss 1.0421, encoder LR 0.000944864
+[2026-07-10 17:27:53,674][    INFO] Epoch 7/100, iter 7/28, loss 0.7156, encoder LR 0.000943894
+[2026-07-10 17:27:55,105][    INFO] Epoch 7/100, iter 10/28, loss 0.7142, encoder LR 0.000942923
+[2026-07-10 17:27:56,180][    INFO] Epoch 7/100, iter 13/28, loss 0.5882, encoder LR 0.000941952
+[2026-07-10 17:27:56,291][    INFO] Epoch 7/100, iter 16/28, loss 0.5035, encoder LR 0.000940982
+[2026-07-10 17:27:57,024][    INFO] Epoch 7/100, iter 19/28, loss 0.5349, encoder LR 0.000940011
+[2026-07-10 17:27:58,226][    INFO] Epoch 7/100, iter 22/28, loss 0.5080, encoder LR 0.00093904
+[2026-07-10 17:27:59,073][    INFO] Epoch 7/100, iter 25/28, loss 0.5766, encoder LR 0.000938069
+[2026-07-10 17:27:59,178][    INFO] Epoch 7/100, iter 28/28, loss 0.5408, encoder LR 0.000937097
+[2026-07-10 17:28:04,616][    INFO] Evaluation class [0 background]: IoU 91.35, Dice 95.48
+[2026-07-10 17:28:04,617][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.01
+[2026-07-10 17:28:04,617][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:04,617][    INFO] Evaluation class [3 granulation tissue]: IoU 0.51, Dice 1.01
+[2026-07-10 17:28:04,617][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:04,617][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:04,617][    INFO] Evaluation epoch 6: MeanIoU 15.31, MeanDice 16.08; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:28:05,937][    INFO] Epoch 8/100, iter 1/28, loss 0.1482, encoder LR 0.000936774
+[2026-07-10 17:28:07,173][    INFO] Epoch 8/100, iter 4/28, loss 0.1687, encoder LR 0.000935802
+[2026-07-10 17:28:07,581][    INFO] Epoch 8/100, iter 7/28, loss 0.3071, encoder LR 0.000934831
+[2026-07-10 17:28:08,040][    INFO] Epoch 8/100, iter 10/28, loss 0.4522, encoder LR 0.000933859
+[2026-07-10 17:28:09,296][    INFO] Epoch 8/100, iter 13/28, loss 0.4046, encoder LR 0.000932887
+[2026-07-10 17:28:10,360][    INFO] Epoch 8/100, iter 16/28, loss 0.4219, encoder LR 0.000931916
+[2026-07-10 17:28:11,035][    INFO] Epoch 8/100, iter 19/28, loss 0.3998, encoder LR 0.000930944
+[2026-07-10 17:28:12,365][    INFO] Epoch 8/100, iter 22/28, loss 0.3657, encoder LR 0.000929972
+[2026-07-10 17:28:12,604][    INFO] Epoch 8/100, iter 25/28, loss 0.3966, encoder LR 0.000929
+[2026-07-10 17:28:13,250][    INFO] Epoch 8/100, iter 28/28, loss 0.5020, encoder LR 0.000928027
+[2026-07-10 17:28:20,276][    INFO] Evaluation class [0 background]: IoU 91.48, Dice 95.55
+[2026-07-10 17:28:20,276][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:20,277][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:20,277][    INFO] Evaluation class [3 granulation tissue]: IoU 14.94, Dice 26.00
+[2026-07-10 17:28:20,278][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:20,279][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:20,280][    INFO] Evaluation epoch 7: MeanIoU 17.74, MeanDice 20.26; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:28:22,050][    INFO] Epoch 9/100, iter 1/28, loss 0.1539, encoder LR 0.000927703
+[2026-07-10 17:28:22,447][    INFO] Epoch 9/100, iter 4/28, loss 0.3602, encoder LR 0.000926731
+[2026-07-10 17:28:23,848][    INFO] Epoch 9/100, iter 7/28, loss 0.5068, encoder LR 0.000925758
+[2026-07-10 17:28:24,681][    INFO] Epoch 9/100, iter 10/28, loss 0.4425, encoder LR 0.000924786
+[2026-07-10 17:28:25,900][    INFO] Epoch 9/100, iter 13/28, loss 0.4229, encoder LR 0.000923813
+[2026-07-10 17:28:26,005][    INFO] Epoch 9/100, iter 16/28, loss 0.3989, encoder LR 0.00092284
+[2026-07-10 17:28:26,979][    INFO] Epoch 9/100, iter 19/28, loss 0.4273, encoder LR 0.000921867
+[2026-07-10 17:28:28,652][    INFO] Epoch 9/100, iter 22/28, loss 0.3963, encoder LR 0.000920894
+[2026-07-10 17:28:29,314][    INFO] Epoch 9/100, iter 25/28, loss 0.4025, encoder LR 0.000919921
+[2026-07-10 17:28:29,453][    INFO] Epoch 9/100, iter 28/28, loss 0.3822, encoder LR 0.000918947
+[2026-07-10 17:28:35,815][    INFO] Evaluation class [0 background]: IoU 91.21, Dice 95.40
+[2026-07-10 17:28:35,815][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:35,815][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:35,815][    INFO] Evaluation class [3 granulation tissue]: IoU 3.22, Dice 6.23
+[2026-07-10 17:28:35,816][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:35,816][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:35,816][    INFO] Evaluation epoch 8: MeanIoU 15.74, MeanDice 16.94; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:28:37,300][    INFO] Epoch 10/100, iter 1/28, loss 0.4663, encoder LR 0.000918623
+[2026-07-10 17:28:37,753][    INFO] Epoch 10/100, iter 4/28, loss 0.2601, encoder LR 0.000917649
+[2026-07-10 17:28:39,505][    INFO] Epoch 10/100, iter 7/28, loss 0.3405, encoder LR 0.000916676
+[2026-07-10 17:28:39,721][    INFO] Epoch 10/100, iter 10/28, loss 0.3097, encoder LR 0.000915702
+[2026-07-10 17:28:40,502][    INFO] Epoch 10/100, iter 13/28, loss 0.2623, encoder LR 0.000914728
+[2026-07-10 17:28:40,888][    INFO] Epoch 10/100, iter 16/28, loss 0.2797, encoder LR 0.000913754
+[2026-07-10 17:28:42,381][    INFO] Epoch 10/100, iter 19/28, loss 0.2828, encoder LR 0.00091278
+[2026-07-10 17:28:42,572][    INFO] Epoch 10/100, iter 22/28, loss 0.3890, encoder LR 0.000911806
+[2026-07-10 17:28:44,280][    INFO] Epoch 10/100, iter 25/28, loss 0.3772, encoder LR 0.000910832
+[2026-07-10 17:28:46,069][    INFO] Epoch 10/100, iter 28/28, loss 0.3621, encoder LR 0.000909857
+[2026-07-10 17:28:53,498][    INFO] Evaluation class [0 background]: IoU 90.76, Dice 95.16
+[2026-07-10 17:28:53,498][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:53,499][    INFO] Evaluation class [2 slough]: IoU 0.08, Dice 0.15
+[2026-07-10 17:28:53,500][    INFO] Evaluation class [3 granulation tissue]: IoU 2.99, Dice 5.81
+[2026-07-10 17:28:53,500][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:53,501][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:28:53,502][    INFO] Evaluation epoch 9: MeanIoU 15.64, MeanDice 16.85; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:28:55,355][    INFO] Epoch 11/100, iter 1/28, loss 0.1880, encoder LR 0.000909533
+[2026-07-10 17:28:56,679][    INFO] Epoch 11/100, iter 4/28, loss 0.3070, encoder LR 0.000908558
+[2026-07-10 17:28:57,611][    INFO] Epoch 11/100, iter 7/28, loss 0.2849, encoder LR 0.000907583
+[2026-07-10 17:28:57,721][    INFO] Epoch 11/100, iter 10/28, loss 0.3896, encoder LR 0.000906609
+[2026-07-10 17:28:58,903][    INFO] Epoch 11/100, iter 13/28, loss 0.4228, encoder LR 0.000905634
+[2026-07-10 17:29:00,571][    INFO] Epoch 11/100, iter 16/28, loss 0.4734, encoder LR 0.000904659
+[2026-07-10 17:29:00,907][    INFO] Epoch 11/100, iter 19/28, loss 0.4786, encoder LR 0.000903683
+[2026-07-10 17:29:01,325][    INFO] Epoch 11/100, iter 22/28, loss 0.4877, encoder LR 0.000902708
+[2026-07-10 17:29:02,857][    INFO] Epoch 11/100, iter 25/28, loss 0.4603, encoder LR 0.000901733
+[2026-07-10 17:29:04,082][    INFO] Epoch 11/100, iter 28/28, loss 0.4467, encoder LR 0.000900757
+[2026-07-10 17:29:10,285][    INFO] Evaluation class [0 background]: IoU 89.32, Dice 94.36
+[2026-07-10 17:29:10,285][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:10,285][    INFO] Evaluation class [2 slough]: IoU 0.04, Dice 0.09
+[2026-07-10 17:29:10,285][    INFO] Evaluation class [3 granulation tissue]: IoU 17.51, Dice 29.81
+[2026-07-10 17:29:10,286][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:10,286][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:10,286][    INFO] Evaluation epoch 10: MeanIoU 17.81, MeanDice 20.71; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:29:12,529][    INFO] Epoch 12/100, iter 1/28, loss 0.1770, encoder LR 0.000900432
+[2026-07-10 17:29:12,637][    INFO] Epoch 12/100, iter 4/28, loss 0.2157, encoder LR 0.000899457
+[2026-07-10 17:29:13,518][    INFO] Epoch 12/100, iter 7/28, loss 0.2468, encoder LR 0.000898481
+[2026-07-10 17:29:14,687][    INFO] Epoch 12/100, iter 10/28, loss 0.3634, encoder LR 0.000897505
+[2026-07-10 17:29:16,400][    INFO] Epoch 12/100, iter 13/28, loss 0.4569, encoder LR 0.000896529
+[2026-07-10 17:29:16,600][    INFO] Epoch 12/100, iter 16/28, loss 0.4183, encoder LR 0.000895553
+[2026-07-10 17:29:18,354][    INFO] Epoch 12/100, iter 19/28, loss 0.3935, encoder LR 0.000894577
+[2026-07-10 17:29:18,969][    INFO] Epoch 12/100, iter 22/28, loss 0.3775, encoder LR 0.0008936
+[2026-07-10 17:29:20,614][    INFO] Epoch 12/100, iter 25/28, loss 0.3478, encoder LR 0.000892624
+[2026-07-10 17:29:20,719][    INFO] Epoch 12/100, iter 28/28, loss 0.4166, encoder LR 0.000891647
+[2026-07-10 17:29:26,181][    INFO] Evaluation class [0 background]: IoU 91.35, Dice 95.48
+[2026-07-10 17:29:26,182][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:26,182][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:26,182][    INFO] Evaluation class [3 granulation tissue]: IoU 0.12, Dice 0.24
+[2026-07-10 17:29:26,182][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:26,182][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:26,182][    INFO] Evaluation epoch 11: MeanIoU 15.25, MeanDice 15.95; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:29:26,971][    INFO] Epoch 13/100, iter 1/28, loss 0.5164, encoder LR 0.000891322
+[2026-07-10 17:29:28,043][    INFO] Epoch 13/100, iter 4/28, loss 0.4789, encoder LR 0.000890345
+[2026-07-10 17:29:28,751][    INFO] Epoch 13/100, iter 7/28, loss 0.4735, encoder LR 0.000889368
+[2026-07-10 17:29:30,809][    INFO] Epoch 13/100, iter 10/28, loss 0.4106, encoder LR 0.000888391
+[2026-07-10 17:29:30,917][    INFO] Epoch 13/100, iter 13/28, loss 0.3980, encoder LR 0.000887414
+[2026-07-10 17:29:32,328][    INFO] Epoch 13/100, iter 16/28, loss 0.3686, encoder LR 0.000886437
+[2026-07-10 17:29:33,716][    INFO] Epoch 13/100, iter 19/28, loss 0.3429, encoder LR 0.000885459
+[2026-07-10 17:29:35,291][    INFO] Epoch 13/100, iter 22/28, loss 0.3145, encoder LR 0.000884482
+[2026-07-10 17:29:35,424][    INFO] Epoch 13/100, iter 25/28, loss 0.3316, encoder LR 0.000883504
+[2026-07-10 17:29:35,891][    INFO] Epoch 13/100, iter 28/28, loss 0.4255, encoder LR 0.000882526
+[2026-07-10 17:29:41,573][    INFO] Evaluation class [0 background]: IoU 91.37, Dice 95.49
+[2026-07-10 17:29:41,574][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:41,574][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:41,574][    INFO] Evaluation class [3 granulation tissue]: IoU 1.38, Dice 2.73
+[2026-07-10 17:29:41,574][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:41,575][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:41,575][    INFO] Evaluation epoch 12: MeanIoU 15.46, MeanDice 16.37; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:29:42,762][    INFO] Epoch 14/100, iter 1/28, loss 0.1338, encoder LR 0.000882201
+[2026-07-10 17:29:43,616][    INFO] Epoch 14/100, iter 4/28, loss 0.5714, encoder LR 0.000881223
+[2026-07-10 17:29:44,257][    INFO] Epoch 14/100, iter 7/28, loss 0.4756, encoder LR 0.000880245
+[2026-07-10 17:29:45,284][    INFO] Epoch 14/100, iter 10/28, loss 0.4243, encoder LR 0.000879267
+[2026-07-10 17:29:46,631][    INFO] Epoch 14/100, iter 13/28, loss 0.3920, encoder LR 0.000878288
+[2026-07-10 17:29:47,833][    INFO] Epoch 14/100, iter 16/28, loss 0.3566, encoder LR 0.00087731
+[2026-07-10 17:29:48,518][    INFO] Epoch 14/100, iter 19/28, loss 0.3543, encoder LR 0.000876332
+[2026-07-10 17:29:48,907][    INFO] Epoch 14/100, iter 22/28, loss 0.3264, encoder LR 0.000875353
+[2026-07-10 17:29:51,235][    INFO] Epoch 14/100, iter 25/28, loss 0.3269, encoder LR 0.000874374
+[2026-07-10 17:29:51,824][    INFO] Epoch 14/100, iter 28/28, loss 0.3816, encoder LR 0.000873395
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [0 background]: IoU 91.31, Dice 95.46
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [3 granulation tissue]: IoU 0.58, Dice 1.15
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:57,361][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:29:57,361][    INFO] Evaluation epoch 13: MeanIoU 15.32, MeanDice 16.10; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:29:59,836][    INFO] Epoch 15/100, iter 1/28, loss 0.0527, encoder LR 0.000873069
+[2026-07-10 17:29:59,951][    INFO] Epoch 15/100, iter 4/28, loss 0.4133, encoder LR 0.00087209
+[2026-07-10 17:30:00,931][    INFO] Epoch 15/100, iter 7/28, loss 0.7347, encoder LR 0.000871111
+[2026-07-10 17:30:02,743][    INFO] Epoch 15/100, iter 10/28, loss 0.6364, encoder LR 0.000870132
+[2026-07-10 17:30:02,908][    INFO] Epoch 15/100, iter 13/28, loss 0.5531, encoder LR 0.000869152
+[2026-07-10 17:30:04,922][    INFO] Epoch 15/100, iter 16/28, loss 0.5094, encoder LR 0.000868173
+[2026-07-10 17:30:05,933][    INFO] Epoch 15/100, iter 19/28, loss 0.4875, encoder LR 0.000867193
+[2026-07-10 17:30:07,635][    INFO] Epoch 15/100, iter 22/28, loss 0.4448, encoder LR 0.000866214
+[2026-07-10 17:30:07,916][    INFO] Epoch 15/100, iter 25/28, loss 0.4737, encoder LR 0.000865234
+[2026-07-10 17:30:08,479][    INFO] Epoch 15/100, iter 28/28, loss 0.4377, encoder LR 0.000864254
+[2026-07-10 17:30:15,026][    INFO] Evaluation class [0 background]: IoU 91.31, Dice 95.46
+[2026-07-10 17:30:15,026][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:15,027][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:15,027][    INFO] Evaluation class [3 granulation tissue]: IoU 0.54, Dice 1.08
+[2026-07-10 17:30:15,027][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:15,027][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:15,027][    INFO] Evaluation epoch 14: MeanIoU 15.31, MeanDice 16.09; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:30:17,282][    INFO] Epoch 16/100, iter 1/28, loss 0.4416, encoder LR 0.000863927
+[2026-07-10 17:30:18,557][    INFO] Epoch 16/100, iter 4/28, loss 0.5223, encoder LR 0.000862947
+[2026-07-10 17:30:20,145][    INFO] Epoch 16/100, iter 7/28, loss 0.3437, encoder LR 0.000861967
+[2026-07-10 17:30:20,886][    INFO] Epoch 16/100, iter 10/28, loss 0.2874, encoder LR 0.000860986
+[2026-07-10 17:30:21,307][    INFO] Epoch 16/100, iter 13/28, loss 0.4784, encoder LR 0.000860006
+[2026-07-10 17:30:23,341][    INFO] Epoch 16/100, iter 16/28, loss 0.5618, encoder LR 0.000859025
+[2026-07-10 17:30:23,535][    INFO] Epoch 16/100, iter 19/28, loss 0.5260, encoder LR 0.000858044
+[2026-07-10 17:30:24,342][    INFO] Epoch 16/100, iter 22/28, loss 0.5124, encoder LR 0.000857063
+[2026-07-10 17:30:24,578][    INFO] Epoch 16/100, iter 25/28, loss 0.5033, encoder LR 0.000856082
+[2026-07-10 17:30:24,998][    INFO] Epoch 16/100, iter 28/28, loss 0.5327, encoder LR 0.000855101
+[2026-07-10 17:30:31,320][    INFO] Evaluation class [0 background]: IoU 83.64, Dice 91.09
+[2026-07-10 17:30:31,320][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.11, Dice 0.21
+[2026-07-10 17:30:31,321][    INFO] Evaluation class [2 slough]: IoU 0.25, Dice 0.49
+[2026-07-10 17:30:31,321][    INFO] Evaluation class [3 granulation tissue]: IoU 5.01, Dice 9.54
+[2026-07-10 17:30:31,321][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:31,321][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:31,321][    INFO] Evaluation epoch 15: MeanIoU 14.83, MeanDice 16.89; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:30:33,934][    INFO] Epoch 17/100, iter 1/28, loss 0.5984, encoder LR 0.000854774
+[2026-07-10 17:30:34,043][    INFO] Epoch 17/100, iter 4/28, loss 0.5734, encoder LR 0.000853793
+[2026-07-10 17:30:35,266][    INFO] Epoch 17/100, iter 7/28, loss 0.5349, encoder LR 0.000852811
+[2026-07-10 17:30:36,342][    INFO] Epoch 17/100, iter 10/28, loss 0.6487, encoder LR 0.00085183
+[2026-07-10 17:30:36,657][    INFO] Epoch 17/100, iter 13/28, loss 0.5898, encoder LR 0.000850848
+[2026-07-10 17:30:37,786][    INFO] Epoch 17/100, iter 16/28, loss 0.5571, encoder LR 0.000849866
+[2026-07-10 17:30:38,546][    INFO] Epoch 17/100, iter 19/28, loss 0.5713, encoder LR 0.000848884
+[2026-07-10 17:30:39,245][    INFO] Epoch 17/100, iter 22/28, loss 0.5670, encoder LR 0.000847902
+[2026-07-10 17:30:39,976][    INFO] Epoch 17/100, iter 25/28, loss 0.5346, encoder LR 0.00084692
+[2026-07-10 17:30:41,599][    INFO] Epoch 17/100, iter 28/28, loss 0.5040, encoder LR 0.000845938
+[2026-07-10 17:30:48,335][    INFO] Evaluation class [0 background]: IoU 86.11, Dice 92.54
+[2026-07-10 17:30:48,336][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.49, Dice 0.97
+[2026-07-10 17:30:48,337][    INFO] Evaluation class [2 slough]: IoU 0.34, Dice 0.68
+[2026-07-10 17:30:48,338][    INFO] Evaluation class [3 granulation tissue]: IoU 8.74, Dice 16.08
+[2026-07-10 17:30:48,339][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:48,340][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:30:48,341][    INFO] Evaluation epoch 16: MeanIoU 15.95, MeanDice 18.38; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:30:50,189][    INFO] Epoch 18/100, iter 1/28, loss 0.1284, encoder LR 0.00084561
+[2026-07-10 17:30:51,266][    INFO] Epoch 18/100, iter 4/28, loss 0.2308, encoder LR 0.000844628
+[2026-07-10 17:30:52,484][    INFO] Epoch 18/100, iter 7/28, loss 0.1986, encoder LR 0.000843645
+[2026-07-10 17:30:53,577][    INFO] Epoch 18/100, iter 10/28, loss 0.3564, encoder LR 0.000842663
+[2026-07-10 17:30:53,879][    INFO] Epoch 18/100, iter 13/28, loss 0.3614, encoder LR 0.00084168
+[2026-07-10 17:30:55,193][    INFO] Epoch 18/100, iter 16/28, loss 0.3166, encoder LR 0.000840697
+[2026-07-10 17:30:55,857][    INFO] Epoch 18/100, iter 19/28, loss 0.3553, encoder LR 0.000839714
+[2026-07-10 17:30:57,678][    INFO] Epoch 18/100, iter 22/28, loss 0.3846, encoder LR 0.00083873
+[2026-07-10 17:30:57,794][    INFO] Epoch 18/100, iter 25/28, loss 0.3743, encoder LR 0.000837747
+[2026-07-10 17:30:59,033][    INFO] Epoch 18/100, iter 28/28, loss 0.3583, encoder LR 0.000836763
+[2026-07-10 17:31:05,068][    INFO] Evaluation class [0 background]: IoU 91.36, Dice 95.49
+[2026-07-10 17:31:05,068][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:05,069][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:05,069][    INFO] Evaluation class [3 granulation tissue]: IoU 4.44, Dice 8.51
+[2026-07-10 17:31:05,069][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:05,069][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:05,069][    INFO] Evaluation epoch 17: MeanIoU 15.97, MeanDice 17.33; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:31:07,747][    INFO] Epoch 19/100, iter 1/28, loss 0.1609, encoder LR 0.000836436
+[2026-07-10 17:31:08,000][    INFO] Epoch 19/100, iter 4/28, loss 0.3716, encoder LR 0.000835452
+[2026-07-10 17:31:08,519][    INFO] Epoch 19/100, iter 7/28, loss 0.2902, encoder LR 0.000834468
+[2026-07-10 17:31:09,870][    INFO] Epoch 19/100, iter 10/28, loss 0.2935, encoder LR 0.000833484
+[2026-07-10 17:31:10,380][    INFO] Epoch 19/100, iter 13/28, loss 0.3456, encoder LR 0.0008325
+[2026-07-10 17:31:11,085][    INFO] Epoch 19/100, iter 16/28, loss 0.3243, encoder LR 0.000831516
+[2026-07-10 17:31:12,251][    INFO] Epoch 19/100, iter 19/28, loss 0.3037, encoder LR 0.000830532
+[2026-07-10 17:31:13,489][    INFO] Epoch 19/100, iter 22/28, loss 0.4078, encoder LR 0.000829547
+[2026-07-10 17:31:13,647][    INFO] Epoch 19/100, iter 25/28, loss 0.4341, encoder LR 0.000828562
+[2026-07-10 17:31:14,169][    INFO] Epoch 19/100, iter 28/28, loss 0.4310, encoder LR 0.000827578
+[2026-07-10 17:31:20,017][    INFO] Evaluation class [0 background]: IoU 91.48, Dice 95.55
+[2026-07-10 17:31:20,017][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.01, Dice 0.01
+[2026-07-10 17:31:20,018][    INFO] Evaluation class [2 slough]: IoU 0.02, Dice 0.04
+[2026-07-10 17:31:20,018][    INFO] Evaluation class [3 granulation tissue]: IoU 24.38, Dice 39.20
+[2026-07-10 17:31:20,018][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:20,018][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:20,018][    INFO] Evaluation epoch 18: MeanIoU 19.31, MeanDice 22.47; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:31:21,269][    INFO] Epoch 20/100, iter 1/28, loss 0.1921, encoder LR 0.00082725
+[2026-07-10 17:31:22,136][    INFO] Epoch 20/100, iter 4/28, loss 0.2355, encoder LR 0.000826265
+[2026-07-10 17:31:23,865][    INFO] Epoch 20/100, iter 7/28, loss 0.2950, encoder LR 0.00082528
+[2026-07-10 17:31:25,255][    INFO] Epoch 20/100, iter 10/28, loss 0.2755, encoder LR 0.000824294
+[2026-07-10 17:31:25,423][    INFO] Epoch 20/100, iter 13/28, loss 0.3023, encoder LR 0.000823309
+[2026-07-10 17:31:27,436][    INFO] Epoch 20/100, iter 16/28, loss 0.2677, encoder LR 0.000822324
+[2026-07-10 17:31:28,976][    INFO] Epoch 20/100, iter 19/28, loss 0.2638, encoder LR 0.000821338
+[2026-07-10 17:31:29,331][    INFO] Epoch 20/100, iter 22/28, loss 0.2380, encoder LR 0.000820353
+[2026-07-10 17:31:29,521][    INFO] Epoch 20/100, iter 25/28, loss 0.2736, encoder LR 0.000819367
+[2026-07-10 17:31:30,017][    INFO] Epoch 20/100, iter 28/28, loss 0.3478, encoder LR 0.000818381
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [0 background]: IoU 91.05, Dice 95.31
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [3 granulation tissue]: IoU 2.19, Dice 4.30
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:36,056][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:36,057][    INFO] Evaluation epoch 19: MeanIoU 15.54, MeanDice 16.60; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:31:37,554][    INFO] Epoch 21/100, iter 1/28, loss 0.7853, encoder LR 0.000818052
+[2026-07-10 17:31:37,893][    INFO] Epoch 21/100, iter 4/28, loss 0.3441, encoder LR 0.000817066
+[2026-07-10 17:31:39,188][    INFO] Epoch 21/100, iter 7/28, loss 0.3968, encoder LR 0.00081608
+[2026-07-10 17:31:42,288][    INFO] Epoch 21/100, iter 10/28, loss 0.3913, encoder LR 0.000815093
+[2026-07-10 17:31:43,726][    INFO] Epoch 21/100, iter 13/28, loss 0.3820, encoder LR 0.000814107
+[2026-07-10 17:31:43,835][    INFO] Epoch 21/100, iter 16/28, loss 0.3957, encoder LR 0.00081312
+[2026-07-10 17:31:45,911][    INFO] Epoch 21/100, iter 19/28, loss 0.3738, encoder LR 0.000812133
+[2026-07-10 17:31:46,766][    INFO] Epoch 21/100, iter 22/28, loss 0.3740, encoder LR 0.000811147
+[2026-07-10 17:31:47,745][    INFO] Epoch 21/100, iter 25/28, loss 0.3861, encoder LR 0.00081016
+[2026-07-10 17:31:47,946][    INFO] Epoch 21/100, iter 28/28, loss 0.4102, encoder LR 0.000809172
+[2026-07-10 17:31:54,807][    INFO] Evaluation class [0 background]: IoU 91.29, Dice 95.45
+[2026-07-10 17:31:54,808][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:54,808][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:54,808][    INFO] Evaluation class [3 granulation tissue]: IoU 0.45, Dice 0.90
+[2026-07-10 17:31:54,808][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:54,808][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:31:54,808][    INFO] Evaluation epoch 20: MeanIoU 15.29, MeanDice 16.06; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:31:56,753][    INFO] Epoch 22/100, iter 1/28, loss 0.1923, encoder LR 0.000808843
+[2026-07-10 17:31:57,048][    INFO] Epoch 22/100, iter 4/28, loss 0.8089, encoder LR 0.000807856
+[2026-07-10 17:31:58,282][    INFO] Epoch 22/100, iter 7/28, loss 0.6547, encoder LR 0.000806868
+[2026-07-10 17:31:58,654][    INFO] Epoch 22/100, iter 10/28, loss 0.5152, encoder LR 0.000805881
+[2026-07-10 17:32:00,002][    INFO] Epoch 22/100, iter 13/28, loss 0.4591, encoder LR 0.000804893
+[2026-07-10 17:32:00,479][    INFO] Epoch 22/100, iter 16/28, loss 0.4340, encoder LR 0.000803905
+[2026-07-10 17:32:02,011][    INFO] Epoch 22/100, iter 19/28, loss 0.3849, encoder LR 0.000802917
+[2026-07-10 17:32:04,107][    INFO] Epoch 22/100, iter 22/28, loss 0.3661, encoder LR 0.000801929
+[2026-07-10 17:32:05,120][    INFO] Epoch 22/100, iter 25/28, loss 0.3470, encoder LR 0.000800941
+[2026-07-10 17:32:05,328][    INFO] Epoch 22/100, iter 28/28, loss 0.3527, encoder LR 0.000799952
+[2026-07-10 17:32:11,547][    INFO] Evaluation class [0 background]: IoU 90.26, Dice 94.88
+[2026-07-10 17:32:11,548][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:11,548][    INFO] Evaluation class [2 slough]: IoU 0.67, Dice 1.32
+[2026-07-10 17:32:11,548][    INFO] Evaluation class [3 granulation tissue]: IoU 3.60, Dice 6.94
+[2026-07-10 17:32:11,548][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:11,548][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:11,548][    INFO] Evaluation epoch 21: MeanIoU 15.75, MeanDice 17.19; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:32:13,367][    INFO] Epoch 23/100, iter 1/28, loss 0.3271, encoder LR 0.000799623
+[2026-07-10 17:32:13,578][    INFO] Epoch 23/100, iter 4/28, loss 0.2806, encoder LR 0.000798634
+[2026-07-10 17:32:14,618][    INFO] Epoch 23/100, iter 7/28, loss 0.3945, encoder LR 0.000797645
+[2026-07-10 17:32:15,037][    INFO] Epoch 23/100, iter 10/28, loss 0.4264, encoder LR 0.000796657
+[2026-07-10 17:32:16,230][    INFO] Epoch 23/100, iter 13/28, loss 0.3902, encoder LR 0.000795667
+[2026-07-10 17:32:16,716][    INFO] Epoch 23/100, iter 16/28, loss 0.3660, encoder LR 0.000794678
+[2026-07-10 17:32:17,857][    INFO] Epoch 23/100, iter 19/28, loss 0.3441, encoder LR 0.000793689
+[2026-07-10 17:32:18,833][    INFO] Epoch 23/100, iter 22/28, loss 0.3267, encoder LR 0.0007927
+[2026-07-10 17:32:20,396][    INFO] Epoch 23/100, iter 25/28, loss 0.3617, encoder LR 0.00079171
+[2026-07-10 17:32:20,595][    INFO] Epoch 23/100, iter 28/28, loss 0.3905, encoder LR 0.00079072
+[2026-07-10 17:32:27,274][    INFO] Evaluation class [0 background]: IoU 90.24, Dice 94.87
+[2026-07-10 17:32:27,275][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:27,276][    INFO] Evaluation class [2 slough]: IoU 0.66, Dice 1.30
+[2026-07-10 17:32:27,277][    INFO] Evaluation class [3 granulation tissue]: IoU 14.58, Dice 25.45
+[2026-07-10 17:32:27,278][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:27,279][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:27,280][    INFO] Evaluation epoch 22: MeanIoU 17.58, MeanDice 20.27; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:32:28,354][    INFO] Epoch 24/100, iter 1/28, loss 0.1815, encoder LR 0.00079039
+[2026-07-10 17:32:29,295][    INFO] Epoch 24/100, iter 4/28, loss 0.1909, encoder LR 0.000789401
+[2026-07-10 17:32:31,167][    INFO] Epoch 24/100, iter 7/28, loss 0.1883, encoder LR 0.00078841
+[2026-07-10 17:32:32,145][    INFO] Epoch 24/100, iter 10/28, loss 0.2872, encoder LR 0.00078742
+[2026-07-10 17:32:33,355][    INFO] Epoch 24/100, iter 13/28, loss 0.2683, encoder LR 0.00078643
+[2026-07-10 17:32:34,608][    INFO] Epoch 24/100, iter 16/28, loss 0.3309, encoder LR 0.00078544
+[2026-07-10 17:32:35,746][    INFO] Epoch 24/100, iter 19/28, loss 0.3140, encoder LR 0.000784449
+[2026-07-10 17:32:35,859][    INFO] Epoch 24/100, iter 22/28, loss 0.3294, encoder LR 0.000783458
+[2026-07-10 17:32:37,606][    INFO] Epoch 24/100, iter 25/28, loss 0.3162, encoder LR 0.000782467
+[2026-07-10 17:32:38,025][    INFO] Epoch 24/100, iter 28/28, loss 0.3392, encoder LR 0.000781476
+[2026-07-10 17:32:44,501][    INFO] Evaluation class [0 background]: IoU 90.69, Dice 95.12
+[2026-07-10 17:32:44,503][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:44,504][    INFO] Evaluation class [2 slough]: IoU 0.22, Dice 0.43
+[2026-07-10 17:32:44,504][    INFO] Evaluation class [3 granulation tissue]: IoU 15.33, Dice 26.58
+[2026-07-10 17:32:44,505][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:44,506][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:44,507][    INFO] Evaluation epoch 23: MeanIoU 17.70, MeanDice 20.35; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:32:46,325][    INFO] Epoch 25/100, iter 1/28, loss 0.2368, encoder LR 0.000781146
+[2026-07-10 17:32:47,216][    INFO] Epoch 25/100, iter 4/28, loss 0.2653, encoder LR 0.000780155
+[2026-07-10 17:32:49,256][    INFO] Epoch 25/100, iter 7/28, loss 0.2214, encoder LR 0.000779164
+[2026-07-10 17:32:49,464][    INFO] Epoch 25/100, iter 10/28, loss 0.1956, encoder LR 0.000778172
+[2026-07-10 17:32:49,923][    INFO] Epoch 25/100, iter 13/28, loss 0.1823, encoder LR 0.00077718
+[2026-07-10 17:32:50,926][    INFO] Epoch 25/100, iter 16/28, loss 0.2040, encoder LR 0.000776189
+[2026-07-10 17:32:51,127][    INFO] Epoch 25/100, iter 19/28, loss 0.2257, encoder LR 0.000775197
+[2026-07-10 17:32:51,321][    INFO] Epoch 25/100, iter 22/28, loss 0.2426, encoder LR 0.000774205
+[2026-07-10 17:32:52,467][    INFO] Epoch 25/100, iter 25/28, loss 0.3145, encoder LR 0.000773213
+[2026-07-10 17:32:53,086][    INFO] Epoch 25/100, iter 28/28, loss 0.2907, encoder LR 0.00077222
+[2026-07-10 17:32:58,728][    INFO] Evaluation class [0 background]: IoU 91.49, Dice 95.56
+[2026-07-10 17:32:58,728][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:58,729][    INFO] Evaluation class [2 slough]: IoU 0.44, Dice 0.88
+[2026-07-10 17:32:58,729][    INFO] Evaluation class [3 granulation tissue]: IoU 14.00, Dice 24.56
+[2026-07-10 17:32:58,729][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:58,729][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:32:58,729][    INFO] Evaluation epoch 24: MeanIoU 17.66, MeanDice 20.17; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:33:01,290][    INFO] Epoch 26/100, iter 1/28, loss 0.2174, encoder LR 0.00077189
+[2026-07-10 17:33:01,396][    INFO] Epoch 26/100, iter 4/28, loss 0.3612, encoder LR 0.000770897
+[2026-07-10 17:33:01,691][    INFO] Epoch 26/100, iter 7/28, loss 0.5543, encoder LR 0.000769904
+[2026-07-10 17:33:02,779][    INFO] Epoch 26/100, iter 10/28, loss 0.4185, encoder LR 0.000768912
+[2026-07-10 17:33:04,343][    INFO] Epoch 26/100, iter 13/28, loss 0.3412, encoder LR 0.000767919
+[2026-07-10 17:33:04,625][    INFO] Epoch 26/100, iter 16/28, loss 0.3430, encoder LR 0.000766926
+[2026-07-10 17:33:05,374][    INFO] Epoch 26/100, iter 19/28, loss 0.3646, encoder LR 0.000765932
+[2026-07-10 17:33:06,535][    INFO] Epoch 26/100, iter 22/28, loss 0.3648, encoder LR 0.000764939
+[2026-07-10 17:33:07,743][    INFO] Epoch 26/100, iter 25/28, loss 0.3627, encoder LR 0.000763946
+[2026-07-10 17:33:07,929][    INFO] Epoch 26/100, iter 28/28, loss 0.3370, encoder LR 0.000762952
+[2026-07-10 17:33:14,444][    INFO] Evaluation class [0 background]: IoU 91.38, Dice 95.49
+[2026-07-10 17:33:14,445][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:14,446][    INFO] Evaluation class [2 slough]: IoU 0.08, Dice 0.16
+[2026-07-10 17:33:14,446][    INFO] Evaluation class [3 granulation tissue]: IoU 11.15, Dice 20.06
+[2026-07-10 17:33:14,447][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:14,448][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:14,448][    INFO] Evaluation epoch 25: MeanIoU 17.10, MeanDice 19.29; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:33:15,491][    INFO] Epoch 27/100, iter 1/28, loss 0.1288, encoder LR 0.000762621
+[2026-07-10 17:33:17,259][    INFO] Epoch 27/100, iter 4/28, loss 0.2148, encoder LR 0.000761627
+[2026-07-10 17:33:17,427][    INFO] Epoch 27/100, iter 7/28, loss 0.4768, encoder LR 0.000760633
+[2026-07-10 17:33:18,423][    INFO] Epoch 27/100, iter 10/28, loss 0.4262, encoder LR 0.000759639
+[2026-07-10 17:33:19,150][    INFO] Epoch 27/100, iter 13/28, loss 0.3995, encoder LR 0.000758644
+[2026-07-10 17:33:19,343][    INFO] Epoch 27/100, iter 16/28, loss 0.4379, encoder LR 0.00075765
+[2026-07-10 17:33:20,755][    INFO] Epoch 27/100, iter 19/28, loss 0.4066, encoder LR 0.000756655
+[2026-07-10 17:33:21,678][    INFO] Epoch 27/100, iter 22/28, loss 0.4766, encoder LR 0.000755661
+[2026-07-10 17:33:23,975][    INFO] Epoch 27/100, iter 25/28, loss 0.4607, encoder LR 0.000754666
+[2026-07-10 17:33:24,081][    INFO] Epoch 27/100, iter 28/28, loss 0.4580, encoder LR 0.000753671
+[2026-07-10 17:33:30,643][    INFO] Evaluation class [0 background]: IoU 91.74, Dice 95.69
+[2026-07-10 17:33:30,644][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:30,645][    INFO] Evaluation class [2 slough]: IoU 0.02, Dice 0.04
+[2026-07-10 17:33:30,646][    INFO] Evaluation class [3 granulation tissue]: IoU 26.83, Dice 42.31
+[2026-07-10 17:33:30,647][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:30,648][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:30,649][    INFO] Evaluation epoch 26: MeanIoU 19.76, MeanDice 23.01; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:33:32,546][    INFO] Epoch 28/100, iter 1/28, loss 0.2328, encoder LR 0.000753339
+[2026-07-10 17:33:33,328][    INFO] Epoch 28/100, iter 4/28, loss 0.3981, encoder LR 0.000752344
+[2026-07-10 17:33:34,474][    INFO] Epoch 28/100, iter 7/28, loss 0.4306, encoder LR 0.000751349
+[2026-07-10 17:33:34,922][    INFO] Epoch 28/100, iter 10/28, loss 0.3677, encoder LR 0.000750353
+[2026-07-10 17:33:35,936][    INFO] Epoch 28/100, iter 13/28, loss 0.3652, encoder LR 0.000749358
+[2026-07-10 17:33:37,634][    INFO] Epoch 28/100, iter 16/28, loss 0.3589, encoder LR 0.000748362
+[2026-07-10 17:33:38,640][    INFO] Epoch 28/100, iter 19/28, loss 0.3651, encoder LR 0.000747366
+[2026-07-10 17:33:38,768][    INFO] Epoch 28/100, iter 22/28, loss 0.3686, encoder LR 0.00074637
+[2026-07-10 17:33:40,132][    INFO] Epoch 28/100, iter 25/28, loss 0.4379, encoder LR 0.000745374
+[2026-07-10 17:33:41,145][    INFO] Epoch 28/100, iter 28/28, loss 0.4186, encoder LR 0.000744377
+[2026-07-10 17:33:46,682][    INFO] Evaluation class [0 background]: IoU 91.01, Dice 95.29
+[2026-07-10 17:33:46,682][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:46,682][    INFO] Evaluation class [2 slough]: IoU 0.15, Dice 0.29
+[2026-07-10 17:33:46,683][    INFO] Evaluation class [3 granulation tissue]: IoU 3.86, Dice 7.43
+[2026-07-10 17:33:46,683][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:46,683][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:33:46,683][    INFO] Evaluation epoch 27: MeanIoU 15.83, MeanDice 17.17; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:33:49,297][    INFO] Epoch 29/100, iter 1/28, loss 0.0714, encoder LR 0.000744045
+[2026-07-10 17:33:49,406][    INFO] Epoch 29/100, iter 4/28, loss 0.1213, encoder LR 0.000743049
+[2026-07-10 17:33:50,843][    INFO] Epoch 29/100, iter 7/28, loss 0.1203, encoder LR 0.000742052
+[2026-07-10 17:33:51,824][    INFO] Epoch 29/100, iter 10/28, loss 0.1580, encoder LR 0.000741055
+[2026-07-10 17:33:52,815][    INFO] Epoch 29/100, iter 13/28, loss 0.1641, encoder LR 0.000740058
+[2026-07-10 17:33:52,935][    INFO] Epoch 29/100, iter 16/28, loss 0.2341, encoder LR 0.000739061
+[2026-07-10 17:33:54,520][    INFO] Epoch 29/100, iter 19/28, loss 0.3416, encoder LR 0.000738063
+[2026-07-10 17:33:55,474][    INFO] Epoch 29/100, iter 22/28, loss 0.3612, encoder LR 0.000737066
+[2026-07-10 17:33:57,434][    INFO] Epoch 29/100, iter 25/28, loss 0.3339, encoder LR 0.000736068
+[2026-07-10 17:33:57,544][    INFO] Epoch 29/100, iter 28/28, loss 0.3779, encoder LR 0.000735071
+[2026-07-10 17:34:02,844][    INFO] Evaluation class [0 background]: IoU 91.86, Dice 95.76
+[2026-07-10 17:34:02,845][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:02,845][    INFO] Evaluation class [2 slough]: IoU 0.35, Dice 0.69
+[2026-07-10 17:34:02,845][    INFO] Evaluation class [3 granulation tissue]: IoU 23.45, Dice 37.99
+[2026-07-10 17:34:02,845][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:02,845][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:02,846][    INFO] Evaluation epoch 28: MeanIoU 19.28, MeanDice 22.41; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:34:03,903][    INFO] Epoch 30/100, iter 1/28, loss 0.5993, encoder LR 0.000734738
+[2026-07-10 17:34:05,046][    INFO] Epoch 30/100, iter 4/28, loss 0.3660, encoder LR 0.00073374
+[2026-07-10 17:34:05,897][    INFO] Epoch 30/100, iter 7/28, loss 0.2817, encoder LR 0.000732742
+[2026-07-10 17:34:07,122][    INFO] Epoch 30/100, iter 10/28, loss 0.2554, encoder LR 0.000731744
+[2026-07-10 17:34:07,479][    INFO] Epoch 30/100, iter 13/28, loss 0.2728, encoder LR 0.000730745
+[2026-07-10 17:34:08,661][    INFO] Epoch 30/100, iter 16/28, loss 0.2700, encoder LR 0.000729747
+[2026-07-10 17:34:09,282][    INFO] Epoch 30/100, iter 19/28, loss 0.2458, encoder LR 0.000728748
+[2026-07-10 17:34:10,188][    INFO] Epoch 30/100, iter 22/28, loss 0.2872, encoder LR 0.000727749
+[2026-07-10 17:34:10,523][    INFO] Epoch 30/100, iter 25/28, loss 0.2820, encoder LR 0.00072675
+[2026-07-10 17:34:11,493][    INFO] Epoch 30/100, iter 28/28, loss 0.3246, encoder LR 0.000725751
+[2026-07-10 17:34:17,175][    INFO] Evaluation class [0 background]: IoU 91.60, Dice 95.62
+[2026-07-10 17:34:17,175][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:17,175][    INFO] Evaluation class [2 slough]: IoU 0.58, Dice 1.15
+[2026-07-10 17:34:17,176][    INFO] Evaluation class [3 granulation tissue]: IoU 17.19, Dice 29.34
+[2026-07-10 17:34:17,176][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:17,176][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:17,176][    INFO] Evaluation epoch 29: MeanIoU 18.23, MeanDice 21.02; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:34:18,239][    INFO] Epoch 31/100, iter 1/28, loss 1.0725, encoder LR 0.000725418
+[2026-07-10 17:34:18,919][    INFO] Epoch 31/100, iter 4/28, loss 0.4557, encoder LR 0.000724418
+[2026-07-10 17:34:20,833][    INFO] Epoch 31/100, iter 7/28, loss 0.3368, encoder LR 0.000723419
+[2026-07-10 17:34:20,954][    INFO] Epoch 31/100, iter 10/28, loss 0.2990, encoder LR 0.000722419
+[2026-07-10 17:34:21,877][    INFO] Epoch 31/100, iter 13/28, loss 0.4636, encoder LR 0.000721419
+[2026-07-10 17:34:23,966][    INFO] Epoch 31/100, iter 16/28, loss 0.4007, encoder LR 0.000720419
+[2026-07-10 17:34:24,432][    INFO] Epoch 31/100, iter 19/28, loss 0.3989, encoder LR 0.000719419
+[2026-07-10 17:34:25,088][    INFO] Epoch 31/100, iter 22/28, loss 0.4651, encoder LR 0.000718419
+[2026-07-10 17:34:26,657][    INFO] Epoch 31/100, iter 25/28, loss 0.4408, encoder LR 0.000717419
+[2026-07-10 17:34:27,896][    INFO] Epoch 31/100, iter 28/28, loss 0.4389, encoder LR 0.000716418
+[2026-07-10 17:34:34,648][    INFO] Evaluation class [0 background]: IoU 91.58, Dice 95.60
+[2026-07-10 17:34:34,648][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.01, Dice 0.02
+[2026-07-10 17:34:34,649][    INFO] Evaluation class [2 slough]: IoU 0.45, Dice 0.90
+[2026-07-10 17:34:34,649][    INFO] Evaluation class [3 granulation tissue]: IoU 20.34, Dice 33.80
+[2026-07-10 17:34:34,650][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:34,651][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:34,652][    INFO] Evaluation epoch 30: MeanIoU 18.73, MeanDice 21.72; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:34:35,706][    INFO] Epoch 32/100, iter 1/28, loss 0.3195, encoder LR 0.000716084
+[2026-07-10 17:34:36,683][    INFO] Epoch 32/100, iter 4/28, loss 0.2684, encoder LR 0.000715084
+[2026-07-10 17:34:38,173][    INFO] Epoch 32/100, iter 7/28, loss 0.2304, encoder LR 0.000714083
+[2026-07-10 17:34:38,280][    INFO] Epoch 32/100, iter 10/28, loss 0.2485, encoder LR 0.000713081
+[2026-07-10 17:34:39,736][    INFO] Epoch 32/100, iter 13/28, loss 0.3038, encoder LR 0.00071208
+[2026-07-10 17:34:40,174][    INFO] Epoch 32/100, iter 16/28, loss 0.2984, encoder LR 0.000711079
+[2026-07-10 17:34:41,645][    INFO] Epoch 32/100, iter 19/28, loss 0.2747, encoder LR 0.000710077
+[2026-07-10 17:34:41,770][    INFO] Epoch 32/100, iter 22/28, loss 0.3275, encoder LR 0.000709075
+[2026-07-10 17:34:42,789][    INFO] Epoch 32/100, iter 25/28, loss 0.3629, encoder LR 0.000708073
+[2026-07-10 17:34:42,912][    INFO] Epoch 32/100, iter 28/28, loss 0.3862, encoder LR 0.000707071
+[2026-07-10 17:34:48,381][    INFO] Evaluation class [0 background]: IoU 91.82, Dice 95.73
+[2026-07-10 17:34:48,382][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:48,382][    INFO] Evaluation class [2 slough]: IoU 0.42, Dice 0.84
+[2026-07-10 17:34:48,382][    INFO] Evaluation class [3 granulation tissue]: IoU 21.13, Dice 34.89
+[2026-07-10 17:34:48,382][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:48,382][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:34:48,383][    INFO] Evaluation epoch 31: MeanIoU 18.90, MeanDice 21.91; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:34:50,427][    INFO] Epoch 33/100, iter 1/28, loss 0.1805, encoder LR 0.000706737
+[2026-07-10 17:34:50,712][    INFO] Epoch 33/100, iter 4/28, loss 0.1706, encoder LR 0.000705735
+[2026-07-10 17:34:51,442][    INFO] Epoch 33/100, iter 7/28, loss 0.1971, encoder LR 0.000704733
+[2026-07-10 17:34:52,319][    INFO] Epoch 33/100, iter 10/28, loss 0.1911, encoder LR 0.00070373
+[2026-07-10 17:34:54,143][    INFO] Epoch 33/100, iter 13/28, loss 0.2187, encoder LR 0.000702727
+[2026-07-10 17:34:54,252][    INFO] Epoch 33/100, iter 16/28, loss 0.2097, encoder LR 0.000701724
+[2026-07-10 17:34:55,308][    INFO] Epoch 33/100, iter 19/28, loss 0.2078, encoder LR 0.000700721
+[2026-07-10 17:34:55,964][    INFO] Epoch 33/100, iter 22/28, loss 0.2250, encoder LR 0.000699718
+[2026-07-10 17:34:56,071][    INFO] Epoch 33/100, iter 25/28, loss 0.2102, encoder LR 0.000698715
+[2026-07-10 17:34:57,706][    INFO] Epoch 33/100, iter 28/28, loss 0.2419, encoder LR 0.000697711
+[2026-07-10 17:35:03,182][    INFO] Evaluation class [0 background]: IoU 91.42, Dice 95.52
+[2026-07-10 17:35:03,182][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:03,183][    INFO] Evaluation class [2 slough]: IoU 0.04, Dice 0.07
+[2026-07-10 17:35:03,183][    INFO] Evaluation class [3 granulation tissue]: IoU 3.35, Dice 6.49
+[2026-07-10 17:35:03,183][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:03,183][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:03,183][    INFO] Evaluation epoch 32: MeanIoU 15.80, MeanDice 17.01; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:35:05,492][    INFO] Epoch 34/100, iter 1/28, loss 0.1104, encoder LR 0.000697377
+[2026-07-10 17:35:05,607][    INFO] Epoch 34/100, iter 4/28, loss 0.9517, encoder LR 0.000696373
+[2026-07-10 17:35:06,051][    INFO] Epoch 34/100, iter 7/28, loss 0.5730, encoder LR 0.000695369
+[2026-07-10 17:35:06,433][    INFO] Epoch 34/100, iter 10/28, loss 0.6398, encoder LR 0.000694365
+[2026-07-10 17:35:07,345][    INFO] Epoch 34/100, iter 13/28, loss 0.5451, encoder LR 0.00069336
+[2026-07-10 17:35:08,104][    INFO] Epoch 34/100, iter 16/28, loss 0.5352, encoder LR 0.000692356
+[2026-07-10 17:35:08,265][    INFO] Epoch 34/100, iter 19/28, loss 0.5857, encoder LR 0.000691352
+[2026-07-10 17:35:09,472][    INFO] Epoch 34/100, iter 22/28, loss 0.5404, encoder LR 0.000690347
+[2026-07-10 17:35:11,004][    INFO] Epoch 34/100, iter 25/28, loss 0.5077, encoder LR 0.000689342
+[2026-07-10 17:35:11,832][    INFO] Epoch 34/100, iter 28/28, loss 0.4995, encoder LR 0.000688337
+[2026-07-10 17:35:18,100][    INFO] Evaluation class [0 background]: IoU 91.70, Dice 95.67
+[2026-07-10 17:35:18,100][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.01
+[2026-07-10 17:35:18,101][    INFO] Evaluation class [2 slough]: IoU 0.53, Dice 1.06
+[2026-07-10 17:35:18,101][    INFO] Evaluation class [3 granulation tissue]: IoU 22.28, Dice 36.44
+[2026-07-10 17:35:18,101][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:18,101][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:18,102][    INFO] Evaluation epoch 33: MeanIoU 19.09, MeanDice 22.20; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:35:20,218][    INFO] Epoch 35/100, iter 1/28, loss 0.2287, encoder LR 0.000688002
+[2026-07-10 17:35:20,388][    INFO] Epoch 35/100, iter 4/28, loss 0.3370, encoder LR 0.000686996
+[2026-07-10 17:35:20,854][    INFO] Epoch 35/100, iter 7/28, loss 0.3462, encoder LR 0.000685991
+[2026-07-10 17:35:22,180][    INFO] Epoch 35/100, iter 10/28, loss 0.3162, encoder LR 0.000684985
+[2026-07-10 17:35:22,983][    INFO] Epoch 35/100, iter 13/28, loss 0.4570, encoder LR 0.00068398
+[2026-07-10 17:35:24,160][    INFO] Epoch 35/100, iter 16/28, loss 0.4093, encoder LR 0.000682974
+[2026-07-10 17:35:24,300][    INFO] Epoch 35/100, iter 19/28, loss 0.4338, encoder LR 0.000681968
+[2026-07-10 17:35:25,028][    INFO] Epoch 35/100, iter 22/28, loss 0.4418, encoder LR 0.000680961
+[2026-07-10 17:35:26,143][    INFO] Epoch 35/100, iter 25/28, loss 0.4157, encoder LR 0.000679955
+[2026-07-10 17:35:27,774][    INFO] Epoch 35/100, iter 28/28, loss 0.3859, encoder LR 0.000678948
+[2026-07-10 17:35:33,186][    INFO] Evaluation class [0 background]: IoU 91.50, Dice 95.56
+[2026-07-10 17:35:33,187][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.01, Dice 0.03
+[2026-07-10 17:35:33,187][    INFO] Evaluation class [2 slough]: IoU 1.03, Dice 2.04
+[2026-07-10 17:35:33,188][    INFO] Evaluation class [3 granulation tissue]: IoU 18.45, Dice 31.15
+[2026-07-10 17:35:33,188][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:33,188][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:33,188][    INFO] Evaluation epoch 34: MeanIoU 18.50, MeanDice 21.46; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:35:34,617][    INFO] Epoch 36/100, iter 1/28, loss 0.1642, encoder LR 0.000678613
+[2026-07-10 17:35:34,989][    INFO] Epoch 36/100, iter 4/28, loss 0.1789, encoder LR 0.000677606
+[2026-07-10 17:35:35,721][    INFO] Epoch 36/100, iter 7/28, loss 0.1402, encoder LR 0.000676599
+[2026-07-10 17:35:37,251][    INFO] Epoch 36/100, iter 10/28, loss 0.1328, encoder LR 0.000675592
+[2026-07-10 17:35:38,795][    INFO] Epoch 36/100, iter 13/28, loss 0.1149, encoder LR 0.000674584
+[2026-07-10 17:35:39,332][    INFO] Epoch 36/100, iter 16/28, loss 0.1560, encoder LR 0.000673577
+[2026-07-10 17:35:39,452][    INFO] Epoch 36/100, iter 19/28, loss 0.1692, encoder LR 0.000672569
+[2026-07-10 17:35:41,239][    INFO] Epoch 36/100, iter 22/28, loss 0.1692, encoder LR 0.000671562
+[2026-07-10 17:35:42,190][    INFO] Epoch 36/100, iter 25/28, loss 0.1870, encoder LR 0.000670554
+[2026-07-10 17:35:42,495][    INFO] Epoch 36/100, iter 28/28, loss 0.1794, encoder LR 0.000669545
+[2026-07-10 17:35:48,725][    INFO] Evaluation class [0 background]: IoU 91.61, Dice 95.62
+[2026-07-10 17:35:48,725][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:48,726][    INFO] Evaluation class [2 slough]: IoU 0.13, Dice 0.26
+[2026-07-10 17:35:48,726][    INFO] Evaluation class [3 granulation tissue]: IoU 11.39, Dice 20.45
+[2026-07-10 17:35:48,726][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:48,726][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:35:48,727][    INFO] Evaluation epoch 35: MeanIoU 17.19, MeanDice 19.39; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:35:51,375][    INFO] Epoch 37/100, iter 1/28, loss 1.6645, encoder LR 0.000669209
+[2026-07-10 17:35:51,496][    INFO] Epoch 37/100, iter 4/28, loss 0.6851, encoder LR 0.000668201
+[2026-07-10 17:35:52,874][    INFO] Epoch 37/100, iter 7/28, loss 0.6440, encoder LR 0.000667192
+[2026-07-10 17:35:55,081][    INFO] Epoch 37/100, iter 10/28, loss 0.4883, encoder LR 0.000666184
+[2026-07-10 17:35:56,209][    INFO] Epoch 37/100, iter 13/28, loss 0.4193, encoder LR 0.000665175
+[2026-07-10 17:35:56,318][    INFO] Epoch 37/100, iter 16/28, loss 0.4383, encoder LR 0.000664166
+[2026-07-10 17:35:56,762][    INFO] Epoch 37/100, iter 19/28, loss 0.4206, encoder LR 0.000663156
+[2026-07-10 17:35:58,716][    INFO] Epoch 37/100, iter 22/28, loss 0.4276, encoder LR 0.000662147
+[2026-07-10 17:35:58,816][    INFO] Epoch 37/100, iter 25/28, loss 0.4167, encoder LR 0.000661138
+[2026-07-10 17:35:59,512][    INFO] Epoch 37/100, iter 28/28, loss 0.4098, encoder LR 0.000660128
+[2026-07-10 17:36:05,278][    INFO] Evaluation class [0 background]: IoU 91.90, Dice 95.78
+[2026-07-10 17:36:05,278][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:05,278][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:05,278][    INFO] Evaluation class [3 granulation tissue]: IoU 26.53, Dice 41.93
+[2026-07-10 17:36:05,279][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:05,279][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:05,279][    INFO] Evaluation epoch 36: MeanIoU 19.74, MeanDice 22.95; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:36:07,016][    INFO] Epoch 38/100, iter 1/28, loss 0.1293, encoder LR 0.000659791
+[2026-07-10 17:36:07,820][    INFO] Epoch 38/100, iter 4/28, loss 0.3267, encoder LR 0.000658781
+[2026-07-10 17:36:08,658][    INFO] Epoch 38/100, iter 7/28, loss 0.4147, encoder LR 0.000657771
+[2026-07-10 17:36:09,312][    INFO] Epoch 38/100, iter 10/28, loss 0.4105, encoder LR 0.000656761
+[2026-07-10 17:36:10,099][    INFO] Epoch 38/100, iter 13/28, loss 0.4419, encoder LR 0.00065575
+[2026-07-10 17:36:10,783][    INFO] Epoch 38/100, iter 16/28, loss 0.4079, encoder LR 0.00065474
+[2026-07-10 17:36:11,447][    INFO] Epoch 38/100, iter 19/28, loss 0.4136, encoder LR 0.000653729
+[2026-07-10 17:36:11,895][    INFO] Epoch 38/100, iter 22/28, loss 0.4186, encoder LR 0.000652718
+[2026-07-10 17:36:13,341][    INFO] Epoch 38/100, iter 25/28, loss 0.3944, encoder LR 0.000651707
+[2026-07-10 17:36:13,449][    INFO] Epoch 38/100, iter 28/28, loss 0.3701, encoder LR 0.000650695
+[2026-07-10 17:36:18,712][    INFO] Evaluation class [0 background]: IoU 91.47, Dice 95.55
+[2026-07-10 17:36:18,712][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:18,713][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:18,713][    INFO] Evaluation class [3 granulation tissue]: IoU 5.59, Dice 10.58
+[2026-07-10 17:36:18,713][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:18,713][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:18,713][    INFO] Evaluation epoch 37: MeanIoU 16.18, MeanDice 17.69; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:36:20,642][    INFO] Epoch 39/100, iter 1/28, loss 0.1433, encoder LR 0.000650358
+[2026-07-10 17:36:20,752][    INFO] Epoch 39/100, iter 4/28, loss 0.4436, encoder LR 0.000649346
+[2026-07-10 17:36:21,063][    INFO] Epoch 39/100, iter 7/28, loss 0.5649, encoder LR 0.000648335
+[2026-07-10 17:36:22,335][    INFO] Epoch 39/100, iter 10/28, loss 0.4381, encoder LR 0.000647323
+[2026-07-10 17:36:24,371][    INFO] Epoch 39/100, iter 13/28, loss 0.3839, encoder LR 0.000646311
+[2026-07-10 17:36:24,537][    INFO] Epoch 39/100, iter 16/28, loss 0.3863, encoder LR 0.000645298
+[2026-07-10 17:36:24,741][    INFO] Epoch 39/100, iter 19/28, loss 0.3559, encoder LR 0.000644286
+[2026-07-10 17:36:26,334][    INFO] Epoch 39/100, iter 22/28, loss 0.3491, encoder LR 0.000643273
+[2026-07-10 17:36:27,002][    INFO] Epoch 39/100, iter 25/28, loss 0.3306, encoder LR 0.00064226
+[2026-07-10 17:36:27,669][    INFO] Epoch 39/100, iter 28/28, loss 0.3135, encoder LR 0.000641247
+[2026-07-10 17:36:33,002][    INFO] Evaluation class [0 background]: IoU 91.47, Dice 95.55
+[2026-07-10 17:36:33,002][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:33,002][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:33,003][    INFO] Evaluation class [3 granulation tissue]: IoU 5.23, Dice 9.95
+[2026-07-10 17:36:33,003][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:33,003][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:33,003][    INFO] Evaluation epoch 38: MeanIoU 16.12, MeanDice 17.58; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:36:34,487][    INFO] Epoch 40/100, iter 1/28, loss 0.1818, encoder LR 0.00064091
+[2026-07-10 17:36:35,001][    INFO] Epoch 40/100, iter 4/28, loss 0.4411, encoder LR 0.000639896
+[2026-07-10 17:36:35,645][    INFO] Epoch 40/100, iter 7/28, loss 0.2960, encoder LR 0.000638883
+[2026-07-10 17:36:37,880][    INFO] Epoch 40/100, iter 10/28, loss 0.2880, encoder LR 0.000637869
+[2026-07-10 17:36:38,476][    INFO] Epoch 40/100, iter 13/28, loss 0.2537, encoder LR 0.000636856
+[2026-07-10 17:36:38,949][    INFO] Epoch 40/100, iter 16/28, loss 0.3302, encoder LR 0.000635842
+[2026-07-10 17:36:39,908][    INFO] Epoch 40/100, iter 19/28, loss 0.3271, encoder LR 0.000634828
+[2026-07-10 17:36:42,086][    INFO] Epoch 40/100, iter 22/28, loss 0.3018, encoder LR 0.000633813
+[2026-07-10 17:36:42,567][    INFO] Epoch 40/100, iter 25/28, loss 0.2977, encoder LR 0.000632799
+[2026-07-10 17:36:42,667][    INFO] Epoch 40/100, iter 28/28, loss 0.3458, encoder LR 0.000631784
+[2026-07-10 17:36:48,332][    INFO] Evaluation class [0 background]: IoU 91.87, Dice 95.76
+[2026-07-10 17:36:48,332][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:48,333][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:48,333][    INFO] Evaluation class [3 granulation tissue]: IoU 21.45, Dice 35.32
+[2026-07-10 17:36:48,333][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:48,333][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:36:48,333][    INFO] Evaluation epoch 39: MeanIoU 18.89, MeanDice 21.85; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:36:50,700][    INFO] Epoch 41/100, iter 1/28, loss 0.2832, encoder LR 0.000631446
+[2026-07-10 17:36:50,810][    INFO] Epoch 41/100, iter 4/28, loss 0.1935, encoder LR 0.000630431
+[2026-07-10 17:36:51,632][    INFO] Epoch 41/100, iter 7/28, loss 0.1735, encoder LR 0.000629416
+[2026-07-10 17:36:53,120][    INFO] Epoch 41/100, iter 10/28, loss 0.1632, encoder LR 0.000628401
+[2026-07-10 17:36:53,384][    INFO] Epoch 41/100, iter 13/28, loss 0.1679, encoder LR 0.000627385
+[2026-07-10 17:36:55,068][    INFO] Epoch 41/100, iter 16/28, loss 0.1808, encoder LR 0.000626369
+[2026-07-10 17:36:55,449][    INFO] Epoch 41/100, iter 19/28, loss 0.1926, encoder LR 0.000625354
+[2026-07-10 17:36:57,992][    INFO] Epoch 41/100, iter 22/28, loss 0.2173, encoder LR 0.000624338
+[2026-07-10 17:36:58,105][    INFO] Epoch 41/100, iter 25/28, loss 0.2135, encoder LR 0.000623321
+[2026-07-10 17:36:59,225][    INFO] Epoch 41/100, iter 28/28, loss 0.2230, encoder LR 0.000622305
+[2026-07-10 17:37:06,174][    INFO] Evaluation class [0 background]: IoU 91.85, Dice 95.75
+[2026-07-10 17:37:06,175][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:06,176][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:06,177][    INFO] Evaluation class [3 granulation tissue]: IoU 21.87, Dice 35.89
+[2026-07-10 17:37:06,178][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:06,178][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:06,179][    INFO] Evaluation epoch 40: MeanIoU 18.95, MeanDice 21.94; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:37:07,765][    INFO] Epoch 42/100, iter 1/28, loss 0.1545, encoder LR 0.000621966
+[2026-07-10 17:37:08,634][    INFO] Epoch 42/100, iter 4/28, loss 0.2017, encoder LR 0.00062095
+[2026-07-10 17:37:09,469][    INFO] Epoch 42/100, iter 7/28, loss 0.3569, encoder LR 0.000619933
+[2026-07-10 17:37:10,135][    INFO] Epoch 42/100, iter 10/28, loss 0.3676, encoder LR 0.000618916
+[2026-07-10 17:37:12,087][    INFO] Epoch 42/100, iter 13/28, loss 0.3711, encoder LR 0.000617899
+[2026-07-10 17:37:12,193][    INFO] Epoch 42/100, iter 16/28, loss 0.3325, encoder LR 0.000616881
+[2026-07-10 17:37:13,922][    INFO] Epoch 42/100, iter 19/28, loss 0.3233, encoder LR 0.000615864
+[2026-07-10 17:37:15,035][    INFO] Epoch 42/100, iter 22/28, loss 0.3407, encoder LR 0.000614846
+[2026-07-10 17:37:15,658][    INFO] Epoch 42/100, iter 25/28, loss 0.3258, encoder LR 0.000613828
+[2026-07-10 17:37:15,892][    INFO] Epoch 42/100, iter 28/28, loss 0.3360, encoder LR 0.00061281
+[2026-07-10 17:37:21,691][    INFO] Evaluation class [0 background]: IoU 91.83, Dice 95.74
+[2026-07-10 17:37:21,692][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:21,692][    INFO] Evaluation class [2 slough]: IoU 0.08, Dice 0.15
+[2026-07-10 17:37:21,692][    INFO] Evaluation class [3 granulation tissue]: IoU 20.97, Dice 34.67
+[2026-07-10 17:37:21,692][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:21,692][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:21,692][    INFO] Evaluation epoch 41: MeanIoU 18.81, MeanDice 21.76; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:37:23,058][    INFO] Epoch 43/100, iter 1/28, loss 0.2085, encoder LR 0.000612471
+[2026-07-10 17:37:24,140][    INFO] Epoch 43/100, iter 4/28, loss 0.3212, encoder LR 0.000611452
+[2026-07-10 17:37:26,206][    INFO] Epoch 43/100, iter 7/28, loss 0.4789, encoder LR 0.000610434
+[2026-07-10 17:37:26,308][    INFO] Epoch 43/100, iter 10/28, loss 0.3969, encoder LR 0.000609415
+[2026-07-10 17:37:27,710][    INFO] Epoch 43/100, iter 13/28, loss 0.3926, encoder LR 0.000608396
+[2026-07-10 17:37:29,686][    INFO] Epoch 43/100, iter 16/28, loss 0.4012, encoder LR 0.000607377
+[2026-07-10 17:37:30,355][    INFO] Epoch 43/100, iter 19/28, loss 0.4098, encoder LR 0.000606358
+[2026-07-10 17:37:30,463][    INFO] Epoch 43/100, iter 22/28, loss 0.4530, encoder LR 0.000605338
+[2026-07-10 17:37:31,518][    INFO] Epoch 43/100, iter 25/28, loss 0.4231, encoder LR 0.000604318
+[2026-07-10 17:37:32,435][    INFO] Epoch 43/100, iter 28/28, loss 0.4752, encoder LR 0.000603298
+[2026-07-10 17:37:38,159][    INFO] Evaluation class [0 background]: IoU 91.47, Dice 95.55
+[2026-07-10 17:37:38,159][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:38,159][    INFO] Evaluation class [2 slough]: IoU 0.02, Dice 0.04
+[2026-07-10 17:37:38,159][    INFO] Evaluation class [3 granulation tissue]: IoU 6.08, Dice 11.47
+[2026-07-10 17:37:38,160][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:38,160][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:38,160][    INFO] Evaluation epoch 42: MeanIoU 16.26, MeanDice 17.84; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:37:40,114][    INFO] Epoch 44/100, iter 1/28, loss 0.3802, encoder LR 0.000602958
+[2026-07-10 17:37:40,660][    INFO] Epoch 44/100, iter 4/28, loss 0.2444, encoder LR 0.000601938
+[2026-07-10 17:37:41,601][    INFO] Epoch 44/100, iter 7/28, loss 0.2306, encoder LR 0.000600918
+[2026-07-10 17:37:42,340][    INFO] Epoch 44/100, iter 10/28, loss 0.2802, encoder LR 0.000599897
+[2026-07-10 17:37:42,890][    INFO] Epoch 44/100, iter 13/28, loss 0.3813, encoder LR 0.000598877
+[2026-07-10 17:37:44,654][    INFO] Epoch 44/100, iter 16/28, loss 0.4216, encoder LR 0.000597856
+[2026-07-10 17:37:44,842][    INFO] Epoch 44/100, iter 19/28, loss 0.3895, encoder LR 0.000596835
+[2026-07-10 17:37:45,428][    INFO] Epoch 44/100, iter 22/28, loss 0.3680, encoder LR 0.000595813
+[2026-07-10 17:37:45,737][    INFO] Epoch 44/100, iter 25/28, loss 0.3739, encoder LR 0.000594792
+[2026-07-10 17:37:47,086][    INFO] Epoch 44/100, iter 28/28, loss 0.3543, encoder LR 0.00059377
+[2026-07-10 17:37:52,757][    INFO] Evaluation class [0 background]: IoU 91.77, Dice 95.71
+[2026-07-10 17:37:52,757][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:52,757][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:52,757][    INFO] Evaluation class [3 granulation tissue]: IoU 17.29, Dice 29.48
+[2026-07-10 17:37:52,757][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:52,758][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:37:52,758][    INFO] Evaluation epoch 43: MeanIoU 18.18, MeanDice 20.87; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:37:53,327][    INFO] Epoch 45/100, iter 1/28, loss 0.2264, encoder LR 0.00059343
+[2026-07-10 17:37:55,644][    INFO] Epoch 45/100, iter 4/28, loss 0.1776, encoder LR 0.000592408
+[2026-07-10 17:37:56,697][    INFO] Epoch 45/100, iter 7/28, loss 0.1855, encoder LR 0.000591386
+[2026-07-10 17:37:57,535][    INFO] Epoch 45/100, iter 10/28, loss 0.2414, encoder LR 0.000590363
+[2026-07-10 17:37:57,907][    INFO] Epoch 45/100, iter 13/28, loss 0.2396, encoder LR 0.000589341
+[2026-07-10 17:37:59,415][    INFO] Epoch 45/100, iter 16/28, loss 0.3353, encoder LR 0.000588318
+[2026-07-10 17:38:01,270][    INFO] Epoch 45/100, iter 19/28, loss 0.3047, encoder LR 0.000587295
+[2026-07-10 17:38:02,162][    INFO] Epoch 45/100, iter 22/28, loss 0.3256, encoder LR 0.000586272
+[2026-07-10 17:38:02,268][    INFO] Epoch 45/100, iter 25/28, loss 0.3223, encoder LR 0.000585249
+[2026-07-10 17:38:03,131][    INFO] Epoch 45/100, iter 28/28, loss 0.3371, encoder LR 0.000584225
+[2026-07-10 17:38:08,727][    INFO] Evaluation class [0 background]: IoU 91.78, Dice 95.71
+[2026-07-10 17:38:08,728][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:08,728][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:08,728][    INFO] Evaluation class [3 granulation tissue]: IoU 18.29, Dice 30.92
+[2026-07-10 17:38:08,728][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:08,728][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:08,728][    INFO] Evaluation epoch 44: MeanIoU 18.34, MeanDice 21.11; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:38:11,386][    INFO] Epoch 46/100, iter 1/28, loss 0.0303, encoder LR 0.000583884
+[2026-07-10 17:38:11,498][    INFO] Epoch 46/100, iter 4/28, loss 0.2731, encoder LR 0.00058286
+[2026-07-10 17:38:13,860][    INFO] Epoch 46/100, iter 7/28, loss 0.2298, encoder LR 0.000581836
+[2026-07-10 17:38:15,659][    INFO] Epoch 46/100, iter 10/28, loss 0.2392, encoder LR 0.000580812
+[2026-07-10 17:38:16,012][    INFO] Epoch 46/100, iter 13/28, loss 0.3023, encoder LR 0.000579787
+[2026-07-10 17:38:16,119][    INFO] Epoch 46/100, iter 16/28, loss 0.2610, encoder LR 0.000578763
+[2026-07-10 17:38:17,827][    INFO] Epoch 46/100, iter 19/28, loss 0.2989, encoder LR 0.000577738
+[2026-07-10 17:38:18,473][    INFO] Epoch 46/100, iter 22/28, loss 0.3127, encoder LR 0.000576713
+[2026-07-10 17:38:19,220][    INFO] Epoch 46/100, iter 25/28, loss 0.3221, encoder LR 0.000575688
+[2026-07-10 17:38:19,883][    INFO] Epoch 46/100, iter 28/28, loss 0.3015, encoder LR 0.000574662
+[2026-07-10 17:38:26,685][    INFO] Evaluation class [0 background]: IoU 91.79, Dice 95.72
+[2026-07-10 17:38:26,686][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:26,686][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:26,686][    INFO] Evaluation class [3 granulation tissue]: IoU 18.17, Dice 30.75
+[2026-07-10 17:38:26,686][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:26,687][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:26,687][    INFO] Evaluation epoch 45: MeanIoU 18.33, MeanDice 21.08; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:38:28,292][    INFO] Epoch 47/100, iter 1/28, loss 0.2678, encoder LR 0.000574321
+[2026-07-10 17:38:29,537][    INFO] Epoch 47/100, iter 4/28, loss 0.3922, encoder LR 0.000573295
+[2026-07-10 17:38:29,709][    INFO] Epoch 47/100, iter 7/28, loss 0.5243, encoder LR 0.000572269
+[2026-07-10 17:38:30,908][    INFO] Epoch 47/100, iter 10/28, loss 0.4275, encoder LR 0.000571243
+[2026-07-10 17:38:32,624][    INFO] Epoch 47/100, iter 13/28, loss 0.4170, encoder LR 0.000570217
+[2026-07-10 17:38:33,526][    INFO] Epoch 47/100, iter 16/28, loss 0.3920, encoder LR 0.00056919
+[2026-07-10 17:38:33,689][    INFO] Epoch 47/100, iter 19/28, loss 0.4233, encoder LR 0.000568163
+[2026-07-10 17:38:35,060][    INFO] Epoch 47/100, iter 22/28, loss 0.4319, encoder LR 0.000567137
+[2026-07-10 17:38:36,400][    INFO] Epoch 47/100, iter 25/28, loss 0.3984, encoder LR 0.000566109
+[2026-07-10 17:38:36,572][    INFO] Epoch 47/100, iter 28/28, loss 0.3860, encoder LR 0.000565082
+[2026-07-10 17:38:42,650][    INFO] Evaluation class [0 background]: IoU 91.96, Dice 95.81
+[2026-07-10 17:38:42,650][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:42,651][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:42,651][    INFO] Evaluation class [3 granulation tissue]: IoU 25.05, Dice 40.06
+[2026-07-10 17:38:42,651][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:42,651][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:38:42,651][    INFO] Evaluation epoch 46: MeanIoU 19.50, MeanDice 22.65; BEST mIoU 19.77, Dice 23.02 at epoch 3
+[2026-07-10 17:38:43,952][    INFO] Epoch 48/100, iter 1/28, loss 0.2347, encoder LR 0.00056474
+[2026-07-10 17:38:44,982][    INFO] Epoch 48/100, iter 4/28, loss 0.2794, encoder LR 0.000563712
+[2026-07-10 17:38:45,208][    INFO] Epoch 48/100, iter 7/28, loss 0.3185, encoder LR 0.000562684
+[2026-07-10 17:38:47,372][    INFO] Epoch 48/100, iter 10/28, loss 0.2707, encoder LR 0.000561656
+[2026-07-10 17:38:48,506][    INFO] Epoch 48/100, iter 13/28, loss 0.2378, encoder LR 0.000560628
+[2026-07-10 17:38:49,668][    INFO] Epoch 48/100, iter 16/28, loss 0.2118, encoder LR 0.0005596
+[2026-07-10 17:38:50,817][    INFO] Epoch 48/100, iter 19/28, loss 0.2448, encoder LR 0.000558571
+[2026-07-10 17:38:52,504][    INFO] Epoch 48/100, iter 22/28, loss 0.2597, encoder LR 0.000557542
+[2026-07-10 17:38:52,687][    INFO] Epoch 48/100, iter 25/28, loss 0.2520, encoder LR 0.000556513
+[2026-07-10 17:38:53,591][    INFO] Epoch 48/100, iter 28/28, loss 0.2555, encoder LR 0.000555484
+[2026-07-10 17:39:00,159][    INFO] Evaluation class [0 background]: IoU 92.09, Dice 95.88
+[2026-07-10 17:39:00,160][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:00,161][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:00,162][    INFO] Evaluation class [3 granulation tissue]: IoU 29.81, Dice 45.93
+[2026-07-10 17:39:00,163][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:00,164][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:00,165][    INFO] Evaluation epoch 47: MeanIoU 20.32, MeanDice 23.64; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:39:03,329][    INFO] Epoch 49/100, iter 1/28, loss 0.0571, encoder LR 0.000555141
+[2026-07-10 17:39:03,654][    INFO] Epoch 49/100, iter 4/28, loss 0.1637, encoder LR 0.000554111
+[2026-07-10 17:39:05,522][    INFO] Epoch 49/100, iter 7/28, loss 0.1308, encoder LR 0.000553081
+[2026-07-10 17:39:06,398][    INFO] Epoch 49/100, iter 10/28, loss 0.1388, encoder LR 0.000552051
+[2026-07-10 17:39:07,429][    INFO] Epoch 49/100, iter 13/28, loss 0.2286, encoder LR 0.000551021
+[2026-07-10 17:39:07,535][    INFO] Epoch 49/100, iter 16/28, loss 0.2857, encoder LR 0.000549991
+[2026-07-10 17:39:08,385][    INFO] Epoch 49/100, iter 19/28, loss 0.2967, encoder LR 0.00054896
+[2026-07-10 17:39:08,740][    INFO] Epoch 49/100, iter 22/28, loss 0.2990, encoder LR 0.000547929
+[2026-07-10 17:39:09,710][    INFO] Epoch 49/100, iter 25/28, loss 0.3124, encoder LR 0.000546898
+[2026-07-10 17:39:10,962][    INFO] Epoch 49/100, iter 28/28, loss 0.3015, encoder LR 0.000545867
+[2026-07-10 17:39:16,848][    INFO] Evaluation class [0 background]: IoU 92.07, Dice 95.87
+[2026-07-10 17:39:16,848][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:16,848][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:16,849][    INFO] Evaluation class [3 granulation tissue]: IoU 29.51, Dice 45.57
+[2026-07-10 17:39:16,849][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:16,849][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:16,849][    INFO] Evaluation epoch 48: MeanIoU 20.26, MeanDice 23.57; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:39:17,994][    INFO] Epoch 50/100, iter 1/28, loss 0.7064, encoder LR 0.000545523
+[2026-07-10 17:39:18,850][    INFO] Epoch 50/100, iter 4/28, loss 0.4204, encoder LR 0.000544492
+[2026-07-10 17:39:21,483][    INFO] Epoch 50/100, iter 7/28, loss 0.3471, encoder LR 0.00054346
+[2026-07-10 17:39:22,878][    INFO] Epoch 50/100, iter 10/28, loss 0.4648, encoder LR 0.000542428
+[2026-07-10 17:39:22,984][    INFO] Epoch 50/100, iter 13/28, loss 0.4320, encoder LR 0.000541396
+[2026-07-10 17:39:24,672][    INFO] Epoch 50/100, iter 16/28, loss 0.3865, encoder LR 0.000540363
+[2026-07-10 17:39:25,608][    INFO] Epoch 50/100, iter 19/28, loss 0.3938, encoder LR 0.00053933
+[2026-07-10 17:39:27,199][    INFO] Epoch 50/100, iter 22/28, loss 0.3646, encoder LR 0.000538298
+[2026-07-10 17:39:27,304][    INFO] Epoch 50/100, iter 25/28, loss 0.3658, encoder LR 0.000537265
+[2026-07-10 17:39:27,950][    INFO] Epoch 50/100, iter 28/28, loss 0.3531, encoder LR 0.000536231
+[2026-07-10 17:39:33,414][    INFO] Evaluation class [0 background]: IoU 91.97, Dice 95.82
+[2026-07-10 17:39:33,415][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:33,415][    INFO] Evaluation class [2 slough]: IoU 0.10, Dice 0.20
+[2026-07-10 17:39:33,415][    INFO] Evaluation class [3 granulation tissue]: IoU 26.38, Dice 41.74
+[2026-07-10 17:39:33,415][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:33,416][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:33,416][    INFO] Evaluation epoch 49: MeanIoU 19.74, MeanDice 22.96; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:39:35,351][    INFO] Epoch 51/100, iter 1/28, loss 0.0809, encoder LR 0.000535887
+[2026-07-10 17:39:35,927][    INFO] Epoch 51/100, iter 4/28, loss 0.6578, encoder LR 0.000534853
+[2026-07-10 17:39:36,655][    INFO] Epoch 51/100, iter 7/28, loss 0.4666, encoder LR 0.000533819
+[2026-07-10 17:39:37,768][    INFO] Epoch 51/100, iter 10/28, loss 0.4627, encoder LR 0.000532785
+[2026-07-10 17:39:39,101][    INFO] Epoch 51/100, iter 13/28, loss 0.4237, encoder LR 0.000531751
+[2026-07-10 17:39:40,519][    INFO] Epoch 51/100, iter 16/28, loss 0.3907, encoder LR 0.000530716
+[2026-07-10 17:39:40,749][    INFO] Epoch 51/100, iter 19/28, loss 0.4177, encoder LR 0.000529682
+[2026-07-10 17:39:41,448][    INFO] Epoch 51/100, iter 22/28, loss 0.4188, encoder LR 0.000528647
+[2026-07-10 17:39:42,108][    INFO] Epoch 51/100, iter 25/28, loss 0.3958, encoder LR 0.000527612
+[2026-07-10 17:39:42,388][    INFO] Epoch 51/100, iter 28/28, loss 0.4058, encoder LR 0.000526576
+[2026-07-10 17:39:48,002][    INFO] Evaluation class [0 background]: IoU 91.84, Dice 95.75
+[2026-07-10 17:39:48,002][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:48,003][    INFO] Evaluation class [2 slough]: IoU 0.15, Dice 0.29
+[2026-07-10 17:39:48,003][    INFO] Evaluation class [3 granulation tissue]: IoU 21.63, Dice 35.56
+[2026-07-10 17:39:48,003][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:48,003][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:39:48,003][    INFO] Evaluation epoch 50: MeanIoU 18.94, MeanDice 21.93; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:39:49,780][    INFO] Epoch 52/100, iter 1/28, loss 0.1472, encoder LR 0.000526231
+[2026-07-10 17:39:49,887][    INFO] Epoch 52/100, iter 4/28, loss 0.5189, encoder LR 0.000525195
+[2026-07-10 17:39:51,421][    INFO] Epoch 52/100, iter 7/28, loss 0.4771, encoder LR 0.000524159
+[2026-07-10 17:39:52,877][    INFO] Epoch 52/100, iter 10/28, loss 0.3854, encoder LR 0.000523123
+[2026-07-10 17:39:52,990][    INFO] Epoch 52/100, iter 13/28, loss 0.3359, encoder LR 0.000522087
+[2026-07-10 17:39:53,648][    INFO] Epoch 52/100, iter 16/28, loss 0.3631, encoder LR 0.00052105
+[2026-07-10 17:39:54,590][    INFO] Epoch 52/100, iter 19/28, loss 0.4215, encoder LR 0.000520013
+[2026-07-10 17:39:54,697][    INFO] Epoch 52/100, iter 22/28, loss 0.3925, encoder LR 0.000518976
+[2026-07-10 17:39:56,320][    INFO] Epoch 52/100, iter 25/28, loss 0.3631, encoder LR 0.000517939
+[2026-07-10 17:39:56,623][    INFO] Epoch 52/100, iter 28/28, loss 0.4095, encoder LR 0.000516902
+[2026-07-10 17:40:02,363][    INFO] Evaluation class [0 background]: IoU 91.98, Dice 95.82
+[2026-07-10 17:40:02,363][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:02,363][    INFO] Evaluation class [2 slough]: IoU 0.81, Dice 1.60
+[2026-07-10 17:40:02,363][    INFO] Evaluation class [3 granulation tissue]: IoU 24.91, Dice 39.88
+[2026-07-10 17:40:02,364][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:02,364][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:02,364][    INFO] Evaluation epoch 51: MeanIoU 19.62, MeanDice 22.88; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:40:03,956][    INFO] Epoch 53/100, iter 1/28, loss 0.4714, encoder LR 0.000516556
+[2026-07-10 17:40:04,211][    INFO] Epoch 53/100, iter 4/28, loss 0.3911, encoder LR 0.000515518
+[2026-07-10 17:40:05,862][    INFO] Epoch 53/100, iter 7/28, loss 0.6082, encoder LR 0.00051448
+[2026-07-10 17:40:07,295][    INFO] Epoch 53/100, iter 10/28, loss 0.5139, encoder LR 0.000513441
+[2026-07-10 17:40:07,817][    INFO] Epoch 53/100, iter 13/28, loss 0.4704, encoder LR 0.000512403
+[2026-07-10 17:40:07,935][    INFO] Epoch 53/100, iter 16/28, loss 0.4094, encoder LR 0.000511364
+[2026-07-10 17:40:08,409][    INFO] Epoch 53/100, iter 19/28, loss 0.3731, encoder LR 0.000510325
+[2026-07-10 17:40:09,620][    INFO] Epoch 53/100, iter 22/28, loss 0.3478, encoder LR 0.000509286
+[2026-07-10 17:40:10,207][    INFO] Epoch 53/100, iter 25/28, loss 0.3904, encoder LR 0.000508246
+[2026-07-10 17:40:10,870][    INFO] Epoch 53/100, iter 28/28, loss 0.3781, encoder LR 0.000507207
+[2026-07-10 17:40:17,033][    INFO] Evaluation class [0 background]: IoU 91.91, Dice 95.79
+[2026-07-10 17:40:17,035][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:17,035][    INFO] Evaluation class [2 slough]: IoU 0.72, Dice 1.43
+[2026-07-10 17:40:17,035][    INFO] Evaluation class [3 granulation tissue]: IoU 23.02, Dice 37.42
+[2026-07-10 17:40:17,035][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:17,035][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:17,036][    INFO] Evaluation epoch 52: MeanIoU 19.28, MeanDice 22.44; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:40:19,543][    INFO] Epoch 54/100, iter 1/28, loss 0.3792, encoder LR 0.00050686
+[2026-07-10 17:40:19,656][    INFO] Epoch 54/100, iter 4/28, loss 0.6085, encoder LR 0.00050582
+[2026-07-10 17:40:20,462][    INFO] Epoch 54/100, iter 7/28, loss 0.6610, encoder LR 0.00050478
+[2026-07-10 17:40:21,076][    INFO] Epoch 54/100, iter 10/28, loss 0.6122, encoder LR 0.000503739
+[2026-07-10 17:40:22,438][    INFO] Epoch 54/100, iter 13/28, loss 0.6634, encoder LR 0.000502699
+[2026-07-10 17:40:22,699][    INFO] Epoch 54/100, iter 16/28, loss 0.5911, encoder LR 0.000501658
+[2026-07-10 17:40:24,338][    INFO] Epoch 54/100, iter 19/28, loss 0.5212, encoder LR 0.000500616
+[2026-07-10 17:40:25,106][    INFO] Epoch 54/100, iter 22/28, loss 0.4820, encoder LR 0.000499575
+[2026-07-10 17:40:25,380][    INFO] Epoch 54/100, iter 25/28, loss 0.4575, encoder LR 0.000498533
+[2026-07-10 17:40:26,587][    INFO] Epoch 54/100, iter 28/28, loss 0.4342, encoder LR 0.000497491
+[2026-07-10 17:40:33,949][    INFO] Evaluation class [0 background]: IoU 92.06, Dice 95.86
+[2026-07-10 17:40:33,950][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:33,950][    INFO] Evaluation class [2 slough]: IoU 0.54, Dice 1.08
+[2026-07-10 17:40:33,950][    INFO] Evaluation class [3 granulation tissue]: IoU 28.81, Dice 44.73
+[2026-07-10 17:40:33,951][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:33,951][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:33,951][    INFO] Evaluation epoch 53: MeanIoU 20.23, MeanDice 23.61; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:40:35,670][    INFO] Epoch 55/100, iter 1/28, loss 0.2251, encoder LR 0.000497144
+[2026-07-10 17:40:35,854][    INFO] Epoch 55/100, iter 4/28, loss 0.3119, encoder LR 0.000496102
+[2026-07-10 17:40:36,353][    INFO] Epoch 55/100, iter 7/28, loss 0.3085, encoder LR 0.000495059
+[2026-07-10 17:40:38,155][    INFO] Epoch 55/100, iter 10/28, loss 0.3058, encoder LR 0.000494016
+[2026-07-10 17:40:38,873][    INFO] Epoch 55/100, iter 13/28, loss 0.2846, encoder LR 0.000492973
+[2026-07-10 17:40:39,972][    INFO] Epoch 55/100, iter 16/28, loss 0.3368, encoder LR 0.00049193
+[2026-07-10 17:40:41,175][    INFO] Epoch 55/100, iter 19/28, loss 0.3105, encoder LR 0.000490887
+[2026-07-10 17:40:43,057][    INFO] Epoch 55/100, iter 22/28, loss 0.3397, encoder LR 0.000489843
+[2026-07-10 17:40:43,212][    INFO] Epoch 55/100, iter 25/28, loss 0.3226, encoder LR 0.000488799
+[2026-07-10 17:40:44,702][    INFO] Epoch 55/100, iter 28/28, loss 0.3346, encoder LR 0.000487755
+[2026-07-10 17:40:50,694][    INFO] Evaluation class [0 background]: IoU 91.66, Dice 95.65
+[2026-07-10 17:40:50,695][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:50,695][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:50,695][    INFO] Evaluation class [3 granulation tissue]: IoU 11.21, Dice 20.16
+[2026-07-10 17:40:50,695][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:50,696][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:40:50,696][    INFO] Evaluation epoch 54: MeanIoU 17.14, MeanDice 19.30; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:40:52,242][    INFO] Epoch 56/100, iter 1/28, loss 0.6434, encoder LR 0.000487406
+[2026-07-10 17:40:52,609][    INFO] Epoch 56/100, iter 4/28, loss 0.4845, encoder LR 0.000486362
+[2026-07-10 17:40:53,929][    INFO] Epoch 56/100, iter 7/28, loss 0.3829, encoder LR 0.000485317
+[2026-07-10 17:40:55,450][    INFO] Epoch 56/100, iter 10/28, loss 0.3297, encoder LR 0.000484272
+[2026-07-10 17:40:55,869][    INFO] Epoch 56/100, iter 13/28, loss 0.2889, encoder LR 0.000483227
+[2026-07-10 17:40:56,955][    INFO] Epoch 56/100, iter 16/28, loss 0.3049, encoder LR 0.000482181
+[2026-07-10 17:40:58,289][    INFO] Epoch 56/100, iter 19/28, loss 0.3135, encoder LR 0.000481135
+[2026-07-10 17:40:59,553][    INFO] Epoch 56/100, iter 22/28, loss 0.3440, encoder LR 0.000480089
+[2026-07-10 17:40:59,659][    INFO] Epoch 56/100, iter 25/28, loss 0.3360, encoder LR 0.000479043
+[2026-07-10 17:41:01,584][    INFO] Epoch 56/100, iter 28/28, loss 0.3321, encoder LR 0.000477996
+[2026-07-10 17:41:07,133][    INFO] Evaluation class [0 background]: IoU 91.97, Dice 95.82
+[2026-07-10 17:41:07,134][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:07,134][    INFO] Evaluation class [2 slough]: IoU 0.05, Dice 0.10
+[2026-07-10 17:41:07,134][    INFO] Evaluation class [3 granulation tissue]: IoU 24.93, Dice 39.90
+[2026-07-10 17:41:07,134][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:07,134][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:07,134][    INFO] Evaluation epoch 55: MeanIoU 19.49, MeanDice 22.64; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:41:08,902][    INFO] Epoch 57/100, iter 1/28, loss 0.1673, encoder LR 0.000477647
+[2026-07-10 17:41:09,025][    INFO] Epoch 57/100, iter 4/28, loss 0.4738, encoder LR 0.0004766
+[2026-07-10 17:41:10,040][    INFO] Epoch 57/100, iter 7/28, loss 0.5545, encoder LR 0.000475553
+[2026-07-10 17:41:10,878][    INFO] Epoch 57/100, iter 10/28, loss 0.5467, encoder LR 0.000474506
+[2026-07-10 17:41:11,441][    INFO] Epoch 57/100, iter 13/28, loss 0.5222, encoder LR 0.000473458
+[2026-07-10 17:41:13,337][    INFO] Epoch 57/100, iter 16/28, loss 0.4475, encoder LR 0.00047241
+[2026-07-10 17:41:14,491][    INFO] Epoch 57/100, iter 19/28, loss 0.4740, encoder LR 0.000471362
+[2026-07-10 17:41:14,612][    INFO] Epoch 57/100, iter 22/28, loss 0.4503, encoder LR 0.000470314
+[2026-07-10 17:41:15,369][    INFO] Epoch 57/100, iter 25/28, loss 0.4296, encoder LR 0.000469265
+[2026-07-10 17:41:16,416][    INFO] Epoch 57/100, iter 28/28, loss 0.4190, encoder LR 0.000468216
+[2026-07-10 17:41:22,938][    INFO] Evaluation class [0 background]: IoU 91.72, Dice 95.68
+[2026-07-10 17:41:22,939][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:22,940][    INFO] Evaluation class [2 slough]: IoU 0.41, Dice 0.81
+[2026-07-10 17:41:22,940][    INFO] Evaluation class [3 granulation tissue]: IoU 14.31, Dice 25.04
+[2026-07-10 17:41:22,941][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:22,942][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:22,943][    INFO] Evaluation epoch 56: MeanIoU 17.74, MeanDice 20.25; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:41:24,250][    INFO] Epoch 58/100, iter 1/28, loss 0.3131, encoder LR 0.000467866
+[2026-07-10 17:41:25,694][    INFO] Epoch 58/100, iter 4/28, loss 0.3046, encoder LR 0.000466817
+[2026-07-10 17:41:26,077][    INFO] Epoch 58/100, iter 7/28, loss 0.3911, encoder LR 0.000465767
+[2026-07-10 17:41:27,503][    INFO] Epoch 58/100, iter 10/28, loss 0.3598, encoder LR 0.000464717
+[2026-07-10 17:41:28,590][    INFO] Epoch 58/100, iter 13/28, loss 0.3465, encoder LR 0.000463667
+[2026-07-10 17:41:29,195][    INFO] Epoch 58/100, iter 16/28, loss 0.3764, encoder LR 0.000462617
+[2026-07-10 17:41:29,300][    INFO] Epoch 58/100, iter 19/28, loss 0.3888, encoder LR 0.000461566
+[2026-07-10 17:41:31,243][    INFO] Epoch 58/100, iter 22/28, loss 0.3463, encoder LR 0.000460515
+[2026-07-10 17:41:32,414][    INFO] Epoch 58/100, iter 25/28, loss 0.3371, encoder LR 0.000459464
+[2026-07-10 17:41:32,534][    INFO] Epoch 58/100, iter 28/28, loss 0.3621, encoder LR 0.000458413
+[2026-07-10 17:41:38,104][    INFO] Evaluation class [0 background]: IoU 91.60, Dice 95.61
+[2026-07-10 17:41:38,104][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:38,105][    INFO] Evaluation class [2 slough]: IoU 0.18, Dice 0.36
+[2026-07-10 17:41:38,105][    INFO] Evaluation class [3 granulation tissue]: IoU 9.83, Dice 17.90
+[2026-07-10 17:41:38,105][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:38,105][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:38,105][    INFO] Evaluation epoch 57: MeanIoU 16.93, MeanDice 18.98; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:41:39,076][    INFO] Epoch 59/100, iter 1/28, loss 0.1225, encoder LR 0.000458062
+[2026-07-10 17:41:40,566][    INFO] Epoch 59/100, iter 4/28, loss 0.4233, encoder LR 0.00045701
+[2026-07-10 17:41:40,790][    INFO] Epoch 59/100, iter 7/28, loss 0.4177, encoder LR 0.000455958
+[2026-07-10 17:41:42,367][    INFO] Epoch 59/100, iter 10/28, loss 0.4736, encoder LR 0.000454906
+[2026-07-10 17:41:43,609][    INFO] Epoch 59/100, iter 13/28, loss 0.4504, encoder LR 0.000453853
+[2026-07-10 17:41:44,126][    INFO] Epoch 59/100, iter 16/28, loss 0.3941, encoder LR 0.0004528
+[2026-07-10 17:41:44,250][    INFO] Epoch 59/100, iter 19/28, loss 0.4775, encoder LR 0.000451747
+[2026-07-10 17:41:45,678][    INFO] Epoch 59/100, iter 22/28, loss 0.4474, encoder LR 0.000450694
+[2026-07-10 17:41:47,872][    INFO] Epoch 59/100, iter 25/28, loss 0.4297, encoder LR 0.00044964
+[2026-07-10 17:41:48,306][    INFO] Epoch 59/100, iter 28/28, loss 0.4209, encoder LR 0.000448586
+[2026-07-10 17:41:53,874][    INFO] Evaluation class [0 background]: IoU 91.56, Dice 95.59
+[2026-07-10 17:41:53,875][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:53,875][    INFO] Evaluation class [2 slough]: IoU 0.44, Dice 0.87
+[2026-07-10 17:41:53,875][    INFO] Evaluation class [3 granulation tissue]: IoU 8.91, Dice 16.37
+[2026-07-10 17:41:53,875][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:53,875][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:41:53,875][    INFO] Evaluation epoch 58: MeanIoU 16.82, MeanDice 18.81; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:41:55,336][    INFO] Epoch 60/100, iter 1/28, loss 0.1518, encoder LR 0.000448235
+[2026-07-10 17:41:55,777][    INFO] Epoch 60/100, iter 4/28, loss 0.3141, encoder LR 0.00044718
+[2026-07-10 17:41:56,934][    INFO] Epoch 60/100, iter 7/28, loss 0.3157, encoder LR 0.000446126
+[2026-07-10 17:41:57,501][    INFO] Epoch 60/100, iter 10/28, loss 0.4182, encoder LR 0.000445071
+[2026-07-10 17:41:57,792][    INFO] Epoch 60/100, iter 13/28, loss 0.3899, encoder LR 0.000444016
+[2026-07-10 17:41:58,642][    INFO] Epoch 60/100, iter 16/28, loss 0.3633, encoder LR 0.00044296
+[2026-07-10 17:42:00,804][    INFO] Epoch 60/100, iter 19/28, loss 0.3305, encoder LR 0.000441904
+[2026-07-10 17:42:02,078][    INFO] Epoch 60/100, iter 22/28, loss 0.3136, encoder LR 0.000440848
+[2026-07-10 17:42:03,190][    INFO] Epoch 60/100, iter 25/28, loss 0.3064, encoder LR 0.000439792
+[2026-07-10 17:42:03,527][    INFO] Epoch 60/100, iter 28/28, loss 0.3605, encoder LR 0.000438736
+[2026-07-10 17:42:10,018][    INFO] Evaluation class [0 background]: IoU 91.48, Dice 95.55
+[2026-07-10 17:42:10,018][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:10,019][    INFO] Evaluation class [2 slough]: IoU 0.08, Dice 0.16
+[2026-07-10 17:42:10,019][    INFO] Evaluation class [3 granulation tissue]: IoU 7.95, Dice 14.72
+[2026-07-10 17:42:10,019][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:10,019][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:10,019][    INFO] Evaluation epoch 59: MeanIoU 16.58, MeanDice 18.41; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:42:11,402][    INFO] Epoch 61/100, iter 1/28, loss 0.1839, encoder LR 0.000438383
+[2026-07-10 17:42:11,509][    INFO] Epoch 61/100, iter 4/28, loss 0.3751, encoder LR 0.000437326
+[2026-07-10 17:42:11,872][    INFO] Epoch 61/100, iter 7/28, loss 0.3865, encoder LR 0.000436269
+[2026-07-10 17:42:13,277][    INFO] Epoch 61/100, iter 10/28, loss 0.3455, encoder LR 0.000435212
+[2026-07-10 17:42:14,751][    INFO] Epoch 61/100, iter 13/28, loss 0.3288, encoder LR 0.000434154
+[2026-07-10 17:42:14,860][    INFO] Epoch 61/100, iter 16/28, loss 0.3911, encoder LR 0.000433096
+[2026-07-10 17:42:16,449][    INFO] Epoch 61/100, iter 19/28, loss 0.3385, encoder LR 0.000432037
+[2026-07-10 17:42:16,908][    INFO] Epoch 61/100, iter 22/28, loss 0.3101, encoder LR 0.000430979
+[2026-07-10 17:42:17,340][    INFO] Epoch 61/100, iter 25/28, loss 0.2852, encoder LR 0.00042992
+[2026-07-10 17:42:18,767][    INFO] Epoch 61/100, iter 28/28, loss 0.3030, encoder LR 0.00042886
+[2026-07-10 17:42:24,524][    INFO] Evaluation class [0 background]: IoU 91.89, Dice 95.77
+[2026-07-10 17:42:24,525][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:24,525][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:24,525][    INFO] Evaluation class [3 granulation tissue]: IoU 21.48, Dice 35.37
+[2026-07-10 17:42:24,525][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:24,525][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:24,526][    INFO] Evaluation epoch 60: MeanIoU 18.89, MeanDice 21.86; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:42:26,048][    INFO] Epoch 62/100, iter 1/28, loss 0.0615, encoder LR 0.000428507
+[2026-07-10 17:42:26,149][    INFO] Epoch 62/100, iter 4/28, loss 0.3822, encoder LR 0.000427448
+[2026-07-10 17:42:26,509][    INFO] Epoch 62/100, iter 7/28, loss 0.2893, encoder LR 0.000426388
+[2026-07-10 17:42:27,655][    INFO] Epoch 62/100, iter 10/28, loss 0.2589, encoder LR 0.000425327
+[2026-07-10 17:42:29,266][    INFO] Epoch 62/100, iter 13/28, loss 0.2927, encoder LR 0.000424267
+[2026-07-10 17:42:29,391][    INFO] Epoch 62/100, iter 16/28, loss 0.2661, encoder LR 0.000423206
+[2026-07-10 17:42:30,393][    INFO] Epoch 62/100, iter 19/28, loss 0.2939, encoder LR 0.000422145
+[2026-07-10 17:42:31,548][    INFO] Epoch 62/100, iter 22/28, loss 0.2945, encoder LR 0.000421084
+[2026-07-10 17:42:32,192][    INFO] Epoch 62/100, iter 25/28, loss 0.3485, encoder LR 0.000420022
+[2026-07-10 17:42:32,442][    INFO] Epoch 62/100, iter 28/28, loss 0.3238, encoder LR 0.00041896
+[2026-07-10 17:42:38,328][    INFO] Evaluation class [0 background]: IoU 91.65, Dice 95.64
+[2026-07-10 17:42:38,329][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:38,329][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:38,329][    INFO] Evaluation class [3 granulation tissue]: IoU 12.09, Dice 21.57
+[2026-07-10 17:42:38,329][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:38,330][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:38,330][    INFO] Evaluation epoch 61: MeanIoU 17.29, MeanDice 19.54; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:42:40,581][    INFO] Epoch 63/100, iter 1/28, loss 0.0510, encoder LR 0.000418606
+[2026-07-10 17:42:41,025][    INFO] Epoch 63/100, iter 4/28, loss 0.4253, encoder LR 0.000417543
+[2026-07-10 17:42:41,467][    INFO] Epoch 63/100, iter 7/28, loss 0.6976, encoder LR 0.000416481
+[2026-07-10 17:42:42,692][    INFO] Epoch 63/100, iter 10/28, loss 0.5220, encoder LR 0.000415418
+[2026-07-10 17:42:43,513][    INFO] Epoch 63/100, iter 13/28, loss 0.5340, encoder LR 0.000414354
+[2026-07-10 17:42:43,672][    INFO] Epoch 63/100, iter 16/28, loss 0.4835, encoder LR 0.000413291
+[2026-07-10 17:42:45,850][    INFO] Epoch 63/100, iter 19/28, loss 0.4407, encoder LR 0.000412227
+[2026-07-10 17:42:47,740][    INFO] Epoch 63/100, iter 22/28, loss 0.4187, encoder LR 0.000411163
+[2026-07-10 17:42:49,690][    INFO] Epoch 63/100, iter 25/28, loss 0.4216, encoder LR 0.000410098
+[2026-07-10 17:42:49,794][    INFO] Epoch 63/100, iter 28/28, loss 0.4128, encoder LR 0.000409033
+[2026-07-10 17:42:55,325][    INFO] Evaluation class [0 background]: IoU 91.52, Dice 95.57
+[2026-07-10 17:42:55,326][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:55,326][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:55,326][    INFO] Evaluation class [3 granulation tissue]: IoU 6.81, Dice 12.76
+[2026-07-10 17:42:55,326][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:55,326][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:42:55,326][    INFO] Evaluation epoch 62: MeanIoU 16.39, MeanDice 18.05; BEST mIoU 20.32, Dice 23.64 at epoch 47
+[2026-07-10 17:42:56,313][    INFO] Epoch 64/100, iter 1/28, loss 0.2355, encoder LR 0.000408678
+[2026-07-10 17:42:57,705][    INFO] Epoch 64/100, iter 4/28, loss 0.2163, encoder LR 0.000407613
+[2026-07-10 17:42:59,244][    INFO] Epoch 64/100, iter 7/28, loss 0.3411, encoder LR 0.000406547
+[2026-07-10 17:42:59,358][    INFO] Epoch 64/100, iter 10/28, loss 0.3534, encoder LR 0.000405482
+[2026-07-10 17:43:00,760][    INFO] Epoch 64/100, iter 13/28, loss 0.3598, encoder LR 0.000404415
+[2026-07-10 17:43:02,332][    INFO] Epoch 64/100, iter 16/28, loss 0.3488, encoder LR 0.000403349
+[2026-07-10 17:43:04,046][    INFO] Epoch 64/100, iter 19/28, loss 0.3857, encoder LR 0.000402282
+[2026-07-10 17:43:04,170][    INFO] Epoch 64/100, iter 22/28, loss 0.3754, encoder LR 0.000401215
+[2026-07-10 17:43:05,542][    INFO] Epoch 64/100, iter 25/28, loss 0.3508, encoder LR 0.000400148
+[2026-07-10 17:43:06,401][    INFO] Epoch 64/100, iter 28/28, loss 0.3368, encoder LR 0.00039908
+[2026-07-10 17:43:11,710][    INFO] Evaluation class [0 background]: IoU 92.12, Dice 95.90
+[2026-07-10 17:43:11,711][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:11,711][    INFO] Evaluation class [2 slough]: IoU 0.07, Dice 0.13
+[2026-07-10 17:43:11,711][    INFO] Evaluation class [3 granulation tissue]: IoU 30.26, Dice 46.46
+[2026-07-10 17:43:11,712][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:11,712][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:11,712][    INFO] Evaluation epoch 63: MeanIoU 20.41, MeanDice 23.75; BEST mIoU 20.41, Dice 23.75 at epoch 63
+[2026-07-10 17:43:12,881][    INFO] Epoch 65/100, iter 1/28, loss 0.2187, encoder LR 0.000398724
+[2026-07-10 17:43:13,258][    INFO] Epoch 65/100, iter 4/28, loss 0.4746, encoder LR 0.000397656
+[2026-07-10 17:43:14,676][    INFO] Epoch 65/100, iter 7/28, loss 0.3597, encoder LR 0.000396587
+[2026-07-10 17:43:16,682][    INFO] Epoch 65/100, iter 10/28, loss 0.3462, encoder LR 0.000395518
+[2026-07-10 17:43:16,796][    INFO] Epoch 65/100, iter 13/28, loss 0.3416, encoder LR 0.000394449
+[2026-07-10 17:43:18,296][    INFO] Epoch 65/100, iter 16/28, loss 0.3636, encoder LR 0.00039338
+[2026-07-10 17:43:19,598][    INFO] Epoch 65/100, iter 19/28, loss 0.3940, encoder LR 0.00039231
+[2026-07-10 17:43:20,581][    INFO] Epoch 65/100, iter 22/28, loss 0.3700, encoder LR 0.00039124
+[2026-07-10 17:43:20,888][    INFO] Epoch 65/100, iter 25/28, loss 0.3535, encoder LR 0.00039017
+[2026-07-10 17:43:21,755][    INFO] Epoch 65/100, iter 28/28, loss 0.3376, encoder LR 0.000389099
+[2026-07-10 17:43:27,910][    INFO] Evaluation class [0 background]: IoU 91.72, Dice 95.68
+[2026-07-10 17:43:27,910][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:27,911][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:27,911][    INFO] Evaluation class [3 granulation tissue]: IoU 14.37, Dice 25.13
+[2026-07-10 17:43:27,911][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:27,911][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:27,911][    INFO] Evaluation epoch 64: MeanIoU 17.68, MeanDice 20.14; BEST mIoU 20.41, Dice 23.75 at epoch 63
+[2026-07-10 17:43:30,481][    INFO] Epoch 66/100, iter 1/28, loss 0.6324, encoder LR 0.000388742
+[2026-07-10 17:43:30,604][    INFO] Epoch 66/100, iter 4/28, loss 0.2892, encoder LR 0.000387671
+[2026-07-10 17:43:31,031][    INFO] Epoch 66/100, iter 7/28, loss 0.4060, encoder LR 0.000386599
+[2026-07-10 17:43:32,357][    INFO] Epoch 66/100, iter 10/28, loss 0.3833, encoder LR 0.000385527
+[2026-07-10 17:43:32,724][    INFO] Epoch 66/100, iter 13/28, loss 0.3930, encoder LR 0.000384455
+[2026-07-10 17:43:34,734][    INFO] Epoch 66/100, iter 16/28, loss 0.3819, encoder LR 0.000383383
+[2026-07-10 17:43:36,376][    INFO] Epoch 66/100, iter 19/28, loss 0.3418, encoder LR 0.00038231
+[2026-07-10 17:43:37,397][    INFO] Epoch 66/100, iter 22/28, loss 0.3065, encoder LR 0.000381237
+[2026-07-10 17:43:37,506][    INFO] Epoch 66/100, iter 25/28, loss 0.3042, encoder LR 0.000380163
+[2026-07-10 17:43:38,999][    INFO] Epoch 66/100, iter 28/28, loss 0.3226, encoder LR 0.000379089
+[2026-07-10 17:43:44,592][    INFO] Evaluation class [0 background]: IoU 91.76, Dice 95.71
+[2026-07-10 17:43:44,592][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:44,593][    INFO] Evaluation class [2 slough]: IoU 0.10, Dice 0.19
+[2026-07-10 17:43:44,593][    INFO] Evaluation class [3 granulation tissue]: IoU 16.21, Dice 27.90
+[2026-07-10 17:43:44,593][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:44,593][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:44,593][    INFO] Evaluation epoch 65: MeanIoU 18.01, MeanDice 20.63; BEST mIoU 20.41, Dice 23.75 at epoch 63
+[2026-07-10 17:43:45,724][    INFO] Epoch 67/100, iter 1/28, loss 1.5552, encoder LR 0.000378731
+[2026-07-10 17:43:46,521][    INFO] Epoch 67/100, iter 4/28, loss 0.6398, encoder LR 0.000377657
+[2026-07-10 17:43:47,210][    INFO] Epoch 67/100, iter 7/28, loss 0.4605, encoder LR 0.000376582
+[2026-07-10 17:43:48,373][    INFO] Epoch 67/100, iter 10/28, loss 0.3646, encoder LR 0.000375507
+[2026-07-10 17:43:49,547][    INFO] Epoch 67/100, iter 13/28, loss 0.4121, encoder LR 0.000374432
+[2026-07-10 17:43:49,664][    INFO] Epoch 67/100, iter 16/28, loss 0.3552, encoder LR 0.000373356
+[2026-07-10 17:43:50,851][    INFO] Epoch 67/100, iter 19/28, loss 0.3626, encoder LR 0.00037228
+[2026-07-10 17:43:51,749][    INFO] Epoch 67/100, iter 22/28, loss 0.3620, encoder LR 0.000371204
+[2026-07-10 17:43:53,197][    INFO] Epoch 67/100, iter 25/28, loss 0.3549, encoder LR 0.000370127
+[2026-07-10 17:43:53,311][    INFO] Epoch 67/100, iter 28/28, loss 0.3300, encoder LR 0.00036905
+[2026-07-10 17:43:58,887][    INFO] Evaluation class [0 background]: IoU 92.23, Dice 95.96
+[2026-07-10 17:43:58,887][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:58,887][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:58,887][    INFO] Evaluation class [3 granulation tissue]: IoU 32.54, Dice 49.10
+[2026-07-10 17:43:58,887][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:58,888][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:43:58,888][    INFO] Evaluation epoch 66: MeanIoU 20.79, MeanDice 24.18; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:44:01,197][    INFO] Epoch 68/100, iter 1/28, loss 0.7422, encoder LR 0.000368691
+[2026-07-10 17:44:01,385][    INFO] Epoch 68/100, iter 4/28, loss 0.4990, encoder LR 0.000367613
+[2026-07-10 17:44:02,505][    INFO] Epoch 68/100, iter 7/28, loss 0.4996, encoder LR 0.000366536
+[2026-07-10 17:44:04,306][    INFO] Epoch 68/100, iter 10/28, loss 0.3995, encoder LR 0.000365457
+[2026-07-10 17:44:04,651][    INFO] Epoch 68/100, iter 13/28, loss 0.4703, encoder LR 0.000364379
+[2026-07-10 17:44:06,125][    INFO] Epoch 68/100, iter 16/28, loss 0.4505, encoder LR 0.0003633
+[2026-07-10 17:44:06,834][    INFO] Epoch 68/100, iter 19/28, loss 0.4124, encoder LR 0.000362221
+[2026-07-10 17:44:08,067][    INFO] Epoch 68/100, iter 22/28, loss 0.3859, encoder LR 0.000361141
+[2026-07-10 17:44:08,173][    INFO] Epoch 68/100, iter 25/28, loss 0.3626, encoder LR 0.000360061
+[2026-07-10 17:44:09,197][    INFO] Epoch 68/100, iter 28/28, loss 0.3336, encoder LR 0.000358981
+[2026-07-10 17:44:14,604][    INFO] Evaluation class [0 background]: IoU 91.79, Dice 95.72
+[2026-07-10 17:44:14,604][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:14,604][    INFO] Evaluation class [2 slough]: IoU 0.07, Dice 0.15
+[2026-07-10 17:44:14,605][    INFO] Evaluation class [3 granulation tissue]: IoU 16.98, Dice 29.03
+[2026-07-10 17:44:14,605][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:14,605][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:14,605][    INFO] Evaluation epoch 67: MeanIoU 18.14, MeanDice 20.82; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:44:15,487][    INFO] Epoch 69/100, iter 1/28, loss 0.0847, encoder LR 0.00035862
+[2026-07-10 17:44:17,266][    INFO] Epoch 69/100, iter 4/28, loss 0.1906, encoder LR 0.00035754
+[2026-07-10 17:44:18,724][    INFO] Epoch 69/100, iter 7/28, loss 0.2947, encoder LR 0.000356458
+[2026-07-10 17:44:20,599][    INFO] Epoch 69/100, iter 10/28, loss 0.3003, encoder LR 0.000355377
+[2026-07-10 17:44:21,120][    INFO] Epoch 69/100, iter 13/28, loss 0.2949, encoder LR 0.000354295
+[2026-07-10 17:44:22,194][    INFO] Epoch 69/100, iter 16/28, loss 0.4020, encoder LR 0.000353213
+[2026-07-10 17:44:23,656][    INFO] Epoch 69/100, iter 19/28, loss 0.3513, encoder LR 0.00035213
+[2026-07-10 17:44:25,249][    INFO] Epoch 69/100, iter 22/28, loss 0.3133, encoder LR 0.000351047
+[2026-07-10 17:44:25,352][    INFO] Epoch 69/100, iter 25/28, loss 0.3913, encoder LR 0.000349963
+[2026-07-10 17:44:26,817][    INFO] Epoch 69/100, iter 28/28, loss 0.3956, encoder LR 0.00034888
+[2026-07-10 17:44:32,008][    INFO] Evaluation class [0 background]: IoU 91.70, Dice 95.67
+[2026-07-10 17:44:32,008][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:32,009][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:32,009][    INFO] Evaluation class [3 granulation tissue]: IoU 13.98, Dice 24.52
+[2026-07-10 17:44:32,009][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:32,009][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:32,009][    INFO] Evaluation epoch 68: MeanIoU 17.61, MeanDice 20.03; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:44:33,157][    INFO] Epoch 70/100, iter 1/28, loss 0.0322, encoder LR 0.000348518
+[2026-07-10 17:44:34,539][    INFO] Epoch 70/100, iter 4/28, loss 0.5253, encoder LR 0.000347434
+[2026-07-10 17:44:35,230][    INFO] Epoch 70/100, iter 7/28, loss 0.5288, encoder LR 0.000346349
+[2026-07-10 17:44:35,985][    INFO] Epoch 70/100, iter 10/28, loss 0.6468, encoder LR 0.000345264
+[2026-07-10 17:44:37,106][    INFO] Epoch 70/100, iter 13/28, loss 0.5774, encoder LR 0.000344179
+[2026-07-10 17:44:37,858][    INFO] Epoch 70/100, iter 16/28, loss 0.5364, encoder LR 0.000343093
+[2026-07-10 17:44:39,412][    INFO] Epoch 70/100, iter 19/28, loss 0.5067, encoder LR 0.000342007
+[2026-07-10 17:44:41,062][    INFO] Epoch 70/100, iter 22/28, loss 0.4740, encoder LR 0.00034092
+[2026-07-10 17:44:41,315][    INFO] Epoch 70/100, iter 25/28, loss 0.4641, encoder LR 0.000339833
+[2026-07-10 17:44:43,019][    INFO] Epoch 70/100, iter 28/28, loss 0.4414, encoder LR 0.000338746
+[2026-07-10 17:44:48,447][    INFO] Evaluation class [0 background]: IoU 92.04, Dice 95.85
+[2026-07-10 17:44:48,448][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:48,448][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:48,449][    INFO] Evaluation class [3 granulation tissue]: IoU 28.59, Dice 44.46
+[2026-07-10 17:44:48,449][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:48,449][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:44:48,449][    INFO] Evaluation epoch 69: MeanIoU 20.10, MeanDice 23.39; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:44:49,503][    INFO] Epoch 71/100, iter 1/28, loss 0.1634, encoder LR 0.000338383
+[2026-07-10 17:44:51,588][    INFO] Epoch 71/100, iter 4/28, loss 0.2139, encoder LR 0.000337296
+[2026-07-10 17:44:51,704][    INFO] Epoch 71/100, iter 7/28, loss 0.2585, encoder LR 0.000336207
+[2026-07-10 17:44:51,815][    INFO] Epoch 71/100, iter 10/28, loss 0.3641, encoder LR 0.000335119
+[2026-07-10 17:44:52,662][    INFO] Epoch 71/100, iter 13/28, loss 0.4334, encoder LR 0.00033403
+[2026-07-10 17:44:54,088][    INFO] Epoch 71/100, iter 16/28, loss 0.4272, encoder LR 0.00033294
+[2026-07-10 17:44:55,987][    INFO] Epoch 71/100, iter 19/28, loss 0.4053, encoder LR 0.00033185
+[2026-07-10 17:44:56,539][    INFO] Epoch 71/100, iter 22/28, loss 0.3836, encoder LR 0.00033076
+[2026-07-10 17:44:56,650][    INFO] Epoch 71/100, iter 25/28, loss 0.3611, encoder LR 0.00032967
+[2026-07-10 17:44:57,612][    INFO] Epoch 71/100, iter 28/28, loss 0.3599, encoder LR 0.000328579
+[2026-07-10 17:45:03,304][    INFO] Evaluation class [0 background]: IoU 91.69, Dice 95.66
+[2026-07-10 17:45:03,304][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:03,305][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:03,305][    INFO] Evaluation class [3 granulation tissue]: IoU 14.79, Dice 25.77
+[2026-07-10 17:45:03,305][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:03,305][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:03,305][    INFO] Evaluation epoch 70: MeanIoU 17.75, MeanDice 20.24; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:45:05,253][    INFO] Epoch 72/100, iter 1/28, loss 0.1550, encoder LR 0.000328215
+[2026-07-10 17:45:05,358][    INFO] Epoch 72/100, iter 4/28, loss 0.2750, encoder LR 0.000327123
+[2026-07-10 17:45:06,044][    INFO] Epoch 72/100, iter 7/28, loss 0.2251, encoder LR 0.000326031
+[2026-07-10 17:45:07,250][    INFO] Epoch 72/100, iter 10/28, loss 0.2043, encoder LR 0.000324939
+[2026-07-10 17:45:07,681][    INFO] Epoch 72/100, iter 13/28, loss 0.2497, encoder LR 0.000323846
+[2026-07-10 17:45:09,005][    INFO] Epoch 72/100, iter 16/28, loss 0.2972, encoder LR 0.000322753
+[2026-07-10 17:45:10,190][    INFO] Epoch 72/100, iter 19/28, loss 0.3093, encoder LR 0.000321659
+[2026-07-10 17:45:10,661][    INFO] Epoch 72/100, iter 22/28, loss 0.3237, encoder LR 0.000320565
+[2026-07-10 17:45:11,192][    INFO] Epoch 72/100, iter 25/28, loss 0.3255, encoder LR 0.000319471
+[2026-07-10 17:45:11,298][    INFO] Epoch 72/100, iter 28/28, loss 0.3271, encoder LR 0.000318376
+[2026-07-10 17:45:17,615][    INFO] Evaluation class [0 background]: IoU 92.00, Dice 95.83
+[2026-07-10 17:45:17,615][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:17,615][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:17,615][    INFO] Evaluation class [3 granulation tissue]: IoU 26.98, Dice 42.50
+[2026-07-10 17:45:17,615][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:17,616][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:17,616][    INFO] Evaluation epoch 71: MeanIoU 19.83, MeanDice 23.06; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:45:18,573][    INFO] Epoch 73/100, iter 1/28, loss 0.5293, encoder LR 0.000318011
+[2026-07-10 17:45:19,776][    INFO] Epoch 73/100, iter 4/28, loss 0.2733, encoder LR 0.000316916
+[2026-07-10 17:45:21,108][    INFO] Epoch 73/100, iter 7/28, loss 0.3323, encoder LR 0.00031582
+[2026-07-10 17:45:22,231][    INFO] Epoch 73/100, iter 10/28, loss 0.2997, encoder LR 0.000314724
+[2026-07-10 17:45:22,397][    INFO] Epoch 73/100, iter 13/28, loss 0.3232, encoder LR 0.000313627
+[2026-07-10 17:45:23,113][    INFO] Epoch 73/100, iter 16/28, loss 0.3498, encoder LR 0.00031253
+[2026-07-10 17:45:24,035][    INFO] Epoch 73/100, iter 19/28, loss 0.3218, encoder LR 0.000311432
+[2026-07-10 17:45:24,897][    INFO] Epoch 73/100, iter 22/28, loss 0.3165, encoder LR 0.000310334
+[2026-07-10 17:45:25,316][    INFO] Epoch 73/100, iter 25/28, loss 0.2869, encoder LR 0.000309236
+[2026-07-10 17:45:26,505][    INFO] Epoch 73/100, iter 28/28, loss 0.2789, encoder LR 0.000308137
+[2026-07-10 17:45:32,092][    INFO] Evaluation class [0 background]: IoU 92.16, Dice 95.92
+[2026-07-10 17:45:32,092][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:32,093][    INFO] Evaluation class [2 slough]: IoU 0.02, Dice 0.05
+[2026-07-10 17:45:32,093][    INFO] Evaluation class [3 granulation tissue]: IoU 30.74, Dice 47.02
+[2026-07-10 17:45:32,093][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:32,093][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:32,093][    INFO] Evaluation epoch 72: MeanIoU 20.49, MeanDice 23.83; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:45:34,759][    INFO] Epoch 74/100, iter 1/28, loss 0.0832, encoder LR 0.000307771
+[2026-07-10 17:45:34,864][    INFO] Epoch 74/100, iter 4/28, loss 0.2950, encoder LR 0.000306671
+[2026-07-10 17:45:35,703][    INFO] Epoch 74/100, iter 7/28, loss 0.2636, encoder LR 0.000305572
+[2026-07-10 17:45:36,035][    INFO] Epoch 74/100, iter 10/28, loss 0.4734, encoder LR 0.000304471
+[2026-07-10 17:45:37,262][    INFO] Epoch 74/100, iter 13/28, loss 0.3758, encoder LR 0.000303371
+[2026-07-10 17:45:37,855][    INFO] Epoch 74/100, iter 16/28, loss 0.3577, encoder LR 0.000302269
+[2026-07-10 17:45:39,244][    INFO] Epoch 74/100, iter 19/28, loss 0.3783, encoder LR 0.000301168
+[2026-07-10 17:45:39,356][    INFO] Epoch 74/100, iter 22/28, loss 0.3463, encoder LR 0.000300066
+[2026-07-10 17:45:40,452][    INFO] Epoch 74/100, iter 25/28, loss 0.3583, encoder LR 0.000298963
+[2026-07-10 17:45:42,096][    INFO] Epoch 74/100, iter 28/28, loss 0.3417, encoder LR 0.00029786
+[2026-07-10 17:45:47,658][    INFO] Evaluation class [0 background]: IoU 91.92, Dice 95.79
+[2026-07-10 17:45:47,659][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:47,659][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:47,659][    INFO] Evaluation class [3 granulation tissue]: IoU 25.43, Dice 40.55
+[2026-07-10 17:45:47,659][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:47,660][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:45:47,660][    INFO] Evaluation epoch 73: MeanIoU 19.56, MeanDice 22.72; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:45:49,004][    INFO] Epoch 75/100, iter 1/28, loss 0.4468, encoder LR 0.000297492
+[2026-07-10 17:45:49,746][    INFO] Epoch 75/100, iter 4/28, loss 0.2125, encoder LR 0.000296389
+[2026-07-10 17:45:51,130][    INFO] Epoch 75/100, iter 7/28, loss 0.2165, encoder LR 0.000295285
+[2026-07-10 17:45:52,607][    INFO] Epoch 75/100, iter 10/28, loss 0.3037, encoder LR 0.00029418
+[2026-07-10 17:45:52,712][    INFO] Epoch 75/100, iter 13/28, loss 0.2456, encoder LR 0.000293075
+[2026-07-10 17:45:53,991][    INFO] Epoch 75/100, iter 16/28, loss 0.2401, encoder LR 0.00029197
+[2026-07-10 17:45:54,868][    INFO] Epoch 75/100, iter 19/28, loss 0.2973, encoder LR 0.000290864
+[2026-07-10 17:45:54,979][    INFO] Epoch 75/100, iter 22/28, loss 0.2788, encoder LR 0.000289758
+[2026-07-10 17:45:55,826][    INFO] Epoch 75/100, iter 25/28, loss 0.2801, encoder LR 0.000288651
+[2026-07-10 17:45:56,596][    INFO] Epoch 75/100, iter 28/28, loss 0.3464, encoder LR 0.000287544
+[2026-07-10 17:46:03,746][    INFO] Evaluation class [0 background]: IoU 91.92, Dice 95.79
+[2026-07-10 17:46:03,747][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:03,747][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:03,747][    INFO] Evaluation class [3 granulation tissue]: IoU 24.95, Dice 39.94
+[2026-07-10 17:46:03,747][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:03,748][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:03,748][    INFO] Evaluation epoch 74: MeanIoU 19.48, MeanDice 22.62; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:46:05,246][    INFO] Epoch 76/100, iter 1/28, loss 0.2783, encoder LR 0.000287175
+[2026-07-10 17:46:05,918][    INFO] Epoch 76/100, iter 4/28, loss 0.3369, encoder LR 0.000286067
+[2026-07-10 17:46:07,175][    INFO] Epoch 76/100, iter 7/28, loss 0.3001, encoder LR 0.000284958
+[2026-07-10 17:46:09,086][    INFO] Epoch 76/100, iter 10/28, loss 0.2848, encoder LR 0.000283849
+[2026-07-10 17:46:09,194][    INFO] Epoch 76/100, iter 13/28, loss 0.2800, encoder LR 0.00028274
+[2026-07-10 17:46:09,546][    INFO] Epoch 76/100, iter 16/28, loss 0.3704, encoder LR 0.00028163
+[2026-07-10 17:46:11,671][    INFO] Epoch 76/100, iter 19/28, loss 0.3575, encoder LR 0.00028052
+[2026-07-10 17:46:13,111][    INFO] Epoch 76/100, iter 22/28, loss 0.3539, encoder LR 0.000279409
+[2026-07-10 17:46:13,223][    INFO] Epoch 76/100, iter 25/28, loss 0.3393, encoder LR 0.000278298
+[2026-07-10 17:46:14,075][    INFO] Epoch 76/100, iter 28/28, loss 0.3499, encoder LR 0.000277186
+[2026-07-10 17:46:20,152][    INFO] Evaluation class [0 background]: IoU 92.11, Dice 95.89
+[2026-07-10 17:46:20,153][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:20,153][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:20,153][    INFO] Evaluation class [3 granulation tissue]: IoU 29.19, Dice 45.19
+[2026-07-10 17:46:20,153][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:20,153][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:20,153][    INFO] Evaluation epoch 75: MeanIoU 20.22, MeanDice 23.51; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:46:21,459][    INFO] Epoch 77/100, iter 1/28, loss 0.6557, encoder LR 0.000276815
+[2026-07-10 17:46:22,753][    INFO] Epoch 77/100, iter 4/28, loss 0.2841, encoder LR 0.000275703
+[2026-07-10 17:46:23,598][    INFO] Epoch 77/100, iter 7/28, loss 0.5138, encoder LR 0.00027459
+[2026-07-10 17:46:24,535][    INFO] Epoch 77/100, iter 10/28, loss 0.4243, encoder LR 0.000273476
+[2026-07-10 17:46:25,099][    INFO] Epoch 77/100, iter 13/28, loss 0.5391, encoder LR 0.000272363
+[2026-07-10 17:46:25,642][    INFO] Epoch 77/100, iter 16/28, loss 0.4651, encoder LR 0.000271248
+[2026-07-10 17:46:26,428][    INFO] Epoch 77/100, iter 19/28, loss 0.4489, encoder LR 0.000270133
+[2026-07-10 17:46:27,037][    INFO] Epoch 77/100, iter 22/28, loss 0.4358, encoder LR 0.000269018
+[2026-07-10 17:46:28,050][    INFO] Epoch 77/100, iter 25/28, loss 0.4418, encoder LR 0.000267902
+[2026-07-10 17:46:28,279][    INFO] Epoch 77/100, iter 28/28, loss 0.4401, encoder LR 0.000266785
+[2026-07-10 17:46:34,036][    INFO] Evaluation class [0 background]: IoU 91.70, Dice 95.67
+[2026-07-10 17:46:34,037][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:34,037][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:34,037][    INFO] Evaluation class [3 granulation tissue]: IoU 13.92, Dice 24.45
+[2026-07-10 17:46:34,037][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:34,037][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:34,038][    INFO] Evaluation epoch 76: MeanIoU 17.60, MeanDice 20.02; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:46:35,629][    INFO] Epoch 78/100, iter 1/28, loss 0.1380, encoder LR 0.000266413
+[2026-07-10 17:46:35,794][    INFO] Epoch 78/100, iter 4/28, loss 0.3118, encoder LR 0.000265296
+[2026-07-10 17:46:37,378][    INFO] Epoch 78/100, iter 7/28, loss 0.2970, encoder LR 0.000264178
+[2026-07-10 17:46:38,201][    INFO] Epoch 78/100, iter 10/28, loss 0.2825, encoder LR 0.00026306
+[2026-07-10 17:46:39,759][    INFO] Epoch 78/100, iter 13/28, loss 0.2701, encoder LR 0.000261941
+[2026-07-10 17:46:40,713][    INFO] Epoch 78/100, iter 16/28, loss 0.2932, encoder LR 0.000260821
+[2026-07-10 17:46:40,820][    INFO] Epoch 78/100, iter 19/28, loss 0.3342, encoder LR 0.000259702
+[2026-07-10 17:46:43,378][    INFO] Epoch 78/100, iter 22/28, loss 0.3782, encoder LR 0.000258581
+[2026-07-10 17:46:44,463][    INFO] Epoch 78/100, iter 25/28, loss 0.3863, encoder LR 0.00025746
+[2026-07-10 17:46:45,937][    INFO] Epoch 78/100, iter 28/28, loss 0.3954, encoder LR 0.000256339
+[2026-07-10 17:46:51,428][    INFO] Evaluation class [0 background]: IoU 92.20, Dice 95.94
+[2026-07-10 17:46:51,429][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:51,429][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:51,429][    INFO] Evaluation class [3 granulation tissue]: IoU 31.56, Dice 47.98
+[2026-07-10 17:46:51,429][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:51,429][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:46:51,429][    INFO] Evaluation epoch 77: MeanIoU 20.63, MeanDice 23.99; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:46:53,006][    INFO] Epoch 79/100, iter 1/28, loss 0.1256, encoder LR 0.000255965
+[2026-07-10 17:46:53,113][    INFO] Epoch 79/100, iter 4/28, loss 0.4851, encoder LR 0.000254843
+[2026-07-10 17:46:54,781][    INFO] Epoch 79/100, iter 7/28, loss 0.3886, encoder LR 0.00025372
+[2026-07-10 17:46:55,389][    INFO] Epoch 79/100, iter 10/28, loss 0.3396, encoder LR 0.000252597
+[2026-07-10 17:46:56,889][    INFO] Epoch 79/100, iter 13/28, loss 0.3354, encoder LR 0.000251473
+[2026-07-10 17:46:57,042][    INFO] Epoch 79/100, iter 16/28, loss 0.3129, encoder LR 0.000250348
+[2026-07-10 17:46:57,546][    INFO] Epoch 79/100, iter 19/28, loss 0.3326, encoder LR 0.000249223
+[2026-07-10 17:46:59,090][    INFO] Epoch 79/100, iter 22/28, loss 0.3545, encoder LR 0.000248098
+[2026-07-10 17:46:59,790][    INFO] Epoch 79/100, iter 25/28, loss 0.3341, encoder LR 0.000246972
+[2026-07-10 17:47:00,045][    INFO] Epoch 79/100, iter 28/28, loss 0.3259, encoder LR 0.000245845
+[2026-07-10 17:47:05,754][    INFO] Evaluation class [0 background]: IoU 91.77, Dice 95.71
+[2026-07-10 17:47:05,755][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:05,755][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:05,755][    INFO] Evaluation class [3 granulation tissue]: IoU 16.00, Dice 27.58
+[2026-07-10 17:47:05,755][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:05,755][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:05,756][    INFO] Evaluation epoch 78: MeanIoU 17.96, MeanDice 20.55; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:47:07,300][    INFO] Epoch 80/100, iter 1/28, loss 0.9807, encoder LR 0.000245469
+[2026-07-10 17:47:07,407][    INFO] Epoch 80/100, iter 4/28, loss 0.7058, encoder LR 0.000244342
+[2026-07-10 17:47:09,137][    INFO] Epoch 80/100, iter 7/28, loss 0.5475, encoder LR 0.000243214
+[2026-07-10 17:47:09,265][    INFO] Epoch 80/100, iter 10/28, loss 0.5103, encoder LR 0.000242085
+[2026-07-10 17:47:11,496][    INFO] Epoch 80/100, iter 13/28, loss 0.4611, encoder LR 0.000240956
+[2026-07-10 17:47:13,026][    INFO] Epoch 80/100, iter 16/28, loss 0.4602, encoder LR 0.000239826
+[2026-07-10 17:47:13,741][    INFO] Epoch 80/100, iter 19/28, loss 0.4173, encoder LR 0.000238696
+[2026-07-10 17:47:13,852][    INFO] Epoch 80/100, iter 22/28, loss 0.3855, encoder LR 0.000237565
+[2026-07-10 17:47:14,695][    INFO] Epoch 80/100, iter 25/28, loss 0.3685, encoder LR 0.000236433
+[2026-07-10 17:47:16,480][    INFO] Epoch 80/100, iter 28/28, loss 0.3470, encoder LR 0.000235301
+[2026-07-10 17:47:22,020][    INFO] Evaluation class [0 background]: IoU 92.02, Dice 95.84
+[2026-07-10 17:47:22,020][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:22,021][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:22,021][    INFO] Evaluation class [3 granulation tissue]: IoU 29.22, Dice 45.23
+[2026-07-10 17:47:22,021][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:22,021][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:22,021][    INFO] Evaluation epoch 79: MeanIoU 20.21, MeanDice 23.51; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:47:22,939][    INFO] Epoch 81/100, iter 1/28, loss 0.4199, encoder LR 0.000234924
+[2026-07-10 17:47:23,528][    INFO] Epoch 81/100, iter 4/28, loss 0.3332, encoder LR 0.000233791
+[2026-07-10 17:47:24,820][    INFO] Epoch 81/100, iter 7/28, loss 0.2903, encoder LR 0.000232657
+[2026-07-10 17:47:26,813][    INFO] Epoch 81/100, iter 10/28, loss 0.2672, encoder LR 0.000231523
+[2026-07-10 17:47:27,033][    INFO] Epoch 81/100, iter 13/28, loss 0.2481, encoder LR 0.000230388
+[2026-07-10 17:47:28,111][    INFO] Epoch 81/100, iter 16/28, loss 0.2755, encoder LR 0.000229253
+[2026-07-10 17:47:28,596][    INFO] Epoch 81/100, iter 19/28, loss 0.3009, encoder LR 0.000228117
+[2026-07-10 17:47:30,202][    INFO] Epoch 81/100, iter 22/28, loss 0.2938, encoder LR 0.00022698
+[2026-07-10 17:47:30,457][    INFO] Epoch 81/100, iter 25/28, loss 0.3555, encoder LR 0.000225843
+[2026-07-10 17:47:30,718][    INFO] Epoch 81/100, iter 28/28, loss 0.3411, encoder LR 0.000224705
+[2026-07-10 17:47:37,264][    INFO] Evaluation class [0 background]: IoU 91.76, Dice 95.70
+[2026-07-10 17:47:37,264][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:37,265][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:37,265][    INFO] Evaluation class [3 granulation tissue]: IoU 16.72, Dice 28.65
+[2026-07-10 17:47:37,265][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:37,265][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:37,265][    INFO] Evaluation epoch 80: MeanIoU 18.08, MeanDice 20.73; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:47:39,952][    INFO] Epoch 82/100, iter 1/28, loss 0.0160, encoder LR 0.000224325
+[2026-07-10 17:47:40,470][    INFO] Epoch 82/100, iter 4/28, loss 0.1199, encoder LR 0.000223186
+[2026-07-10 17:47:41,683][    INFO] Epoch 82/100, iter 7/28, loss 0.2421, encoder LR 0.000222047
+[2026-07-10 17:47:42,077][    INFO] Epoch 82/100, iter 10/28, loss 0.2645, encoder LR 0.000220907
+[2026-07-10 17:47:43,599][    INFO] Epoch 82/100, iter 13/28, loss 0.3095, encoder LR 0.000219766
+[2026-07-10 17:47:43,710][    INFO] Epoch 82/100, iter 16/28, loss 0.2979, encoder LR 0.000218625
+[2026-07-10 17:47:44,705][    INFO] Epoch 82/100, iter 19/28, loss 0.2812, encoder LR 0.000217483
+[2026-07-10 17:47:45,765][    INFO] Epoch 82/100, iter 22/28, loss 0.2535, encoder LR 0.00021634
+[2026-07-10 17:47:46,083][    INFO] Epoch 82/100, iter 25/28, loss 0.2444, encoder LR 0.000215196
+[2026-07-10 17:47:46,994][    INFO] Epoch 82/100, iter 28/28, loss 0.2498, encoder LR 0.000214052
+[2026-07-10 17:47:52,288][    INFO] Evaluation class [0 background]: IoU 91.59, Dice 95.61
+[2026-07-10 17:47:52,289][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:52,289][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:52,289][    INFO] Evaluation class [3 granulation tissue]: IoU 10.14, Dice 18.41
+[2026-07-10 17:47:52,289][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:52,290][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:47:52,290][    INFO] Evaluation epoch 81: MeanIoU 16.95, MeanDice 19.00; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:47:53,480][    INFO] Epoch 83/100, iter 1/28, loss 0.1819, encoder LR 0.000213671
+[2026-07-10 17:47:54,564][    INFO] Epoch 83/100, iter 4/28, loss 0.2217, encoder LR 0.000212526
+[2026-07-10 17:47:54,964][    INFO] Epoch 83/100, iter 7/28, loss 0.3881, encoder LR 0.00021138
+[2026-07-10 17:47:56,057][    INFO] Epoch 83/100, iter 10/28, loss 0.4216, encoder LR 0.000210234
+[2026-07-10 17:47:57,004][    INFO] Epoch 83/100, iter 13/28, loss 0.3729, encoder LR 0.000209087
+[2026-07-10 17:47:57,571][    INFO] Epoch 83/100, iter 16/28, loss 0.3684, encoder LR 0.000207939
+[2026-07-10 17:47:58,545][    INFO] Epoch 83/100, iter 19/28, loss 0.3733, encoder LR 0.00020679
+[2026-07-10 17:47:59,599][    INFO] Epoch 83/100, iter 22/28, loss 0.3455, encoder LR 0.000205641
+[2026-07-10 17:47:59,723][    INFO] Epoch 83/100, iter 25/28, loss 0.3699, encoder LR 0.000204491
+[2026-07-10 17:48:01,267][    INFO] Epoch 83/100, iter 28/28, loss 0.3435, encoder LR 0.000203341
+[2026-07-10 17:48:06,725][    INFO] Evaluation class [0 background]: IoU 91.65, Dice 95.64
+[2026-07-10 17:48:06,726][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:06,726][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:06,726][    INFO] Evaluation class [3 granulation tissue]: IoU 11.49, Dice 20.61
+[2026-07-10 17:48:06,726][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:06,727][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:06,727][    INFO] Evaluation epoch 82: MeanIoU 17.19, MeanDice 19.38; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:48:08,330][    INFO] Epoch 84/100, iter 1/28, loss 0.0848, encoder LR 0.000202957
+[2026-07-10 17:48:08,451][    INFO] Epoch 84/100, iter 4/28, loss 0.4727, encoder LR 0.000201805
+[2026-07-10 17:48:09,845][    INFO] Epoch 84/100, iter 7/28, loss 0.4723, encoder LR 0.000200653
+[2026-07-10 17:48:10,375][    INFO] Epoch 84/100, iter 10/28, loss 0.4244, encoder LR 0.0001995
+[2026-07-10 17:48:11,962][    INFO] Epoch 84/100, iter 13/28, loss 0.3737, encoder LR 0.000198346
+[2026-07-10 17:48:12,198][    INFO] Epoch 84/100, iter 16/28, loss 0.4304, encoder LR 0.000197192
+[2026-07-10 17:48:12,764][    INFO] Epoch 84/100, iter 19/28, loss 0.3844, encoder LR 0.000196036
+[2026-07-10 17:48:13,203][    INFO] Epoch 84/100, iter 22/28, loss 0.3484, encoder LR 0.00019488
+[2026-07-10 17:48:14,376][    INFO] Epoch 84/100, iter 25/28, loss 0.3243, encoder LR 0.000193724
+[2026-07-10 17:48:15,733][    INFO] Epoch 84/100, iter 28/28, loss 0.3179, encoder LR 0.000192566
+[2026-07-10 17:48:21,630][    INFO] Evaluation class [0 background]: IoU 91.86, Dice 95.76
+[2026-07-10 17:48:21,631][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:21,631][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:21,631][    INFO] Evaluation class [3 granulation tissue]: IoU 22.17, Dice 36.30
+[2026-07-10 17:48:21,631][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:21,631][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:21,631][    INFO] Evaluation epoch 83: MeanIoU 19.01, MeanDice 22.01; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:48:22,186][    INFO] Epoch 85/100, iter 1/28, loss 0.1326, encoder LR 0.00019218
+[2026-07-10 17:48:23,766][    INFO] Epoch 85/100, iter 4/28, loss 0.2796, encoder LR 0.000191021
+[2026-07-10 17:48:25,780][    INFO] Epoch 85/100, iter 7/28, loss 0.1993, encoder LR 0.000189862
+[2026-07-10 17:48:27,008][    INFO] Epoch 85/100, iter 10/28, loss 0.1960, encoder LR 0.000188702
+[2026-07-10 17:48:27,114][    INFO] Epoch 85/100, iter 13/28, loss 0.2203, encoder LR 0.000187541
+[2026-07-10 17:48:29,883][    INFO] Epoch 85/100, iter 16/28, loss 0.2505, encoder LR 0.000186379
+[2026-07-10 17:48:30,714][    INFO] Epoch 85/100, iter 19/28, loss 0.2359, encoder LR 0.000185216
+[2026-07-10 17:48:31,617][    INFO] Epoch 85/100, iter 22/28, loss 0.2139, encoder LR 0.000184053
+[2026-07-10 17:48:31,736][    INFO] Epoch 85/100, iter 25/28, loss 0.2068, encoder LR 0.000182889
+[2026-07-10 17:48:31,843][    INFO] Epoch 85/100, iter 28/28, loss 0.1988, encoder LR 0.000181724
+[2026-07-10 17:48:37,438][    INFO] Evaluation class [0 background]: IoU 92.13, Dice 95.90
+[2026-07-10 17:48:37,439][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:37,439][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:37,439][    INFO] Evaluation class [3 granulation tissue]: IoU 30.08, Dice 46.24
+[2026-07-10 17:48:37,439][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:37,439][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:37,439][    INFO] Evaluation epoch 84: MeanIoU 20.37, MeanDice 23.69; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:48:40,342][    INFO] Epoch 86/100, iter 1/28, loss 0.3526, encoder LR 0.000181335
+[2026-07-10 17:48:40,462][    INFO] Epoch 86/100, iter 4/28, loss 0.1313, encoder LR 0.000180169
+[2026-07-10 17:48:40,582][    INFO] Epoch 86/100, iter 7/28, loss 0.1561, encoder LR 0.000179002
+[2026-07-10 17:48:40,719][    INFO] Epoch 86/100, iter 10/28, loss 0.2694, encoder LR 0.000177834
+[2026-07-10 17:48:41,579][    INFO] Epoch 86/100, iter 13/28, loss 0.2563, encoder LR 0.000176666
+[2026-07-10 17:48:42,367][    INFO] Epoch 86/100, iter 16/28, loss 0.2270, encoder LR 0.000175496
+[2026-07-10 17:48:43,488][    INFO] Epoch 86/100, iter 19/28, loss 0.2689, encoder LR 0.000174326
+[2026-07-10 17:48:44,565][    INFO] Epoch 86/100, iter 22/28, loss 0.2752, encoder LR 0.000173154
+[2026-07-10 17:48:44,675][    INFO] Epoch 86/100, iter 25/28, loss 0.2835, encoder LR 0.000171982
+[2026-07-10 17:48:46,209][    INFO] Epoch 86/100, iter 28/28, loss 0.2678, encoder LR 0.000170809
+[2026-07-10 17:48:52,329][    INFO] Evaluation class [0 background]: IoU 91.43, Dice 95.52
+[2026-07-10 17:48:52,329][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:52,329][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:52,329][    INFO] Evaluation class [3 granulation tissue]: IoU 4.12, Dice 7.92
+[2026-07-10 17:48:52,330][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:52,330][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:48:52,330][    INFO] Evaluation epoch 85: MeanIoU 15.93, MeanDice 17.24; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:48:54,777][    INFO] Epoch 87/100, iter 1/28, loss 0.8994, encoder LR 0.000170418
+[2026-07-10 17:48:54,901][    INFO] Epoch 87/100, iter 4/28, loss 0.4949, encoder LR 0.000169244
+[2026-07-10 17:48:56,215][    INFO] Epoch 87/100, iter 7/28, loss 0.3158, encoder LR 0.000168069
+[2026-07-10 17:48:57,371][    INFO] Epoch 87/100, iter 10/28, loss 0.3204, encoder LR 0.000166892
+[2026-07-10 17:48:58,619][    INFO] Epoch 87/100, iter 13/28, loss 0.3092, encoder LR 0.000165715
+[2026-07-10 17:48:58,734][    INFO] Epoch 87/100, iter 16/28, loss 0.3434, encoder LR 0.000164538
+[2026-07-10 17:49:00,097][    INFO] Epoch 87/100, iter 19/28, loss 0.3460, encoder LR 0.000163359
+[2026-07-10 17:49:00,982][    INFO] Epoch 87/100, iter 22/28, loss 0.3521, encoder LR 0.000162179
+[2026-07-10 17:49:02,050][    INFO] Epoch 87/100, iter 25/28, loss 0.3328, encoder LR 0.000160998
+[2026-07-10 17:49:02,158][    INFO] Epoch 87/100, iter 28/28, loss 0.3183, encoder LR 0.000159816
+[2026-07-10 17:49:07,883][    INFO] Evaluation class [0 background]: IoU 91.86, Dice 95.76
+[2026-07-10 17:49:07,884][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.01, Dice 0.02
+[2026-07-10 17:49:07,884][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:07,884][    INFO] Evaluation class [3 granulation tissue]: IoU 21.05, Dice 34.78
+[2026-07-10 17:49:07,884][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:07,884][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:07,885][    INFO] Evaluation epoch 86: MeanIoU 18.82, MeanDice 21.76; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:49:09,776][    INFO] Epoch 88/100, iter 1/28, loss 0.0230, encoder LR 0.000159422
+[2026-07-10 17:49:11,003][    INFO] Epoch 88/100, iter 4/28, loss 0.1355, encoder LR 0.000158239
+[2026-07-10 17:49:11,321][    INFO] Epoch 88/100, iter 7/28, loss 0.4338, encoder LR 0.000157055
+[2026-07-10 17:49:11,985][    INFO] Epoch 88/100, iter 10/28, loss 0.4824, encoder LR 0.00015587
+[2026-07-10 17:49:13,105][    INFO] Epoch 88/100, iter 13/28, loss 0.5704, encoder LR 0.000154684
+[2026-07-10 17:49:14,749][    INFO] Epoch 88/100, iter 16/28, loss 0.5032, encoder LR 0.000153497
+[2026-07-10 17:49:15,576][    INFO] Epoch 88/100, iter 19/28, loss 0.4558, encoder LR 0.000152309
+[2026-07-10 17:49:15,745][    INFO] Epoch 88/100, iter 22/28, loss 0.4217, encoder LR 0.00015112
+[2026-07-10 17:49:16,269][    INFO] Epoch 88/100, iter 25/28, loss 0.3927, encoder LR 0.00014993
+[2026-07-10 17:49:17,939][    INFO] Epoch 88/100, iter 28/28, loss 0.3745, encoder LR 0.000148739
+[2026-07-10 17:49:25,194][    INFO] Evaluation class [0 background]: IoU 91.86, Dice 95.76
+[2026-07-10 17:49:25,195][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:25,196][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:25,196][    INFO] Evaluation class [3 granulation tissue]: IoU 21.45, Dice 35.33
+[2026-07-10 17:49:25,196][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:25,196][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:25,196][    INFO] Evaluation epoch 87: MeanIoU 18.89, MeanDice 21.85; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:49:27,437][    INFO] Epoch 89/100, iter 1/28, loss 0.1415, encoder LR 0.000148342
+[2026-07-10 17:49:28,835][    INFO] Epoch 89/100, iter 4/28, loss 0.1855, encoder LR 0.000147149
+[2026-07-10 17:49:29,077][    INFO] Epoch 89/100, iter 7/28, loss 0.2679, encoder LR 0.000145955
+[2026-07-10 17:49:30,565][    INFO] Epoch 89/100, iter 10/28, loss 0.2353, encoder LR 0.000144761
+[2026-07-10 17:49:31,400][    INFO] Epoch 89/100, iter 13/28, loss 0.2143, encoder LR 0.000143565
+[2026-07-10 17:49:31,520][    INFO] Epoch 89/100, iter 16/28, loss 0.2274, encoder LR 0.000142368
+[2026-07-10 17:49:32,550][    INFO] Epoch 89/100, iter 19/28, loss 0.2355, encoder LR 0.00014117
+[2026-07-10 17:49:33,260][    INFO] Epoch 89/100, iter 22/28, loss 0.2386, encoder LR 0.000139971
+[2026-07-10 17:49:34,711][    INFO] Epoch 89/100, iter 25/28, loss 0.2690, encoder LR 0.00013877
+[2026-07-10 17:49:35,011][    INFO] Epoch 89/100, iter 28/28, loss 0.2780, encoder LR 0.000137569
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [0 background]: IoU 91.59, Dice 95.61
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [3 granulation tissue]: IoU 9.59, Dice 17.51
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:40,634][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:40,635][    INFO] Evaluation epoch 88: MeanIoU 16.86, MeanDice 18.85; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:49:41,291][    INFO] Epoch 90/100, iter 1/28, loss 0.9099, encoder LR 0.000137168
+[2026-07-10 17:49:43,214][    INFO] Epoch 90/100, iter 4/28, loss 0.5182, encoder LR 0.000135965
+[2026-07-10 17:49:43,502][    INFO] Epoch 90/100, iter 7/28, loss 0.5549, encoder LR 0.000134761
+[2026-07-10 17:49:45,060][    INFO] Epoch 90/100, iter 10/28, loss 0.4314, encoder LR 0.000133556
+[2026-07-10 17:49:45,170][    INFO] Epoch 90/100, iter 13/28, loss 0.4276, encoder LR 0.000132349
+[2026-07-10 17:49:46,373][    INFO] Epoch 90/100, iter 16/28, loss 0.3840, encoder LR 0.000131141
+[2026-07-10 17:49:47,647][    INFO] Epoch 90/100, iter 19/28, loss 0.3645, encoder LR 0.000129932
+[2026-07-10 17:49:48,205][    INFO] Epoch 90/100, iter 22/28, loss 0.3781, encoder LR 0.000128722
+[2026-07-10 17:49:48,462][    INFO] Epoch 90/100, iter 25/28, loss 0.4320, encoder LR 0.00012751
+[2026-07-10 17:49:49,208][    INFO] Epoch 90/100, iter 28/28, loss 0.4247, encoder LR 0.000126297
+[2026-07-10 17:49:54,612][    INFO] Evaluation class [0 background]: IoU 91.70, Dice 95.67
+[2026-07-10 17:49:54,612][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:54,612][    INFO] Evaluation class [2 slough]: IoU 0.18, Dice 0.36
+[2026-07-10 17:49:54,612][    INFO] Evaluation class [3 granulation tissue]: IoU 14.73, Dice 25.68
+[2026-07-10 17:49:54,612][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:54,613][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:49:54,613][    INFO] Evaluation epoch 89: MeanIoU 17.77, MeanDice 20.29; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:49:56,866][    INFO] Epoch 91/100, iter 1/28, loss 0.4020, encoder LR 0.000125893
+[2026-07-10 17:49:57,019][    INFO] Epoch 91/100, iter 4/28, loss 0.3141, encoder LR 0.000124678
+[2026-07-10 17:49:58,733][    INFO] Epoch 91/100, iter 7/28, loss 0.2827, encoder LR 0.000123462
+[2026-07-10 17:49:59,889][    INFO] Epoch 91/100, iter 10/28, loss 0.2832, encoder LR 0.000122245
+[2026-07-10 17:50:00,618][    INFO] Epoch 91/100, iter 13/28, loss 0.2998, encoder LR 0.000121026
+[2026-07-10 17:50:00,737][    INFO] Epoch 91/100, iter 16/28, loss 0.2993, encoder LR 0.000119806
+[2026-07-10 17:50:01,222][    INFO] Epoch 91/100, iter 19/28, loss 0.2710, encoder LR 0.000118585
+[2026-07-10 17:50:02,135][    INFO] Epoch 91/100, iter 22/28, loss 0.2692, encoder LR 0.000117362
+[2026-07-10 17:50:03,637][    INFO] Epoch 91/100, iter 25/28, loss 0.2853, encoder LR 0.000116138
+[2026-07-10 17:50:04,203][    INFO] Epoch 91/100, iter 28/28, loss 0.2764, encoder LR 0.000114912
+[2026-07-10 17:50:10,418][    INFO] Evaluation class [0 background]: IoU 91.64, Dice 95.64
+[2026-07-10 17:50:10,418][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:10,418][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:10,419][    INFO] Evaluation class [3 granulation tissue]: IoU 12.75, Dice 22.61
+[2026-07-10 17:50:10,419][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:10,419][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:10,419][    INFO] Evaluation epoch 90: MeanIoU 17.40, MeanDice 19.71; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:50:11,926][    INFO] Epoch 92/100, iter 1/28, loss 0.1193, encoder LR 0.000114503
+[2026-07-10 17:50:12,535][    INFO] Epoch 92/100, iter 4/28, loss 0.1242, encoder LR 0.000113276
+[2026-07-10 17:50:13,321][    INFO] Epoch 92/100, iter 7/28, loss 0.1309, encoder LR 0.000112047
+[2026-07-10 17:50:14,737][    INFO] Epoch 92/100, iter 10/28, loss 0.1404, encoder LR 0.000110816
+[2026-07-10 17:50:15,140][    INFO] Epoch 92/100, iter 13/28, loss 0.1522, encoder LR 0.000109584
+[2026-07-10 17:50:16,183][    INFO] Epoch 92/100, iter 16/28, loss 0.1661, encoder LR 0.000108351
+[2026-07-10 17:50:17,608][    INFO] Epoch 92/100, iter 19/28, loss 0.2281, encoder LR 0.000107115
+[2026-07-10 17:50:18,111][    INFO] Epoch 92/100, iter 22/28, loss 0.2222, encoder LR 0.000105879
+[2026-07-10 17:50:19,680][    INFO] Epoch 92/100, iter 25/28, loss 0.3132, encoder LR 0.00010464
+[2026-07-10 17:50:19,773][    INFO] Epoch 92/100, iter 28/28, loss 0.3319, encoder LR 0.0001034
+[2026-07-10 17:50:25,337][    INFO] Evaluation class [0 background]: IoU 91.78, Dice 95.72
+[2026-07-10 17:50:25,337][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.01
+[2026-07-10 17:50:25,337][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:25,338][    INFO] Evaluation class [3 granulation tissue]: IoU 17.87, Dice 30.32
+[2026-07-10 17:50:25,338][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:25,338][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:25,338][    INFO] Evaluation epoch 91: MeanIoU 18.28, MeanDice 21.01; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:50:27,500][    INFO] Epoch 93/100, iter 1/28, loss 0.0505, encoder LR 0.000102987
+[2026-07-10 17:50:27,960][    INFO] Epoch 93/100, iter 4/28, loss 0.3505, encoder LR 0.000101744
+[2026-07-10 17:50:28,866][    INFO] Epoch 93/100, iter 7/28, loss 0.3195, encoder LR 0.000100501
+[2026-07-10 17:50:30,411][    INFO] Epoch 93/100, iter 10/28, loss 0.4092, encoder LR 9.9255e-05
+[2026-07-10 17:50:32,419][    INFO] Epoch 93/100, iter 13/28, loss 0.3642, encoder LR 9.80077e-05
+[2026-07-10 17:50:32,671][    INFO] Epoch 93/100, iter 16/28, loss 0.3454, encoder LR 9.67586e-05
+[2026-07-10 17:50:33,231][    INFO] Epoch 93/100, iter 19/28, loss 0.4380, encoder LR 9.55077e-05
+[2026-07-10 17:50:34,209][    INFO] Epoch 93/100, iter 22/28, loss 0.4504, encoder LR 9.4255e-05
+[2026-07-10 17:50:35,476][    INFO] Epoch 93/100, iter 25/28, loss 0.4633, encoder LR 9.30004e-05
+[2026-07-10 17:50:36,359][    INFO] Epoch 93/100, iter 28/28, loss 0.4257, encoder LR 9.17439e-05
+[2026-07-10 17:50:43,327][    INFO] Evaluation class [0 background]: IoU 91.85, Dice 95.75
+[2026-07-10 17:50:43,328][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:43,328][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:43,328][    INFO] Evaluation class [3 granulation tissue]: IoU 18.97, Dice 31.89
+[2026-07-10 17:50:43,328][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:43,329][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:50:43,329][    INFO] Evaluation epoch 92: MeanIoU 18.47, MeanDice 21.27; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:50:44,454][    INFO] Epoch 94/100, iter 1/28, loss 0.1276, encoder LR 9.13247e-05
+[2026-07-10 17:50:45,557][    INFO] Epoch 94/100, iter 4/28, loss 0.3035, encoder LR 9.00657e-05
+[2026-07-10 17:50:46,323][    INFO] Epoch 94/100, iter 7/28, loss 0.3678, encoder LR 8.88047e-05
+[2026-07-10 17:50:49,474][    INFO] Epoch 94/100, iter 10/28, loss 0.4373, encoder LR 8.75417e-05
+[2026-07-10 17:50:49,584][    INFO] Epoch 94/100, iter 13/28, loss 0.3928, encoder LR 8.62768e-05
+[2026-07-10 17:50:50,611][    INFO] Epoch 94/100, iter 16/28, loss 0.3998, encoder LR 8.50097e-05
+[2026-07-10 17:50:51,780][    INFO] Epoch 94/100, iter 19/28, loss 0.3726, encoder LR 8.37405e-05
+[2026-07-10 17:50:52,902][    INFO] Epoch 94/100, iter 22/28, loss 0.4077, encoder LR 8.24692e-05
+[2026-07-10 17:50:53,481][    INFO] Epoch 94/100, iter 25/28, loss 0.3732, encoder LR 8.11958e-05
+[2026-07-10 17:50:54,741][    INFO] Epoch 94/100, iter 28/28, loss 0.3865, encoder LR 7.99201e-05
+[2026-07-10 17:51:00,922][    INFO] Evaluation class [0 background]: IoU 91.51, Dice 95.57
+[2026-07-10 17:51:00,923][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:00,923][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:00,923][    INFO] Evaluation class [3 granulation tissue]: IoU 7.23, Dice 13.48
+[2026-07-10 17:51:00,923][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:00,924][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:00,924][    INFO] Evaluation epoch 93: MeanIoU 16.46, MeanDice 18.17; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:51:02,959][    INFO] Epoch 95/100, iter 1/28, loss 0.3370, encoder LR 7.94943e-05
+[2026-07-10 17:51:03,070][    INFO] Epoch 95/100, iter 4/28, loss 0.2476, encoder LR 7.82156e-05
+[2026-07-10 17:51:05,438][    INFO] Epoch 95/100, iter 7/28, loss 0.2281, encoder LR 7.69345e-05
+[2026-07-10 17:51:06,273][    INFO] Epoch 95/100, iter 10/28, loss 0.2110, encoder LR 7.56511e-05
+[2026-07-10 17:51:06,382][    INFO] Epoch 95/100, iter 13/28, loss 0.1835, encoder LR 7.43652e-05
+[2026-07-10 17:51:06,785][    INFO] Epoch 95/100, iter 16/28, loss 0.1876, encoder LR 7.30769e-05
+[2026-07-10 17:51:08,530][    INFO] Epoch 95/100, iter 19/28, loss 0.1878, encoder LR 7.1786e-05
+[2026-07-10 17:51:09,772][    INFO] Epoch 95/100, iter 22/28, loss 0.2404, encoder LR 7.04926e-05
+[2026-07-10 17:51:09,879][    INFO] Epoch 95/100, iter 25/28, loss 0.2624, encoder LR 6.91965e-05
+[2026-07-10 17:51:11,427][    INFO] Epoch 95/100, iter 28/28, loss 0.2429, encoder LR 6.78977e-05
+[2026-07-10 17:51:16,832][    INFO] Evaluation class [0 background]: IoU 92.21, Dice 95.94
+[2026-07-10 17:51:16,832][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.01
+[2026-07-10 17:51:16,832][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:16,832][    INFO] Evaluation class [3 granulation tissue]: IoU 31.94, Dice 48.41
+[2026-07-10 17:51:16,832][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:16,833][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:16,833][    INFO] Evaluation epoch 94: MeanIoU 20.69, MeanDice 24.06; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:51:19,746][    INFO] Epoch 96/100, iter 1/28, loss 0.1198, encoder LR 6.74641e-05
+[2026-07-10 17:51:19,854][    INFO] Epoch 96/100, iter 4/28, loss 0.1223, encoder LR 6.61616e-05
+[2026-07-10 17:51:21,432][    INFO] Epoch 96/100, iter 7/28, loss 0.2262, encoder LR 6.48563e-05
+[2026-07-10 17:51:21,781][    INFO] Epoch 96/100, iter 10/28, loss 0.2415, encoder LR 6.3548e-05
+[2026-07-10 17:51:23,460][    INFO] Epoch 96/100, iter 13/28, loss 0.2645, encoder LR 6.22367e-05
+[2026-07-10 17:51:23,575][    INFO] Epoch 96/100, iter 16/28, loss 0.2323, encoder LR 6.09224e-05
+[2026-07-10 17:51:24,235][    INFO] Epoch 96/100, iter 19/28, loss 0.2534, encoder LR 5.96049e-05
+[2026-07-10 17:51:25,239][    INFO] Epoch 96/100, iter 22/28, loss 0.2557, encoder LR 5.82841e-05
+[2026-07-10 17:51:26,264][    INFO] Epoch 96/100, iter 25/28, loss 0.2758, encoder LR 5.696e-05
+[2026-07-10 17:51:26,755][    INFO] Epoch 96/100, iter 28/28, loss 0.2599, encoder LR 5.56325e-05
+[2026-07-10 17:51:32,254][    INFO] Evaluation class [0 background]: IoU 92.07, Dice 95.87
+[2026-07-10 17:51:32,255][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:32,256][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:32,257][    INFO] Evaluation class [3 granulation tissue]: IoU 27.45, Dice 43.07
+[2026-07-10 17:51:32,258][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:32,259][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:32,259][    INFO] Evaluation epoch 95: MeanIoU 19.92, MeanDice 23.16; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:51:34,208][    INFO] Epoch 97/100, iter 1/28, loss 0.0634, encoder LR 5.51892e-05
+[2026-07-10 17:51:35,264][    INFO] Epoch 97/100, iter 4/28, loss 0.2153, encoder LR 5.38569e-05
+[2026-07-10 17:51:36,730][    INFO] Epoch 97/100, iter 7/28, loss 0.2062, encoder LR 5.2521e-05
+[2026-07-10 17:51:38,238][    INFO] Epoch 97/100, iter 10/28, loss 0.2503, encoder LR 5.11813e-05
+[2026-07-10 17:51:38,391][    INFO] Epoch 97/100, iter 13/28, loss 0.2602, encoder LR 4.98377e-05
+[2026-07-10 17:51:39,376][    INFO] Epoch 97/100, iter 16/28, loss 0.2448, encoder LR 4.849e-05
+[2026-07-10 17:51:40,106][    INFO] Epoch 97/100, iter 19/28, loss 0.2279, encoder LR 4.71382e-05
+[2026-07-10 17:51:40,281][    INFO] Epoch 97/100, iter 22/28, loss 0.2365, encoder LR 4.5782e-05
+[2026-07-10 17:51:41,737][    INFO] Epoch 97/100, iter 25/28, loss 0.2336, encoder LR 4.44214e-05
+[2026-07-10 17:51:43,071][    INFO] Epoch 97/100, iter 28/28, loss 0.2738, encoder LR 4.30561e-05
+[2026-07-10 17:51:50,035][    INFO] Evaluation class [0 background]: IoU 91.41, Dice 95.51
+[2026-07-10 17:51:50,037][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:50,038][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:50,039][    INFO] Evaluation class [3 granulation tissue]: IoU 2.62, Dice 5.10
+[2026-07-10 17:51:50,041][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:50,042][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:51:50,043][    INFO] Evaluation epoch 96: MeanIoU 15.67, MeanDice 16.77; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:51:52,523][    INFO] Epoch 98/100, iter 1/28, loss 0.1720, encoder LR 4.26e-05
+[2026-07-10 17:51:52,771][    INFO] Epoch 98/100, iter 4/28, loss 0.1247, encoder LR 4.12282e-05
+[2026-07-10 17:51:54,595][    INFO] Epoch 98/100, iter 7/28, loss 0.1900, encoder LR 3.98513e-05
+[2026-07-10 17:51:55,243][    INFO] Epoch 98/100, iter 10/28, loss 0.2422, encoder LR 3.84692e-05
+[2026-07-10 17:51:55,890][    INFO] Epoch 98/100, iter 13/28, loss 0.2204, encoder LR 3.70815e-05
+[2026-07-10 17:51:56,947][    INFO] Epoch 98/100, iter 16/28, loss 0.2227, encoder LR 3.5688e-05
+[2026-07-10 17:51:57,483][    INFO] Epoch 98/100, iter 19/28, loss 0.2594, encoder LR 3.42884e-05
+[2026-07-10 17:51:58,587][    INFO] Epoch 98/100, iter 22/28, loss 0.2577, encoder LR 3.28825e-05
+[2026-07-10 17:51:59,075][    INFO] Epoch 98/100, iter 25/28, loss 0.2591, encoder LR 3.14698e-05
+[2026-07-10 17:51:59,555][    INFO] Epoch 98/100, iter 28/28, loss 0.2591, encoder LR 3.005e-05
+[2026-07-10 17:52:04,865][    INFO] Evaluation class [0 background]: IoU 91.61, Dice 95.62
+[2026-07-10 17:52:04,868][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.01
+[2026-07-10 17:52:04,868][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:04,868][    INFO] Evaluation class [3 granulation tissue]: IoU 11.08, Dice 19.94
+[2026-07-10 17:52:04,868][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:04,868][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:04,868][    INFO] Evaluation epoch 97: MeanIoU 17.12, MeanDice 19.26; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:52:07,525][    INFO] Epoch 99/100, iter 1/28, loss 0.0249, encoder LR 2.95752e-05
+[2026-07-10 17:52:07,635][    INFO] Epoch 99/100, iter 4/28, loss 0.2211, encoder LR 2.81453e-05
+[2026-07-10 17:52:09,449][    INFO] Epoch 99/100, iter 7/28, loss 0.1688, encoder LR 2.67073e-05
+[2026-07-10 17:52:10,164][    INFO] Epoch 99/100, iter 10/28, loss 0.2184, encoder LR 2.52607e-05
+[2026-07-10 17:52:10,802][    INFO] Epoch 99/100, iter 13/28, loss 0.2139, encoder LR 2.38048e-05
+[2026-07-10 17:52:10,912][    INFO] Epoch 99/100, iter 16/28, loss 0.2262, encoder LR 2.2339e-05
+[2026-07-10 17:52:11,902][    INFO] Epoch 99/100, iter 19/28, loss 0.2065, encoder LR 2.08623e-05
+[2026-07-10 17:52:12,704][    INFO] Epoch 99/100, iter 22/28, loss 0.2120, encoder LR 1.9374e-05
+[2026-07-10 17:52:13,748][    INFO] Epoch 99/100, iter 25/28, loss 0.2585, encoder LR 1.78728e-05
+[2026-07-10 17:52:14,368][    INFO] Epoch 99/100, iter 28/28, loss 0.2831, encoder LR 1.63575e-05
+[2026-07-10 17:52:19,670][    INFO] Evaluation class [0 background]: IoU 91.60, Dice 95.62
+[2026-07-10 17:52:19,671][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:19,671][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:19,671][    INFO] Evaluation class [3 granulation tissue]: IoU 10.44, Dice 18.90
+[2026-07-10 17:52:19,671][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:19,672][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:19,672][    INFO] Evaluation epoch 98: MeanIoU 17.01, MeanDice 19.09; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:52:21,092][    INFO] Epoch 100/100, iter 1/28, loss 0.4261, encoder LR 1.58489e-05
+[2026-07-10 17:52:22,037][    INFO] Epoch 100/100, iter 4/28, loss 0.5505, encoder LR 1.43121e-05
+[2026-07-10 17:52:23,348][    INFO] Epoch 100/100, iter 7/28, loss 0.6908, encoder LR 1.27567e-05
+[2026-07-10 17:52:25,113][    INFO] Epoch 100/100, iter 10/28, loss 0.6373, encoder LR 1.11799e-05
+[2026-07-10 17:52:25,337][    INFO] Epoch 100/100, iter 13/28, loss 0.5595, encoder LR 9.5778e-06
+[2026-07-10 17:52:26,244][    INFO] Epoch 100/100, iter 16/28, loss 0.4936, encoder LR 7.94524e-06
+[2026-07-10 17:52:27,118][    INFO] Epoch 100/100, iter 19/28, loss 0.4454, encoder LR 6.27419e-06
+[2026-07-10 17:52:28,003][    INFO] Epoch 100/100, iter 22/28, loss 0.4404, encoder LR 4.55141e-06
+[2026-07-10 17:52:28,112][    INFO] Epoch 100/100, iter 25/28, loss 0.4098, encoder LR 2.7505e-06
+[2026-07-10 17:52:29,351][    INFO] Epoch 100/100, iter 28/28, loss 0.4520, encoder LR 7.89874e-07
+[2026-07-10 17:52:35,013][    INFO] Evaluation class [0 background]: IoU 91.90, Dice 95.78
+[2026-07-10 17:52:35,015][    INFO] Evaluation class [1 epithelial tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:35,015][    INFO] Evaluation class [2 slough]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:35,016][    INFO] Evaluation class [3 granulation tissue]: IoU 22.21, Dice 36.35
+[2026-07-10 17:52:35,016][    INFO] Evaluation class [4 necrotic tissue]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:35,016][    INFO] Evaluation class [5 other]: IoU 0.00, Dice 0.00
+[2026-07-10 17:52:35,016][    INFO] Evaluation epoch 99: MeanIoU 19.02, MeanDice 22.02; BEST mIoU 20.79, Dice 24.18 at epoch 66
+[2026-07-10 17:52:35,991][    INFO] Training complete. BEST mIoU 20.79, Dice 24.18 at epoch 66
