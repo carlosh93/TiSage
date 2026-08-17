@@ -1,6 +1,4 @@
-<h1 align="center">TiSage</h1>
-
-<h3 align="center">LUTSeg: A Longitudinal Multi-Expert Dataset for Ulcer Tissue Segmentation</h3>
+<h2 align="center">LUTSeg: A Longitudinal Multi-Expert Dataset for Ulcer Tissue Segmentation</h2>
 
 <p align="center">
   <strong>🏆 Spotlight — Eleventh ISIC Skin Image Analysis Workshop @ MICCAI 2026</strong>
@@ -18,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://workshop.isic-archive.com/2026/"><img src="https://img.shields.io/badge/Paper-Spotlight%20%40%20MICCAI%202026-f97316" alt="Paper: Spotlight at MICCAI 2026"></a>
+  <a href="https://workshop.isic-archive.com/2026/"><img src="https://img.shields.io/badge/Paper-Spotlight%20%40%20MICCAI%202026-f97316" alt="Paper"></a>
   <a href="https://huggingface.co/ksanchez84/TiSage"><img src="https://img.shields.io/badge/Hugging%20Face-Model-FFD21E?logo=huggingface&amp;logoColor=000" alt="Hugging Face model"></a>
   <a href="https://huggingface.co/datasets/ksanchez84/LUTSeg"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&amp;logoColor=000" alt="Hugging Face dataset"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/Citation-BibTeX-2563eb" alt="BibTeX citation"></a>
